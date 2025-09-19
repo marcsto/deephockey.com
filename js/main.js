@@ -54,9 +54,13 @@ function initializePage() {
  * Enhanced card interactions
  */
 function initializeCardInteractions() {
+    // Remove existing listeners to avoid duplicates
     const cards = document.querySelectorAll('.blog-card, .video-card');
     
     cards.forEach(card => {
+        // Skip if already initialized
+        if (card.dataset.initialized === 'true') return;
+        
         // Add keyboard navigation support
         card.addEventListener('keydown', (e) => {
             if (e.key === 'Enter' || e.key === ' ') {
@@ -75,15 +79,24 @@ function initializeCardInteractions() {
             
             const link = card.querySelector('.card-link[href]:not(.card-link-disabled), .video-link[href]');
             if (link) {
-                link.click();
+                // For external links (like YouTube videos), open in new tab
+                if (link.hasAttribute('target')) {
+                    window.open(link.href, link.getAttribute('target'));
+                } else {
+                    link.click();
+                }
             }
         });
 
         // Add tabindex for accessibility
-        if (card.querySelector('.card-link[href]:not(.card-link-disabled), .video-link[href]')) {
+        const link = card.querySelector('.card-link[href]:not(.card-link-disabled), .video-link[href]');
+        if (link) {
             card.setAttribute('tabindex', '0');
             card.style.cursor = 'pointer';
         }
+        
+        // Mark as initialized
+        card.dataset.initialized = 'true';
     });
 }
 
@@ -138,6 +151,9 @@ function displayVideos(videos) {
             </article>
         `;
     }).join('');
+    
+    // Re-initialize card interactions after videos are loaded
+    initializeCardInteractions();
 }
 
 /**
