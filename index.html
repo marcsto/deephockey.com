@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="./css/styles.css">
 </head>
 <body>
-
+   <!-- Get latest videos from https://studio.youtube.com/youtubei/v1/creator/list_creator_videos?alt=json -->
     <!-- App Container -->
     <div id="app" class="app-container">
 
@@ -24,10 +24,14 @@
             
             <section class="hero-section">
                 <h1 class="hero-title header-underline">Deep Hockey Insights</h1>
-                <p class="hero-subtitle">Using AI to uncover the hidden patterns in the world of hockey.</p>
+                <p class="hero-subtitle">Using AI to understand hockey.</p>
             </section>
 
-            <!-- Blog Post Grid -->
+            <!-- Articles Section -->
+            <section class="section-header">
+                <h2 class="section-title">Latest Articles</h2>
+            </section>
+
             <div class="blog-grid">
                 
                 <!-- Blog Post Card 1 -->
@@ -42,31 +46,19 @@
                     </div>
                 </article>
 
-                <!-- Blog Post Card 2 (Placeholder) -->
-                <!-- <article class="blog-card">
-                    <img src="https://placehold.co/600x400/1F2937/E5E7EB?text=Goalie+Analytics" alt="Image representing goalie analytics" class="card-image">
-                    <div class="card-content">
-                        <h2 class="card-title">AI in the Crease: Predicting Goalie Performance</h2>
-                        <p class="card-description">
-                            Goaltending is often called the most important position in hockey. We're using machine learning models to analyze thousands of variables, from stance to rebound control, to predict which goalies are poised for a breakout season and which might be heading for a slump.
-                        </p>
-                        <a href="#" class="card-link card-link-disabled">Coming soon...</a>
-                    </div>
-                </article> -->
-
-                <!-- Blog Post Card 3 (Placeholder) -->
-                <!-- <article class="blog-card">
-                    <img src="https://placehold.co/600x400/1F2937/E5E7EB?text=Draft+Strategy" alt="Image representing NHL draft strategy" class="card-image">
-                    <div class="card-content">
-                        <h2 class="card-title">Beyond the Draft Rankings: Finding Hidden Gems</h2>
-                        <p class="card-description">
-                           Standard draft rankings only tell part of the story. Our AI-driven draft analysis looks at league-adjusted scoring, player development curves, and stylistic compatibility to identify undervalued prospects who have the potential to become stars.
-                        </p>
-                        <a href="#" class="card-link card-link-disabled">Coming soon...</a>
-                    </div>
-                </article> -->
-
             </div>
+
+            <!-- Videos Section -->
+            <section class="section-header" style="margin-top: 4rem;">
+                <h2 class="section-title">Latest Videos</h2>
+                <p class="section-description">Hockey breakdowns, strategy analysis, and game insights from our YouTube channel.</p>
+            </section>
+
+            <div class="blog-grid" id="video-grid">
+                <!-- Videos will be loaded dynamically -->
+                <p style="color: #9CA3AF; text-align: center; grid-column: 1 / -1;">Loading videos...</p>
+            </div>
+
         </main>
         
         <!-- Footer -->

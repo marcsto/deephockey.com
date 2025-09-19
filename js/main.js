@@ -54,13 +54,13 @@ function initializePage() {
  * Enhanced card interactions
  */
 function initializeCardInteractions() {
-    const cards = document.querySelectorAll('.blog-card');
+    const cards = document.querySelectorAll('.blog-card, .video-card');
     
     cards.forEach(card => {
         // Add keyboard navigation support
         card.addEventListener('keydown', (e) => {
             if (e.key === 'Enter' || e.key === ' ') {
-                const link = card.querySelector('.card-link[href]:not(.card-link-disabled)');
+                const link = card.querySelector('.card-link[href]:not(.card-link-disabled), .video-link[href]');
                 if (link) {
                     e.preventDefault();
                     link.click();
@@ -73,18 +73,71 @@ function initializeCardInteractions() {
             // Don't trigger if clicking on a link directly
             if (e.target.tagName === 'A') return;
             
-            const link = card.querySelector('.card-link[href]:not(.card-link-disabled)');
+            const link = card.querySelector('.card-link[href]:not(.card-link-disabled), .video-link[href]');
             if (link) {
                 link.click();
             }
         });
 
         // Add tabindex for accessibility
-        if (card.querySelector('.card-link[href]:not(.card-link-disabled)')) {
+        if (card.querySelector('.card-link[href]:not(.card-link-disabled), .video-link[href]')) {
             card.setAttribute('tabindex', '0');
             card.style.cursor = 'pointer';
         }
     });
+}
+
+/**
+ * Load and display videos from videos.json
+ */
+async function loadVideos() {
+    try {
+        const response = await fetch('./videos.json');
+        const data = await response.json();
+        
+        if (data.videos && Array.isArray(data.videos)) {
+            displayVideos(data.videos.slice(0, 6)); // Show first 6 videos
+        }
+    } catch (error) {
+        console.error('Error loading videos:', error);
+        // Show fallback message
+        const videoGrid = document.getElementById('video-grid');
+        if (videoGrid) {
+            videoGrid.innerHTML = '<p style="color: #9CA3AF; text-align: center; grid-column: 1 / -1;">Videos coming soon...</p>';
+        }
+    }
+}
+
+/**
+ * Display videos in the grid
+ */
+function displayVideos(videos) {
+    const videoGrid = document.getElementById('video-grid');
+    if (!videoGrid) return;
+
+    videoGrid.innerHTML = videos.map(video => {
+        // Get the best thumbnail (highest quality available)
+        const thumbnail = video.thumbnailDetails?.thumbnails?.slice(-1)[0] || 
+                         video.thumbnailDetails?.thumbnails?.[1] || 
+                         video.thumbnailDetails?.thumbnails?.[0];
+        
+        const thumbnailUrl = thumbnail?.url || 'https://placehold.co/320x180/1F2937/E5E7EB?text=Video';
+        
+        // Clean and truncate title
+        const title = video.title?.replace(/#\w+/g, '').trim() || 'Untitled Video';
+        const description = video.description?.slice(0, 150) + '...' || 'No description available.';
+        
+        return `
+            <article class="video-card">
+                <img src="${thumbnailUrl}" alt="${title}" class="video-thumbnail">
+                <div class="video-content">
+                    <h3 class="video-title">${title}</h3>
+                    <p class="video-description">${description}</p>
+                    <a href="https://www.youtube.com/watch?v=${video.videoId}" target="_blank" rel="noopener noreferrer" class="video-link">Watch Video →</a>
+                </div>
+            </article>
+        `;
+    }).join('');
 }
 
 /**
@@ -93,6 +146,7 @@ function initializeCardInteractions() {
 document.addEventListener('DOMContentLoaded', () => {
     initializePage();
     initializeCardInteractions();
+    loadVideos();
 });
 
 /**
