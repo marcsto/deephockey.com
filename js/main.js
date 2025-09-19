@@ -101,11 +101,11 @@ function initializeCardInteractions() {
 }
 
 /**
- * Load and display videos from videos.json
+ * Load and display videos from videos-clean.json
  */
 async function loadVideos() {
     try {
-        const response = await fetch('./videos.json');
+        const response = await fetch('./videos-clean.json');
         const data = await response.json();
         
         if (data.videos && Array.isArray(data.videos)) {
@@ -129,16 +129,12 @@ function displayVideos(videos) {
     if (!videoGrid) return;
 
     videoGrid.innerHTML = videos.map(video => {
-        // Get the best thumbnail (highest quality available)
-        const thumbnail = video.thumbnailDetails?.thumbnails?.slice(-1)[0] || 
-                         video.thumbnailDetails?.thumbnails?.[1] || 
-                         video.thumbnailDetails?.thumbnails?.[0];
+        // Use the pre-optimized thumbnail from clean data
+        const thumbnailUrl = video.thumbnail?.url || 'https://placehold.co/320x180/1F2937/E5E7EB?text=Video';
         
-        const thumbnailUrl = thumbnail?.url || 'https://placehold.co/320x180/1F2937/E5E7EB?text=Video';
-        
-        // Clean and truncate title
+        // Clean and truncate title (remove hashtags)
         const title = video.title?.replace(/#\w+/g, '').trim() || 'Untitled Video';
-        const description = video.description?.slice(0, 150) + '...' || 'No description available.';
+        const description = video.description || 'No description available.';
         
         return `
             <article class="video-card">
