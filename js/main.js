@@ -6,24 +6,61 @@
  * To update navigation, you only need to change it here.
  */
 
-// Header component template
-const Header = `
-    <div class="container">
-        <div class="header-nav">
-            <div>
-                <a href="./index.html" class="logo">
-                   Deep <span class="logo-accent">Hockey</span>
-                </a>
+/**
+ * Get the relative path to the home directory from current page
+ */
+function getHomePath() {
+    try {
+        const currentPath = window.location.pathname;
+        
+        // Handle root paths
+        if (currentPath === '/' || currentPath === '/index.html' || currentPath.endsWith('/index.html')) {
+            return './';
+        }
+        
+        const pathSegments = currentPath.split('/').filter(segment => segment !== '');
+        
+        // Remove the filename if it exists (e.g., 'early-season-power-plays.html')
+        if (pathSegments.length > 0 && pathSegments[pathSegments.length - 1].includes('.')) {
+            pathSegments.pop();
+        }
+        
+        // Calculate relative path back to root
+        if (pathSegments.length === 0) {
+            return './'; // Already at root
+        } else {
+            return '../'.repeat(pathSegments.length);
+        }
+    } catch (error) {
+        console.warn('Error calculating home path, using fallback:', error);
+        // Fallback to absolute path from root
+        return '/';
+    }
+}
+
+/**
+ * Generate header component template with correct paths
+ */
+function generateHeader() {
+    const homePath = getHomePath();
+    return `
+        <div class="container">
+            <div class="header-nav">
+                <div>
+                    <a href="${homePath}index.html" class="logo">
+                       Deep <span class="logo-accent">Hockey</span>
+                    </a>
+                </div>
+                <div class="nav-menu">
+                    <a href="${homePath}index.html" class="nav-link">Home</a>
+                    <a href="#" class="nav-link">About</a>
+                    <a href="https://www.youtube.com/@DeeperHockey/shorts" class="nav-link">YouTube</a>
+                </div>
+                <!-- Mobile menu button can be added here if needed -->
             </div>
-            <div class="nav-menu">
-                <a href="./index.html" class="nav-link">Home</a>
-                <a href="#" class="nav-link">About</a>
-                <a href="https://www.youtube.com/@DeeperHockey/shorts" class="nav-link">YouTube</a>
-            </div>
-            <!-- Mobile menu button can be added here if needed -->
         </div>
-    </div>
-`;
+    `;
+}
 
 // Footer component template
 const Footer = `
@@ -37,10 +74,10 @@ const Footer = `
  * Initialize the page components
  */
 function initializePage() {
-    // Inject header
+    // Inject header with dynamic paths
     const headerElement = document.getElementById('main-header');
     if (headerElement) {
-        headerElement.innerHTML = Header;
+        headerElement.innerHTML = generateHeader();
     }
 
     // Inject footer
