@@ -53,7 +53,7 @@ function generateHeader() {
                 </div>
                 <div class="nav-menu">
                     <a href="${homePath}index.html" class="nav-link">Home</a>
-                    <a href="#" class="nav-link">About</a>
+                    <a href="${homePath}about.html" class="nav-link">About</a>
                     <a href="https://www.youtube.com/@DeeperHockey/shorts" class="nav-link">YouTube</a>
                 </div>
                 <!-- Mobile menu button can be added here if needed -->
