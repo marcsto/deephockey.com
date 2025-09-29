@@ -1,0 +1,226 @@
+/* Shootout-specific styles */
+.main-shootout-content {
+    flex-grow: 1;
+    margin: 0 auto;
+    padding: 1rem 1rem;
+    max-width: 1200px;
+    width: 100%;
+}
+
+.player-header {
+    text-align: center;
+    margin-bottom: 1rem;
+    padding: 1rem;
+    background: linear-gradient(145deg, #1F2937 0%, #1A202C 100%);
+    border-radius: 1rem;
+    border: 1px solid rgba(75, 85, 99, 0.3);
+}
+
+.player-name {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: white;
+}
+
+.player-team {
+    font-size: 1.25rem;
+    color: #60A5FA;
+    margin-bottom: 1rem;
+}
+
+.player-stats {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.stat-item {
+    text-align: center;
+}
+
+.stat-value {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #60A5FA;
+    display: block;
+}
+
+.stat-label {
+    font-size: 0.875rem;
+    color: #D1D5DB;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.shootout-container {
+    display: grid;
+    grid-template-columns: 1fr 350px;
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.video-player-container {
+    background: linear-gradient(145deg, #1F2937 0%, #1A202C 100%);
+    border-radius: 1rem;
+    border: 1px solid rgba(75, 85, 99, 0.3);
+    padding: 1.5rem;
+    height: fit-content;
+}
+
+.video-player {
+    width: 100%;
+    height: 70vh;
+    background: #000;
+    border-radius: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.video-info {
+    text-align: center;
+    color: #D1D5DB;
+}
+
+.video-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: white;
+    margin-bottom: 0.5rem;
+}
+
+.video-details {
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+
+.attempts-sidebar {
+    background: linear-gradient(145deg, #1F2937 0%, #1A202C 100%);
+    border-radius: 1rem;
+    border: 1px solid rgba(75, 85, 99, 0.3);
+    padding: 1.5rem;
+    height: fit-content;
+}
+
+.sidebar-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: white;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.attempt-item {
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    margin-bottom: 0.75rem;
+    background: rgba(31, 41, 55, 0.5);
+    border-radius: 0.5rem;
+    border: 1px solid rgba(75, 85, 99, 0.2);
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.attempt-item:hover {
+    background: rgba(31, 41, 55, 0.8);
+    border-color: rgba(96, 165, 250, 0.3);
+    transform: translateX(4px);
+}
+
+.attempt-item.active {
+    background: rgba(96, 165, 250, 0.1);
+    border-color: #60A5FA;
+}
+
+.attempt-result {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    margin-right: 1rem;
+    flex-shrink: 0;
+}
+
+.attempt-result.goal {
+    background: #10B981;
+    box-shadow: 0 0 8px rgba(16, 185, 129, 0.4);
+}
+
+.attempt-result.miss {
+    background: #EF4444;
+    box-shadow: 0 0 8px rgba(239, 68, 68, 0.4);
+}
+
+.attempt-result.save {
+    background: #F59E0B;
+    box-shadow: 0 0 8px rgba(245, 158, 11, 0.4);
+}
+
+.attempt-info {
+    flex-grow: 1;
+}
+
+.attempt-date {
+    font-size: 0.875rem;
+    color: #D1D5DB;
+    font-weight: 500;
+}
+
+.attempt-opponent {
+    font-size: 0.75rem;
+    color: #9CA3AF;
+}
+
+.attempt-details {
+    font-size: 0.75rem;
+    color: #6B7280;
+    margin-top: 0.25rem;
+}
+
+.legend {
+    margin-top: 1.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(75, 85, 99, 0.3);
+}
+
+.legend-title {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: #D1D5DB;
+    margin-bottom: 0.75rem;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.5rem;
+}
+
+.legend-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    margin-right: 0.5rem;
+}
+
+.legend-label {
+    font-size: 0.75rem;
+    color: #9CA3AF;
+}
+
+@media (max-width: 768px) {
+    .shootout-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .player-name {
+        font-size: 1rem;
+    }
+    
+    .player-stats {
+        gap: 1rem;
+    }
+    
+    .video-player {
+        height: 65vh;
+    }
+}
