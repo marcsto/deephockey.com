@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pierre-Luc Dubois - Shootout Videos | Deep Hockey</title>
+    <meta name="description" content="Complete shootout analysis for Pierre-Luc Dubois including video breakdowns of all shootout attempts.">
+    <meta name="keywords" content="Pierre-Luc Dubois, shootout, NHL, Washington Capitals, hockey analysis">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../css/styles.css">
+    <link rel="stylesheet" href="../../css/shootout.css">
+</head>
+<body>
+    <!-- App Container -->
+    <div id="app" class="app-container">
+
+        <!-- Header -->
+        <header id="main-header" class="site-header"></header>
+
+        <!-- Main Content -->
+        <main class="main-shootout-content">
+            
+            <!-- Player Header -->
+            <div class="player-header">
+                <h1 class="player-name">Pierre-Luc Dubois Shootout Videos</h1>
+            </div>
+
+            <!-- Shootout Container -->
+            <div class="shootout-container">
+                
+                <!-- Video Player -->
+                <div class="video-player-container">
+                    <video id="shootout-video" class="video-player" controls>
+                        <source src="https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/16c1c36e-2254-4a02-ba4e-bbaa5ade67a3.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <div id="no-video-message" class="no-video-message" style="display: none;">
+                        <div class="no-video-icon">🎥</div>
+                        <h3>No Video Available</h3>
+                        <p>Unfortunately, there is no video available for this shootout attempt.</p>
+                    </div>
+                    <div class="video-info">
+                        <div class="video-title" id="video-title">vs Carolina Hurricanes</div>
+                        <div class="video-details" id="video-details">
+                            Apr 10, 2025 • Goal • Wrist<br>Shootout Attempt #1
+                        </div>
+                    </div>
+                    <div class="video-controls">
+                        <div class="autoplay-control">
+                            <label class="toggle-switch">
+                                <input type="checkbox" id="autoplay-toggle" checked>
+                                <span class="toggle-slider"></span>
+                                <span class="toggle-label">Auto-play next video</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Attempts Sidebar -->
+                <div class="attempts-sidebar">
+                    <h3 class="sidebar-title">Shootout Attempts</h3>
+                    
+                    <div class="attempt-item active" data-video="https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/16c1c36e-2254-4a02-ba4e-bbaa5ade67a3.mp4" data-title="vs Carolina Hurricanes" data-details="Apr 10, 2025 • Goal • Wrist<br>Shootout Attempt #1" data-has-video="true">
+                        <div class="attempt-result goal"></div>
+                        <div class="attempt-info">
+                            <div class="attempt-date">Apr 10, 2025</div>
+                            <div class="attempt-opponent">vs Carolina Hurricanes</div>
+                            <div class="attempt-details">Wrist • Goal</div>
+                        </div>
+                    </div>
+
+                    <div class="attempt-item" data-video="https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/f8ffd4d3-d12f-4b41-aa77-1564a57955b6.mp4" data-title="vs Ottawa Senators" data-details="Mar 03, 2025 • Save • Wrist<br>Shootout Attempt #1" data-has-video="true">
+                        <div class="attempt-result save"></div>
+                        <div class="attempt-info">
+                            <div class="attempt-date">Mar 03, 2025</div>
+                            <div class="attempt-opponent">vs Ottawa Senators</div>
+                            <div class="attempt-details">Wrist • Save</div>
+                        </div>
+                    </div>
+
+                    <div class="attempt-item" data-video="https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/23d9fed9-c8c4-4cb3-a6a3-09b7f1c1f063.mp4" data-title="vs Utah Hockey Club" data-details="Feb 09, 2025 • Save • Snap<br>Shootout Attempt #1" data-has-video="true">
+                        <div class="attempt-result save"></div>
+                        <div class="attempt-info">
+                            <div class="attempt-date">Feb 09, 2025</div>
+                            <div class="attempt-opponent">vs Utah Hockey Club</div>
+                            <div class="attempt-details">Snap • Save</div>
+                        </div>
+                    </div>
+
+                    <div class="attempt-item" data-video="https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/4be1e74f-5019-497d-a80d-c67a746d6322.mp4" data-title="@ Buffalo Sabres" data-details="Jan 06, 2025 • Goal • Wrist<br>Shootout Attempt #2" data-has-video="true">
+                        <div class="attempt-result goal"></div>
+                        <div class="attempt-info">
+                            <div class="attempt-date">Jan 06, 2025</div>
+                            <div class="attempt-opponent">@ Buffalo Sabres</div>
+                            <div class="attempt-details">Wrist • Goal</div>
+                        </div>
+                    </div>
+
+                    <div class="attempt-item" data-video="https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/13ffe060-b14b-40c6-bdba-d86cbcd992cf.mp4" data-title="vs Minnesota Wild" data-details="Jan 02, 2025 • Save • Wrist<br>Shootout Attempt #3" data-has-video="true">
+                        <div class="attempt-result save"></div>
+                        <div class="attempt-info">
+                            <div class="attempt-date">Jan 02, 2025</div>
+                            <div class="attempt-opponent">vs Minnesota Wild</div>
+                            <div class="attempt-details">Wrist • Save</div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Back to Articles -->
+            <div style="text-align: center; margin-top: 3rem;">
+                <a href="../../index.html" class="card-link">← Back to Deep Hockey</a>
+            </div>
+
+        </main>
+        
+        <!-- Footer -->
+        <footer id="main-footer" class="site-footer"></footer>
+
+    </div>
+
+    <script src="../../js/main.js"></script>
+    <script>
+        // Shootout video player functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const video = document.getElementById('shootout-video');
+            const videoTitle = document.getElementById('video-title');
+            const videoDetails = document.getElementById('video-details');
+            const noVideoMessage = document.getElementById('no-video-message');
+            const attemptItems = document.querySelectorAll('.attempt-item');
+            const autoplayToggle = document.getElementById('autoplay-toggle');
+
+            // Load autoplay preference from localStorage (default: true)
+            const savedAutoplay = localStorage.getItem('shootout-autoplay');
+            if (savedAutoplay !== null) {
+                autoplayToggle.checked = savedAutoplay === 'true';
+            }
+
+            // Save autoplay preference when changed
+            autoplayToggle.addEventListener('change', function() {
+                localStorage.setItem('shootout-autoplay', this.checked);
+            });
+
+            // Function to play specific video by index
+            function playVideoByIndex(index) {
+                if (index < 0 || index >= attemptItems.length) return;
+                
+                const item = attemptItems[index];
+                
+                // Remove active class from all items
+                attemptItems.forEach(i => i.classList.remove('active'));
+                
+                // Add active class to current item
+                item.classList.add('active');
+                
+                // Update video source
+                const videoSrc = item.dataset.video;
+                const hasVideo = item.dataset.hasVideo === 'true';
+                const title = item.dataset.title;
+                const details = item.dataset.details;
+                
+                // Update title and details
+                videoTitle.textContent = title;
+                videoDetails.innerHTML = details;
+                
+                // Show video or no-video message
+                if (hasVideo && videoSrc) {
+                    video.style.display = 'block';
+                    noVideoMessage.style.display = 'none';
+                    video.src = videoSrc;
+                    video.load();
+                    video.play().catch(e => console.log('Auto-play prevented:', e));
+                } else {
+                    video.style.display = 'none';
+                    noVideoMessage.style.display = 'flex';
+                    video.pause();
+                    video.src = '';
+                }
+            }
+
+            // Function to get current active video index
+            function getCurrentVideoIndex() {
+                for (let i = 0; i < attemptItems.length; i++) {
+                    if (attemptItems[i].classList.contains('active')) {
+                        return i;
+                    }
+                }
+                return 0;
+            }
+
+            // Function to play next video
+            function playNextVideo() {
+                const currentIndex = getCurrentVideoIndex();
+                let nextIndex = currentIndex + 1;
+                
+                // Skip attempts without videos
+                while (nextIndex < attemptItems.length && attemptItems[nextIndex].dataset.hasVideo !== 'true') {
+                    nextIndex++;
+                }
+                
+                if (nextIndex < attemptItems.length) {
+                    playVideoByIndex(nextIndex);
+                    
+                    // Scroll to video on mobile devices
+                    if (window.innerWidth <= 768) {
+                        const videoContainer = document.querySelector('.video-player-container');
+                        videoContainer.scrollIntoView({ 
+                            behavior: 'smooth', 
+                            block: 'center' 
+                        });
+                    }
+                } else {
+                    console.log('Last video reached');
+                }
+            }
+
+            // Add click handlers to attempt items
+            attemptItems.forEach((item, index) => {
+                item.addEventListener('click', function() {
+                    playVideoByIndex(index);
+                    
+                    // Scroll to video on mobile devices
+                    if (window.innerWidth <= 768) {
+                        const videoContainer = document.querySelector('.video-player-container');
+                        videoContainer.scrollIntoView({ 
+                            behavior: 'smooth', 
+                            block: 'center' 
+                        });
+                    }
+                });
+            });
+
+            // Auto-advance to next video when current video ends
+            video.addEventListener('ended', function() {
+                if (autoplayToggle.checked) {
+                    setTimeout(() => {
+                        playNextVideo();
+                    }, 1000); // 1 second delay before next video
+                }
+            });
+
+            // Auto-play first video when page loads
+            setTimeout(() => {
+                // Check if first video has URL
+                if (attemptItems[0].dataset.hasVideo === 'true' && attemptItems[0].dataset.video) {
+                    video.play().catch(e => console.log('Auto-play prevented:', e));
+                } else {
+                    // Show no-video message for first attempt
+                    video.style.display = 'none';
+                    noVideoMessage.style.display = 'flex';
+                }
+            }, 1000);
+        });
+    </script>
+</body>
+</html>

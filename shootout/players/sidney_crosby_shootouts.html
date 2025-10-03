@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sidney Crosby - Shootout Videos | Deep Hockey</title>
+    <meta name="description" content="Complete shootout analysis for Sidney Crosby including video breakdowns of all shootout attempts.">
+    <meta name="keywords" content="Sidney Crosby, shootout, NHL, Pittsburgh Penguins, hockey analysis">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../css/styles.css">
+    <link rel="stylesheet" href="../../css/shootout.css">
+</head>
+<body>
+    <!-- App Container -->
+    <div id="app" class="app-container">
+
+        <!-- Header -->
+        <header id="main-header" class="site-header"></header>
+
+        <!-- Main Content -->
+        <main class="main-shootout-content">
+            
+            <!-- Player Header -->
+            <div class="player-header">
+                <h1 class="player-name">Sidney Crosby Shootout Videos</h1>
+            </div>
+
+            <!-- Shootout Container -->
+            <div class="shootout-container">
+                
+                <!-- Video Player -->
+                <div class="video-player-container">
+                    <video id="shootout-video" class="video-player" controls>
+                        <source src="https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/98a6b2ea-c177-467a-bbe4-e4908f026eb8.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <div id="no-video-message" class="no-video-message" style="display: none;">
+                        <div class="no-video-icon">🎥</div>
+                        <h3>No Video Available</h3>
+                        <p>Unfortunately, there is no video available for this shootout attempt.</p>
+                    </div>
+                    <div class="video-info">
+                        <div class="video-title" id="video-title">@ Florida Panthers</div>
+                        <div class="video-details" id="video-details">
+                            Mar 23, 2025 • Save • Snap<br>Shootout Attempt #4
+                        </div>
+                    </div>
+                    <div class="video-controls">
+                        <div class="autoplay-control">
+                            <label class="toggle-switch">
+                                <input type="checkbox" id="autoplay-toggle" checked>
+                                <span class="toggle-slider"></span>
+                                <span class="toggle-label">Auto-play next video</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Attempts Sidebar -->
+                <div class="attempts-sidebar">
+                    <h3 class="sidebar-title">Shootout Attempts</h3>
+                    
+                    <div class="attempt-item active" data-video="https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/98a6b2ea-c177-467a-bbe4-e4908f026eb8.mp4" data-title="@ Florida Panthers" data-details="Mar 23, 2025 • Save • Snap<br>Shootout Attempt #4" data-has-video="true">
+                        <div class="attempt-result save"></div>
+                        <div class="attempt-info">
+                            <div class="attempt-date">Mar 23, 2025</div>
+                            <div class="attempt-opponent">@ Florida Panthers</div>
+                            <div class="attempt-details">Snap • Save</div>
+                        </div>
+                    </div>
+
+                    <div class="attempt-item" data-video="https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/d9d4e00f-9294-4238-9bcc-4075e11b2a46.mp4" data-title="vs New Jersey Devils" data-details="Feb 04, 2025 • Save • Wrist<br>Shootout Attempt #3" data-has-video="true">
+                        <div class="attempt-result save"></div>
+                        <div class="attempt-info">
+                            <div class="attempt-date">Feb 04, 2025</div>
+                            <div class="attempt-opponent">vs New Jersey Devils</div>
+                            <div class="attempt-details">Wrist • Save</div>
+                        </div>
+                    </div>
+
+                    <div class="attempt-item" data-video="https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/784b5baa-877b-4fa7-8490-47b48be6491a.mp4" data-title="vs Columbus Blue Jackets" data-details="Jan 07, 2025 • Miss • Shot<br>Shootout Attempt #4" data-has-video="true">
+                        <div class="attempt-result miss"></div>
+                        <div class="attempt-info">
+                            <div class="attempt-date">Jan 07, 2025</div>
+                            <div class="attempt-opponent">vs Columbus Blue Jackets</div>
+                            <div class="attempt-details">Shot • Miss</div>
+                        </div>
+                    </div>
+
+                    <div class="attempt-item" data-video="https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/c12f8ad2-f99a-43ff-843d-f4c8ab0c175e.mp4" data-title="@ Florida Panthers" data-details="Jan 03, 2025 • Save • Wrist<br>Shootout Attempt #4" data-has-video="true">
+                        <div class="attempt-result save"></div>
+                        <div class="attempt-info">
+                            <div class="attempt-date">Jan 03, 2025</div>
+                            <div class="attempt-opponent">@ Florida Panthers</div>
+                            <div class="attempt-details">Wrist • Save</div>
+                        </div>
+                    </div>
+
+                    <div class="attempt-item" data-video="https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/d9446dce-0d69-4b4b-a4d8-02cedaf6ac8f.mp4" data-title="vs San Jose Sharks" data-details="Nov 16, 2024 • Goal • Wrist<br>Shootout Attempt #3" data-has-video="true">
+                        <div class="attempt-result goal"></div>
+                        <div class="attempt-info">
+                            <div class="attempt-date">Nov 16, 2024</div>
+                            <div class="attempt-opponent">vs San Jose Sharks</div>
+                            <div class="attempt-details">Wrist • Goal</div>
+                        </div>
+                    </div>
+
+                    <div class="attempt-item" data-video="https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/968420e6-48e3-4112-a4ef-c89bcefe14e6.mp4" data-title="@ New York Islanders" data-details="Nov 05, 2024 • Save • Wrist<br>Shootout Attempt #4" data-has-video="true">
+                        <div class="attempt-result save"></div>
+                        <div class="attempt-info">
+                            <div class="attempt-date">Nov 05, 2024</div>
+                            <div class="attempt-opponent">@ New York Islanders</div>
+                            <div class="attempt-details">Wrist • Save</div>
+                        </div>
+                    </div>
+
+                    <div class="attempt-item" data-video="https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/f331fbb2-cc70-4c26-bd29-91701fbd1ea8.mp4" data-title="@ Calgary Flames" data-details="Oct 22, 2024 • Hit Right Post • Wrist<br>Shootout Attempt #4" data-has-video="true">
+                        <div class="attempt-result miss"></div>
+                        <div class="attempt-info">
+                            <div class="attempt-date">Oct 22, 2024</div>
+                            <div class="attempt-opponent">@ Calgary Flames</div>
+                            <div class="attempt-details">Wrist • Hit Right Post</div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Back to Articles -->
+            <div style="text-align: center; margin-top: 3rem;">
+                <a href="../../index.html" class="card-link">← Back to Deep Hockey</a>
+            </div>
+
+        </main>
+        
+        <!-- Footer -->
+        <footer id="main-footer" class="site-footer"></footer>
+
+    </div>
+
+    <script src="../../js/main.js"></script>
+    <script>
+        // Shootout video player functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const video = document.getElementById('shootout-video');
+            const videoTitle = document.getElementById('video-title');
+            const videoDetails = document.getElementById('video-details');
+            const noVideoMessage = document.getElementById('no-video-message');
+            const attemptItems = document.querySelectorAll('.attempt-item');
+            const autoplayToggle = document.getElementById('autoplay-toggle');
+
+            // Load autoplay preference from localStorage (default: true)
+            const savedAutoplay = localStorage.getItem('shootout-autoplay');
+            if (savedAutoplay !== null) {
+                autoplayToggle.checked = savedAutoplay === 'true';
+            }
+
+            // Save autoplay preference when changed
+            autoplayToggle.addEventListener('change', function() {
+                localStorage.setItem('shootout-autoplay', this.checked);
+            });
+
+            // Function to play specific video by index
+            function playVideoByIndex(index) {
+                if (index < 0 || index >= attemptItems.length) return;
+                
+                const item = attemptItems[index];
+                
+                // Remove active class from all items
+                attemptItems.forEach(i => i.classList.remove('active'));
+                
+                // Add active class to current item
+                item.classList.add('active');
+                
+                // Update video source
+                const videoSrc = item.dataset.video;
+                const hasVideo = item.dataset.hasVideo === 'true';
+                const title = item.dataset.title;
+                const details = item.dataset.details;
+                
+                // Update title and details
+                videoTitle.textContent = title;
+                videoDetails.innerHTML = details;
+                
+                // Show video or no-video message
+                if (hasVideo && videoSrc) {
+                    video.style.display = 'block';
+                    noVideoMessage.style.display = 'none';
+                    video.src = videoSrc;
+                    video.load();
+                    video.play().catch(e => console.log('Auto-play prevented:', e));
+                } else {
+                    video.style.display = 'none';
+                    noVideoMessage.style.display = 'flex';
+                    video.pause();
+                    video.src = '';
+                }
+            }
+
+            // Function to get current active video index
+            function getCurrentVideoIndex() {
+                for (let i = 0; i < attemptItems.length; i++) {
+                    if (attemptItems[i].classList.contains('active')) {
+                        return i;
+                    }
+                }
+                return 0;
+            }
+
+            // Function to play next video
+            function playNextVideo() {
+                const currentIndex = getCurrentVideoIndex();
+                let nextIndex = currentIndex + 1;
+                
+                // Skip attempts without videos
+                while (nextIndex < attemptItems.length && attemptItems[nextIndex].dataset.hasVideo !== 'true') {
+                    nextIndex++;
+                }
+                
+                if (nextIndex < attemptItems.length) {
+                    playVideoByIndex(nextIndex);
+                    
+                    // Scroll to video on mobile devices
+                    if (window.innerWidth <= 768) {
+                        const videoContainer = document.querySelector('.video-player-container');
+                        videoContainer.scrollIntoView({ 
+                            behavior: 'smooth', 
+                            block: 'center' 
+                        });
+                    }
+                } else {
+                    console.log('Last video reached');
+                }
+            }
+
+            // Add click handlers to attempt items
+            attemptItems.forEach((item, index) => {
+                item.addEventListener('click', function() {
+                    playVideoByIndex(index);
+                    
+                    // Scroll to video on mobile devices
+                    if (window.innerWidth <= 768) {
+                        const videoContainer = document.querySelector('.video-player-container');
+                        videoContainer.scrollIntoView({ 
+                            behavior: 'smooth', 
+                            block: 'center' 
+                        });
+                    }
+                });
+            });
+
+            // Auto-advance to next video when current video ends
+            video.addEventListener('ended', function() {
+                if (autoplayToggle.checked) {
+                    setTimeout(() => {
+                        playNextVideo();
+                    }, 1000); // 1 second delay before next video
+                }
+            });
+
+            // Auto-play first video when page loads
+            setTimeout(() => {
+                // Check if first video has URL
+                if (attemptItems[0].dataset.hasVideo === 'true' && attemptItems[0].dataset.video) {
+                    video.play().catch(e => console.log('Auto-play prevented:', e));
+                } else {
+                    // Show no-video message for first attempt
+                    video.style.display = 'none';
+                    noVideoMessage.style.display = 'flex';
+                }
+            }, 1000);
+        });
+    </script>
+</body>
+</html>
