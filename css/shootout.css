@@ -294,3 +294,67 @@
         font-size: 0.8rem;
     }
 }
+
+/* No Video Message Styles */
+.no-video-message {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(145deg, #1F2937 0%, #1A202C 100%);
+    border: 2px dashed rgba(75, 85, 99, 0.5);
+    border-radius: 1rem;
+    padding: 3rem 2rem;
+    text-align: center;
+    min-height: 400px;
+}
+
+.no-video-icon {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    opacity: 0.5;
+}
+
+.no-video-message h3 {
+    color: white;
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.no-video-message p {
+    color: #9CA3AF;
+    font-size: 1rem;
+    max-width: 400px;
+}
+
+.attempt-item.no-video {
+    opacity: 0.7;
+    cursor: default;
+}
+
+.attempt-item.no-video .attempt-info {
+    font-style: italic;
+}
+
+.attempt-item.no-video .attempt-date {
+    color: #EF4444;
+}
+
+@media (max-width: 768px) {
+    .no-video-message {
+        min-height: 300px;
+        padding: 2rem 1rem;
+    }
+    
+    .no-video-icon {
+        font-size: 3rem;
+    }
+    
+    .no-video-message h3 {
+        font-size: 1.25rem;
+    }
+    
+    .no-video-message p {
+        font-size: 0.9rem;
+    }
+}

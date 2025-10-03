@@ -227,16 +227,61 @@
         }
 
         .featured-video-container {
-            max-width: 800px;
+            max-width: 600px;
             margin: 0 auto;
+        }
+
+        .carousel-wrapper {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
         }
 
         .featured-video-player {
             width: 100%;
-            height: 450px;
+            max-width: 400px;
+            aspect-ratio: 9 / 16;
             background: #000;
             border-radius: 0.5rem;
             object-fit: contain;
+        }
+
+        .carousel-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(0, 0, 0, 0.7);
+            border: 2px solid rgba(96, 165, 250, 0.5);
+            border-radius: 50%;
+            width: 48px;
+            height: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            color: #60A5FA;
+            z-index: 10;
+        }
+
+        .carousel-nav:hover {
+            background: rgba(96, 165, 250, 0.2);
+            border-color: #60A5FA;
+            transform: translateY(-50%) scale(1.1);
+        }
+
+        .carousel-nav:active {
+            transform: translateY(-50%) scale(0.95);
+        }
+
+        .carousel-prev {
+            left: -60px;
+        }
+
+        .carousel-next {
+            right: -60px;
         }
 
         .featured-video-info {
@@ -255,7 +300,42 @@
 
         @media (max-width: 768px) {
             .featured-video-player {
-                height: 300px;
+                max-width: 100%;
+            }
+
+            .carousel-wrapper {
+                display: grid;
+                grid-template-columns: 1fr;
+                grid-template-rows: auto auto;
+                gap: 1rem;
+            }
+
+            .carousel-nav {
+                position: static;
+                transform: none;
+                width: 48px;
+                height: 48px;
+            }
+
+            .featured-video-player {
+                grid-row: 1;
+                grid-column: 1;
+            }
+
+            .carousel-prev {
+                grid-row: 2;
+                grid-column: 1;
+                justify-self: center;
+                margin-right: 60px;
+                left: auto;
+            }
+
+            .carousel-next {
+                grid-row: 2;
+                grid-column: 1;
+                justify-self: center;
+                margin-left: 60px;
+                right: auto;
             }
             
             .featured-video-section {
@@ -411,7 +491,7 @@
             
             <!-- Index Header -->
             <div class="shootout-index-header">
-                <h1 class="index-title">DeepHockey Shootout Database</h1>
+                <h1 class="index-title">Deep Hockey Shootout Database</h1>
                 <p class="index-subtitle">Video analysis of NHL shootout attempts</p>
                 
                 <div class="stats-summary">
@@ -430,16 +510,25 @@
                 </div>
             </div>
 
-            <!-- Random Goal Video Player -->
+            <!-- Shootout Carousel -->
             <div class="featured-video-section">
-                <h2 class="featured-video-title">🎯 Random Shootout Goals</h2>
+                <h2 class="featured-video-title">Shootout Carousel</h2>
                 <div class="featured-video-container">
-                    <video id="featured-video" class="featured-video-player" controls autoplay muted>
-                        <source src="" type="video/mp4">
-                        Your browser does not support the video tag.
-                    </video>
-                    <div class="featured-video-info">
-                        <div class="featured-video-text" id="featured-video-text">Loading goal videos...</div>
+                    <div class="carousel-wrapper">
+                        <button class="carousel-nav carousel-prev" id="carousel-prev" aria-label="Previous video">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M15 18l-6-6 6-6"/>
+                            </svg>
+                        </button>
+                        <video id="featured-video" class="featured-video-player" controls autoplay muted>
+                            <source src="" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <button class="carousel-nav carousel-next" id="carousel-next" aria-label="Next video">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M9 18l6-6-6-6"/>
+                            </svg>
+                        </button>
                     </div>
                 </div>
             </div>
@@ -514,31 +603,54 @@
         // Goal videos data - will be populated by Python
         const goalVideos = {{GOAL_VIDEOS_JSON}};
 
+        // Carousel state variables (global scope for access from filter function)
+        let currentVideoIndex = -1;
+        let shuffledVideos = [];
+        let videoHistory = [];  // Track viewing history
+        let featuredVideo, prevButton, nextButton;
+
+        // Shuffle array function
+        function shuffleArray(array) {
+            const newArray = [...array];
+            for (let i = newArray.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [newArray[i], newArray[j]] = [newArray[j], newArray[i]];
+            }
+            return newArray;
+        }
+
+        // Load video by index
+        function loadVideo(index) {
+            if (index >= 0 && index < shuffledVideos.length) {
+                const video = shuffledVideos[index];
+                featuredVideo.src = video.url;
+                featuredVideo.load();
+                featuredVideo.play().catch(e => console.log('Auto-play prevented:', e));
+            }
+        }
+
+        // Update navigation button states
+        function updateNavigationButtons() {
+            // Disable prev button if at start of history
+            prevButton.disabled = videoHistory.length <= 1;
+            prevButton.style.opacity = prevButton.disabled ? '0.3' : '1';
+            prevButton.style.cursor = prevButton.disabled ? 'not-allowed' : 'pointer';
+        }
+
         // Featured video player functionality
         document.addEventListener('DOMContentLoaded', function() {
-            const featuredVideo = document.getElementById('featured-video');
-            const featuredVideoText = document.getElementById('featured-video-text');
-            let currentVideoIndex = -1;
-            let shuffledVideos = [];
-
-            // Shuffle array function
-            function shuffleArray(array) {
-                const newArray = [...array];
-                for (let i = newArray.length - 1; i > 0; i--) {
-                    const j = Math.floor(Math.random() * (i + 1));
-                    [newArray[i], newArray[j]] = [newArray[j], newArray[i]];
-                }
-                return newArray;
-            }
+            featuredVideo = document.getElementById('featured-video');
+            prevButton = document.getElementById('carousel-prev');
+            nextButton = document.getElementById('carousel-next');
 
             // Initialize shuffled videos
             function initializeVideos() {
                 if (goalVideos && goalVideos.length > 0) {
                     shuffledVideos = shuffleArray(goalVideos);
                     currentVideoIndex = 0;
+                    videoHistory = [0];
                     playCurrentVideo();
-                } else {
-                    featuredVideoText.textContent = 'No goal videos available.';
+                    updateNavigationButtons();
                 }
             }
 
@@ -547,24 +659,35 @@
                 if (currentVideoIndex >= 0 && currentVideoIndex < shuffledVideos.length) {
                     const video = shuffledVideos[currentVideoIndex];
                     featuredVideo.src = video.url;
-                    featuredVideoText.innerHTML = `
-                        <strong>${video.playerName}</strong> vs ${video.opponent}<br>
-                        ${video.date} • ${video.details}
-                    `;
                     featuredVideo.load();
                     featuredVideo.play().catch(e => console.log('Auto-play prevented:', e));
                 }
             }
 
-            // Play next video (with reshuffling when we reach the end)
+            // Play next video
             function playNextVideo() {
                 currentVideoIndex++;
                 if (currentVideoIndex >= shuffledVideos.length) {
                     // Reshuffle and start over
                     shuffledVideos = shuffleArray(goalVideos);
                     currentVideoIndex = 0;
+                    videoHistory = [];
                 }
+                videoHistory.push(currentVideoIndex);
                 playCurrentVideo();
+                updateNavigationButtons();
+            }
+
+            // Play previous video
+            function playPreviousVideo() {
+                if (videoHistory.length > 1) {
+                    // Remove current position
+                    videoHistory.pop();
+                    // Get previous position
+                    currentVideoIndex = videoHistory[videoHistory.length - 1];
+                    playCurrentVideo();
+                    updateNavigationButtons();
+                }
             }
 
             // Auto-advance to next video when current video ends
@@ -572,6 +695,33 @@
                 setTimeout(() => {
                     playNextVideo();
                 }, 1000); // 1 second delay before next video
+            });
+
+            // Navigation button click handlers
+            prevButton.addEventListener('click', function() {
+                if (!this.disabled) {
+                    playPreviousVideo();
+                }
+            });
+
+            nextButton.addEventListener('click', function() {
+                playNextVideo();
+            });
+
+            // Keyboard navigation
+            document.addEventListener('keydown', function(e) {
+                // Only if video player area has focus or no input is focused
+                if (document.activeElement.tagName !== 'INPUT' && document.activeElement.tagName !== 'SELECT') {
+                    if (e.key === 'ArrowLeft') {
+                        e.preventDefault();
+                        if (!prevButton.disabled) {
+                            playPreviousVideo();
+                        }
+                    } else if (e.key === 'ArrowRight') {
+                        e.preventDefault();
+                        playNextVideo();
+                    }
+                }
             });
 
             // Initialize on page load
@@ -587,6 +737,55 @@
             const playerCards = document.querySelectorAll('.player-card');
 
             let totalPlayers = playerCards.length;
+
+            // Function to update URL with team parameter
+            function updateURLParameter(team) {
+                const url = new URL(window.location);
+                if (team && team !== '') {
+                    url.searchParams.set('team', team);
+                } else {
+                    url.searchParams.delete('team');
+                }
+                window.history.pushState({}, '', url);
+            }
+
+            // Function to get team from URL parameter
+            function getTeamFromURL() {
+                const urlParams = new URLSearchParams(window.location.search);
+                return urlParams.get('team') || '';
+            }
+
+            // Function to filter carousel by team
+            function filterCarouselByTeam(selectedTeam) {
+                const featuredVideo = document.getElementById('featured-video');
+                
+                if (selectedTeam === '') {
+                    // Show all videos - reinitialize with all goal videos
+                    if (goalVideos && goalVideos.length > 0) {
+                        shuffledVideos = shuffleArray(goalVideos);
+                        currentVideoIndex = 0;
+                        videoHistory = [0];
+                        loadVideo(0);
+                        updateNavigationButtons();
+                    }
+                } else {
+                    // Filter videos by selected team
+                    const filteredVideos = goalVideos.filter(video => video.playerTeam === selectedTeam);
+                    
+                    if (filteredVideos.length > 0) {
+                        shuffledVideos = shuffleArray(filteredVideos);
+                        currentVideoIndex = 0;
+                        videoHistory = [0];
+                        loadVideo(0);
+                        updateNavigationButtons();
+                    } else {
+                        // No videos for this team - show message
+                        featuredVideo.src = '';
+                        featuredVideo.poster = '';
+                        // Could add a "no videos" message here if desired
+                    }
+                }
+            }
 
             // Function to filter players
             function filterPlayers() {
@@ -608,6 +807,12 @@
                         card.classList.add('hidden');
                     }
                 });
+
+                // Filter carousel videos by selected team
+                filterCarouselByTeam(selectedTeam);
+
+                // Update URL with team parameter
+                updateURLParameter(selectedTeam);
 
                 // Update results count
                 if (visibleCount === 0) {
@@ -647,10 +852,18 @@
                 }
             });
 
-            // Focus search input on page load
-            setTimeout(() => {
-                searchInput.focus();
-            }, 500);
+            // Initialize from URL parameter
+            const teamFromURL = getTeamFromURL();
+            if (teamFromURL) {
+                teamFilter.value = teamFromURL;
+                filterPlayers();
+                // Don't focus search input if coming from a team link
+            } else {
+                // Focus search input on page load only if no team filter
+                setTimeout(() => {
+                    searchInput.focus();
+                }, 500);
+            }
         });
     </script>
 </body>

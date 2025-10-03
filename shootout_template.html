@@ -36,6 +36,11 @@
                         <source src="{{FIRST_VIDEO_URL}}" type="video/mp4">
                         Your browser does not support the video tag.
                     </video>
+                    <div id="no-video-message" class="no-video-message" style="display: none;">
+                        <div class="no-video-icon">🎥</div>
+                        <h3>No Video Available</h3>
+                        <p>Unfortunately, there is no video available for this shootout attempt.</p>
+                    </div>
                     <div class="video-info">
                         <div class="video-title" id="video-title">{{FIRST_VIDEO_TITLE}}</div>
                         <div class="video-details" id="video-details">
@@ -80,6 +85,7 @@
             const video = document.getElementById('shootout-video');
             const videoTitle = document.getElementById('video-title');
             const videoDetails = document.getElementById('video-details');
+            const noVideoMessage = document.getElementById('no-video-message');
             const attemptItems = document.querySelectorAll('.attempt-item');
             const autoplayToggle = document.getElementById('autoplay-toggle');
 
@@ -108,16 +114,27 @@
                 
                 // Update video source
                 const videoSrc = item.dataset.video;
+                const hasVideo = item.dataset.hasVideo === 'true';
                 const title = item.dataset.title;
                 const details = item.dataset.details;
                 
-                video.src = videoSrc;
+                // Update title and details
                 videoTitle.textContent = title;
                 videoDetails.innerHTML = details;
                 
-                // Load and play the video
-                video.load();
-                video.play().catch(e => console.log('Auto-play prevented:', e));
+                // Show video or no-video message
+                if (hasVideo && videoSrc) {
+                    video.style.display = 'block';
+                    noVideoMessage.style.display = 'none';
+                    video.src = videoSrc;
+                    video.load();
+                    video.play().catch(e => console.log('Auto-play prevented:', e));
+                } else {
+                    video.style.display = 'none';
+                    noVideoMessage.style.display = 'flex';
+                    video.pause();
+                    video.src = '';
+                }
             }
 
             // Function to get current active video index
@@ -133,7 +150,12 @@
             // Function to play next video
             function playNextVideo() {
                 const currentIndex = getCurrentVideoIndex();
-                const nextIndex = currentIndex + 1;
+                let nextIndex = currentIndex + 1;
+                
+                // Skip attempts without videos
+                while (nextIndex < attemptItems.length && attemptItems[nextIndex].dataset.hasVideo !== 'true') {
+                    nextIndex++;
+                }
                 
                 if (nextIndex < attemptItems.length) {
                     playVideoByIndex(nextIndex);
@@ -178,7 +200,14 @@
 
             // Auto-play first video when page loads
             setTimeout(() => {
-                video.play().catch(e => console.log('Auto-play prevented:', e));
+                // Check if first video has URL
+                if (attemptItems[0].dataset.hasVideo === 'true' && attemptItems[0].dataset.video) {
+                    video.play().catch(e => console.log('Auto-play prevented:', e));
+                } else {
+                    // Show no-video message for first attempt
+                    video.style.display = 'none';
+                    noVideoMessage.style.display = 'flex';
+                }
             }, 1000);
         });
     </script>
