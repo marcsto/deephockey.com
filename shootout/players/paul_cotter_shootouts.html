@@ -62,7 +62,7 @@
                 <div class="attempts-sidebar">
                     <h3 class="sidebar-title">Shootout Attempts</h3>
                     
-                    <div class="attempt-item active" data-video="https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/6ef426ce-a864-4e91-93e9-99281fadcf9f.mp4" data-title="vs Minnesota Wild" data-details="Mar 31, 2025 • Goal • Wrist<br>Shootout Attempt #1" data-has-video="true">
+                    <div class="attempt-item active" data-video="https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/6ef426ce-a864-4e91-93e9-99281fadcf9f.mp4" data-video-id="2024021178-1" data-title="vs Minnesota Wild" data-details="Mar 31, 2025 • Goal • Wrist<br>Shootout Attempt #1" data-has-video="true">
                         <div class="attempt-result goal"></div>
                         <div class="attempt-info">
                             <div class="attempt-date">Mar 31, 2025</div>
@@ -71,7 +71,7 @@
                         </div>
                     </div>
 
-                    <div class="attempt-item" data-video="https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/fd71cf00-83e5-4554-badc-d96ef1f4d4db.mp4" data-title="vs Vancouver Canucks" data-details="Mar 24, 2025 • Save • Wrist<br>Shootout Attempt #1" data-has-video="true">
+                    <div class="attempt-item" data-video="https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/fd71cf00-83e5-4554-badc-d96ef1f4d4db.mp4" data-video-id="2024021125-1" data-title="vs Vancouver Canucks" data-details="Mar 24, 2025 • Save • Wrist<br>Shootout Attempt #1" data-has-video="true">
                         <div class="attempt-result save"></div>
                         <div class="attempt-info">
                             <div class="attempt-date">Mar 24, 2025</div>
@@ -80,7 +80,7 @@
                         </div>
                     </div>
 
-                    <div class="attempt-item" data-video="https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/a6c35a57-37e4-4e84-aed0-98c83dbc2a03.mp4" data-title="@ Pittsburgh Penguins" data-details="Feb 04, 2025 • Goal • Backhand<br>Shootout Attempt #2" data-has-video="true">
+                    <div class="attempt-item" data-video="https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/a6c35a57-37e4-4e84-aed0-98c83dbc2a03.mp4" data-video-id="2024020848-2" data-title="@ Pittsburgh Penguins" data-details="Feb 04, 2025 • Goal • Backhand<br>Shootout Attempt #2" data-has-video="true">
                         <div class="attempt-result goal"></div>
                         <div class="attempt-info">
                             <div class="attempt-date">Feb 04, 2025</div>
@@ -89,7 +89,7 @@
                         </div>
                     </div>
 
-                    <div class="attempt-item" data-video="https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/7dfd96af-ecc6-4551-8d8d-fe3714e6f466.mp4" data-title="vs Florida Panthers" data-details="Jan 14, 2025 • Goal • Wrist<br>Shootout Attempt #1" data-has-video="true">
+                    <div class="attempt-item" data-video="https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/7dfd96af-ecc6-4551-8d8d-fe3714e6f466.mp4" data-video-id="2024020695-1" data-title="vs Florida Panthers" data-details="Jan 14, 2025 • Goal • Wrist<br>Shootout Attempt #1" data-has-video="true">
                         <div class="attempt-result goal"></div>
                         <div class="attempt-info">
                             <div class="attempt-date">Jan 14, 2025</div>
@@ -135,6 +135,28 @@
                 localStorage.setItem('shootout-autoplay', this.checked);
             });
 
+            // URL parameter functions
+            function updateURLParameter(videoId) {
+                const url = new URL(window.location);
+                // Always set the video ID parameter for stable links
+                url.searchParams.set('v', videoId);
+                window.history.pushState({}, '', url);
+            }
+
+            function getVideoIdFromURL() {
+                const urlParams = new URLSearchParams(window.location.search);
+                return urlParams.get('v');
+            }
+
+            function findVideoIndexById(videoId) {
+                for (let i = 0; i < attemptItems.length; i++) {
+                    if (attemptItems[i].dataset.videoId === videoId) {
+                        return i;
+                    }
+                }
+                return 0; // Default to first video if not found
+            }
+
             // Function to play specific video by index
             function playVideoByIndex(index) {
                 if (index < 0 || index >= attemptItems.length) return;
@@ -146,6 +168,10 @@
                 
                 // Add active class to current item
                 item.classList.add('active');
+                
+                // Update URL parameter with video ID
+                const videoId = item.dataset.videoId;
+                updateURLParameter(videoId);
                 
                 // Update video source
                 const videoSrc = item.dataset.video;
@@ -233,15 +259,20 @@
                 }
             });
 
-            // Auto-play first video when page loads
+            // Initialize from URL parameter and auto-play
             setTimeout(() => {
-                // Check if first video has URL
-                if (attemptItems[0].dataset.hasVideo === 'true' && attemptItems[0].dataset.video) {
-                    video.play().catch(e => console.log('Auto-play prevented:', e));
+                const videoId = getVideoIdFromURL();
+                
+                if (videoId) {
+                    // Load video from URL parameter by ID
+                    const videoIndex = findVideoIndexById(videoId);
+                    playVideoByIndex(videoIndex);
                 } else {
-                    // Show no-video message for first attempt
-                    video.style.display = 'none';
-                    noVideoMessage.style.display = 'flex';
+                    // No URL parameter - load first video and set its ID in URL
+                    playVideoByIndex(0);
+                    if (attemptItems[0].dataset.hasVideo === 'true' && attemptItems[0].dataset.video) {
+                        video.play().catch(e => console.log('Auto-play prevented:', e));
+                    }
                 }
             }, 1000);
         });

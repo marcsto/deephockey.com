@@ -62,7 +62,7 @@
                 <div class="attempts-sidebar">
                     <h3 class="sidebar-title">Shootout Attempts</h3>
                     
-                    <div class="attempt-item active" data-video="https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/a7cc914d-2562-4676-ab3d-a477df49aca6.mp4" data-title="@ Chicago Blackhawks" data-details="Apr 12, 2025 • Hit Left Post • Wrist<br>Shootout Attempt #2" data-has-video="true">
+                    <div class="attempt-item active" data-video="https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/a7cc914d-2562-4676-ab3d-a477df49aca6.mp4" data-video-id="2024021271-2" data-title="@ Chicago Blackhawks" data-details="Apr 12, 2025 • Hit Left Post • Wrist<br>Shootout Attempt #2" data-has-video="true">
                         <div class="attempt-result miss"></div>
                         <div class="attempt-info">
                             <div class="attempt-date">Apr 12, 2025</div>
@@ -71,7 +71,7 @@
                         </div>
                     </div>
 
-                    <div class="attempt-item" data-video="https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/214b0070-87ed-4023-851b-9f7f135620f0.mp4" data-title="vs Philadelphia Flyers" data-details="Mar 01, 2025 • Save • Wrist<br>Shootout Attempt #1" data-has-video="true">
+                    <div class="attempt-item" data-video="https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/214b0070-87ed-4023-851b-9f7f135620f0.mp4" data-video-id="2024020956-1" data-title="vs Philadelphia Flyers" data-details="Mar 01, 2025 • Save • Wrist<br>Shootout Attempt #1" data-has-video="true">
                         <div class="attempt-result save"></div>
                         <div class="attempt-info">
                             <div class="attempt-date">Mar 01, 2025</div>
@@ -80,7 +80,7 @@
                         </div>
                     </div>
 
-                    <div class="attempt-item" data-video="https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/497e50af-c570-4ae1-a41e-8b219c2113f6.mp4" data-title="@ St. Louis Blues" data-details="Feb 22, 2025 • Hit Crossbar • Wrist<br>Shootout Attempt #2" data-has-video="true">
+                    <div class="attempt-item" data-video="https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/497e50af-c570-4ae1-a41e-8b219c2113f6.mp4" data-video-id="2024020903-2" data-title="@ St. Louis Blues" data-details="Feb 22, 2025 • Hit Crossbar • Wrist<br>Shootout Attempt #2" data-has-video="true">
                         <div class="attempt-result miss"></div>
                         <div class="attempt-info">
                             <div class="attempt-date">Feb 22, 2025</div>
@@ -126,6 +126,28 @@
                 localStorage.setItem('shootout-autoplay', this.checked);
             });
 
+            // URL parameter functions
+            function updateURLParameter(videoId) {
+                const url = new URL(window.location);
+                // Always set the video ID parameter for stable links
+                url.searchParams.set('v', videoId);
+                window.history.pushState({}, '', url);
+            }
+
+            function getVideoIdFromURL() {
+                const urlParams = new URLSearchParams(window.location.search);
+                return urlParams.get('v');
+            }
+
+            function findVideoIndexById(videoId) {
+                for (let i = 0; i < attemptItems.length; i++) {
+                    if (attemptItems[i].dataset.videoId === videoId) {
+                        return i;
+                    }
+                }
+                return 0; // Default to first video if not found
+            }
+
             // Function to play specific video by index
             function playVideoByIndex(index) {
                 if (index < 0 || index >= attemptItems.length) return;
@@ -137,6 +159,10 @@
                 
                 // Add active class to current item
                 item.classList.add('active');
+                
+                // Update URL parameter with video ID
+                const videoId = item.dataset.videoId;
+                updateURLParameter(videoId);
                 
                 // Update video source
                 const videoSrc = item.dataset.video;
@@ -224,15 +250,20 @@
                 }
             });
 
-            // Auto-play first video when page loads
+            // Initialize from URL parameter and auto-play
             setTimeout(() => {
-                // Check if first video has URL
-                if (attemptItems[0].dataset.hasVideo === 'true' && attemptItems[0].dataset.video) {
-                    video.play().catch(e => console.log('Auto-play prevented:', e));
+                const videoId = getVideoIdFromURL();
+                
+                if (videoId) {
+                    // Load video from URL parameter by ID
+                    const videoIndex = findVideoIndexById(videoId);
+                    playVideoByIndex(videoIndex);
                 } else {
-                    // Show no-video message for first attempt
-                    video.style.display = 'none';
-                    noVideoMessage.style.display = 'flex';
+                    // No URL parameter - load first video and set its ID in URL
+                    playVideoByIndex(0);
+                    if (attemptItems[0].dataset.hasVideo === 'true' && attemptItems[0].dataset.video) {
+                        video.play().catch(e => console.log('Auto-play prevented:', e));
+                    }
                 }
             }, 1000);
         });

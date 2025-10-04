@@ -62,7 +62,7 @@
                 <div class="attempts-sidebar">
                     <h3 class="sidebar-title">Shootout Attempts</h3>
                     
-                    <div class="attempt-item active" data-video="https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/a319d710-97fc-4ebf-a568-da99f97b67af.mp4" data-title="vs New York Islanders" data-details="Apr 12, 2025 • Save • Backhand<br>Shootout Attempt #7" data-has-video="true">
+                    <div class="attempt-item active" data-video="https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/a319d710-97fc-4ebf-a568-da99f97b67af.mp4" data-video-id="2024021265-7" data-title="vs New York Islanders" data-details="Apr 12, 2025 • Save • Backhand<br>Shootout Attempt #7" data-has-video="true">
                         <div class="attempt-result save"></div>
                         <div class="attempt-info">
                             <div class="attempt-date">Apr 12, 2025</div>
@@ -71,7 +71,7 @@
                         </div>
                     </div>
 
-                    <div class="attempt-item" data-video="https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/7187a064-a587-4646-a62f-dbef5d995377.mp4" data-title="vs Tampa Bay Lightning" data-details="Mar 13, 2025 • Goal • Wrist<br>Shootout Attempt #9" data-has-video="true">
+                    <div class="attempt-item" data-video="https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/7187a064-a587-4646-a62f-dbef5d995377.mp4" data-video-id="2024021043-9" data-title="vs Tampa Bay Lightning" data-details="Mar 13, 2025 • Goal • Wrist<br>Shootout Attempt #9" data-has-video="true">
                         <div class="attempt-result goal"></div>
                         <div class="attempt-info">
                             <div class="attempt-date">Mar 13, 2025</div>
@@ -80,7 +80,7 @@
                         </div>
                     </div>
 
-                    <div class="attempt-item" data-video="https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/92574966-3826-4f05-a252-9a61d77e7ac2.mp4" data-title="vs Vegas Golden Knights" data-details="Nov 25, 2024 • Save • Wrist<br>Shootout Attempt #5" data-has-video="true">
+                    <div class="attempt-item" data-video="https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/92574966-3826-4f05-a252-9a61d77e7ac2.mp4" data-video-id="2024020338-5" data-title="vs Vegas Golden Knights" data-details="Nov 25, 2024 • Save • Wrist<br>Shootout Attempt #5" data-has-video="true">
                         <div class="attempt-result save"></div>
                         <div class="attempt-info">
                             <div class="attempt-date">Nov 25, 2024</div>
@@ -89,7 +89,7 @@
                         </div>
                     </div>
 
-                    <div class="attempt-item" data-video="https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/d424bbd3-8eaa-4703-aeac-25b95fbbb263.mp4" data-title="vs San Jose Sharks" data-details="Nov 11, 2024 • Save • Wrist<br>Shootout Attempt #1" data-has-video="true">
+                    <div class="attempt-item" data-video="https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/d424bbd3-8eaa-4703-aeac-25b95fbbb263.mp4" data-video-id="2024020240-1" data-title="vs San Jose Sharks" data-details="Nov 11, 2024 • Save • Wrist<br>Shootout Attempt #1" data-has-video="true">
                         <div class="attempt-result save"></div>
                         <div class="attempt-info">
                             <div class="attempt-date">Nov 11, 2024</div>
@@ -98,7 +98,7 @@
                         </div>
                     </div>
 
-                    <div class="attempt-item" data-video="https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/1c05bb0e-bb77-4b25-b9cf-ba028e564c44.mp4" data-title="@ Florida Panthers" data-details="Nov 09, 2024 • Goal • Wrist<br>Shootout Attempt #4" data-has-video="true">
+                    <div class="attempt-item" data-video="https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/1c05bb0e-bb77-4b25-b9cf-ba028e564c44.mp4" data-video-id="2024020225-4" data-title="@ Florida Panthers" data-details="Nov 09, 2024 • Goal • Wrist<br>Shootout Attempt #4" data-has-video="true">
                         <div class="attempt-result goal"></div>
                         <div class="attempt-info">
                             <div class="attempt-date">Nov 09, 2024</div>
@@ -107,7 +107,7 @@
                         </div>
                     </div>
 
-                    <div class="attempt-item" data-video="https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/a0ba6c22-ca74-40a3-8512-de9ff181e051.mp4" data-title="@ Tampa Bay Lightning" data-details="Nov 07, 2024 • Goal • Wrist<br>Shootout Attempt #4" data-has-video="true">
+                    <div class="attempt-item" data-video="https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/a0ba6c22-ca74-40a3-8512-de9ff181e051.mp4" data-video-id="2024020210-4" data-title="@ Tampa Bay Lightning" data-details="Nov 07, 2024 • Goal • Wrist<br>Shootout Attempt #4" data-has-video="true">
                         <div class="attempt-result goal"></div>
                         <div class="attempt-info">
                             <div class="attempt-date">Nov 07, 2024</div>
@@ -153,6 +153,28 @@
                 localStorage.setItem('shootout-autoplay', this.checked);
             });
 
+            // URL parameter functions
+            function updateURLParameter(videoId) {
+                const url = new URL(window.location);
+                // Always set the video ID parameter for stable links
+                url.searchParams.set('v', videoId);
+                window.history.pushState({}, '', url);
+            }
+
+            function getVideoIdFromURL() {
+                const urlParams = new URLSearchParams(window.location.search);
+                return urlParams.get('v');
+            }
+
+            function findVideoIndexById(videoId) {
+                for (let i = 0; i < attemptItems.length; i++) {
+                    if (attemptItems[i].dataset.videoId === videoId) {
+                        return i;
+                    }
+                }
+                return 0; // Default to first video if not found
+            }
+
             // Function to play specific video by index
             function playVideoByIndex(index) {
                 if (index < 0 || index >= attemptItems.length) return;
@@ -164,6 +186,10 @@
                 
                 // Add active class to current item
                 item.classList.add('active');
+                
+                // Update URL parameter with video ID
+                const videoId = item.dataset.videoId;
+                updateURLParameter(videoId);
                 
                 // Update video source
                 const videoSrc = item.dataset.video;
@@ -251,15 +277,20 @@
                 }
             });
 
-            // Auto-play first video when page loads
+            // Initialize from URL parameter and auto-play
             setTimeout(() => {
-                // Check if first video has URL
-                if (attemptItems[0].dataset.hasVideo === 'true' && attemptItems[0].dataset.video) {
-                    video.play().catch(e => console.log('Auto-play prevented:', e));
+                const videoId = getVideoIdFromURL();
+                
+                if (videoId) {
+                    // Load video from URL parameter by ID
+                    const videoIndex = findVideoIndexById(videoId);
+                    playVideoByIndex(videoIndex);
                 } else {
-                    // Show no-video message for first attempt
-                    video.style.display = 'none';
-                    noVideoMessage.style.display = 'flex';
+                    // No URL parameter - load first video and set its ID in URL
+                    playVideoByIndex(0);
+                    if (attemptItems[0].dataset.hasVideo === 'true' && attemptItems[0].dataset.video) {
+                        video.play().catch(e => console.log('Auto-play prevented:', e));
+                    }
                 }
             }, 1000);
         });

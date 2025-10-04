@@ -62,7 +62,7 @@
                 <div class="attempts-sidebar">
                     <h3 class="sidebar-title">Shootout Attempts</h3>
                     
-                    <div class="attempt-item active" data-video="https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/5fb4b644-fc2e-491c-9e04-e2987374bbe4.mp4" data-title="@ Seattle Kraken" data-details="Apr 12, 2025 • Goal • Wrist<br>Shootout Attempt #2" data-has-video="true">
+                    <div class="attempt-item active" data-video="https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/5fb4b644-fc2e-491c-9e04-e2987374bbe4.mp4" data-video-id="2024021275-2" data-title="@ Seattle Kraken" data-details="Apr 12, 2025 • Goal • Wrist<br>Shootout Attempt #2" data-has-video="true">
                         <div class="attempt-result goal"></div>
                         <div class="attempt-info">
                             <div class="attempt-date">Apr 12, 2025</div>
@@ -71,7 +71,7 @@
                         </div>
                     </div>
 
-                    <div class="attempt-item" data-video="https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/4981f290-8989-430a-abcb-2a13ab3dc71f.mp4" data-title="@ Los Angeles Kings" data-details="Mar 05, 2025 • Goal • Wrist<br>Shootout Attempt #2" data-has-video="true">
+                    <div class="attempt-item" data-video="https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/4981f290-8989-430a-abcb-2a13ab3dc71f.mp4" data-video-id="2024020987-2" data-title="@ Los Angeles Kings" data-details="Mar 05, 2025 • Goal • Wrist<br>Shootout Attempt #2" data-has-video="true">
                         <div class="attempt-result goal"></div>
                         <div class="attempt-info">
                             <div class="attempt-date">Mar 05, 2025</div>
@@ -80,7 +80,7 @@
                         </div>
                     </div>
 
-                    <div class="attempt-item" data-video="https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/c980c7d2-4925-4188-bb18-ab4be1c59896.mp4" data-title="vs Chicago Blackhawks" data-details="Feb 08, 2025 • Save • Wrist<br>Shootout Attempt #1" data-has-video="true">
+                    <div class="attempt-item" data-video="https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/c980c7d2-4925-4188-bb18-ab4be1c59896.mp4" data-video-id="2024020883-1" data-title="vs Chicago Blackhawks" data-details="Feb 08, 2025 • Save • Wrist<br>Shootout Attempt #1" data-has-video="true">
                         <div class="attempt-result save"></div>
                         <div class="attempt-info">
                             <div class="attempt-date">Feb 08, 2025</div>
@@ -89,7 +89,7 @@
                         </div>
                     </div>
 
-                    <div class="attempt-item" data-video="https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/a4ac6779-ea86-4af3-9e71-5ee1794d473f.mp4" data-title="@ Vegas Golden Knights" data-details="Jan 20, 2025 • Goal • Wrist<br>Shootout Attempt #1" data-has-video="true">
+                    <div class="attempt-item" data-video="https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/a4ac6779-ea86-4af3-9e71-5ee1794d473f.mp4" data-video-id="2024020743-1" data-title="@ Vegas Golden Knights" data-details="Jan 20, 2025 • Goal • Wrist<br>Shootout Attempt #1" data-has-video="true">
                         <div class="attempt-result goal"></div>
                         <div class="attempt-info">
                             <div class="attempt-date">Jan 20, 2025</div>
@@ -98,7 +98,7 @@
                         </div>
                     </div>
 
-                    <div class="attempt-item" data-video="https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/81ff2774-eedf-4c80-8f17-057c755999eb.mp4" data-title="vs San Jose Sharks" data-details="Nov 21, 2024 • Goal • Wrist<br>Shootout Attempt #5" data-has-video="true">
+                    <div class="attempt-item" data-video="https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/81ff2774-eedf-4c80-8f17-057c755999eb.mp4" data-video-id="2024020312-5" data-title="vs San Jose Sharks" data-details="Nov 21, 2024 • Goal • Wrist<br>Shootout Attempt #5" data-has-video="true">
                         <div class="attempt-result goal"></div>
                         <div class="attempt-info">
                             <div class="attempt-date">Nov 21, 2024</div>
@@ -144,6 +144,28 @@
                 localStorage.setItem('shootout-autoplay', this.checked);
             });
 
+            // URL parameter functions
+            function updateURLParameter(videoId) {
+                const url = new URL(window.location);
+                // Always set the video ID parameter for stable links
+                url.searchParams.set('v', videoId);
+                window.history.pushState({}, '', url);
+            }
+
+            function getVideoIdFromURL() {
+                const urlParams = new URLSearchParams(window.location.search);
+                return urlParams.get('v');
+            }
+
+            function findVideoIndexById(videoId) {
+                for (let i = 0; i < attemptItems.length; i++) {
+                    if (attemptItems[i].dataset.videoId === videoId) {
+                        return i;
+                    }
+                }
+                return 0; // Default to first video if not found
+            }
+
             // Function to play specific video by index
             function playVideoByIndex(index) {
                 if (index < 0 || index >= attemptItems.length) return;
@@ -155,6 +177,10 @@
                 
                 // Add active class to current item
                 item.classList.add('active');
+                
+                // Update URL parameter with video ID
+                const videoId = item.dataset.videoId;
+                updateURLParameter(videoId);
                 
                 // Update video source
                 const videoSrc = item.dataset.video;
@@ -242,15 +268,20 @@
                 }
             });
 
-            // Auto-play first video when page loads
+            // Initialize from URL parameter and auto-play
             setTimeout(() => {
-                // Check if first video has URL
-                if (attemptItems[0].dataset.hasVideo === 'true' && attemptItems[0].dataset.video) {
-                    video.play().catch(e => console.log('Auto-play prevented:', e));
+                const videoId = getVideoIdFromURL();
+                
+                if (videoId) {
+                    // Load video from URL parameter by ID
+                    const videoIndex = findVideoIndexById(videoId);
+                    playVideoByIndex(videoIndex);
                 } else {
-                    // Show no-video message for first attempt
-                    video.style.display = 'none';
-                    noVideoMessage.style.display = 'flex';
+                    // No URL parameter - load first video and set its ID in URL
+                    playVideoByIndex(0);
+                    if (attemptItems[0].dataset.hasVideo === 'true' && attemptItems[0].dataset.video) {
+                        video.play().catch(e => console.log('Auto-play prevented:', e));
+                    }
                 }
             }, 1000);
         });
