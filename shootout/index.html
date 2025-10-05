@@ -11411,11 +11411,6 @@
                 teamFilter.value = teamFromURL;
                 filterPlayers();
                 // Don't focus search input if coming from a team link
-            } else {
-                // Focus search input on page load only if no team filter
-                setTimeout(() => {
-                    searchInput.focus();
-                }, 500);
             }
         });
     </script>

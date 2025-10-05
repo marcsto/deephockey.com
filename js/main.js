@@ -11,30 +11,58 @@
  */
 function getHomePath() {
     try {
+        // Get the current script's location
+        const scripts = document.getElementsByTagName('script');
+        let scriptPath = '';
+        
+        // Find main.js to determine relative position
+        for (let script of scripts) {
+            if (script.src && script.src.includes('main.js')) {
+                scriptPath = script.src;
+                break;
+            }
+        }
+        
+        // If we found the script, use it to calculate path
+        if (scriptPath) {
+            // Count how many '../' are in the script src
+            const scriptSrc = scripts[scripts.length - 1].getAttribute('src') || '';
+            const depth = (scriptSrc.match(/\.\.\//g) || []).length;
+            
+            if (depth === 0) {
+                return './'; // Same directory
+            } else {
+                return '../'.repeat(depth);
+            }
+        }
+        
+        // Fallback: analyze current page location
         const currentPath = window.location.pathname;
+        const normalizedPath = currentPath.replace(/\\/g, '/');
         
         // Handle root paths
-        if (currentPath === '/' || currentPath === '/index.html' || currentPath.endsWith('/index.html')) {
+        if (normalizedPath === '/' || normalizedPath.endsWith('/index.html') || !normalizedPath.includes('/')) {
             return './';
         }
         
-        const pathSegments = currentPath.split('/').filter(segment => segment !== '');
+        // Count directory levels (excluding filename)
+        const pathSegments = normalizedPath.split('/').filter(segment => segment !== '');
         
-        // Remove the filename if it exists (e.g., 'early-season-power-plays.html')
+        // Remove last segment if it's a file
         if (pathSegments.length > 0 && pathSegments[pathSegments.length - 1].includes('.')) {
             pathSegments.pop();
         }
         
-        // Calculate relative path back to root
-        if (pathSegments.length === 0) {
-            return './'; // Already at root
-        } else {
-            return '../'.repeat(pathSegments.length);
-        }
+        // Remove empty or system segments
+        const cleanSegments = pathSegments.filter(seg => 
+            seg && !seg.match(/^[A-Za-z]:$/) && seg !== 'code' && seg !== 'deephockey.com'
+        );
+        
+        return cleanSegments.length === 0 ? './' : '../'.repeat(cleanSegments.length);
+        
     } catch (error) {
         console.warn('Error calculating home path, using fallback:', error);
-        // Fallback to absolute path from root
-        return '/';
+        return './';
     }
 }
 
@@ -43,6 +71,11 @@ function getHomePath() {
  */
 function generateHeader() {
     const homePath = getHomePath();
+    // Debug logging
+    console.log('[Debug] Current pathname:', window.location.pathname);
+    console.log('[Debug] Calculated home path:', homePath);
+    console.log('[Debug] Full home link will be:', homePath + 'index.html');
+    
     return `
         <div class="container">
             <div class="header-nav">
@@ -54,6 +87,7 @@ function generateHeader() {
                 <div class="nav-menu">
                     <a href="${homePath}about.html" class="nav-link">About</a>
                     <a href="https://www.youtube.com/@DeeperHockey/shorts" class="nav-link">YouTube</a>
+                    <a href="${homePath}shootout/index.html" class="nav-link">Shootouts</a>
                 </div>
                 <!-- Mobile menu button can be added here if needed -->
             </div>
