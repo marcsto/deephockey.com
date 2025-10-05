@@ -6,6 +6,22 @@
  * To update navigation, you only need to change it here.
  */
 
+// --- Google Analytics ---
+const measurementId = "G-4EQ2PM7LNJ";
+// Dynamically create and add the GTag script to the page
+const gTagScript = document.createElement('script');
+gTagScript.async = true;
+gTagScript.src = `https://www.googletagmanager.com/gtag/js?id=${measurementId}`;
+document.head.appendChild(gTagScript);
+
+// Initialize the dataLayer and gtag function
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', measurementId);
+
+// --- End Google Analytics ---
+
 /**
  * Get the relative path to the home directory from current page
  */
