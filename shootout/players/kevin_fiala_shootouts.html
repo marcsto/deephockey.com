@@ -167,7 +167,7 @@
                 const url = new URL(window.location);
                 // Always set the video ID parameter for stable links
                 url.searchParams.set('v', videoId);
-                window.history.pushState({}, '', url);
+                window.history.replaceState({}, '', url);
             }
 
             function getVideoIdFromURL() {
