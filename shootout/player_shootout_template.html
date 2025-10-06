@@ -30,38 +30,54 @@
             <!-- Shootout Container -->
             <div class="shootout-container">
                 
-                <!-- Video Player -->
-                <div class="video-player-container">
-                    <video id="shootout-video" class="video-player" controls>
-                        <source src="{{FIRST_VIDEO_URL}}" type="video/mp4">
-                        Your browser does not support the video tag.
-                    </video>
-                    <div id="no-video-message" class="no-video-message" style="display: none;">
-                        <div class="no-video-icon">🎥</div>
-                        <h3>No Video Available</h3>
-                        <p>Unfortunately, there is no video available for this shootout attempt.</p>
-                    </div>
-                    <div class="video-info">
-                        <div class="video-title" id="video-title">{{FIRST_VIDEO_TITLE}}</div>
-                        <div class="video-details" id="video-details">
-                            {{FIRST_VIDEO_DETAILS}}
+                <!-- Left Column (Video and Stats on wide screens) -->
+                <div class="left-column">
+                    <!-- Video Player -->
+                    <div class="video-player-container">
+                        <video id="shootout-video" class="video-player" controls>
+                            <source src="{{FIRST_VIDEO_URL}}" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <div id="no-video-message" class="no-video-message" style="display: none;">
+                            <div class="no-video-icon">🎥</div>
+                            <h3>No Video Available</h3>
+                            <p>Unfortunately, there is no video available for this shootout attempt.</p>
+                        </div>
+                        <div class="video-info">
+                            <div class="video-title" id="video-title">{{FIRST_VIDEO_TITLE}}</div>
+                            <div class="video-details" id="video-details">
+                                {{FIRST_VIDEO_DETAILS}}
+                            </div>
+                        </div>
+                        <div class="video-controls">
+                            <div class="autoplay-control">
+                                <label class="toggle-switch">
+                                    <input type="checkbox" id="autoplay-toggle" checked>
+                                    <span class="toggle-slider"></span>
+                                    <span class="toggle-label">Auto-play next video</span>
+                                </label>
+                            </div>
                         </div>
                     </div>
-                    <div class="video-controls">
-                        <div class="autoplay-control">
-                            <label class="toggle-switch">
-                                <input type="checkbox" id="autoplay-toggle" checked>
-                                <span class="toggle-slider"></span>
-                                <span class="toggle-label">Auto-play next video</span>
-                            </label>
-                        </div>
+
+                    <!-- Player Stats (desktop: below video) -->
+                    <div class="player-stats-desktop">
+                        {{PLAYER_STATS}}
                     </div>
                 </div>
 
-                <!-- Attempts Sidebar -->
-                <div class="attempts-sidebar">
-                    <h3 class="sidebar-title">Shootout Attempts</h3>
-                    {{ATTEMPT_ITEMS}}
+                <!-- Right Column (Attempts Sidebar) -->
+                <div class="right-column">
+                    <!-- Attempts Sidebar -->
+                    <div class="attempts-sidebar">
+                        <h3 class="sidebar-title">Shootout Attempts</h3>
+                        {{ATTEMPT_ITEMS}}
+                    </div>
+
+                    <!-- Player Stats (mobile: below sidebar) -->
+                    <div class="player-stats-mobile">
+                        {{PLAYER_STATS}}
+                    </div>
                 </div>
 
             </div>

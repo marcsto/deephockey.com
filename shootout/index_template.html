@@ -148,6 +148,12 @@
 
         .attempt-count {
             display: flex;
+            flex-direction: column;
+            gap: 0.25rem;
+        }
+
+        .attempt-main {
+            display: flex;
             align-items: baseline;
             gap: 0.5rem;
         }
@@ -160,6 +166,24 @@
 
         .attempt-label {
             font-size: 0.875rem;
+            color: #9CA3AF;
+        }
+
+        .videos-available {
+            display: flex;
+            align-items: baseline;
+            gap: 0.35rem;
+            margin-top: 0.25rem;
+        }
+
+        .videos-count {
+            font-size: 1rem;
+            font-weight: 600;
+            color: #60A5FA;
+        }
+
+        .videos-label {
+            font-size: 0.75rem;
             color: #9CA3AF;
         }
 
@@ -202,6 +226,12 @@
             color: #9CA3AF;
             text-transform: uppercase;
             letter-spacing: 0.05em;
+        }
+
+        .percentage-label-recent {
+            font-size: 0.7rem;
+            color: #6B7280;
+            font-style: italic;
         }
 
         .back-link {
@@ -396,7 +426,7 @@
             min-width: 200px;
         }
 
-        .team-filter {
+        .team-filter, .sort-select {
             width: 100%;
             padding: 0.75rem;
             background: rgba(31, 41, 55, 0.8);
@@ -408,12 +438,12 @@
             transition: all 0.3s ease;
         }
 
-        .team-filter:focus {
+        .team-filter:focus, .sort-select:focus {
             outline: none;
             border-color: #60A5FA;
         }
 
-        .team-filter option {
+        .team-filter option, .sort-select option {
             background: #1F2937;
             color: white;
         }
@@ -500,12 +530,8 @@
                         <span class="stat-label">Players</span>
                     </div>
                     <div class="stat-item">
-                        <span class="stat-value">{{TOTAL_ATTEMPTS}}</span>
-                        <span class="stat-label">Total Attempts</span>
-                    </div>
-                    <div class="stat-item">
-                        <span class="stat-value">{{MAX_ATTEMPTS}}</span>
-                        <span class="stat-label">Most Attempts</span>
+                        <span class="stat-value">{{TOTAL_VIDEOS}}</span>
+                        <span class="stat-label">Total Videos</span>
                     </div>
                 </div>
             </div>
@@ -538,6 +564,12 @@
                 <div class="search-container">
                     <input type="text" id="player-search" placeholder="Search for a player..." class="search-input">
                     <div class="search-icon">🔍</div>
+                </div>
+                <div class="filter-container">
+                    <select id="sort-by" class="sort-select">
+                        <option value="videos">Sort by Videos</option>
+                        <option value="percentage">Sort by Success % (8+ ATT)</option>
+                    </select>
                 </div>
                 <div class="filter-container">
                     <select id="team-filter" class="team-filter">
@@ -838,6 +870,50 @@
             // Add event listeners
             searchInput.addEventListener('input', filterPlayers);
             teamFilter.addEventListener('change', filterPlayers);
+
+            // Sort functionality
+            const sortSelect = document.getElementById('sort-by');
+            
+            function sortPlayers() {
+                const sortBy = sortSelect.value;
+                const playersArray = Array.from(playerCards);
+                
+                if (sortBy === 'percentage') {
+                    // Sort by career percentage (8+ attempts first, then <8 attempts)
+                    playersArray.sort((a, b) => {
+                        const aCareerAttempts = parseFloat(a.dataset.careerAttempts) || 0;
+                        const bCareerAttempts = parseFloat(b.dataset.careerAttempts) || 0;
+                        const aCareerPct = parseFloat(a.dataset.careerPercentage) || 0;
+                        const bCareerPct = parseFloat(b.dataset.careerPercentage) || 0;
+                        
+                        // Group 1: 8+ career attempts (sorted by percentage descending)
+                        // Group 2: <8 career attempts (sorted by percentage descending)
+                        const aGroup = aCareerAttempts >= 8 ? 1 : 2;
+                        const bGroup = bCareerAttempts >= 8 ? 1 : 2;
+                        
+                        if (aGroup !== bGroup) {
+                            return aGroup - bGroup; // Group 1 first
+                        }
+                        
+                        // Within same group, sort by percentage descending
+                        return bCareerPct - aCareerPct;
+                    });
+                } else {
+                    // Sort by videos (default - recent attempts descending)
+                    playersArray.sort((a, b) => {
+                        const aVideos = parseFloat(a.dataset.videos) || 0;
+                        const bVideos = parseFloat(b.dataset.videos) || 0;
+                        return bVideos - aVideos;
+                    });
+                }
+                
+                // Reorder cards in DOM
+                playersArray.forEach(card => {
+                    playersGrid.appendChild(card);
+                });
+            }
+            
+            sortSelect.addEventListener('change', sortPlayers);
 
             // Add keyboard shortcuts
             document.addEventListener('keydown', function(e) {

@@ -60,6 +60,27 @@
     margin-bottom: 3rem;
 }
 
+.left-column {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.right-column {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+/* Show desktop stats on wide screens, hide mobile stats */
+.player-stats-desktop {
+    display: block;
+}
+
+.player-stats-mobile {
+    display: none;
+}
+
 .video-player-container {
     background: linear-gradient(145deg, #1F2937 0%, #1A202C 100%);
     border-radius: 1rem;
@@ -278,6 +299,15 @@
         grid-template-columns: 1fr;
     }
     
+    /* Hide desktop stats, show mobile stats on narrow screens */
+    .player-stats-desktop {
+        display: none;
+    }
+    
+    .player-stats-mobile {
+        display: block;
+    }
+    
     .player-name {
         font-size: 1rem;
     }
@@ -356,5 +386,105 @@
     
     .no-video-message p {
         font-size: 0.9rem;
+    }
+}
+
+/* Player Stats Section */
+.player-stats-section {
+    background: linear-gradient(145deg, #1F2937 0%, #1A202C 100%);
+    border-radius: 1rem;
+    border: 1px solid rgba(75, 85, 99, 0.3);
+    padding: 2rem;
+    margin-bottom: 3rem;
+}
+
+.stats-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: white;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.stats-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+}
+
+.stats-card {
+    background: rgba(31, 41, 55, 0.5);
+    border-radius: 0.75rem;
+    border: 1px solid rgba(75, 85, 99, 0.3);
+    padding: 1.5rem;
+}
+
+.stats-card-wide {
+    grid-column: 1 / -1;
+}
+
+.stats-card-title {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: #60A5FA;
+    margin-bottom: 1.25rem;
+    text-align: center;
+}
+
+.stats-grid {
+    display: grid;
+    gap: 1rem;
+}
+
+.stats-grid-3 {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.stats-grid-4 {
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.stat-box {
+    text-align: center;
+    padding: 0.75rem;
+    background: rgba(17, 24, 39, 0.5);
+    border-radius: 0.5rem;
+}
+
+.stat-box .stat-value {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: #10B981;
+    display: block;
+    margin-bottom: 0.25rem;
+}
+
+.stat-box .stat-label {
+    font-size: 0.75rem;
+    color: #9CA3AF;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+@media (max-width: 768px) {
+    .stats-container {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .stats-grid-3 {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    .stats-grid-4 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .stat-box .stat-value {
+        font-size: 1.5rem;
+    }
+    
+    .stat-box .stat-label {
+        font-size: 0.7rem;
     }
 }

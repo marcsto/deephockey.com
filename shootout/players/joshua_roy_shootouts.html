@@ -30,38 +30,108 @@
             <!-- Shootout Container -->
             <div class="shootout-container">
                 
-                <!-- Video Player -->
-                <div class="video-player-container">
-                    <video id="shootout-video" class="video-player" controls>
-                        <source src="https://stories.nhl.com/games/271900/17714808/35.mp4" type="video/mp4">
-                        Your browser does not support the video tag.
-                    </video>
-                    <div id="no-video-message" class="no-video-message" style="display: none;">
-                        <div class="no-video-icon">🎥</div>
-                        <h3>No Video Available</h3>
-                        <p>Unfortunately, there is no video available for this shootout attempt.</p>
-                    </div>
-                    <div class="video-info">
-                        <div class="video-title" id="video-title">@ Tampa Bay Lightning</div>
-                        <div class="video-details" id="video-details">
-                            Mar 02, 2024 • Save • Wrist<br>Shootout Attempt #12
+                <!-- Left Column (Video and Stats on wide screens) -->
+                <div class="left-column">
+                    <!-- Video Player -->
+                    <div class="video-player-container">
+                        <video id="shootout-video" class="video-player" controls>
+                            <source src="https://stories.nhl.com/games/271900/17714808/35.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <div id="no-video-message" class="no-video-message" style="display: none;">
+                            <div class="no-video-icon">🎥</div>
+                            <h3>No Video Available</h3>
+                            <p>Unfortunately, there is no video available for this shootout attempt.</p>
+                        </div>
+                        <div class="video-info">
+                            <div class="video-title" id="video-title">@ Tampa Bay Lightning</div>
+                            <div class="video-details" id="video-details">
+                                Mar 02, 2024 • Save • Wrist<br>Shootout Attempt #12
+                            </div>
+                        </div>
+                        <div class="video-controls">
+                            <div class="autoplay-control">
+                                <label class="toggle-switch">
+                                    <input type="checkbox" id="autoplay-toggle" checked>
+                                    <span class="toggle-slider"></span>
+                                    <span class="toggle-label">Auto-play next video</span>
+                                </label>
+                            </div>
                         </div>
                     </div>
-                    <div class="video-controls">
-                        <div class="autoplay-control">
-                            <label class="toggle-switch">
-                                <input type="checkbox" id="autoplay-toggle" checked>
-                                <span class="toggle-slider"></span>
-                                <span class="toggle-label">Auto-play next video</span>
-                            </label>
-                        </div>
+
+                    <!-- Player Stats (desktop: below video) -->
+                    <div class="player-stats-desktop">
+                        <div class="player-stats-section">
+    <h3 class="stats-title">Shootout Statistics</h3>
+    <div class="stats-container">
+        <div class="stats-card">
+            <h4 class="stats-card-title">Career Stats</h4>
+            <div class="stats-grid stats-grid-3">
+                <div class="stat-box">
+                    <div class="stat-value">1</div>
+                    <div class="stat-label">Attempts</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-value">0</div>
+                    <div class="stat-label">Goals</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-value">0.0%</div>
+                    <div class="stat-label">Shooting %</div>
+                </div>
+            </div>
+        </div>
+        <div class="stats-card">
+            <h4 class="stats-card-title">Last 2 Seasons</h4>
+            <div class="stats-grid stats-grid-3">
+                <div class="stat-box">
+                    <div class="stat-value">1</div>
+                    <div class="stat-label">Attempts</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-value">0</div>
+                    <div class="stat-label">Goals</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-value">0.0%</div>
+                    <div class="stat-label">Shooting %</div>
+                </div>
+            </div>
+        </div>
+        <div class="stats-card stats-card-wide">
+            <h4 class="stats-card-title">Shot Type Usage (Career)</h4>
+            <div class="stats-grid stats-grid-4">
+                <div class="stat-box">
+                    <div class="stat-value">0%</div>
+                    <div class="stat-label">Backhand</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-value">100%</div>
+                    <div class="stat-label">Wrist</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-value">0%</div>
+                    <div class="stat-label">Snap</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-value">0%</div>
+                    <div class="stat-label">Slap</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
                     </div>
                 </div>
 
-                <!-- Attempts Sidebar -->
-                <div class="attempts-sidebar">
-                    <h3 class="sidebar-title">Shootout Attempts</h3>
-                    
+                <!-- Right Column (Attempts Sidebar) -->
+                <div class="right-column">
+                    <!-- Attempts Sidebar -->
+                    <div class="attempts-sidebar">
+                        <h3 class="sidebar-title">Shootout Attempts</h3>
+                        
                     <div class="attempt-item active" data-video="https://stories.nhl.com/games/271900/17714808/35.mp4" data-video-id="2023020963-12" data-title="@ Tampa Bay Lightning" data-details="Mar 02, 2024 • Save • Wrist<br>Shootout Attempt #12" data-has-video="true">
                         <div class="attempt-result save"></div>
                         <div class="attempt-info">
@@ -69,6 +139,72 @@
                             <div class="attempt-opponent">@ Tampa Bay Lightning</div>
                             <div class="attempt-details">Wrist • Save</div>
                         </div>
+                    </div>
+                    </div>
+
+                    <!-- Player Stats (mobile: below sidebar) -->
+                    <div class="player-stats-mobile">
+                        <div class="player-stats-section">
+    <h3 class="stats-title">Shootout Statistics</h3>
+    <div class="stats-container">
+        <div class="stats-card">
+            <h4 class="stats-card-title">Career Stats</h4>
+            <div class="stats-grid stats-grid-3">
+                <div class="stat-box">
+                    <div class="stat-value">1</div>
+                    <div class="stat-label">Attempts</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-value">0</div>
+                    <div class="stat-label">Goals</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-value">0.0%</div>
+                    <div class="stat-label">Shooting %</div>
+                </div>
+            </div>
+        </div>
+        <div class="stats-card">
+            <h4 class="stats-card-title">Last 2 Seasons</h4>
+            <div class="stats-grid stats-grid-3">
+                <div class="stat-box">
+                    <div class="stat-value">1</div>
+                    <div class="stat-label">Attempts</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-value">0</div>
+                    <div class="stat-label">Goals</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-value">0.0%</div>
+                    <div class="stat-label">Shooting %</div>
+                </div>
+            </div>
+        </div>
+        <div class="stats-card stats-card-wide">
+            <h4 class="stats-card-title">Shot Type Usage (Career)</h4>
+            <div class="stats-grid stats-grid-4">
+                <div class="stat-box">
+                    <div class="stat-value">0%</div>
+                    <div class="stat-label">Backhand</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-value">100%</div>
+                    <div class="stat-label">Wrist</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-value">0%</div>
+                    <div class="stat-label">Snap</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-value">0%</div>
+                    <div class="stat-label">Slap</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
                     </div>
                 </div>
 
