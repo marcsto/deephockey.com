@@ -294,6 +294,7 @@
             transition: all 0.3s ease;
             color: #60A5FA;
             z-index: 10;
+            outline: none;
         }
 
         .carousel-nav:hover {
@@ -304,6 +305,15 @@
 
         .carousel-nav:active {
             transform: translateY(-50%) scale(0.95);
+        }
+
+        .carousel-nav:focus {
+            outline: none;
+            transform: translateY(-50%);
+        }
+
+        .carousel-nav:focus:not(:active) {
+            transform: translateY(-50%);
         }
 
         .carousel-prev {
