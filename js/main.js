@@ -70,6 +70,7 @@ function generateHeader() {
                 <div class="nav-menu">
                     <a href="https://www.deephockey.com/about.html" class="nav-link">About</a>
                     <a href="https://www.youtube.com/@DeeperHockey/shorts" class="nav-link">YouTube</a>
+                    <a href="https://www.deephockey.com/draft" class="nav-link">Re-draft</a>
                     <a href="https://www.deephockey.com/shootout" class="nav-link">Shootouts</a>
                 </div>
                 <!-- Mobile menu button can be added here if needed -->
@@ -210,9 +211,16 @@ function displayVideos(videos) {
  */
 document.addEventListener('DOMContentLoaded', () => {
     initializePage();
+});
+
+/**
+ * Initialize home page specific features
+ * Call this function from the main index.html page only
+ */
+function initializeHomePage() {
     initializeCardInteractions();
     loadVideos();
-});
+}
 
 /**
  * Utility functions for future enhancements
