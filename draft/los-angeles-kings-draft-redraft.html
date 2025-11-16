@@ -683,6 +683,26 @@
             transform: translateY(-2px);
         }
         
+        .reset-btn {
+            background: linear-gradient(135deg, #EF4444, #DC2626);
+            border: none;
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 0.5rem;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s;
+            box-shadow: 0 4px 12px rgba(239, 68, 68, 0.3);
+            margin-left: 1rem;
+        }
+        
+        .reset-btn:hover {
+            background: linear-gradient(135deg, #DC2626, #B91C1C);
+            box-shadow: 0 6px 16px rgba(239, 68, 68, 0.4);
+            transform: translateY(-2px);
+        }
+        
         .share-btn {
             background: linear-gradient(135deg, #10B981, #22C55E);
             border: none;
@@ -1158,6 +1178,9 @@
             <div class="button-container">
                 <button id="auto-redraft-btn" class="auto-redraft-btn">
                     ⚡ Auto Re-Draft (Select Best Available)
+                </button>
+                <button id="reset-btn" class="reset-btn">
+                    ↺ Reset to Original Picks
                 </button>
             </div>
         </div>
@@ -8261,6 +8284,42 @@
                 }
                 
                 // Scroll to top to see the redrafted team
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+            
+            // Reset Button
+            document.getElementById('reset-btn').addEventListener('click', function() {
+                // Confirm with user before resetting
+                const confirmed = confirm('Are you sure you want to reset all picks back to the original draft selections? This cannot be undone.');
+                
+                if (!confirmed) {
+                    return;
+                }
+                
+                // Iterate through all draft cards and reset to original picks
+                const draftCards = document.querySelectorAll('.draft-card');
+                
+                draftCards.forEach(card => {
+                    const originalPickCard = card.querySelector('.player-card:not(.alt-player-card)');
+                    if (!originalPickCard) return;
+                    
+                    const pickId = originalPickCard.dataset.pickId;
+                    
+                    // Check if this pick has been changed
+                    const currentSelection = allPicksById[pickId];
+                    const originalSelection = originalPicks[pickId];
+                    
+                    if (currentSelection && originalSelection && currentSelection.playerId !== originalSelection.playerId) {
+                        // Pick has been changed - click the original pick card to reset
+                        originalPickCard.click();
+                    }
+                });
+                
+                // Clear the URL parameters
+                const newURL = window.location.pathname;
+                window.history.replaceState({}, document.title, newURL);
+                
+                // Scroll to top
                 window.scrollTo({ top: 0, behavior: 'smooth' });
             });
             
