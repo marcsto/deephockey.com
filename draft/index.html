@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NHL Draft Redraft Tool - Deep Hockey</title>
+    <meta name="description" content="Explore 'what if' scenarios for every NHL team. Redraft the last 15 years and build your ideal roster based on actual player performance.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/styles.css">
+    <style>
+        .draft-index-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem 1rem;
+        }
+        
+        .hero-section {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .hero-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 1rem;
+        }
+        
+        .hero-subtitle {
+            font-size: 1.125rem;
+            color: #D1D5DB;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .teams-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-top: 3rem;
+        }
+        
+        .team-card {
+            background: linear-gradient(145deg, #1F2937 0%, #1A202C 100%);
+            border-radius: 0.75rem;
+            overflow: hidden;
+            border: 1px solid rgba(75, 85, 99, 0.3);
+            transition: all 0.3s;
+            text-decoration: none;
+            display: block;
+        }
+        
+        .team-card:hover {
+            transform: translateY(-4px);
+            border-color: rgba(96, 165, 250, 0.5);
+            box-shadow: 0 8px 16px -4px rgba(0, 0, 0, 0.3);
+        }
+        
+        .team-card-content {
+            padding: 2rem 1.5rem;
+            text-align: center;
+        }
+        
+        .team-logo {
+            width: 120px;
+            height: 120px;
+            margin: 0 auto 1rem;
+            display: block;
+            object-fit: contain;
+        }
+        
+        .team-name {
+            font-size: 1rem;
+            color: #D1D5DB;
+            margin-bottom: 1rem;
+        }
+        
+        .pick-count {
+            font-size: 0.875rem;
+            color: #9CA3AF;
+        }
+    </style>
+</head>
+<body>
+    <div id="app" class="app-container">
+        <!-- Header -->
+        <header id="main-header" class="site-header"></header>
+        
+        <!-- Main Content -->
+        <main class="main-content">
+    
+    <div class="draft-index-container">
+        <div class="hero-section">
+            <h1 class="hero-title">NHL Redraft Tool</h1>
+            <p class="hero-subtitle">
+                Explore "what if" scenarios for every NHL team. Redraft the first 2 rounds from the last 15 years (2010-2024) of NHL drafts and build your ideal roster based on actual player performance.
+            </p>
+        </div>
+        
+        <div class="teams-grid">
+            <a href="anaheim-ducks-draft-redraft.html" class="team-card">
+                <div class="team-card-content">
+                    <img src="https://assets.nhle.com/logos/nhl/svg/ANA_light.svg" alt="ANA" class="team-logo">
+                    <div class="team-name">Anaheim Ducks</div>
+                    <div class="pick-count">40 picks (Rounds 1-2, 2010-2024)</div>
+                </div>
+            </a>
+            
+            <a href="boston-bruins-draft-redraft.html" class="team-card">
+                <div class="team-card-content">
+                    <img src="https://assets.nhle.com/logos/nhl/svg/BOS_light.svg" alt="BOS" class="team-logo">
+                    <div class="team-name">Boston Bruins</div>
+                    <div class="pick-count">26 picks (Rounds 1-2, 2010-2024)</div>
+                </div>
+            </a>
+            
+            <a href="buffalo-sabres-draft-redraft.html" class="team-card">
+                <div class="team-card-content">
+                    <img src="https://assets.nhle.com/logos/nhl/svg/BUF_light.svg" alt="BUF" class="team-logo">
+                    <div class="team-name">Buffalo Sabres</div>
+                    <div class="pick-count">40 picks (Rounds 1-2, 2010-2024)</div>
+                </div>
+            </a>
+            
+            <a href="carolina-hurricanes-draft-redraft.html" class="team-card">
+                <div class="team-card-content">
+                    <img src="https://assets.nhle.com/logos/nhl/svg/CAR_light.svg" alt="CAR" class="team-logo">
+                    <div class="team-name">Carolina Hurricanes</div>
+                    <div class="pick-count">34 picks (Rounds 1-2, 2010-2024)</div>
+                </div>
+            </a>
+            
+            <a href="columbus-blue-jackets-draft-redraft.html" class="team-card">
+                <div class="team-card-content">
+                    <img src="https://assets.nhle.com/logos/nhl/svg/CBJ_light.svg" alt="CBJ" class="team-logo">
+                    <div class="team-name">Columbus Blue Jackets</div>
+                    <div class="pick-count">33 picks (Rounds 1-2, 2010-2024)</div>
+                </div>
+            </a>
+            
+            <a href="calgary-flames-draft-redraft.html" class="team-card">
+                <div class="team-card-content">
+                    <img src="https://assets.nhle.com/logos/nhl/svg/CGY_light.svg" alt="CGY" class="team-logo">
+                    <div class="team-name">Calgary Flames</div>
+                    <div class="pick-count">29 picks (Rounds 1-2, 2010-2024)</div>
+                </div>
+            </a>
+            
+            <a href="chicago-blackhawks-draft-redraft.html" class="team-card">
+                <div class="team-card-content">
+                    <img src="https://assets.nhle.com/logos/nhl/svg/CHI_light.svg" alt="CHI" class="team-logo">
+                    <div class="team-name">Chicago Blackhawks</div>
+                    <div class="pick-count">41 picks (Rounds 1-2, 2010-2024)</div>
+                </div>
+            </a>
+            
+            <a href="colorado-avalanche-draft-redraft.html" class="team-card">
+                <div class="team-card-content">
+                    <img src="https://assets.nhle.com/logos/nhl/svg/COL_light.svg" alt="COL" class="team-logo">
+                    <div class="team-name">Colorado Avalanche</div>
+                    <div class="pick-count">25 picks (Rounds 1-2, 2010-2024)</div>
+                </div>
+            </a>
+            
+            <a href="dallas-stars-draft-redraft.html" class="team-card">
+                <div class="team-card-content">
+                    <img src="https://assets.nhle.com/logos/nhl/svg/DAL_light.svg" alt="DAL" class="team-logo">
+                    <div class="team-name">Dallas Stars</div>
+                    <div class="pick-count">31 picks (Rounds 1-2, 2010-2024)</div>
+                </div>
+            </a>
+            
+            <a href="detroit-red-wings-draft-redraft.html" class="team-card">
+                <div class="team-card-content">
+                    <img src="https://assets.nhle.com/logos/nhl/svg/DET_light.svg" alt="DET" class="team-logo">
+                    <div class="team-name">Detroit Red Wings</div>
+                    <div class="pick-count">41 picks (Rounds 1-2, 2010-2024)</div>
+                </div>
+            </a>
+            
+            <a href="edmonton-oilers-draft-redraft.html" class="team-card">
+                <div class="team-card-content">
+                    <img src="https://assets.nhle.com/logos/nhl/svg/EDM_light.svg" alt="EDM" class="team-logo">
+                    <div class="team-name">Edmonton Oilers</div>
+                    <div class="pick-count">27 picks (Rounds 1-2, 2010-2024)</div>
+                </div>
+            </a>
+            
+            <a href="florida-panthers-draft-redraft.html" class="team-card">
+                <div class="team-card-content">
+                    <img src="https://assets.nhle.com/logos/nhl/svg/FLA_light.svg" alt="FLA" class="team-logo">
+                    <div class="team-name">Florida Panthers</div>
+                    <div class="pick-count">29 picks (Rounds 1-2, 2010-2024)</div>
+                </div>
+            </a>
+            
+            <a href="los-angeles-kings-draft-redraft.html" class="team-card">
+                <div class="team-card-content">
+                    <img src="https://assets.nhle.com/logos/nhl/svg/LAK_light.svg" alt="LAK" class="team-logo">
+                    <div class="team-name">Los Angeles Kings</div>
+                    <div class="pick-count">28 picks (Rounds 1-2, 2010-2024)</div>
+                </div>
+            </a>
+            
+            <a href="minnesota-wild-draft-redraft.html" class="team-card">
+                <div class="team-card-content">
+                    <img src="https://assets.nhle.com/logos/nhl/svg/MIN_light.svg" alt="MIN" class="team-logo">
+                    <div class="team-name">Minnesota Wild</div>
+                    <div class="pick-count">33 picks (Rounds 1-2, 2010-2024)</div>
+                </div>
+            </a>
+            
+            <a href="montreal-canadiens-draft-redraft.html" class="team-card">
+                <div class="team-card-content">
+                    <img src="https://assets.nhle.com/logos/nhl/svg/MTL_light.svg" alt="MTL" class="team-logo">
+                    <div class="team-name">Montréal Canadiens</div>
+                    <div class="pick-count">34 picks (Rounds 1-2, 2010-2024)</div>
+                </div>
+            </a>
+            
+            <a href="new-jersey-devils-draft-redraft.html" class="team-card">
+                <div class="team-card-content">
+                    <img src="https://assets.nhle.com/logos/nhl/svg/NJD_light.svg" alt="NJD" class="team-logo">
+                    <div class="team-name">New Jersey Devils</div>
+                    <div class="pick-count">26 picks (Rounds 1-2, 2010-2024)</div>
+                </div>
+            </a>
+            
+            <a href="nashville-predators-draft-redraft.html" class="team-card">
+                <div class="team-card-content">
+                    <img src="https://assets.nhle.com/logos/nhl/svg/NSH_light.svg" alt="NSH" class="team-logo">
+                    <div class="team-name">Nashville Predators</div>
+                    <div class="pick-count">27 picks (Rounds 1-2, 2010-2024)</div>
+                </div>
+            </a>
+            
+            <a href="new-york-islanders-draft-redraft.html" class="team-card">
+                <div class="team-card-content">
+                    <img src="https://assets.nhle.com/logos/nhl/svg/NYI_light.svg" alt="NYI" class="team-logo">
+                    <div class="team-name">New York Islanders</div>
+                    <div class="pick-count">26 picks (Rounds 1-2, 2010-2024)</div>
+                </div>
+            </a>
+            
+            <a href="new-york-rangers-draft-redraft.html" class="team-card">
+                <div class="team-card-content">
+                    <img src="https://assets.nhle.com/logos/nhl/svg/NYR_light.svg" alt="NYR" class="team-logo">
+                    <div class="team-name">New York Rangers</div>
+                    <div class="pick-count">23 picks (Rounds 1-2, 2010-2024)</div>
+                </div>
+            </a>
+            
+            <a href="ottawa-senators-draft-redraft.html" class="team-card">
+                <div class="team-card-content">
+                    <img src="https://assets.nhle.com/logos/nhl/svg/OTT_light.svg" alt="OTT" class="team-logo">
+                    <div class="team-name">Ottawa Senators</div>
+                    <div class="pick-count">33 picks (Rounds 1-2, 2010-2024)</div>
+                </div>
+            </a>
+            
+            <a href="philadelphia-flyers-draft-redraft.html" class="team-card">
+                <div class="team-card-content">
+                    <img src="https://assets.nhle.com/logos/nhl/svg/PHI_light.svg" alt="PHI" class="team-logo">
+                    <div class="team-name">Philadelphia Flyers</div>
+                    <div class="pick-count">31 picks (Rounds 1-2, 2010-2024)</div>
+                </div>
+            </a>
+            
+            <a href="pittsburgh-penguins-draft-redraft.html" class="team-card">
+                <div class="team-card-content">
+                    <img src="https://assets.nhle.com/logos/nhl/svg/PIT_light.svg" alt="PIT" class="team-logo">
+                    <div class="team-name">Pittsburgh Penguins</div>
+                    <div class="pick-count">21 picks (Rounds 1-2, 2010-2024)</div>
+                </div>
+            </a>
+            
+            <a href="seattle-kraken-draft-redraft.html" class="team-card">
+                <div class="team-card-content">
+                    <img src="https://assets.nhle.com/logos/nhl/svg/SEA_light.svg" alt="SEA" class="team-logo">
+                    <div class="team-name">Seattle Kraken</div>
+                    <div class="pick-count">14 picks (Rounds 1-2, 2010-2024)</div>
+                </div>
+            </a>
+            
+            <a href="san-jose-sharks-draft-redraft.html" class="team-card">
+                <div class="team-card-content">
+                    <img src="https://assets.nhle.com/logos/nhl/svg/SJS_light.svg" alt="SJS" class="team-logo">
+                    <div class="team-name">San Jose Sharks</div>
+                    <div class="pick-count">31 picks (Rounds 1-2, 2010-2024)</div>
+                </div>
+            </a>
+            
+            <a href="st-louis-blues-draft-redraft.html" class="team-card">
+                <div class="team-card-content">
+                    <img src="https://assets.nhle.com/logos/nhl/svg/STL_light.svg" alt="STL" class="team-logo">
+                    <div class="team-name">St. Louis Blues</div>
+                    <div class="pick-count">31 picks (Rounds 1-2, 2010-2024)</div>
+                </div>
+            </a>
+            
+            <a href="tampa-bay-lightning-draft-redraft.html" class="team-card">
+                <div class="team-card-content">
+                    <img src="https://assets.nhle.com/logos/nhl/svg/TBL_dark.svg" alt="TBL" class="team-logo">
+                    <div class="team-name">Tampa Bay Lightning</div>
+                    <div class="pick-count">26 picks (Rounds 1-2, 2010-2024)</div>
+                </div>
+            </a>
+            
+            <a href="toronto-maple-leafs-draft-redraft.html" class="team-card">
+                <div class="team-card-content">
+                    <img src="https://assets.nhle.com/logos/nhl/svg/TOR_light.svg" alt="TOR" class="team-logo">
+                    <div class="team-name">Toronto Maple Leafs</div>
+                    <div class="pick-count">24 picks (Rounds 1-2, 2010-2024)</div>
+                </div>
+            </a>
+            
+            <a href="utah-mammoth-draft-redraft.html" class="team-card">
+                <div class="team-card-content">
+                    <img src="https://assets.nhle.com/logos/nhl/svg/UTA_light.svg" alt="UTA" class="team-logo">
+                    <div class="team-name">Utah Mammoth</div>
+                    <div class="pick-count">41 picks (Rounds 1-2, 2010-2024)</div>
+                </div>
+            </a>
+            
+            <a href="vancouver-canucks-draft-redraft.html" class="team-card">
+                <div class="team-card-content">
+                    <img src="https://assets.nhle.com/logos/nhl/svg/VAN_light.svg" alt="VAN" class="team-logo">
+                    <div class="team-name">Vancouver Canucks</div>
+                    <div class="pick-count">20 picks (Rounds 1-2, 2010-2024)</div>
+                </div>
+            </a>
+            
+            <a href="vegas-golden-knights-draft-redraft.html" class="team-card">
+                <div class="team-card-content">
+                    <img src="https://assets.nhle.com/logos/nhl/svg/VGK_light.svg" alt="VGK" class="team-logo">
+                    <div class="team-name">Vegas Golden Knights</div>
+                    <div class="pick-count">14 picks (Rounds 1-2, 2010-2024)</div>
+                </div>
+            </a>
+            
+            <a href="winnipeg-jets-draft-redraft.html" class="team-card">
+                <div class="team-card-content">
+                    <img src="https://assets.nhle.com/logos/nhl/svg/WPG_light.svg" alt="WPG" class="team-logo">
+                    <div class="team-name">Winnipeg Jets</div>
+                    <div class="pick-count">27 picks (Rounds 1-2, 2010-2024)</div>
+                </div>
+            </a>
+            
+            <a href="washington-capitals-draft-redraft.html" class="team-card">
+                <div class="team-card-content">
+                    <img src="https://assets.nhle.com/logos/nhl/svg/WSH_light.svg" alt="WSH" class="team-logo">
+                    <div class="team-name">Washington Capitals</div>
+                    <div class="pick-count">25 picks (Rounds 1-2, 2010-2024)</div>
+                </div>
+            </a>
+        </div>
+    </div>
+    
+        </main>
+        
+        <!-- Footer -->
+        <footer id="main-footer" class="site-footer"></footer>
+    </div>
+    
+    <script src="../js/main.js"></script>
+</body>
+</html>
