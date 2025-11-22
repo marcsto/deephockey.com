@@ -69,9 +69,10 @@ function generateHeader() {
                 </div>
                 <div class="nav-menu">
                     <a href="https://www.deephockey.com/about.html" class="nav-link">About</a>
-                    <a href="https://www.youtube.com/@DeeperHockey/shorts" class="nav-link">YouTube</a>
-                    <a href="https://www.deephockey.com/draft" class="nav-link">Re-draft</a>
+                    <a href="https://www.youtube.com/@DeeperHockey/shorts" class="nav-link">Videos</a>
+                    <a href="https://www.deephockey.com/draft" class="nav-link">Redraft</a>
                     <a href="https://www.deephockey.com/shootout" class="nav-link">Shootouts</a>
+                    <a href="https://www.deephockey.com/olympics" class="nav-link">Olympics</a>
                 </div>
                 <!-- Mobile menu button can be added here if needed -->
             </div>
