@@ -1,0 +1,2849 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Czechia - 2026 Olympics Roster Builder</title>
+    <meta name="description" content="Build your ideal Czechia Olympic hockey roster for 2026. Select the best players and create your dream team.">
+    
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-4EQ2PM7LNJ"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-4EQ2PM7LNJ');
+    </script>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700&family=Teko:wght@300;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/styles.css">
+    <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+    <style>
+        :root {
+            --blue-primary: #60A5FA;
+            --blue-hover: #3B82F6;
+            
+            /* Widget theme variables */
+            --roster-primary: #C8102E;   
+            --roster-secondary: #000000; 
+            --roster-accent: #FFFFFF;    
+            --roster-gold: #FFD700;      
+            --roster-bg: #121212;        
+            --roster-text: #FFFFFF;
+            --font-head: 'Teko', sans-serif;
+            --font-body: 'Roboto Condensed', sans-serif;
+        }
+        
+        .page-container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        .page-header {
+            text-align: center;
+            margin-bottom: 0.5rem;
+        }
+        
+        .page-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+        }
+        
+        .country-flag-img {
+            height: 2rem;
+            width: auto;
+            border-radius: 0.25rem;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+        
+        .page-subtitle {
+            font-size: 1.125rem;
+            color: #D1D5DB;
+        }
+
+        /* Widget Container Styles */
+        .widget-container {
+            margin-bottom: 0.5rem;
+            width: 100%;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        #roster-widget-container {
+            font-family: var(--font-body);
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: var(--roster-bg);
+            background-image: 
+                radial-gradient(circle at 50% 0%, rgba(255,255,255,0.1) 0%, transparent 60%),
+                url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            background-size: auto;
+            color: var(--roster-text);
+            overflow: hidden;
+            position: relative;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.8);
+            border: 12px solid var(--roster-secondary);
+            min-height: 900px;
+        }
+
+        .watermark {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(-10deg);
+            font-family: var(--font-head);
+            font-size: 15rem;
+            font-weight: 700;
+            color: rgba(255,255,255,0.03);
+            white-space: nowrap;
+            pointer-events: none;
+            z-index: 0;
+            text-transform: uppercase;
+        }
+
+        .top-accent-bar {
+            height: 8px;
+            background: repeating-linear-gradient(
+                45deg,
+                var(--roster-primary),
+                var(--roster-primary) 20px,
+                var(--roster-secondary) 20px,
+                var(--roster-secondary) 40px
+            );
+        }
+
+        .roster-header {
+            text-align: center;
+            padding: 20px 20px 10px 20px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .roster-title {
+            font-family: var(--font-head);
+            font-size: 5rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            line-height: 0.85;
+            margin: 0;
+            letter-spacing: 2px;
+            text-shadow: 3px 3px 0px rgba(0,0,0,0.8);
+        }
+
+        .roster-title span.highlight {
+            color: var(--roster-primary);
+        }
+
+        .roster-subtitle {
+            font-size: 1.4rem;
+            margin-top: 5px;
+            font-weight: 400;
+            letter-spacing: 4px;
+            color: #ccc;
+            text-transform: uppercase;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .section-banner {
+            font-family: var(--font-head);
+            background: var(--roster-primary);
+            color: var(--roster-accent);
+            text-align: center;
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 1.8rem;
+            padding: 2px 0;
+            margin: 15px auto 10px auto;
+            letter-spacing: 2px;
+            width: 95%;
+            transform: skewX(-10deg);
+            box-shadow: 3px 3px 0px rgba(0,0,0,0.5);
+            position: relative;
+            z-index: 2;
+        }
+        
+        .section-banner span {
+            display: block;
+            transform: skewX(10deg);
+        }
+
+        .roster-grid {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+            padding: 0 20px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .line-row {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            width: 100%;
+        }
+
+        .player-card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 95px;
+            text-align: center;
+            position: relative;
+            margin-bottom: 5px;
+        }
+
+        .player-img-container {
+            width: 75px;
+            height: 75px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 3px solid #333;
+            background: #222;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+            transition: all 0.2s;
+            position: relative;
+        }
+        
+        .player-card.my-pick .player-img-container {
+            border-color: var(--roster-primary);
+            box-shadow: 0 0 15px var(--roster-primary);
+        }
+
+        .player-card.lock .player-img-container {
+            border-color: var(--roster-gold);
+            box-shadow: 0 0 5px var(--roster-gold);
+        }
+        
+        .lock-icon {
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%) translateY(50%);
+            background: var(--roster-gold);
+            color: #000;
+            border-radius: 4px;
+            width: 16px;
+            height: 16px;
+            font-size: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid #fff;
+            z-index: 5;
+        }
+
+        .player-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: top;
+            filter: contrast(1.1) saturate(1.1);
+        }
+
+        .player-name {
+            font-family: var(--font-body);
+            font-size: 0.85rem;
+            font-weight: 700;
+            margin-top: 8px;
+            line-height: 1;
+            color: #fff;
+            text-transform: uppercase;
+            text-shadow: 0 2px 4px #000;
+            letter-spacing: 0.5px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            width: 100%;
+        }
+
+        .player-meta {
+            font-size: 0.65rem;
+            color: #aaa;
+            font-weight: 700;
+            text-transform: uppercase;
+            margin-top: 1px;
+        }
+
+        .roster-layout-flex {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            gap: 15px;
+            padding: 0 10px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .layout-col-left {
+            flex: 1;
+        }
+        
+        .layout-col-right {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .roster-footer {
+            margin-top: 30px;
+            background: var(--roster-secondary);
+            border-top: 4px solid var(--roster-primary);
+            color: var(--roster-text);
+            text-align: center;
+            padding: 15px;
+            font-family: var(--font-head);
+            position: relative;
+            z-index: 2;
+        }
+        
+        .footer-main {
+            font-size: 1.5rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+
+        .footer-cta {
+            font-family: var(--font-body);
+            font-weight: 300;
+            font-size: 1rem;
+            color: #aaa;
+            letter-spacing: 1px;
+        }
+        
+        .footer-link {
+            color: var(--roster-primary);
+            font-weight: 700;
+        }
+
+        @media (max-width: 600px) {
+            .roster-title { font-size: 3.5rem; }
+            .player-card { width: 70px; }
+            .player-img-container { width: 60px; height: 60px; }
+            .line-row { gap: 10px; }
+            .roster-layout-flex { flex-direction: column; align-items: center; }
+            .layout-col-left, .layout-col-right { 
+                width: 100%; 
+                max-width: 400px;
+                align-items: center;
+            }
+            .roster-subtitle {
+                font-size: 0.8rem;
+            }
+        }
+        
+            border: none;
+            display: block;
+        }
+        
+        /* Summary Section Styles */
+        .summary-section {
+            background: linear-gradient(145deg, #1F2937 0%, #1A202C 100%);
+            border-radius: 1rem;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            border: 1px solid rgba(75, 85, 99, 0.3);
+        }
+        
+        .summary-title {
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+        
+        .summary-subtitle {
+            font-size: 0.95rem;
+            color: #9CA3AF;
+            margin-bottom: 1.0rem;
+            text-align: center;
+        }
+        
+        .summary-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .position-section {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+        
+        .position-divider {
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: #60A5FA;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid rgba(96, 165, 250, 0.3);
+        }
+        
+        .position-players {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+            gap: 1rem;
+        }
+        
+        .summary-player-card {
+            background: rgba(31, 41, 55, 0.5);
+            border-radius: 0.5rem;
+            padding: 0.75rem;
+            border: 1px solid rgba(75, 85, 99, 0.3);
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.2s;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .summary-player-card.locked {
+            cursor: default;
+        }
+        
+        .summary-player-card.locked::before {
+            content: '🔒';
+            position: absolute;
+            top: 0.5rem;
+            right: 0.5rem;
+            font-size: 0.875rem;
+        }
+        
+        .summary-player-card:not(.locked):hover {
+            border-color: rgba(239, 68, 68, 0.5);
+            background: rgba(239, 68, 68, 0.1);
+        }
+        
+        .summary-player-card.empty {
+            background: rgba(31, 41, 55, 0.3);
+            border: 2px dashed rgba(75, 85, 99, 0.5);
+            cursor: default;
+        }
+        
+        .summary-player-card.empty:hover {
+            border-color: rgba(75, 85, 99, 0.5);
+            background: rgba(31, 41, 55, 0.3);
+        }
+        
+        .summary-headshot {
+            width: 64px;
+            height: 64px;
+            border-radius: 50%;
+            margin: 0 auto 0.5rem;
+            object-fit: cover;
+            border: 2px solid rgba(75, 85, 99, 0.3);
+        }
+        
+        .summary-player-name {
+            font-size: 0.875rem;
+            font-weight: 600;
+            color: white;
+            margin-bottom: 0.25rem;
+            min-height: 2.5em;
+            line-height: 1.25em;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+        
+        .summary-player-team {
+            font-size: 0.75rem;
+            color: #9CA3AF;
+            margin-bottom: 0.5rem;
+            min-height: 1.125em;
+            line-height: 1.125em;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        
+        .percentile-bar {
+            width: 100%;
+            height: 6px;
+            background: rgba(55, 65, 81, 0.5);
+            border-radius: 3px;
+            overflow: hidden;
+        }
+        
+        .percentile-bar-fill {
+            height: 100%;
+            transition: width 0.3s ease;
+        }
+        
+        .percentile-bar-fill.high {
+            background: linear-gradient(90deg, #10B981, #22C55E);
+        }
+        
+        .percentile-bar-fill.medium {
+            background: linear-gradient(90deg, #FBBF24, #F59E0B);
+        }
+        
+        .percentile-bar-fill.low {
+            background: linear-gradient(90deg, #6B7280, #9CA3AF);
+        }
+        
+        .empty-slot-text {
+            color: #6B7280;
+            font-size: 0.875rem;
+            padding: 2rem 1rem;
+        }
+        
+        /* Button Styles */
+        .button-container {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .share-btn, .download-btn {
+            background: linear-gradient(135deg, var(--blue-primary), var(--blue-hover));
+            color: white;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.5rem;
+            font-size: 0.95rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        
+        .share-btn:hover, .download-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(96, 165, 250, 0.3);
+        }
+        
+        /* Available Players Section */
+        .available-section {
+            margin-top: 3rem;
+        }
+        
+        .section-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 1rem;
+        }
+        
+        .section-description {
+            font-size: 0.95rem;
+            color: #D1D5DB;
+            margin-bottom: 1.5rem;
+        }
+        
+        .filters-container {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin-bottom: 1.5rem;
+            padding: 1rem;
+            background: rgba(31, 41, 55, 0.5);
+            border-radius: 0.5rem;
+            border: 1px solid rgba(75, 85, 99, 0.3);
+        }
+        
+        .filter-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+        
+        .filter-label {
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #9CA3AF;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        
+        .filter-select {
+            padding: 0.5rem 0.75rem;
+            background: #1F2937;
+            border: 1px solid rgba(75, 85, 99, 0.5);
+            border-radius: 0.375rem;
+            color: white;
+            font-size: 0.875rem;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        
+        .filter-select:hover {
+            border-color: var(--blue-primary);
+        }
+        
+        .filter-select:focus {
+            outline: none;
+            border-color: var(--blue-primary);
+            box-shadow: 0 0 0 3px rgba(96, 165, 250, 0.1);
+        }
+        
+        .available-players-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1rem;
+        }
+        
+        .available-player-card {
+            background: linear-gradient(145deg, #1F2937 0%, #1A202C 100%);
+            border-radius: 0.5rem;
+            padding: 1rem;
+            border: 1px solid rgba(75, 85, 99, 0.3);
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        
+        .available-player-card:hover {
+            border-color: var(--blue-primary);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+        }
+        
+        .available-player-card.selected {
+            border-color: #22C55E;
+            background: linear-gradient(135deg, rgba(34, 197, 94, 0.15), rgba(16, 185, 129, 0.1));
+        }
+        
+        .available-player-card.disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+            pointer-events: none;
+        }
+        
+        .player-card-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 0.75rem;
+        }
+        
+        .player-card-headshot {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid rgba(75, 85, 99, 0.3);
+        }
+        
+        .player-card-info {
+            flex: 1;
+        }
+        
+        .player-card-name {
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: white;
+            margin-bottom: 0.25rem;
+        }
+        
+        .player-card-position {
+            font-size: 0.75rem;
+            color: #9CA3AF;
+            margin-bottom: 0.25rem;
+        }
+        
+        .player-card-team {
+            font-size: 0.75rem;
+            color: #60A5FA;
+        }
+        
+        .player-card-stats {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 0.5rem;
+            margin-bottom: 0.75rem;
+        }
+        
+        .stat-item {
+            text-align: center;
+        }
+        
+        .stat-label {
+            font-size: 0.65rem;
+            color: #9CA3AF;
+            text-transform: uppercase;
+            margin-bottom: 0.25rem;
+        }
+        
+        .stat-value {
+            font-size: 0.875rem;
+            font-weight: 600;
+            color: white;
+        }
+        
+        @media (max-width: 768px) {
+            .page-title {
+                font-size: 1.5rem;
+            }
+            
+            .summary-grid {
+                grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            }
+            
+            .available-players-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="app" class="app-container">
+        <header id="main-header" class="site-header"></header>
+        
+        <main class="main-content">
+            <div class="page-container">
+                <div class="page-header">
+                    <h1 class="page-title"><img src="https://flagcdn.com/w320/cz.png" alt="Czechia flag" class="country-flag-img"> Team Czechia</h1>
+                    <p class="page-subtitle">Build your ideal Olympic roster</p>
+                </div>
+                
+                <div class="widget-container">
+                    <div id="roster-widget-container">
+                        <div class="top-accent-bar"></div>
+                        <div class="watermark" id="watermark-text">TEAM</div>
+                        
+                        <header class="roster-header">
+                            <h1 class="roster-title">MY <span class="highlight" id="team-title">TEAM</span></h1>
+                            <div class="roster-subtitle">
+                                <span>OLYMPIC HOCKEY 2026</span> | 
+                                <span id="user-name-edit" contenteditable="true" spellcheck="false">MY PICKS</span>
+                            </div>
+                        </header>
+
+                        <div class="roster-layout-flex">
+                            <div class="layout-col-left">
+                                <div class="section-banner"><span>Forwards</span></div>
+                                <div class="roster-grid" id="forwards-grid"></div>
+                                <div class="roster-grid" id="spares-grid" style="margin-bottom: 5px;"></div>
+                            </div>
+
+                            <div class="layout-col-right">
+                                <div class="section-banner"><span>Defense</span></div>
+                                <div class="roster-grid defense-container" id="defense-grid"></div>
+                                
+                                <div class="section-banner" style="margin-top: 20px;"><span>Goalies</span></div>
+                                <div class="roster-grid" id="goalies-grid"></div>
+                            </div>
+                        </div>
+
+                        <footer class="roster-footer">
+                            <div class="footer-main">AGREE? DISAGREE?</div>
+                            <div class="footer-cta">BUILD YOUR DREAM TEAM AT <span class="footer-link">DeepHockey.com</span></div>
+                        </footer>
+                    </div>
+                </div>
+                <p class="summary-subtitle">
+                    🔒 = Pre-announced players (locked)
+                </p>
+                <div class="button-container">
+                    <button id="download-btn" class="download-btn">📸 Download Summary Image</button>
+                    <button id="share-btn" class="share-btn">🔗 Share</button>
+                </div>
+                
+                <div class="available-section">
+                    <h2 class="section-title">Available Players</h2>
+                    <p class="section-description">
+                        Click on players to add them to your roster. Use the filters below to find specific positions.
+                    </p>
+                    <div class="filters-container">
+                        <div class="filter-group">
+                            <label class="filter-label" for="season-select">Stats Period</label>
+                            <select id="season-select" class="filter-select">
+                                <option value="career">Career Stats</option>
+                                <option value="2024-2025">2024-2025 Season</option>
+                                <option value="2025-2026">2025-2026 Season</option>
+                            </select>
+                        </div>
+                        <div class="filter-group">
+                            <label class="filter-label" for="position-filter">Position</label>
+                            <select id="position-filter" class="filter-select">
+                                <option value="all">All Players</option>
+                                <option value="forwards">Forwards Only</option>
+                                <option value="defense">Defense Only</option>
+                                <option value="goalies">Goalies Only</option>
+                            </select>
+                        </div>
+                        <div class="filter-group">
+                            <label class="filter-label" for="sort-by">Sort By</label>
+                            <select id="sort-by" class="filter-select">
+                                <option value="percentile">2025 Estimated Rank</option>
+                                <option value="goals">Goals</option>
+                                <option value="points">Points</option>
+                                <option value="ppg">Points Per Game</option>
+                                <option value="savePct">Save Percentage</option>
+                                <option value="gaa">Goals Against Average</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="available-players-grid" id="available-players-grid">
+                        <!-- Will be populated by JavaScript -->
+                    </div>
+                </div>
+            </div>
+        </main>
+        
+        <footer id="main-footer" class="site-footer"></footer>
+    </div>
+    
+    <script src="../js/main.js"></script>
+    <script>
+        // Pre-selected (locked) players
+        const preSelectedPlayers = [
+            {
+                playerId: '8480843',
+                name: "Lukas Dostal",
+                team: "ANA",
+                position: 'G',
+                positionGroup: 'goalies',
+                headshot: 'https://assets.nhle.com/mugs/nhl/latest/8480843.png',
+                stats: {
+                    games: 134,
+                    goals: 0,
+                    assists: 0,
+                    points: 0,
+                    ppg: '0.00',
+                    gpg: '0.00',
+                    savePct: '0.903',
+                    gaa: '3.22',
+                    s2024_games: 54,
+                    s2024_goals: 0,
+                    s2024_assists: 0,
+                    s2024_points: 0,
+                    s2024_ppg: '0.00',
+                    s2024_gpg: '0.00',
+                    s2024_savePct: '0.903',
+                    s2024_gaa: '3.10',
+                    s2025_games: 16,
+                    s2025_goals: 0,
+                    s2025_assists: 0,
+                    s2025_points: 0,
+                    s2025_ppg: '0.00',
+                    s2025_gpg: '0.00',
+                    s2025_savePct: '0.904',
+                    s2025_gaa: '2.81',
+                    percentile: 96.28,
+                    isGoalie: true
+                },
+                locked: true
+            },
+            {
+                playerId: '8475462',
+                name: "Radko Gudas",
+                team: "ANA",
+                position: 'D',
+                positionGroup: 'defense',
+                headshot: 'https://assets.nhle.com/mugs/nhl/latest/8475462.png',
+                stats: {
+                    games: 836,
+                    goals: 40,
+                    assists: 160,
+                    points: 200,
+                    ppg: '0.24',
+                    gpg: '0.05',
+                    savePct: '',
+                    gaa: '0.00',
+                    s2024_games: 81,
+                    s2024_goals: 1,
+                    s2024_assists: 15,
+                    s2024_points: 16,
+                    s2024_ppg: '0.20',
+                    s2024_gpg: '0.01',
+                    s2024_savePct: '',
+                    s2024_gaa: '0.00',
+                    s2025_games: 10,
+                    s2025_goals: 1,
+                    s2025_assists: 2,
+                    s2025_points: 3,
+                    s2025_ppg: '0.30',
+                    s2025_gpg: '0.10',
+                    s2025_savePct: '',
+                    s2025_gaa: '0.00',
+                    percentile: 32.19,
+                    isGoalie: false
+                },
+                locked: true
+            },
+            {
+                playerId: '8480039',
+                name: "Martin Necas",
+                team: "COL",
+                position: 'C',
+                positionGroup: 'forwards',
+                headshot: 'https://assets.nhle.com/mugs/nhl/latest/8480039.png',
+                stats: {
+                    games: 458,
+                    goals: 134,
+                    assists: 212,
+                    points: 346,
+                    ppg: '0.76',
+                    gpg: '0.29',
+                    savePct: '',
+                    gaa: '0.00',
+                    s2024_games: 79,
+                    s2024_goals: 27,
+                    s2024_assists: 56,
+                    s2024_points: 83,
+                    s2024_ppg: '1.05',
+                    s2024_gpg: '0.34',
+                    s2024_savePct: '',
+                    s2024_gaa: '0.00',
+                    s2025_games: 20,
+                    s2025_goals: 13,
+                    s2025_assists: 15,
+                    s2025_points: 28,
+                    s2025_ppg: '1.40',
+                    s2025_gpg: '0.65',
+                    s2025_savePct: '',
+                    s2025_gaa: '0.00',
+                    percentile: 93.54,
+                    isGoalie: false
+                },
+                locked: true
+            },
+            {
+                playerId: '8476292',
+                name: "Ondrej Palat",
+                team: "NJD",
+                position: 'L',
+                positionGroup: 'forwards',
+                headshot: 'https://assets.nhle.com/mugs/nhl/latest/8476292.png',
+                stats: {
+                    games: 841,
+                    goals: 178,
+                    assists: 329,
+                    points: 507,
+                    ppg: '0.60',
+                    gpg: '0.21',
+                    savePct: '',
+                    gaa: '0.00',
+                    s2024_games: 77,
+                    s2024_goals: 15,
+                    s2024_assists: 13,
+                    s2024_points: 28,
+                    s2024_ppg: '0.36',
+                    s2024_gpg: '0.19',
+                    s2024_savePct: '',
+                    s2024_gaa: '0.00',
+                    s2025_games: 20,
+                    s2025_goals: 1,
+                    s2025_assists: 1,
+                    s2025_points: 2,
+                    s2025_ppg: '0.10',
+                    s2025_gpg: '0.05',
+                    s2025_savePct: '',
+                    s2025_gaa: '0.00',
+                    percentile: 25.64,
+                    isGoalie: false
+                },
+                locked: true
+            },
+            {
+                playerId: '8477956',
+                name: "David Pastrnak",
+                team: "BOS",
+                position: 'R',
+                positionGroup: 'forwards',
+                headshot: 'https://assets.nhle.com/mugs/nhl/latest/8477956.png',
+                stats: {
+                    games: 774,
+                    goals: 401,
+                    assists: 454,
+                    points: 855,
+                    ppg: '1.10',
+                    gpg: '0.52',
+                    savePct: '',
+                    gaa: '0.00',
+                    s2024_games: 82,
+                    s2024_goals: 43,
+                    s2024_assists: 63,
+                    s2024_points: 106,
+                    s2024_ppg: '1.29',
+                    s2024_gpg: '0.52',
+                    s2024_savePct: '',
+                    s2024_gaa: '0.00',
+                    s2025_games: 22,
+                    s2025_goals: 11,
+                    s2025_assists: 16,
+                    s2025_points: 27,
+                    s2025_ppg: '1.23',
+                    s2025_gpg: '0.50',
+                    s2025_savePct: '',
+                    s2025_gaa: '0.00',
+                    percentile: 99.32,
+                    isGoalie: false
+                },
+                locked: true
+            },
+            {
+                playerId: '8478401',
+                name: "Pavel Zacha",
+                team: "BOS",
+                position: 'C',
+                positionGroup: 'forwards',
+                headshot: 'https://assets.nhle.com/mugs/nhl/latest/8478401.png',
+                stats: {
+                    games: 646,
+                    goals: 130,
+                    assists: 227,
+                    points: 357,
+                    ppg: '0.55',
+                    gpg: '0.20',
+                    savePct: '',
+                    gaa: '0.00',
+                    s2024_games: 82,
+                    s2024_goals: 14,
+                    s2024_assists: 33,
+                    s2024_points: 47,
+                    s2024_ppg: '0.57',
+                    s2024_gpg: '0.17',
+                    s2024_savePct: '',
+                    s2024_gaa: '0.00',
+                    s2025_games: 22,
+                    s2025_goals: 5,
+                    s2025_assists: 12,
+                    s2025_points: 17,
+                    s2025_ppg: '0.77',
+                    s2025_gpg: '0.23',
+                    s2025_savePct: '',
+                    s2025_gaa: '0.00',
+                    percentile: 35.91,
+                    isGoalie: false
+                },
+                locked: true
+            }
+        ];
+        
+        // All eligible players for this country
+        const eligiblePlayers = [
+            {
+                playerId: '8477956',
+                name: "David Pastrnak",
+                team: "BOS",
+                position: 'R',
+                positionGroup: 'forwards',
+                headshot: 'https://assets.nhle.com/mugs/nhl/latest/8477956.png',
+                stats: {
+                    games: 774,
+                    goals: 401,
+                    assists: 454,
+                    points: 855,
+                    ppg: '1.10',
+                    gpg: '0.52',
+                    savePct: '',
+                    gaa: '0.00',
+                    s2024_games: 82,
+                    s2024_goals: 43,
+                    s2024_assists: 63,
+                    s2024_points: 106,
+                    s2024_ppg: '1.29',
+                    s2024_gpg: '0.52',
+                    s2024_savePct: '',
+                    s2024_gaa: '0.00',
+                    s2025_games: 22,
+                    s2025_goals: 11,
+                    s2025_assists: 16,
+                    s2025_points: 27,
+                    s2025_ppg: '1.23',
+                    s2025_gpg: '0.50',
+                    s2025_savePct: '',
+                    s2025_gaa: '0.00',
+                    percentile: 99.32,
+                    isGoalie: false
+                }
+            },
+            {
+                playerId: '8480843',
+                name: "Lukas Dostal",
+                team: "ANA",
+                position: 'G',
+                positionGroup: 'goalies',
+                headshot: 'https://assets.nhle.com/mugs/nhl/latest/8480843.png',
+                stats: {
+                    games: 134,
+                    goals: 0,
+                    assists: 0,
+                    points: 0,
+                    ppg: '0.00',
+                    gpg: '0.00',
+                    savePct: '0.903',
+                    gaa: '3.22',
+                    s2024_games: 54,
+                    s2024_goals: 0,
+                    s2024_assists: 0,
+                    s2024_points: 0,
+                    s2024_ppg: '0.00',
+                    s2024_gpg: '0.00',
+                    s2024_savePct: '0.903',
+                    s2024_gaa: '3.10',
+                    s2025_games: 16,
+                    s2025_goals: 0,
+                    s2025_assists: 0,
+                    s2025_points: 0,
+                    s2025_ppg: '0.00',
+                    s2025_gpg: '0.00',
+                    s2025_savePct: '0.904',
+                    s2025_gaa: '2.81',
+                    percentile: 96.28,
+                    isGoalie: true
+                }
+            },
+            {
+                playerId: '8478872',
+                name: "Karel Vejmelka",
+                team: "UTA",
+                position: 'G',
+                positionGroup: 'goalies',
+                headshot: 'https://assets.nhle.com/mugs/nhl/latest/8478872.png',
+                stats: {
+                    games: 209,
+                    goals: 0,
+                    assists: 0,
+                    points: 0,
+                    ppg: '0.00',
+                    gpg: '0.00',
+                    savePct: '0.899',
+                    gaa: '3.20',
+                    s2024_games: 58,
+                    s2024_goals: 0,
+                    s2024_assists: 0,
+                    s2024_points: 0,
+                    s2024_ppg: '0.00',
+                    s2024_gpg: '0.00',
+                    s2024_savePct: '0.904',
+                    s2024_gaa: '2.58',
+                    s2025_games: 15,
+                    s2025_goals: 0,
+                    s2025_assists: 0,
+                    s2025_points: 0,
+                    s2025_ppg: '0.00',
+                    s2025_gpg: '0.00',
+                    s2025_savePct: '0.883',
+                    s2025_gaa: '2.93',
+                    percentile: 94.03,
+                    isGoalie: true
+                }
+            },
+            {
+                playerId: '8480039',
+                name: "Martin Necas",
+                team: "COL",
+                position: 'C',
+                positionGroup: 'forwards',
+                headshot: 'https://assets.nhle.com/mugs/nhl/latest/8480039.png',
+                stats: {
+                    games: 458,
+                    goals: 134,
+                    assists: 212,
+                    points: 346,
+                    ppg: '0.76',
+                    gpg: '0.29',
+                    savePct: '',
+                    gaa: '0.00',
+                    s2024_games: 79,
+                    s2024_goals: 27,
+                    s2024_assists: 56,
+                    s2024_points: 83,
+                    s2024_ppg: '1.05',
+                    s2024_gpg: '0.34',
+                    s2024_savePct: '',
+                    s2024_gaa: '0.00',
+                    s2025_games: 20,
+                    s2025_goals: 13,
+                    s2025_assists: 15,
+                    s2025_points: 28,
+                    s2025_ppg: '1.40',
+                    s2025_gpg: '0.65',
+                    s2025_savePct: '',
+                    s2025_gaa: '0.00',
+                    percentile: 93.54,
+                    isGoalie: false
+                }
+            },
+            {
+                playerId: '8476881',
+                name: "Tomas Hertl",
+                team: "VGK",
+                position: 'C',
+                positionGroup: 'forwards',
+                headshot: 'https://assets.nhle.com/mugs/nhl/latest/8476881.png',
+                stats: {
+                    games: 806,
+                    goals: 258,
+                    assists: 303,
+                    points: 561,
+                    ppg: '0.70',
+                    gpg: '0.32',
+                    savePct: '',
+                    gaa: '0.00',
+                    s2024_games: 73,
+                    s2024_goals: 32,
+                    s2024_assists: 29,
+                    s2024_points: 61,
+                    s2024_ppg: '0.84',
+                    s2024_gpg: '0.44',
+                    s2024_savePct: '',
+                    s2024_gaa: '0.00',
+                    s2025_games: 20,
+                    s2025_goals: 8,
+                    s2025_assists: 9,
+                    s2025_points: 17,
+                    s2025_ppg: '0.85',
+                    s2025_gpg: '0.40',
+                    s2025_savePct: '',
+                    s2025_gaa: '0.00',
+                    percentile: 88.55,
+                    isGoalie: false
+                }
+            },
+            {
+                playerId: '8479425',
+                name: "Filip Hronek",
+                team: "VAN",
+                position: 'D',
+                positionGroup: 'defense',
+                headshot: 'https://assets.nhle.com/mugs/nhl/latest/8479425.png',
+                stats: {
+                    games: 469,
+                    goals: 40,
+                    assists: 207,
+                    points: 247,
+                    ppg: '0.53',
+                    gpg: '0.09',
+                    savePct: '',
+                    gaa: '0.00',
+                    s2024_games: 61,
+                    s2024_goals: 5,
+                    s2024_assists: 28,
+                    s2024_points: 33,
+                    s2024_ppg: '0.54',
+                    s2024_gpg: '0.08',
+                    s2024_savePct: '',
+                    s2024_gaa: '0.00',
+                    s2025_games: 22,
+                    s2025_goals: 1,
+                    s2025_assists: 11,
+                    s2025_points: 12,
+                    s2025_ppg: '0.55',
+                    s2025_gpg: '0.05',
+                    s2025_savePct: '',
+                    s2025_gaa: '0.00',
+                    percentile: 86.3,
+                    isGoalie: false
+                }
+            },
+            {
+                playerId: '8478435',
+                name: "Dan Vladar",
+                team: "PHI",
+                position: 'G',
+                positionGroup: 'goalies',
+                headshot: 'https://assets.nhle.com/mugs/nhl/latest/8478435.png',
+                stats: {
+                    games: 114,
+                    goals: 0,
+                    assists: 0,
+                    points: 0,
+                    ppg: '0.00',
+                    gpg: '0.00',
+                    savePct: '0.897',
+                    gaa: '2.93',
+                    s2024_games: 30,
+                    s2024_goals: 0,
+                    s2024_assists: 0,
+                    s2024_points: 0,
+                    s2024_ppg: '0.00',
+                    s2024_gpg: '0.00',
+                    s2024_savePct: '0.898',
+                    s2024_gaa: '2.80',
+                    s2025_games: 12,
+                    s2025_goals: 0,
+                    s2025_assists: 0,
+                    s2025_points: 0,
+                    s2025_ppg: '0.00',
+                    s2025_gpg: '0.00',
+                    s2025_savePct: '0.911',
+                    s2025_gaa: '2.37',
+                    percentile: 86.11,
+                    isGoalie: true
+                }
+            },
+            {
+                playerId: '8475852',
+                name: "Petr Mrazek",
+                team: "ANA",
+                position: 'G',
+                positionGroup: 'goalies',
+                headshot: 'https://assets.nhle.com/mugs/nhl/latest/8475852.png',
+                stats: {
+                    games: 431,
+                    goals: 0,
+                    assists: 0,
+                    points: 0,
+                    ppg: '0.00',
+                    gpg: '0.00',
+                    savePct: '0.906',
+                    gaa: '2.86',
+                    s2024_games: 38,
+                    s2024_goals: 0,
+                    s2024_assists: 0,
+                    s2024_points: 0,
+                    s2024_ppg: '0.00',
+                    s2024_gpg: '0.00',
+                    s2024_savePct: '0.891',
+                    s2024_gaa: '3.35',
+                    s2025_games: 5,
+                    s2025_goals: 0,
+                    s2025_assists: 0,
+                    s2025_points: 0,
+                    s2025_ppg: '0.00',
+                    s2025_gpg: '0.00',
+                    s2025_savePct: '0.886',
+                    s2025_gaa: '3.60',
+                    percentile: 85.42,
+                    isGoalie: true
+                }
+            },
+            {
+                playerId: '8482487',
+                name: "Jakub Dobes",
+                team: "MTL",
+                position: 'G',
+                positionGroup: 'goalies',
+                headshot: 'https://assets.nhle.com/mugs/nhl/latest/8482487.png',
+                stats: {
+                    games: 23,
+                    goals: 0,
+                    assists: 0,
+                    points: 0,
+                    ppg: '0.00',
+                    gpg: '0.00',
+                    savePct: '0.912',
+                    gaa: '2.58',
+                    s2024_games: 16,
+                    s2024_goals: 0,
+                    s2024_assists: 0,
+                    s2024_points: 0,
+                    s2024_ppg: '0.00',
+                    s2024_gpg: '0.00',
+                    s2024_savePct: '0.909',
+                    s2024_gaa: '2.74',
+                    s2025_games: 10,
+                    s2025_goals: 0,
+                    s2025_assists: 0,
+                    s2025_points: 0,
+                    s2025_ppg: '0.00',
+                    s2025_gpg: '0.00',
+                    s2025_savePct: '0.892',
+                    s2025_gaa: '2.96',
+                    percentile: 83.56,
+                    isGoalie: true
+                }
+            },
+            {
+                playerId: '8477970',
+                name: "Vitek Vanecek",
+                team: "UTA",
+                position: 'G',
+                positionGroup: 'goalies',
+                headshot: 'https://assets.nhle.com/mugs/nhl/latest/8477970.png',
+                stats: {
+                    games: 193,
+                    goals: 0,
+                    assists: 0,
+                    points: 0,
+                    ppg: '0.00',
+                    gpg: '0.00',
+                    savePct: '0.902',
+                    gaa: '2.83',
+                    s2024_games: 25,
+                    s2024_goals: 0,
+                    s2024_assists: 0,
+                    s2024_points: 0,
+                    s2024_ppg: '0.00',
+                    s2024_gpg: '0.00',
+                    s2024_savePct: '0.884',
+                    s2024_gaa: '3.62',
+                    s2025_games: 6,
+                    s2025_goals: 0,
+                    s2025_assists: 0,
+                    s2025_points: 0,
+                    s2025_ppg: '0.00',
+                    s2025_gpg: '0.00',
+                    s2025_savePct: '0.873',
+                    s2025_gaa: '2.85',
+                    percentile: 78.67,
+                    isGoalie: true
+                }
+            },
+            {
+                playerId: '8479496',
+                name: "David Rittich",
+                team: "NYI",
+                position: 'G',
+                positionGroup: 'goalies',
+                headshot: 'https://assets.nhle.com/mugs/nhl/latest/8479496.png',
+                stats: {
+                    games: 235,
+                    goals: 0,
+                    assists: 0,
+                    points: 0,
+                    ppg: '0.00',
+                    gpg: '0.00',
+                    savePct: '0.904',
+                    gaa: '2.80',
+                    s2024_games: 34,
+                    s2024_goals: 0,
+                    s2024_assists: 0,
+                    s2024_points: 0,
+                    s2024_ppg: '0.00',
+                    s2024_gpg: '0.00',
+                    s2024_savePct: '0.887',
+                    s2024_gaa: '2.84',
+                    s2025_games: 7,
+                    s2025_goals: 0,
+                    s2025_assists: 0,
+                    s2025_points: 0,
+                    s2025_ppg: '0.00',
+                    s2025_gpg: '0.00',
+                    s2025_savePct: '0.896',
+                    s2025_gaa: '2.99',
+                    percentile: 75.64,
+                    isGoalie: true
+                }
+            },
+            {
+                playerId: '8478848',
+                name: "Ales Stezka",
+                team: null,
+                position: 'G',
+                positionGroup: 'goalies',
+                headshot: 'https://assets.nhle.com/mugs/nhl/latest/8478848.png',
+                stats: {
+                    games: 1,
+                    goals: 0,
+                    assists: 0,
+                    points: 0,
+                    ppg: '0.00',
+                    gpg: '0.00',
+                    savePct: '0.870',
+                    gaa: '3.09',
+                    s2024_games: 1,
+                    s2024_goals: 0,
+                    s2024_assists: 0,
+                    s2024_points: 0,
+                    s2024_ppg: '0.00',
+                    s2024_gpg: '0.00',
+                    s2024_savePct: '0.870',
+                    s2024_gaa: '3.09',
+                    s2025_games: 0,
+                    s2025_goals: 0,
+                    s2025_assists: 0,
+                    s2025_points: 0,
+                    s2025_ppg: '0.00',
+                    s2025_gpg: '0.00',
+                    s2025_savePct: '0.000',
+                    s2025_gaa: '0.00',
+                    percentile: 63.01,
+                    isGoalie: true
+                }
+            },
+            {
+                playerId: '8480819',
+                name: "Jakub Skarek",
+                team: "SJS",
+                position: 'G',
+                positionGroup: 'goalies',
+                headshot: 'https://assets.nhle.com/mugs/nhl/latest/8480819.png',
+                stats: {
+                    games: 2,
+                    goals: 0,
+                    assists: 0,
+                    points: 0,
+                    ppg: '0.00',
+                    gpg: '0.00',
+                    savePct: '0.872',
+                    gaa: '3.94',
+                    s2024_games: 2,
+                    s2024_goals: 0,
+                    s2024_assists: 0,
+                    s2024_points: 0,
+                    s2024_ppg: '0.00',
+                    s2024_gpg: '0.00',
+                    s2024_savePct: '0.872',
+                    s2024_gaa: '3.94',
+                    s2025_games: 0,
+                    s2025_goals: 0,
+                    s2025_assists: 0,
+                    s2025_points: 0,
+                    s2025_ppg: '0.00',
+                    s2025_gpg: '0.00',
+                    s2025_savePct: '0.000',
+                    s2025_gaa: '0.00',
+                    percentile: 61.25,
+                    isGoalie: true
+                }
+            },
+            {
+                playerId: '8483460',
+                name: "David Jiricek",
+                team: "MIN",
+                position: 'D',
+                positionGroup: 'defense',
+                headshot: 'https://assets.nhle.com/mugs/nhl/latest/8483460.png',
+                stats: {
+                    games: 71,
+                    goals: 2,
+                    assists: 11,
+                    points: 13,
+                    ppg: '0.18',
+                    gpg: '0.03',
+                    savePct: '',
+                    gaa: '0.00',
+                    s2024_games: 12,
+                    s2024_goals: 1,
+                    s2024_assists: 2,
+                    s2024_points: 3,
+                    s2024_ppg: '0.25',
+                    s2024_gpg: '0.08',
+                    s2024_savePct: '',
+                    s2024_gaa: '0.00',
+                    s2025_games: 12,
+                    s2025_goals: 0,
+                    s2025_assists: 0,
+                    s2025_points: 0,
+                    s2025_ppg: '0.00',
+                    s2025_gpg: '0.00',
+                    s2025_savePct: '',
+                    s2025_gaa: '0.00',
+                    percentile: 54.7,
+                    isGoalie: false
+                }
+            },
+            {
+                playerId: '8480890',
+                name: "Jan Jenik",
+                team: "OTT",
+                position: 'C',
+                positionGroup: 'forwards',
+                headshot: 'https://assets.nhle.com/mugs/nhl/latest/8480890.png',
+                stats: {
+                    games: 24,
+                    goals: 4,
+                    assists: 2,
+                    points: 6,
+                    ppg: '0.25',
+                    gpg: '0.17',
+                    savePct: '',
+                    gaa: '0.00',
+                    s2024_games: 2,
+                    s2024_goals: 0,
+                    s2024_assists: 0,
+                    s2024_points: 0,
+                    s2024_ppg: '0.00',
+                    s2024_gpg: '0.00',
+                    s2024_savePct: '',
+                    s2024_gaa: '0.00',
+                    s2025_games: 0,
+                    s2025_goals: 0,
+                    s2025_assists: 0,
+                    s2025_points: 0,
+                    s2025_ppg: '0.00',
+                    s2025_gpg: '0.00',
+                    s2025_savePct: '',
+                    s2025_gaa: '0.00',
+                    percentile: 51.08,
+                    isGoalie: false
+                }
+            },
+            {
+                playerId: '8481712',
+                name: "Matej  Bl\u00fcmel",
+                team: "BOS",
+                position: 'R',
+                positionGroup: 'forwards',
+                headshot: 'https://assets.nhle.com/mugs/nhl/latest/8481712.png',
+                stats: {
+                    games: 13,
+                    goals: 2,
+                    assists: 0,
+                    points: 2,
+                    ppg: '0.15',
+                    gpg: '0.15',
+                    savePct: '',
+                    gaa: '0.00',
+                    s2024_games: 7,
+                    s2024_goals: 1,
+                    s2024_assists: 0,
+                    s2024_points: 1,
+                    s2024_ppg: '0.14',
+                    s2024_gpg: '0.14',
+                    s2024_savePct: '',
+                    s2024_gaa: '0.00',
+                    s2025_games: 2,
+                    s2025_goals: 0,
+                    s2025_assists: 0,
+                    s2025_points: 0,
+                    s2025_ppg: '0.00',
+                    s2025_gpg: '0.00',
+                    s2025_savePct: '',
+                    s2025_gaa: '0.00',
+                    percentile: 47.06,
+                    isGoalie: false
+                }
+            },
+            {
+                playerId: '8481206',
+                name: "John Ludvig",
+                team: null,
+                position: 'D',
+                positionGroup: 'defense',
+                headshot: 'https://assets.nhle.com/mugs/nhl/latest/8481206.png',
+                stats: {
+                    games: 41,
+                    goals: 3,
+                    assists: 4,
+                    points: 7,
+                    ppg: '0.17',
+                    gpg: '0.07',
+                    savePct: '',
+                    gaa: '0.00',
+                    s2024_games: 8,
+                    s2024_goals: 0,
+                    s2024_assists: 2,
+                    s2024_points: 2,
+                    s2024_ppg: '0.25',
+                    s2024_gpg: '0.00',
+                    s2024_savePct: '',
+                    s2024_gaa: '0.00',
+                    s2025_games: 0,
+                    s2025_goals: 0,
+                    s2025_assists: 0,
+                    s2025_points: 0,
+                    s2025_ppg: '0.00',
+                    s2025_gpg: '0.00',
+                    s2025_savePct: '',
+                    s2025_gaa: '0.00',
+                    percentile: 41.0,
+                    isGoalie: false
+                }
+            },
+            {
+                playerId: '8477944',
+                name: "Jakub Vrana",
+                team: null,
+                position: 'L',
+                positionGroup: 'forwards',
+                headshot: 'https://assets.nhle.com/mugs/nhl/latest/8477944.png',
+                stats: {
+                    games: 406,
+                    goals: 119,
+                    assists: 104,
+                    points: 223,
+                    ppg: '0.55',
+                    gpg: '0.29',
+                    savePct: '',
+                    gaa: '0.00',
+                    s2024_games: 39,
+                    s2024_goals: 9,
+                    s2024_assists: 5,
+                    s2024_points: 14,
+                    s2024_ppg: '0.36',
+                    s2024_gpg: '0.23',
+                    s2024_savePct: '',
+                    s2024_gaa: '0.00',
+                    s2025_games: 0,
+                    s2025_goals: 0,
+                    s2025_assists: 0,
+                    s2025_points: 0,
+                    s2025_ppg: '0.00',
+                    s2025_gpg: '0.00',
+                    s2025_savePct: '',
+                    s2025_gaa: '0.00',
+                    percentile: 39.33,
+                    isGoalie: false
+                }
+            },
+            {
+                playerId: '8483609',
+                name: "Adam Klapka",
+                team: "CGY",
+                position: 'R',
+                positionGroup: 'forwards',
+                headshot: 'https://assets.nhle.com/mugs/nhl/latest/8483609.png',
+                stats: {
+                    games: 54,
+                    goals: 9,
+                    assists: 6,
+                    points: 15,
+                    ppg: '0.28',
+                    gpg: '0.17',
+                    savePct: '',
+                    gaa: '0.00',
+                    s2024_games: 31,
+                    s2024_goals: 6,
+                    s2024_assists: 4,
+                    s2024_points: 10,
+                    s2024_ppg: '0.32',
+                    s2024_gpg: '0.19',
+                    s2024_savePct: '',
+                    s2024_gaa: '0.00',
+                    s2025_games: 21,
+                    s2025_goals: 2,
+                    s2025_assists: 3,
+                    s2025_points: 5,
+                    s2025_ppg: '0.24',
+                    s2025_gpg: '0.10',
+                    s2025_savePct: '',
+                    s2025_gaa: '0.00',
+                    percentile: 39.14,
+                    isGoalie: false
+                }
+            },
+            {
+                playerId: '8478401',
+                name: "Pavel Zacha",
+                team: "BOS",
+                position: 'C',
+                positionGroup: 'forwards',
+                headshot: 'https://assets.nhle.com/mugs/nhl/latest/8478401.png',
+                stats: {
+                    games: 646,
+                    goals: 130,
+                    assists: 227,
+                    points: 357,
+                    ppg: '0.55',
+                    gpg: '0.20',
+                    savePct: '',
+                    gaa: '0.00',
+                    s2024_games: 82,
+                    s2024_goals: 14,
+                    s2024_assists: 33,
+                    s2024_points: 47,
+                    s2024_ppg: '0.57',
+                    s2024_gpg: '0.17',
+                    s2024_savePct: '',
+                    s2024_gaa: '0.00',
+                    s2025_games: 22,
+                    s2025_goals: 5,
+                    s2025_assists: 12,
+                    s2025_points: 17,
+                    s2025_ppg: '0.77',
+                    s2025_gpg: '0.23',
+                    s2025_savePct: '',
+                    s2025_gaa: '0.00',
+                    percentile: 35.91,
+                    isGoalie: false
+                }
+            },
+            {
+                playerId: '8480078',
+                name: "Filip Chytil",
+                team: "VAN",
+                position: 'C',
+                positionGroup: 'forwards',
+                headshot: 'https://assets.nhle.com/mugs/nhl/latest/8480078.png',
+                stats: {
+                    games: 399,
+                    goals: 80,
+                    assists: 93,
+                    points: 173,
+                    ppg: '0.43',
+                    gpg: '0.20',
+                    savePct: '',
+                    gaa: '0.00',
+                    s2024_games: 56,
+                    s2024_goals: 13,
+                    s2024_assists: 13,
+                    s2024_points: 26,
+                    s2024_ppg: '0.46',
+                    s2024_gpg: '0.23',
+                    s2024_savePct: '',
+                    s2024_gaa: '0.00',
+                    s2025_games: 6,
+                    s2025_goals: 3,
+                    s2025_assists: 0,
+                    s2025_points: 3,
+                    s2025_ppg: '0.50',
+                    s2025_gpg: '0.50',
+                    s2025_savePct: '',
+                    s2025_gaa: '0.00',
+                    percentile: 35.62,
+                    isGoalie: false
+                }
+            },
+            {
+                playerId: '8475462',
+                name: "Radko Gudas",
+                team: "ANA",
+                position: 'D',
+                positionGroup: 'defense',
+                headshot: 'https://assets.nhle.com/mugs/nhl/latest/8475462.png',
+                stats: {
+                    games: 836,
+                    goals: 40,
+                    assists: 160,
+                    points: 200,
+                    ppg: '0.24',
+                    gpg: '0.05',
+                    savePct: '',
+                    gaa: '0.00',
+                    s2024_games: 81,
+                    s2024_goals: 1,
+                    s2024_assists: 15,
+                    s2024_points: 16,
+                    s2024_ppg: '0.20',
+                    s2024_gpg: '0.01',
+                    s2024_savePct: '',
+                    s2024_gaa: '0.00',
+                    s2025_games: 10,
+                    s2025_goals: 1,
+                    s2025_assists: 2,
+                    s2025_points: 3,
+                    s2025_ppg: '0.30',
+                    s2025_gpg: '0.10',
+                    s2025_savePct: '',
+                    s2025_gaa: '0.00',
+                    percentile: 32.19,
+                    isGoalie: false
+                }
+            },
+            {
+                playerId: '8480172',
+                name: "Jan Rutta",
+                team: null,
+                position: 'D',
+                positionGroup: 'defense',
+                headshot: 'https://assets.nhle.com/mugs/nhl/latest/8480172.png',
+                stats: {
+                    games: 417,
+                    goals: 23,
+                    assists: 75,
+                    points: 98,
+                    ppg: '0.24',
+                    gpg: '0.06',
+                    savePct: '',
+                    gaa: '0.00',
+                    s2024_games: 54,
+                    s2024_goals: 3,
+                    s2024_assists: 6,
+                    s2024_points: 9,
+                    s2024_ppg: '0.17',
+                    s2024_gpg: '0.06',
+                    s2024_savePct: '',
+                    s2024_gaa: '0.00',
+                    s2025_games: 0,
+                    s2025_goals: 0,
+                    s2025_assists: 0,
+                    s2025_points: 0,
+                    s2025_ppg: '0.00',
+                    s2025_gpg: '0.00',
+                    s2025_savePct: '',
+                    s2025_gaa: '0.00',
+                    percentile: 31.7,
+                    isGoalie: false
+                }
+            },
+            {
+                playerId: '8483468',
+                name: "Jiri Kulich",
+                team: "BUF",
+                position: 'C',
+                positionGroup: 'forwards',
+                headshot: 'https://assets.nhle.com/mugs/nhl/latest/8483468.png',
+                stats: {
+                    games: 75,
+                    goals: 18,
+                    assists: 11,
+                    points: 29,
+                    ppg: '0.39',
+                    gpg: '0.24',
+                    savePct: '',
+                    gaa: '0.00',
+                    s2024_games: 62,
+                    s2024_goals: 15,
+                    s2024_assists: 9,
+                    s2024_points: 24,
+                    s2024_ppg: '0.39',
+                    s2024_gpg: '0.24',
+                    s2024_savePct: '',
+                    s2024_gaa: '0.00',
+                    s2025_games: 12,
+                    s2025_goals: 3,
+                    s2025_assists: 2,
+                    s2025_points: 5,
+                    s2025_ppg: '0.42',
+                    s2025_gpg: '0.25',
+                    s2025_savePct: '',
+                    s2025_gaa: '0.00',
+                    percentile: 27.5,
+                    isGoalie: false
+                }
+            },
+            {
+                playerId: '8476292',
+                name: "Ondrej Palat",
+                team: "NJD",
+                position: 'L',
+                positionGroup: 'forwards',
+                headshot: 'https://assets.nhle.com/mugs/nhl/latest/8476292.png',
+                stats: {
+                    games: 841,
+                    goals: 178,
+                    assists: 329,
+                    points: 507,
+                    ppg: '0.60',
+                    gpg: '0.21',
+                    savePct: '',
+                    gaa: '0.00',
+                    s2024_games: 77,
+                    s2024_goals: 15,
+                    s2024_assists: 13,
+                    s2024_points: 28,
+                    s2024_ppg: '0.36',
+                    s2024_gpg: '0.19',
+                    s2024_savePct: '',
+                    s2024_gaa: '0.00',
+                    s2025_games: 20,
+                    s2025_goals: 1,
+                    s2025_assists: 1,
+                    s2025_points: 2,
+                    s2025_ppg: '0.10',
+                    s2025_gpg: '0.05',
+                    s2025_savePct: '',
+                    s2025_gaa: '0.00',
+                    percentile: 25.64,
+                    isGoalie: false
+                }
+            },
+            {
+                playerId: '8483930',
+                name: "Ivan Ivan",
+                team: "COL",
+                position: 'C',
+                positionGroup: 'forwards',
+                headshot: 'https://assets.nhle.com/mugs/nhl/latest/8483930.png',
+                stats: {
+                    games: 40,
+                    goals: 5,
+                    assists: 3,
+                    points: 8,
+                    ppg: '0.20',
+                    gpg: '0.12',
+                    savePct: '',
+                    gaa: '0.00',
+                    s2024_games: 40,
+                    s2024_goals: 5,
+                    s2024_assists: 3,
+                    s2024_points: 8,
+                    s2024_ppg: '0.20',
+                    s2024_gpg: '0.12',
+                    s2024_savePct: '',
+                    s2024_gaa: '0.00',
+                    s2025_games: 0,
+                    s2025_goals: 0,
+                    s2025_assists: 0,
+                    s2025_points: 0,
+                    s2025_ppg: '0.00',
+                    s2025_gpg: '0.00',
+                    s2025_savePct: '',
+                    s2025_gaa: '0.00',
+                    percentile: 12.72,
+                    isGoalie: false
+                }
+            },
+            {
+                playerId: '8480144',
+                name: "David Kampf",
+                team: "VAN",
+                position: 'C',
+                positionGroup: 'forwards',
+                headshot: 'https://assets.nhle.com/mugs/nhl/latest/8480144.png',
+                stats: {
+                    games: 536,
+                    goals: 48,
+                    assists: 95,
+                    points: 143,
+                    ppg: '0.27',
+                    gpg: '0.09',
+                    savePct: '',
+                    gaa: '0.00',
+                    s2024_games: 59,
+                    s2024_goals: 5,
+                    s2024_assists: 8,
+                    s2024_points: 13,
+                    s2024_ppg: '0.22',
+                    s2024_gpg: '0.08',
+                    s2024_savePct: '',
+                    s2024_gaa: '0.00',
+                    s2025_games: 2,
+                    s2025_goals: 0,
+                    s2025_assists: 0,
+                    s2025_points: 0,
+                    s2025_ppg: '0.00',
+                    s2025_gpg: '0.00',
+                    s2025_savePct: '',
+                    s2025_gaa: '0.00',
+                    percentile: 6.36,
+                    isGoalie: false
+                }
+            },
+            {
+                playerId: '8480880',
+                name: "Jakub Lauko",
+                team: null,
+                position: 'C',
+                positionGroup: 'forwards',
+                headshot: 'https://assets.nhle.com/mugs/nhl/latest/8480880.png',
+                stats: {
+                    games: 139,
+                    goals: 11,
+                    assists: 17,
+                    points: 28,
+                    ppg: '0.20',
+                    gpg: '0.08',
+                    savePct: '',
+                    gaa: '0.00',
+                    s2024_games: 56,
+                    s2024_goals: 5,
+                    s2024_assists: 6,
+                    s2024_points: 11,
+                    s2024_ppg: '0.20',
+                    s2024_gpg: '0.09',
+                    s2024_savePct: '',
+                    s2024_gaa: '0.00',
+                    s2025_games: 0,
+                    s2025_goals: 0,
+                    s2025_assists: 0,
+                    s2025_points: 0,
+                    s2025_ppg: '0.00',
+                    s2025_gpg: '0.00',
+                    s2025_savePct: '',
+                    s2025_gaa: '0.00',
+                    percentile: 4.5,
+                    isGoalie: false
+                }
+            },
+            {
+                playerId: '8477931',
+                name: "Tomas Nosek",
+                team: "FLA",
+                position: 'L',
+                positionGroup: 'forwards',
+                headshot: 'https://assets.nhle.com/mugs/nhl/latest/8477931.png',
+                stats: {
+                    games: 493,
+                    goals: 45,
+                    assists: 71,
+                    points: 116,
+                    ppg: '0.24',
+                    gpg: '0.09',
+                    savePct: '',
+                    gaa: '0.00',
+                    s2024_games: 59,
+                    s2024_goals: 1,
+                    s2024_assists: 8,
+                    s2024_points: 9,
+                    s2024_ppg: '0.15',
+                    s2024_gpg: '0.02',
+                    s2024_savePct: '',
+                    s2024_gaa: '0.00',
+                    s2025_games: 0,
+                    s2025_goals: 0,
+                    s2025_assists: 0,
+                    s2025_points: 0,
+                    s2025_ppg: '0.00',
+                    s2025_gpg: '0.00',
+                    s2025_savePct: '',
+                    s2025_gaa: '0.00',
+                    percentile: 4.31,
+                    isGoalie: false
+                }
+            },
+            {
+                playerId: '8476889',
+                name: "Radek Faksa",
+                team: "DAL",
+                position: 'C',
+                positionGroup: 'forwards',
+                headshot: 'https://assets.nhle.com/mugs/nhl/latest/8476889.png',
+                stats: {
+                    games: 724,
+                    goals: 95,
+                    assists: 124,
+                    points: 219,
+                    ppg: '0.30',
+                    gpg: '0.13',
+                    savePct: '',
+                    gaa: '0.00',
+                    s2024_games: 70,
+                    s2024_goals: 5,
+                    s2024_assists: 10,
+                    s2024_points: 15,
+                    s2024_ppg: '0.21',
+                    s2024_gpg: '0.07',
+                    s2024_savePct: '',
+                    s2024_gaa: '0.00',
+                    s2025_games: 20,
+                    s2025_goals: 1,
+                    s2025_assists: 7,
+                    s2025_points: 8,
+                    s2025_ppg: '0.40',
+                    s2025_gpg: '0.05',
+                    s2025_savePct: '',
+                    s2025_gaa: '0.00',
+                    percentile: 2.94,
+                    isGoalie: false
+                }
+            }
+        ];
+        
+        const MAX_ROSTER_SIZE = 25;
+        const MAX_GOALIES = 3;
+        const MAX_FORWARDS = 14;
+        const MAX_DEFENSE = 8;
+        let selectedPlayers = [...preSelectedPlayers];
+        let currentPositionFilter = 'all';
+        let currentSortBy = 'percentile';
+        let currentSeason = 'career';  // 'career', '2024-2025', or '2025-2026'
+        
+        function getPercentileBarHTML(percentile) {
+            if (percentile === 0 || percentile === 0.0) {
+                return '<div class="percentile-bar"><div class="percentile-bar-fill low" style="width: 0%"></div></div>';
+            }
+            
+            let colorClass = 'low';
+            if (percentile >= 67) {
+                colorClass = 'high';
+            } else if (percentile >= 33) {
+                colorClass = 'medium';
+            }
+            
+            return `<div class="percentile-bar"><div class="percentile-bar-fill ${colorClass}" style="width: ${percentile}%"></div></div>`;
+        }
+        
+        function getStatsBySeason(stats, season) {
+            // Returns the appropriate stats object based on selected season
+            if (season === '2024-2025') {
+                return {
+                    games: stats.s2024_games,
+                    goals: stats.s2024_goals,
+                    assists: stats.s2024_assists,
+                    points: stats.s2024_points,
+                    ppg: stats.s2024_ppg,
+                    gpg: stats.s2024_gpg,
+                    savePct: stats.s2024_savePct,
+                    gaa: stats.s2024_gaa,
+                    percentile: stats.percentile,
+                    isGoalie: stats.isGoalie
+                };
+            } else if (season === '2025-2026') {
+                return {
+                    games: stats.s2025_games,
+                    goals: stats.s2025_goals,
+                    assists: stats.s2025_assists,
+                    points: stats.s2025_points,
+                    ppg: stats.s2025_ppg,
+                    gpg: stats.s2025_gpg,
+                    savePct: stats.s2025_savePct,
+                    gaa: stats.s2025_gaa,
+                    percentile: stats.percentile,
+                    isGoalie: stats.isGoalie
+                };
+            } else {
+                // career stats
+                return {
+                    games: stats.games,
+                    goals: stats.goals,
+                    assists: stats.assists,
+                    points: stats.points,
+                    ppg: stats.ppg,
+                    gpg: stats.gpg,
+                    savePct: stats.savePct,
+                    gaa: stats.gaa,
+                    percentile: stats.percentile,
+                    isGoalie: stats.isGoalie
+                };
+            }
+        }
+        
+        // Widget team themes
+        const widgetTeams = {
+            CAN: { primary: '#E41937', secondary: '#000000', accent: '#FFFFFF', name: 'CANADA', bgtext: 'CANADA' },
+            USA: { primary: '#002868', secondary: '#BF0A30', accent: '#FFFFFF', name: 'USA', bgtext: 'USA' },
+            SWE: { primary: '#FECC00', secondary: '#006AA7', accent: '#006AA7', name: 'SWEDEN', bgtext: 'SWEDEN' }, 
+            FIN: { primary: '#002F6C', secondary: '#FFFFFF', accent: '#FFFFFF', name: 'FINLAND', bgtext: 'SUOMI' }, 
+            CZE: { primary: '#D7141A', secondary: '#11457E', accent: '#FFFFFF', name: 'CZECHIA', bgtext: 'CZECHIA' },
+            GER: { primary: '#FFCE00', secondary: '#000000', accent: '#000000', name: 'GERMANY', bgtext: 'GERMANY' }
+        };
+        
+        function getWidgetTeamCode(country) {
+            const mapping = {
+                'Canada': 'CAN',
+                'USA': 'USA',
+                'Finland': 'FIN',
+                'Sweden': 'SWE',
+                'Czechia': 'CZE',
+                'Germany': 'GER'
+            };
+            return mapping[country] || 'CAN';
+        }
+        
+        function formatPlayerName(fullName) {
+            // Convert "FirstName LastName" to "F. LastName"
+            const parts = fullName.trim().split(' ');
+            if (parts.length < 2) return fullName;
+            const firstName = parts[0];
+            const lastName = parts.slice(1).join(' ');
+            return `${firstName.charAt(0)}. ${lastName}`;
+        }
+        
+        function createPlayerCard(player) {
+            const isLock = player.isLock ? 'lock' : 'my-pick';
+            const lockIcon = player.isLock ? '<div class="lock-icon"><i class="fas fa-lock"></i></div>' : '';
+            const imgUrl = player.photo || 'https://via.placeholder.com/150?text=Player';
+            const clickable = !player.isLock ? 'style="cursor: pointer;"' : '';
+
+            return `
+                <div class="player-card ${isLock}" data-player-id="${player.playerId || ''}" ${clickable}>
+                    <div class="player-img-container">
+                        <img src="${imgUrl}" class="player-img" alt="${player.name}" onerror="this.src='https://via.placeholder.com/150?text=N/A'">
+                        ${lockIcon}
+                    </div>
+                    <div class="player-name">${player.name}</div>
+                    <div class="player-meta">${player.team}</div>
+                </div>
+            `;
+        }
+        
+        function renderWidgetRoster(teamCode, rosterData) {
+            const theme = widgetTeams[teamCode] || widgetTeams['CAN'];
+            const root = document.documentElement;
+
+            // Update CSS Variables
+            root.style.setProperty('--roster-primary', theme.primary);
+            root.style.setProperty('--roster-secondary', theme.secondary);
+            
+            // Background Watermark
+            document.getElementById('watermark-text').textContent = theme.bgtext;
+
+            // Title
+            document.getElementById('team-title').textContent = `TEAM ${theme.name}`;
+            
+            // Logic for light/dark text on banners
+            if(['SWE', 'GER'].includes(teamCode)) {
+                root.style.setProperty('--roster-accent', '#000000'); 
+                document.querySelectorAll('.section-banner').forEach(el => el.style.color = '#000');
+            } else {
+                root.style.setProperty('--roster-accent', '#FFFFFF');
+                document.querySelectorAll('.section-banner').forEach(el => el.style.color = '#fff');
+            }
+
+            // Render Grids
+            const forwardsHTML = [];
+            let fwdIndex = 0;
+            for (let i = 0; i < 4; i++) {
+                let lineHTML = `<div class="line-row">`;
+                for (let j = 0; j < 3; j++) {
+                    if (fwdIndex < rosterData.forwards.length) {
+                        lineHTML += createPlayerCard(rosterData.forwards[fwdIndex]);
+                        fwdIndex++;
+                    }
+                }
+                lineHTML += `</div>`;
+                forwardsHTML.push(lineHTML);
+            }
+            
+            let spareRowHTML = `<div class="line-row spares-row">`;
+            while (fwdIndex < rosterData.forwards.length) {
+                spareRowHTML += createPlayerCard(rosterData.forwards[fwdIndex]);
+                fwdIndex++;
+            }
+            spareRowHTML += `</div>`;
+
+            document.getElementById('forwards-grid').innerHTML = forwardsHTML.join('');
+            document.getElementById('spares-grid').innerHTML = spareRowHTML;
+
+            let defHTML = '';
+            let defIndex = 0;
+            for (let i = 0; i < 4; i++) {
+                defHTML += `<div class="line-row">`;
+                for (let j = 0; j < 2; j++) { 
+                    if (defIndex < rosterData.defense.length) {
+                        defHTML += createPlayerCard(rosterData.defense[defIndex]);
+                        defIndex++;
+                    }
+                }
+                defHTML += `</div>`;
+            }
+            document.getElementById('defense-grid').innerHTML = defHTML;
+
+            let goalHTML = `<div class="line-row">`;
+            rosterData.goalies.forEach(g => {
+                goalHTML += createPlayerCard(g);
+            });
+            goalHTML += `</div>`;
+            document.getElementById('goalies-grid').innerHTML = goalHTML;
+            
+            // Add click handlers to all player cards in the widget
+            document.querySelectorAll('#roster-widget-container .player-card').forEach(card => {
+                const playerId = card.dataset.playerId;
+                if (playerId && !card.classList.contains('lock')) {
+                    card.addEventListener('click', () => {
+                        removePlayer(playerId);
+                    });
+                }
+            });
+        }
+        
+        function renderSummary() {
+            // Sort selected players: locked first, then by percentile (highest first) within each position group
+            const sortedPlayers = [...selectedPlayers].sort((a, b) => {
+                // Locked players come first
+                if (a.locked && !b.locked) return -1;
+                if (!a.locked && b.locked) return 1;
+                // Then sort by percentile
+                return (b.stats.percentile || 0) - (a.stats.percentile || 0);
+            });
+            
+            // Group players by position
+            const forwards = sortedPlayers.filter(p => p.positionGroup === 'forwards');
+            const defense = sortedPlayers.filter(p => p.positionGroup === 'defense');
+            const goalies = sortedPlayers.filter(p => p.positionGroup === 'goalies');
+            
+            // Convert to widget format
+            const rosterData = {
+                forwards: forwards.map(p => ({
+                    playerId: p.playerId,
+                    name: formatPlayerName(p.name),
+                    team: p.team,
+                    photo: p.headshot,
+                    isLock: p.locked || false
+                })),
+                defense: defense.map(p => ({
+                    playerId: p.playerId,
+                    name: formatPlayerName(p.name),
+                    team: p.team,
+                    photo: p.headshot,
+                    isLock: p.locked || false
+                })),
+                goalies: goalies.map(p => ({
+                    playerId: p.playerId,
+                    name: formatPlayerName(p.name),
+                    team: p.team,
+                    photo: p.headshot,
+                    isLock: p.locked || false
+                }))
+            };
+            
+            // Render the widget
+            const teamCode = getWidgetTeamCode('Czechia');
+            renderWidgetRoster(teamCode, rosterData);
+        }
+        
+        function renderAvailablePlayers() {
+            const grid = document.getElementById('available-players-grid');
+            grid.innerHTML = '';
+            
+            const selectedIds = new Set(selectedPlayers.map(p => p.playerId));
+            
+            // Count current position groups
+            const forwards = selectedPlayers.filter(p => p.positionGroup === 'forwards');
+            const defense = selectedPlayers.filter(p => p.positionGroup === 'defense');
+            const goalies = selectedPlayers.filter(p => p.positionGroup === 'goalies');
+            
+            // Filter players by position
+            let filteredPlayers = eligiblePlayers;
+            if (currentPositionFilter !== 'all') {
+                filteredPlayers = eligiblePlayers.filter(p => p.positionGroup === currentPositionFilter);
+            }
+            
+            // Sort players
+            const sortedPlayers = [...filteredPlayers].sort((a, b) => {
+                const aStats = getStatsBySeason(a.stats, currentSeason);
+                const bStats = getStatsBySeason(b.stats, currentSeason);
+                
+                switch(currentSortBy) {
+                    case 'percentile':
+                        return (bStats.percentile || 0) - (aStats.percentile || 0);
+                    case 'goals':
+                        return (bStats.goals || 0) - (aStats.goals || 0);
+                    case 'points':
+                        return (bStats.points || 0) - (aStats.points || 0);
+                    case 'ppg':
+                        return parseFloat(bStats.ppg || 0) - parseFloat(aStats.ppg || 0);
+                    case 'savePct':
+                        // Only sort goalies, put non-goalies at end
+                        if (!aStats.isGoalie && !bStats.isGoalie) return 0;
+                        if (!aStats.isGoalie) return 1;
+                        if (!bStats.isGoalie) return -1;
+                        return parseFloat(bStats.savePct || 0) - parseFloat(aStats.savePct || 0);
+                    case 'gaa':
+                        // Only sort goalies, put non-goalies at end, lower GAA is better
+                        if (!aStats.isGoalie && !bStats.isGoalie) return 0;
+                        if (!aStats.isGoalie) return 1;
+                        if (!bStats.isGoalie) return -1;
+                        return parseFloat(aStats.gaa || 999) - parseFloat(bStats.gaa || 999);
+                    default:
+                        return 0;
+                }
+            });
+            
+            sortedPlayers.forEach(player => {
+                const isSelected = selectedIds.has(player.playerId);
+                
+                // Check if this position is at capacity
+                let isDisabled = false;
+                if (!isSelected) {
+                    if (player.positionGroup === 'goalies' && goalies.length >= MAX_GOALIES) {
+                        isDisabled = true;
+                    } else if (player.positionGroup === 'forwards' && forwards.length >= MAX_FORWARDS) {
+                        isDisabled = true;
+                    } else if (player.positionGroup === 'defense' && defense.length >= MAX_DEFENSE) {
+                        isDisabled = true;
+                    } else if (selectedPlayers.length >= MAX_ROSTER_SIZE) {
+                        isDisabled = true;
+                    }
+                }
+                
+                const card = document.createElement('div');
+                card.className = `available-player-card ${isSelected ? 'selected' : ''} ${isDisabled ? 'disabled' : ''}`;
+                card.dataset.playerId = player.playerId;
+                
+                const stats = getStatsBySeason(player.stats, currentSeason);
+                let statsHTML;
+                if (stats.isGoalie) {
+                    statsHTML = `
+                        <div class="stat-item">
+                            <div class="stat-label">GP</div>
+                            <div class="stat-value">${stats.games}</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-label">SV%</div>
+                            <div class="stat-value">${stats.savePct}</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-label">GAA</div>
+                            <div class="stat-value">${stats.gaa || '-.--'}</div>
+                        </div>
+                    `;
+                } else {
+                    statsHTML = `
+                        <div class="stat-item">
+                            <div class="stat-label">GP</div>
+                            <div class="stat-value">${stats.games}</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-label">G</div>
+                            <div class="stat-value">${stats.goals}</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-label">PTS</div>
+                            <div class="stat-value">${stats.points}</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-label">P/GP</div>
+                            <div class="stat-value">${stats.ppg}</div>
+                        </div>
+                    `;
+                }
+                
+                card.innerHTML = `
+                    <div class="player-card-header">
+                        <img src="${player.headshot}" alt="${player.name}" class="player-card-headshot"
+                             onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22%3E%3Crect fill=%22%23111827%22 width=%22100%22 height=%22100%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 text-anchor=%22middle%22 dy=%22.3em%22 fill=%22%239CA3AF%22 font-size=%2240%22%3E?%3C/text%3E%3C/svg%3E'">
+                        <div class="player-card-info">
+                            <div class="player-card-name">${player.name}</div>
+                            <div class="player-card-position">${player.position}</div>
+                            <div class="player-card-team">${player.team}</div>
+                        </div>
+                    </div>
+                    <div class="player-card-stats">
+                        ${statsHTML}
+                    </div>
+                    ${getPercentileBarHTML(stats.percentile)}
+                `;
+                
+                if (!isDisabled) {
+                    card.addEventListener('click', () => {
+                        if (isSelected) {
+                            removePlayer(player.playerId);
+                        } else {
+                            addPlayer(player);
+                        }
+                    });
+                }
+                
+                grid.appendChild(card);
+            });
+        }
+        
+        function addPlayer(player) {
+            if (selectedPlayers.length >= MAX_ROSTER_SIZE) return;
+            if (selectedPlayers.find(p => p.playerId === player.playerId)) return;
+            
+            // Check position-specific limits
+            const forwards = selectedPlayers.filter(p => p.positionGroup === 'forwards');
+            const defense = selectedPlayers.filter(p => p.positionGroup === 'defense');
+            const goalies = selectedPlayers.filter(p => p.positionGroup === 'goalies');
+            
+            if (player.positionGroup === 'goalies' && goalies.length >= MAX_GOALIES) {
+                alert(`Maximum of ${MAX_GOALIES} goalies allowed on roster.`);
+                return;
+            }
+            
+            if (player.positionGroup === 'forwards' && forwards.length >= MAX_FORWARDS) {
+                alert(`Maximum of ${MAX_FORWARDS} forwards allowed on roster.`);
+                return;
+            }
+            
+            if (player.positionGroup === 'defense' && defense.length >= MAX_DEFENSE) {
+                alert(`Maximum of ${MAX_DEFENSE} defense allowed on roster.`);
+                return;
+            }
+            
+            selectedPlayers.push(player);
+            renderSummary();
+            renderAvailablePlayers();
+            updateURL();
+        }
+        
+        function removePlayer(playerId) {
+            const player = selectedPlayers.find(p => p.playerId === playerId);
+            if (player && player.locked) return; // Can't remove locked players
+            
+            selectedPlayers = selectedPlayers.filter(p => p.playerId !== playerId);
+            renderSummary();
+            renderAvailablePlayers();
+            updateURL();
+        }
+        
+        function updateURL() {
+            const additionalIds = selectedPlayers
+                .filter(p => !p.locked)
+                .map(p => p.playerId)
+                .join(',');
+            
+            const url = new URL(window.location);
+            if (additionalIds) {
+                url.searchParams.set('players', additionalIds);
+            } else {
+                url.searchParams.delete('players');
+            }
+            window.history.replaceState({}, '', url);
+        }
+        
+        function loadFromURL() {
+            const params = new URLSearchParams(window.location.search);
+            const playerIds = params.get('players');
+            
+            if (playerIds) {
+                const ids = playerIds.split(',');
+                ids.forEach(id => {
+                    const player = eligiblePlayers.find(p => p.playerId === id);
+                    if (player && !selectedPlayers.find(p => p.playerId === id)) {
+                        selectedPlayers.push(player);
+                    }
+                });
+            }
+        }
+        
+        async function generateRosterImage() {
+            const widget = document.getElementById('roster-widget-container');
+            const widgetContainer = document.querySelector('.widget-container');
+            
+            // Store original styles
+            const originalWidgetContainerWidth = widgetContainer.style.width;
+            const originalWidgetContainerMaxWidth = widgetContainer.style.maxWidth;
+            const originalWidgetWidth = widget.style.width;
+            const originalWidgetMaxWidth = widget.style.maxWidth;
+            
+            // Force desktop dimensions for capture (800px width)
+            widgetContainer.style.width = '800px';
+            widgetContainer.style.maxWidth = '800px';
+            widget.style.width = '800px';
+            widget.style.maxWidth = '800px';
+            
+            // Wait for layout to settle
+            await new Promise(resolve => setTimeout(resolve, 100));
+            
+            // Swap NHL image URLs to local ones temporarily
+            const images = widget.querySelectorAll('img');
+            const originalSrcs = [];
+            
+            // Load no-mugshot list
+            let noMugshotPlayers = [];
+            try {
+                const response = await fetch('../images/mugs/no_mugshot_players.json');
+                if (response.ok) {
+                    noMugshotPlayers = await response.json();
+                    console.log('Loaded no-mugshot list:', noMugshotPlayers.length, 'players');
+                }
+            } catch (e) {
+                console.log('Could not load no_mugshot_players.json:', e);
+            }
+            
+            // Swap image sources
+            images.forEach((img, index) => {
+                originalSrcs[index] = img.src;
+                
+                // Check if this is a player headshot from NHL
+                if (img.src.includes('assets.nhle.com/mugs')) {
+                    const match = img.src.match(/(\d+)\.png/);
+                    if (match) {
+                        const playerId = match[1];
+                        // Check if player has no mugshot (compare as strings)
+                        if (noMugshotPlayers.includes(String(playerId))) {
+                            img.src = '../images/mugs/default-skater.png';
+                        } else {
+                            img.src = '../images/mugs/' + playerId + '.png';
+                        }
+                    }
+                }
+            });
+            
+            // Wait for all images to load or error out
+            const imagePromises = Array.from(images).map((img, idx) => {
+                return new Promise((resolve) => {
+                    if (img.complete) {
+                        resolve();
+                    } else {
+                        const onLoad = () => {
+                            img.removeEventListener('load', onLoad);
+                            img.removeEventListener('error', onError);
+                            resolve();
+                        };
+                        const onError = (e) => {
+                            img.removeEventListener('load', onLoad);
+                            img.removeEventListener('error', onError);
+                            console.log('Image error at index', idx, ':', img.src);
+                            // If image fails to load, use default and wait for it to load
+                            if (img.src.includes('/mugs/') && !img.src.includes('default-skater')) {
+                                img.src = '../images/mugs/default-skater.png';
+                                // Wait for default image to load
+                                img.onload = () => {
+                                    img.onload = null;
+                                    img.onerror = null;
+                                    console.log('Default loaded for index', idx);
+                                    resolve();
+                                };
+                                img.onerror = () => {
+                                    console.error('Default failed for index', idx);
+                                    img.onload = null;
+                                    img.onerror = null;
+                                    resolve(); // Give up if even default fails
+                                };
+                            } else {
+                                resolve();
+                            }
+                        };
+                        img.addEventListener('load', onLoad);
+                        img.addEventListener('error', onError);
+                    }
+                });
+            });
+            
+            console.log('Waiting for', imagePromises.length, 'images to load...');
+            await Promise.all(imagePromises);
+            console.log('All images ready, converting to data URLs...');
+            
+            // Convert all images to data URLs to avoid CORS issues during capture
+            const dataUrlPromises = Array.from(images).map(img => {
+                return new Promise((resolve) => {
+                    if (!img.src || img.src.startsWith('data:')) {
+                        resolve();
+                        return;
+                    }
+                    
+                    const canvas = document.createElement('canvas');
+                    canvas.width = img.naturalWidth || img.width;
+                    canvas.height = img.naturalHeight || img.height;
+                    const ctx = canvas.getContext('2d');
+                    
+                    try {
+                        ctx.drawImage(img, 0, 0);
+                        img.src = canvas.toDataURL('image/png');
+                        resolve();
+                    } catch (e) {
+                        console.warn('Could not convert image to data URL:', img.src, e);
+                        resolve(); // Continue anyway
+                    }
+                });
+            });
+            
+            await Promise.all(dataUrlPromises);
+            console.log('Images converted to data URLs, capturing...');
+            
+            // Wait a bit for rendering
+            await new Promise(resolve => setTimeout(resolve, 100));
+            
+            // Capture the widget
+            const canvas = await html2canvas(widget, {
+                scale: 2,
+                useCORS: true,
+                backgroundColor: null
+            });
+            
+            // Restore original image sources
+            images.forEach((img, index) => {
+                img.src = originalSrcs[index];
+            });
+            
+            // Restore original widget dimensions
+            widgetContainer.style.width = originalWidgetContainerWidth;
+            widgetContainer.style.maxWidth = originalWidgetContainerMaxWidth;
+            widget.style.width = originalWidgetWidth;
+            widget.style.maxWidth = originalWidgetMaxWidth;
+            
+            return canvas;
+        }
+
+        function fallbackCopyURL(url) {
+            navigator.clipboard.writeText(url).then(() => {
+                alert('Link copied to clipboard!');
+            }).catch(err => {
+                console.error('Failed to copy:', err);
+            });
+        }
+
+        // Share button
+        document.getElementById('share-btn').addEventListener('click', async () => {
+            const btn = document.getElementById('share-btn');
+            const originalText = btn.innerHTML;
+            const url = window.location.href;
+            
+            try {
+                btn.innerHTML = '⏳ Generating...';
+                btn.disabled = true;
+                
+                // Generate the image
+                const canvas = await generateRosterImage();
+                
+                canvas.toBlob(async (blob) => {
+                    const file = new File([blob], 'czechia-olympics-2026.png', { type: 'image/png' });
+                    
+                    if (navigator.share && navigator.canShare && navigator.canShare({ files: [file] })) {
+                        try {
+                            await navigator.share({
+                                title: 'Czechia - 2026 Olympics Roster',
+                                text: 'Check out my Czechia Olympic roster for 2026!',
+                                files: [file],
+                                url: url
+                            });
+                            btn.innerHTML = '✓ Shared!';
+                        } catch (err) {
+                            if (err.name !== 'AbortError') {
+                                console.error('Share failed:', err);
+                                fallbackCopyURL(url);
+                            }
+                        }
+                    } else {
+                        // Fallback to just sharing URL or copying
+                        if (navigator.share) {
+                             try {
+                                await navigator.share({
+                                    title: 'Czechia - 2026 Olympics Roster',
+                                    text: 'Check out my Czechia Olympic roster for 2026!',
+                                    url: url
+                                });
+                            } catch (err) {
+                                if (err.name !== 'AbortError') {
+                                    fallbackCopyURL(url);
+                                }
+                            }
+                        } else {
+                            fallbackCopyURL(url);
+                        }
+                    }
+                    
+                    btn.disabled = false;
+                    setTimeout(() => {
+                        btn.innerHTML = originalText;
+                    }, 2000);
+                }, 'image/png');
+                
+            } catch (error) {
+                console.error('Failed to generate share image:', error);
+                fallbackCopyURL(url);
+                btn.innerHTML = originalText;
+                btn.disabled = false;
+            }
+        });
+        
+        // Download image button
+        document.getElementById('download-btn').addEventListener('click', async () => {
+            const btn = document.getElementById('download-btn');
+            const originalText = btn.innerHTML;
+            
+            try {
+                // Show loading state
+                btn.innerHTML = '⏳ Generating...';
+                btn.disabled = true;
+                
+                const canvas = await generateRosterImage();
+                
+                // Create download link
+                const link = document.createElement('a');
+                link.download = `czechia-olympics-2026.png`;
+                link.href = canvas.toDataURL();
+                link.click();
+                
+                // Show success feedback
+                btn.innerHTML = '✓ Downloaded!';
+                btn.disabled = false;
+                
+                setTimeout(() => {
+                    btn.innerHTML = originalText;
+                }, 2000);
+            } catch (error) {
+                console.error('Failed to generate image:', error);
+                alert('Failed to generate image. Please try again.');
+                
+                btn.innerHTML = originalText;
+                btn.disabled = false;
+            }
+        });
+        
+        // Initialize
+        loadFromURL();
+        renderSummary();
+        renderAvailablePlayers();
+        
+        // Add filter and sort event listeners
+        document.getElementById('season-select').addEventListener('change', (e) => {
+            currentSeason = e.target.value;
+            renderAvailablePlayers();
+        });
+        
+        document.getElementById('position-filter').addEventListener('change', (e) => {
+            currentPositionFilter = e.target.value;
+            renderAvailablePlayers();
+        });
+        
+        document.getElementById('sort-by').addEventListener('change', (e) => {
+            currentSortBy = e.target.value;
+            renderAvailablePlayers();
+        });
+    </script>
+</body>
+</html>
