@@ -250,6 +250,24 @@
             box-shadow: 0 0 5px var(--roster-gold);
         }
         
+        .player-card.pulse-green .player-img-container {
+            animation: pulse-green 1.5s infinite;
+            border-color: #22C55E !important;
+            box-shadow: 0 0 15px #22C55E !important;
+        }
+        
+        @keyframes pulse-green {
+            0% {
+                box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.7);
+            }
+            70% {
+                box-shadow: 0 0 0 10px rgba(34, 197, 94, 0);
+            }
+            100% {
+                box-shadow: 0 0 0 0 rgba(34, 197, 94, 0);
+            }
+        }
+        
         .lock-icon {
             position: absolute;
             bottom: 0;
@@ -774,7 +792,8 @@
                     </div>
                 </div>
                 <p class="summary-subtitle">
-                    🔒 = Pre-announced players (locked)
+                    🔒 = Pre-announced players (locked).
+                    Click on 2 players to swap their order.
                 </p>
                 <div class="button-container">
                     <button id="download-btn" class="download-btn">📸 Download Summary Image</button>
@@ -1028,6 +1047,7 @@
         let currentPositionFilter = 'all';
         let currentSortBy = 'percentile';
         let currentSeason = 'career';  // 'career', '2024-2025', or '2025-2026'
+        let swapSourceId = null;
         
         function getPercentileBarHTML(percentile) {
             if (percentile === 0 || percentile === 0.0) {
@@ -1136,10 +1156,11 @@
             const isLock = player.isLock ? 'lock' : 'my-pick';
             const lockIcon = player.isLock ? '<div class="lock-icon"><i class="fas fa-lock"></i></div>' : '';
             const imgUrl = player.photo || 'https://via.placeholder.com/150?text=Player';
-            const clickable = !player.isLock ? 'style="cursor: pointer;"' : '';
+            const clickable = 'style="cursor: pointer;"'; // Always clickable for swap
+            const pulseClass = (swapSourceId && swapSourceId === player.playerId) ? 'pulse-green' : '';
 
             return `
-                <div class="player-card ${isLock}" data-player-id="${player.playerId || ''}" ${clickable}>
+                <div class="player-card ${isLock} ${pulseClass}" data-player-id="${player.playerId || ''}" ${clickable}>
                     <div class="player-img-container">
                         <img src="${imgUrl}" class="player-img" alt="${player.name}" onerror="this.src='https://via.placeholder.com/150?text=N/A'">
                         ${lockIcon}
@@ -1223,28 +1244,50 @@
             // Add click handlers to all player cards in the widget
             document.querySelectorAll('#roster-widget-container .player-card').forEach(card => {
                 const playerId = card.dataset.playerId;
-                if (playerId && !card.classList.contains('lock')) {
+                if (playerId) {
                     card.addEventListener('click', () => {
-                        removePlayer(playerId);
+                        handlePlayerClick(playerId);
                     });
                 }
             });
         }
         
+        function handlePlayerClick(playerId) {
+            if (!swapSourceId) {
+                // Select first player for swap
+                swapSourceId = playerId;
+                renderSummary(); // Re-render to show pulse animation
+            } else if (swapSourceId === playerId) {
+                // Deselect if clicking same player
+                swapSourceId = null;
+                renderSummary();
+            } else {
+                // Swap players
+                const idx1 = selectedPlayers.findIndex(p => p.playerId === swapSourceId);
+                const idx2 = selectedPlayers.findIndex(p => p.playerId === playerId);
+                
+                if (idx1 !== -1 && idx2 !== -1) {
+                    // Check if swapping across position groups (optional: prevent or allow?)
+                    // For now, allow swapping any two players in the list order
+                    const temp = selectedPlayers[idx1];
+                    selectedPlayers[idx1] = selectedPlayers[idx2];
+                    selectedPlayers[idx2] = temp;
+                    updateURL();
+                }
+                
+                swapSourceId = null;
+                renderSummary();
+            }
+        }
+
         function renderSummary() {
-            // Sort selected players: locked first, then by percentile (highest first) within each position group
-            const sortedPlayers = [...selectedPlayers].sort((a, b) => {
-                // Locked players come first
-                if (a.locked && !b.locked) return -1;
-                if (!a.locked && b.locked) return 1;
-                // Then sort by percentile
-                return (b.stats.percentile || 0) - (a.stats.percentile || 0);
-            });
+            // Use selectedPlayers order directly (no sorting) to respect manual swaps
+            // But we still need to group them for display
             
-            // Group players by position
-            const forwards = sortedPlayers.filter(p => p.positionGroup === 'forwards');
-            const defense = sortedPlayers.filter(p => p.positionGroup === 'defense');
-            const goalies = sortedPlayers.filter(p => p.positionGroup === 'goalies');
+            // Group players by position, preserving their relative order in selectedPlayers
+            const forwards = selectedPlayers.filter(p => p.positionGroup === 'forwards');
+            const defense = selectedPlayers.filter(p => p.positionGroup === 'defense');
+            const goalies = selectedPlayers.filter(p => p.positionGroup === 'goalies');
             
             // Convert to widget format
             const rosterData = {
@@ -1444,24 +1487,45 @@
         }
         
         function removePlayer(playerId) {
-            const player = selectedPlayers.find(p => p.playerId === playerId);
-            if (player && player.locked) return; // Can't remove locked players
+            const indexToRemove = selectedPlayers.findIndex(p => p.playerId === playerId);
+            if (indexToRemove === -1) return;
             
-            selectedPlayers = selectedPlayers.filter(p => p.playerId !== playerId);
+            const playerToRemove = selectedPlayers[indexToRemove];
+            if (playerToRemove.locked) return; // Can't remove locked players
+            
+            // Find the last player in the same position group
+            let indexLast = -1;
+            for (let i = selectedPlayers.length - 1; i >= 0; i--) {
+                if (selectedPlayers[i].positionGroup === playerToRemove.positionGroup) {
+                    indexLast = i;
+                    break;
+                }
+            }
+            
+            if (indexLast !== -1 && indexLast !== indexToRemove) {
+                // Move the last player to the removed player's spot to prevent shifting
+                selectedPlayers[indexToRemove] = selectedPlayers[indexLast];
+                // Remove the last player from their original spot
+                selectedPlayers.splice(indexLast, 1);
+            } else {
+                // Just remove the player if they are the last one
+                selectedPlayers.splice(indexToRemove, 1);
+            }
+            
             renderSummary();
             renderAvailablePlayers();
             updateURL();
         }
         
         function updateURL() {
-            const additionalIds = selectedPlayers
-                .filter(p => !p.locked)
+            // Save ALL player IDs in order to preserve swaps
+            const allIds = selectedPlayers
                 .map(p => p.playerId)
                 .join(',');
             
             const url = new URL(window.location);
-            if (additionalIds) {
-                url.searchParams.set('players', additionalIds);
+            if (allIds) {
+                url.searchParams.set('players', allIds);
             } else {
                 url.searchParams.delete('players');
             }
@@ -1474,12 +1538,35 @@
             
             if (playerIds) {
                 const ids = playerIds.split(',');
+                let newSelection = [];
+                
                 ids.forEach(id => {
-                    const player = eligiblePlayers.find(p => p.playerId === id);
-                    if (player && !selectedPlayers.find(p => p.playerId === id)) {
-                        selectedPlayers.push(player);
+                    // Try to find in preSelectedPlayers first to preserve locked status
+                    let player = preSelectedPlayers.find(p => p.playerId === id);
+                    
+                    // If not found, look in eligiblePlayers
+                    if (!player) {
+                        player = eligiblePlayers.find(p => p.playerId === id);
+                    }
+                    
+                    if (player) {
+                        newSelection.push(player);
                     }
                 });
+                
+                // Check for missing locked players and add them to the beginning
+                const missingLocked = preSelectedPlayers.filter(locked => 
+                    !newSelection.find(p => p.playerId === locked.playerId)
+                );
+                
+                if (missingLocked.length > 0) {
+                    newSelection = [...missingLocked, ...newSelection];
+                }
+                
+                // Only update if we found valid players
+                if (newSelection.length > 0) {
+                    selectedPlayers = newSelection;
+                }
             }
         }
         
