@@ -6,6 +6,20 @@
     <title>USA - 2026 Olympics Roster Builder</title>
     <meta name="description" content="Build your ideal USA Olympic hockey roster for 2026. Select the best players and create your dream team.">
     
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://deephockey.com/olympics/usa.html">
+    <meta property="og:title" content="USA - 2026 Olympics Roster Builder">
+    <meta property="og:description" content="Build your ideal USA Olympic hockey roster for 2026. Select the best players and create your dream team.">
+    <meta property="og:image" content="https://deephockey.com/images/olympics/usa-olympics-2026.png">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://deephockey.com/olympics/usa.html">
+    <meta property="twitter:title" content="USA - 2026 Olympics Roster Builder">
+    <meta property="twitter:description" content="Build your ideal USA Olympic hockey roster for 2026. Select the best players and create your dream team.">
+    <meta property="twitter:image" content="https://deephockey.com/images/olympics/usa-olympics-2026.png">
+    
     <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-4EQ2PM7LNJ"></script>
     <script>
@@ -138,10 +152,17 @@
             margin: 0;
             letter-spacing: 2px;
             text-shadow: 3px 3px 0px rgba(0,0,0,0.8);
+            color: #FFFFFF;
         }
 
         .roster-title span.highlight {
             color: var(--roster-primary);
+            text-shadow: 
+                -1px -1px 0 #fff,  
+                 1px -1px 0 #fff,
+                -1px  1px 0 #fff,
+                 1px  1px 0 #fff,
+                 3px  3px 0px rgba(0,0,0,0.8);
         }
 
         .roster-subtitle {
@@ -12268,12 +12289,18 @@
         
         // Widget team themes
         const widgetTeams = {
-            CAN: { primary: '#E41937', secondary: '#000000', accent: '#FFFFFF', name: 'CANADA', bgtext: 'CANADA' },
-            USA: { primary: '#002868', secondary: '#BF0A30', accent: '#FFFFFF', name: 'USA', bgtext: 'USA' },
-            SWE: { primary: '#FECC00', secondary: '#006AA7', accent: '#006AA7', name: 'SWEDEN', bgtext: 'SWEDEN' }, 
-            FIN: { primary: '#002F6C', secondary: '#FFFFFF', accent: '#FFFFFF', name: 'FINLAND', bgtext: 'SUOMI' }, 
-            CZE: { primary: '#D7141A', secondary: '#11457E', accent: '#FFFFFF', name: 'CZECHIA', bgtext: 'CZECHIA' },
-            GER: { primary: '#FFCE00', secondary: '#000000', accent: '#000000', name: 'GERMANY', bgtext: 'GERMANY' }
+            CAN: { primary: '#E41937', secondary: '#000000', accent: '#FFFFFF', text: '#FFFFFF', name: 'CANADA', bgtext: 'CANADA' },
+            USA: { primary: '#002868', secondary: '#BF0A30', accent: '#FFFFFF', text: '#FFFFFF', name: 'USA', bgtext: 'USA' },
+            SWE: { primary: '#FECC00', secondary: '#006AA7', accent: '#006AA7', text: '#FFFFFF', name: 'SWEDEN', bgtext: 'SWEDEN' }, 
+            FIN: { primary: '#002F6C', secondary: '#FFFFFF', accent: '#FFFFFF', text: '#000000', name: 'FINLAND', bgtext: 'SUOMI' }, 
+            CZE: { primary: '#D7141A', secondary: '#11457E', accent: '#FFFFFF', text: '#FFFFFF', name: 'CZECHIA', bgtext: 'CZECHIA' },
+            GER: { primary: '#FFCE00', secondary: '#000000', accent: '#000000', text: '#FFFFFF', name: 'GERMANY', bgtext: 'GERMANY' },
+            SUI: { primary: '#D52B1E', secondary: '#FFFFFF', accent: '#FFFFFF', text: '#000000', name: 'SWITZERLAND', bgtext: 'SUISSE' },
+            SVK: { primary: '#0B4EA2', secondary: '#EE1C25', accent: '#FFFFFF', text: '#FFFFFF', name: 'SLOVAKIA', bgtext: 'SLOVENSKO' },
+            LAT: { primary: '#9E3039', secondary: '#FFFFFF', accent: '#FFFFFF', text: '#000000', name: 'LATVIA', bgtext: 'LATVIJA' },
+            DNK: { primary: '#C60C30', secondary: '#FFFFFF', accent: '#FFFFFF', text: '#000000', name: 'DENMARK', bgtext: 'DANMARK' },
+            FRA: { primary: '#0055A4', secondary: '#EF4135', accent: '#FFFFFF', text: '#FFFFFF', name: 'FRANCE', bgtext: 'FRANCE' },
+            ITA: { primary: '#0066BC', secondary: '#FFFFFF', accent: '#FFFFFF', text: '#000000', name: 'ITALY', bgtext: 'ITALIA' }
         };
         
         function getWidgetTeamCode(country) {
@@ -12283,7 +12310,13 @@
                 'Finland': 'FIN',
                 'Sweden': 'SWE',
                 'Czechia': 'CZE',
-                'Germany': 'GER'
+                'Germany': 'GER',
+                'Switzerland': 'SUI',
+                'Slovakia': 'SVK',
+                'Latvia': 'LAT',
+                'Denmark': 'DNK',
+                'France': 'FRA',
+                'Italy': 'ITA'
             };
             return mapping[country] || 'CAN';
         }
@@ -12322,6 +12355,7 @@
             // Update CSS Variables
             root.style.setProperty('--roster-primary', theme.primary);
             root.style.setProperty('--roster-secondary', theme.secondary);
+            root.style.setProperty('--roster-text', theme.text || '#FFFFFF');
             
             // Background Watermark
             document.getElementById('watermark-text').textContent = theme.bgtext;
