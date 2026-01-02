@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0">
+<channel>
+  <title>Deep Hockey</title>
+  <link>https://www.deephockey.com</link>
+  <description>AI-Powered Hockey Analysis</description>
+  <language>en-us</language>
+  <item>
+    <title>The Phantom Icing in the Habs-Mammoth Game</title>
+    <link>https://www.deephockey.com/articles/2025-11-26-habs-icing-off-the-post.html</link>
+    <description>Breakdown of the phantom icing call in the Montreal vs. Utah game. Analysis of NHL Rule 81.2, officiating tunnel vision, and why the face-off moved to center ice.</description>
+    <pubDate>Thu, 27 Nov 2025 00:00:00 GMT</pubDate>
+  </item>
+  <item>
+    <title>My Team Canada 2026 Roster</title>
+    <link>https://www.deephockey.com/articles/2026-olympics-team-canada-picks.html</link>
+    <description>My picks for the 2026 Team Canada Olympic roster. Analysis of the mix between proven talent (Crosby, McDavid) and the new guard (Bedard, Celebrini).</description>
+    <pubDate>Sun, 23 Nov 2025 00:00:00 GMT</pubDate>
+  </item>
+  <item>
+    <title>More Power Play Minutes Are Given Early in the Season</title>
+    <link>https://www.deephockey.com/articles/early-season-power-plays.html</link>
+    <description>Data from the past two seasons reveals October power play minutes average 14.64 and 12.69 per game—significantly higher than later months. This early-season penalty surge creates a critical strategic window that smart teams can exploit for competitive advantage.</description>
+    <pubDate>Fri, 19 Sep 2025 00:00:00 GMT</pubDate>
+  </item>
+</channel>
+</rss>
