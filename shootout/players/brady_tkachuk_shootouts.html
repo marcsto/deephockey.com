@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Brady Tkachuk - Shootout Videos | Deep Hockey</title>
     <meta name="description" content="Complete shootout analysis for Brady Tkachuk including video breakdowns of all shootout attempts.">
-    <meta name="keywords" content="Brady Tkachuk, shootout, NHL, Ottawa Senators, hockey analysis">
+    <meta name="keywords" content="Brady Tkachuk, shootout, NHL, Florida Panthers, hockey analysis">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
@@ -21,7 +21,7 @@
 
         <!-- Main Content -->
         <main class="main-shootout-content">
-            
+
             <!-- Player Header -->
             <div class="player-header">
                 <h1 class="player-name">Brady Tkachuk Shootout Videos</h1>
@@ -29,7 +29,7 @@
 
             <!-- Shootout Container -->
             <div class="shootout-container">
-                
+
                 <!-- Left Column (Video and Stats on wide screens) -->
                 <div class="left-column">
                     <!-- Video Player -->
@@ -44,7 +44,7 @@
                             <p>Unfortunately, there is no video available for this shootout attempt.</p>
                         </div>
                         <div class="video-info">
-                            <div class="video-title" id="video-title">vs Montréal Canadiens</div>
+                            <div class="video-title" id="video-title">vs Canadiens</div>
                             <div class="video-details" id="video-details">
                                 Apr 13, 2024 • Save • Wrist<br>Shootout Attempt #1
                             </div>
@@ -83,7 +83,7 @@
             </div>
         </div>
         <div class="stats-card">
-            <h4 class="stats-card-title">Last 2 Seasons</h4>
+            <h4 class="stats-card-title">2023-2024 through 2026-2027</h4>
             <div class="stats-grid stats-grid-3">
                 <div class="stat-box">
                     <div class="stat-value">2</div>
@@ -131,21 +131,21 @@
                     <!-- Attempts Sidebar -->
                     <div class="attempts-sidebar">
                         <h3 class="sidebar-title">Shootout Attempts</h3>
-                        
-                    <div class="attempt-item active" data-video="https://stories.nhl.com/games/320087/19172736/24.mp4" data-video-id="2023021276-1" data-title="vs Montréal Canadiens" data-details="Apr 13, 2024 • Save • Wrist<br>Shootout Attempt #1" data-has-video="true">
+
+                    <div class="attempt-item active" data-video="https://stories.nhl.com/games/320087/19172736/24.mp4" data-video-id="2023021276-1" data-title="vs Canadiens" data-details="Apr 13, 2024 • Save • Wrist<br>Shootout Attempt #1" data-has-video="true">
                         <div class="attempt-result save"></div>
                         <div class="attempt-info">
                             <div class="attempt-date">Apr 13, 2024</div>
-                            <div class="attempt-opponent">vs Montréal Canadiens</div>
+                            <div class="attempt-opponent">vs Canadiens</div>
                             <div class="attempt-details">Wrist • Save</div>
                         </div>
                     </div>
 
-                    <div class="attempt-item" data-video="https://stories.nhl.com/games/317926/19088820/21.mp4" data-video-id="2023021259-2" data-title="vs Tampa Bay Lightning" data-details="Apr 11, 2024 • Goal • Backhand<br>Shootout Attempt #2" data-has-video="true">
+                    <div class="attempt-item" data-video="https://stories.nhl.com/games/317926/19088820/21.mp4" data-video-id="2023021259-2" data-title="vs Lightning" data-details="Apr 11, 2024 • Goal • Backhand<br>Shootout Attempt #2" data-has-video="true">
                         <div class="attempt-result goal"></div>
                         <div class="attempt-info">
                             <div class="attempt-date">Apr 11, 2024</div>
-                            <div class="attempt-opponent">vs Tampa Bay Lightning</div>
+                            <div class="attempt-opponent">vs Lightning</div>
                             <div class="attempt-details">Backhand • Goal</div>
                         </div>
                     </div>
@@ -174,7 +174,7 @@
             </div>
         </div>
         <div class="stats-card">
-            <h4 class="stats-card-title">Last 2 Seasons</h4>
+            <h4 class="stats-card-title">2023-2024 through 2026-2027</h4>
             <div class="stats-grid stats-grid-3">
                 <div class="stat-box">
                     <div class="stat-value">2</div>
@@ -225,7 +225,7 @@
             </div>
 
         </main>
-        
+
         <!-- Footer -->
         <footer id="main-footer" class="site-footer"></footer>
 
@@ -278,29 +278,29 @@
             // Function to play specific video by index
             function playVideoByIndex(index) {
                 if (index < 0 || index >= attemptItems.length) return;
-                
+
                 const item = attemptItems[index];
-                
+
                 // Remove active class from all items
                 attemptItems.forEach(i => i.classList.remove('active'));
-                
+
                 // Add active class to current item
                 item.classList.add('active');
-                
+
                 // Update URL parameter with video ID
                 const videoId = item.dataset.videoId;
                 updateURLParameter(videoId);
-                
+
                 // Update video source
                 const videoSrc = item.dataset.video;
                 const hasVideo = item.dataset.hasVideo === 'true';
                 const title = item.dataset.title;
                 const details = item.dataset.details;
-                
+
                 // Update title and details
                 videoTitle.textContent = title;
                 videoDetails.innerHTML = details;
-                
+
                 // Show video or no-video message
                 if (hasVideo && videoSrc) {
                     video.style.display = 'block';
@@ -330,21 +330,21 @@
             function playNextVideo() {
                 const currentIndex = getCurrentVideoIndex();
                 let nextIndex = currentIndex + 1;
-                
+
                 // Skip attempts without videos
                 while (nextIndex < attemptItems.length && attemptItems[nextIndex].dataset.hasVideo !== 'true') {
                     nextIndex++;
                 }
-                
+
                 if (nextIndex < attemptItems.length) {
                     playVideoByIndex(nextIndex);
-                    
+
                     // Scroll to video on mobile devices
                     if (window.innerWidth <= 768) {
                         const videoContainer = document.querySelector('.video-player-container');
-                        videoContainer.scrollIntoView({ 
-                            behavior: 'smooth', 
-                            block: 'center' 
+                        videoContainer.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'center'
                         });
                     }
                 } else {
@@ -356,13 +356,13 @@
             attemptItems.forEach((item, index) => {
                 item.addEventListener('click', function() {
                     playVideoByIndex(index);
-                    
+
                     // Scroll to video on mobile devices
                     if (window.innerWidth <= 768) {
                         const videoContainer = document.querySelector('.video-player-container');
-                        videoContainer.scrollIntoView({ 
-                            behavior: 'smooth', 
-                            block: 'center' 
+                        videoContainer.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'center'
                         });
                     }
                 });
@@ -380,7 +380,7 @@
             // Initialize from URL parameter and auto-play
             setTimeout(() => {
                 const videoId = getVideoIdFromURL();
-                
+
                 if (videoId) {
                     // Load video from URL parameter by ID
                     const videoIndex = findVideoIndexById(videoId);

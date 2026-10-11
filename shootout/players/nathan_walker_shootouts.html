@@ -21,7 +21,7 @@
 
         <!-- Main Content -->
         <main class="main-shootout-content">
-            
+
             <!-- Player Header -->
             <div class="player-header">
                 <h1 class="player-name">Nathan Walker Shootout Videos</h1>
@@ -29,7 +29,7 @@
 
             <!-- Shootout Container -->
             <div class="shootout-container">
-                
+
                 <!-- Left Column (Video and Stats on wide screens) -->
                 <div class="left-column">
                     <!-- Video Player -->
@@ -44,7 +44,7 @@
                             <p>Unfortunately, there is no video available for this shootout attempt.</p>
                         </div>
                         <div class="video-info">
-                            <div class="video-title" id="video-title">vs Chicago Blackhawks</div>
+                            <div class="video-title" id="video-title">vs Blackhawks</div>
                             <div class="video-details" id="video-details">
                                 Feb 08, 2025 • Save • Wrist<br>Shootout Attempt #15
                             </div>
@@ -83,7 +83,7 @@
             </div>
         </div>
         <div class="stats-card">
-            <h4 class="stats-card-title">Last 2 Seasons</h4>
+            <h4 class="stats-card-title">2023-2024 through 2026-2027</h4>
             <div class="stats-grid stats-grid-3">
                 <div class="stat-box">
                     <div class="stat-value">1</div>
@@ -131,12 +131,12 @@
                     <!-- Attempts Sidebar -->
                     <div class="attempts-sidebar">
                         <h3 class="sidebar-title">Shootout Attempts</h3>
-                        
-                    <div class="attempt-item active" data-video="https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/8089827f-4dc4-4ecc-acb1-9b32839eec80.mp4" data-video-id="2024020883-15" data-title="vs Chicago Blackhawks" data-details="Feb 08, 2025 • Save • Wrist<br>Shootout Attempt #15" data-has-video="true">
+
+                    <div class="attempt-item active" data-video="https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/8089827f-4dc4-4ecc-acb1-9b32839eec80.mp4" data-video-id="2024020883-15" data-title="vs Blackhawks" data-details="Feb 08, 2025 • Save • Wrist<br>Shootout Attempt #15" data-has-video="true">
                         <div class="attempt-result save"></div>
                         <div class="attempt-info">
                             <div class="attempt-date">Feb 08, 2025</div>
-                            <div class="attempt-opponent">vs Chicago Blackhawks</div>
+                            <div class="attempt-opponent">vs Blackhawks</div>
                             <div class="attempt-details">Wrist • Save</div>
                         </div>
                     </div>
@@ -165,7 +165,7 @@
             </div>
         </div>
         <div class="stats-card">
-            <h4 class="stats-card-title">Last 2 Seasons</h4>
+            <h4 class="stats-card-title">2023-2024 through 2026-2027</h4>
             <div class="stats-grid stats-grid-3">
                 <div class="stat-box">
                     <div class="stat-value">1</div>
@@ -216,7 +216,7 @@
             </div>
 
         </main>
-        
+
         <!-- Footer -->
         <footer id="main-footer" class="site-footer"></footer>
 
@@ -269,29 +269,29 @@
             // Function to play specific video by index
             function playVideoByIndex(index) {
                 if (index < 0 || index >= attemptItems.length) return;
-                
+
                 const item = attemptItems[index];
-                
+
                 // Remove active class from all items
                 attemptItems.forEach(i => i.classList.remove('active'));
-                
+
                 // Add active class to current item
                 item.classList.add('active');
-                
+
                 // Update URL parameter with video ID
                 const videoId = item.dataset.videoId;
                 updateURLParameter(videoId);
-                
+
                 // Update video source
                 const videoSrc = item.dataset.video;
                 const hasVideo = item.dataset.hasVideo === 'true';
                 const title = item.dataset.title;
                 const details = item.dataset.details;
-                
+
                 // Update title and details
                 videoTitle.textContent = title;
                 videoDetails.innerHTML = details;
-                
+
                 // Show video or no-video message
                 if (hasVideo && videoSrc) {
                     video.style.display = 'block';
@@ -321,21 +321,21 @@
             function playNextVideo() {
                 const currentIndex = getCurrentVideoIndex();
                 let nextIndex = currentIndex + 1;
-                
+
                 // Skip attempts without videos
                 while (nextIndex < attemptItems.length && attemptItems[nextIndex].dataset.hasVideo !== 'true') {
                     nextIndex++;
                 }
-                
+
                 if (nextIndex < attemptItems.length) {
                     playVideoByIndex(nextIndex);
-                    
+
                     // Scroll to video on mobile devices
                     if (window.innerWidth <= 768) {
                         const videoContainer = document.querySelector('.video-player-container');
-                        videoContainer.scrollIntoView({ 
-                            behavior: 'smooth', 
-                            block: 'center' 
+                        videoContainer.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'center'
                         });
                     }
                 } else {
@@ -347,13 +347,13 @@
             attemptItems.forEach((item, index) => {
                 item.addEventListener('click', function() {
                     playVideoByIndex(index);
-                    
+
                     // Scroll to video on mobile devices
                     if (window.innerWidth <= 768) {
                         const videoContainer = document.querySelector('.video-player-container');
-                        videoContainer.scrollIntoView({ 
-                            behavior: 'smooth', 
-                            block: 'center' 
+                        videoContainer.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'center'
                         });
                     }
                 });
@@ -371,7 +371,7 @@
             // Initialize from URL parameter and auto-play
             setTimeout(() => {
                 const videoId = getVideoIdFromURL();
-                
+
                 if (videoId) {
                     // Load video from URL parameter by ID
                     const videoIndex = findVideoIndexById(videoId);

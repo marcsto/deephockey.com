@@ -21,7 +21,7 @@
 
         <!-- Main Content -->
         <main class="main-shootout-content">
-            
+
             <!-- Player Header -->
             <div class="player-header">
                 <h1 class="player-name">Scott Wedgewood Shootout Videos</h1>
@@ -29,13 +29,13 @@
 
             <!-- Shootout Container -->
             <div class="shootout-container">
-                
+
                 <!-- Left Column (Video and Stats on wide screens) -->
                 <div class="left-column">
                     <!-- Video Player -->
                     <div class="video-player-container">
                         <video id="shootout-video" class="video-player" controls>
-                            <source src="https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/26bb9484-1a65-4cdf-8c6f-c2d052db4e07.mp4" type="video/mp4">
+                            <source src="https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/c8d42cf0-884c-4a31-87cb-0f7b692a6037.mp4" type="video/mp4">
                             Your browser does not support the video tag.
                         </video>
                         <div id="no-video-message" class="no-video-message" style="display: none;">
@@ -44,9 +44,9 @@
                             <p>Unfortunately, there is no video available for this shootout attempt.</p>
                         </div>
                         <div class="video-info">
-                            <div class="video-title" id="video-title">vs Vegas Golden Knights</div>
+                            <div class="video-title" id="video-title">vs Oilers</div>
                             <div class="video-details" id="video-details">
-                                Apr 08, 2025 • Save • Wrist<br>Shootout Attempt #1
+                                Apr 13, 2026 • Goal • Wrist<br>Shootout Attempt #1
                             </div>
                         </div>
                         <div class="video-controls">
@@ -69,6 +69,23 @@
             <h4 class="stats-card-title">Career Stats</h4>
             <div class="stats-grid stats-grid-3">
                 <div class="stat-box">
+                    <div class="stat-value">68</div>
+                    <div class="stat-label">Attempts</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-value">42</div>
+                    <div class="stat-label">Saves</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-value">61.8%</div>
+                    <div class="stat-label">Save %</div>
+                </div>
+            </div>
+        </div>
+        <div class="stats-card">
+            <h4 class="stats-card-title">2023-2024 through 2026-2027</h4>
+            <div class="stats-grid stats-grid-3">
+                <div class="stat-box">
                     <div class="stat-value">40</div>
                     <div class="stat-label">Attempts</div>
                 </div>
@@ -78,23 +95,6 @@
                 </div>
                 <div class="stat-box">
                     <div class="stat-value">65.0%</div>
-                    <div class="stat-label">Save %</div>
-                </div>
-            </div>
-        </div>
-        <div class="stats-card">
-            <h4 class="stats-card-title">Last 2 Seasons</h4>
-            <div class="stats-grid stats-grid-3">
-                <div class="stat-box">
-                    <div class="stat-value">12</div>
-                    <div class="stat-label">Attempts</div>
-                </div>
-                <div class="stat-box">
-                    <div class="stat-value">10</div>
-                    <div class="stat-label">Saves</div>
-                </div>
-                <div class="stat-box">
-                    <div class="stat-value">83.3%</div>
                     <div class="stat-label">Save %</div>
                 </div>
             </div>
@@ -110,111 +110,363 @@
                     <!-- Attempts Sidebar -->
                     <div class="attempts-sidebar">
                         <h3 class="sidebar-title">Shootout Attempts</h3>
-                        
-                    <div class="attempt-item active" data-video="https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/26bb9484-1a65-4cdf-8c6f-c2d052db4e07.mp4" data-video-id="2024021244-1" data-title="vs Vegas Golden Knights" data-details="Apr 08, 2025 • Save • Wrist<br>Shootout Attempt #1" data-has-video="true">
+
+                    <div class="attempt-item active" data-video="https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/c8d42cf0-884c-4a31-87cb-0f7b692a6037.mp4" data-video-id="2025021289-1" data-title="vs Oilers" data-details="Apr 13, 2026 • Goal • Wrist<br>Shootout Attempt #1" data-has-video="true">
+                        <div class="attempt-result goal"></div>
+                        <div class="attempt-info">
+                            <div class="attempt-date">Apr 13, 2026</div>
+                            <div class="attempt-opponent">vs Oilers</div>
+                            <div class="attempt-details">Wrist • Goal</div>
+                        </div>
+                    </div>
+
+                    <div class="attempt-item" data-video="https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/a1d0496b-f1ca-4005-ad40-dc589ae61448.mp4" data-video-id="2025021289-3" data-title="vs Oilers" data-details="Apr 13, 2026 • Goal • Wrist<br>Shootout Attempt #3" data-has-video="true">
+                        <div class="attempt-result goal"></div>
+                        <div class="attempt-info">
+                            <div class="attempt-date">Apr 13, 2026</div>
+                            <div class="attempt-opponent">vs Oilers</div>
+                            <div class="attempt-details">Wrist • Goal</div>
+                        </div>
+                    </div>
+
+                    <div class="attempt-item no-video" data-video="" data-video-id="2025021289-5" data-title="vs Oilers" data-details="Apr 13, 2026 • Save • Wrist<br>Shootout Attempt #5" data-has-video="false">
                         <div class="attempt-result save"></div>
                         <div class="attempt-info">
-                            <div class="attempt-date">Apr 08, 2025</div>
-                            <div class="attempt-opponent">vs Vegas Golden Knights</div>
+                            <div class="attempt-date">Apr 13, 2026 (No Video)</div>
+                            <div class="attempt-opponent">vs Oilers</div>
                             <div class="attempt-details">Wrist • Save</div>
                         </div>
                     </div>
 
-                    <div class="attempt-item" data-video="https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/d99e18a2-b68e-462d-a44f-30a40850ae67.mp4" data-video-id="2024021244-3" data-title="vs Vegas Golden Knights" data-details="Apr 08, 2025 • Save • Snap<br>Shootout Attempt #3" data-has-video="true">
+                    <div class="attempt-item" data-video="https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/adc00856-de13-4d8f-a899-98790e791e0f.mp4" data-video-id="2025021080-1" data-title="vs Stars" data-details="Mar 18, 2026 • Save • Backhand<br>Shootout Attempt #1" data-has-video="true">
+                        <div class="attempt-result save"></div>
+                        <div class="attempt-info">
+                            <div class="attempt-date">Mar 18, 2026</div>
+                            <div class="attempt-opponent">vs Stars</div>
+                            <div class="attempt-details">Backhand • Save</div>
+                        </div>
+                    </div>
+
+                    <div class="attempt-item" data-video="https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/ad853f7d-084a-4e0d-b4f2-d5cae73b7edb.mp4" data-video-id="2025021080-3" data-title="vs Stars" data-details="Mar 18, 2026 • Save • Wrist<br>Shootout Attempt #3" data-has-video="true">
+                        <div class="attempt-result save"></div>
+                        <div class="attempt-info">
+                            <div class="attempt-date">Mar 18, 2026</div>
+                            <div class="attempt-opponent">vs Stars</div>
+                            <div class="attempt-details">Wrist • Save</div>
+                        </div>
+                    </div>
+
+                    <div class="attempt-item" data-video="https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/d9e1f853-0fdb-4a12-855a-c77e70fc70bc.mp4" data-video-id="2025021080-5" data-title="vs Stars" data-details="Mar 18, 2026 • Goal • Wrist<br>Shootout Attempt #5" data-has-video="true">
+                        <div class="attempt-result goal"></div>
+                        <div class="attempt-info">
+                            <div class="attempt-date">Mar 18, 2026</div>
+                            <div class="attempt-opponent">vs Stars</div>
+                            <div class="attempt-details">Wrist • Goal</div>
+                        </div>
+                    </div>
+
+                    <div class="attempt-item" data-video="https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/78eb0fef-bd41-4bbd-bd73-e4cd76258fd0.mp4" data-video-id="2025021001-1" data-title="vs Wild" data-details="Mar 08, 2026 • High And Wide Left • Wrist<br>Shootout Attempt #1" data-has-video="true">
+                        <div class="attempt-result miss"></div>
+                        <div class="attempt-info">
+                            <div class="attempt-date">Mar 08, 2026</div>
+                            <div class="attempt-opponent">vs Wild</div>
+                            <div class="attempt-details">Wrist • High And Wide Left</div>
+                        </div>
+                    </div>
+
+                    <div class="attempt-item" data-video="https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/137ab7bc-f47f-48ec-97e6-ecdb784750f1.mp4" data-video-id="2025021001-3" data-title="vs Wild" data-details="Mar 08, 2026 • Goal • Wrist<br>Shootout Attempt #3" data-has-video="true">
+                        <div class="attempt-result goal"></div>
+                        <div class="attempt-info">
+                            <div class="attempt-date">Mar 08, 2026</div>
+                            <div class="attempt-opponent">vs Wild</div>
+                            <div class="attempt-details">Wrist • Goal</div>
+                        </div>
+                    </div>
+
+                    <div class="attempt-item" data-video="https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/0be37f4d-0e3b-4842-b955-4e5bafe1eb34.mp4" data-video-id="2025021001-5" data-title="vs Wild" data-details="Mar 08, 2026 • Save • Wrist<br>Shootout Attempt #5" data-has-video="true">
+                        <div class="attempt-result save"></div>
+                        <div class="attempt-info">
+                            <div class="attempt-date">Mar 08, 2026</div>
+                            <div class="attempt-opponent">vs Wild</div>
+                            <div class="attempt-details">Wrist • Save</div>
+                        </div>
+                    </div>
+
+                    <div class="attempt-item" data-video="https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/f2143081-533b-4eaa-8238-518b94af8d5e.mp4" data-video-id="2025021001-7" data-title="vs Wild" data-details="Mar 08, 2026 • Save • Wrist<br>Shootout Attempt #7" data-has-video="true">
+                        <div class="attempt-result save"></div>
+                        <div class="attempt-info">
+                            <div class="attempt-date">Mar 08, 2026</div>
+                            <div class="attempt-opponent">vs Wild</div>
+                            <div class="attempt-details">Wrist • Save</div>
+                        </div>
+                    </div>
+
+                    <div class="attempt-item" data-video="https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/70616e56-20ed-42a7-932b-908bb5d011c3.mp4" data-video-id="2025020984-1" data-title="vs Stars" data-details="Mar 06, 2026 • Save • Backhand<br>Shootout Attempt #1" data-has-video="true">
+                        <div class="attempt-result save"></div>
+                        <div class="attempt-info">
+                            <div class="attempt-date">Mar 06, 2026</div>
+                            <div class="attempt-opponent">vs Stars</div>
+                            <div class="attempt-details">Backhand • Save</div>
+                        </div>
+                    </div>
+
+                    <div class="attempt-item" data-video="https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/009bb2d6-ef86-40e1-980c-f59d83f1e054.mp4" data-video-id="2025020984-3" data-title="vs Stars" data-details="Mar 06, 2026 • Save • Backhand<br>Shootout Attempt #3" data-has-video="true">
+                        <div class="attempt-result save"></div>
+                        <div class="attempt-info">
+                            <div class="attempt-date">Mar 06, 2026</div>
+                            <div class="attempt-opponent">vs Stars</div>
+                            <div class="attempt-details">Backhand • Save</div>
+                        </div>
+                    </div>
+
+                    <div class="attempt-item" data-video="https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/7bf7bdeb-2c55-41f7-adcc-1ef496e3d647.mp4" data-video-id="2025020789-1" data-title="vs Ducks" data-details="Jan 21, 2026 • Goal • Wrist<br>Shootout Attempt #1" data-has-video="true">
+                        <div class="attempt-result goal"></div>
+                        <div class="attempt-info">
+                            <div class="attempt-date">Jan 21, 2026</div>
+                            <div class="attempt-opponent">vs Ducks</div>
+                            <div class="attempt-details">Wrist • Goal</div>
+                        </div>
+                    </div>
+
+                    <div class="attempt-item" data-video="https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/8ce25cd7-aad4-4647-8008-de31b6d0ffa1.mp4" data-video-id="2025020789-3" data-title="vs Ducks" data-details="Jan 21, 2026 • Save • Wrist<br>Shootout Attempt #3" data-has-video="true">
+                        <div class="attempt-result save"></div>
+                        <div class="attempt-info">
+                            <div class="attempt-date">Jan 21, 2026</div>
+                            <div class="attempt-opponent">vs Ducks</div>
+                            <div class="attempt-details">Wrist • Save</div>
+                        </div>
+                    </div>
+
+                    <div class="attempt-item" data-video="https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/16dd0116-363c-47a4-b3e3-35bf5b8fd3de.mp4" data-video-id="2025020789-5" data-title="vs Ducks" data-details="Jan 21, 2026 • Goal • Wrist<br>Shootout Attempt #5" data-has-video="true">
+                        <div class="attempt-result goal"></div>
+                        <div class="attempt-info">
+                            <div class="attempt-date">Jan 21, 2026</div>
+                            <div class="attempt-opponent">vs Ducks</div>
+                            <div class="attempt-details">Wrist • Goal</div>
+                        </div>
+                    </div>
+
+                    <div class="attempt-item" data-video="https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/a57e4073-1d1f-4ed6-ac51-3068003f08fc.mp4" data-video-id="2025020600-2" data-title="vs Golden Knights" data-details="Dec 27, 2025 • Wide Left • Wrist<br>Shootout Attempt #2" data-has-video="true">
+                        <div class="attempt-result miss"></div>
+                        <div class="attempt-info">
+                            <div class="attempt-date">Dec 27, 2025</div>
+                            <div class="attempt-opponent">vs Golden Knights</div>
+                            <div class="attempt-details">Wrist • Wide Left</div>
+                        </div>
+                    </div>
+
+                    <div class="attempt-item" data-video="https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/01ca5c11-f13d-428e-965a-7d2060b7c337.mp4" data-video-id="2025020600-4" data-title="vs Golden Knights" data-details="Dec 27, 2025 • Goal • Backhand<br>Shootout Attempt #4" data-has-video="true">
+                        <div class="attempt-result goal"></div>
+                        <div class="attempt-info">
+                            <div class="attempt-date">Dec 27, 2025</div>
+                            <div class="attempt-opponent">vs Golden Knights</div>
+                            <div class="attempt-details">Backhand • Goal</div>
+                        </div>
+                    </div>
+
+                    <div class="attempt-item" data-video="https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/3d58ac79-02bf-4833-925d-9f7d7c9cc168.mp4" data-video-id="2025020600-6" data-title="vs Golden Knights" data-details="Dec 27, 2025 • Save • Wrist<br>Shootout Attempt #6" data-has-video="true">
+                        <div class="attempt-result save"></div>
+                        <div class="attempt-info">
+                            <div class="attempt-date">Dec 27, 2025</div>
+                            <div class="attempt-opponent">vs Golden Knights</div>
+                            <div class="attempt-details">Wrist • Save</div>
+                        </div>
+                    </div>
+
+                    <div class="attempt-item" data-video="https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/d606aae1-b40d-44ef-8a0f-b3cb8aec29cd.mp4" data-video-id="2025020600-8" data-title="vs Golden Knights" data-details="Dec 27, 2025 • Wide Right • Wrist<br>Shootout Attempt #8" data-has-video="true">
+                        <div class="attempt-result miss"></div>
+                        <div class="attempt-info">
+                            <div class="attempt-date">Dec 27, 2025</div>
+                            <div class="attempt-opponent">vs Golden Knights</div>
+                            <div class="attempt-details">Wrist • Wide Right</div>
+                        </div>
+                    </div>
+
+                    <div class="attempt-item" data-video="https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/d2497041-d904-4cce-a474-c64e74a6c1f8.mp4" data-video-id="2025020475-1" data-title="vs Predators" data-details="Dec 09, 2025 • Goal • Snap<br>Shootout Attempt #1" data-has-video="true">
+                        <div class="attempt-result goal"></div>
+                        <div class="attempt-info">
+                            <div class="attempt-date">Dec 09, 2025</div>
+                            <div class="attempt-opponent">vs Predators</div>
+                            <div class="attempt-details">Snap • Goal</div>
+                        </div>
+                    </div>
+
+                    <div class="attempt-item" data-video="https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/3f8ac186-dd9b-4c2e-911b-6b39abc1eae0.mp4" data-video-id="2025020475-3" data-title="vs Predators" data-details="Dec 09, 2025 • Wide Left • Backhand<br>Shootout Attempt #3" data-has-video="true">
+                        <div class="attempt-result miss"></div>
+                        <div class="attempt-info">
+                            <div class="attempt-date">Dec 09, 2025</div>
+                            <div class="attempt-opponent">vs Predators</div>
+                            <div class="attempt-details">Backhand • Wide Left</div>
+                        </div>
+                    </div>
+
+                    <div class="attempt-item" data-video="https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/f81d01b2-23f7-4ae0-925e-6d8adbca0509.mp4" data-video-id="2025020475-5" data-title="vs Predators" data-details="Dec 09, 2025 • Wide Right • Snap<br>Shootout Attempt #5" data-has-video="true">
+                        <div class="attempt-result miss"></div>
+                        <div class="attempt-info">
+                            <div class="attempt-date">Dec 09, 2025</div>
+                            <div class="attempt-opponent">vs Predators</div>
+                            <div class="attempt-details">Snap • Wide Right</div>
+                        </div>
+                    </div>
+
+                    <div class="attempt-item" data-video="https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/944a60c7-ea20-4a80-9a32-931dcde38605.mp4" data-video-id="2025020378-1" data-title="vs Wild" data-details="Nov 28, 2025 • Goal • Backhand<br>Shootout Attempt #1" data-has-video="true">
+                        <div class="attempt-result goal"></div>
+                        <div class="attempt-info">
+                            <div class="attempt-date">Nov 28, 2025</div>
+                            <div class="attempt-opponent">vs Wild</div>
+                            <div class="attempt-details">Backhand • Goal</div>
+                        </div>
+                    </div>
+
+                    <div class="attempt-item" data-video="https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/70c0c7e2-7577-417a-862a-1cce3f41a410.mp4" data-video-id="2025020378-3" data-title="vs Wild" data-details="Nov 28, 2025 • Save • Wrist<br>Shootout Attempt #3" data-has-video="true">
+                        <div class="attempt-result save"></div>
+                        <div class="attempt-info">
+                            <div class="attempt-date">Nov 28, 2025</div>
+                            <div class="attempt-opponent">vs Wild</div>
+                            <div class="attempt-details">Wrist • Save</div>
+                        </div>
+                    </div>
+
+                    <div class="attempt-item" data-video="https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/9390ae86-88a7-4526-9bd2-77c120f1cd9a.mp4" data-video-id="2025020378-5" data-title="vs Wild" data-details="Nov 28, 2025 • Goal • Wrist<br>Shootout Attempt #5" data-has-video="true">
+                        <div class="attempt-result goal"></div>
+                        <div class="attempt-info">
+                            <div class="attempt-date">Nov 28, 2025</div>
+                            <div class="attempt-opponent">vs Wild</div>
+                            <div class="attempt-details">Wrist • Goal</div>
+                        </div>
+                    </div>
+
+                    <div class="attempt-item" data-video="https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/df935c93-8771-4e86-995e-cca8af4347c8.mp4" data-video-id="2025020034-1" data-title="vs Stars" data-details="Oct 11, 2025 • Goal • Wrist<br>Shootout Attempt #1" data-has-video="true">
+                        <div class="attempt-result goal"></div>
+                        <div class="attempt-info">
+                            <div class="attempt-date">Oct 11, 2025</div>
+                            <div class="attempt-opponent">vs Stars</div>
+                            <div class="attempt-details">Wrist • Goal</div>
+                        </div>
+                    </div>
+
+                    <div class="attempt-item" data-video="https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/566f36b2-defc-4457-8186-6fd3489d8eea.mp4" data-video-id="2025020034-3" data-title="vs Stars" data-details="Oct 11, 2025 • Save • Wrist<br>Shootout Attempt #3" data-has-video="true">
+                        <div class="attempt-result save"></div>
+                        <div class="attempt-info">
+                            <div class="attempt-date">Oct 11, 2025</div>
+                            <div class="attempt-opponent">vs Stars</div>
+                            <div class="attempt-details">Wrist • Save</div>
+                        </div>
+                    </div>
+
+                    <div class="attempt-item" data-video="https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/413326a7-a8f3-46e0-8a34-1229edc98774.mp4" data-video-id="2025020034-5" data-title="vs Stars" data-details="Oct 11, 2025 • Goal • Wrist<br>Shootout Attempt #5" data-has-video="true">
+                        <div class="attempt-result goal"></div>
+                        <div class="attempt-info">
+                            <div class="attempt-date">Oct 11, 2025</div>
+                            <div class="attempt-opponent">vs Stars</div>
+                            <div class="attempt-details">Wrist • Goal</div>
+                        </div>
+                    </div>
+
+                    <div class="attempt-item" data-video="https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/26bb9484-1a65-4cdf-8c6f-c2d052db4e07.mp4" data-video-id="2024021244-1" data-title="vs Golden Knights" data-details="Apr 08, 2025 • Save • Wrist<br>Shootout Attempt #1" data-has-video="true">
                         <div class="attempt-result save"></div>
                         <div class="attempt-info">
                             <div class="attempt-date">Apr 08, 2025</div>
-                            <div class="attempt-opponent">vs Vegas Golden Knights</div>
+                            <div class="attempt-opponent">vs Golden Knights</div>
+                            <div class="attempt-details">Wrist • Save</div>
+                        </div>
+                    </div>
+
+                    <div class="attempt-item" data-video="https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/d99e18a2-b68e-462d-a44f-30a40850ae67.mp4" data-video-id="2024021244-3" data-title="vs Golden Knights" data-details="Apr 08, 2025 • Save • Snap<br>Shootout Attempt #3" data-has-video="true">
+                        <div class="attempt-result save"></div>
+                        <div class="attempt-info">
+                            <div class="attempt-date">Apr 08, 2025</div>
+                            <div class="attempt-opponent">vs Golden Knights</div>
                             <div class="attempt-details">Snap • Save</div>
                         </div>
                     </div>
 
-                    <div class="attempt-item" data-video="https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/9a8fb367-c22c-4cd6-ae94-1a93141f02a2.mp4" data-video-id="2024021244-5" data-title="vs Vegas Golden Knights" data-details="Apr 08, 2025 • Save • Wrist<br>Shootout Attempt #5" data-has-video="true">
+                    <div class="attempt-item" data-video="https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/9a8fb367-c22c-4cd6-ae94-1a93141f02a2.mp4" data-video-id="2024021244-5" data-title="vs Golden Knights" data-details="Apr 08, 2025 • Save • Wrist<br>Shootout Attempt #5" data-has-video="true">
                         <div class="attempt-result save"></div>
                         <div class="attempt-info">
                             <div class="attempt-date">Apr 08, 2025</div>
-                            <div class="attempt-opponent">vs Vegas Golden Knights</div>
+                            <div class="attempt-opponent">vs Golden Knights</div>
                             <div class="attempt-details">Wrist • Save</div>
                         </div>
                     </div>
 
-                    <div class="attempt-item" data-video="https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/422d2204-4a24-4257-9745-a618a8d7aa44.mp4" data-video-id="2024021195-1" data-title="vs Chicago Blackhawks" data-details="Apr 02, 2025 • Wide Right • Backhand<br>Shootout Attempt #1" data-has-video="true">
+                    <div class="attempt-item" data-video="https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/422d2204-4a24-4257-9745-a618a8d7aa44.mp4" data-video-id="2024021195-1" data-title="vs Blackhawks" data-details="Apr 02, 2025 • Wide Right • Backhand<br>Shootout Attempt #1" data-has-video="true">
                         <div class="attempt-result miss"></div>
                         <div class="attempt-info">
                             <div class="attempt-date">Apr 02, 2025</div>
-                            <div class="attempt-opponent">vs Chicago Blackhawks</div>
+                            <div class="attempt-opponent">vs Blackhawks</div>
                             <div class="attempt-details">Backhand • Wide Right</div>
                         </div>
                     </div>
 
-                    <div class="attempt-item" data-video="https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/4331fb64-602a-4add-a4f3-1619341ac613.mp4" data-video-id="2024021195-3" data-title="vs Chicago Blackhawks" data-details="Apr 02, 2025 • Hit Right Post • Wrist<br>Shootout Attempt #3" data-has-video="true">
+                    <div class="attempt-item" data-video="https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/4331fb64-602a-4add-a4f3-1619341ac613.mp4" data-video-id="2024021195-3" data-title="vs Blackhawks" data-details="Apr 02, 2025 • Hit Right Post • Wrist<br>Shootout Attempt #3" data-has-video="true">
                         <div class="attempt-result miss"></div>
                         <div class="attempt-info">
                             <div class="attempt-date">Apr 02, 2025</div>
-                            <div class="attempt-opponent">vs Chicago Blackhawks</div>
+                            <div class="attempt-opponent">vs Blackhawks</div>
                             <div class="attempt-details">Wrist • Hit Right Post</div>
                         </div>
                     </div>
 
-                    <div class="attempt-item" data-video="https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/f82c11ee-7c5d-4b7a-9f87-c8782002dbd7.mp4" data-video-id="2024021195-5" data-title="vs Chicago Blackhawks" data-details="Apr 02, 2025 • Goal • Wrist<br>Shootout Attempt #5" data-has-video="true">
+                    <div class="attempt-item" data-video="https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/f82c11ee-7c5d-4b7a-9f87-c8782002dbd7.mp4" data-video-id="2024021195-5" data-title="vs Blackhawks" data-details="Apr 02, 2025 • Goal • Wrist<br>Shootout Attempt #5" data-has-video="true">
                         <div class="attempt-result goal"></div>
                         <div class="attempt-info">
                             <div class="attempt-date">Apr 02, 2025</div>
-                            <div class="attempt-opponent">vs Chicago Blackhawks</div>
+                            <div class="attempt-opponent">vs Blackhawks</div>
                             <div class="attempt-details">Wrist • Goal</div>
                         </div>
                     </div>
 
-                    <div class="attempt-item" data-video="https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/e1e7a4fb-2d91-4f7c-af2c-9b7238e1d30c.mp4" data-video-id="2024021180-1" data-title="vs Calgary Flames" data-details="Mar 31, 2025 • Save • Wrist<br>Shootout Attempt #1" data-has-video="true">
+                    <div class="attempt-item" data-video="https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/e1e7a4fb-2d91-4f7c-af2c-9b7238e1d30c.mp4" data-video-id="2024021180-1" data-title="vs Flames" data-details="Mar 31, 2025 • Save • Wrist<br>Shootout Attempt #1" data-has-video="true">
                         <div class="attempt-result save"></div>
                         <div class="attempt-info">
                             <div class="attempt-date">Mar 31, 2025</div>
-                            <div class="attempt-opponent">vs Calgary Flames</div>
+                            <div class="attempt-opponent">vs Flames</div>
                             <div class="attempt-details">Wrist • Save</div>
                         </div>
                     </div>
 
-                    <div class="attempt-item" data-video="https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/7dcc5ffb-3650-4b6b-a362-0516b97a4744.mp4" data-video-id="2024021180-3" data-title="vs Calgary Flames" data-details="Mar 31, 2025 • Goal • Wrist<br>Shootout Attempt #3" data-has-video="true">
+                    <div class="attempt-item" data-video="https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/7dcc5ffb-3650-4b6b-a362-0516b97a4744.mp4" data-video-id="2024021180-3" data-title="vs Flames" data-details="Mar 31, 2025 • Goal • Wrist<br>Shootout Attempt #3" data-has-video="true">
                         <div class="attempt-result goal"></div>
                         <div class="attempt-info">
                             <div class="attempt-date">Mar 31, 2025</div>
-                            <div class="attempt-opponent">vs Calgary Flames</div>
+                            <div class="attempt-opponent">vs Flames</div>
                             <div class="attempt-details">Wrist • Goal</div>
                         </div>
                     </div>
 
-                    <div class="attempt-item" data-video="https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/9852106e-00bd-4160-9b84-df48bc6ed5e6.mp4" data-video-id="2024021180-5" data-title="vs Calgary Flames" data-details="Mar 31, 2025 • Save • Wrist<br>Shootout Attempt #5" data-has-video="true">
+                    <div class="attempt-item" data-video="https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/9852106e-00bd-4160-9b84-df48bc6ed5e6.mp4" data-video-id="2024021180-5" data-title="vs Flames" data-details="Mar 31, 2025 • Save • Wrist<br>Shootout Attempt #5" data-has-video="true">
                         <div class="attempt-result save"></div>
                         <div class="attempt-info">
                             <div class="attempt-date">Mar 31, 2025</div>
-                            <div class="attempt-opponent">vs Calgary Flames</div>
+                            <div class="attempt-opponent">vs Flames</div>
                             <div class="attempt-details">Wrist • Save</div>
                         </div>
                     </div>
 
-                    <div class="attempt-item" data-video="https://www.nhl.com/stories/192062/14995239/24.mp4" data-video-id="2023020396-1" data-title="vs Washington Capitals" data-details="Dec 07, 2023 • Save • Wrist<br>Shootout Attempt #1" data-has-video="true">
+                    <div class="attempt-item" data-video="https://www.nhl.com/stories/192062/14995239/24.mp4" data-video-id="2023020396-1" data-title="vs Capitals" data-details="Dec 07, 2023 • Save • Wrist<br>Shootout Attempt #1" data-has-video="true">
                         <div class="attempt-result save"></div>
                         <div class="attempt-info">
                             <div class="attempt-date">Dec 07, 2023</div>
-                            <div class="attempt-opponent">vs Washington Capitals</div>
+                            <div class="attempt-opponent">vs Capitals</div>
                             <div class="attempt-details">Wrist • Save</div>
                         </div>
                     </div>
 
-                    <div class="attempt-item" data-video="https://www.nhl.com/stories/192062/14995239/26.mp4" data-video-id="2023020396-3" data-title="vs Washington Capitals" data-details="Dec 07, 2023 • Save • Wrist<br>Shootout Attempt #3" data-has-video="true">
+                    <div class="attempt-item" data-video="https://www.nhl.com/stories/192062/14995239/26.mp4" data-video-id="2023020396-3" data-title="vs Capitals" data-details="Dec 07, 2023 • Save • Wrist<br>Shootout Attempt #3" data-has-video="true">
                         <div class="attempt-result save"></div>
                         <div class="attempt-info">
                             <div class="attempt-date">Dec 07, 2023</div>
-                            <div class="attempt-opponent">vs Washington Capitals</div>
+                            <div class="attempt-opponent">vs Capitals</div>
                             <div class="attempt-details">Wrist • Save</div>
                         </div>
                     </div>
 
-                    <div class="attempt-item" data-video="https://www.nhl.com/stories/192062/14995239/28.mp4" data-video-id="2023020396-5" data-title="vs Washington Capitals" data-details="Dec 07, 2023 • Save • Wrist<br>Shootout Attempt #5" data-has-video="true">
+                    <div class="attempt-item" data-video="https://www.nhl.com/stories/192062/14995239/28.mp4" data-video-id="2023020396-5" data-title="vs Capitals" data-details="Dec 07, 2023 • Save • Wrist<br>Shootout Attempt #5" data-has-video="true">
                         <div class="attempt-result save"></div>
                         <div class="attempt-info">
                             <div class="attempt-date">Dec 07, 2023</div>
-                            <div class="attempt-opponent">vs Washington Capitals</div>
+                            <div class="attempt-opponent">vs Capitals</div>
                             <div class="attempt-details">Wrist • Save</div>
                         </div>
                     </div>
@@ -229,6 +481,23 @@
             <h4 class="stats-card-title">Career Stats</h4>
             <div class="stats-grid stats-grid-3">
                 <div class="stat-box">
+                    <div class="stat-value">68</div>
+                    <div class="stat-label">Attempts</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-value">42</div>
+                    <div class="stat-label">Saves</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-value">61.8%</div>
+                    <div class="stat-label">Save %</div>
+                </div>
+            </div>
+        </div>
+        <div class="stats-card">
+            <h4 class="stats-card-title">2023-2024 through 2026-2027</h4>
+            <div class="stats-grid stats-grid-3">
+                <div class="stat-box">
                     <div class="stat-value">40</div>
                     <div class="stat-label">Attempts</div>
                 </div>
@@ -238,23 +507,6 @@
                 </div>
                 <div class="stat-box">
                     <div class="stat-value">65.0%</div>
-                    <div class="stat-label">Save %</div>
-                </div>
-            </div>
-        </div>
-        <div class="stats-card">
-            <h4 class="stats-card-title">Last 2 Seasons</h4>
-            <div class="stats-grid stats-grid-3">
-                <div class="stat-box">
-                    <div class="stat-value">12</div>
-                    <div class="stat-label">Attempts</div>
-                </div>
-                <div class="stat-box">
-                    <div class="stat-value">10</div>
-                    <div class="stat-label">Saves</div>
-                </div>
-                <div class="stat-box">
-                    <div class="stat-value">83.3%</div>
                     <div class="stat-label">Save %</div>
                 </div>
             </div>
@@ -273,7 +525,7 @@
             </div>
 
         </main>
-        
+
         <!-- Footer -->
         <footer id="main-footer" class="site-footer"></footer>
 
@@ -326,29 +578,29 @@
             // Function to play specific video by index
             function playVideoByIndex(index) {
                 if (index < 0 || index >= attemptItems.length) return;
-                
+
                 const item = attemptItems[index];
-                
+
                 // Remove active class from all items
                 attemptItems.forEach(i => i.classList.remove('active'));
-                
+
                 // Add active class to current item
                 item.classList.add('active');
-                
+
                 // Update URL parameter with video ID
                 const videoId = item.dataset.videoId;
                 updateURLParameter(videoId);
-                
+
                 // Update video source
                 const videoSrc = item.dataset.video;
                 const hasVideo = item.dataset.hasVideo === 'true';
                 const title = item.dataset.title;
                 const details = item.dataset.details;
-                
+
                 // Update title and details
                 videoTitle.textContent = title;
                 videoDetails.innerHTML = details;
-                
+
                 // Show video or no-video message
                 if (hasVideo && videoSrc) {
                     video.style.display = 'block';
@@ -378,21 +630,21 @@
             function playNextVideo() {
                 const currentIndex = getCurrentVideoIndex();
                 let nextIndex = currentIndex + 1;
-                
+
                 // Skip attempts without videos
                 while (nextIndex < attemptItems.length && attemptItems[nextIndex].dataset.hasVideo !== 'true') {
                     nextIndex++;
                 }
-                
+
                 if (nextIndex < attemptItems.length) {
                     playVideoByIndex(nextIndex);
-                    
+
                     // Scroll to video on mobile devices
                     if (window.innerWidth <= 768) {
                         const videoContainer = document.querySelector('.video-player-container');
-                        videoContainer.scrollIntoView({ 
-                            behavior: 'smooth', 
-                            block: 'center' 
+                        videoContainer.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'center'
                         });
                     }
                 } else {
@@ -404,13 +656,13 @@
             attemptItems.forEach((item, index) => {
                 item.addEventListener('click', function() {
                     playVideoByIndex(index);
-                    
+
                     // Scroll to video on mobile devices
                     if (window.innerWidth <= 768) {
                         const videoContainer = document.querySelector('.video-player-container');
-                        videoContainer.scrollIntoView({ 
-                            behavior: 'smooth', 
-                            block: 'center' 
+                        videoContainer.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'center'
                         });
                     }
                 });
@@ -428,7 +680,7 @@
             // Initialize from URL parameter and auto-play
             setTimeout(() => {
                 const videoId = getVideoIdFromURL();
-                
+
                 if (videoId) {
                     // Load video from URL parameter by ID
                     const videoIndex = findVideoIndexById(videoId);
