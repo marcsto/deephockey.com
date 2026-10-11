@@ -2,15 +2,18 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Alex Newhook - Shootout Videos | Deep Hockey</title>
-    <meta name="description" content="Complete shootout analysis for Alex Newhook including video breakdowns of all shootout attempts.">
+    <title>Alex Newhook Shootout Stats &amp; Videos | Deep Hockey</title>
+    <meta name="description" content="Alex Newhook shootout stats: 2 archived NHL regular-season attempts, 2 videos, career totals and results by date.">
     <meta name="keywords" content="Alex Newhook, shootout, NHL, Montréal Canadiens, hockey analysis">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../../css/styles.css">
     <link rel="stylesheet" href="../../css/shootout.css">
+    <link rel="stylesheet" href="/css/shootout-context.css">
+    <link rel="canonical" href="https://www.deephockey.com/shootout/players/alex_newhook_shootouts.html">
 </head>
 <body>
     <!-- App Container -->
@@ -21,13 +24,18 @@
 
         <!-- Main Content -->
         <main class="main-shootout-content">
+<nav class="shootout-breadcrumbs" aria-label="Breadcrumb"><a href="/">Deep Hockey</a><span aria-hidden="true">/</span><a href="/shootout/">Player shootouts</a><span aria-hidden="true">/</span><a href="/shootout/goalie_shootout_stats.html">Goalie shootouts</a></nav>
 
             <!-- Player Header -->
             <div class="player-header">
                 <h1 class="player-name">Alex Newhook Shootout Videos</h1>
             </div>
 
-            <!-- Shootout Container -->
+            <section class="shootout-overview" aria-label="Shootout summary">
+<p>Alex Newhook scored <strong>0 goals in 2 attempts</strong> (0.0%) in the available regular-season archive for 2023-2024 to 2024-2025.
+There are 2 videos to watch. The latest recorded attempt was on Oct 19, 2024 against Islanders.</p>
+<a href="#season-record">Season breakdown and recent results ↓</a></section>
+<!-- Shootout Container -->
             <div class="shootout-container">
 
                 <!-- Left Column (Video and Stats on wide screens) -->
@@ -138,6 +146,7 @@
                             <div class="attempt-date">Oct 19, 2024</div>
                             <div class="attempt-opponent">vs Islanders</div>
                             <div class="attempt-details">Wrist • Save</div>
+                            <div class="attempt-context">Round 6 · Goalie: <a href="/shootout/goalies/semyon_varlamov_shootouts.html?v=2024020081-12">Semyon Varlamov</a></div>
                         </div>
                     </div>
 
@@ -147,6 +156,7 @@
                             <div class="attempt-date">Oct 30, 2023</div>
                             <div class="attempt-opponent">vs Golden Knights</div>
                             <div class="attempt-details">Snap • Hit Left Post</div>
+                            <div class="attempt-context">Round 4 · Goalie: <a href="/shootout/goalies/adin_hill_shootouts.html?v=2023020138-8">Adin Hill</a></div>
                         </div>
                     </div>
                     </div>
@@ -219,9 +229,17 @@
 
             </div>
 
-            <!-- Back to Articles -->
+            <section class="shootout-context-panel" id="season-record" data-player-id="8481618">
+<h2>Alex Newhook's season-by-season shootout record</h2>
+<div class="shootout-table-scroll"><table class="shootout-season-table"><caption>Available regular-season attempts in this archive</caption>
+<thead><tr><th scope="col">Season</th><th scope="col">Attempts</th><th scope="col">Goals</th><th scope="col">Scoring %</th><th scope="col">Videos</th></tr></thead>
+<tbody><tr><th scope="row">2023-2024</th><td>1</td><td>0</td><td>0.0%</td><td>1</td></tr><tr><th scope="row">2024-2025</th><td>1</td><td>0</td><td>0.0%</td><td>1</td></tr></tbody></table></div>
+<p>Wrist shots account for 1 of the 2 attempts with a recorded shot type (50.0%).</p><h3>Latest shootout results</h3><ol class="shootout-recent-results"><li><time datetime="2024-10-19">Oct 19, 2024</time> — <strong>Saved</strong> against Islanders, round 6. Goalie: <a href="/shootout/goalies/semyon_varlamov_shootouts.html?v=2024020081-12">Semyon Varlamov</a>. <a class="attempt-jump" href="?v=2024020081-12" data-attempt-id="2024020081-12">Watch attempt</a>.</li><li><time datetime="2023-10-30">Oct 30, 2023</time> — <strong>Missed</strong> against Golden Knights, round 4. Goalie: <a href="/shootout/goalies/adin_hill_shootouts.html?v=2023020138-8">Adin Hill</a>. <a class="attempt-jump" href="?v=2023020138-8" data-attempt-id="2023020138-8">Watch attempt</a>.</li></ol>
+<p class="shootout-data-note">Results and attempt order come from NHL play-by-play. This archive contains available records from 2023–24 onward; it is not a complete career log. Attempts without a matching clip remain in the statistics. Career totals above use the broader historical NHL dataset. Preseason and playoff games are excluded.</p>
+</section>
+<!-- Back to Articles -->
             <div style="text-align: center; margin-top: 3rem;">
-                <a href="../../index.html" class="card-link">← Back to Deep Hockey</a>
+                <a href="/shootout/" class="card-link">← All player shootouts</a>
             </div>
 
         </main>
@@ -354,7 +372,8 @@
 
             // Add click handlers to attempt items
             attemptItems.forEach((item, index) => {
-                item.addEventListener('click', function() {
+                item.addEventListener('click', function(event) {
+                    if (event.target.closest('a')) return;
                     playVideoByIndex(index);
 
                     // Scroll to video on mobile devices
@@ -365,6 +384,14 @@
                             block: 'center'
                         });
                     }
+                });
+            });
+
+            document.querySelectorAll('.attempt-jump').forEach(link => {
+                link.addEventListener('click', function(event) {
+                    event.preventDefault();
+                    playVideoByIndex(findVideoIndexById(this.dataset.attemptId));
+                    document.querySelector('.video-player-container').scrollIntoView({ behavior: 'smooth', block: 'center' });
                 });
             });
 

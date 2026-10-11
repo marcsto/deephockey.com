@@ -2,15 +2,18 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nicholas Robertson - Shootout Videos | Deep Hockey</title>
-    <meta name="description" content="Complete shootout analysis for Nicholas Robertson including video breakdowns of all shootout attempts.">
-    <meta name="keywords" content="Nicholas Robertson, shootout, NHL, Toronto Maple Leafs, hockey analysis">
+    <title>Nick Robertson - Shootout Videos | Deep Hockey</title>
+    <meta name="description" content="Nick Robertson shootout stats: 2 archived NHL regular-season attempts, 2 videos, career totals and results by date.">
+    <meta name="keywords" content="Nick Robertson, shootout, NHL, Pittsburgh Penguins, hockey analysis">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../../css/styles.css">
     <link rel="stylesheet" href="../../css/shootout.css">
+    <link rel="stylesheet" href="/css/shootout-context.css">
+    <link rel="canonical" href="https://www.deephockey.com/shootout/players/nicholas_robertson_shootouts.html">
 </head>
 <body>
     <!-- App Container -->
@@ -21,15 +24,16 @@
 
         <!-- Main Content -->
         <main class="main-shootout-content">
-            
+<nav class="shootout-breadcrumbs" aria-label="Breadcrumb"><a href="/">Deep Hockey</a><span aria-hidden="true">/</span><a href="/shootout/">Player shootouts</a><span aria-hidden="true">/</span><a href="/shootout/goalie_shootout_stats.html">Goalie shootouts</a></nav>
+
             <!-- Player Header -->
             <div class="player-header">
-                <h1 class="player-name">Nicholas Robertson Shootout Videos</h1>
+                <h1 class="player-name">Nick Robertson Shootout Videos</h1>
             </div>
 
             <!-- Shootout Container -->
             <div class="shootout-container">
-                
+
                 <!-- Left Column (Video and Stats on wide screens) -->
                 <div class="left-column">
                     <!-- Video Player -->
@@ -44,7 +48,7 @@
                             <p>Unfortunately, there is no video available for this shootout attempt.</p>
                         </div>
                         <div class="video-info">
-                            <div class="video-title" id="video-title">vs Florida Panthers</div>
+                            <div class="video-title" id="video-title">vs Panthers</div>
                             <div class="video-details" id="video-details">
                                 Nov 28, 2023 • Save • Snap<br>Shootout Attempt #9
                             </div>
@@ -83,7 +87,7 @@
             </div>
         </div>
         <div class="stats-card">
-            <h4 class="stats-card-title">Last 2 Seasons</h4>
+            <h4 class="stats-card-title">2023-2024 through 2026-2027</h4>
             <div class="stats-grid stats-grid-3">
                 <div class="stat-box">
                     <div class="stat-value">2</div>
@@ -131,22 +135,24 @@
                     <!-- Attempts Sidebar -->
                     <div class="attempts-sidebar">
                         <h3 class="sidebar-title">Shootout Attempts</h3>
-                        
-                    <div class="attempt-item active" data-video="https://www.nhl.com/stories/184348/14725364/24.mp4" data-video-id="2023020329-9" data-title="vs Florida Panthers" data-details="Nov 28, 2023 • Save • Snap<br>Shootout Attempt #9" data-has-video="true">
+
+                    <div class="attempt-item active" data-video="https://www.nhl.com/stories/184348/14725364/24.mp4" data-video-id="2023020329-9" data-title="vs Panthers" data-details="Nov 28, 2023 • Save • Snap<br>Shootout Attempt #9" data-has-video="true">
                         <div class="attempt-result save"></div>
                         <div class="attempt-info">
                             <div class="attempt-date">Nov 28, 2023</div>
-                            <div class="attempt-opponent">vs Florida Panthers</div>
+                            <div class="attempt-opponent">vs Panthers</div>
                             <div class="attempt-details">Snap • Save</div>
+
                         </div>
                     </div>
 
-                    <div class="attempt-item" data-video="https://www.nhl.com/stories/171503/14194385/32.mp4" data-video-id="2023020207-7" data-title="vs Calgary Flames" data-details="Nov 10, 2023 • Wide Left • Wrist<br>Shootout Attempt #7" data-has-video="true">
+                    <div class="attempt-item" data-video="https://www.nhl.com/stories/171503/14194385/32.mp4" data-video-id="2023020207-7" data-title="vs Flames" data-details="Nov 10, 2023 • Wide Left • Wrist<br>Shootout Attempt #7" data-has-video="true">
                         <div class="attempt-result miss"></div>
                         <div class="attempt-info">
                             <div class="attempt-date">Nov 10, 2023</div>
-                            <div class="attempt-opponent">vs Calgary Flames</div>
+                            <div class="attempt-opponent">vs Flames</div>
                             <div class="attempt-details">Wrist • Wide Left</div>
+
                         </div>
                     </div>
                     </div>
@@ -174,7 +180,7 @@
             </div>
         </div>
         <div class="stats-card">
-            <h4 class="stats-card-title">Last 2 Seasons</h4>
+            <h4 class="stats-card-title">2023-2024 through 2026-2027</h4>
             <div class="stats-grid stats-grid-3">
                 <div class="stat-box">
                     <div class="stat-value">2</div>
@@ -221,11 +227,11 @@
 
             <!-- Back to Articles -->
             <div style="text-align: center; margin-top: 3rem;">
-                <a href="../../index.html" class="card-link">← Back to Deep Hockey</a>
+                <a href="/shootout/" class="card-link">← All player shootouts</a>
             </div>
 
         </main>
-        
+
         <!-- Footer -->
         <footer id="main-footer" class="site-footer"></footer>
 
@@ -278,29 +284,29 @@
             // Function to play specific video by index
             function playVideoByIndex(index) {
                 if (index < 0 || index >= attemptItems.length) return;
-                
+
                 const item = attemptItems[index];
-                
+
                 // Remove active class from all items
                 attemptItems.forEach(i => i.classList.remove('active'));
-                
+
                 // Add active class to current item
                 item.classList.add('active');
-                
+
                 // Update URL parameter with video ID
                 const videoId = item.dataset.videoId;
                 updateURLParameter(videoId);
-                
+
                 // Update video source
                 const videoSrc = item.dataset.video;
                 const hasVideo = item.dataset.hasVideo === 'true';
                 const title = item.dataset.title;
                 const details = item.dataset.details;
-                
+
                 // Update title and details
                 videoTitle.textContent = title;
                 videoDetails.innerHTML = details;
-                
+
                 // Show video or no-video message
                 if (hasVideo && videoSrc) {
                     video.style.display = 'block';
@@ -330,21 +336,21 @@
             function playNextVideo() {
                 const currentIndex = getCurrentVideoIndex();
                 let nextIndex = currentIndex + 1;
-                
+
                 // Skip attempts without videos
                 while (nextIndex < attemptItems.length && attemptItems[nextIndex].dataset.hasVideo !== 'true') {
                     nextIndex++;
                 }
-                
+
                 if (nextIndex < attemptItems.length) {
                     playVideoByIndex(nextIndex);
-                    
+
                     // Scroll to video on mobile devices
                     if (window.innerWidth <= 768) {
                         const videoContainer = document.querySelector('.video-player-container');
-                        videoContainer.scrollIntoView({ 
-                            behavior: 'smooth', 
-                            block: 'center' 
+                        videoContainer.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'center'
                         });
                     }
                 } else {
@@ -354,17 +360,26 @@
 
             // Add click handlers to attempt items
             attemptItems.forEach((item, index) => {
-                item.addEventListener('click', function() {
+                item.addEventListener('click', function(event) {
+                    if (event.target.closest('a')) return;
                     playVideoByIndex(index);
-                    
+
                     // Scroll to video on mobile devices
                     if (window.innerWidth <= 768) {
                         const videoContainer = document.querySelector('.video-player-container');
-                        videoContainer.scrollIntoView({ 
-                            behavior: 'smooth', 
-                            block: 'center' 
+                        videoContainer.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'center'
                         });
                     }
+                });
+            });
+
+            document.querySelectorAll('.attempt-jump').forEach(link => {
+                link.addEventListener('click', function(event) {
+                    event.preventDefault();
+                    playVideoByIndex(findVideoIndexById(this.dataset.attemptId));
+                    document.querySelector('.video-player-container').scrollIntoView({ behavior: 'smooth', block: 'center' });
                 });
             });
 
@@ -380,7 +395,7 @@
             // Initialize from URL parameter and auto-play
             setTimeout(() => {
                 const videoId = getVideoIdFromURL();
-                
+
                 if (videoId) {
                     // Load video from URL parameter by ID
                     const videoIndex = findVideoIndexById(videoId);

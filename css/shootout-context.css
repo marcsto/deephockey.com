@@ -1,0 +1,39 @@
+.shootout-container > .left-column,
+.shootout-container > .right-column { min-width: 0; }
+.shootout-breadcrumbs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .55rem;
+    margin-bottom: 1.25rem;
+    font-size: .9rem;
+    color: #9ca3af;
+}
+.shootout-breadcrumbs a,
+.shootout-overview a,
+.shootout-context-panel a,
+.attempt-context a { color: #93c5fd; text-decoration: underline; text-underline-offset: .2em; }
+.shootout-overview { margin: 0 0 1.5rem; color: #d1d5db; line-height: 1.7; }
+.shootout-overview p { margin: 0 0 .4rem; }
+.shootout-context-panel { background: #111827; border: 1px solid #374151; border-radius: .8rem; padding: 1.5rem; margin-top: 2rem; color: #d1d5db; line-height: 1.7; }
+.shootout-context-panel h2 { color: #f3f4f6; font-size: 1.35rem; margin: 0 0 1rem; }
+.shootout-context-panel h3 { color: #f3f4f6; margin: 1.5rem 0 .75rem; }
+.shootout-table-scroll { overflow-x: auto; }
+.shootout-season-table { border-collapse: collapse; width: 100%; font-variant-numeric: tabular-nums; }
+.shootout-season-table caption { text-align: left; margin-bottom: .5rem; font-size: .9rem; color: #9ca3af; }
+.shootout-season-table th, .shootout-season-table td { padding: .65rem .8rem; border-bottom: 1px solid #374151; text-align: right; white-space: nowrap; }
+.shootout-season-table th:first-child { text-align: left; }
+.shootout-season-table thead { color: #93c5fd; }
+.shootout-recent-results { padding-left: 1.25rem; }
+.shootout-recent-results li { padding: .45rem 0; }
+.shootout-data-note { color: #9ca3af; font-size: .9rem; margin-top: 1.5rem; }
+.attempt-context { font-size: .8rem; color: #9ca3af; margin-top: .35rem; line-height: 1.5; }
+@media (max-width: 600px) {
+    .player-stats-section { padding: 1rem; }
+    .stats-card { min-width: 0; padding: .75rem; }
+    .stats-grid { gap: .4rem; }
+    .stat-box { min-width: 0; padding: .4rem; }
+    .stat-box .stat-label { overflow-wrap: anywhere; }
+    .shootout-context-panel { padding: 1rem; }
+    .shootout-season-table th, .shootout-season-table td { padding: .55rem .45rem; font-size: .85rem; }
+    .shootout-overview { font-size: .95rem; }
+}
