@@ -1,4 +1,5 @@
 .shootout-scouting { margin: 1rem 0 1.5rem; padding: 1.2rem 1.4rem; border: 1px solid #37516d; border-left: 4px solid #7dd3fc; border-radius: .75rem; background: #111e30; color: #e2e8f0; line-height: 1.65; }
+.left-column > .shootout-scouting { margin: 0; }
 .scouting-heading { display: flex; align-items: center; flex-wrap: wrap; gap: .6rem 1rem; margin-bottom: .55rem; }
 .scouting-heading h2 { font-size: 1.1rem; margin: 0; color: #f8fafc; }
 .scouting-tendency { border: 1px solid #4b6c8a; border-radius: 2rem; padding: .15rem .7rem; font-size: .8rem; color: #bae6fd; }
