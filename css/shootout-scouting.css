@@ -1,0 +1,14 @@
+.shootout-scouting { margin: 1rem 0 1.5rem; padding: 1.2rem 1.4rem; border: 1px solid #37516d; border-left: 4px solid #7dd3fc; border-radius: .75rem; background: #111e30; color: #e2e8f0; line-height: 1.65; }
+.scouting-heading { display: flex; align-items: center; flex-wrap: wrap; gap: .6rem 1rem; margin-bottom: .55rem; }
+.scouting-heading h2 { font-size: 1.1rem; margin: 0; color: #f8fafc; }
+.scouting-tendency { border: 1px solid #4b6c8a; border-radius: 2rem; padding: .15rem .7rem; font-size: .8rem; color: #bae6fd; }
+.shootout-scouting .scouting-summary { margin: 0 0 .8rem; max-width: 100ch; }
+.scouting-evidence { display: flex; flex-wrap: wrap; gap: .4rem 1.4rem; font-size: .88rem; }
+.scouting-evidence strong { font-variant-numeric: tabular-nums; color: #f8fafc; }
+.shootout-scouting .scouting-scope { color: #a7b7c9; font-size: .8rem; margin: .4rem 0; }
+.scouting-examples, .scouting-method { font-size: .85rem; margin-top: .55rem; }
+.scouting-examples a { color: #93c5fd; text-decoration: underline; text-underline-offset: .2em; }
+.scouting-method { color: #a7b7c9; }
+.scouting-method summary { cursor: pointer; width: fit-content; }
+.scouting-method p { margin: .6rem 0 0; max-width: 100ch; }
+@media (max-width: 600px) { .shootout-scouting { padding: 1rem; } .scouting-evidence { gap: .3rem .9rem; } }
