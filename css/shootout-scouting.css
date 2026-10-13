@@ -6,6 +6,9 @@
 .shootout-scouting .scouting-summary { margin: 0 0 .8rem; max-width: 100ch; }
 .scouting-evidence { display: flex; flex-wrap: wrap; gap: .4rem 1.4rem; font-size: .88rem; }
 .scouting-evidence strong { font-variant-numeric: tabular-nums; color: #f8fafc; }
+.scouting-effectiveness { margin-top: .9rem; padding-top: .8rem; border-top: 1px solid #37516d; }
+.scouting-effectiveness h3 { margin: 0 0 .3rem; font-size: .95rem; color: #bae6fd; }
+.scouting-effectiveness p { margin: 0; max-width: 100ch; }
 .shootout-scouting .scouting-scope { color: #a7b7c9; font-size: .8rem; margin: .4rem 0; }
 .scouting-examples, .scouting-method { font-size: .85rem; margin-top: .55rem; }
 .scouting-examples a { color: #93c5fd; text-decoration: underline; text-underline-offset: .2em; }
