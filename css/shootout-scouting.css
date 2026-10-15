@@ -1,5 +1,5 @@
-.shootout-scouting { margin: 1rem 0 1.5rem; padding: 1.2rem 1.4rem; border: 1px solid #37516d; border-left: 4px solid #7dd3fc; border-radius: .75rem; background: #111e30; color: #e2e8f0; line-height: 1.65; }
-.left-column > .shootout-scouting { margin: 0; }
+.shootout-scouting, .shootout-goalie-approaches { margin: 1rem 0 1.5rem; padding: 1.2rem 1.4rem; border: 1px solid #37516d; border-left: 4px solid #7dd3fc; border-radius: .75rem; background: #111e30; color: #e2e8f0; line-height: 1.65; }
+.left-column > .shootout-scouting, .left-column > .shootout-goalie-approaches { margin: 0; }
 .scouting-heading { display: flex; align-items: center; flex-wrap: wrap; gap: .6rem 1rem; margin-bottom: .55rem; }
 .scouting-heading h2 { font-size: 1.1rem; margin: 0; color: #f8fafc; }
 .scouting-tendency { border: 1px solid #4b6c8a; border-radius: 2rem; padding: .15rem .7rem; font-size: .8rem; color: #bae6fd; }
@@ -9,10 +9,24 @@
 .scouting-effectiveness { margin-top: .9rem; padding-top: .8rem; border-top: 1px solid #37516d; }
 .scouting-effectiveness h3 { margin: 0 0 .3rem; font-size: .95rem; color: #bae6fd; }
 .scouting-effectiveness p { margin: 0; max-width: 100ch; }
-.shootout-scouting .scouting-scope { color: #a7b7c9; font-size: .8rem; margin: .4rem 0; }
+.scouting-approaches { margin-top: .9rem; padding-top: .8rem; border-top: 1px solid #37516d; }
+.scouting-approaches h3, .scouting-approaches h2 { margin: 0; font-size: .95rem; color: #bae6fd; }
+.shootout-goalie-approaches > .scouting-approaches { margin: 0; padding: 0; border: 0; }
+.scouting-approach-table { width: 100%; border-collapse: collapse; font-size: .85rem; font-variant-numeric: tabular-nums; }
+.scouting-approach-table caption { text-align: left; color: #a7b7c9; font-size: .8rem; margin: .35rem 0; }
+.scouting-approach-table th, .scouting-approach-table td { padding: .45rem .35rem; text-align: left; border-bottom: 1px solid #37516d; }
+.scouting-approach-table span { color: #a7b7c9; white-space: nowrap; }
+.approach-help { position: relative; width: fit-content; }
+.approach-help summary { display: inline-flex; align-items: center; gap: .3rem; min-height: 44px; cursor: pointer; list-style: none; }
+.approach-help summary::-webkit-details-marker { display: none; }
+.approach-help summary:focus-visible { outline: 2px solid #7dd3fc; outline-offset: 3px; border-radius: .2rem; }
+.approach-help .approach-help-text { position: absolute; z-index: 20; top: 100%; left: 0; box-sizing: border-box; width: min(19rem, calc(100vw - 6rem)); margin: 0; padding: .8rem; border: 1px solid #5b7895; border-radius: .5rem; background: #172b42; color: #e2e8f0; box-shadow: 0 5px 20px #0006; font-size: .85rem; font-weight: normal; line-height: 1.5; text-align: left; white-space: normal; }
+.shootout-scouting .scouting-scope, .shootout-goalie-approaches .scouting-scope { color: #a7b7c9; font-size: .8rem; margin: .4rem 0; }
 .scouting-examples, .scouting-method { font-size: .85rem; margin-top: .55rem; }
 .scouting-examples a { color: #93c5fd; text-decoration: underline; text-underline-offset: .2em; }
 .scouting-method { color: #a7b7c9; }
 .scouting-method summary { cursor: pointer; width: fit-content; }
 .scouting-method p { margin: .6rem 0 0; max-width: 100ch; }
-@media (max-width: 600px) { .shootout-scouting { padding: 1rem; } .scouting-evidence { gap: .3rem .9rem; } }
+@media (max-width: 600px) { .shootout-scouting, .shootout-goalie-approaches { padding: 1rem; } .scouting-evidence { gap: .3rem .9rem; } }
+/* Keep one visible stats block above the scouting/approach read on phones too. */
+@media (max-width: 768px) { .shootout-person-layout .player-stats-desktop { display: block; } .shootout-person-layout .player-stats-mobile { display: none; } }

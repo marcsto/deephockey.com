@@ -1,472 +1,635 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>David Rittich - Shootout Videos | Deep Hockey</title>
-    <meta name="description" content="David Rittich shootout stats: 29 NHL regular-season attempts from 2023–24 onward, 27 videos, career totals and results by date.">
-    <meta name="keywords" content="David Rittich, shootout, NHL, New Jersey Devils, hockey analysis">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../../css/styles.css">
-    <link rel="stylesheet" href="../../css/shootout.css">
-    <link rel="stylesheet" href="/css/shootout-context.css">
-    <link rel="canonical" href="https://www.deephockey.com/shootout/goalies/david_rittich_shootouts.html">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>David Rittich Shootout Stats &amp; Videos | Deep Hockey</title>
+<meta content="David Rittich shootout stats: 29 NHL regular-season attempts from 2023–24 onward, 27 videos, career totals and results by date." name="description"/>
+<meta content="David Rittich, shootout, NHL, New Jersey Devils, hockey analysis" name="keywords"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="../../css/styles.css" rel="stylesheet"/>
+<link href="../../css/shootout.css" rel="stylesheet"/>
+<link href="/css/shootout-context.css" rel="stylesheet"/>
+<link href="https://www.deephockey.com/shootout/goalies/david_rittich_shootouts.html" rel="canonical"/>
+<link href="/css/shootout-scouting.css?v=a917770e7c94" rel="stylesheet"/>
+<link href="/css/shootout-shot-map.css" rel="stylesheet"/>
+<script defer="" src="/js/shootout-shot-map.js"></script>
 </head>
 <body>
-    <!-- App Container -->
-    <div id="app" class="app-container">
-
-        <!-- Header -->
-        <header id="main-header" class="site-header"></header>
-
-        <!-- Main Content -->
-        <main class="main-shootout-content">
-<nav class="shootout-breadcrumbs" aria-label="Breadcrumb"><a href="/">Deep Hockey</a><span aria-hidden="true">/</span><a href="/shootout/">Player shootouts</a><span aria-hidden="true">/</span><a href="/shootout/goalie_shootout_stats.html">Goalie shootouts</a></nav>
-
-            <!-- Player Header -->
-            <div class="player-header">
-                <h1 class="player-name">David Rittich Shootout Videos</h1>
-            </div>
-
-            <!-- Shootout Container -->
-            <div class="shootout-container">
-
-                <!-- Left Column (Video and Stats on wide screens) -->
-                <div class="left-column">
-                    <!-- Video Player -->
-                    <div class="video-player-container">
-                        <video id="shootout-video" class="video-player" controls>
-                            <source src="https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/5e424dfc-5e9e-47c4-85ac-158efdefcc67.mp4" type="video/mp4">
+<!-- App Container -->
+<div class="app-container" id="app">
+<!-- Header -->
+<header class="site-header" id="main-header"></header>
+<!-- Main Content -->
+<main class="main-shootout-content">
+<nav aria-label="Breadcrumb" class="shootout-breadcrumbs"><a href="/">Deep Hockey</a><span aria-hidden="true">/</span><a href="/shootout/">Player shootouts</a><span aria-hidden="true">/</span><a href="/shootout/goalie_shootout_stats.html">Goalie shootouts</a></nav>
+<!-- Player Header -->
+<div class="player-header">
+<h1 class="player-name">David Rittich Shootout Videos</h1>
+</div>
+<section aria-label="Shootout summary" class="shootout-overview">
+<p class="career-shootout-summary">David Rittich has allowed <strong>24 goals on 69 career NHL shootout attempts faced</strong> (34.8% goals allowed).</p>
+<p>Watch 27 of the attempts he faced below. His latest listed attempt came against the Nashville Predators on January 8, 2026.</p>
+<a href="#season-record">Season breakdown and recent results ↓</a></section>
+<!-- Shootout Container -->
+<div class="shootout-container shootout-person-layout">
+<!-- Left Column (Video and Stats on wide screens) -->
+<div class="left-column">
+<!-- Video Player -->
+<div class="video-player-container">
+<video class="video-player" controls="" id="shootout-video">
+<source src="https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/5e424dfc-5e9e-47c4-85ac-158efdefcc67.mp4" type="video/mp4"/>
                             Your browser does not support the video tag.
                         </video>
-                        <div id="no-video-message" class="no-video-message" style="display: none;">
-                            <div class="no-video-icon">🎥</div>
-                            <h3>No Video Available</h3>
-                            <p>Unfortunately, there is no video available for this shootout attempt.</p>
-                        </div>
-                        <div class="video-info">
-                            <div class="video-title" id="video-title">vs Predators</div>
-                            <div class="video-details" id="video-details">
-                                Jan 08, 2026 • Save • Backhand<br>Shootout Attempt #1
-                            </div>
-                        </div>
-                        <div class="video-controls">
-                            <div class="autoplay-control">
-                                <label class="toggle-switch">
-                                    <input type="checkbox" id="autoplay-toggle" checked>
-                                    <span class="toggle-slider"></span>
-                                    <span class="toggle-label">Auto-play next video</span>
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Player Stats (desktop: below video) -->
-                    <div class="player-stats-desktop">
-                        <div class="player-stats-section">
-    <h3 class="stats-title">Shootout Statistics</h3>
-    <div class="stats-container">
-        <div class="stats-card">
-            <h4 class="stats-card-title">Career Stats</h4>
-            <div class="stats-grid stats-grid-3">
-                <div class="stat-box">
-                    <div class="stat-value">69</div>
-                    <div class="stat-label">Attempts</div>
-                </div>
-                <div class="stat-box">
-                    <div class="stat-value">45</div>
-                    <div class="stat-label">Saves</div>
-                </div>
-                <div class="stat-box">
-                    <div class="stat-value">65.2%</div>
-                    <div class="stat-label">Save %</div>
-                </div>
-            </div>
-        </div>
-        <div class="stats-card">
-            <h4 class="stats-card-title">2023–24 through 2026–27</h4>
-            <div class="stats-grid stats-grid-3">
-                <div class="stat-box">
-                    <div class="stat-value">29</div>
-                    <div class="stat-label">Attempts</div>
-                </div>
-                <div class="stat-box">
-                    <div class="stat-value">16</div>
-                    <div class="stat-label">Saves</div>
-                </div>
-                <div class="stat-box">
-                    <div class="stat-value">55.2%</div>
-                    <div class="stat-label">Save %</div>
-                </div>
-            </div>
-        </div>
-    </div>
+<div class="no-video-message" id="no-video-message" style="display: none;">
+<div class="no-video-icon">🎥</div>
+<h3>No Video Available</h3>
+<p>Unfortunately, there is no video available for this shootout attempt.</p>
 </div>
-
-                    </div>
-                </div>
-
-                <!-- Right Column (Attempts Sidebar) -->
-                <div class="right-column">
-                    <!-- Attempts Sidebar -->
-                    <div class="attempts-sidebar">
-                        <h3 class="sidebar-title">Shootout Attempts</h3>
-
-                    <div class="attempt-item active" data-video="https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/5e424dfc-5e9e-47c4-85ac-158efdefcc67.mp4" data-video-id="2025020689-1" data-title="vs Predators" data-details="Jan 08, 2026 • Save • Backhand<br>Shootout Attempt #1" data-has-video="true">
-                        <div class="attempt-result save"></div>
-                        <div class="attempt-info">
-                            <div class="attempt-date">Jan 08, 2026</div>
-                            <div class="attempt-opponent">vs Predators</div>
-                            <div class="attempt-details">Backhand • Save</div>
-
-                        </div>
-                    </div>
-
-                    <div class="attempt-item" data-video="https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/6fd58fe6-2bbf-44ed-960b-0219b2ca1280.mp4" data-video-id="2025020689-3" data-title="vs Predators" data-details="Jan 08, 2026 • Goal • Backhand<br>Shootout Attempt #3" data-has-video="true">
-                        <div class="attempt-result goal"></div>
-                        <div class="attempt-info">
-                            <div class="attempt-date">Jan 08, 2026</div>
-                            <div class="attempt-opponent">vs Predators</div>
-                            <div class="attempt-details">Backhand • Goal</div>
-
-                        </div>
-                    </div>
-
-                    <div class="attempt-item" data-video="https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/cb344174-64ac-4e9f-883f-dcaee2e52ee8.mp4" data-video-id="2025020689-5" data-title="vs Predators" data-details="Jan 08, 2026 • Hit Left Post • Wrist<br>Shootout Attempt #5" data-has-video="true">
-                        <div class="attempt-result miss"></div>
-                        <div class="attempt-info">
-                            <div class="attempt-date">Jan 08, 2026</div>
-                            <div class="attempt-opponent">vs Predators</div>
-                            <div class="attempt-details">Wrist • Hit Left Post</div>
-
-                        </div>
-                    </div>
-
-                    <div class="attempt-item" data-video="https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/d94ad350-3695-4799-865c-a5d5006ddd35.mp4" data-video-id="2025020620-1" data-title="vs Blackhawks" data-details="Dec 30, 2025 • High And Wide Right • Wrist<br>Shootout Attempt #1" data-has-video="true">
-                        <div class="attempt-result miss"></div>
-                        <div class="attempt-info">
-                            <div class="attempt-date">Dec 30, 2025</div>
-                            <div class="attempt-opponent">vs Blackhawks</div>
-                            <div class="attempt-details">Wrist • High And Wide Right</div>
-
-                        </div>
-                    </div>
-
-                    <div class="attempt-item" data-video="https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/14628ed8-7bf6-4558-9543-b5e73bf0f9d2.mp4" data-video-id="2025020620-3" data-title="vs Blackhawks" data-details="Dec 30, 2025 • Save • Wrist<br>Shootout Attempt #3" data-has-video="true">
-                        <div class="attempt-result save"></div>
-                        <div class="attempt-info">
-                            <div class="attempt-date">Dec 30, 2025</div>
-                            <div class="attempt-opponent">vs Blackhawks</div>
-                            <div class="attempt-details">Wrist • Save</div>
-
-                        </div>
-                    </div>
-
-                    <div class="attempt-item" data-video="https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/b2d18867-4521-45c6-b7f4-9b9ac633206b.mp4" data-video-id="2025020620-5" data-title="vs Blackhawks" data-details="Dec 30, 2025 • Save • Wrist<br>Shootout Attempt #5" data-has-video="true">
-                        <div class="attempt-result save"></div>
-                        <div class="attempt-info">
-                            <div class="attempt-date">Dec 30, 2025</div>
-                            <div class="attempt-opponent">vs Blackhawks</div>
-                            <div class="attempt-details">Wrist • Save</div>
-
-                        </div>
-                    </div>
-
-                    <div class="attempt-item" data-video="https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/362008ec-8df8-4047-8b91-3c1281971b17.mp4" data-video-id="2025020553-1" data-title="vs Sabres" data-details="Dec 20, 2025 • Save • Wrist<br>Shootout Attempt #1" data-has-video="true">
-                        <div class="attempt-result save"></div>
-                        <div class="attempt-info">
-                            <div class="attempt-date">Dec 20, 2025</div>
-                            <div class="attempt-opponent">vs Sabres</div>
-                            <div class="attempt-details">Wrist • Save</div>
-
-                        </div>
-                    </div>
-
-                    <div class="attempt-item" data-video="https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/167b8482-13e7-4892-b724-9bf488925bf1.mp4" data-video-id="2025020553-3" data-title="vs Sabres" data-details="Dec 20, 2025 • Goal • Wrist<br>Shootout Attempt #3" data-has-video="true">
-                        <div class="attempt-result goal"></div>
-                        <div class="attempt-info">
-                            <div class="attempt-date">Dec 20, 2025</div>
-                            <div class="attempt-opponent">vs Sabres</div>
-                            <div class="attempt-details">Wrist • Goal</div>
-
-                        </div>
-                    </div>
-
-                    <div class="attempt-item" data-video="https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/ed2dfb00-eedc-4575-9837-0d86f8a54dd0.mp4" data-video-id="2025020553-5" data-title="vs Sabres" data-details="Dec 20, 2025 • Wide Right • Wrist<br>Shootout Attempt #5" data-has-video="true">
-                        <div class="attempt-result miss"></div>
-                        <div class="attempt-info">
-                            <div class="attempt-date">Dec 20, 2025</div>
-                            <div class="attempt-opponent">vs Sabres</div>
-                            <div class="attempt-details">Wrist • Wide Right</div>
-
-                        </div>
-                    </div>
-
-                    <div class="attempt-item" data-video="https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/e2f737d9-f53f-4bf2-974d-255308cd1d54.mp4" data-video-id="2025020553-7" data-title="vs Sabres" data-details="Dec 20, 2025 • Short • Wrist<br>Shootout Attempt #7" data-has-video="true">
-                        <div class="attempt-result miss"></div>
-                        <div class="attempt-info">
-                            <div class="attempt-date">Dec 20, 2025</div>
-                            <div class="attempt-opponent">vs Sabres</div>
-                            <div class="attempt-details">Wrist • Short</div>
-
-                        </div>
-                    </div>
-
-                    <div class="attempt-item" data-video="https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/6493cc5c-4ef8-4d97-85cb-4482e75177e0.mp4" data-video-id="2025020553-9" data-title="vs Sabres" data-details="Dec 20, 2025 • Goal • Wrist<br>Shootout Attempt #9" data-has-video="true">
-                        <div class="attempt-result goal"></div>
-                        <div class="attempt-info">
-                            <div class="attempt-date">Dec 20, 2025</div>
-                            <div class="attempt-opponent">vs Sabres</div>
-                            <div class="attempt-details">Wrist • Goal</div>
-
-                        </div>
-                    </div>
-
-                    <div class="attempt-item" data-video="https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/90964723-b6a9-4a77-b61f-d6cd1ad67275.mp4" data-video-id="2025020381-1" data-title="vs Flyers" data-details="Nov 28, 2025 • Goal • Backhand<br>Shootout Attempt #1" data-has-video="true">
-                        <div class="attempt-result goal"></div>
-                        <div class="attempt-info">
-                            <div class="attempt-date">Nov 28, 2025</div>
-                            <div class="attempt-opponent">vs Flyers</div>
-                            <div class="attempt-details">Backhand • Goal</div>
-
-                        </div>
-                    </div>
-
-                    <div class="attempt-item" data-video="https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/0d626321-8fd0-449d-996d-7f01030a4f33.mp4" data-video-id="2025020381-3" data-title="vs Flyers" data-details="Nov 28, 2025 • Save • Backhand<br>Shootout Attempt #3" data-has-video="true">
-                        <div class="attempt-result save"></div>
-                        <div class="attempt-info">
-                            <div class="attempt-date">Nov 28, 2025</div>
-                            <div class="attempt-opponent">vs Flyers</div>
-                            <div class="attempt-details">Backhand • Save</div>
-
-                        </div>
-                    </div>
-
-                    <div class="attempt-item" data-video="https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/b845372e-bdca-476f-911a-72b5f1b8836a.mp4" data-video-id="2025020381-5" data-title="vs Flyers" data-details="Nov 28, 2025 • Goal • Wrist<br>Shootout Attempt #5" data-has-video="true">
-                        <div class="attempt-result goal"></div>
-                        <div class="attempt-info">
-                            <div class="attempt-date">Nov 28, 2025</div>
-                            <div class="attempt-opponent">vs Flyers</div>
-                            <div class="attempt-details">Wrist • Goal</div>
-
-                        </div>
-                    </div>
-
-                    <div class="attempt-item" data-video="https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/ec62eac2-799b-4b01-8e6b-79a0c17c1efb.mp4" data-video-id="2025020349-1" data-title="vs Kraken" data-details="Nov 23, 2025 • Goal • Snap<br>Shootout Attempt #1" data-has-video="true">
-                        <div class="attempt-result goal"></div>
-                        <div class="attempt-info">
-                            <div class="attempt-date">Nov 23, 2025</div>
-                            <div class="attempt-opponent">vs Kraken</div>
-                            <div class="attempt-details">Snap • Goal</div>
-
-                        </div>
-                    </div>
-
-                    <div class="attempt-item" data-video="https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/e8baa43c-950e-4494-aff4-bff282dfee79.mp4" data-video-id="2025020349-3" data-title="vs Kraken" data-details="Nov 23, 2025 • High And Wide Right • Snap<br>Shootout Attempt #3" data-has-video="true">
-                        <div class="attempt-result miss"></div>
-                        <div class="attempt-info">
-                            <div class="attempt-date">Nov 23, 2025</div>
-                            <div class="attempt-opponent">vs Kraken</div>
-                            <div class="attempt-details">Snap • High And Wide Right</div>
-
-                        </div>
-                    </div>
-
-                    <div class="attempt-item" data-video="https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/9bdff767-5994-4e01-8a2d-c19e738d731e.mp4" data-video-id="2025020349-5" data-title="vs Kraken" data-details="Nov 23, 2025 • High And Wide Left • Snap<br>Shootout Attempt #5" data-has-video="true">
-                        <div class="attempt-result miss"></div>
-                        <div class="attempt-info">
-                            <div class="attempt-date">Nov 23, 2025</div>
-                            <div class="attempt-opponent">vs Kraken</div>
-                            <div class="attempt-details">Snap • High And Wide Left</div>
-
-                        </div>
-                    </div>
-
-                    <div class="attempt-item" data-video="https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/105382e9-19d4-4ba9-b397-418bad3ad2ab.mp4" data-video-id="2025020349-7" data-title="vs Kraken" data-details="Nov 23, 2025 • Save • Snap<br>Shootout Attempt #7" data-has-video="true">
-                        <div class="attempt-result save"></div>
-                        <div class="attempt-info">
-                            <div class="attempt-date">Nov 23, 2025</div>
-                            <div class="attempt-opponent">vs Kraken</div>
-                            <div class="attempt-details">Snap • Save</div>
-
-                        </div>
-                    </div>
-
-                    <div class="attempt-item" data-video="https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/7d5da699-c1e1-43df-aa70-4b91ba0070e8.mp4" data-video-id="2024020888-2" data-title="vs Ducks" data-details="Feb 08, 2025 • Goal • Wrist<br>Shootout Attempt #2" data-has-video="true">
-                        <div class="attempt-result goal"></div>
-                        <div class="attempt-info">
-                            <div class="attempt-date">Feb 08, 2025</div>
-                            <div class="attempt-opponent">vs Ducks</div>
-                            <div class="attempt-details">Wrist • Goal</div>
-
-                        </div>
-                    </div>
-
-                    <div class="attempt-item" data-video="https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/d9204d05-dae4-4f88-bb1f-219330d5b874.mp4" data-video-id="2024020888-4" data-title="vs Ducks" data-details="Feb 08, 2025 • Goal • Wrist<br>Shootout Attempt #4" data-has-video="true">
-                        <div class="attempt-result goal"></div>
-                        <div class="attempt-info">
-                            <div class="attempt-date">Feb 08, 2025</div>
-                            <div class="attempt-opponent">vs Ducks</div>
-                            <div class="attempt-details">Wrist • Goal</div>
-
-                        </div>
-                    </div>
-
-                    <div class="attempt-item" data-video="https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/13a6b457-668c-4a68-b92f-18f1550b2adb.mp4" data-video-id="2024020875-2" data-title="vs Stars" data-details="Feb 07, 2025 • High And Wide Right • Wrist<br>Shootout Attempt #2" data-has-video="true">
-                        <div class="attempt-result miss"></div>
-                        <div class="attempt-info">
-                            <div class="attempt-date">Feb 07, 2025</div>
-                            <div class="attempt-opponent">vs Stars</div>
-                            <div class="attempt-details">Wrist • High And Wide Right</div>
-
-                        </div>
-                    </div>
-
-                    <div class="attempt-item" data-video="https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/1af2e9b7-4d7d-45bc-964e-a78a588b2b8a.mp4" data-video-id="2024020875-4" data-title="vs Stars" data-details="Feb 07, 2025 • Save • Backhand<br>Shootout Attempt #4" data-has-video="true">
-                        <div class="attempt-result save"></div>
-                        <div class="attempt-info">
-                            <div class="attempt-date">Feb 07, 2025</div>
-                            <div class="attempt-opponent">vs Stars</div>
-                            <div class="attempt-details">Backhand • Save</div>
-
-                        </div>
-                    </div>
-
-                    <div class="attempt-item" data-video="https://stories.nhl.com/games/264809/17467375/20.mp4" data-video-id="2023020915-2" data-title="vs Ducks" data-details="Feb 24, 2024 • Save • Wrist<br>Shootout Attempt #2" data-has-video="true">
-                        <div class="attempt-result save"></div>
-                        <div class="attempt-info">
-                            <div class="attempt-date">Feb 24, 2024</div>
-                            <div class="attempt-opponent">vs Ducks</div>
-                            <div class="attempt-details">Wrist • Save</div>
-
-                        </div>
-                    </div>
-
-                    <div class="attempt-item" data-video="https://stories.nhl.com/games/264809/17467375/22.mp4" data-video-id="2023020915-4" data-title="vs Ducks" data-details="Feb 24, 2024 • Goal • Wrist<br>Shootout Attempt #4" data-has-video="true">
-                        <div class="attempt-result goal"></div>
-                        <div class="attempt-info">
-                            <div class="attempt-date">Feb 24, 2024</div>
-                            <div class="attempt-opponent">vs Ducks</div>
-                            <div class="attempt-details">Wrist • Goal</div>
-
-                        </div>
-                    </div>
-
-                    <div class="attempt-item" data-video="https://stories.nhl.com/games/264809/17467375/24.mp4" data-video-id="2023020915-6" data-title="vs Ducks" data-details="Feb 24, 2024 • Save • Wrist<br>Shootout Attempt #6" data-has-video="true">
-                        <div class="attempt-result save"></div>
-                        <div class="attempt-info">
-                            <div class="attempt-date">Feb 24, 2024</div>
-                            <div class="attempt-opponent">vs Ducks</div>
-                            <div class="attempt-details">Wrist • Save</div>
-
-                        </div>
-                    </div>
-
-                    <div class="attempt-item no-video" data-video="" data-video-id="2023020729-2" data-title="vs Sharks" data-details="Jan 22, 2024 • Goal • Wrist<br>Shootout Attempt #2" data-has-video="false">
-                        <div class="attempt-result goal"></div>
-                        <div class="attempt-info">
-                            <div class="attempt-date">Jan 22, 2024 (No Video)</div>
-                            <div class="attempt-opponent">vs Sharks</div>
-                            <div class="attempt-details">Wrist • Goal</div>
-
-                        </div>
-                    </div>
-
-                    <div class="attempt-item no-video" data-video="" data-video-id="2023020729-4" data-title="vs Sharks" data-details="Jan 22, 2024 • Goal • Wrist<br>Shootout Attempt #4" data-has-video="false">
-                        <div class="attempt-result goal"></div>
-                        <div class="attempt-info">
-                            <div class="attempt-date">Jan 22, 2024 (No Video)</div>
-                            <div class="attempt-opponent">vs Sharks</div>
-                            <div class="attempt-details">Wrist • Goal</div>
-
-                        </div>
-                    </div>
-
-                    <div class="attempt-item" data-video="https://www.nhl.com/stories/214434/15885981/23.mp4" data-video-id="2023020600-2" data-title="vs Red Wings" data-details="Jan 04, 2024 • Goal • Wrist<br>Shootout Attempt #2" data-has-video="true">
-                        <div class="attempt-result goal"></div>
-                        <div class="attempt-info">
-                            <div class="attempt-date">Jan 04, 2024</div>
-                            <div class="attempt-opponent">vs Red Wings</div>
-                            <div class="attempt-details">Wrist • Goal</div>
-
-                        </div>
-                    </div>
-
-                    <div class="attempt-item" data-video="https://www.nhl.com/stories/214434/15885981/25.mp4" data-video-id="2023020600-4" data-title="vs Red Wings" data-details="Jan 04, 2024 • Goal • Wrist<br>Shootout Attempt #4" data-has-video="true">
-                        <div class="attempt-result goal"></div>
-                        <div class="attempt-info">
-                            <div class="attempt-date">Jan 04, 2024</div>
-                            <div class="attempt-opponent">vs Red Wings</div>
-                            <div class="attempt-details">Wrist • Goal</div>
-
-                        </div>
-                    </div>
-                    </div>
-
-                    <!-- Player Stats (mobile: below sidebar) -->
-                    <div class="player-stats-mobile">
-                        <div class="player-stats-section">
-    <h3 class="stats-title">Shootout Statistics</h3>
-    <div class="stats-container">
-        <div class="stats-card">
-            <h4 class="stats-card-title">Career Stats</h4>
-            <div class="stats-grid stats-grid-3">
-                <div class="stat-box">
-                    <div class="stat-value">69</div>
-                    <div class="stat-label">Attempts</div>
-                </div>
-                <div class="stat-box">
-                    <div class="stat-value">45</div>
-                    <div class="stat-label">Saves</div>
-                </div>
-                <div class="stat-box">
-                    <div class="stat-value">65.2%</div>
-                    <div class="stat-label">Save %</div>
-                </div>
-            </div>
-        </div>
-        <div class="stats-card">
-            <h4 class="stats-card-title">2023–24 through 2026–27</h4>
-            <div class="stats-grid stats-grid-3">
-                <div class="stat-box">
-                    <div class="stat-value">29</div>
-                    <div class="stat-label">Attempts</div>
-                </div>
-                <div class="stat-box">
-                    <div class="stat-value">16</div>
-                    <div class="stat-label">Saves</div>
-                </div>
-                <div class="stat-box">
-                    <div class="stat-value">55.2%</div>
-                    <div class="stat-label">Save %</div>
-                </div>
-            </div>
-        </div>
-    </div>
+<div class="video-info">
+<div class="video-title" id="video-title">vs Predators</div>
+<div class="video-details" id="video-details">
+                                Jan 08, 2026 • Save • Backhand<br/>Shootout Attempt #1
+                            </div>
 </div>
-
-                    </div>
-                </div>
-
-            </div>
-
-            <!-- Back to Articles -->
-            <div style="text-align: center; margin-top: 3rem;">
-                <a href="/shootout/" class="card-link">← All player shootouts</a>
-            </div>
-
-        </main>
-
-        <!-- Footer -->
-        <footer id="main-footer" class="site-footer"></footer>
-
-    </div>
-
-    <script src="../../js/main.js"></script>
-    <script>
+<div class="video-controls">
+<div class="autoplay-control">
+<label class="toggle-switch">
+<input checked="" id="autoplay-toggle" type="checkbox"/>
+<span class="toggle-slider"></span>
+<span class="toggle-label">Auto-play next video</span>
+</label>
+</div>
+</div>
+</div>
+<section aria-labelledby="shot-map-title" class="shootout-shot-map" data-role="goalie" id="shot-map">
+<div class="shot-map-heading"><h3 id="shot-map-title">Shot locations faced</h3>
+<label class="shot-map-toggle"><input aria-controls="shot-map-recent shot-map-career" autocomplete="off" class="shot-map-career-toggle" type="checkbox"/> Show full career</label></div>
+<p class="shot-map-hint">Fill = result · Shape = shot type · Select a marker for details or video</p>
+<div class="shot-map-panel" data-attempts="29" data-goals="13" data-missing-location="0" data-no-shot="0" data-outside-view="0" data-plotted="29" data-scope="recent" id="shot-map-recent">
+<p class="shot-map-summary"><strong>2023–24 onward</strong> · 13 goals allowed on 29 attempts faced (44.8% goals allowed)</p>
+<div aria-label="Results" class="shot-map-results"><span><i aria-hidden="true" style="background:#007d60"></i>Goals allowed <strong>13</strong></span><span><i aria-hidden="true" style="background:#c27500"></i>Saves <strong>9</strong></span><span><i aria-hidden="true" style="background:#bb3670"></i>Misses <strong>7</strong></span></div>
+<svg aria-label="Shot locations zoomed in on the net and slot, just beyond the face-off dots" class="shot-map-rink" role="group" viewbox="-27 3 54 41">
+<path class="shot-map-ice" d="M -42.5 75 V 28 A 28 28 0 0 1 -14.5 0 H 14.5 A 28 28 0 0 1 42.5 28 V 75 Z"></path>
+<g class="shot-map-rink-red">
+<path d="M -36.75 11 H 36.75"></path>
+<circle cx="-22" cy="31" r="15"></circle><circle cx="22" cy="31" r="15"></circle>
+<circle class="shot-map-faceoff-dot" cx="-22" cy="31" r="1"></circle><circle class="shot-map-faceoff-dot" cx="22" cy="31" r="1"></circle>
+<path d="M -39 28.1 H -37 M -39 33.9 H -37 M -7 28.1 H -5 M -7 33.9 H -5 M 5 28.1 H 7 M 5 33.9 H 7 M 37 28.1 H 39 M 37 33.9 H 39"></path>
+<path d="M -11 11 L -14 0 M 11 11 L 14 0"></path>
+</g>
+<path class="shot-map-crease" d="M -4 11 V 15.5 A 6.083 6.083 0 0 0 4 15.5 V 11 Z"></path>
+<path class="shot-map-net" d="M -3 11 V 8.8 Q -3 7.67 -1.7 7.67 H 1.7 Q 3 7.67 3 8.8 V 11 Z"></path><g class="shot-map-stems"><path d="M -0 21 L 1.550 21.000"></path><circle cx="-0" cy="21" r=".22"></circle><path d="M -0 21 L -0.775 22.342"></path><circle cx="-0" cy="21" r=".22"></circle><path d="M -0 21 L -0.775 19.658"></path><circle cx="-0" cy="21" r=".22"></circle><path d="M -2 18 L -0.450 18.000"></path><circle cx="-2" cy="18" r=".22"></circle><path d="M -2 18 L -3.550 18.000"></path><circle cx="-2" cy="18" r=".22"></circle><path d="M -1 22 L 0.550 22.000"></path><circle cx="-1" cy="22" r=".22"></circle><path d="M -1 22 L -2.550 22.000"></path><circle cx="-1" cy="22" r=".22"></circle></g><a aria-label="2026-01-08 · Save · Backhand · 10.0 ft from net · Open attempt" class="attempt-jump shot-map-point" data-attempt-id="2025020689-1" data-board-distance="21" data-event-id="1105" data-game-id="2025020689" data-has-video="true" data-result="save" data-rink-side="0" data-shot-type="backhand" href="?v=2025020689-1" tabindex="0">
+<title>2026-01-08 · Save · Backhand · 10.0 ft from net · Open attempt</title><g fill="#c27500" transform="translate(1.550 21.000) scale(.7)"><rect height="2" rx=".12" width="2" x="-1" y="-1"></rect></g></a><a aria-label="2025-12-20 · Miss · Wrist · 10.0 ft from net · Open attempt" class="attempt-jump shot-map-point" data-attempt-id="2025020553-5" data-board-distance="21" data-event-id="212" data-game-id="2025020553" data-has-video="true" data-result="miss" data-rink-side="0" data-shot-type="wrist" href="?v=2025020553-5" tabindex="0">
+<title>2025-12-20 · Miss · Wrist · 10.0 ft from net · Open attempt</title><g fill="#bb3670" transform="translate(-0.775 22.342) scale(.7)"><circle r="1.05"></circle></g></a><a aria-label="2024-02-24 · Goal allowed · Wrist · 10.0 ft from net · Open attempt" class="attempt-jump shot-map-point" data-attempt-id="2023020915-4" data-board-distance="21" data-event-id="449" data-game-id="2023020915" data-has-video="true" data-result="goal" data-rink-side="0" data-shot-type="wrist" href="?v=2023020915-4" tabindex="0">
+<title>2024-02-24 · Goal allowed · Wrist · 10.0 ft from net · Open attempt</title><g fill="#007d60" transform="translate(-0.775 19.658) scale(.7)"><circle r="1.05"></circle></g></a><a aria-label="2026-01-08 · Goal allowed · Backhand · 13.4 ft from net · Open attempt" class="attempt-jump shot-map-point" data-attempt-id="2025020689-3" data-board-distance="23" data-event-id="1106" data-game-id="2025020689" data-has-video="true" data-result="goal" data-rink-side="6" data-shot-type="backhand" href="?v=2025020689-3" tabindex="0">
+<title>2026-01-08 · Goal allowed · Backhand · 13.4 ft from net · Open attempt</title><g fill="#007d60" transform="translate(-6.000 23.000) scale(.7)"><rect height="2" rx=".12" width="2" x="-1" y="-1"></rect></g></a><a aria-label="2026-01-08 · Miss · Wrist · 24.3 ft from net · Open attempt" class="attempt-jump shot-map-point" data-attempt-id="2025020689-5" data-board-distance="35" data-event-id="1107" data-game-id="2025020689" data-has-video="true" data-result="miss" data-rink-side="4" data-shot-type="wrist" href="?v=2025020689-5" tabindex="0">
+<title>2026-01-08 · Miss · Wrist · 24.3 ft from net · Open attempt</title><g fill="#bb3670" transform="translate(-4.000 35.000) scale(.7)"><circle r="1.05"></circle></g></a><a aria-label="2025-12-30 · Miss · Wrist · 10.8 ft from net · Open attempt" class="attempt-jump shot-map-point" data-attempt-id="2025020620-1" data-board-distance="20" data-event-id="456" data-game-id="2025020620" data-has-video="true" data-result="miss" data-rink-side="-6" data-shot-type="wrist" href="?v=2025020620-1" tabindex="0">
+<title>2025-12-30 · Miss · Wrist · 10.8 ft from net · Open attempt</title><g fill="#bb3670" transform="translate(6.000 20.000) scale(.7)"><circle r="1.05"></circle></g></a><a aria-label="2025-12-30 · Save · Wrist · 15.0 ft from net · Open attempt" class="attempt-jump shot-map-point" data-attempt-id="2025020620-3" data-board-distance="26" data-event-id="457" data-game-id="2025020620" data-has-video="true" data-result="save" data-rink-side="-1" data-shot-type="wrist" href="?v=2025020620-3" tabindex="0">
+<title>2025-12-30 · Save · Wrist · 15.0 ft from net · Open attempt</title><g fill="#c27500" transform="translate(1.000 26.000) scale(.7)"><circle r="1.05"></circle></g></a><a aria-label="2025-12-30 · Save · Wrist · 7.1 ft from net · Open attempt" class="attempt-jump shot-map-point" data-attempt-id="2025020620-5" data-board-distance="16" data-event-id="458" data-game-id="2025020620" data-has-video="true" data-result="save" data-rink-side="5" data-shot-type="wrist" href="?v=2025020620-5" tabindex="0">
+<title>2025-12-30 · Save · Wrist · 7.1 ft from net · Open attempt</title><g fill="#c27500" transform="translate(-5.000 16.000) scale(.7)"><circle r="1.05"></circle></g></a><a aria-label="2025-12-20 · Save · Wrist · 10.0 ft from net · Open attempt" class="attempt-jump shot-map-point" data-attempt-id="2025020553-1" data-board-distance="21" data-event-id="208" data-game-id="2025020553" data-has-video="true" data-result="save" data-rink-side="-1" data-shot-type="wrist" href="?v=2025020553-1" tabindex="0">
+<title>2025-12-20 · Save · Wrist · 10.0 ft from net · Open attempt</title><g fill="#c27500" transform="translate(1.000 21.000) scale(.7)"><circle r="1.05"></circle></g></a><a aria-label="2025-12-20 · Goal allowed · Wrist · 23.0 ft from net · Open attempt" class="attempt-jump shot-map-point" data-attempt-id="2025020553-3" data-board-distance="34" data-event-id="210" data-game-id="2025020553" data-has-video="true" data-result="goal" data-rink-side="1" data-shot-type="wrist" href="?v=2025020553-3" tabindex="0">
+<title>2025-12-20 · Goal allowed · Wrist · 23.0 ft from net · Open attempt</title><g fill="#007d60" transform="translate(-1.000 34.000) scale(.7)"><circle r="1.05"></circle></g></a><a aria-label="2025-12-20 · Miss · Wrist · 20.2 ft from net · Open attempt" class="attempt-jump shot-map-point" data-attempt-id="2025020553-7" data-board-distance="31" data-event-id="214" data-game-id="2025020553" data-has-video="true" data-result="miss" data-rink-side="3" data-shot-type="wrist" href="?v=2025020553-7" tabindex="0">
+<title>2025-12-20 · Miss · Wrist · 20.2 ft from net · Open attempt</title><g fill="#bb3670" transform="translate(-3.000 31.000) scale(.7)"><circle r="1.05"></circle></g></a><a aria-label="2025-12-20 · Goal allowed · Wrist · 17.1 ft from net · Open attempt" class="attempt-jump shot-map-point" data-attempt-id="2025020553-9" data-board-distance="28" data-event-id="216" data-game-id="2025020553" data-has-video="true" data-result="goal" data-rink-side="2" data-shot-type="wrist" href="?v=2025020553-9" tabindex="0">
+<title>2025-12-20 · Goal allowed · Wrist · 17.1 ft from net · Open attempt</title><g fill="#007d60" transform="translate(-2.000 28.000) scale(.7)"><circle r="1.05"></circle></g></a><a aria-label="2025-11-28 · Goal allowed · Backhand · 10.8 ft from net · Open attempt" class="attempt-jump shot-map-point" data-attempt-id="2025020381-1" data-board-distance="17" data-event-id="1151" data-game-id="2025020381" data-has-video="true" data-result="goal" data-rink-side="-9" data-shot-type="backhand" href="?v=2025020381-1" tabindex="0">
+<title>2025-11-28 · Goal allowed · Backhand · 10.8 ft from net · Open attempt</title><g fill="#007d60" transform="translate(9.000 17.000) scale(.7)"><rect height="2" rx=".12" width="2" x="-1" y="-1"></rect></g></a><a aria-label="2025-11-28 · Save · Backhand · 9.8 ft from net · Open attempt" class="attempt-jump shot-map-point" data-attempt-id="2025020381-3" data-board-distance="15" data-event-id="1153" data-game-id="2025020381" data-has-video="true" data-result="save" data-rink-side="-9" data-shot-type="backhand" href="?v=2025020381-3" tabindex="0">
+<title>2025-11-28 · Save · Backhand · 9.8 ft from net · Open attempt</title><g fill="#c27500" transform="translate(9.000 15.000) scale(.7)"><rect height="2" rx=".12" width="2" x="-1" y="-1"></rect></g></a><a aria-label="2025-11-28 · Goal allowed · Wrist · 12.2 ft from net · Open attempt" class="attempt-jump shot-map-point" data-attempt-id="2025020381-5" data-board-distance="18" data-event-id="1155" data-game-id="2025020381" data-has-video="true" data-result="goal" data-rink-side="-10" data-shot-type="wrist" href="?v=2025020381-5" tabindex="0">
+<title>2025-11-28 · Goal allowed · Wrist · 12.2 ft from net · Open attempt</title><g fill="#007d60" transform="translate(10.000 18.000) scale(.7)"><circle r="1.05"></circle></g></a><a aria-label="2025-11-23 · Goal allowed · Snap · 8.2 ft from net · Open attempt" class="attempt-jump shot-map-point" data-attempt-id="2025020349-1" data-board-distance="19" data-event-id="1203" data-game-id="2025020349" data-has-video="true" data-result="goal" data-rink-side="-2" data-shot-type="snap" href="?v=2025020349-1" tabindex="0">
+<title>2025-11-23 · Goal allowed · Snap · 8.2 ft from net · Open attempt</title><g fill="#007d60" transform="translate(2.000 19.000) scale(.7)"><path d="M 0 -1.35 L 1.25 1 L -1.25 1 Z"></path></g></a><a aria-label="2025-11-23 · Miss · Snap · 13.0 ft from net · Open attempt" class="attempt-jump shot-map-point" data-attempt-id="2025020349-3" data-board-distance="24" data-event-id="1205" data-game-id="2025020349" data-has-video="true" data-result="miss" data-rink-side="-1" data-shot-type="snap" href="?v=2025020349-3" tabindex="0">
+<title>2025-11-23 · Miss · Snap · 13.0 ft from net · Open attempt</title><g fill="#bb3670" transform="translate(1.000 24.000) scale(.7)"><path d="M 0 -1.35 L 1.25 1 L -1.25 1 Z"></path></g></a><a aria-label="2025-11-23 · Miss · Snap · 14.0 ft from net · Open attempt" class="attempt-jump shot-map-point" data-attempt-id="2025020349-5" data-board-distance="25" data-event-id="1207" data-game-id="2025020349" data-has-video="true" data-result="miss" data-rink-side="-0" data-shot-type="snap" href="?v=2025020349-5" tabindex="0">
+<title>2025-11-23 · Miss · Snap · 14.0 ft from net · Open attempt</title><g fill="#bb3670" transform="translate(0.000 25.000) scale(.7)"><path d="M 0 -1.35 L 1.25 1 L -1.25 1 Z"></path></g></a><a aria-label="2025-11-23 · Save · Snap · 13.6 ft from net · Open attempt" class="attempt-jump shot-map-point" data-attempt-id="2025020349-7" data-board-distance="24" data-event-id="1209" data-game-id="2025020349" data-has-video="true" data-result="save" data-rink-side="-4" data-shot-type="snap" href="?v=2025020349-7" tabindex="0">
+<title>2025-11-23 · Save · Snap · 13.6 ft from net · Open attempt</title><g fill="#c27500" transform="translate(4.000 24.000) scale(.7)"><path d="M 0 -1.35 L 1.25 1 L -1.25 1 Z"></path></g></a><a aria-label="2025-02-08 · Goal allowed · Wrist · 7.3 ft from net · Open attempt" class="attempt-jump shot-map-point" data-attempt-id="2024020888-2" data-board-distance="18" data-event-id="532" data-game-id="2024020888" data-has-video="true" data-result="goal" data-rink-side="2" data-shot-type="wrist" href="?v=2024020888-2" tabindex="0">
+<title>2025-02-08 · Goal allowed · Wrist · 7.3 ft from net · Open attempt</title><g fill="#007d60" transform="translate(-0.450 18.000) scale(.7)"><circle r="1.05"></circle></g></a><a aria-label="2025-02-08 · Goal allowed · Wrist · 7.3 ft from net · Open attempt" class="attempt-jump shot-map-point" data-attempt-id="2024020888-4" data-board-distance="18" data-event-id="534" data-game-id="2024020888" data-has-video="true" data-result="goal" data-rink-side="2" data-shot-type="wrist" href="?v=2024020888-4" tabindex="0">
+<title>2025-02-08 · Goal allowed · Wrist · 7.3 ft from net · Open attempt</title><g fill="#007d60" transform="translate(-3.550 18.000) scale(.7)"><circle r="1.05"></circle></g></a><a aria-label="2025-02-07 · Miss · Wrist · 11.2 ft from net · Open attempt" class="attempt-jump shot-map-point" data-attempt-id="2024020875-2" data-board-distance="22" data-event-id="634" data-game-id="2024020875" data-has-video="true" data-result="miss" data-rink-side="-2" data-shot-type="wrist" href="?v=2024020875-2" tabindex="0">
+<title>2025-02-07 · Miss · Wrist · 11.2 ft from net · Open attempt</title><g fill="#bb3670" transform="translate(2.000 22.000) scale(.7)"><circle r="1.05"></circle></g></a><a aria-label="2025-02-07 · Save · Backhand · 6.4 ft from net · Open attempt" class="attempt-jump shot-map-point" data-attempt-id="2024020875-4" data-board-distance="16" data-event-id="636" data-game-id="2024020875" data-has-video="true" data-result="save" data-rink-side="-4" data-shot-type="backhand" href="?v=2024020875-4" tabindex="0">
+<title>2025-02-07 · Save · Backhand · 6.4 ft from net · Open attempt</title><g fill="#c27500" transform="translate(4.000 16.000) scale(.7)"><rect height="2" rx=".12" width="2" x="-1" y="-1"></rect></g></a><a aria-label="2024-02-24 · Save · Wrist · 9.0 ft from net · Open attempt" class="attempt-jump shot-map-point" data-attempt-id="2023020915-2" data-board-distance="20" data-event-id="447" data-game-id="2023020915" data-has-video="true" data-result="save" data-rink-side="0" data-shot-type="wrist" href="?v=2023020915-2" tabindex="0">
+<title>2024-02-24 · Save · Wrist · 9.0 ft from net · Open attempt</title><g fill="#c27500" transform="translate(0.000 20.000) scale(.7)"><circle r="1.05"></circle></g></a><a aria-label="2024-02-24 · Save · Wrist · 11.0 ft from net · Open attempt" class="attempt-jump shot-map-point" data-attempt-id="2023020915-6" data-board-distance="22" data-event-id="1051" data-game-id="2023020915" data-has-video="true" data-result="save" data-rink-side="1" data-shot-type="wrist" href="?v=2023020915-6" tabindex="0">
+<title>2024-02-24 · Save · Wrist · 11.0 ft from net · Open attempt</title><g fill="#c27500" transform="translate(0.550 22.000) scale(.7)"><circle r="1.05"></circle></g></a><a aria-label="2024-01-04 · Goal allowed · Wrist · 11.0 ft from net · Open attempt" class="attempt-jump shot-map-point" data-attempt-id="2023020600-2" data-board-distance="22" data-event-id="628" data-game-id="2023020600" data-has-video="true" data-result="goal" data-rink-side="1" data-shot-type="wrist" href="?v=2023020600-2" tabindex="0">
+<title>2024-01-04 · Goal allowed · Wrist · 11.0 ft from net · Open attempt</title><g fill="#007d60" transform="translate(-2.550 22.000) scale(.7)"><circle r="1.05"></circle></g></a><a aria-label="2024-01-22 · Goal allowed · Wrist · 21.4 ft from net · Video unavailable" class="attempt-jump shot-map-point" data-attempt-id="2023020729-2" data-board-distance="32" data-event-id="433" data-game-id="2023020729" data-has-video="false" data-result="goal" data-rink-side="4" data-shot-type="wrist" href="?v=2023020729-2" tabindex="0">
+<title>2024-01-22 · Goal allowed · Wrist · 21.4 ft from net · Video unavailable</title><g fill="#007d60" transform="translate(-4.000 32.000) scale(.7)"><circle r="1.05"></circle></g></a><a aria-label="2024-01-22 · Goal allowed · Wrist · 18.1 ft from net · Video unavailable" class="attempt-jump shot-map-point" data-attempt-id="2023020729-4" data-board-distance="29" data-event-id="435" data-game-id="2023020729" data-has-video="false" data-result="goal" data-rink-side="2" data-shot-type="wrist" href="?v=2023020729-4" tabindex="0">
+<title>2024-01-22 · Goal allowed · Wrist · 18.1 ft from net · Video unavailable</title><g fill="#007d60" transform="translate(-2.000 29.000) scale(.7)"><circle r="1.05"></circle></g></a><a aria-label="2024-01-04 · Goal allowed · Wrist · 9.1 ft from net · Open attempt" class="attempt-jump shot-map-point" data-attempt-id="2023020600-4" data-board-distance="20" data-event-id="630" data-game-id="2023020600" data-has-video="true" data-result="goal" data-rink-side="1" data-shot-type="wrist" href="?v=2023020600-4" tabindex="0">
+<title>2024-01-04 · Goal allowed · Wrist · 9.1 ft from net · Open attempt</title><g fill="#007d60" transform="translate(-1.000 20.000) scale(.7)"><circle r="1.05"></circle></g></a></svg>
+<div aria-label="Shot types" class="shot-map-types"><span><svg aria-hidden="true" viewbox="-2 -2 4 4"><circle r="1.05"></circle></svg>Wrist</span><span><svg aria-hidden="true" viewbox="-2 -2 4 4"><path d="M 0 -1.35 L 1.25 1 L -1.25 1 Z"></path></svg>Snap</span><span><svg aria-hidden="true" viewbox="-2 -2 4 4"><rect height="2" rx=".12" width="2" x="-1" y="-1"></rect></svg>Backhand</span></div>
+<div aria-label="Video availability" class="shot-map-video-legend">
+<span><svg aria-hidden="true" class="shot-map-video-key" data-has-video="true" viewbox="-2 -2 4 4"><g><circle r="1.05"></circle></g></svg>White border: video</span>
+<span><svg aria-hidden="true" class="shot-map-video-key" data-has-video="false" viewbox="-2 -2 4 4"><g><circle r="1.05"></circle></g></svg>Dark dashed border: no video</span>
+</div>
+<p class="shot-map-note">29 shots shown · 2023–24 to 2025–26. Both rink ends rotated toward the same net. Overlapping locations are slightly separated; stems mark the recorded spot.</p></div>
+<div class="shot-map-panel" data-attempts="69" data-goals="24" data-missing-location="0" data-no-shot="0" data-outside-view="0" data-plotted="69" data-scope="career" hidden="" id="shot-map-career">
+<p class="shot-map-summary"><strong>Full career</strong> · 24 goals allowed on 69 attempts faced (34.8% goals allowed)</p>
+<div aria-label="Results" class="shot-map-results"><span><i aria-hidden="true" style="background:#007d60"></i>Goals allowed <strong>24</strong></span><span><i aria-hidden="true" style="background:#c27500"></i>Saves <strong>35</strong></span><span><i aria-hidden="true" style="background:#bb3670"></i>Misses <strong>10</strong></span></div>
+<svg aria-label="Shot locations zoomed in on the net and slot, just beyond the face-off dots" class="shot-map-rink" role="group" viewbox="-27 3 54 41">
+<path class="shot-map-ice" d="M -42.5 75 V 28 A 28 28 0 0 1 -14.5 0 H 14.5 A 28 28 0 0 1 42.5 28 V 75 Z"></path>
+<g class="shot-map-rink-red">
+<path d="M -36.75 11 H 36.75"></path>
+<circle cx="-22" cy="31" r="15"></circle><circle cx="22" cy="31" r="15"></circle>
+<circle class="shot-map-faceoff-dot" cx="-22" cy="31" r="1"></circle><circle class="shot-map-faceoff-dot" cx="22" cy="31" r="1"></circle>
+<path d="M -39 28.1 H -37 M -39 33.9 H -37 M -7 28.1 H -5 M -7 33.9 H -5 M 5 28.1 H 7 M 5 33.9 H 7 M 37 28.1 H 39 M 37 33.9 H 39"></path>
+<path d="M -11 11 L -14 0 M 11 11 L 14 0"></path>
+</g>
+<path class="shot-map-crease" d="M -4 11 V 15.5 A 6.083 6.083 0 0 0 4 15.5 V 11 Z"></path>
+<path class="shot-map-net" d="M -3 11 V 8.8 Q -3 7.67 -1.7 7.67 H 1.7 Q 3 7.67 3 8.8 V 11 Z"></path><g class="shot-map-stems"><path d="M -0 21 L 1.550 21.000"></path><circle cx="-0" cy="21" r=".22"></circle><path d="M -0 21 L -0.775 22.342"></path><circle cx="-0" cy="21" r=".22"></circle><path d="M -0 21 L -0.775 19.658"></path><circle cx="-0" cy="21" r=".22"></circle><path d="M 1 21 L 2.550 21.000"></path><circle cx="1" cy="21" r=".22"></circle><path d="M 1 21 L -0.550 21.000"></path><circle cx="1" cy="21" r=".22"></circle><path d="M 0 25 L 1.550 25.000"></path><circle cx="0" cy="25" r=".22"></circle><path d="M 0 25 L -0.775 26.342"></path><circle cx="0" cy="25" r=".22"></circle><path d="M 0 25 L -0.775 23.658"></path><circle cx="0" cy="25" r=".22"></circle><path d="M -2 18 L -0.450 18.000"></path><circle cx="-2" cy="18" r=".22"></circle><path d="M -2 18 L -3.550 18.000"></path><circle cx="-2" cy="18" r=".22"></circle><path d="M 4 16 L 5.550 16.000"></path><circle cx="4" cy="16" r=".22"></circle><path d="M 4 16 L 3.225 17.342"></path><circle cx="4" cy="16" r=".22"></circle><path d="M 4 16 L 3.225 14.658"></path><circle cx="4" cy="16" r=".22"></circle><path d="M -1 22 L 0.550 22.000"></path><circle cx="-1" cy="22" r=".22"></circle><path d="M -1 22 L -2.550 22.000"></path><circle cx="-1" cy="22" r=".22"></circle><path d="M 0 30 L 1.550 30.000"></path><circle cx="0" cy="30" r=".22"></circle><path d="M 0 30 L -1.550 30.000"></path><circle cx="0" cy="30" r=".22"></circle></g><a aria-label="2026-01-08 · Save · Backhand · 10.0 ft from net · Open attempt" class="attempt-jump shot-map-point" data-attempt-id="2025020689-1" data-board-distance="21" data-event-id="1105" data-game-id="2025020689" data-has-video="true" data-result="save" data-rink-side="0" data-shot-type="backhand" href="?v=2025020689-1" tabindex="0">
+<title>2026-01-08 · Save · Backhand · 10.0 ft from net · Open attempt</title><g fill="#c27500" transform="translate(1.550 21.000) scale(.7)"><rect height="2" rx=".12" width="2" x="-1" y="-1"></rect></g></a><a aria-label="2025-12-20 · Miss · Wrist · 10.0 ft from net · Open attempt" class="attempt-jump shot-map-point" data-attempt-id="2025020553-5" data-board-distance="21" data-event-id="212" data-game-id="2025020553" data-has-video="true" data-result="miss" data-rink-side="0" data-shot-type="wrist" href="?v=2025020553-5" tabindex="0">
+<title>2025-12-20 · Miss · Wrist · 10.0 ft from net · Open attempt</title><g fill="#bb3670" transform="translate(-0.775 22.342) scale(.7)"><circle r="1.05"></circle></g></a><a aria-label="2024-02-24 · Goal allowed · Wrist · 10.0 ft from net · Open attempt" class="attempt-jump shot-map-point" data-attempt-id="2023020915-4" data-board-distance="21" data-event-id="449" data-game-id="2023020915" data-has-video="true" data-result="goal" data-rink-side="0" data-shot-type="wrist" href="?v=2023020915-4" tabindex="0">
+<title>2024-02-24 · Goal allowed · Wrist · 10.0 ft from net · Open attempt</title><g fill="#007d60" transform="translate(-0.775 19.658) scale(.7)"><circle r="1.05"></circle></g></a><a aria-label="2026-01-08 · Goal allowed · Backhand · 13.4 ft from net · Open attempt" class="attempt-jump shot-map-point" data-attempt-id="2025020689-3" data-board-distance="23" data-event-id="1106" data-game-id="2025020689" data-has-video="true" data-result="goal" data-rink-side="6" data-shot-type="backhand" href="?v=2025020689-3" tabindex="0">
+<title>2026-01-08 · Goal allowed · Backhand · 13.4 ft from net · Open attempt</title><g fill="#007d60" transform="translate(-6.000 23.000) scale(.7)"><rect height="2" rx=".12" width="2" x="-1" y="-1"></rect></g></a><a aria-label="2026-01-08 · Miss · Wrist · 24.3 ft from net · Open attempt" class="attempt-jump shot-map-point" data-attempt-id="2025020689-5" data-board-distance="35" data-event-id="1107" data-game-id="2025020689" data-has-video="true" data-result="miss" data-rink-side="4" data-shot-type="wrist" href="?v=2025020689-5" tabindex="0">
+<title>2026-01-08 · Miss · Wrist · 24.3 ft from net · Open attempt</title><g fill="#bb3670" transform="translate(-4.000 35.000) scale(.7)"><circle r="1.05"></circle></g></a><a aria-label="2025-12-30 · Miss · Wrist · 10.8 ft from net · Open attempt" class="attempt-jump shot-map-point" data-attempt-id="2025020620-1" data-board-distance="20" data-event-id="456" data-game-id="2025020620" data-has-video="true" data-result="miss" data-rink-side="-6" data-shot-type="wrist" href="?v=2025020620-1" tabindex="0">
+<title>2025-12-30 · Miss · Wrist · 10.8 ft from net · Open attempt</title><g fill="#bb3670" transform="translate(6.000 20.000) scale(.7)"><circle r="1.05"></circle></g></a><a aria-label="2025-12-30 · Save · Wrist · 15.0 ft from net · Open attempt" class="attempt-jump shot-map-point" data-attempt-id="2025020620-3" data-board-distance="26" data-event-id="457" data-game-id="2025020620" data-has-video="true" data-result="save" data-rink-side="-1" data-shot-type="wrist" href="?v=2025020620-3" tabindex="0">
+<title>2025-12-30 · Save · Wrist · 15.0 ft from net · Open attempt</title><g fill="#c27500" transform="translate(1.000 26.000) scale(.7)"><circle r="1.05"></circle></g></a><a aria-label="2025-12-30 · Save · Wrist · 7.1 ft from net · Open attempt" class="attempt-jump shot-map-point" data-attempt-id="2025020620-5" data-board-distance="16" data-event-id="458" data-game-id="2025020620" data-has-video="true" data-result="save" data-rink-side="5" data-shot-type="wrist" href="?v=2025020620-5" tabindex="0">
+<title>2025-12-30 · Save · Wrist · 7.1 ft from net · Open attempt</title><g fill="#c27500" transform="translate(-5.000 16.000) scale(.7)"><circle r="1.05"></circle></g></a><a aria-label="2025-12-20 · Save · Wrist · 10.0 ft from net · Open attempt" class="attempt-jump shot-map-point" data-attempt-id="2025020553-1" data-board-distance="21" data-event-id="208" data-game-id="2025020553" data-has-video="true" data-result="save" data-rink-side="-1" data-shot-type="wrist" href="?v=2025020553-1" tabindex="0">
+<title>2025-12-20 · Save · Wrist · 10.0 ft from net · Open attempt</title><g fill="#c27500" transform="translate(2.550 21.000) scale(.7)"><circle r="1.05"></circle></g></a><g aria-label="2023-02-14 · Save · Wrist · 10.0 ft from net · Video unavailable" class="shot-map-point" data-attempt-id="2022020860-4" data-board-distance="21" data-event-id="819" data-game-id="2022020860" data-has-video="false" data-result="save" data-rink-side="-1" data-shot-type="wrist" role="button" tabindex="0">
+<title>2023-02-14 · Save · Wrist · 10.0 ft from net · Video unavailable</title><g fill="#c27500" transform="translate(-0.550 21.000) scale(.7)"><circle r="1.05"></circle></g></g><a aria-label="2025-12-20 · Goal allowed · Wrist · 23.0 ft from net · Open attempt" class="attempt-jump shot-map-point" data-attempt-id="2025020553-3" data-board-distance="34" data-event-id="210" data-game-id="2025020553" data-has-video="true" data-result="goal" data-rink-side="1" data-shot-type="wrist" href="?v=2025020553-3" tabindex="0">
+<title>2025-12-20 · Goal allowed · Wrist · 23.0 ft from net · Open attempt</title><g fill="#007d60" transform="translate(-1.000 34.000) scale(.7)"><circle r="1.05"></circle></g></a><a aria-label="2025-12-20 · Miss · Wrist · 20.2 ft from net · Open attempt" class="attempt-jump shot-map-point" data-attempt-id="2025020553-7" data-board-distance="31" data-event-id="214" data-game-id="2025020553" data-has-video="true" data-result="miss" data-rink-side="3" data-shot-type="wrist" href="?v=2025020553-7" tabindex="0">
+<title>2025-12-20 · Miss · Wrist · 20.2 ft from net · Open attempt</title><g fill="#bb3670" transform="translate(-3.000 31.000) scale(.7)"><circle r="1.05"></circle></g></a><a aria-label="2025-12-20 · Goal allowed · Wrist · 17.1 ft from net · Open attempt" class="attempt-jump shot-map-point" data-attempt-id="2025020553-9" data-board-distance="28" data-event-id="216" data-game-id="2025020553" data-has-video="true" data-result="goal" data-rink-side="2" data-shot-type="wrist" href="?v=2025020553-9" tabindex="0">
+<title>2025-12-20 · Goal allowed · Wrist · 17.1 ft from net · Open attempt</title><g fill="#007d60" transform="translate(-2.000 28.000) scale(.7)"><circle r="1.05"></circle></g></a><a aria-label="2025-11-28 · Goal allowed · Backhand · 10.8 ft from net · Open attempt" class="attempt-jump shot-map-point" data-attempt-id="2025020381-1" data-board-distance="17" data-event-id="1151" data-game-id="2025020381" data-has-video="true" data-result="goal" data-rink-side="-9" data-shot-type="backhand" href="?v=2025020381-1" tabindex="0">
+<title>2025-11-28 · Goal allowed · Backhand · 10.8 ft from net · Open attempt</title><g fill="#007d60" transform="translate(9.000 17.000) scale(.7)"><rect height="2" rx=".12" width="2" x="-1" y="-1"></rect></g></a><a aria-label="2025-11-28 · Save · Backhand · 9.8 ft from net · Open attempt" class="attempt-jump shot-map-point" data-attempt-id="2025020381-3" data-board-distance="15" data-event-id="1153" data-game-id="2025020381" data-has-video="true" data-result="save" data-rink-side="-9" data-shot-type="backhand" href="?v=2025020381-3" tabindex="0">
+<title>2025-11-28 · Save · Backhand · 9.8 ft from net · Open attempt</title><g fill="#c27500" transform="translate(9.000 15.000) scale(.7)"><rect height="2" rx=".12" width="2" x="-1" y="-1"></rect></g></a><a aria-label="2025-11-28 · Goal allowed · Wrist · 12.2 ft from net · Open attempt" class="attempt-jump shot-map-point" data-attempt-id="2025020381-5" data-board-distance="18" data-event-id="1155" data-game-id="2025020381" data-has-video="true" data-result="goal" data-rink-side="-10" data-shot-type="wrist" href="?v=2025020381-5" tabindex="0">
+<title>2025-11-28 · Goal allowed · Wrist · 12.2 ft from net · Open attempt</title><g fill="#007d60" transform="translate(10.000 18.000) scale(.7)"><circle r="1.05"></circle></g></a><a aria-label="2025-11-23 · Goal allowed · Snap · 8.2 ft from net · Open attempt" class="attempt-jump shot-map-point" data-attempt-id="2025020349-1" data-board-distance="19" data-event-id="1203" data-game-id="2025020349" data-has-video="true" data-result="goal" data-rink-side="-2" data-shot-type="snap" href="?v=2025020349-1" tabindex="0">
+<title>2025-11-23 · Goal allowed · Snap · 8.2 ft from net · Open attempt</title><g fill="#007d60" transform="translate(2.000 19.000) scale(.7)"><path d="M 0 -1.35 L 1.25 1 L -1.25 1 Z"></path></g></a><a aria-label="2025-11-23 · Miss · Snap · 13.0 ft from net · Open attempt" class="attempt-jump shot-map-point" data-attempt-id="2025020349-3" data-board-distance="24" data-event-id="1205" data-game-id="2025020349" data-has-video="true" data-result="miss" data-rink-side="-1" data-shot-type="snap" href="?v=2025020349-3" tabindex="0">
+<title>2025-11-23 · Miss · Snap · 13.0 ft from net · Open attempt</title><g fill="#bb3670" transform="translate(1.000 24.000) scale(.7)"><path d="M 0 -1.35 L 1.25 1 L -1.25 1 Z"></path></g></a><a aria-label="2025-11-23 · Miss · Snap · 14.0 ft from net · Open attempt" class="attempt-jump shot-map-point" data-attempt-id="2025020349-5" data-board-distance="25" data-event-id="1207" data-game-id="2025020349" data-has-video="true" data-result="miss" data-rink-side="-0" data-shot-type="snap" href="?v=2025020349-5" tabindex="0">
+<title>2025-11-23 · Miss · Snap · 14.0 ft from net · Open attempt</title><g fill="#bb3670" transform="translate(1.550 25.000) scale(.7)"><path d="M 0 -1.35 L 1.25 1 L -1.25 1 Z"></path></g></a><g aria-label="2020-01-16 · Save · Wrist · 14.0 ft from net · Video unavailable" class="shot-map-point" data-attempt-id="2019020728-1" data-board-distance="25" data-event-id="863" data-game-id="2019020728" data-has-video="false" data-result="save" data-rink-side="-0" data-shot-type="wrist" role="button" tabindex="0">
+<title>2020-01-16 · Save · Wrist · 14.0 ft from net · Video unavailable</title><g fill="#c27500" transform="translate(-0.775 26.342) scale(.7)"><circle r="1.05"></circle></g></g><g aria-label="2018-12-20 · Save · Wrist · 14.0 ft from net · Video unavailable" class="shot-map-point" data-attempt-id="2018020537-4" data-board-distance="25" data-event-id="821" data-game-id="2018020537" data-has-video="false" data-result="save" data-rink-side="-0" data-shot-type="wrist" role="button" tabindex="0">
+<title>2018-12-20 · Save · Wrist · 14.0 ft from net · Video unavailable</title><g fill="#c27500" transform="translate(-0.775 23.658) scale(.7)"><circle r="1.05"></circle></g></g><a aria-label="2025-11-23 · Save · Snap · 13.6 ft from net · Open attempt" class="attempt-jump shot-map-point" data-attempt-id="2025020349-7" data-board-distance="24" data-event-id="1209" data-game-id="2025020349" data-has-video="true" data-result="save" data-rink-side="-4" data-shot-type="snap" href="?v=2025020349-7" tabindex="0">
+<title>2025-11-23 · Save · Snap · 13.6 ft from net · Open attempt</title><g fill="#c27500" transform="translate(4.000 24.000) scale(.7)"><path d="M 0 -1.35 L 1.25 1 L -1.25 1 Z"></path></g></a><a aria-label="2025-02-08 · Goal allowed · Wrist · 7.3 ft from net · Open attempt" class="attempt-jump shot-map-point" data-attempt-id="2024020888-2" data-board-distance="18" data-event-id="532" data-game-id="2024020888" data-has-video="true" data-result="goal" data-rink-side="2" data-shot-type="wrist" href="?v=2024020888-2" tabindex="0">
+<title>2025-02-08 · Goal allowed · Wrist · 7.3 ft from net · Open attempt</title><g fill="#007d60" transform="translate(-0.450 18.000) scale(.7)"><circle r="1.05"></circle></g></a><a aria-label="2025-02-08 · Goal allowed · Wrist · 7.3 ft from net · Open attempt" class="attempt-jump shot-map-point" data-attempt-id="2024020888-4" data-board-distance="18" data-event-id="534" data-game-id="2024020888" data-has-video="true" data-result="goal" data-rink-side="2" data-shot-type="wrist" href="?v=2024020888-4" tabindex="0">
+<title>2025-02-08 · Goal allowed · Wrist · 7.3 ft from net · Open attempt</title><g fill="#007d60" transform="translate(-3.550 18.000) scale(.7)"><circle r="1.05"></circle></g></a><a aria-label="2025-02-07 · Miss · Wrist · 11.2 ft from net · Open attempt" class="attempt-jump shot-map-point" data-attempt-id="2024020875-2" data-board-distance="22" data-event-id="634" data-game-id="2024020875" data-has-video="true" data-result="miss" data-rink-side="-2" data-shot-type="wrist" href="?v=2024020875-2" tabindex="0">
+<title>2025-02-07 · Miss · Wrist · 11.2 ft from net · Open attempt</title><g fill="#bb3670" transform="translate(2.000 22.000) scale(.7)"><circle r="1.05"></circle></g></a><a aria-label="2025-02-07 · Save · Backhand · 6.4 ft from net · Open attempt" class="attempt-jump shot-map-point" data-attempt-id="2024020875-4" data-board-distance="16" data-event-id="636" data-game-id="2024020875" data-has-video="true" data-result="save" data-rink-side="-4" data-shot-type="backhand" href="?v=2024020875-4" tabindex="0">
+<title>2025-02-07 · Save · Backhand · 6.4 ft from net · Open attempt</title><g fill="#c27500" transform="translate(5.550 16.000) scale(.7)"><rect height="2" rx=".12" width="2" x="-1" y="-1"></rect></g></a><g aria-label="2021-12-30 · Save · Backhand · 6.4 ft from net · Video unavailable" class="shot-map-point" data-attempt-id="2021020555-5" data-board-distance="16" data-event-id="822" data-game-id="2021020555" data-has-video="false" data-result="save" data-rink-side="-4" data-shot-type="backhand" role="button" tabindex="0">
+<title>2021-12-30 · Save · Backhand · 6.4 ft from net · Video unavailable</title><g fill="#c27500" transform="translate(3.225 17.342) scale(.7)"><rect height="2" rx=".12" width="2" x="-1" y="-1"></rect></g></g><g aria-label="2017-12-28 · Goal allowed · Wrist · 6.4 ft from net · Video unavailable" class="shot-map-point" data-attempt-id="2017020575-5" data-board-distance="16" data-event-id="825" data-game-id="2017020575" data-has-video="false" data-result="goal" data-rink-side="-4" data-shot-type="wrist" role="button" tabindex="0">
+<title>2017-12-28 · Goal allowed · Wrist · 6.4 ft from net · Video unavailable</title><g fill="#007d60" transform="translate(3.225 14.658) scale(.7)"><circle r="1.05"></circle></g></g><a aria-label="2024-02-24 · Save · Wrist · 9.0 ft from net · Open attempt" class="attempt-jump shot-map-point" data-attempt-id="2023020915-2" data-board-distance="20" data-event-id="447" data-game-id="2023020915" data-has-video="true" data-result="save" data-rink-side="0" data-shot-type="wrist" href="?v=2023020915-2" tabindex="0">
+<title>2024-02-24 · Save · Wrist · 9.0 ft from net · Open attempt</title><g fill="#c27500" transform="translate(0.000 20.000) scale(.7)"><circle r="1.05"></circle></g></a><a aria-label="2024-02-24 · Save · Wrist · 11.0 ft from net · Open attempt" class="attempt-jump shot-map-point" data-attempt-id="2023020915-6" data-board-distance="22" data-event-id="1051" data-game-id="2023020915" data-has-video="true" data-result="save" data-rink-side="1" data-shot-type="wrist" href="?v=2023020915-6" tabindex="0">
+<title>2024-02-24 · Save · Wrist · 11.0 ft from net · Open attempt</title><g fill="#c27500" transform="translate(0.550 22.000) scale(.7)"><circle r="1.05"></circle></g></a><a aria-label="2024-01-04 · Goal allowed · Wrist · 11.0 ft from net · Open attempt" class="attempt-jump shot-map-point" data-attempt-id="2023020600-2" data-board-distance="22" data-event-id="628" data-game-id="2023020600" data-has-video="true" data-result="goal" data-rink-side="1" data-shot-type="wrist" href="?v=2023020600-2" tabindex="0">
+<title>2024-01-04 · Goal allowed · Wrist · 11.0 ft from net · Open attempt</title><g fill="#007d60" transform="translate(-2.550 22.000) scale(.7)"><circle r="1.05"></circle></g></a><a aria-label="2024-01-22 · Goal allowed · Wrist · 21.4 ft from net · Video unavailable" class="attempt-jump shot-map-point" data-attempt-id="2023020729-2" data-board-distance="32" data-event-id="433" data-game-id="2023020729" data-has-video="false" data-result="goal" data-rink-side="4" data-shot-type="wrist" href="?v=2023020729-2" tabindex="0">
+<title>2024-01-22 · Goal allowed · Wrist · 21.4 ft from net · Video unavailable</title><g fill="#007d60" transform="translate(-4.000 32.000) scale(.7)"><circle r="1.05"></circle></g></a><a aria-label="2024-01-22 · Goal allowed · Wrist · 18.1 ft from net · Video unavailable" class="attempt-jump shot-map-point" data-attempt-id="2023020729-4" data-board-distance="29" data-event-id="435" data-game-id="2023020729" data-has-video="false" data-result="goal" data-rink-side="2" data-shot-type="wrist" href="?v=2023020729-4" tabindex="0">
+<title>2024-01-22 · Goal allowed · Wrist · 18.1 ft from net · Video unavailable</title><g fill="#007d60" transform="translate(-2.000 29.000) scale(.7)"><circle r="1.05"></circle></g></a><a aria-label="2024-01-04 · Goal allowed · Wrist · 9.1 ft from net · Open attempt" class="attempt-jump shot-map-point" data-attempt-id="2023020600-4" data-board-distance="20" data-event-id="630" data-game-id="2023020600" data-has-video="true" data-result="goal" data-rink-side="1" data-shot-type="wrist" href="?v=2023020600-4" tabindex="0">
+<title>2024-01-04 · Goal allowed · Wrist · 9.1 ft from net · Open attempt</title><g fill="#007d60" transform="translate(-1.000 20.000) scale(.7)"><circle r="1.05"></circle></g></a><g aria-label="2023-02-14 · Miss · Wrist · 13.3 ft from net · Video unavailable" class="shot-map-point" data-attempt-id="2022020860-2" data-board-distance="24" data-event-id="817" data-game-id="2022020860" data-has-video="false" data-result="miss" data-rink-side="3" data-shot-type="wrist" role="button" tabindex="0">
+<title>2023-02-14 · Miss · Wrist · 13.3 ft from net · Video unavailable</title><g fill="#bb3670" transform="translate(-3.000 24.000) scale(.7)"><circle r="1.05"></circle></g></g><g aria-label="2022-04-28 · Save · Backhand · 8.5 ft from net · Video unavailable" class="shot-map-point" data-attempt-id="2021021296-2" data-board-distance="17" data-event-id="1122" data-game-id="2021021296" data-has-video="false" data-result="save" data-rink-side="6" data-shot-type="backhand" role="button" tabindex="0">
+<title>2022-04-28 · Save · Backhand · 8.5 ft from net · Video unavailable</title><g fill="#c27500" transform="translate(-6.000 17.000) scale(.7)"><rect height="2" rx=".12" width="2" x="-1" y="-1"></rect></g></g><g aria-label="2022-04-28 · Save · Wrist · 9.8 ft from net · Video unavailable" class="shot-map-point" data-attempt-id="2021021296-4" data-board-distance="15" data-event-id="1124" data-game-id="2021021296" data-has-video="false" data-result="save" data-rink-side="9" data-shot-type="wrist" role="button" tabindex="0">
+<title>2022-04-28 · Save · Wrist · 9.8 ft from net · Video unavailable</title><g fill="#c27500" transform="translate(-9.000 15.000) scale(.7)"><circle r="1.05"></circle></g></g><g aria-label="2022-04-28 · Miss · Backhand · 11.2 ft from net · Video unavailable" class="shot-map-point" data-attempt-id="2021021296-6" data-board-distance="21" data-event-id="1127" data-game-id="2021021296" data-has-video="false" data-result="miss" data-rink-side="-5" data-shot-type="backhand" role="button" tabindex="0">
+<title>2022-04-28 · Miss · Backhand · 11.2 ft from net · Video unavailable</title><g fill="#bb3670" transform="translate(5.000 21.000) scale(.7)"><rect height="2" rx=".12" width="2" x="-1" y="-1"></rect></g></g><g aria-label="2021-12-30 · Save · Wrist · 6.3 ft from net · Video unavailable" class="shot-map-point" data-attempt-id="2021020555-1" data-board-distance="17" data-event-id="818" data-game-id="2021020555" data-has-video="false" data-result="save" data-rink-side="-2" data-shot-type="wrist" role="button" tabindex="0">
+<title>2021-12-30 · Save · Wrist · 6.3 ft from net · Video unavailable</title><g fill="#c27500" transform="translate(2.000 17.000) scale(.7)"><circle r="1.05"></circle></g></g><g aria-label="2021-12-30 · Miss · Wrist · 5.0 ft from net · Video unavailable" class="shot-map-point" data-attempt-id="2021020555-3" data-board-distance="11" data-event-id="820" data-game-id="2021020555" data-has-video="false" data-result="miss" data-rink-side="-5" data-shot-type="wrist" role="button" tabindex="0">
+<title>2021-12-30 · Miss · Wrist · 5.0 ft from net · Video unavailable</title><g fill="#bb3670" transform="translate(5.000 11.000) scale(.7)"><circle r="1.05"></circle></g></g><g aria-label="2021-12-30 · Goal allowed · Backhand · 9.2 ft from net · Video unavailable" class="shot-map-point" data-attempt-id="2021020555-7" data-board-distance="20" data-event-id="824" data-game-id="2021020555" data-has-video="false" data-result="goal" data-rink-side="-2" data-shot-type="backhand" role="button" tabindex="0">
+<title>2021-12-30 · Goal allowed · Backhand · 9.2 ft from net · Video unavailable</title><g fill="#007d60" transform="translate(2.000 20.000) scale(.7)"><rect height="2" rx=".12" width="2" x="-1" y="-1"></rect></g></g><g aria-label="2021-12-30 · Goal allowed · Wrist · 9.8 ft from net · Video unavailable" class="shot-map-point" data-attempt-id="2021020555-9" data-board-distance="20" data-event-id="826" data-game-id="2021020555" data-has-video="false" data-result="goal" data-rink-side="4" data-shot-type="wrist" role="button" tabindex="0">
+<title>2021-12-30 · Goal allowed · Wrist · 9.8 ft from net · Video unavailable</title><g fill="#007d60" transform="translate(-4.000 20.000) scale(.7)"><circle r="1.05"></circle></g></g><g aria-label="2020-01-29 · Save · Wrist · 18.7 ft from net · Video unavailable" class="shot-map-point" data-attempt-id="2019020778-5" data-board-distance="29" data-event-id="697" data-game-id="2019020778" data-has-video="false" data-result="save" data-rink-side="5" data-shot-type="wrist" role="button" tabindex="0">
+<title>2020-01-29 · Save · Wrist · 18.7 ft from net · Video unavailable</title><g fill="#c27500" transform="translate(-5.000 29.000) scale(.7)"><circle r="1.05"></circle></g></g><g aria-label="2020-01-16 · Save · Wrist · 24.2 ft from net · Video unavailable" class="shot-map-point" data-attempt-id="2019020728-3" data-board-distance="33" data-event-id="865" data-game-id="2019020728" data-has-video="false" data-result="save" data-rink-side="-10" data-shot-type="wrist" role="button" tabindex="0">
+<title>2020-01-16 · Save · Wrist · 24.2 ft from net · Video unavailable</title><g fill="#c27500" transform="translate(10.000 33.000) scale(.7)"><circle r="1.05"></circle></g></g><g aria-label="2020-01-16 · Save · Wrist · 16.6 ft from net · Video unavailable" class="shot-map-point" data-attempt-id="2019020728-5" data-board-distance="26" data-event-id="867" data-game-id="2019020728" data-has-video="false" data-result="save" data-rink-side="7" data-shot-type="wrist" role="button" tabindex="0">
+<title>2020-01-16 · Save · Wrist · 16.6 ft from net · Video unavailable</title><g fill="#c27500" transform="translate(-7.000 26.000) scale(.7)"><circle r="1.05"></circle></g></g><g aria-label="2020-01-05 · Save · Backhand · 13.4 ft from net · Video unavailable" class="shot-map-point" data-attempt-id="2019020656-3" data-board-distance="23" data-event-id="786" data-game-id="2019020656" data-has-video="false" data-result="save" data-rink-side="-6" data-shot-type="backhand" role="button" tabindex="0">
+<title>2020-01-05 · Save · Backhand · 13.4 ft from net · Video unavailable</title><g fill="#c27500" transform="translate(6.000 23.000) scale(.7)"><rect height="2" rx=".12" width="2" x="-1" y="-1"></rect></g></g><g aria-label="2020-01-05 · Save · Backhand · 13.0 ft from net · Video unavailable" class="shot-map-point" data-attempt-id="2019020656-5" data-board-distance="24" data-event-id="788" data-game-id="2019020656" data-has-video="false" data-result="save" data-rink-side="1" data-shot-type="backhand" role="button" tabindex="0">
+<title>2020-01-05 · Save · Backhand · 13.0 ft from net · Video unavailable</title><g fill="#c27500" transform="translate(-1.000 24.000) scale(.7)"><rect height="2" rx=".12" width="2" x="-1" y="-1"></rect></g></g><g aria-label="2020-01-05 · Goal allowed · Wrist · 13.5 ft from net · Video unavailable" class="shot-map-point" data-attempt-id="2019020656-7" data-board-distance="20" data-event-id="790" data-game-id="2019020656" data-has-video="false" data-result="goal" data-rink-side="10" data-shot-type="wrist" role="button" tabindex="0">
+<title>2020-01-05 · Goal allowed · Wrist · 13.5 ft from net · Video unavailable</title><g fill="#007d60" transform="translate(-10.000 20.000) scale(.7)"><circle r="1.05"></circle></g></g><g aria-label="2020-01-05 · Save · Wrist · 17.9 ft from net · Video unavailable" class="shot-map-point" data-attempt-id="2019020656-9" data-board-distance="27" data-event-id="792" data-game-id="2019020656" data-has-video="false" data-result="save" data-rink-side="8" data-shot-type="wrist" role="button" tabindex="0">
+<title>2020-01-05 · Save · Wrist · 17.9 ft from net · Video unavailable</title><g fill="#c27500" transform="translate(-8.000 27.000) scale(.7)"><circle r="1.05"></circle></g></g><g aria-label="2020-01-05 · Save · Wrist · 12.0 ft from net · Video unavailable" class="shot-map-point" data-attempt-id="2019020656-11" data-board-distance="23" data-event-id="794" data-game-id="2019020656" data-has-video="false" data-result="save" data-rink-side="-0" data-shot-type="wrist" role="button" tabindex="0">
+<title>2020-01-05 · Save · Wrist · 12.0 ft from net · Video unavailable</title><g fill="#c27500" transform="translate(0.000 23.000) scale(.7)"><circle r="1.05"></circle></g></g><g aria-label="2020-01-05 · Save · Backhand · 11.4 ft from net · Video unavailable" class="shot-map-point" data-attempt-id="2019020656-13" data-board-distance="22" data-event-id="796" data-game-id="2019020656" data-has-video="false" data-result="save" data-rink-side="3" data-shot-type="backhand" role="button" tabindex="0">
+<title>2020-01-05 · Save · Backhand · 11.4 ft from net · Video unavailable</title><g fill="#c27500" transform="translate(-3.000 22.000) scale(.7)"><rect height="2" rx=".12" width="2" x="-1" y="-1"></rect></g></g><g aria-label="2019-11-23 · Save · Snap · 15.5 ft from net · Video unavailable" class="shot-map-point" data-attempt-id="2019020349-1" data-board-distance="26" data-event-id="763" data-game-id="2019020349" data-has-video="false" data-result="save" data-rink-side="4" data-shot-type="snap" role="button" tabindex="0">
+<title>2019-11-23 · Save · Snap · 15.5 ft from net · Video unavailable</title><g fill="#c27500" transform="translate(-4.000 26.000) scale(.7)"><path d="M 0 -1.35 L 1.25 1 L -1.25 1 Z"></path></g></g><g aria-label="2019-11-23 · Save · Slap · 17.0 ft from net · Video unavailable" class="shot-map-point" data-attempt-id="2019020349-3" data-board-distance="28" data-event-id="765" data-game-id="2019020349" data-has-video="false" data-result="save" data-rink-side="1" data-shot-type="slap" role="button" tabindex="0">
+<title>2019-11-23 · Save · Slap · 17.0 ft from net · Video unavailable</title><g fill="#c27500" transform="translate(-1.000 28.000) scale(.7)"><path d="M 0 -1.4 L 1.4 0 L 0 1.4 L -1.4 0 Z"></path></g></g><g aria-label="2019-11-23 · Save · Wrist · 19.2 ft from net · Video unavailable" class="shot-map-point" data-attempt-id="2019020349-5" data-board-distance="30" data-event-id="767" data-game-id="2019020349" data-has-video="false" data-result="save" data-rink-side="3" data-shot-type="wrist" role="button" tabindex="0">
+<title>2019-11-23 · Save · Wrist · 19.2 ft from net · Video unavailable</title><g fill="#c27500" transform="translate(-3.000 30.000) scale(.7)"><circle r="1.05"></circle></g></g><g aria-label="2019-10-24 · Save · Wrist · 6.3 ft from net · Video unavailable" class="shot-map-point" data-attempt-id="2019020153-2" data-board-distance="17" data-event-id="775" data-game-id="2019020153" data-has-video="false" data-result="save" data-rink-side="2" data-shot-type="wrist" role="button" tabindex="0">
+<title>2019-10-24 · Save · Wrist · 6.3 ft from net · Video unavailable</title><g fill="#c27500" transform="translate(-2.000 17.000) scale(.7)"><circle r="1.05"></circle></g></g><g aria-label="2019-10-24 · Save · Wrist · 8.1 ft from net · Video unavailable" class="shot-map-point" data-attempt-id="2019020153-4" data-board-distance="19" data-event-id="872" data-game-id="2019020153" data-has-video="false" data-result="save" data-rink-side="1" data-shot-type="wrist" role="button" tabindex="0">
+<title>2019-10-24 · Save · Wrist · 8.1 ft from net · Video unavailable</title><g fill="#c27500" transform="translate(-1.000 19.000) scale(.7)"><circle r="1.05"></circle></g></g><g aria-label="2019-10-10 · Goal allowed · Wrist · 19.0 ft from net · Video unavailable" class="shot-map-point" data-attempt-id="2019020055-1" data-board-distance="30" data-event-id="797" data-game-id="2019020055" data-has-video="false" data-result="goal" data-rink-side="-0" data-shot-type="wrist" role="button" tabindex="0">
+<title>2019-10-10 · Goal allowed · Wrist · 19.0 ft from net · Video unavailable</title><g fill="#007d60" transform="translate(1.550 30.000) scale(.7)"><circle r="1.05"></circle></g></g><g aria-label="2019-02-09 · Goal allowed · Wrist · 19.0 ft from net · Video unavailable" class="shot-map-point" data-attempt-id="2018020850-1" data-board-distance="30" data-event-id="773" data-game-id="2018020850" data-has-video="false" data-result="goal" data-rink-side="-0" data-shot-type="wrist" role="button" tabindex="0">
+<title>2019-02-09 · Goal allowed · Wrist · 19.0 ft from net · Video unavailable</title><g fill="#007d60" transform="translate(-1.550 30.000) scale(.7)"><circle r="1.05"></circle></g></g><g aria-label="2019-10-10 · Save · Wrist · 19.6 ft from net · Video unavailable" class="shot-map-point" data-attempt-id="2019020055-5" data-board-distance="30" data-event-id="1001" data-game-id="2019020055" data-has-video="false" data-result="save" data-rink-side="5" data-shot-type="wrist" role="button" tabindex="0">
+<title>2019-10-10 · Save · Wrist · 19.6 ft from net · Video unavailable</title><g fill="#c27500" transform="translate(-5.000 30.000) scale(.7)"><circle r="1.05"></circle></g></g><g aria-label="2019-02-09 · Save · Backhand · 11.2 ft from net · Video unavailable" class="shot-map-point" data-attempt-id="2018020850-3" data-board-distance="21" data-event-id="775" data-game-id="2018020850" data-has-video="false" data-result="save" data-rink-side="5" data-shot-type="backhand" role="button" tabindex="0">
+<title>2019-02-09 · Save · Backhand · 11.2 ft from net · Video unavailable</title><g fill="#c27500" transform="translate(-5.000 21.000) scale(.7)"><rect height="2" rx=".12" width="2" x="-1" y="-1"></rect></g></g><g aria-label="2019-02-09 · Save · Wrist · 17.2 ft from net · Video unavailable" class="shot-map-point" data-attempt-id="2018020850-5" data-board-distance="25" data-event-id="777" data-game-id="2018020850" data-has-video="false" data-result="save" data-rink-side="10" data-shot-type="wrist" role="button" tabindex="0">
+<title>2019-02-09 · Save · Wrist · 17.2 ft from net · Video unavailable</title><g fill="#c27500" transform="translate(-10.000 25.000) scale(.7)"><circle r="1.05"></circle></g></g><g aria-label="2018-12-20 · Goal allowed · Wrist · 19.0 ft from net · Video unavailable" class="shot-map-point" data-attempt-id="2018020537-2" data-board-distance="30" data-event-id="819" data-game-id="2018020537" data-has-video="false" data-result="goal" data-rink-side="-1" data-shot-type="wrist" role="button" tabindex="0">
+<title>2018-12-20 · Goal allowed · Wrist · 19.0 ft from net · Video unavailable</title><g fill="#007d60" transform="translate(1.000 30.000) scale(.7)"><circle r="1.05"></circle></g></g><g aria-label="2018-12-20 · Save · Wrist · 15.8 ft from net · Video unavailable" class="shot-map-point" data-attempt-id="2018020537-10" data-board-distance="26" data-event-id="828" data-game-id="2018020537" data-has-video="false" data-result="save" data-rink-side="5" data-shot-type="wrist" role="button" tabindex="0">
+<title>2018-12-20 · Save · Wrist · 15.8 ft from net · Video unavailable</title><g fill="#c27500" transform="translate(-5.000 26.000) scale(.7)"><circle r="1.05"></circle></g></g><g aria-label="2018-12-20 · Goal allowed · Wrist · 13.9 ft from net · Video unavailable" class="shot-map-point" data-attempt-id="2018020537-14" data-board-distance="24" data-event-id="833" data-game-id="2018020537" data-has-video="false" data-result="goal" data-rink-side="5" data-shot-type="wrist" role="button" tabindex="0">
+<title>2018-12-20 · Goal allowed · Wrist · 13.9 ft from net · Video unavailable</title><g fill="#007d60" transform="translate(-5.000 24.000) scale(.7)"><circle r="1.05"></circle></g></g><g aria-label="2018-01-25 · Goal allowed · Backhand · 5.1 ft from net · Video unavailable" class="shot-map-point" data-attempt-id="2017020755-1" data-board-distance="16" data-event-id="776" data-game-id="2017020755" data-has-video="false" data-result="goal" data-rink-side="-1" data-shot-type="backhand" role="button" tabindex="0">
+<title>2018-01-25 · Goal allowed · Backhand · 5.1 ft from net · Video unavailable</title><g fill="#007d60" transform="translate(1.000 16.000) scale(.7)"><rect height="2" rx=".12" width="2" x="-1" y="-1"></rect></g></g><g aria-label="2018-01-25 · Save · Backhand · 6.0 ft from net · Video unavailable" class="shot-map-point" data-attempt-id="2017020755-3" data-board-distance="17" data-event-id="779" data-game-id="2017020755" data-has-video="false" data-result="save" data-rink-side="0" data-shot-type="backhand" role="button" tabindex="0">
+<title>2018-01-25 · Save · Backhand · 6.0 ft from net · Video unavailable</title><g fill="#c27500" transform="translate(0.000 17.000) scale(.7)"><rect height="2" rx=".12" width="2" x="-1" y="-1"></rect></g></g><g aria-label="2018-01-25 · Goal allowed · Backhand · 5.0 ft from net · Video unavailable" class="shot-map-point" data-attempt-id="2017020755-5" data-board-distance="14" data-event-id="781" data-game-id="2017020755" data-has-video="false" data-result="goal" data-rink-side="-4" data-shot-type="backhand" role="button" tabindex="0">
+<title>2018-01-25 · Goal allowed · Backhand · 5.0 ft from net · Video unavailable</title><g fill="#007d60" transform="translate(4.000 14.000) scale(.7)"><rect height="2" rx=".12" width="2" x="-1" y="-1"></rect></g></g><g aria-label="2017-12-28 · Goal allowed · Snap · 11.2 ft from net · Video unavailable" class="shot-map-point" data-attempt-id="2017020575-1" data-board-distance="22" data-event-id="821" data-game-id="2017020575" data-has-video="false" data-result="goal" data-rink-side="2" data-shot-type="snap" role="button" tabindex="0">
+<title>2017-12-28 · Goal allowed · Snap · 11.2 ft from net · Video unavailable</title><g fill="#007d60" transform="translate(-2.000 22.000) scale(.7)"><path d="M 0 -1.35 L 1.25 1 L -1.25 1 Z"></path></g></g><g aria-label="2017-12-28 · Save · Wrist · 18.0 ft from net · Video unavailable" class="shot-map-point" data-attempt-id="2017020575-3" data-board-distance="29" data-event-id="823" data-game-id="2017020575" data-has-video="false" data-result="save" data-rink-side="1" data-shot-type="wrist" role="button" tabindex="0">
+<title>2017-12-28 · Save · Wrist · 18.0 ft from net · Video unavailable</title><g fill="#c27500" transform="translate(-1.000 29.000) scale(.7)"><circle r="1.05"></circle></g></g></svg>
+<div aria-label="Shot types" class="shot-map-types"><span><svg aria-hidden="true" viewbox="-2 -2 4 4"><circle r="1.05"></circle></svg>Wrist</span><span><svg aria-hidden="true" viewbox="-2 -2 4 4"><path d="M 0 -1.35 L 1.25 1 L -1.25 1 Z"></path></svg>Snap</span><span><svg aria-hidden="true" viewbox="-2 -2 4 4"><rect height="2" rx=".12" width="2" x="-1" y="-1"></rect></svg>Backhand</span><span><svg aria-hidden="true" viewbox="-2 -2 4 4"><path d="M 0 -1.4 L 1.4 0 L 0 1.4 L -1.4 0 Z"></path></svg>Slap</span></div>
+<div aria-label="Video availability" class="shot-map-video-legend">
+<span><svg aria-hidden="true" class="shot-map-video-key" data-has-video="true" viewbox="-2 -2 4 4"><g><circle r="1.05"></circle></g></svg>White border: video</span>
+<span><svg aria-hidden="true" class="shot-map-video-key" data-has-video="false" viewbox="-2 -2 4 4"><g><circle r="1.05"></circle></g></svg>Dark dashed border: no video</span>
+</div>
+<p class="shot-map-note">69 shots shown · 2017–18 to 2025–26. Both rink ends rotated toward the same net. Overlapping locations are slightly separated; stems mark the recorded spot.</p></div>
+<p aria-atomic="true" aria-live="polite" class="shot-map-selection" hidden=""></p>
+</section>
+<!-- Player Stats (desktop: below video) -->
+<div class="player-stats-desktop">
+<div class="player-stats-section">
+<h3 class="stats-title">Shootout Statistics</h3>
+<div class="stats-container">
+<div class="stats-card">
+<h4 class="stats-card-title">Career Stats</h4>
+<div class="stats-grid stats-grid-3">
+<div class="stat-box">
+<div class="stat-value">69</div>
+<div class="stat-label">Attempts</div>
+</div>
+<div class="stat-box">
+<div class="stat-value">45</div>
+<div class="stat-label">Saves</div>
+</div>
+<div class="stat-box">
+<div class="stat-value">65.2%</div>
+<div class="stat-label">Save %</div>
+</div>
+</div>
+</div>
+<div class="stats-card">
+<h4 class="stats-card-title">2023–24 through 2026–27</h4>
+<div class="stats-grid stats-grid-3">
+<div class="stat-box">
+<div class="stat-value">29</div>
+<div class="stat-label">Attempts</div>
+</div>
+<div class="stat-box">
+<div class="stat-value">16</div>
+<div class="stat-label">Saves</div>
+</div>
+<div class="stat-box">
+<div class="stat-value">55.2%</div>
+<div class="stat-label">Save %</div>
+</div>
+</div>
+</div>
+<div class="stats-card stats-card-wide">
+<h4 class="stats-card-title">Shot Types Faced (Career)</h4>
+<div class="stats-grid stats-grid-4">
+<div class="stat-box">
+<div class="stat-value">23%</div>
+<div class="stat-label">Backhand</div>
+</div>
+<div class="stat-box">
+<div class="stat-value">67%</div>
+<div class="stat-label">Wrist</div>
+</div>
+<div class="stat-box">
+<div class="stat-value">9%</div>
+<div class="stat-label">Snap</div>
+</div>
+<div class="stat-box">
+<div class="stat-value">1%</div>
+<div class="stat-label">Slap</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div><section aria-label="Shootout approaches faced" class="shootout-goalie-approaches" data-goalie-id="8479496" id="approaches-faced">
+<div class="scouting-approaches" data-classified="17" data-model-version="video-approach-v2" data-perspective="shooter" data-role="goalie" data-total="29">
+<h2>Approaches faced</h2>
+<table class="scouting-approach-table"><caption>Approach share and goals allowed rate</caption><thead><tr><th scope="col"><details class="approach-help"><summary aria-label="Approach: show viewpoint explanation" title="Left and right from the shooter's viewpoint, facing the net. Shooter's left is the goalie's right, and vice versa. Lower goals allowed rates are better for the goalie.">Approach <span aria-hidden="true">ⓘ</span></summary><p class="approach-help-text">Left and right from the shooter's viewpoint, facing the net. Shooter's left is the goalie's right, and vice versa. Lower goals allowed rates are better for the goalie.</p></details></th><th scope="col">Share (attempts)</th><th scope="col">Goals allowed rate (goals/attempts)</th></tr></thead><tbody><tr data-attempts="8" data-goals="3" data-known-outcomes="8" data-side="left"><th scope="row">Shooter's left</th><td>47.1% <span>(8)</span></td><td>37.5% <span>(3/8)</span></td></tr><tr data-attempts="0" data-goals="0" data-known-outcomes="0" data-side="center"><th scope="row">Center</th><td>0.0% <span>(0)</span></td><td>— <span>(0/0)</span></td></tr><tr data-attempts="9" data-goals="2" data-known-outcomes="9" data-side="right"><th scope="row">Shooter's right</th><td>52.9% <span>(9)</span></td><td>22.2% <span>(2/9)</span></td></tr></tbody></table>
+<p class="scouting-scope">17 of 29 attempts faced classified · 2024-01-04 to 2026-01-08. 12 unclassified. Shares use classified attempts only; goals allowed rates use known results within each approach.</p>
+<details class="scouting-method"><summary>How approach is measured</summary><p>Video estimates use the player's median sideways position between the blue line and 20 ft from the goal line. Center means within 4 ft of the rink's middle; left and right describe the main approach lane, even if the player cuts across later. Only tracks passing automatic quality checks count, with at least 5 observed positions spanning 15 ft and no gap over 0.4 seconds. Partial, uncertain and missing tracks stay unclassified. These are estimates from available videos, not complete career tendencies; small samples can produce extreme scoring rates.</p></details>
+</div>
+</section>
+</div>
+<!-- Right Column (Attempts Sidebar) -->
+<div class="right-column">
+<!-- Attempts Sidebar -->
+<div class="attempts-sidebar">
+<h3 class="sidebar-title">Shootout Attempts</h3>
+<div class="attempt-item active" data-details="Jan 08, 2026 • Save • Backhand&lt;br&gt;Shootout Attempt #1" data-has-video="true" data-title="vs Predators" data-video="https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/5e424dfc-5e9e-47c4-85ac-158efdefcc67.mp4" data-video-id="2025020689-1">
+<div class="attempt-result save"></div>
+<div class="attempt-info">
+<div class="attempt-date">Jan 08, 2026</div>
+<div class="attempt-opponent">vs Predators</div>
+<div class="attempt-details">Backhand • Save</div>
+<div class="attempt-context">Round 1 · Shooter: <a href="/shootout/players/ryan_oreilly_shootouts.html?v=2025020689-1">Ryan O'Reilly</a></div>
+</div>
+</div>
+<div class="attempt-item" data-details="Jan 08, 2026 • Goal • Backhand&lt;br&gt;Shootout Attempt #3" data-has-video="true" data-title="vs Predators" data-video="https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/6fd58fe6-2bbf-44ed-960b-0219b2ca1280.mp4" data-video-id="2025020689-3">
+<div class="attempt-result goal"></div>
+<div class="attempt-info">
+<div class="attempt-date">Jan 08, 2026</div>
+<div class="attempt-opponent">vs Predators</div>
+<div class="attempt-details">Backhand • Goal</div>
+<div class="attempt-context">Round 2 · Shooter: <a href="/shootout/players/filip_forsberg_shootouts.html?v=2025020689-3">Filip Forsberg</a></div>
+</div>
+</div>
+<div class="attempt-item" data-details="Jan 08, 2026 • Hit Left Post • Wrist&lt;br&gt;Shootout Attempt #5" data-has-video="true" data-title="vs Predators" data-video="https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/cb344174-64ac-4e9f-883f-dcaee2e52ee8.mp4" data-video-id="2025020689-5">
+<div class="attempt-result miss"></div>
+<div class="attempt-info">
+<div class="attempt-date">Jan 08, 2026</div>
+<div class="attempt-opponent">vs Predators</div>
+<div class="attempt-details">Wrist • Hit Left Post</div>
+<div class="attempt-context">Round 3 · Shooter: <a href="/shootout/players/steven_stamkos_shootouts.html?v=2025020689-5">Steven Stamkos</a></div>
+</div>
+</div>
+<div class="attempt-item" data-details="Dec 30, 2025 • High And Wide Right • Wrist&lt;br&gt;Shootout Attempt #1" data-has-video="true" data-title="vs Blackhawks" data-video="https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/d94ad350-3695-4799-865c-a5d5006ddd35.mp4" data-video-id="2025020620-1">
+<div class="attempt-result miss"></div>
+<div class="attempt-info">
+<div class="attempt-date">Dec 30, 2025</div>
+<div class="attempt-opponent">vs Blackhawks</div>
+<div class="attempt-details">Wrist • High And Wide Right</div>
+<div class="attempt-context">Round 1 · Shooter: <a href="/shootout/players/nick_lardis_shootouts.html?v=2025020620-1">Nick Lardis</a></div>
+</div>
+</div>
+<div class="attempt-item" data-details="Dec 30, 2025 • Save • Wrist&lt;br&gt;Shootout Attempt #3" data-has-video="true" data-title="vs Blackhawks" data-video="https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/14628ed8-7bf6-4558-9543-b5e73bf0f9d2.mp4" data-video-id="2025020620-3">
+<div class="attempt-result save"></div>
+<div class="attempt-info">
+<div class="attempt-date">Dec 30, 2025</div>
+<div class="attempt-opponent">vs Blackhawks</div>
+<div class="attempt-details">Wrist • Save</div>
+<div class="attempt-context">Round 2 · Shooter: <a href="/shootout/players/teuvo_teravainen_shootouts.html?v=2025020620-3">Teuvo Teravainen</a></div>
+</div>
+</div>
+<div class="attempt-item" data-details="Dec 30, 2025 • Save • Wrist&lt;br&gt;Shootout Attempt #5" data-has-video="true" data-title="vs Blackhawks" data-video="https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/b2d18867-4521-45c6-b7f4-9b9ac633206b.mp4" data-video-id="2025020620-5">
+<div class="attempt-result save"></div>
+<div class="attempt-info">
+<div class="attempt-date">Dec 30, 2025</div>
+<div class="attempt-opponent">vs Blackhawks</div>
+<div class="attempt-details">Wrist • Save</div>
+<div class="attempt-context">Round 3 · Shooter: <a href="/shootout/players/ryan_donato_shootouts.html?v=2025020620-5">Ryan Donato</a></div>
+</div>
+</div>
+<div class="attempt-item" data-details="Dec 20, 2025 • Save • Wrist&lt;br&gt;Shootout Attempt #1" data-has-video="true" data-title="vs Sabres" data-video="https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/362008ec-8df8-4047-8b91-3c1281971b17.mp4" data-video-id="2025020553-1">
+<div class="attempt-result save"></div>
+<div class="attempt-info">
+<div class="attempt-date">Dec 20, 2025</div>
+<div class="attempt-opponent">vs Sabres</div>
+<div class="attempt-details">Wrist • Save</div>
+<div class="attempt-context">Round 1 · Shooter: <a href="/shootout/players/tage_thompson_shootouts.html?v=2025020553-1">Tage Thompson</a></div>
+</div>
+</div>
+<div class="attempt-item" data-details="Dec 20, 2025 • Goal • Wrist&lt;br&gt;Shootout Attempt #3" data-has-video="true" data-title="vs Sabres" data-video="https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/167b8482-13e7-4892-b724-9bf488925bf1.mp4" data-video-id="2025020553-3">
+<div class="attempt-result goal"></div>
+<div class="attempt-info">
+<div class="attempt-date">Dec 20, 2025</div>
+<div class="attempt-opponent">vs Sabres</div>
+<div class="attempt-details">Wrist • Goal</div>
+<div class="attempt-context">Round 2 · Shooter: <a href="/shootout/players/jack_quinn_shootouts.html?v=2025020553-3">Jack Quinn</a></div>
+</div>
+</div>
+<div class="attempt-item" data-details="Dec 20, 2025 • Wide Right • Wrist&lt;br&gt;Shootout Attempt #5" data-has-video="true" data-title="vs Sabres" data-video="https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/ed2dfb00-eedc-4575-9837-0d86f8a54dd0.mp4" data-video-id="2025020553-5">
+<div class="attempt-result miss"></div>
+<div class="attempt-info">
+<div class="attempt-date">Dec 20, 2025</div>
+<div class="attempt-opponent">vs Sabres</div>
+<div class="attempt-details">Wrist • Wide Right</div>
+<div class="attempt-context">Round 3 · Shooter: <a href="/shootout/players/alex_tuch_shootouts.html?v=2025020553-5">Alex Tuch</a></div>
+</div>
+</div>
+<div class="attempt-item" data-details="Dec 20, 2025 • Short • Wrist&lt;br&gt;Shootout Attempt #7" data-has-video="true" data-title="vs Sabres" data-video="https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/e2f737d9-f53f-4bf2-974d-255308cd1d54.mp4" data-video-id="2025020553-7">
+<div class="attempt-result miss"></div>
+<div class="attempt-info">
+<div class="attempt-date">Dec 20, 2025</div>
+<div class="attempt-opponent">vs Sabres</div>
+<div class="attempt-details">Wrist • Short</div>
+<div class="attempt-context">Round 4 · Shooter: <a href="/shootout/players/noah_ostlund_shootouts.html?v=2025020553-7">Noah Ostlund</a></div>
+</div>
+</div>
+<div class="attempt-item" data-details="Dec 20, 2025 • Goal • Wrist&lt;br&gt;Shootout Attempt #9" data-has-video="true" data-title="vs Sabres" data-video="https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/6493cc5c-4ef8-4d97-85cb-4482e75177e0.mp4" data-video-id="2025020553-9">
+<div class="attempt-result goal"></div>
+<div class="attempt-info">
+<div class="attempt-date">Dec 20, 2025</div>
+<div class="attempt-opponent">vs Sabres</div>
+<div class="attempt-details">Wrist • Goal</div>
+<div class="attempt-context">Round 5 · Shooter: <a href="/shootout/players/josh_norris_shootouts.html?v=2025020553-9">Josh Norris</a></div>
+</div>
+</div>
+<div class="attempt-item" data-details="Nov 28, 2025 • Goal • Backhand&lt;br&gt;Shootout Attempt #1" data-has-video="true" data-title="vs Flyers" data-video="https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/90964723-b6a9-4a77-b61f-d6cd1ad67275.mp4" data-video-id="2025020381-1">
+<div class="attempt-result goal"></div>
+<div class="attempt-info">
+<div class="attempt-date">Nov 28, 2025</div>
+<div class="attempt-opponent">vs Flyers</div>
+<div class="attempt-details">Backhand • Goal</div>
+<div class="attempt-context">Round 1 · Shooter: <a href="/shootout/players/trevor_zegras_shootouts.html?v=2025020381-1">Trevor Zegras</a></div>
+</div>
+</div>
+<div class="attempt-item" data-details="Nov 28, 2025 • Save • Backhand&lt;br&gt;Shootout Attempt #3" data-has-video="true" data-title="vs Flyers" data-video="https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/0d626321-8fd0-449d-996d-7f01030a4f33.mp4" data-video-id="2025020381-3">
+<div class="attempt-result save"></div>
+<div class="attempt-info">
+<div class="attempt-date">Nov 28, 2025</div>
+<div class="attempt-opponent">vs Flyers</div>
+<div class="attempt-details">Backhand • Save</div>
+<div class="attempt-context">Round 2 · Shooter: <a href="/shootout/players/matvei_michkov_shootouts.html?v=2025020381-3">Matvei Michkov</a></div>
+</div>
+</div>
+<div class="attempt-item" data-details="Nov 28, 2025 • Goal • Wrist&lt;br&gt;Shootout Attempt #5" data-has-video="true" data-title="vs Flyers" data-video="https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/b845372e-bdca-476f-911a-72b5f1b8836a.mp4" data-video-id="2025020381-5">
+<div class="attempt-result goal"></div>
+<div class="attempt-info">
+<div class="attempt-date">Nov 28, 2025</div>
+<div class="attempt-opponent">vs Flyers</div>
+<div class="attempt-details">Wrist • Goal</div>
+<div class="attempt-context">Round 3 · Shooter: <a href="/shootout/players/travis_konecny_shootouts.html?v=2025020381-5">Travis Konecny</a></div>
+</div>
+</div>
+<div class="attempt-item" data-details="Nov 23, 2025 • Goal • Snap&lt;br&gt;Shootout Attempt #1" data-has-video="true" data-title="vs Kraken" data-video="https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/ec62eac2-799b-4b01-8e6b-79a0c17c1efb.mp4" data-video-id="2025020349-1">
+<div class="attempt-result goal"></div>
+<div class="attempt-info">
+<div class="attempt-date">Nov 23, 2025</div>
+<div class="attempt-opponent">vs Kraken</div>
+<div class="attempt-details">Snap • Goal</div>
+<div class="attempt-context">Round 1 · Shooter: <a href="/shootout/players/frederick_gaudreau_shootouts.html?v=2025020349-1">Frederick Gaudreau</a></div>
+</div>
+</div>
+<div class="attempt-item" data-details="Nov 23, 2025 • High And Wide Right • Snap&lt;br&gt;Shootout Attempt #3" data-has-video="true" data-title="vs Kraken" data-video="https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/e8baa43c-950e-4494-aff4-bff282dfee79.mp4" data-video-id="2025020349-3">
+<div class="attempt-result miss"></div>
+<div class="attempt-info">
+<div class="attempt-date">Nov 23, 2025</div>
+<div class="attempt-opponent">vs Kraken</div>
+<div class="attempt-details">Snap • High And Wide Right</div>
+<div class="attempt-context">Round 2 · Shooter: <a href="/shootout/players/jordan_eberle_shootouts.html?v=2025020349-3">Jordan Eberle</a></div>
+</div>
+</div>
+<div class="attempt-item" data-details="Nov 23, 2025 • High And Wide Left • Snap&lt;br&gt;Shootout Attempt #5" data-has-video="true" data-title="vs Kraken" data-video="https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/9bdff767-5994-4e01-8a2d-c19e738d731e.mp4" data-video-id="2025020349-5">
+<div class="attempt-result miss"></div>
+<div class="attempt-info">
+<div class="attempt-date">Nov 23, 2025</div>
+<div class="attempt-opponent">vs Kraken</div>
+<div class="attempt-details">Snap • High And Wide Left</div>
+<div class="attempt-context">Round 3 · Shooter: <a href="/shootout/players/eeli_tolvanen_shootouts.html?v=2025020349-5">Eeli Tolvanen</a></div>
+</div>
+</div>
+<div class="attempt-item" data-details="Nov 23, 2025 • Save • Snap&lt;br&gt;Shootout Attempt #7" data-has-video="true" data-title="vs Kraken" data-video="https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/105382e9-19d4-4ba9-b397-418bad3ad2ab.mp4" data-video-id="2025020349-7">
+<div class="attempt-result save"></div>
+<div class="attempt-info">
+<div class="attempt-date">Nov 23, 2025</div>
+<div class="attempt-opponent">vs Kraken</div>
+<div class="attempt-details">Snap • Save</div>
+<div class="attempt-context">Round 4 · Shooter: <a href="/shootout/players/chandler_stephenson_shootouts.html?v=2025020349-7">Chandler Stephenson</a></div>
+</div>
+</div>
+<div class="attempt-item" data-details="Feb 08, 2025 • Goal • Wrist&lt;br&gt;Shootout Attempt #2" data-has-video="true" data-title="vs Ducks" data-video="https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/7d5da699-c1e1-43df-aa70-4b91ba0070e8.mp4" data-video-id="2024020888-2">
+<div class="attempt-result goal"></div>
+<div class="attempt-info">
+<div class="attempt-date">Feb 08, 2025</div>
+<div class="attempt-opponent">vs Ducks</div>
+<div class="attempt-details">Wrist • Goal</div>
+<div class="attempt-context">Round 1 · Shooter: <a href="/shootout/players/trevor_zegras_shootouts.html?v=2024020888-2">Trevor Zegras</a></div>
+</div>
+</div>
+<div class="attempt-item" data-details="Feb 08, 2025 • Goal • Wrist&lt;br&gt;Shootout Attempt #4" data-has-video="true" data-title="vs Ducks" data-video="https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/d9204d05-dae4-4f88-bb1f-219330d5b874.mp4" data-video-id="2024020888-4">
+<div class="attempt-result goal"></div>
+<div class="attempt-info">
+<div class="attempt-date">Feb 08, 2025</div>
+<div class="attempt-opponent">vs Ducks</div>
+<div class="attempt-details">Wrist • Goal</div>
+<div class="attempt-context">Round 2 · Shooter: <a href="/shootout/players/leo_carlsson_shootouts.html?v=2024020888-4">Leo Carlsson</a></div>
+</div>
+</div>
+<div class="attempt-item" data-details="Feb 07, 2025 • High And Wide Right • Wrist&lt;br&gt;Shootout Attempt #2" data-has-video="true" data-title="vs Stars" data-video="https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/13a6b457-668c-4a68-b92f-18f1550b2adb.mp4" data-video-id="2024020875-2">
+<div class="attempt-result miss"></div>
+<div class="attempt-info">
+<div class="attempt-date">Feb 07, 2025</div>
+<div class="attempt-opponent">vs Stars</div>
+<div class="attempt-details">Wrist • High And Wide Right</div>
+<div class="attempt-context">Round 1 · Shooter: <a href="/shootout/players/jason_robertson_shootouts.html?v=2024020875-2">Jason Robertson</a></div>
+</div>
+</div>
+<div class="attempt-item" data-details="Feb 07, 2025 • Save • Backhand&lt;br&gt;Shootout Attempt #4" data-has-video="true" data-title="vs Stars" data-video="https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/1af2e9b7-4d7d-45bc-964e-a78a588b2b8a.mp4" data-video-id="2024020875-4">
+<div class="attempt-result save"></div>
+<div class="attempt-info">
+<div class="attempt-date">Feb 07, 2025</div>
+<div class="attempt-opponent">vs Stars</div>
+<div class="attempt-details">Backhand • Save</div>
+<div class="attempt-context">Round 2 · Shooter: <a href="/shootout/players/matt_duchene_shootouts.html?v=2024020875-4">Matt Duchene</a></div>
+</div>
+</div>
+<div class="attempt-item" data-details="Feb 24, 2024 • Save • Wrist&lt;br&gt;Shootout Attempt #2" data-has-video="true" data-title="vs Ducks" data-video="https://stories.nhl.com/games/264809/17467375/20.mp4" data-video-id="2023020915-2">
+<div class="attempt-result save"></div>
+<div class="attempt-info">
+<div class="attempt-date">Feb 24, 2024</div>
+<div class="attempt-opponent">vs Ducks</div>
+<div class="attempt-details">Wrist • Save</div>
+<div class="attempt-context">Round 1 · Shooter: <a href="/shootout/players/mason_mctavish_shootouts.html?v=2023020915-2">Mason McTavish</a></div>
+</div>
+</div>
+<div class="attempt-item" data-details="Feb 24, 2024 • Goal • Wrist&lt;br&gt;Shootout Attempt #4" data-has-video="true" data-title="vs Ducks" data-video="https://stories.nhl.com/games/264809/17467375/22.mp4" data-video-id="2023020915-4">
+<div class="attempt-result goal"></div>
+<div class="attempt-info">
+<div class="attempt-date">Feb 24, 2024</div>
+<div class="attempt-opponent">vs Ducks</div>
+<div class="attempt-details">Wrist • Goal</div>
+<div class="attempt-context">Round 2 · Shooter: <a href="/shootout/players/leo_carlsson_shootouts.html?v=2023020915-4">Leo Carlsson</a></div>
+</div>
+</div>
+<div class="attempt-item" data-details="Feb 24, 2024 • Save • Wrist&lt;br&gt;Shootout Attempt #6" data-has-video="true" data-title="vs Ducks" data-video="https://stories.nhl.com/games/264809/17467375/24.mp4" data-video-id="2023020915-6">
+<div class="attempt-result save"></div>
+<div class="attempt-info">
+<div class="attempt-date">Feb 24, 2024</div>
+<div class="attempt-opponent">vs Ducks</div>
+<div class="attempt-details">Wrist • Save</div>
+<div class="attempt-context">Round 3 · Shooter: <a href="/shootout/players/alex_killorn_shootouts.html?v=2023020915-6">Alex Killorn</a></div>
+</div>
+</div>
+<div class="attempt-item no-video" data-details="Jan 22, 2024 • Goal • Wrist&lt;br&gt;Shootout Attempt #2" data-has-video="false" data-title="vs Sharks" data-video="" data-video-id="2023020729-2">
+<div class="attempt-result goal"></div>
+<div class="attempt-info">
+<div class="attempt-date">Jan 22, 2024 (No Video)</div>
+<div class="attempt-opponent">vs Sharks</div>
+<div class="attempt-details">Wrist • Goal</div>
+<div class="attempt-context">Round 1 · Shooter: <a href="/shootout/players/logan_couture_shootouts.html?v=2023020729-2">Logan Couture</a></div>
+</div>
+</div>
+<div class="attempt-item no-video" data-details="Jan 22, 2024 • Goal • Wrist&lt;br&gt;Shootout Attempt #4" data-has-video="false" data-title="vs Sharks" data-video="" data-video-id="2023020729-4">
+<div class="attempt-result goal"></div>
+<div class="attempt-info">
+<div class="attempt-date">Jan 22, 2024 (No Video)</div>
+<div class="attempt-opponent">vs Sharks</div>
+<div class="attempt-details">Wrist • Goal</div>
+<div class="attempt-context">Round 2 · Shooter: <a href="/shootout/players/fabian_zetterlund_shootouts.html?v=2023020729-4">Fabian Zetterlund</a></div>
+</div>
+</div>
+<div class="attempt-item" data-details="Jan 04, 2024 • Goal • Wrist&lt;br&gt;Shootout Attempt #2" data-has-video="true" data-title="vs Red Wings" data-video="https://www.nhl.com/stories/214434/15885981/23.mp4" data-video-id="2023020600-2">
+<div class="attempt-result goal"></div>
+<div class="attempt-info">
+<div class="attempt-date">Jan 04, 2024</div>
+<div class="attempt-opponent">vs Red Wings</div>
+<div class="attempt-details">Wrist • Goal</div>
+<div class="attempt-context">Round 1 · Shooter: <a href="/shootout/players/lucas_raymond_shootouts.html?v=2023020600-2">Lucas Raymond</a></div>
+</div>
+</div>
+<div class="attempt-item" data-details="Jan 04, 2024 • Goal • Wrist&lt;br&gt;Shootout Attempt #4" data-has-video="true" data-title="vs Red Wings" data-video="https://www.nhl.com/stories/214434/15885981/25.mp4" data-video-id="2023020600-4">
+<div class="attempt-result goal"></div>
+<div class="attempt-info">
+<div class="attempt-date">Jan 04, 2024</div>
+<div class="attempt-opponent">vs Red Wings</div>
+<div class="attempt-details">Wrist • Goal</div>
+<div class="attempt-context">Round 2 · Shooter: <a href="/shootout/players/patrick_kane_shootouts.html?v=2023020600-4">Patrick Kane</a></div>
+</div>
+</div>
+</div>
+<!-- Player Stats (mobile: below sidebar) -->
+<div class="player-stats-mobile">
+<div class="player-stats-section">
+<h3 class="stats-title">Shootout Statistics</h3>
+<div class="stats-container">
+<div class="stats-card">
+<h4 class="stats-card-title">Career Stats</h4>
+<div class="stats-grid stats-grid-3">
+<div class="stat-box">
+<div class="stat-value">69</div>
+<div class="stat-label">Attempts</div>
+</div>
+<div class="stat-box">
+<div class="stat-value">45</div>
+<div class="stat-label">Saves</div>
+</div>
+<div class="stat-box">
+<div class="stat-value">65.2%</div>
+<div class="stat-label">Save %</div>
+</div>
+</div>
+</div>
+<div class="stats-card">
+<h4 class="stats-card-title">2023–24 through 2026–27</h4>
+<div class="stats-grid stats-grid-3">
+<div class="stat-box">
+<div class="stat-value">29</div>
+<div class="stat-label">Attempts</div>
+</div>
+<div class="stat-box">
+<div class="stat-value">16</div>
+<div class="stat-label">Saves</div>
+</div>
+<div class="stat-box">
+<div class="stat-value">55.2%</div>
+<div class="stat-label">Save %</div>
+</div>
+</div>
+</div>
+<div class="stats-card stats-card-wide">
+<h4 class="stats-card-title">Shot Types Faced (Career)</h4>
+<div class="stats-grid stats-grid-4">
+<div class="stat-box">
+<div class="stat-value">23%</div>
+<div class="stat-label">Backhand</div>
+</div>
+<div class="stat-box">
+<div class="stat-value">67%</div>
+<div class="stat-label">Wrist</div>
+</div>
+<div class="stat-box">
+<div class="stat-value">9%</div>
+<div class="stat-label">Snap</div>
+</div>
+<div class="stat-box">
+<div class="stat-value">1%</div>
+<div class="stat-label">Slap</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<section class="shootout-context-panel" data-goalie-id="8479496" id="season-record">
+<h2>David Rittich's attempts faced by season</h2>
+<div class="shootout-table-scroll"><table class="shootout-season-table"><caption>Regular-season attempts from 2023–24 onward</caption>
+<thead><tr><th scope="col">Season</th><th scope="col">Attempts faced</th><th scope="col">Goals allowed</th><th scope="col">Goals allowed %</th><th scope="col">Videos</th></tr></thead>
+<tbody><tr><th scope="row">2023–24</th><td>7</td><td>5</td><td>71.4%</td><td>5</td></tr><tr><th scope="row">2024–25</th><td>4</td><td>2</td><td>50.0%</td><td>4</td></tr><tr><th scope="row">2025–26</th><td>18</td><td>6</td><td>33.3%</td><td>18</td></tr></tbody></table></div>
+<p>Wrist shots account for 20 of the 29 attempts with a recorded shot type (69.0%).</p><h3>Latest shootout results</h3><ol class="shootout-recent-results"><li><time datetime="2026-01-08">Jan 08, 2026</time> — <strong>Saved</strong> against Predators, round 1. Shooter: <a href="/shootout/players/ryan_oreilly_shootouts.html?v=2025020689-1">Ryan O'Reilly</a>. <a class="attempt-jump" data-attempt-id="2025020689-1" href="?v=2025020689-1">Watch attempt</a>.</li><li><time datetime="2026-01-08">Jan 08, 2026</time> — <strong>Goal allowed</strong> against Predators, round 2. Shooter: <a href="/shootout/players/filip_forsberg_shootouts.html?v=2025020689-3">Filip Forsberg</a>. <a class="attempt-jump" data-attempt-id="2025020689-3" href="?v=2025020689-3">Watch attempt</a>.</li><li><time datetime="2026-01-08">Jan 08, 2026</time> — <strong>Missed</strong> against Predators, round 3. Shooter: <a href="/shootout/players/steven_stamkos_shootouts.html?v=2025020689-5">Steven Stamkos</a>. <a class="attempt-jump" data-attempt-id="2025020689-5" href="?v=2025020689-5">Watch attempt</a>.</li><li><time datetime="2025-12-30">Dec 30, 2025</time> — <strong>Missed</strong> against Blackhawks, round 1. Shooter: <a href="/shootout/players/nick_lardis_shootouts.html?v=2025020620-1">Nick Lardis</a>. <a class="attempt-jump" data-attempt-id="2025020620-1" href="?v=2025020620-1">Watch attempt</a>.</li><li><time datetime="2025-12-30">Dec 30, 2025</time> — <strong>Saved</strong> against Blackhawks, round 2. Shooter: <a href="/shootout/players/teuvo_teravainen_shootouts.html?v=2025020620-3">Teuvo Teravainen</a>. <a class="attempt-jump" data-attempt-id="2025020620-3" href="?v=2025020620-3">Watch attempt</a>.</li></ol>
+<p class="shootout-data-note">Career totals cover NHL regular-season shootouts. The attempt list, season table, and approach breakdown cover attempts faced from 2023–24 onward, including attempts without video clips. The shot map starts with the recent period; select “Show full career” to include older shot locations. Results come from NHL play-by-play.</p>
+</section>
+<!-- Back to Articles -->
+<div style="text-align: center; margin-top: 3rem;">
+<a class="card-link" href="/shootout/">← All player shootouts</a>
+</div>
+</main>
+<!-- Footer -->
+<footer class="site-footer" id="main-footer"></footer>
+</div>
+<script src="../../js/main.js"></script>
+<script>
         // Shootout video player functionality
         document.addEventListener('DOMContentLoaded', function() {
             const video = document.getElementById('shootout-video');
