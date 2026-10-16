@@ -6,7 +6,7 @@
 .shootout-scouting .scouting-summary { margin: 0 0 .8rem; max-width: 100ch; }
 .scouting-evidence { display: flex; flex-wrap: wrap; gap: .4rem 1.4rem; font-size: .88rem; }
 .scouting-evidence strong { font-variant-numeric: tabular-nums; color: #f8fafc; }
-.scouting-effectiveness { margin-top: .9rem; padding-top: .8rem; border-top: 1px solid #37516d; }
+.scouting-effectiveness { margin: .2rem 0 .9rem; padding: .75rem .9rem; border: 1px solid #37516d; border-radius: .5rem; background: #182b41; }
 .scouting-effectiveness h3 { margin: 0 0 .3rem; font-size: .95rem; color: #bae6fd; }
 .scouting-effectiveness p { margin: 0; max-width: 100ch; }
 .scouting-approaches { margin-top: .9rem; padding-top: .8rem; border-top: 1px solid #37516d; }
@@ -27,6 +27,28 @@
 .scouting-method { color: #a7b7c9; }
 .scouting-method summary { cursor: pointer; width: fit-content; }
 .scouting-method p { margin: .6rem 0 0; max-width: 100ch; }
+.scouting-finishes { margin-top: 1rem; padding-top: .8rem; border-top: 1px solid #37516d; }
+.scouting-finishes h3 { margin: 0 0 .55rem; font-size: 1rem; color: #f8fafc; }
+.finish-periods { min-width: 0; border: 0; margin: 0; padding: 0; }
+.finish-sr-only, .finish-period-radio { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; border: 0; }
+.finish-period-label { display: inline-flex; align-items: center; justify-content: center; box-sizing: border-box; min-height: 44px; padding: .4rem .85rem; margin: 0 .3rem .4rem 0; border: 1px solid #4b6c8a; border-radius: .45rem; color: #cbd5e1; font-size: .85rem; cursor: pointer; }
+.finish-period-radio:checked + .finish-period-label { background: #254965; border-color: #7dd3fc; color: #fff; }
+.finish-period-radio:focus-visible + .finish-period-label { outline: 2px solid #7dd3fc; outline-offset: 3px; }
+.finish-panel { display: none; }
+#finish-period-career:checked ~ .finish-panel[data-scope="career"], #finish-period-recent:checked ~ .finish-panel[data-scope="recent"] { display: block; }
+.finish-results-table { width: 100%; border-collapse: collapse; table-layout: fixed; font-size: .87rem; font-variant-numeric: tabular-nums; }
+.finish-results-table caption { text-align: left; color: #a7b7c9; margin: .15rem 0 .35rem; font-size: .8rem; }
+.finish-results-table th, .finish-results-table td { padding: .55rem .25rem; border-bottom: 1px solid #37516d; text-align: right; vertical-align: middle; }
+.finish-results-table th:first-child { width: 43%; text-align: left; }
+.finish-results-table thead th { font-size: .76rem; font-weight: 500; line-height: 1.35; color: #a7b7c9; }
+.finish-results-table tbody th { font-weight: 500; }
+.finish-results-table td:last-child { font-weight: 650; color: #f8fafc; }
+.finish-outcome-note { display: block; font-size: .7rem; line-height: 1.3; color: #a7b7c9; }
+.finish-breakdown { margin-top: .3rem; font-size: .85rem; }
+.finish-breakdown > summary { box-sizing: border-box; min-height: 44px; padding: .55rem 0; cursor: pointer; color: #93c5fd; }
+.finish-breakdown > summary:focus-visible { outline: 2px solid #7dd3fc; outline-offset: 3px; }
+.finish-breakdown[open] { padding-bottom: .4rem; }
+.finish-breakdown .finish-results-table { font-size: .82rem; }
 @media (max-width: 600px) { .shootout-scouting, .shootout-goalie-approaches { padding: 1rem; } .scouting-evidence { gap: .3rem .9rem; } }
 /* Keep one visible stats block following the scouting/approach read on phones too. */
 @media (max-width: 768px) { .shootout-person-layout .player-stats-desktop { display: block; } .shootout-person-layout .player-stats-mobile { display: none; } }
