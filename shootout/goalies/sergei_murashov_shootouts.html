@@ -18,6 +18,8 @@
 <link href="/css/shootout-scouting.css?v=2e65caae388c" rel="stylesheet"/>
 <link href="/css/shootout-shot-map.css?v=475d48420075" rel="stylesheet"/>
 <script defer="" src="/js/shootout-shot-map.js?v=b684577f7f26"></script>
+<link href="/css/shootout-trajectories.css?v=72c494053468" rel="stylesheet"/>
+<script defer="" src="/js/shootout-trajectories.js?v=84608c84b272"></script>
 </head>
 <body>
 <!-- App Container -->
@@ -34,6 +36,7 @@
 <section aria-label="Shootout summary" class="shootout-overview">
 <p class="career-shootout-summary">Sergei Murashov has allowed <strong>1 goal on 3 career NHL shootout attempts faced</strong> (33.3% goals allowed).</p>
 <p>Watch 3 of the attempts he faced below. His latest listed attempt came against the Columbus Blue Jackets on October 9, 2026.</p>
+<a class="trajectory-entry-link" href="#trajectories">Explore paths to the net ↓</a>
 <a href="#season-record">Season breakdown and recent results ↓</a></section>
 <!-- Shootout Container -->
 <div class="shootout-container shootout-person-layout">
@@ -307,6 +310,56 @@
 </div>
 </div>
 </div>
+<section aria-labelledby="trajectory-title" class="shootout-trajectories" data-role="goalie" data-total="3" data-tracked="2" data-version="video-routes-v1" id="trajectories"><div class="trajectory-heading"><div><p class="trajectory-eyebrow">From the video to the ice</p>
+<h2 id="trajectory-title">Paths to the net faced</h2><p class="trajectory-intro">See the approach. Spot the cut. Compare the finish.</p></div>
+<span class="trajectory-coverage">2 of 3 attempts with usable tracking</span></div>
+<div aria-label="Filter trajectories by result" class="trajectory-filters" role="group"><button aria-pressed="true" data-route-filter="all" type="button">All paths <span>2</span></button><button aria-pressed="false" data-route-filter="goal" type="button">Goals allowed <span>1</span></button><button aria-pressed="false" data-route-filter="save" type="button">Saves <span>1</span></button><button aria-pressed="false" data-route-filter="miss" type="button">Misses <span>0</span></button></div>
+<div class="trajectory-layout">
+<div class="trajectory-canvas">
+<div class="trajectory-orientation"><span>Shooter’s left</span><span>Facing the net ↑</span><span>Shooter’s right</span></div>
+<svg aria-labelledby="trajectory-rink-title trajectory-rink-desc" class="trajectory-rink" role="img" viewbox="-48 -4 96 110">
+<title id="trajectory-rink-title">Video-derived skater paths toward the net</title>
+<desc id="trajectory-rink-desc">Both rink ends are rotated to face the net at the top. Use the attempt selector to explore each route.</desc>
+<defs><clippath id="trajectory-ice-clip"><path d="M -42.5 100 V 28 A 28 28 0 0 1 -14.5 0 H 14.5 A 28 28 0 0 1 42.5 28 V 100 Z"></path></clippath></defs>
+<path class="trajectory-ice" d="M -42.5 100 V 28 A 28 28 0 0 1 -14.5 0 H 14.5 A 28 28 0 0 1 42.5 28 V 100"></path>
+<g clip-path="url(#trajectory-ice-clip)">
+<g class="trajectory-rink-lines"><path d="M -42.5 11 H 42.5 M -11 11 L -14 0 M 11 11 L 14 0"></path>
+<circle cx="-22" cy="31" r="15"></circle><circle cx="22" cy="31" r="15"></circle>
+<circle cx="-22" cy="31" r=".8"></circle><circle cx="22" cy="31" r=".8"></circle>
+<path class="trajectory-blue-line" d="M -42.5 75 H 42.5"></path>
+<path d="M -42.5 100 H 42.5"></path><circle class="trajectory-center-circle" cy="100" r="15"></circle></g>
+<path class="trajectory-center-guide" d="M 0 20 V 98"></path>
+<path class="trajectory-crease" d="M -4 11 V 15.5 A 6.083 6.083 0 0 0 4 15.5 V 11 Z"></path>
+<g class="trajectory-routes"><path class="trajectory-route" d="M 7.56 75.3 L 7.79 75.17 L 8.62 74.72 L 9.87 74.12 L 11.4 73.67 L 12.93 73.19 L 14.38 72.66 L 15.86 72.09 L 17.32 71.54 L 18.7 71 L 19.93 70.42 L 21.03 69.78 L 22.07 69.1 L 23.02 68.37 L 23.87 67.55 L 24.62 66.63 L 25.27 65.63 L 25.85 64.59 L 26.37 63.53 L 26.82 62.41 L 27.18 61.23 L 27.44 60 L 27.6 58.73 L 27.66 57.44 L 27.72 56.18 L 27.71 54.9 L 27.66 53.58 L 27.58 52.24 L 27.57 50.91 L 27.45 49.75 L 27.3 48.63 L 27.05 47.55 L 26.64 46.52 L 26.16 45.47 L 25.62 44.42 L 24.95 43.46 L 24.27 42.54 L 23.39 41.67 L 22.46 40.77 L 21.49 39.92 L 20.56 39.17 L 19.73 38.53 L 18.95 37.95 L 18.14 37.33 L 17.39 36.67 L 16.71 36.03 L 16.05 35.45 L 15.31 34.83 L 14.52 34.25 L 13.72 33.68 L 12.88 33.12 L 12.1 32.62 L 11.38 32.17 L 10.66 31.7 L 9.84 31.23 L 9.07 30.88 L 8.33 30.5 L 7.62 30.05 L 6.93 29.48 L 6.25 28.72 L 5.57 27.74 L 4.91 26.58 L 4.37 25.35 L 4.01 24.12 L 3.88 22.95 L 3.97 21.79 L 4.27 20.86 L 4.67 20.09 L 5.23 19.48 L 5.86 19.03" data-result="goal" data-route-id="2026020068-1"><title>Oct 09, 2026 · Kent Johnson · Goal allowed</title></path><path class="trajectory-route" d="M -14.13 93.98 L -14.88 93.55 L -16.07 92.56 L -17.25 91.64 L -18.24 90.78 L -19.39 89.77 L -20.45 88.76 L -21.52 87.71 L -22.52 86.54 L -23.45 85.33 L -24.42 84.04 L -25.37 82.7 L -26.27 81.33 L -27.05 79.91 L -27.75 78.47 L -28.27 76.88 L -28.67 75.29 L -29.03 73.74 L -29.42 72.23 L -29.72 70.81 L -29.91 69.58 L -29.93 68.61 L -29.71 67.76 L -29.31 66.85 L -28.79 65.74 L -28.18 64.46 L -27.49 63.06 L -26.58 61.66 L -25.6 60.34 L -24.54 59.11 L -23.44 57.95 L -22.32 56.85 L -21.24 55.79 L -20.17 54.8 L -19.17 53.85 L -18.23 52.92 L -17.36 52.01 L -16.53 51.16 L -15.69 50.26 L -14.9 49.32 L -14.11 48.21 L -13.35 46.95 L -12.66 45.68 L -12.02 44.44 L -11.38 43.23 L -10.75 42.06 L -10.08 40.95 L -9.35 39.92 L -8.5 38.96 L -7.58 38.08 L -6.62 37.26 L -5.57 36.52 L -4.52 35.82 L -3.52 35.12 L -2.58 34.46 L -1.68 33.76 L -0.79 33.07 L 0.13 32.4 L 1.13 31.76 L 2.23 31.14 L 3.44 30.54 L 4.66 30.04 L 5.87 29.6" data-result="save" data-route-id="2026020068-3"><title>Oct 09, 2026 · Conor Garland · Save</title></path></g>
+<path class="trajectory-selected-halo"></path><path class="trajectory-selected-path"></path>
+<circle class="trajectory-start" r="1.1"></circle><circle class="trajectory-cursor" r="1.5"></circle>
+</g>
+<path class="trajectory-net" d="M -3 11 V 8.8 Q -3 7.67 -1.7 7.67 H 1.7 Q 3 7.67 3 8.8 V 11 Z"></path>
+<text class="trajectory-rink-label" x="-40" y="72">BLUE LINE</text>
+<text class="trajectory-rink-label" text-anchor="middle" x="0" y="104">CENTER ICE</text>
+</svg>
+<p class="trajectory-map-key"><span class="trajectory-key-start"></span>First tracked position <span class="trajectory-key-end"></span>Selected position</p>
+</div>
+<div class="trajectory-controls">
+<label class="trajectory-select-label" for="trajectory-attempt">Explore an attempt</label>
+<select id="trajectory-attempt"><option value="2026020068-1">Oct 09, 2026 · Goal allowed · Kent Johnson</option><option value="2026020068-3">Oct 09, 2026 · Save · Conor Garland</option></select>
+<div class="trajectory-step"><button aria-label="Previous tracked attempt" class="trajectory-previous" type="button">← Previous</button><span class="trajectory-position"></span><button aria-label="Next tracked attempt" class="trajectory-next" type="button">Next →</button></div>
+<div aria-atomic="true" aria-live="polite" class="trajectory-detail"><span class="trajectory-result"></span><h3 class="trajectory-opponent"></h3><p class="trajectory-date"></p>
+<dl class="trajectory-metrics"><div><dt>Approach lane</dt><dd class="trajectory-lane"></dd></div><div><dt>Tracked span</dt><dd class="trajectory-duration"></dd></div></dl></div>
+<div class="trajectory-replay"><button class="trajectory-play" type="button">↻ Replay route</button><output class="trajectory-time" for="trajectory-progress"></output></div>
+<label class="trajectory-sr-only" for="trajectory-progress">Position along selected trajectory</label>
+<input id="trajectory-progress" max="1000" min="0" step="1" type="range" value="1000"/>
+<p class="trajectory-gap" hidden="" role="status">Tracking gap · no position shown</p>
+<label class="trajectory-compare"><input checked="" type="checkbox"/> Compare with other paths</label>
+<a class="trajectory-watch attempt-jump" data-attempt-id="2026020068-1" href="?v=2026020068-1">Watch this attempt <span aria-hidden="true">↗</span></a>
+<p class="trajectory-no-video" hidden="">Video unavailable for this attempt.</p>
+<p class="trajectory-selection-hint">Choose an attempt above or tap a path on the ice.</p>
+</div></div>
+<p class="trajectory-filter-empty" hidden="" role="status">No tracked attempts match this result. Choose another filter.</p>
+<p class="trajectory-note">Skater paths estimated from video · both ends rotated toward the same net · 2 tracked, 1 unavailable.</p>
+<details class="trajectory-method"><summary>About these paths</summary><p>Only paths passing automatic tracking and approach checks are shown. Lines connect trusted observed positions; breaks mark missing tracking. Routes begin at center ice or the first available position and stop at the closest tracked point to the net. The endpoint is not a measured shot release. Replay follows the video timing across the displayed span. Colors show the official attempt result; the paths track the skater, not the puck. Coverage is for the attempts listed on this page, not the full career.</p></details>
+<noscript><p class="trajectory-note">Enable JavaScript to select, filter, and replay paths. The map above shows all available routes.</p></noscript>
+<script class="trajectory-data" type="application/json">[{"id":"2026020068-1","game_id":2026020068,"event_id":474,"date":"Oct 09, 2026","opponent":"Kent Johnson","result":"goal","result_label":"Goal allowed","type":"Snap","side":"right","segments":[[[4.872,7.56,75.3],[4.938,7.79,75.17],[5.005,8.62,74.72],[5.072,9.87,74.12],[5.138,11.4,73.67],[5.205,12.93,73.19],[5.272,14.38,72.66],[5.339,15.86,72.09],[5.405,17.32,71.54],[5.472,18.7,71.0],[5.539,19.93,70.42],[5.606,21.03,69.78],[5.672,22.07,69.1],[5.739,23.02,68.37],[5.806,23.87,67.55],[5.872,24.62,66.63],[5.939,25.27,65.63],[6.006,25.85,64.59],[6.073,26.37,63.53],[6.139,26.82,62.41],[6.206,27.18,61.23],[6.273,27.44,60.0],[6.34,27.6,58.73],[6.406,27.66,57.44],[6.473,27.72,56.18],[6.54,27.71,54.9],[6.607,27.66,53.58],[6.673,27.58,52.24],[6.74,27.57,50.91],[6.807,27.45,49.75],[6.873,27.3,48.63],[6.94,27.05,47.55],[7.007,26.64,46.52],[7.074,26.16,45.47],[7.141,25.62,44.42],[7.207,24.95,43.46],[7.274,24.27,42.54],[7.341,23.39,41.67],[7.407,22.46,40.77],[7.474,21.49,39.92],[7.541,20.56,39.17],[7.608,19.73,38.53],[7.674,18.95,37.95],[7.741,18.14,37.33],[7.808,17.39,36.67],[7.875,16.71,36.03],[7.941,16.05,35.45],[8.008,15.31,34.83],[8.075,14.52,34.25],[8.142,13.72,33.68],[8.208,12.88,33.12],[8.275,12.1,32.62],[8.342,11.38,32.17],[8.408,10.66,31.7],[8.475,9.84,31.23],[8.542,9.07,30.88],[8.609,8.33,30.5],[8.675,7.62,30.05],[8.742,6.93,29.48],[8.809,6.25,28.72],[8.876,5.57,27.74],[8.942,4.91,26.58],[9.009,4.37,25.35],[9.076,4.01,24.12],[9.143,3.88,22.95],[9.209,3.97,21.79],[9.276,4.27,20.86],[9.343,4.67,20.09],[9.409,5.23,19.48],[9.476,5.86,19.03]]],"has_video":true},{"id":"2026020068-3","game_id":2026020068,"event_id":476,"date":"Oct 09, 2026","opponent":"Conor Garland","result":"save","result_label":"Save","type":"Wrist","side":"left","segments":[[[2.069,-14.13,93.98],[2.135,-14.88,93.55],[2.202,-16.07,92.56],[2.269,-17.25,91.64],[2.336,-18.24,90.78],[2.402,-19.39,89.77],[2.469,-20.45,88.76],[2.536,-21.52,87.71],[2.603,-22.52,86.54],[2.669,-23.45,85.33],[2.736,-24.42,84.04],[2.803,-25.37,82.7],[2.869,-26.27,81.33],[2.936,-27.05,79.91],[3.003,-27.75,78.47],[3.07,-28.27,76.88],[3.136,-28.67,75.29],[3.203,-29.03,73.74],[3.27,-29.42,72.23],[3.337,-29.72,70.81],[3.403,-29.91,69.58],[3.47,-29.93,68.61],[3.537,-29.71,67.76],[3.604,-29.31,66.85],[3.67,-28.79,65.74],[3.737,-28.18,64.46],[3.804,-27.49,63.06],[3.87,-26.58,61.66],[3.937,-25.6,60.34],[4.004,-24.54,59.11],[4.071,-23.44,57.95],[4.138,-22.32,56.85],[4.204,-21.24,55.79],[4.271,-20.17,54.8],[4.338,-19.17,53.85],[4.404,-18.23,52.92],[4.471,-17.36,52.01],[4.538,-16.53,51.16],[4.605,-15.69,50.26],[4.671,-14.9,49.32],[4.738,-14.11,48.21],[4.805,-13.35,46.95],[4.872,-12.66,45.68],[4.938,-12.02,44.44],[5.005,-11.38,43.23],[5.072,-10.75,42.06],[5.138,-10.08,40.95],[5.205,-9.35,39.92],[5.272,-8.5,38.96],[5.339,-7.58,38.08],[5.405,-6.62,37.26],[5.472,-5.57,36.52],[5.539,-4.52,35.82],[5.606,-3.52,35.12],[5.672,-2.58,34.46],[5.739,-1.68,33.76],[5.806,-0.79,33.07],[5.872,0.13,32.4],[5.939,1.13,31.76],[6.006,2.23,31.14],[6.073,3.44,30.54],[6.139,4.66,30.04],[6.206,5.87,29.6]]],"has_video":true}]</script></section>
 <section class="shootout-context-panel" data-goalie-id="8483703" id="season-record">
 <h2>Sergei Murashov's attempts faced by season</h2>
 <div class="shootout-table-scroll"><table class="shootout-season-table"><caption>Regular-season attempts from 2023–24 onward</caption>

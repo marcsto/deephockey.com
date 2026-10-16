@@ -18,6 +18,8 @@
 <link href="/css/shootout-scouting.css?v=2e65caae388c" rel="stylesheet"/>
 <link href="/css/shootout-shot-map.css?v=475d48420075" rel="stylesheet"/>
 <script defer="" src="/js/shootout-shot-map.js?v=b684577f7f26"></script>
+<link href="/css/shootout-trajectories.css?v=72c494053468" rel="stylesheet"/>
+<script defer="" src="/js/shootout-trajectories.js?v=84608c84b272"></script>
 </head>
 <body>
 <!-- App Container -->
@@ -34,6 +36,7 @@
 <section aria-label="Shootout summary" class="shootout-overview">
 <p class="career-shootout-summary">Cutter Gauthier has scored <strong>2 goals on 3 career NHL shootout attempts</strong> (66.7%).</p>
 <p>Watch 3 of his attempts below. His latest listed attempt came against the Montréal Canadiens on March 6, 2026.</p>
+<a class="trajectory-entry-link" href="#trajectories">Explore paths to the net ↓</a>
 <a href="#season-record">Season breakdown and recent results ↓</a></section>
 <!-- Shootout Container -->
 <div class="shootout-container shootout-person-layout">
@@ -300,6 +303,56 @@
 </div>
 </div>
 </div>
+<section aria-labelledby="trajectory-title" class="shootout-trajectories" data-role="player" data-total="3" data-tracked="2" data-version="video-routes-v1" id="trajectories"><div class="trajectory-heading"><div><p class="trajectory-eyebrow">From the video to the ice</p>
+<h2 id="trajectory-title">Paths to the net</h2><p class="trajectory-intro">See the approach. Spot the cut. Compare the finish.</p></div>
+<span class="trajectory-coverage">2 of 3 attempts with usable tracking</span></div>
+<div aria-label="Filter trajectories by result" class="trajectory-filters" role="group"><button aria-pressed="true" data-route-filter="all" type="button">All paths <span>2</span></button><button aria-pressed="false" data-route-filter="goal" type="button">Goals <span>2</span></button><button aria-pressed="false" data-route-filter="save" type="button">Saves <span>0</span></button><button aria-pressed="false" data-route-filter="miss" type="button">Misses <span>0</span></button></div>
+<div class="trajectory-layout">
+<div class="trajectory-canvas">
+<div class="trajectory-orientation"><span>Shooter’s left</span><span>Facing the net ↑</span><span>Shooter’s right</span></div>
+<svg aria-labelledby="trajectory-rink-title trajectory-rink-desc" class="trajectory-rink" role="img" viewbox="-48 -4 96 110">
+<title id="trajectory-rink-title">Video-derived skater paths toward the net</title>
+<desc id="trajectory-rink-desc">Both rink ends are rotated to face the net at the top. Use the attempt selector to explore each route.</desc>
+<defs><clippath id="trajectory-ice-clip"><path d="M -42.5 100 V 28 A 28 28 0 0 1 -14.5 0 H 14.5 A 28 28 0 0 1 42.5 28 V 100 Z"></path></clippath></defs>
+<path class="trajectory-ice" d="M -42.5 100 V 28 A 28 28 0 0 1 -14.5 0 H 14.5 A 28 28 0 0 1 42.5 28 V 100"></path>
+<g clip-path="url(#trajectory-ice-clip)">
+<g class="trajectory-rink-lines"><path d="M -42.5 11 H 42.5 M -11 11 L -14 0 M 11 11 L 14 0"></path>
+<circle cx="-22" cy="31" r="15"></circle><circle cx="22" cy="31" r="15"></circle>
+<circle cx="-22" cy="31" r=".8"></circle><circle cx="22" cy="31" r=".8"></circle>
+<path class="trajectory-blue-line" d="M -42.5 75 H 42.5"></path>
+<path d="M -42.5 100 H 42.5"></path><circle class="trajectory-center-circle" cy="100" r="15"></circle></g>
+<path class="trajectory-center-guide" d="M 0 20 V 98"></path>
+<path class="trajectory-crease" d="M -4 11 V 15.5 A 6.083 6.083 0 0 0 4 15.5 V 11 Z"></path>
+<g class="trajectory-routes"><path class="trajectory-route" d="M 4.19 99.82 L 5.38 99.03 L 6.65 98.33 L 7.94 97.66 L 9.23 96.99 L 10.51 96.31 L 11.74 95.59 L 12.87 94.83 L 13.88 94.01 L 14.74 93.14 L 15.44 92.24 L 16.02 91.32 L 16.68 90.34 L 17.46 89.32 L 18.37 88.26 L 19.46 87.25 L 20.63 86.31 L 22.32 85.55 L 24.23 84.91 L 26.48 84.31 L 28.81 83.69 L 30.57 83 L 31.06 81.99 L 31.07 80.84 L 31.11 79.6 L 31.08 78.26 L 31.2 76.97 L 31.43 75.69 L 31.86 74.37 L 32.28 73.04 L 32.7 71.72 L 33.07 70.42 L 33.39 69.17 L 33.63 67.92 L 33.82 66.66 L 34.01 65.32 L 34.13 63.89 L 34.3 62.48 L 34.44 61.1 L 34.53 59.72 L 34.58 58.31 L 34.52 56.92 L 34.44 55.65 L 34.28 54.42 L 34.01 53.21 L 33.65 52.03 L 33.26 50.92 L 32.76 49.83 L 32.16 48.68 L 31.45 47.53 L 30.65 46.4 L 29.76 45.27 L 28.84 44.17 L 27.89 43.12 L 26.91 42.16 L 25.93 41.27 L 24.92 40.46 L 23.93 39.74 L 22.93 39.08 L 21.96 38.46 L 20.99 37.88 L 20.04 37.35 L 19.11 36.84 L 18.16 36.34 L 17.19 35.84 L 16.24 35.34 L 15.32 34.84 L 14.43 34.33 L 13.57 33.81 L 12.72 33.27 L 11.88 32.73 L 11.07 32.26 L 10.29 31.83 L 9.46 31.47 L 8.59 31.1 L 7.73 30.72 L 6.88 30.32 L 6.02 29.92 L 5.16 29.52" data-result="goal" data-route-id="2025020987-7"><title>Mar 06, 2026 · Canadiens · Goal</title></path><path class="trajectory-route" d="M 28.85 83.73 L 28.88 83.48 L 29.34 82.9 M 30.48 79.12 L 30.67 78.04 L 30.84 76.79 L 31.02 75.42 L 31.1 74.04 L 31.19 72.61 L 31.3 71.13 L 31.41 69.61 L 31.48 68.18 L 31.52 66.77 L 31.54 65.38 L 31.56 64.04 L 31.54 62.75 L 31.52 61.48 L 31.52 60.25 M 31.51 57.93 L 31.5 56.87 L 31.47 55.84 L 31.43 54.87 L 31.36 53.95 L 31.26 53.01 L 31.12 52.11 L 30.96 51.26 L 30.75 50.45 L 30.51 49.72 L 30.22 49.01 L 29.89 48.32 L 29.53 47.68 L 29.07 47.08 L 28.53 46.52 L 27.77 45.94 L 26.88 45.37 L 25.8 44.77 L 24.71 44.22 L 23.47 43.61 L 22.08 42.94 L 20.68 42.26 L 19.3 41.5 L 18.01 40.68 L 16.74 39.83 L 15.48 38.94 L 14.26 38.12 L 13.12 37.38 L 11.93 36.59 L 10.7 35.79 L 9.52 35.02 L 8.29 34.22 L 7.07 33.43 M 3.27 30.91 L 1.97 30.02 L 0.68 29.12" data-result="goal" data-route-id="2025020789-5"><title>Jan 21, 2026 · Avalanche · Goal</title></path></g>
+<path class="trajectory-selected-halo"></path><path class="trajectory-selected-path"></path>
+<circle class="trajectory-start" r="1.1"></circle><circle class="trajectory-cursor" r="1.5"></circle>
+</g>
+<path class="trajectory-net" d="M -3 11 V 8.8 Q -3 7.67 -1.7 7.67 H 1.7 Q 3 7.67 3 8.8 V 11 Z"></path>
+<text class="trajectory-rink-label" x="-40" y="72">BLUE LINE</text>
+<text class="trajectory-rink-label" text-anchor="middle" x="0" y="104">CENTER ICE</text>
+</svg>
+<p class="trajectory-map-key"><span class="trajectory-key-start"></span>First tracked position <span class="trajectory-key-end"></span>Selected position</p>
+</div>
+<div class="trajectory-controls">
+<label class="trajectory-select-label" for="trajectory-attempt">Explore an attempt</label>
+<select id="trajectory-attempt"><option value="2025020987-7">Mar 06, 2026 · Goal · Canadiens</option><option value="2025020789-5">Jan 21, 2026 · Goal · Avalanche</option></select>
+<div class="trajectory-step"><button aria-label="Previous tracked attempt" class="trajectory-previous" type="button">← Previous</button><span class="trajectory-position"></span><button aria-label="Next tracked attempt" class="trajectory-next" type="button">Next →</button></div>
+<div aria-atomic="true" aria-live="polite" class="trajectory-detail"><span class="trajectory-result"></span><h3 class="trajectory-opponent"></h3><p class="trajectory-date"></p>
+<dl class="trajectory-metrics"><div><dt>Approach lane</dt><dd class="trajectory-lane"></dd></div><div><dt>Tracked span</dt><dd class="trajectory-duration"></dd></div></dl></div>
+<div class="trajectory-replay"><button class="trajectory-play" type="button">↻ Replay route</button><output class="trajectory-time" for="trajectory-progress"></output></div>
+<label class="trajectory-sr-only" for="trajectory-progress">Position along selected trajectory</label>
+<input id="trajectory-progress" max="1000" min="0" step="1" type="range" value="1000"/>
+<p class="trajectory-gap" hidden="" role="status">Tracking gap · no position shown</p>
+<label class="trajectory-compare"><input checked="" type="checkbox"/> Compare with other paths</label>
+<a class="trajectory-watch attempt-jump" data-attempt-id="2025020987-7" href="?v=2025020987-7">Watch this attempt <span aria-hidden="true">↗</span></a>
+<p class="trajectory-no-video" hidden="">Video unavailable for this attempt.</p>
+<p class="trajectory-selection-hint">Choose an attempt above or tap a path on the ice.</p>
+</div></div>
+<p class="trajectory-filter-empty" hidden="" role="status">No tracked attempts match this result. Choose another filter.</p>
+<p class="trajectory-note">Skater paths estimated from video · both ends rotated toward the same net · 2 tracked, 1 unavailable.</p>
+<details class="trajectory-method"><summary>About these paths</summary><p>Only paths passing automatic tracking and approach checks are shown. Lines connect trusted observed positions; breaks mark missing tracking. Routes begin at center ice or the first available position and stop at the closest tracked point to the net. The endpoint is not a measured shot release. Replay follows the video timing across the displayed span. Colors show the official attempt result; the paths track the skater, not the puck. Coverage is for the attempts listed on this page, not the full career.</p></details>
+<noscript><p class="trajectory-note">Enable JavaScript to select, filter, and replay paths. The map above shows all available routes.</p></noscript>
+<script class="trajectory-data" type="application/json">[{"id":"2025020987-7","game_id":2025020987,"event_id":212,"date":"Mar 06, 2026","opponent":"Canadiens","result":"goal","result_label":"Goal","type":"Snap","side":"right","segments":[[[1.802,4.19,99.82],[1.869,5.38,99.03],[1.935,6.65,98.33],[2.002,7.94,97.66],[2.069,9.23,96.99],[2.135,10.51,96.31],[2.202,11.74,95.59],[2.269,12.87,94.83],[2.336,13.88,94.01],[2.402,14.74,93.14],[2.469,15.44,92.24],[2.536,16.02,91.32],[2.603,16.68,90.34],[2.669,17.46,89.32],[2.736,18.37,88.26],[2.803,19.46,87.25],[2.869,20.63,86.31],[2.936,22.32,85.55],[3.003,24.23,84.91],[3.07,26.48,84.31],[3.136,28.81,83.69],[3.203,30.57,83.0],[3.27,31.06,81.99],[3.337,31.07,80.84],[3.403,31.11,79.6],[3.47,31.08,78.26],[3.537,31.2,76.97],[3.604,31.43,75.69],[3.67,31.86,74.37],[3.737,32.28,73.04],[3.804,32.7,71.72],[3.87,33.07,70.42],[3.937,33.39,69.17],[4.004,33.63,67.92],[4.071,33.82,66.66],[4.138,34.01,65.32],[4.204,34.13,63.89],[4.271,34.3,62.48],[4.338,34.44,61.1],[4.404,34.53,59.72],[4.471,34.58,58.31],[4.538,34.52,56.92],[4.605,34.44,55.65],[4.671,34.28,54.42],[4.738,34.01,53.21],[4.805,33.65,52.03],[4.872,33.26,50.92],[4.938,32.76,49.83],[5.005,32.16,48.68],[5.072,31.45,47.53],[5.138,30.65,46.4],[5.205,29.76,45.27],[5.272,28.84,44.17],[5.339,27.89,43.12],[5.405,26.91,42.16],[5.472,25.93,41.27],[5.539,24.92,40.46],[5.606,23.93,39.74],[5.672,22.93,39.08],[5.739,21.96,38.46],[5.806,20.99,37.88],[5.872,20.04,37.35],[5.939,19.11,36.84],[6.006,18.16,36.34],[6.073,17.19,35.84],[6.139,16.24,35.34],[6.206,15.32,34.84],[6.273,14.43,34.33],[6.34,13.57,33.81],[6.406,12.72,33.27],[6.473,11.88,32.73],[6.54,11.07,32.26],[6.607,10.29,31.83],[6.673,9.46,31.47],[6.74,8.59,31.1],[6.807,7.73,30.72],[6.873,6.88,30.32],[6.94,6.02,29.92],[7.007,5.16,29.52]]],"has_video":true},{"id":"2025020789-5","game_id":2025020789,"event_id":257,"date":"Jan 21, 2026","opponent":"Avalanche","result":"goal","result_label":"Goal","type":"Wrist","side":"right","segments":[[[0.0,28.85,83.73],[0.067,28.88,83.48],[0.134,29.34,82.9]],[[0.334,30.48,79.12],[0.4,30.67,78.04],[0.467,30.84,76.79],[0.534,31.02,75.42],[0.601,31.1,74.04],[0.667,31.19,72.61],[0.734,31.3,71.13],[0.801,31.41,69.61],[0.868,31.48,68.18],[0.934,31.52,66.77],[1.001,31.54,65.38],[1.068,31.56,64.04],[1.135,31.54,62.75],[1.201,31.52,61.48],[1.268,31.52,60.25]],[[1.401,31.51,57.93],[1.468,31.5,56.87],[1.535,31.47,55.84],[1.602,31.43,54.87],[1.668,31.36,53.95],[1.735,31.26,53.01],[1.802,31.12,52.11],[1.869,30.96,51.26],[1.935,30.75,50.45],[2.002,30.51,49.72],[2.069,30.22,49.01],[2.135,29.89,48.32],[2.202,29.53,47.68],[2.269,29.07,47.08],[2.336,28.53,46.52],[2.402,27.77,45.94],[2.469,26.88,45.37],[2.536,25.8,44.77],[2.603,24.71,44.22],[2.669,23.47,43.61],[2.736,22.08,42.94],[2.803,20.68,42.26],[2.869,19.3,41.5],[2.936,18.01,40.68],[3.003,16.74,39.83],[3.07,15.48,38.94],[3.136,14.26,38.12],[3.203,13.12,37.38],[3.27,11.93,36.59],[3.337,10.7,35.79],[3.403,9.52,35.02],[3.47,8.29,34.22],[3.537,7.07,33.43]],[[3.737,3.27,30.91],[3.804,1.97,30.02],[3.87,0.68,29.12]]],"has_video":true}]</script></section>
 <section class="shootout-context-panel" data-player-id="8483445" id="season-record">
 <h2>Cutter Gauthier's attempts by season</h2>
 <div class="shootout-table-scroll"><table class="shootout-season-table"><caption>Regular-season attempts from 2023–24 onward</caption>

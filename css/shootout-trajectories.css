@@ -1,0 +1,88 @@
+.shootout-trajectories { --route-goal: #57dfbd; --route-save: #f3bd6c; --route-miss: #ed8fab; --route-unknown: #b9c9df; margin: 2rem 0; padding: clamp(1rem, 3vw, 2rem); border: 1px solid #37516d; border-radius: 1.1rem; background: radial-gradient(ellipse at 15% 25%, #18374a 0, #111e30 60%); color: #e2e8f0; scroll-margin-top: 5rem; }
+.shootout-trajectories * { box-sizing: border-box; }
+.shootout-trajectories [hidden] { display: none !important; }
+.trajectory-heading { display: flex; align-items: flex-start; justify-content: space-between; flex-wrap: wrap; gap: 1rem; margin-bottom: 1.3rem; }
+.trajectory-eyebrow { margin: 0 0 .4rem; font-size: .68rem; font-weight: 700; text-transform: uppercase; letter-spacing: .16em; color: #8bd5e1; }
+.trajectory-heading h2 { margin: 0; font-size: clamp(1.5rem, 3vw, 2rem); line-height: 1.2; letter-spacing: -.035em; color: #f8fafc; }
+.trajectory-intro { margin: .6rem 0 0; font-size: .9rem; color: #b0c3d4; line-height: 1.6; }
+.trajectory-coverage { padding: .5rem .75rem; border: 1px solid #3b566d; border-radius: 2rem; font-size: .75rem; color: #c4d6e4; background: #112334; }
+.trajectory-filters { display: flex; flex-wrap: wrap; gap: .45rem; margin-bottom: 1.3rem; }
+.shootout-trajectories button, .shootout-trajectories select, .trajectory-watch { font: inherit; font-size: .85rem; }
+.shootout-trajectories button { cursor: pointer; min-height: 44px; padding: .6rem .85rem; border: 1px solid #455e77; border-radius: .5rem; color: #d4e0eb; background: #1a2c40; }
+.shootout-trajectories button:disabled { opacity: .4; cursor: default; }
+.shootout-trajectories button:not(:disabled):hover { background: #2c455d; }
+.shootout-trajectories :is(button, select, a, input, summary):focus-visible { outline: 2px solid #9fe7f0; outline-offset: 4px; }
+.trajectory-filters button { border-radius: 2rem; background: transparent; }
+.trajectory-filters button span { margin-left: .3rem; font-variant-numeric: tabular-nums; opacity: .8; }
+.trajectory-filters button[aria-pressed="true"] { border-color: #b1e2ed; background: #b1e2ed; color: #112334; }
+.trajectory-filters button[data-route-filter="goal"]::before, .trajectory-filters button[data-route-filter="save"]::before, .trajectory-filters button[data-route-filter="miss"]::before { content: ''; display: inline-block; width: .5rem; height: .5rem; margin-right: .4rem; border-radius: 50%; background: var(--route-color); box-shadow: 0 0 0 1px #132a3d; }
+.shootout-trajectories [data-result="goal"], .shootout-trajectories [data-route-filter="goal"] { --route-color: var(--route-goal); }
+.shootout-trajectories [data-result="save"], .shootout-trajectories [data-route-filter="save"] { --route-color: var(--route-save); }
+.shootout-trajectories [data-result="miss"], .shootout-trajectories [data-route-filter="miss"] { --route-color: var(--route-miss); }
+.shootout-trajectories [data-result="unknown"] { --route-color: var(--route-unknown); }
+.trajectory-layout { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(260px, .85fr); gap: clamp(1.2rem, 4vw, 3rem); align-items: center; }
+.trajectory-canvas { min-width: 0; max-width: 510px; width: 100%; margin: auto; }
+.trajectory-orientation { display: flex; justify-content: space-between; gap: .3rem; font-size: .66rem; color: #adc2d4; margin-bottom: .4rem; }
+.trajectory-orientation span:nth-child(2) { color: #d4e7ef; }
+.trajectory-rink { width: 100%; height: auto; display: block; overflow: visible; }
+.trajectory-ice { fill: #102638; stroke: #6b8798; stroke-width: .5; }
+.trajectory-rink-lines { fill: none; stroke: #ac7583; stroke-width: .22; opacity: .65; }
+.trajectory-rink-lines .trajectory-blue-line { stroke: #81b9e8; stroke-width: .65; }
+.trajectory-rink-lines .trajectory-center-circle { stroke: #81b9e8; }
+.trajectory-center-guide { fill: none; stroke: #7292a6; opacity: .18; stroke-width: .2; stroke-dasharray: 1 1.5; }
+.trajectory-crease { fill: #26485e; stroke: #a5c3d2; stroke-width: .2; }
+.trajectory-net { fill: #587587; stroke: #f1bac0; stroke-width: .45; }
+.trajectory-rink-label { font: 2px Inter, sans-serif; letter-spacing: .35px; fill: #a6bbce; }
+.trajectory-route { fill: none; stroke: var(--route-color); stroke-width: .45; opacity: .4; stroke-linecap: round; stroke-linejoin: round; cursor: pointer; pointer-events: stroke; }
+.trajectory-route:hover { opacity: 1; stroke-width: 1; }
+.trajectory-route.is-selected { opacity: .23; stroke-dasharray: .7 1; }
+.trajectory-selected-halo, .trajectory-selected-path { fill: none; stroke-linecap: round; stroke-linejoin: round; pointer-events: none; }
+.trajectory-selected-halo { stroke: #0b1827; stroke-width: 1.8; }
+.trajectory-selected-path { stroke: var(--route-color); stroke-width: .8; }
+.trajectory-start { fill: #102638; stroke: var(--route-color); stroke-width: .5; pointer-events: none; }
+.trajectory-cursor { fill: var(--route-color); stroke: #f8fafc; stroke-width: .45; pointer-events: none; }
+.trajectory-selected-halo:not([d]), .trajectory-selected-path:not([d]), .trajectory-start:not([cx]), .trajectory-cursor:not([cx]) { display: none; }
+.trajectory-map-key { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: .4rem; margin: .45rem 0 0; font-size: .65rem; color: #b0c3d4; }
+.trajectory-key-start, .trajectory-key-end { width: .5rem; height: .5rem; border: 1px solid #b0c3d4; border-radius: 50%; }
+.trajectory-key-end { background: #b0c3d4; margin-left: .45rem; }
+.trajectory-controls { min-width: 0; }
+.trajectory-select-label { display: block; margin-bottom: .55rem; color: #d8e7f1; font-size: .9rem; font-weight: 600; }
+.shootout-trajectories select { width: 100%; min-height: 48px; padding: .65rem .5rem; background: #172d42; color: #e5edf5; border: 1px solid #536d86; border-radius: .5rem; text-overflow: ellipsis; }
+.trajectory-step { display: flex; align-items: center; justify-content: space-between; gap: .5rem; margin: .5rem 0 1.4rem; }
+.trajectory-step button { background: transparent; border-color: transparent; padding-inline: .3rem; font-size: .8rem; }
+.trajectory-position { font-size: .75rem; color: #afc2d4; font-variant-numeric: tabular-nums; }
+.trajectory-result { display: inline-block; color: var(--route-color); font-size: .72rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
+.trajectory-detail h3 { margin: .45rem 0; font-size: clamp(1.15rem, 2.2vw, 1.6rem); letter-spacing: -.02em; line-height: 1.35; color: #f8fafc; }
+.trajectory-date { margin: 0; font-size: .8rem; line-height: 1.5; color: #b0c3d4; }
+.trajectory-metrics { display: grid; grid-template-columns: 1fr 1fr; margin: 1.3rem 0; padding-block: 1rem; border-block: 1px solid #334b61; gap: .75rem; }
+.trajectory-metrics dt { color: #a8bfd1; font-size: .72rem; margin-bottom: .4rem; }
+.trajectory-metrics dd { margin: 0; font-size: 1.15rem; color: #e2eef5; font-weight: 600; }
+.trajectory-replay { display: flex; align-items: center; justify-content: space-between; gap: .5rem; }
+.trajectory-replay .trajectory-play { background: #234557; border-color: #5c91a3; color: #e5f8ff; }
+.trajectory-time { color: #b5cbdc; font-size: .75rem; font-variant-numeric: tabular-nums; }
+#trajectory-progress { display: block; width: 100%; margin: .5rem 0; min-height: 32px; accent-color: #94d9e4; cursor: pointer; }
+.trajectory-compare { display: flex; align-items: center; gap: .5rem; min-height: 44px; margin-bottom: .6rem; font-size: .8rem; color: #bcd0df; cursor: pointer; }
+.trajectory-compare input { width: 16px; height: 16px; accent-color: #8fd5df; }
+.trajectory-watch { display: flex; align-items: center; justify-content: space-between; gap: .5rem; min-height: 46px; padding: .65rem 1rem; color: #e5f8ff; background: #28465d; border: 1px solid #5c819a; border-radius: .5rem; text-decoration: none; }
+.trajectory-watch:hover { background: #365b73; }
+.trajectory-selection-hint, .trajectory-note, .trajectory-no-video, .trajectory-gap { color: #adc2d4; font-size: .75rem; line-height: 1.6; }
+.trajectory-selection-hint { margin: .8rem 0 0; }
+.trajectory-note { margin: 1.4rem 0 .2rem; padding-top: 1rem; border-top: 1px solid #334b61; }
+.trajectory-method { font-size: .78rem; color: #adc2d4; line-height: 1.65; }
+.trajectory-method summary { display: flex; align-items: center; min-height: 44px; cursor: pointer; color: #b5e2f1; width: fit-content; }
+.trajectory-method summary::before { content: '+'; margin-right: .5rem; }
+.trajectory-method[open] summary::before { content: '−'; }
+.trajectory-method p { margin: .4rem 0 0; max-width: 100ch; }
+.trajectory-filter-empty, .trajectory-empty { padding: 2rem 1rem; border: 1px dashed #4a657b; border-radius: .75rem; line-height: 1.65; color: #bcd0df; }
+.trajectory-sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+.trajectory-entry-link { display: inline-flex; align-items: center; min-height: 44px; margin-right: 1.25rem; }
+@media (max-width: 700px) {
+    .trajectory-layout { grid-template-columns: minmax(0, 1fr); gap: 1.5rem; }
+    .trajectory-canvas { max-width: 410px; }
+    .trajectory-heading { gap: .75rem; }
+    .trajectory-filters { gap: .35rem; }
+    .trajectory-filters button { padding-inline: .7rem; font-size: .78rem; }
+    .trajectory-step { margin-bottom: .75rem; }
+    .trajectory-detail h3 { font-size: 1.25rem; }
+    .trajectory-metrics { margin-block: 1rem; }
+}

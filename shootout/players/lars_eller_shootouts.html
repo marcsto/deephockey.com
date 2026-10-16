@@ -18,6 +18,8 @@
 <link href="/css/shootout-scouting.css?v=2e65caae388c" rel="stylesheet"/>
 <link href="/css/shootout-shot-map.css?v=475d48420075" rel="stylesheet"/>
 <script defer="" src="/js/shootout-shot-map.js?v=b684577f7f26"></script>
+<link href="/css/shootout-trajectories.css?v=72c494053468" rel="stylesheet"/>
+<script defer="" src="/js/shootout-trajectories.js?v=84608c84b272"></script>
 </head>
 <body>
 <!-- App Container -->
@@ -34,6 +36,7 @@
 <section aria-label="Shootout summary" class="shootout-overview">
 <p class="career-shootout-summary">Lars Eller has scored <strong>7 goals on 21 career NHL shootout attempts</strong> (33.3%).</p>
 <p>Watch 2 of his attempts below. His latest listed attempt came against the Calgary Flames on October 22, 2024.</p>
+<a class="trajectory-entry-link" href="#trajectories">Explore paths to the net ↓</a>
 <a href="#season-record">Season breakdown and recent results ↓</a></section>
 <!-- Shootout Container -->
 <div class="shootout-container shootout-person-layout">
@@ -305,6 +308,56 @@
 </div>
 </div>
 </div>
+<section aria-labelledby="trajectory-title" class="shootout-trajectories" data-role="player" data-total="2" data-tracked="2" data-version="video-routes-v1" id="trajectories"><div class="trajectory-heading"><div><p class="trajectory-eyebrow">From the video to the ice</p>
+<h2 id="trajectory-title">Paths to the net</h2><p class="trajectory-intro">See the approach. Spot the cut. Compare the finish.</p></div>
+<span class="trajectory-coverage">2 of 2 attempts with usable tracking</span></div>
+<div aria-label="Filter trajectories by result" class="trajectory-filters" role="group"><button aria-pressed="true" data-route-filter="all" type="button">All paths <span>2</span></button><button aria-pressed="false" data-route-filter="goal" type="button">Goals <span>1</span></button><button aria-pressed="false" data-route-filter="save" type="button">Saves <span>1</span></button><button aria-pressed="false" data-route-filter="miss" type="button">Misses <span>0</span></button></div>
+<div class="trajectory-layout">
+<div class="trajectory-canvas">
+<div class="trajectory-orientation"><span>Shooter’s left</span><span>Facing the net ↑</span><span>Shooter’s right</span></div>
+<svg aria-labelledby="trajectory-rink-title trajectory-rink-desc" class="trajectory-rink" role="img" viewbox="-48 -4 96 110">
+<title id="trajectory-rink-title">Video-derived skater paths toward the net</title>
+<desc id="trajectory-rink-desc">Both rink ends are rotated to face the net at the top. Use the attempt selector to explore each route.</desc>
+<defs><clippath id="trajectory-ice-clip"><path d="M -42.5 100 V 28 A 28 28 0 0 1 -14.5 0 H 14.5 A 28 28 0 0 1 42.5 28 V 100 Z"></path></clippath></defs>
+<path class="trajectory-ice" d="M -42.5 100 V 28 A 28 28 0 0 1 -14.5 0 H 14.5 A 28 28 0 0 1 42.5 28 V 100"></path>
+<g clip-path="url(#trajectory-ice-clip)">
+<g class="trajectory-rink-lines"><path d="M -42.5 11 H 42.5 M -11 11 L -14 0 M 11 11 L 14 0"></path>
+<circle cx="-22" cy="31" r="15"></circle><circle cx="22" cy="31" r="15"></circle>
+<circle cx="-22" cy="31" r=".8"></circle><circle cx="22" cy="31" r=".8"></circle>
+<path class="trajectory-blue-line" d="M -42.5 75 H 42.5"></path>
+<path d="M -42.5 100 H 42.5"></path><circle class="trajectory-center-circle" cy="100" r="15"></circle></g>
+<path class="trajectory-center-guide" d="M 0 20 V 98"></path>
+<path class="trajectory-crease" d="M -4 11 V 15.5 A 6.083 6.083 0 0 0 4 15.5 V 11 Z"></path>
+<g class="trajectory-routes"><path class="trajectory-route" d="M -24.86 79.77 L -24.91 79.58 L -25.29 79.04 L -26.07 78.27 L -27.18 77.36 L -28.06 76.3 L -29.37 74.87 L -30.44 73.46 L -30.99 72.11 L -31.57 70.68 L -32.19 69.19 L -32.74 67.63 L -33.21 66.02 L -33.62 64.31 L -33.94 62.53 L -34.15 60.73 L -34.23 58.94 L -34.13 57.17 L -33.87 55.47 L -33.47 53.77 L -33.02 52.1 L -32.56 50.42 L -32.11 48.77 L -31.56 47.2 L -30.88 45.7 L -30.09 44.23 L -29.21 42.78 L -28.22 41.41 L -27.15 40.07 L -25.95 38.82 L -24.68 37.62 L -23.29 36.51 L -21.73 35.49 L -20.03 34.64 L -18.31 33.9 L -16.57 33.12 L -14.89 32.34 L -13.27 31.55 L -11.73 30.75 L -10.22 29.95 L -8.78 29.14 L -7.39 28.33 L -6.02 27.56 L -4.68 26.82 L -3.4 26.14 L -2.16 25.39 L -0.95 24.62 L 0.19 23.79 L 1.28 22.99 L 2.35 22.12 L 3.4 21.32" data-result="save" data-route-id="2024020102-10"><title>Oct 22, 2024 · Flames · Save</title></path><path class="trajectory-route" d="M 2.14 93.47 L 2.21 92.58 L 2.85 91.3 L 3.38 90.07 L 3.96 88.9 L 4.62 87.71 L 5.36 86.58 L 6.28 85.47 L 7.32 84.38 L 8.46 83.34 L 9.7 82.33 L 11.12 81.32 L 12.62 80.32 L 14.11 79.36 L 15.55 78.43 L 16.94 77.52 L 18.27 76.61 L 19.57 75.65 L 20.95 74.73 L 22.21 73.77 L 23.34 72.76 L 24.25 71.6 L 25.02 70.34 L 25.68 69.02 L 26.17 67.63 L 26.59 66.17 L 27.01 64.69 L 27.36 63.16 L 27.67 61.59 L 27.93 60.02 L 28.12 58.43 L 28.28 56.88 L 28.29 55.29 L 28.08 53.66 L 27.82 52.04 L 27.57 50.48 L 27.23 48.96 L 26.75 47.42 L 26.09 45.87 L 25.24 44.26 L 24.29 42.66 L 23.31 41.11 L 22.3 39.61 L 21.23 38.12 L 20 36.66 L 18.71 35.25 L 17.42 33.92 L 16.1 32.66 L 14.77 31.41 L 13.49 30.2 L 12.22 29.07 L 10.91 28.02 L 9.55 27.08 L 8.13 26.26 L 6.67 25.53 L 5.12 24.79 L 3.52 23.99 L 1.99 23.28 L 0.48 22.58 L -1.02 21.87 L -2.57 21.08 L -4.12 20.28" data-result="goal" data-route-id="2023020442-14"><title>Dec 13, 2023 · Canadiens · Goal</title></path></g>
+<path class="trajectory-selected-halo"></path><path class="trajectory-selected-path"></path>
+<circle class="trajectory-start" r="1.1"></circle><circle class="trajectory-cursor" r="1.5"></circle>
+</g>
+<path class="trajectory-net" d="M -3 11 V 8.8 Q -3 7.67 -1.7 7.67 H 1.7 Q 3 7.67 3 8.8 V 11 Z"></path>
+<text class="trajectory-rink-label" x="-40" y="72">BLUE LINE</text>
+<text class="trajectory-rink-label" text-anchor="middle" x="0" y="104">CENTER ICE</text>
+</svg>
+<p class="trajectory-map-key"><span class="trajectory-key-start"></span>First tracked position <span class="trajectory-key-end"></span>Selected position</p>
+</div>
+<div class="trajectory-controls">
+<label class="trajectory-select-label" for="trajectory-attempt">Explore an attempt</label>
+<select id="trajectory-attempt"><option value="2024020102-10">Oct 22, 2024 · Save · Flames</option><option value="2023020442-14">Dec 13, 2023 · Goal · Canadiens</option></select>
+<div class="trajectory-step"><button aria-label="Previous tracked attempt" class="trajectory-previous" type="button">← Previous</button><span class="trajectory-position"></span><button aria-label="Next tracked attempt" class="trajectory-next" type="button">Next →</button></div>
+<div aria-atomic="true" aria-live="polite" class="trajectory-detail"><span class="trajectory-result"></span><h3 class="trajectory-opponent"></h3><p class="trajectory-date"></p>
+<dl class="trajectory-metrics"><div><dt>Approach lane</dt><dd class="trajectory-lane"></dd></div><div><dt>Tracked span</dt><dd class="trajectory-duration"></dd></div></dl></div>
+<div class="trajectory-replay"><button class="trajectory-play" type="button">↻ Replay route</button><output class="trajectory-time" for="trajectory-progress"></output></div>
+<label class="trajectory-sr-only" for="trajectory-progress">Position along selected trajectory</label>
+<input id="trajectory-progress" max="1000" min="0" step="1" type="range" value="1000"/>
+<p class="trajectory-gap" hidden="" role="status">Tracking gap · no position shown</p>
+<label class="trajectory-compare"><input checked="" type="checkbox"/> Compare with other paths</label>
+<a class="trajectory-watch attempt-jump" data-attempt-id="2024020102-10" href="?v=2024020102-10">Watch this attempt <span aria-hidden="true">↗</span></a>
+<p class="trajectory-no-video" hidden="">Video unavailable for this attempt.</p>
+<p class="trajectory-selection-hint">Choose an attempt above or tap a path on the ice.</p>
+</div></div>
+<p class="trajectory-filter-empty" hidden="" role="status">No tracked attempts match this result. Choose another filter.</p>
+<p class="trajectory-note">Skater paths estimated from video · both ends rotated toward the same net · 2 tracked, 0 unavailable.</p>
+<details class="trajectory-method"><summary>About these paths</summary><p>Only paths passing automatic tracking and approach checks are shown. Lines connect trusted observed positions; breaks mark missing tracking. Routes begin at center ice or the first available position and stop at the closest tracked point to the net. The endpoint is not a measured shot release. Replay follows the video timing across the displayed span. Colors show the official attempt result; the paths track the skater, not the puck. Coverage is for the attempts listed on this page, not the full career.</p></details>
+<noscript><p class="trajectory-note">Enable JavaScript to select, filter, and replay paths. The map above shows all available routes.</p></noscript>
+<script class="trajectory-data" type="application/json">[{"id":"2024020102-10","game_id":2024020102,"event_id":1103,"date":"Oct 22, 2024","opponent":"Flames","result":"save","result_label":"Save","type":"Wrist","side":"left","segments":[[[5.138,-24.86,79.77],[5.205,-24.91,79.58],[5.272,-25.29,79.04],[5.339,-26.07,78.27],[5.405,-27.18,77.36],[5.472,-28.06,76.3],[5.539,-29.37,74.87],[5.606,-30.44,73.46],[5.672,-30.99,72.11],[5.739,-31.57,70.68],[5.806,-32.19,69.19],[5.872,-32.74,67.63],[5.939,-33.21,66.02],[6.006,-33.62,64.31],[6.073,-33.94,62.53],[6.139,-34.15,60.73],[6.206,-34.23,58.94],[6.273,-34.13,57.17],[6.34,-33.87,55.47],[6.406,-33.47,53.77],[6.473,-33.02,52.1],[6.54,-32.56,50.42],[6.607,-32.11,48.77],[6.673,-31.56,47.2],[6.74,-30.88,45.7],[6.807,-30.09,44.23],[6.873,-29.21,42.78],[6.94,-28.22,41.41],[7.007,-27.15,40.07],[7.074,-25.95,38.82],[7.141,-24.68,37.62],[7.207,-23.29,36.51],[7.274,-21.73,35.49],[7.341,-20.03,34.64],[7.407,-18.31,33.9],[7.474,-16.57,33.12],[7.541,-14.89,32.34],[7.608,-13.27,31.55],[7.674,-11.73,30.75],[7.741,-10.22,29.95],[7.808,-8.78,29.14],[7.875,-7.39,28.33],[7.941,-6.02,27.56],[8.008,-4.68,26.82],[8.075,-3.4,26.14],[8.142,-2.16,25.39],[8.208,-0.95,24.62],[8.275,0.19,23.79],[8.342,1.28,22.99],[8.408,2.35,22.12],[8.475,3.4,21.32]]],"has_video":true},{"id":"2023020442-14","game_id":2023020442,"event_id":200,"date":"Dec 13, 2023","opponent":"Canadiens","result":"goal","result_label":"Goal","type":"Snap","side":"right","segments":[[[0.0,2.14,93.47],[0.067,2.21,92.58],[0.134,2.85,91.3],[0.2,3.38,90.07],[0.267,3.96,88.9],[0.334,4.62,87.71],[0.4,5.36,86.58],[0.467,6.28,85.47],[0.534,7.32,84.38],[0.601,8.46,83.34],[0.667,9.7,82.33],[0.734,11.12,81.32],[0.801,12.62,80.32],[0.868,14.11,79.36],[0.934,15.55,78.43],[1.001,16.94,77.52],[1.068,18.27,76.61],[1.135,19.57,75.65],[1.201,20.95,74.73],[1.268,22.21,73.77],[1.335,23.34,72.76],[1.401,24.25,71.6],[1.468,25.02,70.34],[1.535,25.68,69.02],[1.602,26.17,67.63],[1.668,26.59,66.17],[1.735,27.01,64.69],[1.802,27.36,63.16],[1.869,27.67,61.59],[1.935,27.93,60.02],[2.002,28.12,58.43],[2.069,28.28,56.88],[2.135,28.29,55.29],[2.202,28.08,53.66],[2.269,27.82,52.04],[2.336,27.57,50.48],[2.402,27.23,48.96],[2.469,26.75,47.42],[2.536,26.09,45.87],[2.603,25.24,44.26],[2.669,24.29,42.66],[2.736,23.31,41.11],[2.803,22.3,39.61],[2.869,21.23,38.12],[2.936,20.0,36.66],[3.003,18.71,35.25],[3.07,17.42,33.92],[3.136,16.1,32.66],[3.203,14.77,31.41],[3.27,13.49,30.2],[3.337,12.22,29.07],[3.403,10.91,28.02],[3.47,9.55,27.08],[3.537,8.13,26.26],[3.604,6.67,25.53],[3.67,5.12,24.79],[3.737,3.52,23.99],[3.804,1.99,23.28],[3.87,0.48,22.58],[3.937,-1.02,21.87],[4.004,-2.57,21.08],[4.071,-4.12,20.28]]],"has_video":true}]</script></section>
 <section class="shootout-context-panel" data-player-id="8474189" id="season-record">
 <h2>Lars Eller's attempts by season</h2>
 <div class="shootout-table-scroll"><table class="shootout-season-table"><caption>Regular-season attempts from 2023–24 onward</caption>

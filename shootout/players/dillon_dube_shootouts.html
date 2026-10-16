@@ -18,6 +18,8 @@
 <link href="/css/shootout-scouting.css?v=2e65caae388c" rel="stylesheet"/>
 <link href="/css/shootout-shot-map.css?v=475d48420075" rel="stylesheet"/>
 <script defer="" src="/js/shootout-shot-map.js?v=b684577f7f26"></script>
+<link href="/css/shootout-trajectories.css?v=72c494053468" rel="stylesheet"/>
+<script defer="" src="/js/shootout-trajectories.js?v=84608c84b272"></script>
 </head>
 <body>
 <!-- App Container -->
@@ -34,6 +36,7 @@
 <section aria-label="Shootout summary" class="shootout-overview">
 <p class="career-shootout-summary">Dillon Dube has scored <strong>1 goal on 3 career NHL shootout attempts</strong> (33.3%).</p>
 <p>Watch his shootout attempt below. His latest listed attempt came against the Toronto Maple Leafs on November 10, 2023.</p>
+<a class="trajectory-entry-link" href="#trajectories">Explore paths to the net ↓</a>
 <a href="#season-record">Season breakdown and recent results ↓</a></section>
 <!-- Shootout Container -->
 <div class="shootout-container shootout-person-layout">
@@ -276,6 +279,56 @@
 </div>
 </div>
 </div>
+<section aria-labelledby="trajectory-title" class="shootout-trajectories" data-role="player" data-total="1" data-tracked="1" data-version="video-routes-v1" id="trajectories"><div class="trajectory-heading"><div><p class="trajectory-eyebrow">From the video to the ice</p>
+<h2 id="trajectory-title">Paths to the net</h2><p class="trajectory-intro">See the approach. Spot the cut. Compare the finish.</p></div>
+<span class="trajectory-coverage">1 of 1 attempts with usable tracking</span></div>
+<div aria-label="Filter trajectories by result" class="trajectory-filters" role="group"><button aria-pressed="true" data-route-filter="all" type="button">All paths <span>1</span></button><button aria-pressed="false" data-route-filter="goal" type="button">Goals <span>0</span></button><button aria-pressed="false" data-route-filter="save" type="button">Saves <span>1</span></button><button aria-pressed="false" data-route-filter="miss" type="button">Misses <span>0</span></button></div>
+<div class="trajectory-layout">
+<div class="trajectory-canvas">
+<div class="trajectory-orientation"><span>Shooter’s left</span><span>Facing the net ↑</span><span>Shooter’s right</span></div>
+<svg aria-labelledby="trajectory-rink-title trajectory-rink-desc" class="trajectory-rink" role="img" viewbox="-48 -4 96 110">
+<title id="trajectory-rink-title">Video-derived skater paths toward the net</title>
+<desc id="trajectory-rink-desc">Both rink ends are rotated to face the net at the top. Use the attempt selector to explore each route.</desc>
+<defs><clippath id="trajectory-ice-clip"><path d="M -42.5 100 V 28 A 28 28 0 0 1 -14.5 0 H 14.5 A 28 28 0 0 1 42.5 28 V 100 Z"></path></clippath></defs>
+<path class="trajectory-ice" d="M -42.5 100 V 28 A 28 28 0 0 1 -14.5 0 H 14.5 A 28 28 0 0 1 42.5 28 V 100"></path>
+<g clip-path="url(#trajectory-ice-clip)">
+<g class="trajectory-rink-lines"><path d="M -42.5 11 H 42.5 M -11 11 L -14 0 M 11 11 L 14 0"></path>
+<circle cx="-22" cy="31" r="15"></circle><circle cx="22" cy="31" r="15"></circle>
+<circle cx="-22" cy="31" r=".8"></circle><circle cx="22" cy="31" r=".8"></circle>
+<path class="trajectory-blue-line" d="M -42.5 75 H 42.5"></path>
+<path d="M -42.5 100 H 42.5"></path><circle class="trajectory-center-circle" cy="100" r="15"></circle></g>
+<path class="trajectory-center-guide" d="M 0 20 V 98"></path>
+<path class="trajectory-crease" d="M -4 11 V 15.5 A 6.083 6.083 0 0 0 4 15.5 V 11 Z"></path>
+<g class="trajectory-routes"><path class="trajectory-route" d="M -0.65 96.45 L -1.29 95.91 L -2.33 95.25 L -3.36 94.62 L -4.32 94.03 L -5.45 93.49 L -6.77 92.98 L -8.23 92.48 L -9.77 91.96 L -11.22 91.43 L -12.57 90.88 L -13.89 90.29 L -15.16 89.67 L -16.41 89.01 L -17.57 88.27 L -18.68 87.48 L -19.77 86.64 L -20.85 85.76 L -21.9 84.78 L -22.98 83.74 L -24.04 82.61 L -25.07 81.42 L -26.04 80.19 L -26.96 78.92 L -27.82 77.59 L -28.64 76.25 L -29.46 74.92 L -30.3 73.58 L -31.12 72.25 L -31.93 70.91 L -32.74 69.56 L -33.48 68.2 L -34.18 66.83 L -34.82 65.45 L -35.34 64.06 L -35.75 62.67 L -36.02 61.27 L -36.18 59.89 L -36.18 58.56 L -36.01 57.27 L -35.57 56.09 L -34.96 54.9 L -34.18 53.77 L -33.2 52.72 L -32.05 51.75 L -30.89 50.86 L -29.64 50.02 L -28.34 49.25 L -27.02 48.59 L -25.62 48.05 L -24.27 47.6 L -22.91 47.23 L -21.64 46.92 L -20.44 46.7 L -19.23 46.57 L -18.04 46.45 L -16.77 46.33 L -15.55 46.19 L -14.29 46.05 L -13.05 45.87 L -11.74 45.64 L -10.44 45.33 L -9.14 44.88 L -7.9 44.38 L -6.69 43.81 L -5.51 43.16 L -4.39 42.39 L -3.33 41.58 L -2.42 40.61 L -1.64 39.61 L -0.92 38.55 L -0.32 37.42 L 0.27 36.24 L 0.88 35.05 L 1.37 33.88 L 1.73 32.66 L 1.99 31.41 L 2.31 30.21 L 2.59 29 L 2.86 27.79 L 3.13 26.63 L 3.38 25.5 L 3.6 24.41 L 3.78 23.4 L 3.98 22.39 M 4.1 20.67 L 3.92 19.81" data-result="save" data-route-id="2023020207-10"><title>Nov 10, 2023 · Maple Leafs · Save</title></path></g>
+<path class="trajectory-selected-halo"></path><path class="trajectory-selected-path"></path>
+<circle class="trajectory-start" r="1.1"></circle><circle class="trajectory-cursor" r="1.5"></circle>
+</g>
+<path class="trajectory-net" d="M -3 11 V 8.8 Q -3 7.67 -1.7 7.67 H 1.7 Q 3 7.67 3 8.8 V 11 Z"></path>
+<text class="trajectory-rink-label" x="-40" y="72">BLUE LINE</text>
+<text class="trajectory-rink-label" text-anchor="middle" x="0" y="104">CENTER ICE</text>
+</svg>
+<p class="trajectory-map-key"><span class="trajectory-key-start"></span>First tracked position <span class="trajectory-key-end"></span>Selected position</p>
+</div>
+<div class="trajectory-controls">
+<label class="trajectory-select-label" for="trajectory-attempt">Explore an attempt</label>
+<select id="trajectory-attempt"><option value="2023020207-10">Nov 10, 2023 · Save · Maple Leafs</option></select>
+<div class="trajectory-step"><button aria-label="Previous tracked attempt" class="trajectory-previous" type="button">← Previous</button><span class="trajectory-position"></span><button aria-label="Next tracked attempt" class="trajectory-next" type="button">Next →</button></div>
+<div aria-atomic="true" aria-live="polite" class="trajectory-detail"><span class="trajectory-result"></span><h3 class="trajectory-opponent"></h3><p class="trajectory-date"></p>
+<dl class="trajectory-metrics"><div><dt>Approach lane</dt><dd class="trajectory-lane"></dd></div><div><dt>Tracked span</dt><dd class="trajectory-duration"></dd></div></dl></div>
+<div class="trajectory-replay"><button class="trajectory-play" type="button">↻ Replay route</button><output class="trajectory-time" for="trajectory-progress"></output></div>
+<label class="trajectory-sr-only" for="trajectory-progress">Position along selected trajectory</label>
+<input id="trajectory-progress" max="1000" min="0" step="1" type="range" value="1000"/>
+<p class="trajectory-gap" hidden="" role="status">Tracking gap · no position shown</p>
+<label class="trajectory-compare"><input checked="" type="checkbox"/> Compare with other paths</label>
+<a class="trajectory-watch attempt-jump" data-attempt-id="2023020207-10" href="?v=2023020207-10">Watch this attempt <span aria-hidden="true">↗</span></a>
+<p class="trajectory-no-video" hidden="">Video unavailable for this attempt.</p>
+<p class="trajectory-selection-hint">Choose an attempt above or tap a path on the ice.</p>
+</div></div>
+<p class="trajectory-filter-empty" hidden="" role="status">No tracked attempts match this result. Choose another filter.</p>
+<p class="trajectory-note">Skater paths estimated from video · both ends rotated toward the same net · 1 tracked, 0 unavailable.</p>
+<details class="trajectory-method"><summary>About these paths</summary><p>Only paths passing automatic tracking and approach checks are shown. Lines connect trusted observed positions; breaks mark missing tracking. Routes begin at center ice or the first available position and stop at the closest tracked point to the net. The endpoint is not a measured shot release. Replay follows the video timing across the displayed span. Colors show the official attempt result; the paths track the skater, not the puck. Coverage is for the attempts listed on this page, not the full career.</p></details>
+<noscript><p class="trajectory-note">Enable JavaScript to select, filter, and replay paths. The map above shows all available routes.</p></noscript>
+<script class="trajectory-data" type="application/json">[{"id":"2023020207-10","game_id":2023020207,"event_id":186,"date":"Nov 10, 2023","opponent":"Maple Leafs","result":"save","result_label":"Save","type":"Backhand","side":"left","segments":[[[0.0,-0.65,96.45],[0.067,-1.29,95.91],[0.134,-2.33,95.25],[0.2,-3.36,94.62],[0.267,-4.32,94.03],[0.334,-5.45,93.49],[0.4,-6.77,92.98],[0.467,-8.23,92.48],[0.534,-9.77,91.96],[0.601,-11.22,91.43],[0.667,-12.57,90.88],[0.734,-13.89,90.29],[0.801,-15.16,89.67],[0.868,-16.41,89.01],[0.934,-17.57,88.27],[1.001,-18.68,87.48],[1.068,-19.77,86.64],[1.135,-20.85,85.76],[1.201,-21.9,84.78],[1.268,-22.98,83.74],[1.335,-24.04,82.61],[1.401,-25.07,81.42],[1.468,-26.04,80.19],[1.535,-26.96,78.92],[1.602,-27.82,77.59],[1.668,-28.64,76.25],[1.735,-29.46,74.92],[1.802,-30.3,73.58],[1.869,-31.12,72.25],[1.935,-31.93,70.91],[2.002,-32.74,69.56],[2.069,-33.48,68.2],[2.135,-34.18,66.83],[2.202,-34.82,65.45],[2.269,-35.34,64.06],[2.336,-35.75,62.67],[2.402,-36.02,61.27],[2.469,-36.18,59.89],[2.536,-36.18,58.56],[2.603,-36.01,57.27],[2.669,-35.57,56.09],[2.736,-34.96,54.9],[2.803,-34.18,53.77],[2.869,-33.2,52.72],[2.936,-32.05,51.75],[3.003,-30.89,50.86],[3.07,-29.64,50.02],[3.136,-28.34,49.25],[3.203,-27.02,48.59],[3.27,-25.62,48.05],[3.337,-24.27,47.6],[3.403,-22.91,47.23],[3.47,-21.64,46.92],[3.537,-20.44,46.7],[3.604,-19.23,46.57],[3.67,-18.04,46.45],[3.737,-16.77,46.33],[3.804,-15.55,46.19],[3.87,-14.29,46.05],[3.937,-13.05,45.87],[4.004,-11.74,45.64],[4.071,-10.44,45.33],[4.138,-9.14,44.88],[4.204,-7.9,44.38],[4.271,-6.69,43.81],[4.338,-5.51,43.16],[4.404,-4.39,42.39],[4.471,-3.33,41.58],[4.538,-2.42,40.61],[4.605,-1.64,39.61],[4.671,-0.92,38.55],[4.738,-0.32,37.42],[4.805,0.27,36.24],[4.872,0.88,35.05],[4.938,1.37,33.88],[5.005,1.73,32.66],[5.072,1.99,31.41],[5.138,2.31,30.21],[5.205,2.59,29.0],[5.272,2.86,27.79],[5.339,3.13,26.63],[5.405,3.38,25.5],[5.472,3.6,24.41],[5.539,3.78,23.4],[5.606,3.98,22.39]],[[5.739,4.1,20.67],[5.806,3.92,19.81]]],"has_video":true}]</script></section>
 <section class="shootout-context-panel" data-player-id="8479346" id="season-record">
 <h2>Dillon Dube's attempts by season</h2>
 <div class="shootout-table-scroll"><table class="shootout-season-table"><caption>Regular-season attempts from 2023–24 onward</caption>

@@ -18,6 +18,8 @@
 <link href="/css/shootout-scouting.css?v=2e65caae388c" rel="stylesheet"/>
 <link href="/css/shootout-shot-map.css?v=475d48420075" rel="stylesheet"/>
 <script defer="" src="/js/shootout-shot-map.js?v=b684577f7f26"></script>
+<link href="/css/shootout-trajectories.css?v=72c494053468" rel="stylesheet"/>
+<script defer="" src="/js/shootout-trajectories.js?v=84608c84b272"></script>
 </head>
 <body>
 <!-- App Container -->
@@ -34,6 +36,7 @@
 <section aria-label="Shootout summary" class="shootout-overview">
 <p class="career-shootout-summary">Aliaksei Protas has scored <strong>0 goals on 2 career NHL shootout attempts</strong> (0.0%).</p>
 <p>Watch 2 of his attempts below. His latest listed attempt came against the Boston Bruins on March 14, 2026.</p>
+<a class="trajectory-entry-link" href="#trajectories">Explore paths to the net ↓</a>
 <a href="#season-record">Season breakdown and recent results ↓</a></section>
 <!-- Shootout Container -->
 <div class="shootout-container shootout-person-layout">
@@ -287,6 +290,56 @@
 </div>
 </div>
 </div>
+<section aria-labelledby="trajectory-title" class="shootout-trajectories" data-role="player" data-total="2" data-tracked="2" data-version="video-routes-v1" id="trajectories"><div class="trajectory-heading"><div><p class="trajectory-eyebrow">From the video to the ice</p>
+<h2 id="trajectory-title">Paths to the net</h2><p class="trajectory-intro">See the approach. Spot the cut. Compare the finish.</p></div>
+<span class="trajectory-coverage">2 of 2 attempts with usable tracking</span></div>
+<div aria-label="Filter trajectories by result" class="trajectory-filters" role="group"><button aria-pressed="true" data-route-filter="all" type="button">All paths <span>2</span></button><button aria-pressed="false" data-route-filter="goal" type="button">Goals <span>0</span></button><button aria-pressed="false" data-route-filter="save" type="button">Saves <span>2</span></button><button aria-pressed="false" data-route-filter="miss" type="button">Misses <span>0</span></button></div>
+<div class="trajectory-layout">
+<div class="trajectory-canvas">
+<div class="trajectory-orientation"><span>Shooter’s left</span><span>Facing the net ↑</span><span>Shooter’s right</span></div>
+<svg aria-labelledby="trajectory-rink-title trajectory-rink-desc" class="trajectory-rink" role="img" viewbox="-48 -4 96 110">
+<title id="trajectory-rink-title">Video-derived skater paths toward the net</title>
+<desc id="trajectory-rink-desc">Both rink ends are rotated to face the net at the top. Use the attempt selector to explore each route.</desc>
+<defs><clippath id="trajectory-ice-clip"><path d="M -42.5 100 V 28 A 28 28 0 0 1 -14.5 0 H 14.5 A 28 28 0 0 1 42.5 28 V 100 Z"></path></clippath></defs>
+<path class="trajectory-ice" d="M -42.5 100 V 28 A 28 28 0 0 1 -14.5 0 H 14.5 A 28 28 0 0 1 42.5 28 V 100"></path>
+<g clip-path="url(#trajectory-ice-clip)">
+<g class="trajectory-rink-lines"><path d="M -42.5 11 H 42.5 M -11 11 L -14 0 M 11 11 L 14 0"></path>
+<circle cx="-22" cy="31" r="15"></circle><circle cx="22" cy="31" r="15"></circle>
+<circle cx="-22" cy="31" r=".8"></circle><circle cx="22" cy="31" r=".8"></circle>
+<path class="trajectory-blue-line" d="M -42.5 75 H 42.5"></path>
+<path d="M -42.5 100 H 42.5"></path><circle class="trajectory-center-circle" cy="100" r="15"></circle></g>
+<path class="trajectory-center-guide" d="M 0 20 V 98"></path>
+<path class="trajectory-crease" d="M -4 11 V 15.5 A 6.083 6.083 0 0 0 4 15.5 V 11 Z"></path>
+<g class="trajectory-routes"><path class="trajectory-route" d="M -3.62 98.98 L -3.87 97.94 L -4.18 96.94 L -4.52 95.96 L -4.88 94.98 L -5.24 93.99 L -5.88 93.08 L -6.67 92.19 L -7.69 91.35 L -8.77 90.5 L -9.89 89.64 L -11.01 88.81 L -12.08 87.97 L -13.12 87.12 L -14.1 86.25 L -14.99 85.33 L -15.81 84.36 L -16.55 83.37 L -17.12 82.33 L -17.59 81.3 L -17.96 80.26 L -18.3 79.21 L -18.68 78.16 L -19.17 77.12 L -19.55 76.06 L -19.99 74.98 L -20.51 73.92 L -21.09 72.85 L -21.75 71.81 L -22.41 70.75 L -23.08 69.66 L -23.77 68.53 L -24.36 67.31 L -25.07 66.14 L -25.76 64.98 L -26.33 63.78 L -26.79 62.57 L -27.13 61.34 L -27.37 60.12 L -27.52 58.87 L -27.62 57.62 L -27.64 56.38 L -27.56 55.12 L -27.39 53.87 L -27.05 52.55 L -26.61 51.24 L -26.07 49.96 L -25.37 48.62 L -24.51 47.31 L -23.52 45.9 L -22.41 44.53 L -21.29 43.27 L -20.21 42.19 L -19.18 41.29 L -18.09 40.52 L -16.99 39.83 L -15.91 39.23 L -14.82 38.68 L -13.68 38.18 L -12.52 37.69 L -11.37 37.25 L -10.26 36.84 L -9.15 36.43 L -8.02 35.94 L -6.88 35.4 L -5.77 34.77 L -4.69 34.09 L -3.68 33.38 L -2.78 32.64 L -1.93 31.87 L -1.15 31.05 L -0.38 30.17 L 0.42 29.27 L 1.22 28.35 L 2.07 27.43 L 2.95 26.51 L 3.81 25.62 L 4.65 24.72" data-result="save" data-route-id="2025021044-17"><title>Mar 14, 2026 · Bruins · Save</title></path><path class="trajectory-route" d="M 4.02 99.62 L 3.86 98.42 L 3.59 97.28 L 3.2 96.15 L 2.67 95.02 L 2.07 93.92 L 1.43 92.88 L 0.72 91.89 L -0.11 90.94 L -1.12 90.05 L -2.3 89.19 L -3.61 88.36 L -4.98 87.55 L -6.36 86.77 L -7.7 86 L -9 85.26 L -10.29 84.52 L -11.62 83.81 L -13.07 83.13 L -14.51 82.45 L -15.96 81.68 L -17.36 80.84 L -18.55 79.88 L -19.52 78.77 L -20.23 77.62 L -20.8 76.44 L -21.33 75.27 L -21.82 74.08 L -22.23 72.84 L -22.61 71.61 L -22.88 70.33 L -22.98 69 L -22.98 67.66 L -22.95 66.31 L -22.81 64.93 L -22.58 63.54 L -22.27 62.14 L -21.91 60.75 L -21.54 59.39 L -21.13 58.06 L -20.71 56.77 L -20.2 55.5 L -19.6 54.27 L -18.94 53.12 L -18.2 52.04 L -17.37 51.03 L -16.44 50.07 L -15.41 49.13 L -14.29 48.23 L -13.12 47.32 L -11.99 46.48 L -10.89 45.67 L -9.82 44.88 L -8.79 44.08 L -7.79 43.29 L -6.8 42.49 L -5.82 41.62 L -4.89 40.73 L -4.05 39.88 L -3.27 39.02 L -2.56 38.13 L -1.95 37.21 L -1.4 36.32 L -0.9 35.42 L -0.45 34.58 L -0.03 33.86 L 0.48 33.2 L 1.07 32.73 L 1.68 32.02 L 2.27 31.04 L 2.9 29.73 L 3.56 28.42 L 4.24 27.11 L 4.96 25.82 L 5.69 24.53 L 6.44 23.3 L 7.12 22.19 L 7.75 21.15 L 8.4 20.25 L 9.02 19.46 L 9.63 18.7" data-result="save" data-route-id="2024020890-3"><title>Feb 09, 2025 · Utah Hockey Club · Save</title></path></g>
+<path class="trajectory-selected-halo"></path><path class="trajectory-selected-path"></path>
+<circle class="trajectory-start" r="1.1"></circle><circle class="trajectory-cursor" r="1.5"></circle>
+</g>
+<path class="trajectory-net" d="M -3 11 V 8.8 Q -3 7.67 -1.7 7.67 H 1.7 Q 3 7.67 3 8.8 V 11 Z"></path>
+<text class="trajectory-rink-label" x="-40" y="72">BLUE LINE</text>
+<text class="trajectory-rink-label" text-anchor="middle" x="0" y="104">CENTER ICE</text>
+</svg>
+<p class="trajectory-map-key"><span class="trajectory-key-start"></span>First tracked position <span class="trajectory-key-end"></span>Selected position</p>
+</div>
+<div class="trajectory-controls">
+<label class="trajectory-select-label" for="trajectory-attempt">Explore an attempt</label>
+<select id="trajectory-attempt"><option value="2025021044-17">Mar 14, 2026 · Save · Bruins</option><option value="2024020890-3">Feb 09, 2025 · Save · Utah Hockey Club</option></select>
+<div class="trajectory-step"><button aria-label="Previous tracked attempt" class="trajectory-previous" type="button">← Previous</button><span class="trajectory-position"></span><button aria-label="Next tracked attempt" class="trajectory-next" type="button">Next →</button></div>
+<div aria-atomic="true" aria-live="polite" class="trajectory-detail"><span class="trajectory-result"></span><h3 class="trajectory-opponent"></h3><p class="trajectory-date"></p>
+<dl class="trajectory-metrics"><div><dt>Approach lane</dt><dd class="trajectory-lane"></dd></div><div><dt>Tracked span</dt><dd class="trajectory-duration"></dd></div></dl></div>
+<div class="trajectory-replay"><button class="trajectory-play" type="button">↻ Replay route</button><output class="trajectory-time" for="trajectory-progress"></output></div>
+<label class="trajectory-sr-only" for="trajectory-progress">Position along selected trajectory</label>
+<input id="trajectory-progress" max="1000" min="0" step="1" type="range" value="1000"/>
+<p class="trajectory-gap" hidden="" role="status">Tracking gap · no position shown</p>
+<label class="trajectory-compare"><input checked="" type="checkbox"/> Compare with other paths</label>
+<a class="trajectory-watch attempt-jump" data-attempt-id="2025021044-17" href="?v=2025021044-17">Watch this attempt <span aria-hidden="true">↗</span></a>
+<p class="trajectory-no-video" hidden="">Video unavailable for this attempt.</p>
+<p class="trajectory-selection-hint">Choose an attempt above or tap a path on the ice.</p>
+</div></div>
+<p class="trajectory-filter-empty" hidden="" role="status">No tracked attempts match this result. Choose another filter.</p>
+<p class="trajectory-note">Skater paths estimated from video · both ends rotated toward the same net · 2 tracked, 0 unavailable.</p>
+<details class="trajectory-method"><summary>About these paths</summary><p>Only paths passing automatic tracking and approach checks are shown. Lines connect trusted observed positions; breaks mark missing tracking. Routes begin at center ice or the first available position and stop at the closest tracked point to the net. The endpoint is not a measured shot release. Replay follows the video timing across the displayed span. Colors show the official attempt result; the paths track the skater, not the puck. Coverage is for the attempts listed on this page, not the full career.</p></details>
+<noscript><p class="trajectory-note">Enable JavaScript to select, filter, and replay paths. The map above shows all available routes.</p></noscript>
+<script class="trajectory-data" type="application/json">[{"id":"2025021044-17","game_id":2025021044,"event_id":280,"date":"Mar 14, 2026","opponent":"Bruins","result":"save","result_label":"Save","type":"Snap","side":"left","segments":[[[4.404,-3.62,98.98],[4.471,-3.87,97.94],[4.538,-4.18,96.94],[4.605,-4.52,95.96],[4.671,-4.88,94.98],[4.738,-5.24,93.99],[4.805,-5.88,93.08],[4.872,-6.67,92.19],[4.938,-7.69,91.35],[5.005,-8.77,90.5],[5.072,-9.89,89.64],[5.138,-11.01,88.81],[5.205,-12.08,87.97],[5.272,-13.12,87.12],[5.339,-14.1,86.25],[5.405,-14.99,85.33],[5.472,-15.81,84.36],[5.539,-16.55,83.37],[5.606,-17.12,82.33],[5.672,-17.59,81.3],[5.739,-17.96,80.26],[5.806,-18.3,79.21],[5.872,-18.68,78.16],[5.939,-19.17,77.12],[6.006,-19.55,76.06],[6.073,-19.99,74.98],[6.139,-20.51,73.92],[6.206,-21.09,72.85],[6.273,-21.75,71.81],[6.34,-22.41,70.75],[6.406,-23.08,69.66],[6.473,-23.77,68.53],[6.54,-24.36,67.31],[6.607,-25.07,66.14],[6.673,-25.76,64.98],[6.74,-26.33,63.78],[6.807,-26.79,62.57],[6.873,-27.13,61.34],[6.94,-27.37,60.12],[7.007,-27.52,58.87],[7.074,-27.62,57.62],[7.141,-27.64,56.38],[7.207,-27.56,55.12],[7.274,-27.39,53.87],[7.341,-27.05,52.55],[7.407,-26.61,51.24],[7.474,-26.07,49.96],[7.541,-25.37,48.62],[7.608,-24.51,47.31],[7.674,-23.52,45.9],[7.741,-22.41,44.53],[7.808,-21.29,43.27],[7.875,-20.21,42.19],[7.941,-19.18,41.29],[8.008,-18.09,40.52],[8.075,-16.99,39.83],[8.142,-15.91,39.23],[8.208,-14.82,38.68],[8.275,-13.68,38.18],[8.342,-12.52,37.69],[8.408,-11.37,37.25],[8.475,-10.26,36.84],[8.542,-9.15,36.43],[8.609,-8.02,35.94],[8.675,-6.88,35.4],[8.742,-5.77,34.77],[8.809,-4.69,34.09],[8.876,-3.68,33.38],[8.942,-2.78,32.64],[9.009,-1.93,31.87],[9.076,-1.15,31.05],[9.143,-0.38,30.17],[9.209,0.42,29.27],[9.276,1.22,28.35],[9.343,2.07,27.43],[9.409,2.95,26.51],[9.476,3.81,25.62],[9.543,4.65,24.72]]],"has_video":true},{"id":"2024020890-3","game_id":2024020890,"event_id":95,"date":"Feb 09, 2025","opponent":"Utah Hockey Club","result":"save","result_label":"Save","type":"Snap","side":"left","segments":[[[0.4,4.02,99.62],[0.467,3.86,98.42],[0.534,3.59,97.28],[0.601,3.2,96.15],[0.667,2.67,95.02],[0.734,2.07,93.92],[0.801,1.43,92.88],[0.868,0.72,91.89],[0.934,-0.11,90.94],[1.001,-1.12,90.05],[1.068,-2.3,89.19],[1.135,-3.61,88.36],[1.201,-4.98,87.55],[1.268,-6.36,86.77],[1.335,-7.7,86.0],[1.401,-9.0,85.26],[1.468,-10.29,84.52],[1.535,-11.62,83.81],[1.602,-13.07,83.13],[1.668,-14.51,82.45],[1.735,-15.96,81.68],[1.802,-17.36,80.84],[1.869,-18.55,79.88],[1.935,-19.52,78.77],[2.002,-20.23,77.62],[2.069,-20.8,76.44],[2.135,-21.33,75.27],[2.202,-21.82,74.08],[2.269,-22.23,72.84],[2.336,-22.61,71.61],[2.402,-22.88,70.33],[2.469,-22.98,69.0],[2.536,-22.98,67.66],[2.603,-22.95,66.31],[2.669,-22.81,64.93],[2.736,-22.58,63.54],[2.803,-22.27,62.14],[2.869,-21.91,60.75],[2.936,-21.54,59.39],[3.003,-21.13,58.06],[3.07,-20.71,56.77],[3.136,-20.2,55.5],[3.203,-19.6,54.27],[3.27,-18.94,53.12],[3.337,-18.2,52.04],[3.403,-17.37,51.03],[3.47,-16.44,50.07],[3.537,-15.41,49.13],[3.604,-14.29,48.23],[3.67,-13.12,47.32],[3.737,-11.99,46.48],[3.804,-10.89,45.67],[3.87,-9.82,44.88],[3.937,-8.79,44.08],[4.004,-7.79,43.29],[4.071,-6.8,42.49],[4.138,-5.82,41.62],[4.204,-4.89,40.73],[4.271,-4.05,39.88],[4.338,-3.27,39.02],[4.404,-2.56,38.13],[4.471,-1.95,37.21],[4.538,-1.4,36.32],[4.605,-0.9,35.42],[4.671,-0.45,34.58],[4.738,-0.03,33.86],[4.805,0.48,33.2],[4.872,1.07,32.73],[4.938,1.68,32.02],[5.005,2.27,31.04],[5.072,2.9,29.73],[5.138,3.56,28.42],[5.205,4.24,27.11],[5.272,4.96,25.82],[5.339,5.69,24.53],[5.405,6.44,23.3],[5.472,7.12,22.19],[5.539,7.75,21.15],[5.606,8.4,20.25],[5.672,9.02,19.46],[5.739,9.63,18.7]]],"has_video":true}]</script></section>
 <section class="shootout-context-panel" data-player-id="8481656" id="season-record">
 <h2>Aliaksei Protas's attempts by season</h2>
 <div class="shootout-table-scroll"><table class="shootout-season-table"><caption>Regular-season attempts from 2023–24 onward</caption>

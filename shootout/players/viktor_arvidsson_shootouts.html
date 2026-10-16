@@ -18,6 +18,8 @@
 <link href="/css/shootout-scouting.css?v=2e65caae388c" rel="stylesheet"/>
 <link href="/css/shootout-shot-map.css?v=475d48420075" rel="stylesheet"/>
 <script defer="" src="/js/shootout-shot-map.js?v=b684577f7f26"></script>
+<link href="/css/shootout-trajectories.css?v=72c494053468" rel="stylesheet"/>
+<script defer="" src="/js/shootout-trajectories.js?v=84608c84b272"></script>
 </head>
 <body>
 <!-- App Container -->
@@ -34,6 +36,7 @@
 <section aria-label="Shootout summary" class="shootout-overview">
 <p class="career-shootout-summary">Viktor Arvidsson has scored <strong>4 goals on 13 career NHL shootout attempts</strong> (30.8%).</p>
 <p>Watch 4 of his attempts below. His latest listed attempt came against the Montréal Canadiens on October 10, 2026.</p>
+<a class="trajectory-entry-link" href="#trajectories">Explore paths to the net ↓</a>
 <a href="#season-record">Season breakdown and recent results ↓</a></section>
 <!-- Shootout Container -->
 <div class="shootout-container shootout-person-layout">
@@ -322,6 +325,56 @@
 </div>
 </div>
 </div>
+<section aria-labelledby="trajectory-title" class="shootout-trajectories" data-role="player" data-total="4" data-tracked="2" data-version="video-routes-v1" id="trajectories"><div class="trajectory-heading"><div><p class="trajectory-eyebrow">From the video to the ice</p>
+<h2 id="trajectory-title">Paths to the net</h2><p class="trajectory-intro">See the approach. Spot the cut. Compare the finish.</p></div>
+<span class="trajectory-coverage">2 of 4 attempts with usable tracking</span></div>
+<div aria-label="Filter trajectories by result" class="trajectory-filters" role="group"><button aria-pressed="true" data-route-filter="all" type="button">All paths <span>2</span></button><button aria-pressed="false" data-route-filter="goal" type="button">Goals <span>1</span></button><button aria-pressed="false" data-route-filter="save" type="button">Saves <span>1</span></button><button aria-pressed="false" data-route-filter="miss" type="button">Misses <span>0</span></button></div>
+<div class="trajectory-layout">
+<div class="trajectory-canvas">
+<div class="trajectory-orientation"><span>Shooter’s left</span><span>Facing the net ↑</span><span>Shooter’s right</span></div>
+<svg aria-labelledby="trajectory-rink-title trajectory-rink-desc" class="trajectory-rink" role="img" viewbox="-48 -4 96 110">
+<title id="trajectory-rink-title">Video-derived skater paths toward the net</title>
+<desc id="trajectory-rink-desc">Both rink ends are rotated to face the net at the top. Use the attempt selector to explore each route.</desc>
+<defs><clippath id="trajectory-ice-clip"><path d="M -42.5 100 V 28 A 28 28 0 0 1 -14.5 0 H 14.5 A 28 28 0 0 1 42.5 28 V 100 Z"></path></clippath></defs>
+<path class="trajectory-ice" d="M -42.5 100 V 28 A 28 28 0 0 1 -14.5 0 H 14.5 A 28 28 0 0 1 42.5 28 V 100"></path>
+<g clip-path="url(#trajectory-ice-clip)">
+<g class="trajectory-rink-lines"><path d="M -42.5 11 H 42.5 M -11 11 L -14 0 M 11 11 L 14 0"></path>
+<circle cx="-22" cy="31" r="15"></circle><circle cx="22" cy="31" r="15"></circle>
+<circle cx="-22" cy="31" r=".8"></circle><circle cx="22" cy="31" r=".8"></circle>
+<path class="trajectory-blue-line" d="M -42.5 75 H 42.5"></path>
+<path d="M -42.5 100 H 42.5"></path><circle class="trajectory-center-circle" cy="100" r="15"></circle></g>
+<path class="trajectory-center-guide" d="M 0 20 V 98"></path>
+<path class="trajectory-crease" d="M -4 11 V 15.5 A 6.083 6.083 0 0 0 4 15.5 V 11 Z"></path>
+<g class="trajectory-routes"><path class="trajectory-route" d="M 26.78 72.83 L 26.97 71.98 L 27.22 70.73 L 27.62 69.42 L 27.98 68.16 L 28.31 66.87 L 28.54 65.59 L 28.68 64.33 L 28.76 63.12 L 28.82 62 L 28.84 60.88 L 28.86 59.71 L 28.9 58.46 L 28.95 57.16 L 28.97 55.79 L 28.97 54.36 L 28.93 52.9 L 28.82 51.43 L 28.66 49.98 L 28.42 48.56 L 28.09 47.18 L 27.67 45.86 L 27.11 44.61 L 26.42 43.43 L 25.57 42.34 L 24.61 41.33 L 23.53 40.39 L 22.35 39.54 L 21.07 38.82 L 19.7 38.18 L 18.28 37.59 L 16.84 37.07 L 15.43 36.58 L 14.05 36.1 L 12.7 35.62 L 11.38 35.12 L 10.1 34.6 L 8.89 34.09 L 7.78 33.51 L 6.78 32.87 L 5.89 32.15 L 5.06 31.39 L 4.29 30.58 L 3.57 29.74 L 2.87 28.92 L 2.23 28.07 L 1.64 27.13 L 1.03 26.15 L 0.45 25.18 L -0.08 24.21 L -0.6 23.24 L -1.08 22.28 L -1.51 21.38 L -2.08 20.65 L -2.89 20.13 L -3.7 19.65 L -4.48 19.03 L -5.22 18.4 L -5.92 17.79 L -6.57 17.16 M -7.9 14.94 L -8.23 14.14 L -8.49 13.33" data-result="goal" data-route-id="2025021170-6"><title>Mar 29, 2026 · Blue Jackets · Goal</title></path><path class="trajectory-route" d="M 3.52 99.88 L 3.53 98.67 L 3.63 97.52 L 3.84 96.38 L 4.13 95.23 L 4.62 94.12 L 5.27 93.04 L 5.97 91.92 L 6.65 90.75 L 7.32 89.51 L 7.88 88.2 L 8.27 86.85 L 8.43 85.44 L 8.43 83.98 L 8.34 82.51 L 8.33 81.09 L 8.42 79.75 L 8.65 78.51 L 9.06 77.36 L 9.61 76.24 L 10.36 75.2 L 11.32 74.23 L 12.46 73.32 L 13.73 72.45 L 15.08 71.61 L 16.44 70.83 L 17.78 70.04 L 19.05 69.24 L 20.23 68.42 L 21.33 67.55 L 22.34 66.63 L 23.22 65.66 L 23.93 64.59 L 24.55 63.49 L 25.1 62.34 L 25.54 61.17 L 25.93 59.98 L 26.26 58.78 L 26.48 57.56 L 26.54 56.24 L 26.47 54.87 L 26.31 53.45 L 26.08 52.03 L 25.85 50.64 L 25.52 49.23 L 25.17 47.83 L 24.75 46.5 L 24.28 45.22 L 23.76 43.98 L 23.15 42.78 L 22.46 41.59 L 21.68 40.43 L 20.84 39.29 L 19.91 38.14 L 18.92 37.02 L 17.86 35.91 L 16.79 34.86 L 15.7 33.87 L 14.59 32.93 L 13.44 32.02 L 12.28 31.12 L 11.15 30.29 L 10.03 29.48 L 8.95 28.69 L 7.87 27.96 L 6.81 27.3 L 5.73 26.66 L 4.62 26.04 L 3.48 25.43 L 2.27 24.82 L 1.01 24.21 L -0.27 23.64 L -1.61 23.1 L -3 22.6" data-result="save" data-route-id="2025021044-6"><title>Mar 14, 2026 · Capitals · Save</title></path></g>
+<path class="trajectory-selected-halo"></path><path class="trajectory-selected-path"></path>
+<circle class="trajectory-start" r="1.1"></circle><circle class="trajectory-cursor" r="1.5"></circle>
+</g>
+<path class="trajectory-net" d="M -3 11 V 8.8 Q -3 7.67 -1.7 7.67 H 1.7 Q 3 7.67 3 8.8 V 11 Z"></path>
+<text class="trajectory-rink-label" x="-40" y="72">BLUE LINE</text>
+<text class="trajectory-rink-label" text-anchor="middle" x="0" y="104">CENTER ICE</text>
+</svg>
+<p class="trajectory-map-key"><span class="trajectory-key-start"></span>First tracked position <span class="trajectory-key-end"></span>Selected position</p>
+</div>
+<div class="trajectory-controls">
+<label class="trajectory-select-label" for="trajectory-attempt">Explore an attempt</label>
+<select id="trajectory-attempt"><option value="2025021170-6">Mar 29, 2026 · Goal · Blue Jackets</option><option value="2025021044-6">Mar 14, 2026 · Save · Capitals</option></select>
+<div class="trajectory-step"><button aria-label="Previous tracked attempt" class="trajectory-previous" type="button">← Previous</button><span class="trajectory-position"></span><button aria-label="Next tracked attempt" class="trajectory-next" type="button">Next →</button></div>
+<div aria-atomic="true" aria-live="polite" class="trajectory-detail"><span class="trajectory-result"></span><h3 class="trajectory-opponent"></h3><p class="trajectory-date"></p>
+<dl class="trajectory-metrics"><div><dt>Approach lane</dt><dd class="trajectory-lane"></dd></div><div><dt>Tracked span</dt><dd class="trajectory-duration"></dd></div></dl></div>
+<div class="trajectory-replay"><button class="trajectory-play" type="button">↻ Replay route</button><output class="trajectory-time" for="trajectory-progress"></output></div>
+<label class="trajectory-sr-only" for="trajectory-progress">Position along selected trajectory</label>
+<input id="trajectory-progress" max="1000" min="0" step="1" type="range" value="1000"/>
+<p class="trajectory-gap" hidden="" role="status">Tracking gap · no position shown</p>
+<label class="trajectory-compare"><input checked="" type="checkbox"/> Compare with other paths</label>
+<a class="trajectory-watch attempt-jump" data-attempt-id="2025021170-6" href="?v=2025021170-6">Watch this attempt <span aria-hidden="true">↗</span></a>
+<p class="trajectory-no-video" hidden="">Video unavailable for this attempt.</p>
+<p class="trajectory-selection-hint">Choose an attempt above or tap a path on the ice.</p>
+</div></div>
+<p class="trajectory-filter-empty" hidden="" role="status">No tracked attempts match this result. Choose another filter.</p>
+<p class="trajectory-note">Skater paths estimated from video · both ends rotated toward the same net · 2 tracked, 2 unavailable.</p>
+<details class="trajectory-method"><summary>About these paths</summary><p>Only paths passing automatic tracking and approach checks are shown. Lines connect trusted observed positions; breaks mark missing tracking. Routes begin at center ice or the first available position and stop at the closest tracked point to the net. The endpoint is not a measured shot release. Replay follows the video timing across the displayed span. Colors show the official attempt result; the paths track the skater, not the puck. Coverage is for the attempts listed on this page, not the full career.</p></details>
+<noscript><p class="trajectory-note">Enable JavaScript to select, filter, and replay paths. The map above shows all available routes.</p></noscript>
+<script class="trajectory-data" type="application/json">[{"id":"2025021170-6","game_id":2025021170,"event_id":658,"date":"Mar 29, 2026","opponent":"Blue Jackets","result":"goal","result_label":"Goal","type":"Backhand","side":"right","segments":[[[0.0,26.78,72.83],[0.067,26.97,71.98],[0.134,27.22,70.73],[0.2,27.62,69.42],[0.267,27.98,68.16],[0.334,28.31,66.87],[0.4,28.54,65.59],[0.467,28.68,64.33],[0.534,28.76,63.12],[0.601,28.82,62.0],[0.667,28.84,60.88],[0.734,28.86,59.71],[0.801,28.9,58.46],[0.868,28.95,57.16],[0.934,28.97,55.79],[1.001,28.97,54.36],[1.068,28.93,52.9],[1.135,28.82,51.43],[1.201,28.66,49.98],[1.268,28.42,48.56],[1.335,28.09,47.18],[1.401,27.67,45.86],[1.468,27.11,44.61],[1.535,26.42,43.43],[1.602,25.57,42.34],[1.668,24.61,41.33],[1.735,23.53,40.39],[1.802,22.35,39.54],[1.869,21.07,38.82],[1.935,19.7,38.18],[2.002,18.28,37.59],[2.069,16.84,37.07],[2.135,15.43,36.58],[2.202,14.05,36.1],[2.269,12.7,35.62],[2.336,11.38,35.12],[2.402,10.1,34.6],[2.469,8.89,34.09],[2.536,7.78,33.51],[2.603,6.78,32.87],[2.669,5.89,32.15],[2.736,5.06,31.39],[2.803,4.29,30.58],[2.869,3.57,29.74],[2.936,2.87,28.92],[3.003,2.23,28.07],[3.07,1.64,27.13],[3.136,1.03,26.15],[3.203,0.45,25.18],[3.27,-0.08,24.21],[3.337,-0.6,23.24],[3.403,-1.08,22.28],[3.47,-1.51,21.38],[3.537,-2.08,20.65],[3.604,-2.89,20.13],[3.67,-3.7,19.65],[3.737,-4.48,19.03],[3.804,-5.22,18.4],[3.87,-5.92,17.79],[3.937,-6.57,17.16]],[[4.138,-7.9,14.94],[4.204,-8.23,14.14],[4.271,-8.49,13.33]]],"has_video":true},{"id":"2025021044-6","game_id":2025021044,"event_id":269,"date":"Mar 14, 2026","opponent":"Capitals","result":"save","result_label":"Save","type":"Snap","side":"right","segments":[[[6.673,3.52,99.88],[6.74,3.53,98.67],[6.807,3.63,97.52],[6.873,3.84,96.38],[6.94,4.13,95.23],[7.007,4.62,94.12],[7.074,5.27,93.04],[7.141,5.97,91.92],[7.207,6.65,90.75],[7.274,7.32,89.51],[7.341,7.88,88.2],[7.407,8.27,86.85],[7.474,8.43,85.44],[7.541,8.43,83.98],[7.608,8.34,82.51],[7.674,8.33,81.09],[7.741,8.42,79.75],[7.808,8.65,78.51],[7.875,9.06,77.36],[7.941,9.61,76.24],[8.008,10.36,75.2],[8.075,11.32,74.23],[8.142,12.46,73.32],[8.208,13.73,72.45],[8.275,15.08,71.61],[8.342,16.44,70.83],[8.408,17.78,70.04],[8.475,19.05,69.24],[8.542,20.23,68.42],[8.609,21.33,67.55],[8.675,22.34,66.63],[8.742,23.22,65.66],[8.809,23.93,64.59],[8.876,24.55,63.49],[8.942,25.1,62.34],[9.009,25.54,61.17],[9.076,25.93,59.98],[9.143,26.26,58.78],[9.209,26.48,57.56],[9.276,26.54,56.24],[9.343,26.47,54.87],[9.409,26.31,53.45],[9.476,26.08,52.03],[9.543,25.85,50.64],[9.61,25.52,49.23],[9.676,25.17,47.83],[9.743,24.75,46.5],[9.81,24.28,45.22],[9.877,23.76,43.98],[9.943,23.15,42.78],[10.01,22.46,41.59],[10.077,21.68,40.43],[10.143,20.84,39.29],[10.21,19.91,38.14],[10.277,18.92,37.02],[10.344,17.86,35.91],[10.41,16.79,34.86],[10.477,15.7,33.87],[10.544,14.59,32.93],[10.611,13.44,32.02],[10.677,12.28,31.12],[10.744,11.15,30.29],[10.811,10.03,29.48],[10.877,8.95,28.69],[10.944,7.87,27.96],[11.011,6.81,27.3],[11.078,5.73,26.66],[11.145,4.62,26.04],[11.211,3.48,25.43],[11.278,2.27,24.82],[11.345,1.01,24.21],[11.411,-0.27,23.64],[11.478,-1.61,23.1],[11.545,-3.0,22.6]]],"has_video":true}]</script></section>
 <section class="shootout-context-panel" data-player-id="8478042" id="season-record">
 <h2>Viktor Arvidsson's attempts by season</h2>
 <div class="shootout-table-scroll"><table class="shootout-season-table"><caption>Regular-season attempts from 2023–24 onward</caption>

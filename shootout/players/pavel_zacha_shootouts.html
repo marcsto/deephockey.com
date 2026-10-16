@@ -18,6 +18,8 @@
 <link href="/css/shootout-scouting.css?v=2e65caae388c" rel="stylesheet"/>
 <link href="/css/shootout-shot-map.css?v=475d48420075" rel="stylesheet"/>
 <script defer="" src="/js/shootout-shot-map.js?v=b684577f7f26"></script>
+<link href="/css/shootout-trajectories.css?v=72c494053468" rel="stylesheet"/>
+<script defer="" src="/js/shootout-trajectories.js?v=84608c84b272"></script>
 </head>
 <body>
 <!-- App Container -->
@@ -34,6 +36,7 @@
 <section aria-label="Shootout summary" class="shootout-overview">
 <p class="career-shootout-summary">Pavel Zacha has scored <strong>1 goal on 10 career NHL shootout attempts</strong> (10.0%).</p>
 <p>Watch 2 of his attempts below. His latest listed attempt came against the Washington Capitals on March 14, 2026.</p>
+<a class="trajectory-entry-link" href="#trajectories">Explore paths to the net ↓</a>
 <a href="#season-record">Season breakdown and recent results ↓</a></section>
 <!-- Shootout Container -->
 <div class="shootout-container shootout-person-layout">
@@ -295,6 +298,56 @@
 </div>
 </div>
 </div>
+<section aria-labelledby="trajectory-title" class="shootout-trajectories" data-role="player" data-total="2" data-tracked="2" data-version="video-routes-v1" id="trajectories"><div class="trajectory-heading"><div><p class="trajectory-eyebrow">From the video to the ice</p>
+<h2 id="trajectory-title">Paths to the net</h2><p class="trajectory-intro">See the approach. Spot the cut. Compare the finish.</p></div>
+<span class="trajectory-coverage">2 of 2 attempts with usable tracking</span></div>
+<div aria-label="Filter trajectories by result" class="trajectory-filters" role="group"><button aria-pressed="true" data-route-filter="all" type="button">All paths <span>2</span></button><button aria-pressed="false" data-route-filter="goal" type="button">Goals <span>0</span></button><button aria-pressed="false" data-route-filter="save" type="button">Saves <span>2</span></button><button aria-pressed="false" data-route-filter="miss" type="button">Misses <span>0</span></button></div>
+<div class="trajectory-layout">
+<div class="trajectory-canvas">
+<div class="trajectory-orientation"><span>Shooter’s left</span><span>Facing the net ↑</span><span>Shooter’s right</span></div>
+<svg aria-labelledby="trajectory-rink-title trajectory-rink-desc" class="trajectory-rink" role="img" viewbox="-48 -4 96 110">
+<title id="trajectory-rink-title">Video-derived skater paths toward the net</title>
+<desc id="trajectory-rink-desc">Both rink ends are rotated to face the net at the top. Use the attempt selector to explore each route.</desc>
+<defs><clippath id="trajectory-ice-clip"><path d="M -42.5 100 V 28 A 28 28 0 0 1 -14.5 0 H 14.5 A 28 28 0 0 1 42.5 28 V 100 Z"></path></clippath></defs>
+<path class="trajectory-ice" d="M -42.5 100 V 28 A 28 28 0 0 1 -14.5 0 H 14.5 A 28 28 0 0 1 42.5 28 V 100"></path>
+<g clip-path="url(#trajectory-ice-clip)">
+<g class="trajectory-rink-lines"><path d="M -42.5 11 H 42.5 M -11 11 L -14 0 M 11 11 L 14 0"></path>
+<circle cx="-22" cy="31" r="15"></circle><circle cx="22" cy="31" r="15"></circle>
+<circle cx="-22" cy="31" r=".8"></circle><circle cx="22" cy="31" r=".8"></circle>
+<path class="trajectory-blue-line" d="M -42.5 75 H 42.5"></path>
+<path d="M -42.5 100 H 42.5"></path><circle class="trajectory-center-circle" cy="100" r="15"></circle></g>
+<path class="trajectory-center-guide" d="M 0 20 V 98"></path>
+<path class="trajectory-crease" d="M -4 11 V 15.5 A 6.083 6.083 0 0 0 4 15.5 V 11 Z"></path>
+<g class="trajectory-routes"><path class="trajectory-route" d="M 3.99 99.24 L 3.03 98.26 L 1.95 97.31 L 0.77 96.39 L -0.48 95.52 L -1.75 94.73 L -2.93 94.02 L -4.09 93.33 L -5.26 92.67 L -6.49 92.05 L -7.78 91.42 L -9.1 90.75 L -10.4 90.08 L -11.65 89.38 L -12.91 88.61 L -14.12 87.79 L -15.36 86.89 L -16.55 85.97 L -17.72 84.97 L -18.82 83.86 L -19.84 82.68 L -20.73 81.46 L -21.48 80.21 L -22.13 78.9 L -22.71 77.52 L -23.23 76.05 L -23.77 74.58 L -24.42 73.07 L -25.08 71.61 L -25.71 70.17 L -26.25 68.71 L -26.65 67.23 L -26.89 65.74 L -26.96 64.27 L -26.84 62.83 L -26.52 61.4 L -26.02 60.01 L -25.35 58.69 L -24.58 57.39 L -23.71 56.12 L -22.72 54.88 L -21.67 53.66 L -20.53 52.43 L -19.27 51.25 L -17.94 50.09 L -16.57 48.94 L -15.23 47.77 L -13.96 46.58 L -12.79 45.42 L -11.72 44.28 L -10.71 43.18 L -9.77 42.12 L -8.88 41.08 L -8.05 40.04 L -7.23 38.97 L -6.15 38.06 L -5.09 37.15 L -4.07 36.24 L -3.09 35.31 L -2.21 34.33 L -1.43 33.33 L -0.71 32.25 L -0.08 31.12 L 0.64 30.08 L 1.34 29.05 L 2.19 28.16 L 3.14 27.38 L 4.18 26.71 L 5.32 26.14" data-result="save" data-route-id="2025021044-12"><title>Mar 14, 2026 · Capitals · Save</title></path><path class="trajectory-route" d="M -29.67 81.95 L -29.41 80.65 L -30.19 79.09 L -30.57 77.62 L -31.19 76.17 L -31.53 74.75 L -31.96 73.36 L -32.31 71.98 L -32.52 70.58 L -32.62 69.16 L -32.54 67.72 L -32.29 66.2 L -31.89 64.7 L -31.39 63.25 L -30.79 61.85 L -30.08 60.49 L -29.22 59.12 L -28.27 57.77 L -27.32 56.46 L -26.32 55.17 L -25.29 53.89 L -24.22 52.65 L -23.1 51.43 L -21.93 50.23 L -20.71 49.08 L -19.47 47.96 L -18.2 46.87 L -16.95 45.8 L -15.71 44.7 L -14.47 43.62 L -13.27 42.57 L -12.09 41.55 L -10.87 40.53 L -9.62 39.54 L -8.35 38.56 L -7.06 37.63 L -5.77 36.68 L -4.47 35.68 L -3.24 34.67 L -2.11 33.69 L -1.04 32.74 L 0.03 31.85 L 1.08 31.07 L 2.08 30.21 L 3.13 29.26 L 4.25 28.21 L 5.46 27.16 L 6.72 26.18 L 8.02 25.22 L 9.3 24.22" data-result="save" data-route-id="2024020723-6"><title>Jan 18, 2025 · Senators · Save</title></path></g>
+<path class="trajectory-selected-halo"></path><path class="trajectory-selected-path"></path>
+<circle class="trajectory-start" r="1.1"></circle><circle class="trajectory-cursor" r="1.5"></circle>
+</g>
+<path class="trajectory-net" d="M -3 11 V 8.8 Q -3 7.67 -1.7 7.67 H 1.7 Q 3 7.67 3 8.8 V 11 Z"></path>
+<text class="trajectory-rink-label" x="-40" y="72">BLUE LINE</text>
+<text class="trajectory-rink-label" text-anchor="middle" x="0" y="104">CENTER ICE</text>
+</svg>
+<p class="trajectory-map-key"><span class="trajectory-key-start"></span>First tracked position <span class="trajectory-key-end"></span>Selected position</p>
+</div>
+<div class="trajectory-controls">
+<label class="trajectory-select-label" for="trajectory-attempt">Explore an attempt</label>
+<select id="trajectory-attempt"><option value="2025021044-12">Mar 14, 2026 · Save · Capitals</option><option value="2024020723-6">Jan 18, 2025 · Save · Senators</option></select>
+<div class="trajectory-step"><button aria-label="Previous tracked attempt" class="trajectory-previous" type="button">← Previous</button><span class="trajectory-position"></span><button aria-label="Next tracked attempt" class="trajectory-next" type="button">Next →</button></div>
+<div aria-atomic="true" aria-live="polite" class="trajectory-detail"><span class="trajectory-result"></span><h3 class="trajectory-opponent"></h3><p class="trajectory-date"></p>
+<dl class="trajectory-metrics"><div><dt>Approach lane</dt><dd class="trajectory-lane"></dd></div><div><dt>Tracked span</dt><dd class="trajectory-duration"></dd></div></dl></div>
+<div class="trajectory-replay"><button class="trajectory-play" type="button">↻ Replay route</button><output class="trajectory-time" for="trajectory-progress"></output></div>
+<label class="trajectory-sr-only" for="trajectory-progress">Position along selected trajectory</label>
+<input id="trajectory-progress" max="1000" min="0" step="1" type="range" value="1000"/>
+<p class="trajectory-gap" hidden="" role="status">Tracking gap · no position shown</p>
+<label class="trajectory-compare"><input checked="" type="checkbox"/> Compare with other paths</label>
+<a class="trajectory-watch attempt-jump" data-attempt-id="2025021044-12" href="?v=2025021044-12">Watch this attempt <span aria-hidden="true">↗</span></a>
+<p class="trajectory-no-video" hidden="">Video unavailable for this attempt.</p>
+<p class="trajectory-selection-hint">Choose an attempt above or tap a path on the ice.</p>
+</div></div>
+<p class="trajectory-filter-empty" hidden="" role="status">No tracked attempts match this result. Choose another filter.</p>
+<p class="trajectory-note">Skater paths estimated from video · both ends rotated toward the same net · 2 tracked, 0 unavailable.</p>
+<details class="trajectory-method"><summary>About these paths</summary><p>Only paths passing automatic tracking and approach checks are shown. Lines connect trusted observed positions; breaks mark missing tracking. Routes begin at center ice or the first available position and stop at the closest tracked point to the net. The endpoint is not a measured shot release. Replay follows the video timing across the displayed span. Colors show the official attempt result; the paths track the skater, not the puck. Coverage is for the attempts listed on this page, not the full career.</p></details>
+<noscript><p class="trajectory-note">Enable JavaScript to select, filter, and replay paths. The map above shows all available routes.</p></noscript>
+<script class="trajectory-data" type="application/json">[{"id":"2025021044-12","game_id":2025021044,"event_id":275,"date":"Mar 14, 2026","opponent":"Capitals","result":"save","result_label":"Save","type":"Snap","side":"left","segments":[[[4.671,3.99,99.24],[4.738,3.03,98.26],[4.805,1.95,97.31],[4.872,0.77,96.39],[4.938,-0.48,95.52],[5.005,-1.75,94.73],[5.072,-2.93,94.02],[5.138,-4.09,93.33],[5.205,-5.26,92.67],[5.272,-6.49,92.05],[5.339,-7.78,91.42],[5.405,-9.1,90.75],[5.472,-10.4,90.08],[5.539,-11.65,89.38],[5.606,-12.91,88.61],[5.672,-14.12,87.79],[5.739,-15.36,86.89],[5.806,-16.55,85.97],[5.872,-17.72,84.97],[5.939,-18.82,83.86],[6.006,-19.84,82.68],[6.073,-20.73,81.46],[6.139,-21.48,80.21],[6.206,-22.13,78.9],[6.273,-22.71,77.52],[6.34,-23.23,76.05],[6.406,-23.77,74.58],[6.473,-24.42,73.07],[6.54,-25.08,71.61],[6.607,-25.71,70.17],[6.673,-26.25,68.71],[6.74,-26.65,67.23],[6.807,-26.89,65.74],[6.873,-26.96,64.27],[6.94,-26.84,62.83],[7.007,-26.52,61.4],[7.074,-26.02,60.01],[7.141,-25.35,58.69],[7.207,-24.58,57.39],[7.274,-23.71,56.12],[7.341,-22.72,54.88],[7.407,-21.67,53.66],[7.474,-20.53,52.43],[7.541,-19.27,51.25],[7.608,-17.94,50.09],[7.674,-16.57,48.94],[7.741,-15.23,47.77],[7.808,-13.96,46.58],[7.875,-12.79,45.42],[7.941,-11.72,44.28],[8.008,-10.71,43.18],[8.075,-9.77,42.12],[8.142,-8.88,41.08],[8.208,-8.05,40.04],[8.275,-7.23,38.97],[8.342,-6.15,38.06],[8.408,-5.09,37.15],[8.475,-4.07,36.24],[8.542,-3.09,35.31],[8.609,-2.21,34.33],[8.675,-1.43,33.33],[8.742,-0.71,32.25],[8.809,-0.08,31.12],[8.876,0.64,30.08],[8.942,1.34,29.05],[9.009,2.19,28.16],[9.076,3.14,27.38],[9.143,4.18,26.71],[9.209,5.32,26.14]]],"has_video":true},{"id":"2024020723-6","game_id":2024020723,"event_id":266,"date":"Jan 18, 2025","opponent":"Senators","result":"save","result_label":"Save","type":"Snap","side":"left","segments":[[[2.135,-29.67,81.95],[2.202,-29.41,80.65],[2.269,-30.19,79.09],[2.336,-30.57,77.62],[2.402,-31.19,76.17],[2.469,-31.53,74.75],[2.536,-31.96,73.36],[2.603,-32.31,71.98],[2.669,-32.52,70.58],[2.736,-32.62,69.16],[2.803,-32.54,67.72],[2.869,-32.29,66.2],[2.936,-31.89,64.7],[3.003,-31.39,63.25],[3.07,-30.79,61.85],[3.136,-30.08,60.49],[3.203,-29.22,59.12],[3.27,-28.27,57.77],[3.337,-27.32,56.46],[3.403,-26.32,55.17],[3.47,-25.29,53.89],[3.537,-24.22,52.65],[3.604,-23.1,51.43],[3.67,-21.93,50.23],[3.737,-20.71,49.08],[3.804,-19.47,47.96],[3.87,-18.2,46.87],[3.937,-16.95,45.8],[4.004,-15.71,44.7],[4.071,-14.47,43.62],[4.138,-13.27,42.57],[4.204,-12.09,41.55],[4.271,-10.87,40.53],[4.338,-9.62,39.54],[4.404,-8.35,38.56],[4.471,-7.06,37.63],[4.538,-5.77,36.68],[4.605,-4.47,35.68],[4.671,-3.24,34.67],[4.738,-2.11,33.69],[4.805,-1.04,32.74],[4.872,0.03,31.85],[4.938,1.08,31.07],[5.005,2.08,30.21],[5.072,3.13,29.26],[5.138,4.25,28.21],[5.205,5.46,27.16],[5.272,6.72,26.18],[5.339,8.02,25.22],[5.405,9.3,24.22]]],"has_video":true}]</script></section>
 <section class="shootout-context-panel" data-player-id="8478401" id="season-record">
 <h2>Pavel Zacha's attempts by season</h2>
 <div class="shootout-table-scroll"><table class="shootout-season-table"><caption>Regular-season attempts from 2023–24 onward</caption>

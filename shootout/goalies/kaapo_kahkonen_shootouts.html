@@ -18,6 +18,8 @@
 <link href="/css/shootout-scouting.css?v=2e65caae388c" rel="stylesheet"/>
 <link href="/css/shootout-shot-map.css?v=475d48420075" rel="stylesheet"/>
 <script defer="" src="/js/shootout-shot-map.js?v=b684577f7f26"></script>
+<link href="/css/shootout-trajectories.css?v=72c494053468" rel="stylesheet"/>
+<script defer="" src="/js/shootout-trajectories.js?v=84608c84b272"></script>
 </head>
 <body>
 <!-- App Container -->
@@ -34,6 +36,7 @@
 <section aria-label="Shootout summary" class="shootout-overview">
 <p class="career-shootout-summary">Kaapo Kahkonen has allowed <strong>10 goals on 20 career NHL shootout attempts faced</strong> (50.0% goals allowed).</p>
 <p>Watch 3 of the attempts he faced below. His latest listed attempt came against the Los Angeles Kings on January 22, 2024.</p>
+<a class="trajectory-entry-link" href="#trajectories">Explore paths to the net ↓</a>
 <a href="#season-record">Season breakdown and recent results ↓</a></section>
 <!-- Shootout Container -->
 <div class="shootout-container shootout-person-layout">
@@ -348,6 +351,56 @@
 </div>
 </div>
 </div>
+<section aria-labelledby="trajectory-title" class="shootout-trajectories" data-role="goalie" data-total="5" data-tracked="2" data-version="video-routes-v1" id="trajectories"><div class="trajectory-heading"><div><p class="trajectory-eyebrow">From the video to the ice</p>
+<h2 id="trajectory-title">Paths to the net faced</h2><p class="trajectory-intro">See the approach. Spot the cut. Compare the finish.</p></div>
+<span class="trajectory-coverage">2 of 5 attempts with usable tracking</span></div>
+<div aria-label="Filter trajectories by result" class="trajectory-filters" role="group"><button aria-pressed="true" data-route-filter="all" type="button">All paths <span>2</span></button><button aria-pressed="false" data-route-filter="goal" type="button">Goals allowed <span>1</span></button><button aria-pressed="false" data-route-filter="save" type="button">Saves <span>1</span></button><button aria-pressed="false" data-route-filter="miss" type="button">Misses <span>0</span></button></div>
+<div class="trajectory-layout">
+<div class="trajectory-canvas">
+<div class="trajectory-orientation"><span>Shooter’s left</span><span>Facing the net ↑</span><span>Shooter’s right</span></div>
+<svg aria-labelledby="trajectory-rink-title trajectory-rink-desc" class="trajectory-rink" role="img" viewbox="-48 -4 96 110">
+<title id="trajectory-rink-title">Video-derived skater paths toward the net</title>
+<desc id="trajectory-rink-desc">Both rink ends are rotated to face the net at the top. Use the attempt selector to explore each route.</desc>
+<defs><clippath id="trajectory-ice-clip"><path d="M -42.5 100 V 28 A 28 28 0 0 1 -14.5 0 H 14.5 A 28 28 0 0 1 42.5 28 V 100 Z"></path></clippath></defs>
+<path class="trajectory-ice" d="M -42.5 100 V 28 A 28 28 0 0 1 -14.5 0 H 14.5 A 28 28 0 0 1 42.5 28 V 100"></path>
+<g clip-path="url(#trajectory-ice-clip)">
+<g class="trajectory-rink-lines"><path d="M -42.5 11 H 42.5 M -11 11 L -14 0 M 11 11 L 14 0"></path>
+<circle cx="-22" cy="31" r="15"></circle><circle cx="22" cy="31" r="15"></circle>
+<circle cx="-22" cy="31" r=".8"></circle><circle cx="22" cy="31" r=".8"></circle>
+<path class="trajectory-blue-line" d="M -42.5 75 H 42.5"></path>
+<path d="M -42.5 100 H 42.5"></path><circle class="trajectory-center-circle" cy="100" r="15"></circle></g>
+<path class="trajectory-center-guide" d="M 0 20 V 98"></path>
+<path class="trajectory-crease" d="M -4 11 V 15.5 A 6.083 6.083 0 0 0 4 15.5 V 11 Z"></path>
+<g class="trajectory-routes"><path class="trajectory-route" d="M -1.98 96.7 L -1.21 96.04 L 0.47 95.07 L 1.94 94 L 3.08 92.95 L 4.18 91.88 L 5.3 90.76 L 6.37 89.63 L 7.36 88.52 L 8.1 87.51 L 8.78 86.51 L 9.4 85.46 L 9.96 84.33 L 10.49 83.1 L 11.02 81.76 L 11.56 80.34 L 12.07 78.87 L 12.51 77.41 L 12.93 75.92 L 13.3 74.43 L 13.57 72.92 L 13.77 71.35 L 13.96 69.77 L 14.13 68.17 L 14.28 66.54 L 14.39 64.89 L 14.29 63.31 L 13.89 61.78 L 13.26 60.34 L 12.46 58.94 L 11.62 57.57 L 10.74 56.23 L 9.8 54.95 L 8.85 53.68 L 8.05 52.38 L 7.39 51.02 L 6.89 49.63 L 6.52 48.18 L 6.24 46.68 L 6.07 45.12 L 6 43.52 L 6.01 41.91 L 6.11 40.27 L 6.21 38.57 L 6.23 36.91 L 6.15 35.27 L 5.93 33.74 L 5.53 32.27 L 4.84 30.98 L 4.16 29.73 L 3.47 28.47 L 2.79 27.21 L 2.07 25.97 L 1.22 24.83 L 0.27 23.76 L -0.78 22.73 L -1.93 21.72 L -3.08 20.68 L -4.22 19.64 L -5.18 18.49 L -6.02 17.24" data-result="save" data-route-id="2023020427-1"><title>Dec 10, 2023 · Nicolas Roy · Save</title></path><path class="trajectory-route" d="M -6.63 98.73 L -7.04 97.33 L -7.44 95.94 L -7.93 94.59 L -8.62 93.25 L -9.56 92 L -10.74 90.79 L -12.08 89.62 L -13.34 88.44 L -14.64 87.28 L -15.95 86.17 L -17.22 85.07 L -18.41 83.92 L -19.52 82.75 L -20.52 81.52 L -21.46 80.34 L -22.42 79.1 L -23.59 77.92 L -24.79 76.77 L -26.12 75.63 L -27.39 74.51 L -28.62 73.38 L -29.8 72.28 L -30.91 71.12 L -32.02 69.91 L -32.92 68.57 L -33.73 67.19 L -34.27 65.67 L -34.53 64.07 L -34.62 62.43 L -34.64 60.82 L -34.6 59.22 L -34.32 57.56 L -33.9 55.92 L -33.43 54.38 L -32.93 52.95 L -32.18 51.54 L -31.51 50.32 L -30.69 49.13 L -29.8 48.02 L -28.78 46.97 L -27.75 46.04 L -26.55 45.2 L -25.38 44.49 L -24.19 43.84 L -22.98 43.2 L -21.76 42.58 L -20.52 42.02 L -19.27 41.5 L -18.07 40.94 L -16.92 40.4 L -15.85 39.87 L -14.89 39.39 L -13.98 38.89 L -13.15 38.42 L -12.32 37.91 L -11.47 37.37 L -10.74 36.89 L -10.04 36.41 L -9.41 35.95 L -8.77 35.49 L -8.16 35.05 L -7.62 34.64 L -7.1 34.19 L -6.57 33.68 L -6.03 33.12 L -5.43 32.48 L -4.88 31.83 L -4.38 31.2 L -3.92 30.54 L -3.56 29.93 L -3.31 29.35 L -3.12 28.81 L -2.99 28.31 L -2.89 27.81 L -2.71 27.28 L -2.52 26.72 L -2.23 26.08 L -1.85 25.38 L -1.4 24.64 L -0.88 23.9 L -0.27 23.15 L 0.38 22.4 L 1.08 21.68 L 1.74 21 L 2.4 20.39 L 3.04 19.82 L 3.67 19.27 L 4.28 18.75 L 4.88 18.26 L 5.48 17.77" data-result="goal" data-route-id="2023020427-3"><title>Dec 10, 2023 · Jack Eichel · Goal allowed</title></path></g>
+<path class="trajectory-selected-halo"></path><path class="trajectory-selected-path"></path>
+<circle class="trajectory-start" r="1.1"></circle><circle class="trajectory-cursor" r="1.5"></circle>
+</g>
+<path class="trajectory-net" d="M -3 11 V 8.8 Q -3 7.67 -1.7 7.67 H 1.7 Q 3 7.67 3 8.8 V 11 Z"></path>
+<text class="trajectory-rink-label" x="-40" y="72">BLUE LINE</text>
+<text class="trajectory-rink-label" text-anchor="middle" x="0" y="104">CENTER ICE</text>
+</svg>
+<p class="trajectory-map-key"><span class="trajectory-key-start"></span>First tracked position <span class="trajectory-key-end"></span>Selected position</p>
+</div>
+<div class="trajectory-controls">
+<label class="trajectory-select-label" for="trajectory-attempt">Explore an attempt</label>
+<select id="trajectory-attempt"><option value="2023020427-1">Dec 10, 2023 · Save · Nicolas Roy</option><option value="2023020427-3">Dec 10, 2023 · Goal allowed · Jack Eichel</option></select>
+<div class="trajectory-step"><button aria-label="Previous tracked attempt" class="trajectory-previous" type="button">← Previous</button><span class="trajectory-position"></span><button aria-label="Next tracked attempt" class="trajectory-next" type="button">Next →</button></div>
+<div aria-atomic="true" aria-live="polite" class="trajectory-detail"><span class="trajectory-result"></span><h3 class="trajectory-opponent"></h3><p class="trajectory-date"></p>
+<dl class="trajectory-metrics"><div><dt>Approach lane</dt><dd class="trajectory-lane"></dd></div><div><dt>Tracked span</dt><dd class="trajectory-duration"></dd></div></dl></div>
+<div class="trajectory-replay"><button class="trajectory-play" type="button">↻ Replay route</button><output class="trajectory-time" for="trajectory-progress"></output></div>
+<label class="trajectory-sr-only" for="trajectory-progress">Position along selected trajectory</label>
+<input id="trajectory-progress" max="1000" min="0" step="1" type="range" value="1000"/>
+<p class="trajectory-gap" hidden="" role="status">Tracking gap · no position shown</p>
+<label class="trajectory-compare"><input checked="" type="checkbox"/> Compare with other paths</label>
+<a class="trajectory-watch attempt-jump" data-attempt-id="2023020427-1" href="?v=2023020427-1">Watch this attempt <span aria-hidden="true">↗</span></a>
+<p class="trajectory-no-video" hidden="">Video unavailable for this attempt.</p>
+<p class="trajectory-selection-hint">Choose an attempt above or tap a path on the ice.</p>
+</div></div>
+<p class="trajectory-filter-empty" hidden="" role="status">No tracked attempts match this result. Choose another filter.</p>
+<p class="trajectory-note">Skater paths estimated from video · both ends rotated toward the same net · 2 tracked, 3 unavailable.</p>
+<details class="trajectory-method"><summary>About these paths</summary><p>Only paths passing automatic tracking and approach checks are shown. Lines connect trusted observed positions; breaks mark missing tracking. Routes begin at center ice or the first available position and stop at the closest tracked point to the net. The endpoint is not a measured shot release. Replay follows the video timing across the displayed span. Colors show the official attempt result; the paths track the skater, not the puck. Coverage is for the attempts listed on this page, not the full career.</p></details>
+<noscript><p class="trajectory-note">Enable JavaScript to select, filter, and replay paths. The map above shows all available routes.</p></noscript>
+<script class="trajectory-data" type="application/json">[{"id":"2023020427-1","game_id":2023020427,"event_id":239,"date":"Dec 10, 2023","opponent":"Nicolas Roy","result":"save","result_label":"Save","type":"Backhand","side":"right","segments":[[[4.605,-1.98,96.7],[4.671,-1.21,96.04],[4.738,0.47,95.07],[4.805,1.94,94.0],[4.872,3.08,92.95],[4.938,4.18,91.88],[5.005,5.3,90.76],[5.072,6.37,89.63],[5.138,7.36,88.52],[5.205,8.1,87.51],[5.272,8.78,86.51],[5.339,9.4,85.46],[5.405,9.96,84.33],[5.472,10.49,83.1],[5.539,11.02,81.76],[5.606,11.56,80.34],[5.672,12.07,78.87],[5.739,12.51,77.41],[5.806,12.93,75.92],[5.872,13.3,74.43],[5.939,13.57,72.92],[6.006,13.77,71.35],[6.073,13.96,69.77],[6.139,14.13,68.17],[6.206,14.28,66.54],[6.273,14.39,64.89],[6.34,14.29,63.31],[6.406,13.89,61.78],[6.473,13.26,60.34],[6.54,12.46,58.94],[6.607,11.62,57.57],[6.673,10.74,56.23],[6.74,9.8,54.95],[6.807,8.85,53.68],[6.873,8.05,52.38],[6.94,7.39,51.02],[7.007,6.89,49.63],[7.074,6.52,48.18],[7.141,6.24,46.68],[7.207,6.07,45.12],[7.274,6.0,43.52],[7.341,6.01,41.91],[7.407,6.11,40.27],[7.474,6.21,38.57],[7.541,6.23,36.91],[7.608,6.15,35.27],[7.674,5.93,33.74],[7.741,5.53,32.27],[7.808,4.84,30.98],[7.875,4.16,29.73],[7.941,3.47,28.47],[8.008,2.79,27.21],[8.075,2.07,25.97],[8.142,1.22,24.83],[8.208,0.27,23.76],[8.275,-0.78,22.73],[8.342,-1.93,21.72],[8.408,-3.08,20.68],[8.475,-4.22,19.64],[8.542,-5.18,18.49],[8.609,-6.02,17.24]]],"has_video":true},{"id":"2023020427-3","game_id":2023020427,"event_id":241,"date":"Dec 10, 2023","opponent":"Jack Eichel","result":"goal","result_label":"Goal allowed","type":"Wrist","side":"left","segments":[[[2.869,-6.63,98.73],[2.936,-7.04,97.33],[3.003,-7.44,95.94],[3.07,-7.93,94.59],[3.136,-8.62,93.25],[3.203,-9.56,92.0],[3.27,-10.74,90.79],[3.337,-12.08,89.62],[3.403,-13.34,88.44],[3.47,-14.64,87.28],[3.537,-15.95,86.17],[3.604,-17.22,85.07],[3.67,-18.41,83.92],[3.737,-19.52,82.75],[3.804,-20.52,81.52],[3.87,-21.46,80.34],[3.937,-22.42,79.1],[4.004,-23.59,77.92],[4.071,-24.79,76.77],[4.138,-26.12,75.63],[4.204,-27.39,74.51],[4.271,-28.62,73.38],[4.338,-29.8,72.28],[4.404,-30.91,71.12],[4.471,-32.02,69.91],[4.538,-32.92,68.57],[4.605,-33.73,67.19],[4.671,-34.27,65.67],[4.738,-34.53,64.07],[4.805,-34.62,62.43],[4.872,-34.64,60.82],[4.938,-34.6,59.22],[5.005,-34.32,57.56],[5.072,-33.9,55.92],[5.138,-33.43,54.38],[5.205,-32.93,52.95],[5.272,-32.18,51.54],[5.339,-31.51,50.32],[5.405,-30.69,49.13],[5.472,-29.8,48.02],[5.539,-28.78,46.97],[5.606,-27.75,46.04],[5.672,-26.55,45.2],[5.739,-25.38,44.49],[5.806,-24.19,43.84],[5.872,-22.98,43.2],[5.939,-21.76,42.58],[6.006,-20.52,42.02],[6.073,-19.27,41.5],[6.139,-18.07,40.94],[6.206,-16.92,40.4],[6.273,-15.85,39.87],[6.34,-14.89,39.39],[6.406,-13.98,38.89],[6.473,-13.15,38.42],[6.54,-12.32,37.91],[6.607,-11.47,37.37],[6.673,-10.74,36.89],[6.74,-10.04,36.41],[6.807,-9.41,35.95],[6.873,-8.77,35.49],[6.94,-8.16,35.05],[7.007,-7.62,34.64],[7.074,-7.1,34.19],[7.141,-6.57,33.68],[7.207,-6.03,33.12],[7.274,-5.43,32.48],[7.341,-4.88,31.83],[7.407,-4.38,31.2],[7.474,-3.92,30.54],[7.541,-3.56,29.93],[7.608,-3.31,29.35],[7.674,-3.12,28.81],[7.741,-2.99,28.31],[7.808,-2.89,27.81],[7.875,-2.71,27.28],[7.941,-2.52,26.72],[8.008,-2.23,26.08],[8.075,-1.85,25.38],[8.142,-1.4,24.64],[8.208,-0.88,23.9],[8.275,-0.27,23.15],[8.342,0.38,22.4],[8.408,1.08,21.68],[8.475,1.74,21.0],[8.542,2.4,20.39],[8.609,3.04,19.82],[8.675,3.67,19.27],[8.742,4.28,18.75],[8.809,4.88,18.26],[8.876,5.48,17.77]]],"has_video":true}]</script></section>
 <section class="shootout-context-panel" data-goalie-id="8478039" id="season-record">
 <h2>Kaapo Kahkonen's attempts faced by season</h2>
 <div class="shootout-table-scroll"><table class="shootout-season-table"><caption>Regular-season attempts from 2023–24 onward</caption>

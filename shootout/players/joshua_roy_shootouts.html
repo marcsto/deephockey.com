@@ -18,6 +18,8 @@
 <link href="/css/shootout-scouting.css?v=2e65caae388c" rel="stylesheet"/>
 <link href="/css/shootout-shot-map.css?v=475d48420075" rel="stylesheet"/>
 <script defer="" src="/js/shootout-shot-map.js?v=b684577f7f26"></script>
+<link href="/css/shootout-trajectories.css?v=72c494053468" rel="stylesheet"/>
+<script defer="" src="/js/shootout-trajectories.js?v=84608c84b272"></script>
 </head>
 <body>
 <!-- App Container -->
@@ -34,6 +36,7 @@
 <section aria-label="Shootout summary" class="shootout-overview">
 <p class="career-shootout-summary">Joshua Roy has scored <strong>0 goals on 1 career NHL shootout attempt</strong> (0.0%).</p>
 <p>Watch his shootout attempt below. His latest listed attempt came against the Tampa Bay Lightning on March 2, 2024.</p>
+<a class="trajectory-entry-link" href="#trajectories">Explore paths to the net ↓</a>
 <a href="#season-record">Season breakdown and recent results ↓</a></section>
 <!-- Shootout Container -->
 <div class="shootout-container shootout-person-layout">
@@ -273,6 +276,56 @@
 </div>
 </div>
 </div>
+<section aria-labelledby="trajectory-title" class="shootout-trajectories" data-role="player" data-total="1" data-tracked="1" data-version="video-routes-v1" id="trajectories"><div class="trajectory-heading"><div><p class="trajectory-eyebrow">From the video to the ice</p>
+<h2 id="trajectory-title">Paths to the net</h2><p class="trajectory-intro">See the approach. Spot the cut. Compare the finish.</p></div>
+<span class="trajectory-coverage">1 of 1 attempts with usable tracking</span></div>
+<div aria-label="Filter trajectories by result" class="trajectory-filters" role="group"><button aria-pressed="true" data-route-filter="all" type="button">All paths <span>1</span></button><button aria-pressed="false" data-route-filter="goal" type="button">Goals <span>0</span></button><button aria-pressed="false" data-route-filter="save" type="button">Saves <span>1</span></button><button aria-pressed="false" data-route-filter="miss" type="button">Misses <span>0</span></button></div>
+<div class="trajectory-layout">
+<div class="trajectory-canvas">
+<div class="trajectory-orientation"><span>Shooter’s left</span><span>Facing the net ↑</span><span>Shooter’s right</span></div>
+<svg aria-labelledby="trajectory-rink-title trajectory-rink-desc" class="trajectory-rink" role="img" viewbox="-48 -4 96 110">
+<title id="trajectory-rink-title">Video-derived skater paths toward the net</title>
+<desc id="trajectory-rink-desc">Both rink ends are rotated to face the net at the top. Use the attempt selector to explore each route.</desc>
+<defs><clippath id="trajectory-ice-clip"><path d="M -42.5 100 V 28 A 28 28 0 0 1 -14.5 0 H 14.5 A 28 28 0 0 1 42.5 28 V 100 Z"></path></clippath></defs>
+<path class="trajectory-ice" d="M -42.5 100 V 28 A 28 28 0 0 1 -14.5 0 H 14.5 A 28 28 0 0 1 42.5 28 V 100"></path>
+<g clip-path="url(#trajectory-ice-clip)">
+<g class="trajectory-rink-lines"><path d="M -42.5 11 H 42.5 M -11 11 L -14 0 M 11 11 L 14 0"></path>
+<circle cx="-22" cy="31" r="15"></circle><circle cx="22" cy="31" r="15"></circle>
+<circle cx="-22" cy="31" r=".8"></circle><circle cx="22" cy="31" r=".8"></circle>
+<path class="trajectory-blue-line" d="M -42.5 75 H 42.5"></path>
+<path d="M -42.5 100 H 42.5"></path><circle class="trajectory-center-circle" cy="100" r="15"></circle></g>
+<path class="trajectory-center-guide" d="M 0 20 V 98"></path>
+<path class="trajectory-crease" d="M -4 11 V 15.5 A 6.083 6.083 0 0 0 4 15.5 V 11 Z"></path>
+<g class="trajectory-routes"><path class="trajectory-route" d="M -1.67 90.51 L -2.52 89.43 L -3.57 88.42 L -4.73 87.41 L -5.82 86.38 L -6.93 85.4 L -8.11 84.48 L -9.39 83.62 L -10.72 82.78 L -12.08 81.96 L -13.51 81.16 L -14.97 80.37 L -16.43 79.58 L -17.86 78.8 L -19.26 78.02 L -20.62 77.2 L -21.92 76.36 L -23.17 75.46 L -24.36 74.53 L -25.41 73.53 L -26.28 72.45 L -26.98 71.32 L -27.54 70.11 L -28.04 68.84 L -28.48 67.51 L -28.97 66.22 L -29.38 64.85 L -29.73 63.42 L -29.91 61.94 L -30.33 60.55 L -30.52 59 L -30.6 57.43 L -30.61 55.87 L -30.48 54.29 L -30.31 52.73 L -30.02 51.15 L -29.79 49.63 L -29.52 48.16 L -29.29 46.73 L -28.96 45.32 L -28.48 43.93 L -27.89 42.6 L -27.18 41.32 L -26.36 40.09 L -25.52 38.92 L -24.75 37.85 L -23.97 36.86 L -23.16 35.96 L -22.33 35.12 L -21.41 34.35 L -20.41 33.63 L -19.35 32.96 L -18.23 32.32 L -17.07 31.72 L -15.88 31.15 L -14.69 30.61 L -13.52 30.06 L -12.37 29.46 L -11.25 28.8 L -10.14 28.1 L -9.11 27.33 L -8.1 26.5 L -7.09 25.68 L -6.09 24.92 L -5.08 24.19 L -4.05 23.47 L -3 22.74 L -1.96 22.01 L -0.93 21.3 L 0.08 20.6 L 1.07 19.93 L 2.07 19.28 L 3.05 18.65 L 4.03 18.02" data-result="save" data-route-id="2023020963-12"><title>Mar 02, 2024 · Lightning · Save</title></path></g>
+<path class="trajectory-selected-halo"></path><path class="trajectory-selected-path"></path>
+<circle class="trajectory-start" r="1.1"></circle><circle class="trajectory-cursor" r="1.5"></circle>
+</g>
+<path class="trajectory-net" d="M -3 11 V 8.8 Q -3 7.67 -1.7 7.67 H 1.7 Q 3 7.67 3 8.8 V 11 Z"></path>
+<text class="trajectory-rink-label" x="-40" y="72">BLUE LINE</text>
+<text class="trajectory-rink-label" text-anchor="middle" x="0" y="104">CENTER ICE</text>
+</svg>
+<p class="trajectory-map-key"><span class="trajectory-key-start"></span>First tracked position <span class="trajectory-key-end"></span>Selected position</p>
+</div>
+<div class="trajectory-controls">
+<label class="trajectory-select-label" for="trajectory-attempt">Explore an attempt</label>
+<select id="trajectory-attempt"><option value="2023020963-12">Mar 02, 2024 · Save · Lightning</option></select>
+<div class="trajectory-step"><button aria-label="Previous tracked attempt" class="trajectory-previous" type="button">← Previous</button><span class="trajectory-position"></span><button aria-label="Next tracked attempt" class="trajectory-next" type="button">Next →</button></div>
+<div aria-atomic="true" aria-live="polite" class="trajectory-detail"><span class="trajectory-result"></span><h3 class="trajectory-opponent"></h3><p class="trajectory-date"></p>
+<dl class="trajectory-metrics"><div><dt>Approach lane</dt><dd class="trajectory-lane"></dd></div><div><dt>Tracked span</dt><dd class="trajectory-duration"></dd></div></dl></div>
+<div class="trajectory-replay"><button class="trajectory-play" type="button">↻ Replay route</button><output class="trajectory-time" for="trajectory-progress"></output></div>
+<label class="trajectory-sr-only" for="trajectory-progress">Position along selected trajectory</label>
+<input id="trajectory-progress" max="1000" min="0" step="1" type="range" value="1000"/>
+<p class="trajectory-gap" hidden="" role="status">Tracking gap · no position shown</p>
+<label class="trajectory-compare"><input checked="" type="checkbox"/> Compare with other paths</label>
+<a class="trajectory-watch attempt-jump" data-attempt-id="2023020963-12" href="?v=2023020963-12">Watch this attempt <span aria-hidden="true">↗</span></a>
+<p class="trajectory-no-video" hidden="">Video unavailable for this attempt.</p>
+<p class="trajectory-selection-hint">Choose an attempt above or tap a path on the ice.</p>
+</div></div>
+<p class="trajectory-filter-empty" hidden="" role="status">No tracked attempts match this result. Choose another filter.</p>
+<p class="trajectory-note">Skater paths estimated from video · both ends rotated toward the same net · 1 tracked, 0 unavailable.</p>
+<details class="trajectory-method"><summary>About these paths</summary><p>Only paths passing automatic tracking and approach checks are shown. Lines connect trusted observed positions; breaks mark missing tracking. Routes begin at center ice or the first available position and stop at the closest tracked point to the net. The endpoint is not a measured shot release. Replay follows the video timing across the displayed span. Colors show the official attempt result; the paths track the skater, not the puck. Coverage is for the attempts listed on this page, not the full career.</p></details>
+<noscript><p class="trajectory-note">Enable JavaScript to select, filter, and replay paths. The map above shows all available routes.</p></noscript>
+<script class="trajectory-data" type="application/json">[{"id":"2023020963-12","game_id":2023020963,"event_id":238,"date":"Mar 02, 2024","opponent":"Lightning","result":"save","result_label":"Save","type":"Wrist","side":"left","segments":[[[0.2,-1.67,90.51],[0.267,-2.52,89.43],[0.334,-3.57,88.42],[0.4,-4.73,87.41],[0.467,-5.82,86.38],[0.534,-6.93,85.4],[0.601,-8.11,84.48],[0.667,-9.39,83.62],[0.734,-10.72,82.78],[0.801,-12.08,81.96],[0.868,-13.51,81.16],[0.934,-14.97,80.37],[1.001,-16.43,79.58],[1.068,-17.86,78.8],[1.135,-19.26,78.02],[1.201,-20.62,77.2],[1.268,-21.92,76.36],[1.335,-23.17,75.46],[1.401,-24.36,74.53],[1.468,-25.41,73.53],[1.535,-26.28,72.45],[1.602,-26.98,71.32],[1.668,-27.54,70.11],[1.735,-28.04,68.84],[1.802,-28.48,67.51],[1.869,-28.97,66.22],[1.935,-29.38,64.85],[2.002,-29.73,63.42],[2.069,-29.91,61.94],[2.135,-30.33,60.55],[2.202,-30.52,59.0],[2.269,-30.6,57.43],[2.336,-30.61,55.87],[2.402,-30.48,54.29],[2.469,-30.31,52.73],[2.536,-30.02,51.15],[2.603,-29.79,49.63],[2.669,-29.52,48.16],[2.736,-29.29,46.73],[2.803,-28.96,45.32],[2.869,-28.48,43.93],[2.936,-27.89,42.6],[3.003,-27.18,41.32],[3.07,-26.36,40.09],[3.136,-25.52,38.92],[3.203,-24.75,37.85],[3.27,-23.97,36.86],[3.337,-23.16,35.96],[3.403,-22.33,35.12],[3.47,-21.41,34.35],[3.537,-20.41,33.63],[3.604,-19.35,32.96],[3.67,-18.23,32.32],[3.737,-17.07,31.72],[3.804,-15.88,31.15],[3.87,-14.69,30.61],[3.937,-13.52,30.06],[4.004,-12.37,29.46],[4.071,-11.25,28.8],[4.138,-10.14,28.1],[4.204,-9.11,27.33],[4.271,-8.1,26.5],[4.338,-7.09,25.68],[4.404,-6.09,24.92],[4.471,-5.08,24.19],[4.538,-4.05,23.47],[4.605,-3.0,22.74],[4.671,-1.96,22.01],[4.738,-0.93,21.3],[4.805,0.08,20.6],[4.872,1.07,19.93],[4.938,2.07,19.28],[5.005,3.05,18.65],[5.072,4.03,18.02]]],"has_video":true}]</script></section>
 <section class="shootout-context-panel" data-player-id="8482749" id="season-record">
 <h2>Joshua Roy's attempts by season</h2>
 <div class="shootout-table-scroll"><table class="shootout-season-table"><caption>Regular-season attempts from 2023–24 onward</caption>
