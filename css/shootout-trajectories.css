@@ -14,7 +14,7 @@
 .shootout-trajectories :is(button, select, a, input, summary):focus-visible { outline: 2px solid #9fe7f0; outline-offset: 4px; }
 .trajectory-filters button { border-radius: 2rem; background: transparent; }
 .trajectory-filters button span { margin-left: .3rem; font-variant-numeric: tabular-nums; opacity: .8; }
-.trajectory-filters button[aria-pressed="true"] { border-color: #b1e2ed; background: #b1e2ed; color: #112334; }
+.shootout-trajectories .trajectory-filters button[aria-pressed="true"] { border-color: #b1e2ed; background: #b1e2ed; color: #112334; }
 .trajectory-filters button[data-route-filter="goal"]::before, .trajectory-filters button[data-route-filter="save"]::before, .trajectory-filters button[data-route-filter="miss"]::before { content: ''; display: inline-block; width: .5rem; height: .5rem; margin-right: .4rem; border-radius: 50%; background: var(--route-color); box-shadow: 0 0 0 1px #132a3d; }
 .shootout-trajectories [data-result="goal"], .shootout-trajectories [data-route-filter="goal"] { --route-color: var(--route-goal); }
 .shootout-trajectories [data-result="save"], .shootout-trajectories [data-route-filter="save"] { --route-color: var(--route-save); }
