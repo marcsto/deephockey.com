@@ -29,4 +29,12 @@
 .shot-map-point[data-has-video="false"] g, .shot-map-video-key[data-has-video="false"] g { stroke: #263449; stroke-width: .45; stroke-dasharray: .6 .35; }
 .shot-map-point:hover g, .shot-map-point:focus g { stroke-width: .75; filter: drop-shadow(0 0 .2px #1d4ed8); }
 .shot-map-point:focus { outline: none; }
+.shot-map-current-ring { display: none; fill: none; stroke: #1d4ed8; stroke-width: .65; stroke-dasharray: none; }
+.shot-map-point.is-current .shot-map-current-ring { display: block; }
+.shot-map-key { color: #a7b7c9; font-size: .8rem; }
+.shot-map-key summary { display: flex; align-items: center; min-height: 44px; cursor: pointer; color: #bfdbfe; }
+.shot-map-key summary::before { content: '+'; margin-right: .5rem; }
+.shot-map-key[open] summary::before { content: '−'; }
+.shot-map-key summary:focus-visible { outline: 2px solid #93c5fd; outline-offset: 2px; }
+.shot-map-key .shot-map-hint { margin-top: .3rem; }
 @media (max-width: 600px) { .shootout-shot-map { padding: .85rem; } .shot-map-results, .shot-map-types { gap: .35rem .85rem; } }

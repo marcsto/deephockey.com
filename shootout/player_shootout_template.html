@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="../../css/styles.css">
     <link rel="stylesheet" href="../../css/shootout.css">
     <link rel="stylesheet" href="/css/shootout-context.css">
+    <link rel="stylesheet" href="/css/shootout-player.css">
 </head>
 <body>
     <!-- App Container -->
@@ -36,7 +37,7 @@
                 <div class="left-column">
                     <!-- Video Player -->
                     <div class="video-player-container">
-                        <video id="shootout-video" class="video-player" controls>
+                        <video id="shootout-video" class="video-player" controls playsinline>
                             <source src="{{FIRST_VIDEO_URL}}" type="video/mp4">
                             Your browser does not support the video tag.
                         </video>
@@ -45,21 +46,31 @@
                             <h3>No Video Available</h3>
                             <p>Unfortunately, there is no video available for this shootout attempt.</p>
                         </div>
-                        <div class="video-info">
-                            <div class="video-title" id="video-title">{{FIRST_VIDEO_TITLE}}</div>
-                            <div class="video-details" id="video-details">
-                                {{FIRST_VIDEO_DETAILS}}
+                        <div class="video-navigation" aria-label="Video navigation">
+                            <button type="button" class="video-nav-button" id="previous-video" aria-label="Previous video" disabled>
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m15 6-6 6 6 6"/></svg>
+                            </button>
+                            <div class="video-info">
+                                <div class="video-title" id="video-title">{{FIRST_VIDEO_TITLE}}</div>
+                                <div class="video-details" id="video-details">{{FIRST_VIDEO_DETAILS}}</div>
                             </div>
+                            <button type="button" class="video-nav-button" id="next-video" aria-label="Next video" disabled>
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg>
+                            </button>
                         </div>
                         <div class="video-controls">
+                            <button type="button" class="browse-videos" id="browse-videos" aria-haspopup="dialog" aria-expanded="false" aria-controls="video-picker" disabled>
+                                <span>Browse videos</span><span class="video-position" id="video-position"></span>
+                            </button>
                             <div class="autoplay-control">
                                 <label class="toggle-switch">
-                                    <input type="checkbox" id="autoplay-toggle" checked>
+                                    <input type="checkbox" id="autoplay-toggle" aria-label="Autoplay next video" checked>
                                     <span class="toggle-slider"></span>
-                                    <span class="toggle-label">Auto-play next video</span>
+                                    <span class="toggle-label">Autoplay</span>
                                 </label>
                             </div>
                         </div>
+                        <p class="video-status" id="video-status" aria-live="polite" aria-atomic="true"></p>
                     </div>
 
                     <!-- Player Stats (desktop: below video) -->
@@ -96,178 +107,21 @@
 
     </div>
 
+    <dialog class="video-picker" id="video-picker" aria-labelledby="video-picker-title">
+        <div class="video-picker-heading">
+            <h2 id="video-picker-title">{{PLAYER_NAME}} videos</h2>
+            <button type="button" class="video-picker-close" aria-label="Close video picker" autofocus>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18"/></svg>
+            </button>
+        </div>
+        <div class="video-picker-filters" role="group" aria-label="Filter videos">
+            <button type="button" data-video-filter="all" aria-pressed="true">All videos</button>
+            <button type="button" data-video-filter="goal" aria-pressed="false">Goals</button>
+        </div>
+        <p class="video-picker-empty" id="video-picker-empty" role="status" hidden></p>
+        <div class="video-picker-list" id="video-picker-list" aria-label="Available videos"></div>
+    </dialog>
     <script src="../../js/main.js"></script>
-    <script>
-        // Shootout video player functionality
-        document.addEventListener('DOMContentLoaded', function() {
-            const video = document.getElementById('shootout-video');
-            const videoTitle = document.getElementById('video-title');
-            const videoDetails = document.getElementById('video-details');
-            const noVideoMessage = document.getElementById('no-video-message');
-            const attemptItems = document.querySelectorAll('.attempt-item');
-            const autoplayToggle = document.getElementById('autoplay-toggle');
-
-            // Load autoplay preference from localStorage (default: true)
-            const savedAutoplay = localStorage.getItem('shootout-autoplay');
-            if (savedAutoplay !== null) {
-                autoplayToggle.checked = savedAutoplay === 'true';
-            }
-
-            // Save autoplay preference when changed
-            autoplayToggle.addEventListener('change', function() {
-                localStorage.setItem('shootout-autoplay', this.checked);
-            });
-
-            // URL parameter functions
-            function updateURLParameter(videoId) {
-                const url = new URL(window.location);
-                // Always set the video ID parameter for stable links
-                url.searchParams.set('v', videoId);
-                window.history.replaceState({}, '', url);
-            }
-
-            function getVideoIdFromURL() {
-                const urlParams = new URLSearchParams(window.location.search);
-                return urlParams.get('v');
-            }
-
-            function findVideoIndexById(videoId) {
-                for (let i = 0; i < attemptItems.length; i++) {
-                    if (attemptItems[i].dataset.videoId === videoId) {
-                        return i;
-                    }
-                }
-                return 0; // Default to first video if not found
-            }
-
-            // Function to play specific video by index
-            function playVideoByIndex(index) {
-                if (index < 0 || index >= attemptItems.length) return;
-                
-                const item = attemptItems[index];
-                
-                // Remove active class from all items
-                attemptItems.forEach(i => i.classList.remove('active'));
-                
-                // Add active class to current item
-                item.classList.add('active');
-                
-                // Update URL parameter with video ID
-                const videoId = item.dataset.videoId;
-                updateURLParameter(videoId);
-                
-                // Update video source
-                const videoSrc = item.dataset.video;
-                const hasVideo = item.dataset.hasVideo === 'true';
-                const title = item.dataset.title;
-                const details = item.dataset.details;
-                
-                // Update title and details
-                videoTitle.textContent = title;
-                videoDetails.innerHTML = details;
-                
-                // Show video or no-video message
-                if (hasVideo && videoSrc) {
-                    video.style.display = 'block';
-                    noVideoMessage.style.display = 'none';
-                    video.src = videoSrc;
-                    video.load();
-                    video.play().catch(e => console.log('Auto-play prevented:', e));
-                } else {
-                    video.style.display = 'none';
-                    noVideoMessage.style.display = 'flex';
-                    video.pause();
-                    video.src = '';
-                }
-            }
-
-            // Function to get current active video index
-            function getCurrentVideoIndex() {
-                for (let i = 0; i < attemptItems.length; i++) {
-                    if (attemptItems[i].classList.contains('active')) {
-                        return i;
-                    }
-                }
-                return 0;
-            }
-
-            // Function to play next video
-            function playNextVideo() {
-                const currentIndex = getCurrentVideoIndex();
-                let nextIndex = currentIndex + 1;
-                
-                // Skip attempts without videos
-                while (nextIndex < attemptItems.length && attemptItems[nextIndex].dataset.hasVideo !== 'true') {
-                    nextIndex++;
-                }
-                
-                if (nextIndex < attemptItems.length) {
-                    playVideoByIndex(nextIndex);
-                    
-                    // Scroll to video on mobile devices
-                    if (window.innerWidth <= 768) {
-                        const videoContainer = document.querySelector('.video-player-container');
-                        videoContainer.scrollIntoView({ 
-                            behavior: 'smooth', 
-                            block: 'center' 
-                        });
-                    }
-                } else {
-                    console.log('Last video reached');
-                }
-            }
-
-            // Add click handlers to attempt items
-            attemptItems.forEach((item, index) => {
-                item.addEventListener('click', function(event) {
-                    if (event.target.closest('a')) return;
-                    playVideoByIndex(index);
-                    
-                    // Scroll to video on mobile devices
-                    if (window.innerWidth <= 768) {
-                        const videoContainer = document.querySelector('.video-player-container');
-                        videoContainer.scrollIntoView({ 
-                            behavior: 'smooth', 
-                            block: 'center' 
-                        });
-                    }
-                });
-            });
-
-            document.querySelectorAll('.attempt-jump').forEach(link => {
-                link.addEventListener('click', function(event) {
-                    event.preventDefault();
-                    playVideoByIndex(findVideoIndexById(this.dataset.attemptId));
-                    document.querySelector('.video-player-container').scrollIntoView({ behavior: 'smooth', block: 'center' });
-                });
-            });
-
-            // Auto-advance to next video when current video ends
-            video.addEventListener('ended', function() {
-                if (autoplayToggle.checked) {
-                    setTimeout(() => {
-                        playNextVideo();
-                    }, 1000); // 1 second delay before next video
-                }
-            });
-
-            // Initialize from URL parameter and auto-play
-            setTimeout(() => {
-                const videoId = getVideoIdFromURL();
-                
-                if (videoId) {
-                    // Load video from URL parameter by ID
-                    const videoIndex = findVideoIndexById(videoId);
-                    playVideoByIndex(videoIndex);
-                } else {
-                    // No URL parameter - load first video and set its ID in URL
-                    playVideoByIndex(0);
-                    if (attemptItems[0].dataset.hasVideo === 'true' && attemptItems[0].dataset.video) {
-                        video.play().catch(e => console.log('Auto-play prevented:', e));
-                    }
-                }
-            }, 1000);
-        });
-    </script>
+    <script src="/js/shootout-player.js" defer></script>
 </body>
 </html>

@@ -28,5 +28,5 @@
 .scouting-method summary { cursor: pointer; width: fit-content; }
 .scouting-method p { margin: .6rem 0 0; max-width: 100ch; }
 @media (max-width: 600px) { .shootout-scouting, .shootout-goalie-approaches { padding: 1rem; } .scouting-evidence { gap: .3rem .9rem; } }
-/* Keep one visible stats block above the scouting/approach read on phones too. */
+/* Keep one visible stats block following the scouting/approach read on phones too. */
 @media (max-width: 768px) { .shootout-person-layout .player-stats-desktop { display: block; } .shootout-person-layout .player-stats-mobile { display: none; } }

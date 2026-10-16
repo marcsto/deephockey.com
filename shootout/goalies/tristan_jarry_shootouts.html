@@ -13,10 +13,11 @@
 <link href="../../css/styles.css" rel="stylesheet"/>
 <link href="../../css/shootout.css" rel="stylesheet"/>
 <link href="/css/shootout-context.css" rel="stylesheet"/>
+<link href="/css/shootout-player.css?v=91ee5f299048" rel="stylesheet"/>
 <link href="https://www.deephockey.com/shootout/goalies/tristan_jarry_shootouts.html" rel="canonical"/>
-<link href="/css/shootout-scouting.css?v=a917770e7c94" rel="stylesheet"/>
-<link href="/css/shootout-shot-map.css" rel="stylesheet"/>
-<script defer="" src="/js/shootout-shot-map.js"></script>
+<link href="/css/shootout-scouting.css?v=359e16daf2cf" rel="stylesheet"/>
+<link href="/css/shootout-shot-map.css?v=475d48420075" rel="stylesheet"/>
+<script defer="" src="/js/shootout-shot-map.js?v=b684577f7f26"></script>
 </head>
 <body>
 <!-- App Container -->
@@ -40,7 +41,7 @@
 <div class="left-column">
 <!-- Video Player -->
 <div class="video-player-container">
-<video class="video-player" controls="" id="shootout-video">
+<video class="video-player" controls="" id="shootout-video" playsinline="">
 <source src="https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/09f9e6e3-117b-4d5f-afa6-29cd902b3df8.mp4" type="video/mp4"/>
                             Your browser does not support the video tag.
                         </video>
@@ -49,26 +50,36 @@
 <h3>No Video Available</h3>
 <p>Unfortunately, there is no video available for this shootout attempt.</p>
 </div>
+<div aria-label="Video navigation" class="video-navigation">
+<button aria-label="Previous video" class="video-nav-button" disabled="" id="previous-video" type="button">
+<svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><path d="m15 6-6 6 6 6"></path></svg>
+</button>
 <div class="video-info">
 <div class="video-title" id="video-title">vs Stars</div>
-<div class="video-details" id="video-details">
-                                Dec 07, 2025 • Hit Crossbar • Snap<br/>Shootout Attempt #1
-                            </div>
+<div class="video-details" id="video-details">Dec 07, 2025 • Hit Crossbar • Snap</div>
+</div>
+<button aria-label="Next video" class="video-nav-button" disabled="" id="next-video" type="button">
+<svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><path d="m9 6 6 6-6 6"></path></svg>
+</button>
 </div>
 <div class="video-controls">
+<button aria-controls="video-picker" aria-expanded="false" aria-haspopup="dialog" class="browse-videos" disabled="" id="browse-videos" type="button">
+<span>Browse videos</span><span class="video-position" id="video-position"></span>
+</button>
 <div class="autoplay-control">
 <label class="toggle-switch">
-<input checked="" id="autoplay-toggle" type="checkbox"/>
+<input aria-label="Autoplay next video" checked="" id="autoplay-toggle" type="checkbox"/>
 <span class="toggle-slider"></span>
-<span class="toggle-label">Auto-play next video</span>
+<span class="toggle-label">Autoplay</span>
 </label>
 </div>
 </div>
+<p aria-atomic="true" aria-live="polite" class="video-status" id="video-status"></p>
 </div>
 <section aria-labelledby="shot-map-title" class="shootout-shot-map" data-role="goalie" id="shot-map">
 <div class="shot-map-heading"><h3 id="shot-map-title">Shot locations faced</h3>
 <label class="shot-map-toggle"><input aria-controls="shot-map-recent shot-map-career" autocomplete="off" class="shot-map-career-toggle" type="checkbox"/> Show full career</label></div>
-<p class="shot-map-hint">Fill = result · Shape = shot type · Select a marker for details or video</p>
+<p class="shot-map-hint">Select a shot to watch or view details.</p>
 <div class="shot-map-panel" data-attempts="15" data-goals="7" data-missing-location="0" data-no-shot="0" data-outside-view="0" data-plotted="15" data-scope="recent" id="shot-map-recent">
 <p class="shot-map-summary"><strong>2023–24 onward</strong> · 7 goals allowed on 15 attempts faced (46.7% goals allowed)</p>
 <div aria-label="Results" class="shot-map-results"><span><i aria-hidden="true" style="background:#007d60"></i>Goals allowed <strong>7</strong></span><span><i aria-hidden="true" style="background:#c27500"></i>Saves <strong>6</strong></span><span><i aria-hidden="true" style="background:#bb3670"></i>Misses <strong>2</strong></span></div>
@@ -83,27 +94,29 @@
 </g>
 <path class="shot-map-crease" d="M -4 11 V 15.5 A 6.083 6.083 0 0 0 4 15.5 V 11 Z"></path>
 <path class="shot-map-net" d="M -3 11 V 8.8 Q -3 7.67 -1.7 7.67 H 1.7 Q 3 7.67 3 8.8 V 11 Z"></path><g class="shot-map-stems"></g><a aria-label="2025-12-07 · Miss · Snap · 19.0 ft from net · Open attempt" class="attempt-jump shot-map-point" data-attempt-id="2025020456-1" data-board-distance="30" data-event-id="805" data-game-id="2025020456" data-has-video="true" data-result="miss" data-rink-side="-0" data-shot-type="snap" href="?v=2025020456-1" tabindex="0">
-<title>2025-12-07 · Miss · Snap · 19.0 ft from net · Open attempt</title><g fill="#bb3670" transform="translate(0.000 30.000) scale(.7)"><path d="M 0 -1.35 L 1.25 1 L -1.25 1 Z"></path></g></a><a aria-label="2025-12-07 · Save · Snap · 20.0 ft from net · Open attempt" class="attempt-jump shot-map-point" data-attempt-id="2025020456-3" data-board-distance="31" data-event-id="806" data-game-id="2025020456" data-has-video="true" data-result="save" data-rink-side="-1" data-shot-type="snap" href="?v=2025020456-3" tabindex="0">
-<title>2025-12-07 · Save · Snap · 20.0 ft from net · Open attempt</title><g fill="#c27500" transform="translate(1.000 31.000) scale(.7)"><path d="M 0 -1.35 L 1.25 1 L -1.25 1 Z"></path></g></a><a aria-label="2025-12-07 · Goal allowed · Snap · 24.0 ft from net · Open attempt" class="attempt-jump shot-map-point" data-attempt-id="2025020456-5" data-board-distance="35" data-event-id="808" data-game-id="2025020456" data-has-video="true" data-result="goal" data-rink-side="1" data-shot-type="snap" href="?v=2025020456-5" tabindex="0">
-<title>2025-12-07 · Goal allowed · Snap · 24.0 ft from net · Open attempt</title><g fill="#007d60" transform="translate(-1.000 35.000) scale(.7)"><path d="M 0 -1.35 L 1.25 1 L -1.25 1 Z"></path></g></a><a aria-label="2025-03-23 · Goal allowed · Backhand · 13.3 ft from net · Open attempt" class="attempt-jump shot-map-point" data-attempt-id="2024021120-1" data-board-distance="24" data-event-id="804" data-game-id="2024021120" data-has-video="true" data-result="goal" data-rink-side="-3" data-shot-type="backhand" href="?v=2024021120-1" tabindex="0">
-<title>2025-03-23 · Goal allowed · Backhand · 13.3 ft from net · Open attempt</title><g fill="#007d60" transform="translate(3.000 24.000) scale(.7)"><rect height="2" rx=".12" width="2" x="-1" y="-1"></rect></g></a><a aria-label="2025-03-23 · Save · Backhand · 12.1 ft from net · Open attempt" class="attempt-jump shot-map-point" data-attempt-id="2024021120-3" data-board-distance="22" data-event-id="811" data-game-id="2024021120" data-has-video="true" data-result="save" data-rink-side="-5" data-shot-type="backhand" href="?v=2024021120-3" tabindex="0">
-<title>2025-03-23 · Save · Backhand · 12.1 ft from net · Open attempt</title><g fill="#c27500" transform="translate(5.000 22.000) scale(.7)"><rect height="2" rx=".12" width="2" x="-1" y="-1"></rect></g></a><a aria-label="2025-03-23 · Miss · Snap · 24.0 ft from net · Open attempt" class="attempt-jump shot-map-point" data-attempt-id="2024021120-5" data-board-distance="34" data-event-id="817" data-game-id="2024021120" data-has-video="true" data-result="miss" data-rink-side="-7" data-shot-type="snap" href="?v=2024021120-5" tabindex="0">
-<title>2025-03-23 · Miss · Snap · 24.0 ft from net · Open attempt</title><g fill="#bb3670" transform="translate(7.000 34.000) scale(.7)"><path d="M 0 -1.35 L 1.25 1 L -1.25 1 Z"></path></g></a><a aria-label="2025-01-07 · Goal allowed · Wrist · 24.0 ft from net · Open attempt" class="attempt-jump shot-map-point" data-attempt-id="2024020645-1" data-board-distance="35" data-event-id="569" data-game-id="2024020645" data-has-video="true" data-result="goal" data-rink-side="-1" data-shot-type="wrist" href="?v=2024020645-1" tabindex="0">
-<title>2025-01-07 · Goal allowed · Wrist · 24.0 ft from net · Open attempt</title><g fill="#007d60" transform="translate(1.000 35.000) scale(.7)"><circle r="1.05"></circle></g></a><a aria-label="2025-01-07 · Save · Wrist · 10.8 ft from net · Open attempt" class="attempt-jump shot-map-point" data-attempt-id="2024020645-3" data-board-distance="21" data-event-id="571" data-game-id="2024020645" data-has-video="true" data-result="save" data-rink-side="4" data-shot-type="wrist" href="?v=2024020645-3" tabindex="0">
-<title>2025-01-07 · Save · Wrist · 10.8 ft from net · Open attempt</title><g fill="#c27500" transform="translate(-4.000 21.000) scale(.7)"><circle r="1.05"></circle></g></a><a aria-label="2025-01-07 · Goal allowed · Wrist · 12.2 ft from net · Open attempt" class="attempt-jump shot-map-point" data-attempt-id="2024020645-5" data-board-distance="23" data-event-id="573" data-game-id="2024020645" data-has-video="true" data-result="goal" data-rink-side="2" data-shot-type="wrist" href="?v=2024020645-5" tabindex="0">
-<title>2025-01-07 · Goal allowed · Wrist · 12.2 ft from net · Open attempt</title><g fill="#007d60" transform="translate(-2.000 23.000) scale(.7)"><circle r="1.05"></circle></g></a><a aria-label="2025-01-03 · Save · Wrist · 10.0 ft from net · Open attempt" class="attempt-jump shot-map-point" data-attempt-id="2024020615-1" data-board-distance="21" data-event-id="340" data-game-id="2024020615" data-has-video="true" data-result="save" data-rink-side="-1" data-shot-type="wrist" href="?v=2024020615-1" tabindex="0">
-<title>2025-01-03 · Save · Wrist · 10.0 ft from net · Open attempt</title><g fill="#c27500" transform="translate(1.000 21.000) scale(.7)"><circle r="1.05"></circle></g></a><a aria-label="2025-01-03 · Goal allowed · Snap · 14.0 ft from net · Open attempt" class="attempt-jump shot-map-point" data-attempt-id="2024020615-3" data-board-distance="25" data-event-id="342" data-game-id="2024020615" data-has-video="true" data-result="goal" data-rink-side="-0" data-shot-type="snap" href="?v=2024020615-3" tabindex="0">
-<title>2025-01-03 · Goal allowed · Snap · 14.0 ft from net · Open attempt</title><g fill="#007d60" transform="translate(0.000 25.000) scale(.7)"><path d="M 0 -1.35 L 1.25 1 L -1.25 1 Z"></path></g></a><a aria-label="2025-01-03 · Goal allowed · Snap · 24.4 ft from net · Open attempt" class="attempt-jump shot-map-point" data-attempt-id="2024020615-5" data-board-distance="31" data-event-id="344" data-game-id="2024020615" data-has-video="true" data-result="goal" data-rink-side="-14" data-shot-type="snap" href="?v=2024020615-5" tabindex="0">
-<title>2025-01-03 · Goal allowed · Snap · 24.4 ft from net · Open attempt</title><g fill="#007d60" transform="translate(14.000 31.000) scale(.7)"><path d="M 0 -1.35 L 1.25 1 L -1.25 1 Z"></path></g></a><a aria-label="2023-12-02 · Save · Wrist · 10.8 ft from net · Video unavailable" class="attempt-jump shot-map-point" data-attempt-id="2023020363-1" data-board-distance="21" data-event-id="445" data-game-id="2023020363" data-has-video="false" data-result="save" data-rink-side="-4" data-shot-type="wrist" href="?v=2023020363-1" tabindex="0">
-<title>2023-12-02 · Save · Wrist · 10.8 ft from net · Video unavailable</title><g fill="#c27500" transform="translate(4.000 21.000) scale(.7)"><circle r="1.05"></circle></g></a><a aria-label="2023-12-02 · Goal allowed · Wrist · 8.5 ft from net · Video unavailable" class="attempt-jump shot-map-point" data-attempt-id="2023020363-3" data-board-distance="17" data-event-id="447" data-game-id="2023020363" data-has-video="false" data-result="goal" data-rink-side="6" data-shot-type="wrist" href="?v=2023020363-3" tabindex="0">
-<title>2023-12-02 · Goal allowed · Wrist · 8.5 ft from net · Video unavailable</title><g fill="#007d60" transform="translate(-6.000 17.000) scale(.7)"><circle r="1.05"></circle></g></a><a aria-label="2023-12-02 · Save · Wrist · 27.3 ft from net · Video unavailable" class="attempt-jump shot-map-point" data-attempt-id="2023020363-5" data-board-distance="36" data-event-id="449" data-game-id="2023020363" data-has-video="false" data-result="save" data-rink-side="-11" data-shot-type="wrist" href="?v=2023020363-5" tabindex="0">
-<title>2023-12-02 · Save · Wrist · 27.3 ft from net · Video unavailable</title><g fill="#c27500" transform="translate(11.000 36.000) scale(.7)"><circle r="1.05"></circle></g></a></svg>
+<title>2025-12-07 · Miss · Snap · 19.0 ft from net · Open attempt</title><g fill="#bb3670" transform="translate(0.000 30.000) scale(.7)"><circle class="shot-map-current-ring" r="2.6"></circle><path d="M 0 -1.35 L 1.25 1 L -1.25 1 Z"></path></g></a><a aria-label="2025-12-07 · Save · Snap · 20.0 ft from net · Open attempt" class="attempt-jump shot-map-point" data-attempt-id="2025020456-3" data-board-distance="31" data-event-id="806" data-game-id="2025020456" data-has-video="true" data-result="save" data-rink-side="-1" data-shot-type="snap" href="?v=2025020456-3" tabindex="0">
+<title>2025-12-07 · Save · Snap · 20.0 ft from net · Open attempt</title><g fill="#c27500" transform="translate(1.000 31.000) scale(.7)"><circle class="shot-map-current-ring" r="2.6"></circle><path d="M 0 -1.35 L 1.25 1 L -1.25 1 Z"></path></g></a><a aria-label="2025-12-07 · Goal allowed · Snap · 24.0 ft from net · Open attempt" class="attempt-jump shot-map-point" data-attempt-id="2025020456-5" data-board-distance="35" data-event-id="808" data-game-id="2025020456" data-has-video="true" data-result="goal" data-rink-side="1" data-shot-type="snap" href="?v=2025020456-5" tabindex="0">
+<title>2025-12-07 · Goal allowed · Snap · 24.0 ft from net · Open attempt</title><g fill="#007d60" transform="translate(-1.000 35.000) scale(.7)"><circle class="shot-map-current-ring" r="2.6"></circle><path d="M 0 -1.35 L 1.25 1 L -1.25 1 Z"></path></g></a><a aria-label="2025-03-23 · Goal allowed · Backhand · 13.3 ft from net · Open attempt" class="attempt-jump shot-map-point" data-attempt-id="2024021120-1" data-board-distance="24" data-event-id="804" data-game-id="2024021120" data-has-video="true" data-result="goal" data-rink-side="-3" data-shot-type="backhand" href="?v=2024021120-1" tabindex="0">
+<title>2025-03-23 · Goal allowed · Backhand · 13.3 ft from net · Open attempt</title><g fill="#007d60" transform="translate(3.000 24.000) scale(.7)"><circle class="shot-map-current-ring" r="2.6"></circle><rect height="2" rx=".12" width="2" x="-1" y="-1"></rect></g></a><a aria-label="2025-03-23 · Save · Backhand · 12.1 ft from net · Open attempt" class="attempt-jump shot-map-point" data-attempt-id="2024021120-3" data-board-distance="22" data-event-id="811" data-game-id="2024021120" data-has-video="true" data-result="save" data-rink-side="-5" data-shot-type="backhand" href="?v=2024021120-3" tabindex="0">
+<title>2025-03-23 · Save · Backhand · 12.1 ft from net · Open attempt</title><g fill="#c27500" transform="translate(5.000 22.000) scale(.7)"><circle class="shot-map-current-ring" r="2.6"></circle><rect height="2" rx=".12" width="2" x="-1" y="-1"></rect></g></a><a aria-label="2025-03-23 · Miss · Snap · 24.0 ft from net · Open attempt" class="attempt-jump shot-map-point" data-attempt-id="2024021120-5" data-board-distance="34" data-event-id="817" data-game-id="2024021120" data-has-video="true" data-result="miss" data-rink-side="-7" data-shot-type="snap" href="?v=2024021120-5" tabindex="0">
+<title>2025-03-23 · Miss · Snap · 24.0 ft from net · Open attempt</title><g fill="#bb3670" transform="translate(7.000 34.000) scale(.7)"><circle class="shot-map-current-ring" r="2.6"></circle><path d="M 0 -1.35 L 1.25 1 L -1.25 1 Z"></path></g></a><a aria-label="2025-01-07 · Goal allowed · Wrist · 24.0 ft from net · Open attempt" class="attempt-jump shot-map-point" data-attempt-id="2024020645-1" data-board-distance="35" data-event-id="569" data-game-id="2024020645" data-has-video="true" data-result="goal" data-rink-side="-1" data-shot-type="wrist" href="?v=2024020645-1" tabindex="0">
+<title>2025-01-07 · Goal allowed · Wrist · 24.0 ft from net · Open attempt</title><g fill="#007d60" transform="translate(1.000 35.000) scale(.7)"><circle class="shot-map-current-ring" r="2.6"></circle><circle r="1.05"></circle></g></a><a aria-label="2025-01-07 · Save · Wrist · 10.8 ft from net · Open attempt" class="attempt-jump shot-map-point" data-attempt-id="2024020645-3" data-board-distance="21" data-event-id="571" data-game-id="2024020645" data-has-video="true" data-result="save" data-rink-side="4" data-shot-type="wrist" href="?v=2024020645-3" tabindex="0">
+<title>2025-01-07 · Save · Wrist · 10.8 ft from net · Open attempt</title><g fill="#c27500" transform="translate(-4.000 21.000) scale(.7)"><circle class="shot-map-current-ring" r="2.6"></circle><circle r="1.05"></circle></g></a><a aria-label="2025-01-07 · Goal allowed · Wrist · 12.2 ft from net · Open attempt" class="attempt-jump shot-map-point" data-attempt-id="2024020645-5" data-board-distance="23" data-event-id="573" data-game-id="2024020645" data-has-video="true" data-result="goal" data-rink-side="2" data-shot-type="wrist" href="?v=2024020645-5" tabindex="0">
+<title>2025-01-07 · Goal allowed · Wrist · 12.2 ft from net · Open attempt</title><g fill="#007d60" transform="translate(-2.000 23.000) scale(.7)"><circle class="shot-map-current-ring" r="2.6"></circle><circle r="1.05"></circle></g></a><a aria-label="2025-01-03 · Save · Wrist · 10.0 ft from net · Open attempt" class="attempt-jump shot-map-point" data-attempt-id="2024020615-1" data-board-distance="21" data-event-id="340" data-game-id="2024020615" data-has-video="true" data-result="save" data-rink-side="-1" data-shot-type="wrist" href="?v=2024020615-1" tabindex="0">
+<title>2025-01-03 · Save · Wrist · 10.0 ft from net · Open attempt</title><g fill="#c27500" transform="translate(1.000 21.000) scale(.7)"><circle class="shot-map-current-ring" r="2.6"></circle><circle r="1.05"></circle></g></a><a aria-label="2025-01-03 · Goal allowed · Snap · 14.0 ft from net · Open attempt" class="attempt-jump shot-map-point" data-attempt-id="2024020615-3" data-board-distance="25" data-event-id="342" data-game-id="2024020615" data-has-video="true" data-result="goal" data-rink-side="-0" data-shot-type="snap" href="?v=2024020615-3" tabindex="0">
+<title>2025-01-03 · Goal allowed · Snap · 14.0 ft from net · Open attempt</title><g fill="#007d60" transform="translate(0.000 25.000) scale(.7)"><circle class="shot-map-current-ring" r="2.6"></circle><path d="M 0 -1.35 L 1.25 1 L -1.25 1 Z"></path></g></a><a aria-label="2025-01-03 · Goal allowed · Snap · 24.4 ft from net · Open attempt" class="attempt-jump shot-map-point" data-attempt-id="2024020615-5" data-board-distance="31" data-event-id="344" data-game-id="2024020615" data-has-video="true" data-result="goal" data-rink-side="-14" data-shot-type="snap" href="?v=2024020615-5" tabindex="0">
+<title>2025-01-03 · Goal allowed · Snap · 24.4 ft from net · Open attempt</title><g fill="#007d60" transform="translate(14.000 31.000) scale(.7)"><circle class="shot-map-current-ring" r="2.6"></circle><path d="M 0 -1.35 L 1.25 1 L -1.25 1 Z"></path></g></a><a aria-label="2023-12-02 · Save · Wrist · 10.8 ft from net · Video unavailable" class="attempt-jump shot-map-point" data-attempt-id="2023020363-1" data-board-distance="21" data-event-id="445" data-game-id="2023020363" data-has-video="false" data-result="save" data-rink-side="-4" data-shot-type="wrist" href="?v=2023020363-1" tabindex="0">
+<title>2023-12-02 · Save · Wrist · 10.8 ft from net · Video unavailable</title><g fill="#c27500" transform="translate(4.000 21.000) scale(.7)"><circle class="shot-map-current-ring" r="2.6"></circle><circle r="1.05"></circle></g></a><a aria-label="2023-12-02 · Goal allowed · Wrist · 8.5 ft from net · Video unavailable" class="attempt-jump shot-map-point" data-attempt-id="2023020363-3" data-board-distance="17" data-event-id="447" data-game-id="2023020363" data-has-video="false" data-result="goal" data-rink-side="6" data-shot-type="wrist" href="?v=2023020363-3" tabindex="0">
+<title>2023-12-02 · Goal allowed · Wrist · 8.5 ft from net · Video unavailable</title><g fill="#007d60" transform="translate(-6.000 17.000) scale(.7)"><circle class="shot-map-current-ring" r="2.6"></circle><circle r="1.05"></circle></g></a><a aria-label="2023-12-02 · Save · Wrist · 27.3 ft from net · Video unavailable" class="attempt-jump shot-map-point" data-attempt-id="2023020363-5" data-board-distance="36" data-event-id="449" data-game-id="2023020363" data-has-video="false" data-result="save" data-rink-side="-11" data-shot-type="wrist" href="?v=2023020363-5" tabindex="0">
+<title>2023-12-02 · Save · Wrist · 27.3 ft from net · Video unavailable</title><g fill="#c27500" transform="translate(11.000 36.000) scale(.7)"><circle class="shot-map-current-ring" r="2.6"></circle><circle r="1.05"></circle></g></a></svg>
+<details class="shot-map-key"><summary>Map key &amp; coverage</summary>
+<p class="shot-map-hint">Fill shows the result; shape shows the shot type. A blue ring marks the selected attempt.</p>
 <div aria-label="Shot types" class="shot-map-types"><span><svg aria-hidden="true" viewbox="-2 -2 4 4"><circle r="1.05"></circle></svg>Wrist</span><span><svg aria-hidden="true" viewbox="-2 -2 4 4"><path d="M 0 -1.35 L 1.25 1 L -1.25 1 Z"></path></svg>Snap</span><span><svg aria-hidden="true" viewbox="-2 -2 4 4"><rect height="2" rx=".12" width="2" x="-1" y="-1"></rect></svg>Backhand</span></div>
 <div aria-label="Video availability" class="shot-map-video-legend">
 <span><svg aria-hidden="true" class="shot-map-video-key" data-has-video="true" viewbox="-2 -2 4 4"><g><circle r="1.05"></circle></g></svg>White border: video</span>
 <span><svg aria-hidden="true" class="shot-map-video-key" data-has-video="false" viewbox="-2 -2 4 4"><g><circle r="1.05"></circle></g></svg>Dark dashed border: no video</span>
 </div>
-<p class="shot-map-note">15 shots shown · 2023–24 to 2025–26. Both rink ends rotated toward the same net.</p></div>
+<p class="shot-map-note">15 shots shown · 2023–24 to 2025–26. Both rink ends rotated toward the same net.</p></details></div>
 <div class="shot-map-panel" data-attempts="60" data-goals="25" data-missing-location="0" data-no-shot="1" data-outside-view="0" data-plotted="59" data-scope="career" hidden="" id="shot-map-career">
 <p class="shot-map-summary"><strong>Full career</strong> · 25 goals allowed on 60 attempts faced (41.7% goals allowed)</p>
 <div aria-label="Results" class="shot-map-results"><span><i aria-hidden="true" style="background:#007d60"></i>Goals allowed <strong>25</strong></span><span><i aria-hidden="true" style="background:#c27500"></i>Saves <strong>28</strong></span><span><i aria-hidden="true" style="background:#bb3670"></i>Misses <strong>6</strong></span></div>
@@ -118,75 +131,84 @@
 </g>
 <path class="shot-map-crease" d="M -4 11 V 15.5 A 6.083 6.083 0 0 0 4 15.5 V 11 Z"></path>
 <path class="shot-map-net" d="M -3 11 V 8.8 Q -3 7.67 -1.7 7.67 H 1.7 Q 3 7.67 3 8.8 V 11 Z"></path><g class="shot-map-stems"><path d="M 1 31 L 2.550 31.000"></path><circle cx="1" cy="31" r=".22"></circle><path d="M 1 31 L -0.550 31.000"></path><circle cx="1" cy="31" r=".22"></circle><path d="M 1 21 L 2.550 21.000"></path><circle cx="1" cy="21" r=".22"></circle><path d="M 1 21 L 0.225 22.342"></path><circle cx="1" cy="21" r=".22"></circle><path d="M 1 21 L 0.225 19.658"></path><circle cx="1" cy="21" r=".22"></circle><path d="M 0 25 L 1.550 25.000"></path><circle cx="0" cy="25" r=".22"></circle><path d="M 0 25 L -1.550 25.000"></path><circle cx="0" cy="25" r=".22"></circle><path d="M 3 25 L 4.550 25.000"></path><circle cx="3" cy="25" r=".22"></circle><path d="M 3 25 L 1.450 25.000"></path><circle cx="3" cy="25" r=".22"></circle><path d="M 1 23 L 2.550 23.000"></path><circle cx="1" cy="23" r=".22"></circle><path d="M 1 23 L -0.550 23.000"></path><circle cx="1" cy="23" r=".22"></circle></g><a aria-label="2025-12-07 · Miss · Snap · 19.0 ft from net · Open attempt" class="attempt-jump shot-map-point" data-attempt-id="2025020456-1" data-board-distance="30" data-event-id="805" data-game-id="2025020456" data-has-video="true" data-result="miss" data-rink-side="-0" data-shot-type="snap" href="?v=2025020456-1" tabindex="0">
-<title>2025-12-07 · Miss · Snap · 19.0 ft from net · Open attempt</title><g fill="#bb3670" transform="translate(0.000 30.000) scale(.7)"><path d="M 0 -1.35 L 1.25 1 L -1.25 1 Z"></path></g></a><a aria-label="2025-12-07 · Save · Snap · 20.0 ft from net · Open attempt" class="attempt-jump shot-map-point" data-attempt-id="2025020456-3" data-board-distance="31" data-event-id="806" data-game-id="2025020456" data-has-video="true" data-result="save" data-rink-side="-1" data-shot-type="snap" href="?v=2025020456-3" tabindex="0">
-<title>2025-12-07 · Save · Snap · 20.0 ft from net · Open attempt</title><g fill="#c27500" transform="translate(2.550 31.000) scale(.7)"><path d="M 0 -1.35 L 1.25 1 L -1.25 1 Z"></path></g></a><g aria-label="2021-11-06 · Goal allowed · Wrist · 20.0 ft from net · Video unavailable" class="shot-map-point" data-attempt-id="2021020167-6" data-board-distance="31" data-event-id="776" data-game-id="2021020167" data-has-video="false" data-result="goal" data-rink-side="-1" data-shot-type="wrist" role="button" tabindex="0">
-<title>2021-11-06 · Goal allowed · Wrist · 20.0 ft from net · Video unavailable</title><g fill="#007d60" transform="translate(-0.550 31.000) scale(.7)"><circle r="1.05"></circle></g></g><a aria-label="2025-12-07 · Goal allowed · Snap · 24.0 ft from net · Open attempt" class="attempt-jump shot-map-point" data-attempt-id="2025020456-5" data-board-distance="35" data-event-id="808" data-game-id="2025020456" data-has-video="true" data-result="goal" data-rink-side="1" data-shot-type="snap" href="?v=2025020456-5" tabindex="0">
-<title>2025-12-07 · Goal allowed · Snap · 24.0 ft from net · Open attempt</title><g fill="#007d60" transform="translate(-1.000 35.000) scale(.7)"><path d="M 0 -1.35 L 1.25 1 L -1.25 1 Z"></path></g></a><a aria-label="2025-03-23 · Goal allowed · Backhand · 13.3 ft from net · Open attempt" class="attempt-jump shot-map-point" data-attempt-id="2024021120-1" data-board-distance="24" data-event-id="804" data-game-id="2024021120" data-has-video="true" data-result="goal" data-rink-side="-3" data-shot-type="backhand" href="?v=2024021120-1" tabindex="0">
-<title>2025-03-23 · Goal allowed · Backhand · 13.3 ft from net · Open attempt</title><g fill="#007d60" transform="translate(3.000 24.000) scale(.7)"><rect height="2" rx=".12" width="2" x="-1" y="-1"></rect></g></a><a aria-label="2025-03-23 · Save · Backhand · 12.1 ft from net · Open attempt" class="attempt-jump shot-map-point" data-attempt-id="2024021120-3" data-board-distance="22" data-event-id="811" data-game-id="2024021120" data-has-video="true" data-result="save" data-rink-side="-5" data-shot-type="backhand" href="?v=2024021120-3" tabindex="0">
-<title>2025-03-23 · Save · Backhand · 12.1 ft from net · Open attempt</title><g fill="#c27500" transform="translate(5.000 22.000) scale(.7)"><rect height="2" rx=".12" width="2" x="-1" y="-1"></rect></g></a><a aria-label="2025-03-23 · Miss · Snap · 24.0 ft from net · Open attempt" class="attempt-jump shot-map-point" data-attempt-id="2024021120-5" data-board-distance="34" data-event-id="817" data-game-id="2024021120" data-has-video="true" data-result="miss" data-rink-side="-7" data-shot-type="snap" href="?v=2024021120-5" tabindex="0">
-<title>2025-03-23 · Miss · Snap · 24.0 ft from net · Open attempt</title><g fill="#bb3670" transform="translate(7.000 34.000) scale(.7)"><path d="M 0 -1.35 L 1.25 1 L -1.25 1 Z"></path></g></a><a aria-label="2025-01-07 · Goal allowed · Wrist · 24.0 ft from net · Open attempt" class="attempt-jump shot-map-point" data-attempt-id="2024020645-1" data-board-distance="35" data-event-id="569" data-game-id="2024020645" data-has-video="true" data-result="goal" data-rink-side="-1" data-shot-type="wrist" href="?v=2024020645-1" tabindex="0">
-<title>2025-01-07 · Goal allowed · Wrist · 24.0 ft from net · Open attempt</title><g fill="#007d60" transform="translate(1.000 35.000) scale(.7)"><circle r="1.05"></circle></g></a><a aria-label="2025-01-07 · Save · Wrist · 10.8 ft from net · Open attempt" class="attempt-jump shot-map-point" data-attempt-id="2024020645-3" data-board-distance="21" data-event-id="571" data-game-id="2024020645" data-has-video="true" data-result="save" data-rink-side="4" data-shot-type="wrist" href="?v=2024020645-3" tabindex="0">
-<title>2025-01-07 · Save · Wrist · 10.8 ft from net · Open attempt</title><g fill="#c27500" transform="translate(-4.000 21.000) scale(.7)"><circle r="1.05"></circle></g></a><a aria-label="2025-01-07 · Goal allowed · Wrist · 12.2 ft from net · Open attempt" class="attempt-jump shot-map-point" data-attempt-id="2024020645-5" data-board-distance="23" data-event-id="573" data-game-id="2024020645" data-has-video="true" data-result="goal" data-rink-side="2" data-shot-type="wrist" href="?v=2024020645-5" tabindex="0">
-<title>2025-01-07 · Goal allowed · Wrist · 12.2 ft from net · Open attempt</title><g fill="#007d60" transform="translate(-2.000 23.000) scale(.7)"><circle r="1.05"></circle></g></a><a aria-label="2025-01-03 · Save · Wrist · 10.0 ft from net · Open attempt" class="attempt-jump shot-map-point" data-attempt-id="2024020615-1" data-board-distance="21" data-event-id="340" data-game-id="2024020615" data-has-video="true" data-result="save" data-rink-side="-1" data-shot-type="wrist" href="?v=2024020615-1" tabindex="0">
-<title>2025-01-03 · Save · Wrist · 10.0 ft from net · Open attempt</title><g fill="#c27500" transform="translate(2.550 21.000) scale(.7)"><circle r="1.05"></circle></g></a><g aria-label="2021-11-11 · Save · Wrist · 10.0 ft from net · Video unavailable" class="shot-map-point" data-attempt-id="2021020200-2" data-board-distance="21" data-event-id="863" data-game-id="2021020200" data-has-video="false" data-result="save" data-rink-side="-1" data-shot-type="wrist" role="button" tabindex="0">
-<title>2021-11-11 · Save · Wrist · 10.0 ft from net · Video unavailable</title><g fill="#c27500" transform="translate(0.225 22.342) scale(.7)"><circle r="1.05"></circle></g></g><g aria-label="2017-11-11 · Goal allowed · Wrist · 10.0 ft from net · Video unavailable" class="shot-map-point" data-attempt-id="2017020258-3" data-board-distance="21" data-event-id="842" data-game-id="2017020258" data-has-video="false" data-result="goal" data-rink-side="-1" data-shot-type="wrist" role="button" tabindex="0">
-<title>2017-11-11 · Goal allowed · Wrist · 10.0 ft from net · Video unavailable</title><g fill="#007d60" transform="translate(0.225 19.658) scale(.7)"><circle r="1.05"></circle></g></g><a aria-label="2025-01-03 · Goal allowed · Snap · 14.0 ft from net · Open attempt" class="attempt-jump shot-map-point" data-attempt-id="2024020615-3" data-board-distance="25" data-event-id="342" data-game-id="2024020615" data-has-video="true" data-result="goal" data-rink-side="-0" data-shot-type="snap" href="?v=2024020615-3" tabindex="0">
-<title>2025-01-03 · Goal allowed · Snap · 14.0 ft from net · Open attempt</title><g fill="#007d60" transform="translate(1.550 25.000) scale(.7)"><path d="M 0 -1.35 L 1.25 1 L -1.25 1 Z"></path></g></a><g aria-label="2017-11-11 · Goal allowed · Wrist · 14.0 ft from net · Video unavailable" class="shot-map-point" data-attempt-id="2017020258-5" data-board-distance="25" data-event-id="844" data-game-id="2017020258" data-has-video="false" data-result="goal" data-rink-side="-0" data-shot-type="wrist" role="button" tabindex="0">
-<title>2017-11-11 · Goal allowed · Wrist · 14.0 ft from net · Video unavailable</title><g fill="#007d60" transform="translate(-1.550 25.000) scale(.7)"><circle r="1.05"></circle></g></g><a aria-label="2025-01-03 · Goal allowed · Snap · 24.4 ft from net · Open attempt" class="attempt-jump shot-map-point" data-attempt-id="2024020615-5" data-board-distance="31" data-event-id="344" data-game-id="2024020615" data-has-video="true" data-result="goal" data-rink-side="-14" data-shot-type="snap" href="?v=2024020615-5" tabindex="0">
-<title>2025-01-03 · Goal allowed · Snap · 24.4 ft from net · Open attempt</title><g fill="#007d60" transform="translate(14.000 31.000) scale(.7)"><path d="M 0 -1.35 L 1.25 1 L -1.25 1 Z"></path></g></a><a aria-label="2023-12-02 · Save · Wrist · 10.8 ft from net · Video unavailable" class="attempt-jump shot-map-point" data-attempt-id="2023020363-1" data-board-distance="21" data-event-id="445" data-game-id="2023020363" data-has-video="false" data-result="save" data-rink-side="-4" data-shot-type="wrist" href="?v=2023020363-1" tabindex="0">
-<title>2023-12-02 · Save · Wrist · 10.8 ft from net · Video unavailable</title><g fill="#c27500" transform="translate(4.000 21.000) scale(.7)"><circle r="1.05"></circle></g></a><a aria-label="2023-12-02 · Goal allowed · Wrist · 8.5 ft from net · Video unavailable" class="attempt-jump shot-map-point" data-attempt-id="2023020363-3" data-board-distance="17" data-event-id="447" data-game-id="2023020363" data-has-video="false" data-result="goal" data-rink-side="6" data-shot-type="wrist" href="?v=2023020363-3" tabindex="0">
-<title>2023-12-02 · Goal allowed · Wrist · 8.5 ft from net · Video unavailable</title><g fill="#007d60" transform="translate(-6.000 17.000) scale(.7)"><circle r="1.05"></circle></g></a><a aria-label="2023-12-02 · Save · Wrist · 27.3 ft from net · Video unavailable" class="attempt-jump shot-map-point" data-attempt-id="2023020363-5" data-board-distance="36" data-event-id="449" data-game-id="2023020363" data-has-video="false" data-result="save" data-rink-side="-11" data-shot-type="wrist" href="?v=2023020363-5" tabindex="0">
-<title>2023-12-02 · Save · Wrist · 27.3 ft from net · Video unavailable</title><g fill="#c27500" transform="translate(11.000 36.000) scale(.7)"><circle r="1.05"></circle></g></a><g aria-label="2022-11-23 · Goal allowed · Wrist · 12.4 ft from net · Video unavailable" class="shot-map-point" data-attempt-id="2022020305-3" data-board-distance="23" data-event-id="876" data-game-id="2022020305" data-has-video="false" data-result="goal" data-rink-side="-3" data-shot-type="wrist" role="button" tabindex="0">
-<title>2022-11-23 · Goal allowed · Wrist · 12.4 ft from net · Video unavailable</title><g fill="#007d60" transform="translate(3.000 23.000) scale(.7)"><circle r="1.05"></circle></g></g><g aria-label="2022-11-23 · Goal allowed · Wrist · 16.8 ft from net · Video unavailable" class="shot-map-point" data-attempt-id="2022020305-5" data-board-distance="27" data-event-id="878" data-game-id="2022020305" data-has-video="false" data-result="goal" data-rink-side="-5" data-shot-type="wrist" role="button" tabindex="0">
-<title>2022-11-23 · Goal allowed · Wrist · 16.8 ft from net · Video unavailable</title><g fill="#007d60" transform="translate(5.000 27.000) scale(.7)"><circle r="1.05"></circle></g></g><g aria-label="2022-11-23 · Save · Wrist · 17.0 ft from net · Video unavailable" class="shot-map-point" data-attempt-id="2022020305-7" data-board-distance="28" data-event-id="880" data-game-id="2022020305" data-has-video="false" data-result="save" data-rink-side="-0" data-shot-type="wrist" role="button" tabindex="0">
-<title>2022-11-23 · Save · Wrist · 17.0 ft from net · Video unavailable</title><g fill="#c27500" transform="translate(0.000 28.000) scale(.7)"><circle r="1.05"></circle></g></g><g aria-label="2022-03-17 · Miss · Wrist · 10.8 ft from net · Video unavailable" class="shot-map-point" data-attempt-id="2021020972-1" data-board-distance="20" data-event-id="881" data-game-id="2021020972" data-has-video="false" data-result="miss" data-rink-side="-6" data-shot-type="wrist" role="button" tabindex="0">
-<title>2022-03-17 · Miss · Wrist · 10.8 ft from net · Video unavailable</title><g fill="#bb3670" transform="translate(6.000 20.000) scale(.7)"><circle r="1.05"></circle></g></g><g aria-label="2022-03-17 · Save · Backhand · 12.7 ft from net · Video unavailable" class="shot-map-point" data-attempt-id="2021020972-3" data-board-distance="20" data-event-id="883" data-game-id="2021020972" data-has-video="false" data-result="save" data-rink-side="9" data-shot-type="backhand" role="button" tabindex="0">
-<title>2022-03-17 · Save · Backhand · 12.7 ft from net · Video unavailable</title><g fill="#c27500" transform="translate(-9.000 20.000) scale(.7)"><rect height="2" rx=".12" width="2" x="-1" y="-1"></rect></g></g><g aria-label="2022-03-17 · Save · Wrist · 23.2 ft from net · Video unavailable" class="shot-map-point" data-attempt-id="2021020972-5" data-board-distance="34" data-event-id="885" data-game-id="2021020972" data-has-video="false" data-result="save" data-rink-side="3" data-shot-type="wrist" role="button" tabindex="0">
-<title>2022-03-17 · Save · Wrist · 23.2 ft from net · Video unavailable</title><g fill="#c27500" transform="translate(-3.000 34.000) scale(.7)"><circle r="1.05"></circle></g></g><g aria-label="2022-03-17 · Miss · Wrist · 22.1 ft from net · Video unavailable" class="shot-map-point" data-attempt-id="2021020972-7" data-board-distance="33" data-event-id="887" data-game-id="2021020972" data-has-video="false" data-result="miss" data-rink-side="-2" data-shot-type="wrist" role="button" tabindex="0">
-<title>2022-03-17 · Miss · Wrist · 22.1 ft from net · Video unavailable</title><g fill="#bb3670" transform="translate(2.000 33.000) scale(.7)"><circle r="1.05"></circle></g></g><g aria-label="2022-01-23 · Miss · Backhand · 14.2 ft from net · Video unavailable" class="shot-map-point" data-attempt-id="2021020733-2" data-board-distance="22" data-event-id="861" data-game-id="2021020733" data-has-video="false" data-result="miss" data-rink-side="-9" data-shot-type="backhand" role="button" tabindex="0">
-<title>2022-01-23 · Miss · Backhand · 14.2 ft from net · Video unavailable</title><g fill="#bb3670" transform="translate(9.000 22.000) scale(.7)"><rect height="2" rx=".12" width="2" x="-1" y="-1"></rect></g></g><g aria-label="2022-01-23 · Save · Wrist · 11.2 ft from net · Video unavailable" class="shot-map-point" data-attempt-id="2021020733-4" data-board-distance="21" data-event-id="863" data-game-id="2021020733" data-has-video="false" data-result="save" data-rink-side="-5" data-shot-type="wrist" role="button" tabindex="0">
-<title>2022-01-23 · Save · Wrist · 11.2 ft from net · Video unavailable</title><g fill="#c27500" transform="translate(5.000 21.000) scale(.7)"><circle r="1.05"></circle></g></g><g aria-label="2022-01-23 · Miss · Wrist · 21.8 ft from net · Video unavailable" class="shot-map-point" data-attempt-id="2021020733-6" data-board-distance="32" data-event-id="865" data-game-id="2021020733" data-has-video="false" data-result="miss" data-rink-side="-6" data-shot-type="wrist" role="button" tabindex="0">
-<title>2022-01-23 · Miss · Wrist · 21.8 ft from net · Video unavailable</title><g fill="#bb3670" transform="translate(6.000 32.000) scale(.7)"><circle r="1.05"></circle></g></g><g aria-label="2021-11-29 · Save · Wrist · 15.1 ft from net · Video unavailable" class="shot-map-point" data-attempt-id="2021020336-1" data-board-distance="26" data-event-id="647" data-game-id="2021020336" data-has-video="false" data-result="save" data-rink-side="2" data-shot-type="wrist" role="button" tabindex="0">
-<title>2021-11-29 · Save · Wrist · 15.1 ft from net · Video unavailable</title><g fill="#c27500" transform="translate(-2.000 26.000) scale(.7)"><circle r="1.05"></circle></g></g><g aria-label="2021-11-29 · Save · Wrist · 16.0 ft from net · Video unavailable" class="shot-map-point" data-attempt-id="2021020336-3" data-board-distance="27" data-event-id="649" data-game-id="2021020336" data-has-video="false" data-result="save" data-rink-side="-1" data-shot-type="wrist" role="button" tabindex="0">
-<title>2021-11-29 · Save · Wrist · 16.0 ft from net · Video unavailable</title><g fill="#c27500" transform="translate(1.000 27.000) scale(.7)"><circle r="1.05"></circle></g></g><g aria-label="2021-11-29 · Goal allowed · Wrist · 22.1 ft from net · Video unavailable" class="shot-map-point" data-attempt-id="2021020336-5" data-board-distance="33" data-event-id="801" data-game-id="2021020336" data-has-video="false" data-result="goal" data-rink-side="2" data-shot-type="wrist" role="button" tabindex="0">
-<title>2021-11-29 · Goal allowed · Wrist · 22.1 ft from net · Video unavailable</title><g fill="#007d60" transform="translate(-2.000 33.000) scale(.7)"><circle r="1.05"></circle></g></g><g aria-label="2021-11-29 · Save · Wrist · 12.8 ft from net · Video unavailable" class="shot-map-point" data-attempt-id="2021020336-7" data-board-distance="19" data-event-id="803" data-game-id="2021020336" data-has-video="false" data-result="save" data-rink-side="10" data-shot-type="wrist" role="button" tabindex="0">
-<title>2021-11-29 · Save · Wrist · 12.8 ft from net · Video unavailable</title><g fill="#c27500" transform="translate(-10.000 19.000) scale(.7)"><circle r="1.05"></circle></g></g><g aria-label="2021-11-29 · Save · Wrist · 16.0 ft from net · Video unavailable" class="shot-map-point" data-attempt-id="2021020336-9" data-board-distance="27" data-event-id="805" data-game-id="2021020336" data-has-video="false" data-result="save" data-rink-side="-0" data-shot-type="wrist" role="button" tabindex="0">
-<title>2021-11-29 · Save · Wrist · 16.0 ft from net · Video unavailable</title><g fill="#c27500" transform="translate(0.000 27.000) scale(.7)"><circle r="1.05"></circle></g></g><g aria-label="2021-11-29 · Save · Wrist · 14.3 ft from net · Video unavailable" class="shot-map-point" data-attempt-id="2021020336-11" data-board-distance="25" data-event-id="807" data-game-id="2021020336" data-has-video="false" data-result="save" data-rink-side="-3" data-shot-type="wrist" role="button" tabindex="0">
-<title>2021-11-29 · Save · Wrist · 14.3 ft from net · Video unavailable</title><g fill="#c27500" transform="translate(4.550 25.000) scale(.7)"><circle r="1.05"></circle></g></g><g aria-label="2021-11-11 · Goal allowed · Backhand · 14.3 ft from net · Video unavailable" class="shot-map-point" data-attempt-id="2021020200-4" data-board-distance="25" data-event-id="865" data-game-id="2021020200" data-has-video="false" data-result="goal" data-rink-side="-3" data-shot-type="backhand" role="button" tabindex="0">
-<title>2021-11-11 · Goal allowed · Backhand · 14.3 ft from net · Video unavailable</title><g fill="#007d60" transform="translate(1.450 25.000) scale(.7)"><rect height="2" rx=".12" width="2" x="-1" y="-1"></rect></g></g><g aria-label="2021-11-29 · Goal allowed · Wrist · 19.2 ft from net · Video unavailable" class="shot-map-point" data-attempt-id="2021020336-13" data-board-distance="30" data-event-id="809" data-game-id="2021020336" data-has-video="false" data-result="goal" data-rink-side="-3" data-shot-type="wrist" role="button" tabindex="0">
-<title>2021-11-29 · Goal allowed · Wrist · 19.2 ft from net · Video unavailable</title><g fill="#007d60" transform="translate(3.000 30.000) scale(.7)"><circle r="1.05"></circle></g></g><g aria-label="2021-11-11 · Save · Wrist · 17.1 ft from net · Video unavailable" class="shot-map-point" data-attempt-id="2021020200-6" data-board-distance="28" data-event-id="867" data-game-id="2021020200" data-has-video="false" data-result="save" data-rink-side="2" data-shot-type="wrist" role="button" tabindex="0">
-<title>2021-11-11 · Save · Wrist · 17.1 ft from net · Video unavailable</title><g fill="#c27500" transform="translate(-2.000 28.000) scale(.7)"><circle r="1.05"></circle></g></g><g aria-label="2021-11-11 · Save · Wrist · 12.0 ft from net · Video unavailable" class="shot-map-point" data-attempt-id="2021020200-8" data-board-distance="23" data-event-id="869" data-game-id="2021020200" data-has-video="false" data-result="save" data-rink-side="-1" data-shot-type="wrist" role="button" tabindex="0">
-<title>2021-11-11 · Save · Wrist · 12.0 ft from net · Video unavailable</title><g fill="#c27500" transform="translate(2.550 23.000) scale(.7)"><circle r="1.05"></circle></g></g><g aria-label="2020-01-12 · Save · Wrist · 12.0 ft from net · Video unavailable" class="shot-map-point" data-attempt-id="2019020706-2" data-board-distance="23" data-event-id="858" data-game-id="2019020706" data-has-video="false" data-result="save" data-rink-side="-1" data-shot-type="wrist" role="button" tabindex="0">
-<title>2020-01-12 · Save · Wrist · 12.0 ft from net · Video unavailable</title><g fill="#c27500" transform="translate(-0.550 23.000) scale(.7)"><circle r="1.05"></circle></g></g><g aria-label="2021-11-09 · Goal allowed · Wrist · 9.0 ft from net · Video unavailable" class="shot-map-point" data-attempt-id="2021020187-1" data-board-distance="20" data-event-id="689" data-game-id="2021020187" data-has-video="false" data-result="goal" data-rink-side="-0" data-shot-type="wrist" role="button" tabindex="0">
-<title>2021-11-09 · Goal allowed · Wrist · 9.0 ft from net · Video unavailable</title><g fill="#007d60" transform="translate(0.000 20.000) scale(.7)"><circle r="1.05"></circle></g></g><g aria-label="2021-11-09 · Save · Wrist · 11.7 ft from net · Video unavailable" class="shot-map-point" data-attempt-id="2021020187-3" data-board-distance="22" data-event-id="691" data-game-id="2021020187" data-has-video="false" data-result="save" data-rink-side="4" data-shot-type="wrist" role="button" tabindex="0">
-<title>2021-11-09 · Save · Wrist · 11.7 ft from net · Video unavailable</title><g fill="#c27500" transform="translate(-4.000 22.000) scale(.7)"><circle r="1.05"></circle></g></g><g aria-label="2021-11-09 · Goal allowed · Wrist · 16.1 ft from net · Video unavailable" class="shot-map-point" data-attempt-id="2021020187-5" data-board-distance="27" data-event-id="693" data-game-id="2021020187" data-has-video="false" data-result="goal" data-rink-side="2" data-shot-type="wrist" role="button" tabindex="0">
-<title>2021-11-09 · Goal allowed · Wrist · 16.1 ft from net · Video unavailable</title><g fill="#007d60" transform="translate(-2.000 27.000) scale(.7)"><circle r="1.05"></circle></g></g><g aria-label="2021-11-06 · Save · Backhand · 7.3 ft from net · Video unavailable" class="shot-map-point" data-attempt-id="2021020167-2" data-board-distance="18" data-event-id="772" data-game-id="2021020167" data-has-video="false" data-result="save" data-rink-side="-2" data-shot-type="backhand" role="button" tabindex="0">
-<title>2021-11-06 · Save · Backhand · 7.3 ft from net · Video unavailable</title><g fill="#c27500" transform="translate(2.000 18.000) scale(.7)"><rect height="2" rx=".12" width="2" x="-1" y="-1"></rect></g></g><g aria-label="2021-11-06 · Goal allowed · Wrist · 20.1 ft from net · Video unavailable" class="shot-map-point" data-attempt-id="2021020167-4" data-board-distance="31" data-event-id="774" data-game-id="2021020167" data-has-video="false" data-result="goal" data-rink-side="-2" data-shot-type="wrist" role="button" tabindex="0">
-<title>2021-11-06 · Goal allowed · Wrist · 20.1 ft from net · Video unavailable</title><g fill="#007d60" transform="translate(2.000 31.000) scale(.7)"><circle r="1.05"></circle></g></g><g aria-label="2021-11-06 · Goal allowed · Wrist · 16.5 ft from net · Video unavailable" class="shot-map-point" data-attempt-id="2021020167-8" data-board-distance="27" data-event-id="778" data-game-id="2021020167" data-has-video="false" data-result="goal" data-rink-side="4" data-shot-type="wrist" role="button" tabindex="0">
-<title>2021-11-06 · Goal allowed · Wrist · 16.5 ft from net · Video unavailable</title><g fill="#007d60" transform="translate(-4.000 27.000) scale(.7)"><circle r="1.05"></circle></g></g><g aria-label="2021-10-19 · Save · Wrist · 11.2 ft from net · Video unavailable" class="shot-map-point" data-attempt-id="2021020044-2" data-board-distance="21" data-event-id="628" data-game-id="2021020044" data-has-video="false" data-result="save" data-rink-side="5" data-shot-type="wrist" role="button" tabindex="0">
-<title>2021-10-19 · Save · Wrist · 11.2 ft from net · Video unavailable</title><g fill="#c27500" transform="translate(-5.000 21.000) scale(.7)"><circle r="1.05"></circle></g></g><g aria-label="2021-10-19 · Goal allowed · Backhand · 11.7 ft from net · Video unavailable" class="shot-map-point" data-attempt-id="2021020044-4" data-board-distance="21" data-event-id="630" data-game-id="2021020044" data-has-video="false" data-result="goal" data-rink-side="6" data-shot-type="backhand" role="button" tabindex="0">
-<title>2021-10-19 · Goal allowed · Backhand · 11.7 ft from net · Video unavailable</title><g fill="#007d60" transform="translate(-6.000 21.000) scale(.7)"><rect height="2" rx=".12" width="2" x="-1" y="-1"></rect></g></g><g aria-label="2021-10-19 · Goal allowed · Backhand · 8.9 ft from net · Video unavailable" class="shot-map-point" data-attempt-id="2021020044-6" data-board-distance="19" data-event-id="632" data-game-id="2021020044" data-has-video="false" data-result="goal" data-rink-side="-4" data-shot-type="backhand" role="button" tabindex="0">
-<title>2021-10-19 · Goal allowed · Backhand · 8.9 ft from net · Video unavailable</title><g fill="#007d60" transform="translate(4.000 19.000) scale(.7)"><rect height="2" rx=".12" width="2" x="-1" y="-1"></rect></g></g><g aria-label="2021-04-15 · Goal allowed · Wrist · 8.5 ft from net · Video unavailable" class="shot-map-point" data-attempt-id="2020020680-2" data-board-distance="19" data-event-id="638" data-game-id="2020020680" data-has-video="false" data-result="goal" data-rink-side="-3" data-shot-type="wrist" role="button" tabindex="0">
-<title>2021-04-15 · Goal allowed · Wrist · 8.5 ft from net · Video unavailable</title><g fill="#007d60" transform="translate(3.000 19.000) scale(.7)"><circle r="1.05"></circle></g></g><g aria-label="2021-04-15 · Goal allowed · Backhand · 7.1 ft from net · Video unavailable" class="shot-map-point" data-attempt-id="2020020680-4" data-board-distance="18" data-event-id="640" data-game-id="2020020680" data-has-video="false" data-result="goal" data-rink-side="-1" data-shot-type="backhand" role="button" tabindex="0">
-<title>2021-04-15 · Goal allowed · Backhand · 7.1 ft from net · Video unavailable</title><g fill="#007d60" transform="translate(1.000 18.000) scale(.7)"><rect height="2" rx=".12" width="2" x="-1" y="-1"></rect></g></g><g aria-label="2021-01-22 · Save · Backhand · 12.6 ft from net · Video unavailable" class="shot-map-point" data-attempt-id="2020020068-2" data-board-distance="23" data-event-id="733" data-game-id="2020020068" data-has-video="false" data-result="save" data-rink-side="4" data-shot-type="backhand" role="button" tabindex="0">
-<title>2021-01-22 · Save · Backhand · 12.6 ft from net · Video unavailable</title><g fill="#c27500" transform="translate(-4.000 23.000) scale(.7)"><rect height="2" rx=".12" width="2" x="-1" y="-1"></rect></g></g><g aria-label="2021-01-22 · Goal allowed · Wrist · 10.0 ft from net · Video unavailable" class="shot-map-point" data-attempt-id="2020020068-4" data-board-distance="21" data-event-id="735" data-game-id="2020020068" data-has-video="false" data-result="goal" data-rink-side="-0" data-shot-type="wrist" role="button" tabindex="0">
-<title>2021-01-22 · Goal allowed · Wrist · 10.0 ft from net · Video unavailable</title><g fill="#007d60" transform="translate(0.000 21.000) scale(.7)"><circle r="1.05"></circle></g></g><g aria-label="2021-01-22 · Save · Wrist · 9.4 ft from net · Video unavailable" class="shot-map-point" data-attempt-id="2020020068-6" data-board-distance="19" data-event-id="737" data-game-id="2020020068" data-has-video="false" data-result="save" data-rink-side="-5" data-shot-type="wrist" role="button" tabindex="0">
-<title>2021-01-22 · Save · Wrist · 9.4 ft from net · Video unavailable</title><g fill="#c27500" transform="translate(5.000 19.000) scale(.7)"><circle r="1.05"></circle></g></g><g aria-label="2020-01-12 · Goal allowed · Wrist · 16.3 ft from net · Video unavailable" class="shot-map-point" data-attempt-id="2019020706-6" data-board-distance="27" data-event-id="862" data-game-id="2019020706" data-has-video="false" data-result="goal" data-rink-side="3" data-shot-type="wrist" role="button" tabindex="0">
-<title>2020-01-12 · Goal allowed · Wrist · 16.3 ft from net · Video unavailable</title><g fill="#007d60" transform="translate(-3.000 27.000) scale(.7)"><circle r="1.05"></circle></g></g><g aria-label="2020-01-12 · Save · Wrist · 21.2 ft from net · Video unavailable" class="shot-map-point" data-attempt-id="2019020706-10" data-board-distance="32" data-event-id="866" data-game-id="2019020706" data-has-video="false" data-result="save" data-rink-side="-3" data-shot-type="wrist" role="button" tabindex="0">
-<title>2020-01-12 · Save · Wrist · 21.2 ft from net · Video unavailable</title><g fill="#c27500" transform="translate(3.000 32.000) scale(.7)"><circle r="1.05"></circle></g></g><g aria-label="2020-01-12 · Save · Wrist · 19.9 ft from net · Video unavailable" class="shot-map-point" data-attempt-id="2019020706-14" data-board-distance="30" data-event-id="870" data-game-id="2019020706" data-has-video="false" data-result="save" data-rink-side="-6" data-shot-type="wrist" role="button" tabindex="0">
-<title>2020-01-12 · Save · Wrist · 19.9 ft from net · Video unavailable</title><g fill="#c27500" transform="translate(6.000 30.000) scale(.7)"><circle r="1.05"></circle></g></g><g aria-label="2020-01-12 · Save · Wrist · 22.0 ft from net · Video unavailable" class="shot-map-point" data-attempt-id="2019020706-16" data-board-distance="33" data-event-id="872" data-game-id="2019020706" data-has-video="false" data-result="save" data-rink-side="1" data-shot-type="wrist" role="button" tabindex="0">
-<title>2020-01-12 · Save · Wrist · 22.0 ft from net · Video unavailable</title><g fill="#c27500" transform="translate(-1.000 33.000) scale(.7)"><circle r="1.05"></circle></g></g><g aria-label="2019-12-14 · Save · Wrist · 23.5 ft from net · Video unavailable" class="shot-map-point" data-attempt-id="2019020509-6" data-board-distance="34" data-event-id="822" data-game-id="2019020509" data-has-video="false" data-result="save" data-rink-side="-5" data-shot-type="wrist" role="button" tabindex="0">
-<title>2019-12-14 · Save · Wrist · 23.5 ft from net · Video unavailable</title><g fill="#c27500" transform="translate(5.000 34.000) scale(.7)"><circle r="1.05"></circle></g></g></svg>
+<title>2025-12-07 · Miss · Snap · 19.0 ft from net · Open attempt</title><g fill="#bb3670" transform="translate(0.000 30.000) scale(.7)"><circle class="shot-map-current-ring" r="2.6"></circle><path d="M 0 -1.35 L 1.25 1 L -1.25 1 Z"></path></g></a><a aria-label="2025-12-07 · Save · Snap · 20.0 ft from net · Open attempt" class="attempt-jump shot-map-point" data-attempt-id="2025020456-3" data-board-distance="31" data-event-id="806" data-game-id="2025020456" data-has-video="true" data-result="save" data-rink-side="-1" data-shot-type="snap" href="?v=2025020456-3" tabindex="0">
+<title>2025-12-07 · Save · Snap · 20.0 ft from net · Open attempt</title><g fill="#c27500" transform="translate(2.550 31.000) scale(.7)"><circle class="shot-map-current-ring" r="2.6"></circle><path d="M 0 -1.35 L 1.25 1 L -1.25 1 Z"></path></g></a><g aria-label="2021-11-06 · Goal allowed · Wrist · 20.0 ft from net · Video unavailable" class="shot-map-point" data-attempt-id="2021020167-6" data-board-distance="31" data-event-id="776" data-game-id="2021020167" data-has-video="false" data-result="goal" data-rink-side="-1" data-shot-type="wrist" role="button" tabindex="0">
+<title>2021-11-06 · Goal allowed · Wrist · 20.0 ft from net · Video unavailable</title><g fill="#007d60" transform="translate(-0.550 31.000) scale(.7)"><circle class="shot-map-current-ring" r="2.6"></circle><circle r="1.05"></circle></g></g><a aria-label="2025-12-07 · Goal allowed · Snap · 24.0 ft from net · Open attempt" class="attempt-jump shot-map-point" data-attempt-id="2025020456-5" data-board-distance="35" data-event-id="808" data-game-id="2025020456" data-has-video="true" data-result="goal" data-rink-side="1" data-shot-type="snap" href="?v=2025020456-5" tabindex="0">
+<title>2025-12-07 · Goal allowed · Snap · 24.0 ft from net · Open attempt</title><g fill="#007d60" transform="translate(-1.000 35.000) scale(.7)"><circle class="shot-map-current-ring" r="2.6"></circle><path d="M 0 -1.35 L 1.25 1 L -1.25 1 Z"></path></g></a><a aria-label="2025-03-23 · Goal allowed · Backhand · 13.3 ft from net · Open attempt" class="attempt-jump shot-map-point" data-attempt-id="2024021120-1" data-board-distance="24" data-event-id="804" data-game-id="2024021120" data-has-video="true" data-result="goal" data-rink-side="-3" data-shot-type="backhand" href="?v=2024021120-1" tabindex="0">
+<title>2025-03-23 · Goal allowed · Backhand · 13.3 ft from net · Open attempt</title><g fill="#007d60" transform="translate(3.000 24.000) scale(.7)"><circle class="shot-map-current-ring" r="2.6"></circle><rect height="2" rx=".12" width="2" x="-1" y="-1"></rect></g></a><a aria-label="2025-03-23 · Save · Backhand · 12.1 ft from net · Open attempt" class="attempt-jump shot-map-point" data-attempt-id="2024021120-3" data-board-distance="22" data-event-id="811" data-game-id="2024021120" data-has-video="true" data-result="save" data-rink-side="-5" data-shot-type="backhand" href="?v=2024021120-3" tabindex="0">
+<title>2025-03-23 · Save · Backhand · 12.1 ft from net · Open attempt</title><g fill="#c27500" transform="translate(5.000 22.000) scale(.7)"><circle class="shot-map-current-ring" r="2.6"></circle><rect height="2" rx=".12" width="2" x="-1" y="-1"></rect></g></a><a aria-label="2025-03-23 · Miss · Snap · 24.0 ft from net · Open attempt" class="attempt-jump shot-map-point" data-attempt-id="2024021120-5" data-board-distance="34" data-event-id="817" data-game-id="2024021120" data-has-video="true" data-result="miss" data-rink-side="-7" data-shot-type="snap" href="?v=2024021120-5" tabindex="0">
+<title>2025-03-23 · Miss · Snap · 24.0 ft from net · Open attempt</title><g fill="#bb3670" transform="translate(7.000 34.000) scale(.7)"><circle class="shot-map-current-ring" r="2.6"></circle><path d="M 0 -1.35 L 1.25 1 L -1.25 1 Z"></path></g></a><a aria-label="2025-01-07 · Goal allowed · Wrist · 24.0 ft from net · Open attempt" class="attempt-jump shot-map-point" data-attempt-id="2024020645-1" data-board-distance="35" data-event-id="569" data-game-id="2024020645" data-has-video="true" data-result="goal" data-rink-side="-1" data-shot-type="wrist" href="?v=2024020645-1" tabindex="0">
+<title>2025-01-07 · Goal allowed · Wrist · 24.0 ft from net · Open attempt</title><g fill="#007d60" transform="translate(1.000 35.000) scale(.7)"><circle class="shot-map-current-ring" r="2.6"></circle><circle r="1.05"></circle></g></a><a aria-label="2025-01-07 · Save · Wrist · 10.8 ft from net · Open attempt" class="attempt-jump shot-map-point" data-attempt-id="2024020645-3" data-board-distance="21" data-event-id="571" data-game-id="2024020645" data-has-video="true" data-result="save" data-rink-side="4" data-shot-type="wrist" href="?v=2024020645-3" tabindex="0">
+<title>2025-01-07 · Save · Wrist · 10.8 ft from net · Open attempt</title><g fill="#c27500" transform="translate(-4.000 21.000) scale(.7)"><circle class="shot-map-current-ring" r="2.6"></circle><circle r="1.05"></circle></g></a><a aria-label="2025-01-07 · Goal allowed · Wrist · 12.2 ft from net · Open attempt" class="attempt-jump shot-map-point" data-attempt-id="2024020645-5" data-board-distance="23" data-event-id="573" data-game-id="2024020645" data-has-video="true" data-result="goal" data-rink-side="2" data-shot-type="wrist" href="?v=2024020645-5" tabindex="0">
+<title>2025-01-07 · Goal allowed · Wrist · 12.2 ft from net · Open attempt</title><g fill="#007d60" transform="translate(-2.000 23.000) scale(.7)"><circle class="shot-map-current-ring" r="2.6"></circle><circle r="1.05"></circle></g></a><a aria-label="2025-01-03 · Save · Wrist · 10.0 ft from net · Open attempt" class="attempt-jump shot-map-point" data-attempt-id="2024020615-1" data-board-distance="21" data-event-id="340" data-game-id="2024020615" data-has-video="true" data-result="save" data-rink-side="-1" data-shot-type="wrist" href="?v=2024020615-1" tabindex="0">
+<title>2025-01-03 · Save · Wrist · 10.0 ft from net · Open attempt</title><g fill="#c27500" transform="translate(2.550 21.000) scale(.7)"><circle class="shot-map-current-ring" r="2.6"></circle><circle r="1.05"></circle></g></a><g aria-label="2021-11-11 · Save · Wrist · 10.0 ft from net · Video unavailable" class="shot-map-point" data-attempt-id="2021020200-2" data-board-distance="21" data-event-id="863" data-game-id="2021020200" data-has-video="false" data-result="save" data-rink-side="-1" data-shot-type="wrist" role="button" tabindex="0">
+<title>2021-11-11 · Save · Wrist · 10.0 ft from net · Video unavailable</title><g fill="#c27500" transform="translate(0.225 22.342) scale(.7)"><circle class="shot-map-current-ring" r="2.6"></circle><circle r="1.05"></circle></g></g><g aria-label="2017-11-11 · Goal allowed · Wrist · 10.0 ft from net · Video unavailable" class="shot-map-point" data-attempt-id="2017020258-3" data-board-distance="21" data-event-id="842" data-game-id="2017020258" data-has-video="false" data-result="goal" data-rink-side="-1" data-shot-type="wrist" role="button" tabindex="0">
+<title>2017-11-11 · Goal allowed · Wrist · 10.0 ft from net · Video unavailable</title><g fill="#007d60" transform="translate(0.225 19.658) scale(.7)"><circle class="shot-map-current-ring" r="2.6"></circle><circle r="1.05"></circle></g></g><a aria-label="2025-01-03 · Goal allowed · Snap · 14.0 ft from net · Open attempt" class="attempt-jump shot-map-point" data-attempt-id="2024020615-3" data-board-distance="25" data-event-id="342" data-game-id="2024020615" data-has-video="true" data-result="goal" data-rink-side="-0" data-shot-type="snap" href="?v=2024020615-3" tabindex="0">
+<title>2025-01-03 · Goal allowed · Snap · 14.0 ft from net · Open attempt</title><g fill="#007d60" transform="translate(1.550 25.000) scale(.7)"><circle class="shot-map-current-ring" r="2.6"></circle><path d="M 0 -1.35 L 1.25 1 L -1.25 1 Z"></path></g></a><g aria-label="2017-11-11 · Goal allowed · Wrist · 14.0 ft from net · Video unavailable" class="shot-map-point" data-attempt-id="2017020258-5" data-board-distance="25" data-event-id="844" data-game-id="2017020258" data-has-video="false" data-result="goal" data-rink-side="-0" data-shot-type="wrist" role="button" tabindex="0">
+<title>2017-11-11 · Goal allowed · Wrist · 14.0 ft from net · Video unavailable</title><g fill="#007d60" transform="translate(-1.550 25.000) scale(.7)"><circle class="shot-map-current-ring" r="2.6"></circle><circle r="1.05"></circle></g></g><a aria-label="2025-01-03 · Goal allowed · Snap · 24.4 ft from net · Open attempt" class="attempt-jump shot-map-point" data-attempt-id="2024020615-5" data-board-distance="31" data-event-id="344" data-game-id="2024020615" data-has-video="true" data-result="goal" data-rink-side="-14" data-shot-type="snap" href="?v=2024020615-5" tabindex="0">
+<title>2025-01-03 · Goal allowed · Snap · 24.4 ft from net · Open attempt</title><g fill="#007d60" transform="translate(14.000 31.000) scale(.7)"><circle class="shot-map-current-ring" r="2.6"></circle><path d="M 0 -1.35 L 1.25 1 L -1.25 1 Z"></path></g></a><a aria-label="2023-12-02 · Save · Wrist · 10.8 ft from net · Video unavailable" class="attempt-jump shot-map-point" data-attempt-id="2023020363-1" data-board-distance="21" data-event-id="445" data-game-id="2023020363" data-has-video="false" data-result="save" data-rink-side="-4" data-shot-type="wrist" href="?v=2023020363-1" tabindex="0">
+<title>2023-12-02 · Save · Wrist · 10.8 ft from net · Video unavailable</title><g fill="#c27500" transform="translate(4.000 21.000) scale(.7)"><circle class="shot-map-current-ring" r="2.6"></circle><circle r="1.05"></circle></g></a><a aria-label="2023-12-02 · Goal allowed · Wrist · 8.5 ft from net · Video unavailable" class="attempt-jump shot-map-point" data-attempt-id="2023020363-3" data-board-distance="17" data-event-id="447" data-game-id="2023020363" data-has-video="false" data-result="goal" data-rink-side="6" data-shot-type="wrist" href="?v=2023020363-3" tabindex="0">
+<title>2023-12-02 · Goal allowed · Wrist · 8.5 ft from net · Video unavailable</title><g fill="#007d60" transform="translate(-6.000 17.000) scale(.7)"><circle class="shot-map-current-ring" r="2.6"></circle><circle r="1.05"></circle></g></a><a aria-label="2023-12-02 · Save · Wrist · 27.3 ft from net · Video unavailable" class="attempt-jump shot-map-point" data-attempt-id="2023020363-5" data-board-distance="36" data-event-id="449" data-game-id="2023020363" data-has-video="false" data-result="save" data-rink-side="-11" data-shot-type="wrist" href="?v=2023020363-5" tabindex="0">
+<title>2023-12-02 · Save · Wrist · 27.3 ft from net · Video unavailable</title><g fill="#c27500" transform="translate(11.000 36.000) scale(.7)"><circle class="shot-map-current-ring" r="2.6"></circle><circle r="1.05"></circle></g></a><g aria-label="2022-11-23 · Goal allowed · Wrist · 12.4 ft from net · Video unavailable" class="shot-map-point" data-attempt-id="2022020305-3" data-board-distance="23" data-event-id="876" data-game-id="2022020305" data-has-video="false" data-result="goal" data-rink-side="-3" data-shot-type="wrist" role="button" tabindex="0">
+<title>2022-11-23 · Goal allowed · Wrist · 12.4 ft from net · Video unavailable</title><g fill="#007d60" transform="translate(3.000 23.000) scale(.7)"><circle class="shot-map-current-ring" r="2.6"></circle><circle r="1.05"></circle></g></g><g aria-label="2022-11-23 · Goal allowed · Wrist · 16.8 ft from net · Video unavailable" class="shot-map-point" data-attempt-id="2022020305-5" data-board-distance="27" data-event-id="878" data-game-id="2022020305" data-has-video="false" data-result="goal" data-rink-side="-5" data-shot-type="wrist" role="button" tabindex="0">
+<title>2022-11-23 · Goal allowed · Wrist · 16.8 ft from net · Video unavailable</title><g fill="#007d60" transform="translate(5.000 27.000) scale(.7)"><circle class="shot-map-current-ring" r="2.6"></circle><circle r="1.05"></circle></g></g><g aria-label="2022-11-23 · Save · Wrist · 17.0 ft from net · Video unavailable" class="shot-map-point" data-attempt-id="2022020305-7" data-board-distance="28" data-event-id="880" data-game-id="2022020305" data-has-video="false" data-result="save" data-rink-side="-0" data-shot-type="wrist" role="button" tabindex="0">
+<title>2022-11-23 · Save · Wrist · 17.0 ft from net · Video unavailable</title><g fill="#c27500" transform="translate(0.000 28.000) scale(.7)"><circle class="shot-map-current-ring" r="2.6"></circle><circle r="1.05"></circle></g></g><g aria-label="2022-03-17 · Miss · Wrist · 10.8 ft from net · Video unavailable" class="shot-map-point" data-attempt-id="2021020972-1" data-board-distance="20" data-event-id="881" data-game-id="2021020972" data-has-video="false" data-result="miss" data-rink-side="-6" data-shot-type="wrist" role="button" tabindex="0">
+<title>2022-03-17 · Miss · Wrist · 10.8 ft from net · Video unavailable</title><g fill="#bb3670" transform="translate(6.000 20.000) scale(.7)"><circle class="shot-map-current-ring" r="2.6"></circle><circle r="1.05"></circle></g></g><g aria-label="2022-03-17 · Save · Backhand · 12.7 ft from net · Video unavailable" class="shot-map-point" data-attempt-id="2021020972-3" data-board-distance="20" data-event-id="883" data-game-id="2021020972" data-has-video="false" data-result="save" data-rink-side="9" data-shot-type="backhand" role="button" tabindex="0">
+<title>2022-03-17 · Save · Backhand · 12.7 ft from net · Video unavailable</title><g fill="#c27500" transform="translate(-9.000 20.000) scale(.7)"><circle class="shot-map-current-ring" r="2.6"></circle><rect height="2" rx=".12" width="2" x="-1" y="-1"></rect></g></g><g aria-label="2022-03-17 · Save · Wrist · 23.2 ft from net · Video unavailable" class="shot-map-point" data-attempt-id="2021020972-5" data-board-distance="34" data-event-id="885" data-game-id="2021020972" data-has-video="false" data-result="save" data-rink-side="3" data-shot-type="wrist" role="button" tabindex="0">
+<title>2022-03-17 · Save · Wrist · 23.2 ft from net · Video unavailable</title><g fill="#c27500" transform="translate(-3.000 34.000) scale(.7)"><circle class="shot-map-current-ring" r="2.6"></circle><circle r="1.05"></circle></g></g><g aria-label="2022-03-17 · Miss · Wrist · 22.1 ft from net · Video unavailable" class="shot-map-point" data-attempt-id="2021020972-7" data-board-distance="33" data-event-id="887" data-game-id="2021020972" data-has-video="false" data-result="miss" data-rink-side="-2" data-shot-type="wrist" role="button" tabindex="0">
+<title>2022-03-17 · Miss · Wrist · 22.1 ft from net · Video unavailable</title><g fill="#bb3670" transform="translate(2.000 33.000) scale(.7)"><circle class="shot-map-current-ring" r="2.6"></circle><circle r="1.05"></circle></g></g><g aria-label="2022-01-23 · Miss · Backhand · 14.2 ft from net · Video unavailable" class="shot-map-point" data-attempt-id="2021020733-2" data-board-distance="22" data-event-id="861" data-game-id="2021020733" data-has-video="false" data-result="miss" data-rink-side="-9" data-shot-type="backhand" role="button" tabindex="0">
+<title>2022-01-23 · Miss · Backhand · 14.2 ft from net · Video unavailable</title><g fill="#bb3670" transform="translate(9.000 22.000) scale(.7)"><circle class="shot-map-current-ring" r="2.6"></circle><rect height="2" rx=".12" width="2" x="-1" y="-1"></rect></g></g><g aria-label="2022-01-23 · Save · Wrist · 11.2 ft from net · Video unavailable" class="shot-map-point" data-attempt-id="2021020733-4" data-board-distance="21" data-event-id="863" data-game-id="2021020733" data-has-video="false" data-result="save" data-rink-side="-5" data-shot-type="wrist" role="button" tabindex="0">
+<title>2022-01-23 · Save · Wrist · 11.2 ft from net · Video unavailable</title><g fill="#c27500" transform="translate(5.000 21.000) scale(.7)"><circle class="shot-map-current-ring" r="2.6"></circle><circle r="1.05"></circle></g></g><g aria-label="2022-01-23 · Miss · Wrist · 21.8 ft from net · Video unavailable" class="shot-map-point" data-attempt-id="2021020733-6" data-board-distance="32" data-event-id="865" data-game-id="2021020733" data-has-video="false" data-result="miss" data-rink-side="-6" data-shot-type="wrist" role="button" tabindex="0">
+<title>2022-01-23 · Miss · Wrist · 21.8 ft from net · Video unavailable</title><g fill="#bb3670" transform="translate(6.000 32.000) scale(.7)"><circle class="shot-map-current-ring" r="2.6"></circle><circle r="1.05"></circle></g></g><g aria-label="2021-11-29 · Save · Wrist · 15.1 ft from net · Video unavailable" class="shot-map-point" data-attempt-id="2021020336-1" data-board-distance="26" data-event-id="647" data-game-id="2021020336" data-has-video="false" data-result="save" data-rink-side="2" data-shot-type="wrist" role="button" tabindex="0">
+<title>2021-11-29 · Save · Wrist · 15.1 ft from net · Video unavailable</title><g fill="#c27500" transform="translate(-2.000 26.000) scale(.7)"><circle class="shot-map-current-ring" r="2.6"></circle><circle r="1.05"></circle></g></g><g aria-label="2021-11-29 · Save · Wrist · 16.0 ft from net · Video unavailable" class="shot-map-point" data-attempt-id="2021020336-3" data-board-distance="27" data-event-id="649" data-game-id="2021020336" data-has-video="false" data-result="save" data-rink-side="-1" data-shot-type="wrist" role="button" tabindex="0">
+<title>2021-11-29 · Save · Wrist · 16.0 ft from net · Video unavailable</title><g fill="#c27500" transform="translate(1.000 27.000) scale(.7)"><circle class="shot-map-current-ring" r="2.6"></circle><circle r="1.05"></circle></g></g><g aria-label="2021-11-29 · Goal allowed · Wrist · 22.1 ft from net · Video unavailable" class="shot-map-point" data-attempt-id="2021020336-5" data-board-distance="33" data-event-id="801" data-game-id="2021020336" data-has-video="false" data-result="goal" data-rink-side="2" data-shot-type="wrist" role="button" tabindex="0">
+<title>2021-11-29 · Goal allowed · Wrist · 22.1 ft from net · Video unavailable</title><g fill="#007d60" transform="translate(-2.000 33.000) scale(.7)"><circle class="shot-map-current-ring" r="2.6"></circle><circle r="1.05"></circle></g></g><g aria-label="2021-11-29 · Save · Wrist · 12.8 ft from net · Video unavailable" class="shot-map-point" data-attempt-id="2021020336-7" data-board-distance="19" data-event-id="803" data-game-id="2021020336" data-has-video="false" data-result="save" data-rink-side="10" data-shot-type="wrist" role="button" tabindex="0">
+<title>2021-11-29 · Save · Wrist · 12.8 ft from net · Video unavailable</title><g fill="#c27500" transform="translate(-10.000 19.000) scale(.7)"><circle class="shot-map-current-ring" r="2.6"></circle><circle r="1.05"></circle></g></g><g aria-label="2021-11-29 · Save · Wrist · 16.0 ft from net · Video unavailable" class="shot-map-point" data-attempt-id="2021020336-9" data-board-distance="27" data-event-id="805" data-game-id="2021020336" data-has-video="false" data-result="save" data-rink-side="-0" data-shot-type="wrist" role="button" tabindex="0">
+<title>2021-11-29 · Save · Wrist · 16.0 ft from net · Video unavailable</title><g fill="#c27500" transform="translate(0.000 27.000) scale(.7)"><circle class="shot-map-current-ring" r="2.6"></circle><circle r="1.05"></circle></g></g><g aria-label="2021-11-29 · Save · Wrist · 14.3 ft from net · Video unavailable" class="shot-map-point" data-attempt-id="2021020336-11" data-board-distance="25" data-event-id="807" data-game-id="2021020336" data-has-video="false" data-result="save" data-rink-side="-3" data-shot-type="wrist" role="button" tabindex="0">
+<title>2021-11-29 · Save · Wrist · 14.3 ft from net · Video unavailable</title><g fill="#c27500" transform="translate(4.550 25.000) scale(.7)"><circle class="shot-map-current-ring" r="2.6"></circle><circle r="1.05"></circle></g></g><g aria-label="2021-11-11 · Goal allowed · Backhand · 14.3 ft from net · Video unavailable" class="shot-map-point" data-attempt-id="2021020200-4" data-board-distance="25" data-event-id="865" data-game-id="2021020200" data-has-video="false" data-result="goal" data-rink-side="-3" data-shot-type="backhand" role="button" tabindex="0">
+<title>2021-11-11 · Goal allowed · Backhand · 14.3 ft from net · Video unavailable</title><g fill="#007d60" transform="translate(1.450 25.000) scale(.7)"><circle class="shot-map-current-ring" r="2.6"></circle><rect height="2" rx=".12" width="2" x="-1" y="-1"></rect></g></g><g aria-label="2021-11-29 · Goal allowed · Wrist · 19.2 ft from net · Video unavailable" class="shot-map-point" data-attempt-id="2021020336-13" data-board-distance="30" data-event-id="809" data-game-id="2021020336" data-has-video="false" data-result="goal" data-rink-side="-3" data-shot-type="wrist" role="button" tabindex="0">
+<title>2021-11-29 · Goal allowed · Wrist · 19.2 ft from net · Video unavailable</title><g fill="#007d60" transform="translate(3.000 30.000) scale(.7)"><circle class="shot-map-current-ring" r="2.6"></circle><circle r="1.05"></circle></g></g><g aria-label="2021-11-11 · Save · Wrist · 17.1 ft from net · Video unavailable" class="shot-map-point" data-attempt-id="2021020200-6" data-board-distance="28" data-event-id="867" data-game-id="2021020200" data-has-video="false" data-result="save" data-rink-side="2" data-shot-type="wrist" role="button" tabindex="0">
+<title>2021-11-11 · Save · Wrist · 17.1 ft from net · Video unavailable</title><g fill="#c27500" transform="translate(-2.000 28.000) scale(.7)"><circle class="shot-map-current-ring" r="2.6"></circle><circle r="1.05"></circle></g></g><g aria-label="2021-11-11 · Save · Wrist · 12.0 ft from net · Video unavailable" class="shot-map-point" data-attempt-id="2021020200-8" data-board-distance="23" data-event-id="869" data-game-id="2021020200" data-has-video="false" data-result="save" data-rink-side="-1" data-shot-type="wrist" role="button" tabindex="0">
+<title>2021-11-11 · Save · Wrist · 12.0 ft from net · Video unavailable</title><g fill="#c27500" transform="translate(2.550 23.000) scale(.7)"><circle class="shot-map-current-ring" r="2.6"></circle><circle r="1.05"></circle></g></g><g aria-label="2020-01-12 · Save · Wrist · 12.0 ft from net · Video unavailable" class="shot-map-point" data-attempt-id="2019020706-2" data-board-distance="23" data-event-id="858" data-game-id="2019020706" data-has-video="false" data-result="save" data-rink-side="-1" data-shot-type="wrist" role="button" tabindex="0">
+<title>2020-01-12 · Save · Wrist · 12.0 ft from net · Video unavailable</title><g fill="#c27500" transform="translate(-0.550 23.000) scale(.7)"><circle class="shot-map-current-ring" r="2.6"></circle><circle r="1.05"></circle></g></g><g aria-label="2021-11-09 · Goal allowed · Wrist · 9.0 ft from net · Video unavailable" class="shot-map-point" data-attempt-id="2021020187-1" data-board-distance="20" data-event-id="689" data-game-id="2021020187" data-has-video="false" data-result="goal" data-rink-side="-0" data-shot-type="wrist" role="button" tabindex="0">
+<title>2021-11-09 · Goal allowed · Wrist · 9.0 ft from net · Video unavailable</title><g fill="#007d60" transform="translate(0.000 20.000) scale(.7)"><circle class="shot-map-current-ring" r="2.6"></circle><circle r="1.05"></circle></g></g><g aria-label="2021-11-09 · Save · Wrist · 11.7 ft from net · Video unavailable" class="shot-map-point" data-attempt-id="2021020187-3" data-board-distance="22" data-event-id="691" data-game-id="2021020187" data-has-video="false" data-result="save" data-rink-side="4" data-shot-type="wrist" role="button" tabindex="0">
+<title>2021-11-09 · Save · Wrist · 11.7 ft from net · Video unavailable</title><g fill="#c27500" transform="translate(-4.000 22.000) scale(.7)"><circle class="shot-map-current-ring" r="2.6"></circle><circle r="1.05"></circle></g></g><g aria-label="2021-11-09 · Goal allowed · Wrist · 16.1 ft from net · Video unavailable" class="shot-map-point" data-attempt-id="2021020187-5" data-board-distance="27" data-event-id="693" data-game-id="2021020187" data-has-video="false" data-result="goal" data-rink-side="2" data-shot-type="wrist" role="button" tabindex="0">
+<title>2021-11-09 · Goal allowed · Wrist · 16.1 ft from net · Video unavailable</title><g fill="#007d60" transform="translate(-2.000 27.000) scale(.7)"><circle class="shot-map-current-ring" r="2.6"></circle><circle r="1.05"></circle></g></g><g aria-label="2021-11-06 · Save · Backhand · 7.3 ft from net · Video unavailable" class="shot-map-point" data-attempt-id="2021020167-2" data-board-distance="18" data-event-id="772" data-game-id="2021020167" data-has-video="false" data-result="save" data-rink-side="-2" data-shot-type="backhand" role="button" tabindex="0">
+<title>2021-11-06 · Save · Backhand · 7.3 ft from net · Video unavailable</title><g fill="#c27500" transform="translate(2.000 18.000) scale(.7)"><circle class="shot-map-current-ring" r="2.6"></circle><rect height="2" rx=".12" width="2" x="-1" y="-1"></rect></g></g><g aria-label="2021-11-06 · Goal allowed · Wrist · 20.1 ft from net · Video unavailable" class="shot-map-point" data-attempt-id="2021020167-4" data-board-distance="31" data-event-id="774" data-game-id="2021020167" data-has-video="false" data-result="goal" data-rink-side="-2" data-shot-type="wrist" role="button" tabindex="0">
+<title>2021-11-06 · Goal allowed · Wrist · 20.1 ft from net · Video unavailable</title><g fill="#007d60" transform="translate(2.000 31.000) scale(.7)"><circle class="shot-map-current-ring" r="2.6"></circle><circle r="1.05"></circle></g></g><g aria-label="2021-11-06 · Goal allowed · Wrist · 16.5 ft from net · Video unavailable" class="shot-map-point" data-attempt-id="2021020167-8" data-board-distance="27" data-event-id="778" data-game-id="2021020167" data-has-video="false" data-result="goal" data-rink-side="4" data-shot-type="wrist" role="button" tabindex="0">
+<title>2021-11-06 · Goal allowed · Wrist · 16.5 ft from net · Video unavailable</title><g fill="#007d60" transform="translate(-4.000 27.000) scale(.7)"><circle class="shot-map-current-ring" r="2.6"></circle><circle r="1.05"></circle></g></g><g aria-label="2021-10-19 · Save · Wrist · 11.2 ft from net · Video unavailable" class="shot-map-point" data-attempt-id="2021020044-2" data-board-distance="21" data-event-id="628" data-game-id="2021020044" data-has-video="false" data-result="save" data-rink-side="5" data-shot-type="wrist" role="button" tabindex="0">
+<title>2021-10-19 · Save · Wrist · 11.2 ft from net · Video unavailable</title><g fill="#c27500" transform="translate(-5.000 21.000) scale(.7)"><circle class="shot-map-current-ring" r="2.6"></circle><circle r="1.05"></circle></g></g><g aria-label="2021-10-19 · Goal allowed · Backhand · 11.7 ft from net · Video unavailable" class="shot-map-point" data-attempt-id="2021020044-4" data-board-distance="21" data-event-id="630" data-game-id="2021020044" data-has-video="false" data-result="goal" data-rink-side="6" data-shot-type="backhand" role="button" tabindex="0">
+<title>2021-10-19 · Goal allowed · Backhand · 11.7 ft from net · Video unavailable</title><g fill="#007d60" transform="translate(-6.000 21.000) scale(.7)"><circle class="shot-map-current-ring" r="2.6"></circle><rect height="2" rx=".12" width="2" x="-1" y="-1"></rect></g></g><g aria-label="2021-10-19 · Goal allowed · Backhand · 8.9 ft from net · Video unavailable" class="shot-map-point" data-attempt-id="2021020044-6" data-board-distance="19" data-event-id="632" data-game-id="2021020044" data-has-video="false" data-result="goal" data-rink-side="-4" data-shot-type="backhand" role="button" tabindex="0">
+<title>2021-10-19 · Goal allowed · Backhand · 8.9 ft from net · Video unavailable</title><g fill="#007d60" transform="translate(4.000 19.000) scale(.7)"><circle class="shot-map-current-ring" r="2.6"></circle><rect height="2" rx=".12" width="2" x="-1" y="-1"></rect></g></g><g aria-label="2021-04-15 · Goal allowed · Wrist · 8.5 ft from net · Video unavailable" class="shot-map-point" data-attempt-id="2020020680-2" data-board-distance="19" data-event-id="638" data-game-id="2020020680" data-has-video="false" data-result="goal" data-rink-side="-3" data-shot-type="wrist" role="button" tabindex="0">
+<title>2021-04-15 · Goal allowed · Wrist · 8.5 ft from net · Video unavailable</title><g fill="#007d60" transform="translate(3.000 19.000) scale(.7)"><circle class="shot-map-current-ring" r="2.6"></circle><circle r="1.05"></circle></g></g><g aria-label="2021-04-15 · Goal allowed · Backhand · 7.1 ft from net · Video unavailable" class="shot-map-point" data-attempt-id="2020020680-4" data-board-distance="18" data-event-id="640" data-game-id="2020020680" data-has-video="false" data-result="goal" data-rink-side="-1" data-shot-type="backhand" role="button" tabindex="0">
+<title>2021-04-15 · Goal allowed · Backhand · 7.1 ft from net · Video unavailable</title><g fill="#007d60" transform="translate(1.000 18.000) scale(.7)"><circle class="shot-map-current-ring" r="2.6"></circle><rect height="2" rx=".12" width="2" x="-1" y="-1"></rect></g></g><g aria-label="2021-01-22 · Save · Backhand · 12.6 ft from net · Video unavailable" class="shot-map-point" data-attempt-id="2020020068-2" data-board-distance="23" data-event-id="733" data-game-id="2020020068" data-has-video="false" data-result="save" data-rink-side="4" data-shot-type="backhand" role="button" tabindex="0">
+<title>2021-01-22 · Save · Backhand · 12.6 ft from net · Video unavailable</title><g fill="#c27500" transform="translate(-4.000 23.000) scale(.7)"><circle class="shot-map-current-ring" r="2.6"></circle><rect height="2" rx=".12" width="2" x="-1" y="-1"></rect></g></g><g aria-label="2021-01-22 · Goal allowed · Wrist · 10.0 ft from net · Video unavailable" class="shot-map-point" data-attempt-id="2020020068-4" data-board-distance="21" data-event-id="735" data-game-id="2020020068" data-has-video="false" data-result="goal" data-rink-side="-0" data-shot-type="wrist" role="button" tabindex="0">
+<title>2021-01-22 · Goal allowed · Wrist · 10.0 ft from net · Video unavailable</title><g fill="#007d60" transform="translate(0.000 21.000) scale(.7)"><circle class="shot-map-current-ring" r="2.6"></circle><circle r="1.05"></circle></g></g><g aria-label="2021-01-22 · Save · Wrist · 9.4 ft from net · Video unavailable" class="shot-map-point" data-attempt-id="2020020068-6" data-board-distance="19" data-event-id="737" data-game-id="2020020068" data-has-video="false" data-result="save" data-rink-side="-5" data-shot-type="wrist" role="button" tabindex="0">
+<title>2021-01-22 · Save · Wrist · 9.4 ft from net · Video unavailable</title><g fill="#c27500" transform="translate(5.000 19.000) scale(.7)"><circle class="shot-map-current-ring" r="2.6"></circle><circle r="1.05"></circle></g></g><g aria-label="2020-01-12 · Goal allowed · Wrist · 16.3 ft from net · Video unavailable" class="shot-map-point" data-attempt-id="2019020706-6" data-board-distance="27" data-event-id="862" data-game-id="2019020706" data-has-video="false" data-result="goal" data-rink-side="3" data-shot-type="wrist" role="button" tabindex="0">
+<title>2020-01-12 · Goal allowed · Wrist · 16.3 ft from net · Video unavailable</title><g fill="#007d60" transform="translate(-3.000 27.000) scale(.7)"><circle class="shot-map-current-ring" r="2.6"></circle><circle r="1.05"></circle></g></g><g aria-label="2020-01-12 · Save · Wrist · 21.2 ft from net · Video unavailable" class="shot-map-point" data-attempt-id="2019020706-10" data-board-distance="32" data-event-id="866" data-game-id="2019020706" data-has-video="false" data-result="save" data-rink-side="-3" data-shot-type="wrist" role="button" tabindex="0">
+<title>2020-01-12 · Save · Wrist · 21.2 ft from net · Video unavailable</title><g fill="#c27500" transform="translate(3.000 32.000) scale(.7)"><circle class="shot-map-current-ring" r="2.6"></circle><circle r="1.05"></circle></g></g><g aria-label="2020-01-12 · Save · Wrist · 19.9 ft from net · Video unavailable" class="shot-map-point" data-attempt-id="2019020706-14" data-board-distance="30" data-event-id="870" data-game-id="2019020706" data-has-video="false" data-result="save" data-rink-side="-6" data-shot-type="wrist" role="button" tabindex="0">
+<title>2020-01-12 · Save · Wrist · 19.9 ft from net · Video unavailable</title><g fill="#c27500" transform="translate(6.000 30.000) scale(.7)"><circle class="shot-map-current-ring" r="2.6"></circle><circle r="1.05"></circle></g></g><g aria-label="2020-01-12 · Save · Wrist · 22.0 ft from net · Video unavailable" class="shot-map-point" data-attempt-id="2019020706-16" data-board-distance="33" data-event-id="872" data-game-id="2019020706" data-has-video="false" data-result="save" data-rink-side="1" data-shot-type="wrist" role="button" tabindex="0">
+<title>2020-01-12 · Save · Wrist · 22.0 ft from net · Video unavailable</title><g fill="#c27500" transform="translate(-1.000 33.000) scale(.7)"><circle class="shot-map-current-ring" r="2.6"></circle><circle r="1.05"></circle></g></g><g aria-label="2019-12-14 · Save · Wrist · 23.5 ft from net · Video unavailable" class="shot-map-point" data-attempt-id="2019020509-6" data-board-distance="34" data-event-id="822" data-game-id="2019020509" data-has-video="false" data-result="save" data-rink-side="-5" data-shot-type="wrist" role="button" tabindex="0">
+<title>2019-12-14 · Save · Wrist · 23.5 ft from net · Video unavailable</title><g fill="#c27500" transform="translate(5.000 34.000) scale(.7)"><circle class="shot-map-current-ring" r="2.6"></circle><circle r="1.05"></circle></g></g></svg>
+<details class="shot-map-key"><summary>Map key &amp; coverage</summary>
+<p class="shot-map-hint">Fill shows the result; shape shows the shot type. A blue ring marks the selected attempt.</p>
 <div aria-label="Shot types" class="shot-map-types"><span><svg aria-hidden="true" viewbox="-2 -2 4 4"><circle r="1.05"></circle></svg>Wrist</span><span><svg aria-hidden="true" viewbox="-2 -2 4 4"><path d="M 0 -1.35 L 1.25 1 L -1.25 1 Z"></path></svg>Snap</span><span><svg aria-hidden="true" viewbox="-2 -2 4 4"><rect height="2" rx=".12" width="2" x="-1" y="-1"></rect></svg>Backhand</span></div>
 <div aria-label="Video availability" class="shot-map-video-legend">
 <span><svg aria-hidden="true" class="shot-map-video-key" data-has-video="true" viewbox="-2 -2 4 4"><g><circle r="1.05"></circle></g></svg>White border: video</span>
 <span><svg aria-hidden="true" class="shot-map-video-key" data-has-video="false" viewbox="-2 -2 4 4"><g><circle r="1.05"></circle></g></svg>Dark dashed border: no video</span>
 </div>
-<p class="shot-map-note">59 shots shown · 2017–18 to 2025–26. Both rink ends rotated toward the same net. 1 without a recorded shot omitted. Overlapping locations are slightly separated; stems mark the recorded spot.</p></div>
+<p class="shot-map-note">59 shots shown · 2017–18 to 2025–26. Both rink ends rotated toward the same net. 1 without a recorded shot omitted. Overlapping locations are slightly separated; stems mark the recorded spot.</p></details></div>
 <p aria-atomic="true" aria-live="polite" class="shot-map-selection" hidden=""></p>
 </section>
 <!-- Player Stats (desktop: below video) -->
-<div class="player-stats-desktop">
+<section aria-label="Shootout approaches faced" class="shootout-goalie-approaches" data-goalie-id="8477465" id="approaches-faced">
+<div class="scouting-approaches" data-classified="3" data-model-version="video-approach-v3" data-perspective="shooter" data-role="goalie" data-total="15">
+<h2>Approaches faced</h2>
+<table class="scouting-approach-table"><caption>Approach share and goals allowed rate</caption><thead><tr><th scope="col"><details class="approach-help"><summary aria-label="Approach: show viewpoint explanation" title="Left and right from the shooter's viewpoint, facing the net. Shooter's left is the goalie's right, and vice versa. Lower goals allowed rates are better for the goalie.">Approach <span aria-hidden="true">ⓘ</span></summary><p class="approach-help-text">Left and right from the shooter's viewpoint, facing the net. Shooter's left is the goalie's right, and vice versa. Lower goals allowed rates are better for the goalie.</p></details></th><th scope="col">Share (attempts)</th><th scope="col">Goals allowed rate (goals/attempts)</th></tr></thead><tbody><tr data-attempts="2" data-goals="2" data-known-outcomes="2" data-side="left"><th scope="row">Shooter's left</th><td>66.7% <span>(2)</span></td><td>100.0% <span>(2/2)</span></td></tr><tr data-attempts="0" data-goals="0" data-known-outcomes="0" data-side="center"><th scope="row">Center</th><td>0.0% <span>(0)</span></td><td>— <span>(0/0)</span></td></tr><tr data-attempts="1" data-goals="0" data-known-outcomes="1" data-side="right"><th scope="row">Shooter's right</th><td>33.3% <span>(1)</span></td><td>0.0% <span>(0/1)</span></td></tr></tbody></table>
+<p class="scouting-scope">3 of 15 attempts faced classified · 2023-12-02 to 2025-12-07. 12 unclassified. Shares use classified attempts only; goals allowed rates use known results within each approach.</p>
+<details class="scouting-method"><summary>How approach is measured</summary><p>Video estimates use the player's median sideways position between the blue line and 20 ft from the goal line. Center means within 4 ft of the rink's middle; left and right describe the main approach lane, even if the player cuts across later. Only tracks passing automatic quality checks count, with at least 5 observed positions spanning 15 ft and no gap over 0.4 seconds. Partial, uncertain and missing tracks stay unclassified. These are estimates from available videos, not complete career tendencies; small samples can produce extreme scoring rates.</p></details>
+</div>
+</section><div class="player-stats-desktop">
 <div class="player-stats-section">
 <h3 class="stats-title">Shootout Statistics</h3>
 <div class="stats-container">
@@ -247,154 +269,177 @@
 </div>
 </div>
 </div>
-</div><section aria-label="Shootout approaches faced" class="shootout-goalie-approaches" data-goalie-id="8477465" id="approaches-faced">
-<div class="scouting-approaches" data-classified="3" data-model-version="video-approach-v2" data-perspective="shooter" data-role="goalie" data-total="15">
-<h2>Approaches faced</h2>
-<table class="scouting-approach-table"><caption>Approach share and goals allowed rate</caption><thead><tr><th scope="col"><details class="approach-help"><summary aria-label="Approach: show viewpoint explanation" title="Left and right from the shooter's viewpoint, facing the net. Shooter's left is the goalie's right, and vice versa. Lower goals allowed rates are better for the goalie.">Approach <span aria-hidden="true">ⓘ</span></summary><p class="approach-help-text">Left and right from the shooter's viewpoint, facing the net. Shooter's left is the goalie's right, and vice versa. Lower goals allowed rates are better for the goalie.</p></details></th><th scope="col">Share (attempts)</th><th scope="col">Goals allowed rate (goals/attempts)</th></tr></thead><tbody><tr data-attempts="1" data-goals="0" data-known-outcomes="1" data-side="left"><th scope="row">Shooter's left</th><td>33.3% <span>(1)</span></td><td>0.0% <span>(0/1)</span></td></tr><tr data-attempts="0" data-goals="0" data-known-outcomes="0" data-side="center"><th scope="row">Center</th><td>0.0% <span>(0)</span></td><td>— <span>(0/0)</span></td></tr><tr data-attempts="2" data-goals="2" data-known-outcomes="2" data-side="right"><th scope="row">Shooter's right</th><td>66.7% <span>(2)</span></td><td>100.0% <span>(2/2)</span></td></tr></tbody></table>
-<p class="scouting-scope">3 of 15 attempts faced classified · 2023-12-02 to 2025-12-07. 12 unclassified. Shares use classified attempts only; goals allowed rates use known results within each approach.</p>
-<details class="scouting-method"><summary>How approach is measured</summary><p>Video estimates use the player's median sideways position between the blue line and 20 ft from the goal line. Center means within 4 ft of the rink's middle; left and right describe the main approach lane, even if the player cuts across later. Only tracks passing automatic quality checks count, with at least 5 observed positions spanning 15 ft and no gap over 0.4 seconds. Partial, uncertain and missing tracks stay unclassified. These are estimates from available videos, not complete career tendencies; small samples can produce extreme scoring rates.</p></details>
 </div>
-</section>
 </div>
 <!-- Right Column (Attempts Sidebar) -->
 <div class="right-column">
 <!-- Attempts Sidebar -->
 <div class="attempts-sidebar">
 <h3 class="sidebar-title">Shootout Attempts</h3>
-<div class="attempt-item active" data-details="Dec 07, 2025 • Hit Crossbar • Snap&lt;br&gt;Shootout Attempt #1" data-has-video="true" data-title="vs Stars" data-video="https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/09f9e6e3-117b-4d5f-afa6-29cd902b3df8.mp4" data-video-id="2025020456-1">
+<div class="attempt-item active" data-details="Dec 07, 2025 • Hit Crossbar • Snap" data-has-video="true" data-result="miss" data-title="vs Stars" data-video="https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/09f9e6e3-117b-4d5f-afa6-29cd902b3df8.mp4" data-video-id="2025020456-1">
+<button class="attempt-select" type="button">
 <div class="attempt-result miss"></div>
 <div class="attempt-info">
 <div class="attempt-date">Dec 07, 2025</div>
 <div class="attempt-opponent">vs Stars</div>
 <div class="attempt-details">Snap • Hit Crossbar</div>
+</div>
+</button>
 <div class="attempt-context">Round 1 · Shooter: <a href="/shootout/players/jason_robertson_shootouts.html?v=2025020456-1">Jason Robertson</a></div>
 </div>
-</div>
-<div class="attempt-item" data-details="Dec 07, 2025 • Save • Snap&lt;br&gt;Shootout Attempt #3" data-has-video="true" data-title="vs Stars" data-video="https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/f7b32634-c17b-4bf6-b45f-25d013922e4a.mp4" data-video-id="2025020456-3">
+<div class="attempt-item" data-details="Dec 07, 2025 • Save • Snap" data-has-video="true" data-result="save" data-title="vs Stars" data-video="https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/f7b32634-c17b-4bf6-b45f-25d013922e4a.mp4" data-video-id="2025020456-3">
+<button class="attempt-select" type="button">
 <div class="attempt-result save"></div>
 <div class="attempt-info">
 <div class="attempt-date">Dec 07, 2025</div>
 <div class="attempt-opponent">vs Stars</div>
 <div class="attempt-details">Snap • Save</div>
+</div>
+</button>
 <div class="attempt-context">Round 2 · Shooter: <a href="/shootout/players/matt_duchene_shootouts.html?v=2025020456-3">Matt Duchene</a></div>
 </div>
-</div>
-<div class="attempt-item" data-details="Dec 07, 2025 • Goal • Snap&lt;br&gt;Shootout Attempt #5" data-has-video="true" data-title="vs Stars" data-video="https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/cdd2c7e0-7547-4aed-bf8b-82292e915d8d.mp4" data-video-id="2025020456-5">
+<div class="attempt-item" data-details="Dec 07, 2025 • Goal • Snap" data-has-video="true" data-result="goal" data-title="vs Stars" data-video="https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/cdd2c7e0-7547-4aed-bf8b-82292e915d8d.mp4" data-video-id="2025020456-5">
+<button class="attempt-select" type="button">
 <div class="attempt-result goal"></div>
 <div class="attempt-info">
 <div class="attempt-date">Dec 07, 2025</div>
 <div class="attempt-opponent">vs Stars</div>
 <div class="attempt-details">Snap • Goal</div>
+</div>
+</button>
 <div class="attempt-context">Round 3 · Shooter: <a href="/shootout/players/mikko_rantanen_shootouts.html?v=2025020456-5">Mikko Rantanen</a></div>
 </div>
-</div>
-<div class="attempt-item" data-details="Mar 23, 2025 • Goal • Backhand&lt;br&gt;Shootout Attempt #1" data-has-video="true" data-title="vs Panthers" data-video="https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/85b55014-513b-4210-ac74-5df9f38294d6.mp4" data-video-id="2024021120-1">
+<div class="attempt-item" data-details="Mar 23, 2025 • Goal • Backhand" data-has-video="true" data-result="goal" data-title="vs Panthers" data-video="https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/85b55014-513b-4210-ac74-5df9f38294d6.mp4" data-video-id="2024021120-1">
+<button class="attempt-select" type="button">
 <div class="attempt-result goal"></div>
 <div class="attempt-info">
 <div class="attempt-date">Mar 23, 2025</div>
 <div class="attempt-opponent">vs Panthers</div>
 <div class="attempt-details">Backhand • Goal</div>
+</div>
+</button>
 <div class="attempt-context">Round 1 · Shooter: <a href="/shootout/players/aleksander_barkov_shootouts.html?v=2024021120-1">Aleksander Barkov</a></div>
 </div>
-</div>
-<div class="attempt-item" data-details="Mar 23, 2025 • Save • Backhand&lt;br&gt;Shootout Attempt #3" data-has-video="true" data-title="vs Panthers" data-video="https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/a6db6115-4289-4069-94a6-5bf412ba1079.mp4" data-video-id="2024021120-3">
+<div class="attempt-item" data-details="Mar 23, 2025 • Save • Backhand" data-has-video="true" data-result="save" data-title="vs Panthers" data-video="https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/a6db6115-4289-4069-94a6-5bf412ba1079.mp4" data-video-id="2024021120-3">
+<button class="attempt-select" type="button">
 <div class="attempt-result save"></div>
 <div class="attempt-info">
 <div class="attempt-date">Mar 23, 2025</div>
 <div class="attempt-opponent">vs Panthers</div>
 <div class="attempt-details">Backhand • Save</div>
+</div>
+</button>
 <div class="attempt-context">Round 2 · Shooter: <a href="/shootout/players/anton_lundell_shootouts.html?v=2024021120-3">Anton Lundell</a></div>
 </div>
-</div>
-<div class="attempt-item" data-details="Mar 23, 2025 • Hit Crossbar • Snap&lt;br&gt;Shootout Attempt #5" data-has-video="true" data-title="vs Panthers" data-video="https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/2e067ee5-7189-494a-bd60-8d5ac14e9b34.mp4" data-video-id="2024021120-5">
+<div class="attempt-item" data-details="Mar 23, 2025 • Hit Crossbar • Snap" data-has-video="true" data-result="miss" data-title="vs Panthers" data-video="https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/2e067ee5-7189-494a-bd60-8d5ac14e9b34.mp4" data-video-id="2024021120-5">
+<button class="attempt-select" type="button">
 <div class="attempt-result miss"></div>
 <div class="attempt-info">
 <div class="attempt-date">Mar 23, 2025</div>
 <div class="attempt-opponent">vs Panthers</div>
 <div class="attempt-details">Snap • Hit Crossbar</div>
+</div>
+</button>
 <div class="attempt-context">Round 3 · Shooter: <a href="/shootout/players/sam_reinhart_shootouts.html?v=2024021120-5">Sam Reinhart</a></div>
 </div>
-</div>
-<div class="attempt-item" data-details="Jan 07, 2025 • Goal • Wrist&lt;br&gt;Shootout Attempt #1" data-has-video="true" data-title="vs Blue Jackets" data-video="https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/39367e98-e45f-44f3-b775-26c4a90142b3.mp4" data-video-id="2024020645-1">
+<div class="attempt-item" data-details="Jan 07, 2025 • Goal • Wrist" data-has-video="true" data-result="goal" data-title="vs Blue Jackets" data-video="https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/39367e98-e45f-44f3-b775-26c4a90142b3.mp4" data-video-id="2024020645-1">
+<button class="attempt-select" type="button">
 <div class="attempt-result goal"></div>
 <div class="attempt-info">
 <div class="attempt-date">Jan 07, 2025</div>
 <div class="attempt-opponent">vs Blue Jackets</div>
 <div class="attempt-details">Wrist • Goal</div>
+</div>
+</button>
 <div class="attempt-context">Round 1 · Shooter: <a href="/shootout/players/kent_johnson_shootouts.html?v=2024020645-1">Kent Johnson</a></div>
 </div>
-</div>
-<div class="attempt-item" data-details="Jan 07, 2025 • Save • Wrist&lt;br&gt;Shootout Attempt #3" data-has-video="true" data-title="vs Blue Jackets" data-video="https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/5c887c14-dac2-4070-8e59-9e25329ab158.mp4" data-video-id="2024020645-3">
+<div class="attempt-item" data-details="Jan 07, 2025 • Save • Wrist" data-has-video="true" data-result="save" data-title="vs Blue Jackets" data-video="https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/5c887c14-dac2-4070-8e59-9e25329ab158.mp4" data-video-id="2024020645-3">
+<button class="attempt-select" type="button">
 <div class="attempt-result save"></div>
 <div class="attempt-info">
 <div class="attempt-date">Jan 07, 2025</div>
 <div class="attempt-opponent">vs Blue Jackets</div>
 <div class="attempt-details">Wrist • Save</div>
+</div>
+</button>
 <div class="attempt-context">Round 2 · Shooter: <a href="/shootout/players/adam_fantilli_shootouts.html?v=2024020645-3">Adam Fantilli</a></div>
 </div>
-</div>
-<div class="attempt-item" data-details="Jan 07, 2025 • Goal • Wrist&lt;br&gt;Shootout Attempt #5" data-has-video="true" data-title="vs Blue Jackets" data-video="https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/1d934a4e-6767-4fe4-ba15-2ecf7dc48900.mp4" data-video-id="2024020645-5">
+<div class="attempt-item" data-details="Jan 07, 2025 • Goal • Wrist" data-has-video="true" data-result="goal" data-title="vs Blue Jackets" data-video="https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/1d934a4e-6767-4fe4-ba15-2ecf7dc48900.mp4" data-video-id="2024020645-5">
+<button class="attempt-select" type="button">
 <div class="attempt-result goal"></div>
 <div class="attempt-info">
 <div class="attempt-date">Jan 07, 2025</div>
 <div class="attempt-opponent">vs Blue Jackets</div>
 <div class="attempt-details">Wrist • Goal</div>
+</div>
+</button>
 <div class="attempt-context">Round 3 · Shooter: <a href="/shootout/players/kirill_marchenko_shootouts.html?v=2024020645-5">Kirill Marchenko</a></div>
 </div>
-</div>
-<div class="attempt-item" data-details="Jan 03, 2025 • Save • Wrist&lt;br&gt;Shootout Attempt #1" data-has-video="true" data-title="vs Panthers" data-video="https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/76402f08-d804-4213-941e-66ea887da5ba.mp4" data-video-id="2024020615-1">
+<div class="attempt-item" data-details="Jan 03, 2025 • Save • Wrist" data-has-video="true" data-result="save" data-title="vs Panthers" data-video="https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/76402f08-d804-4213-941e-66ea887da5ba.mp4" data-video-id="2024020615-1">
+<button class="attempt-select" type="button">
 <div class="attempt-result save"></div>
 <div class="attempt-info">
 <div class="attempt-date">Jan 03, 2025</div>
 <div class="attempt-opponent">vs Panthers</div>
 <div class="attempt-details">Wrist • Save</div>
+</div>
+</button>
 <div class="attempt-context">Round 1 · Shooter: <a href="/shootout/players/aleksander_barkov_shootouts.html?v=2024020615-1">Aleksander Barkov</a></div>
 </div>
-</div>
-<div class="attempt-item" data-details="Jan 03, 2025 • Goal • Snap&lt;br&gt;Shootout Attempt #3" data-has-video="true" data-title="vs Panthers" data-video="https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/3c9108b8-1397-43fe-a677-4a1b4d7922a6.mp4" data-video-id="2024020615-3">
+<div class="attempt-item" data-details="Jan 03, 2025 • Goal • Snap" data-has-video="true" data-result="goal" data-title="vs Panthers" data-video="https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/3c9108b8-1397-43fe-a677-4a1b4d7922a6.mp4" data-video-id="2024020615-3">
+<button class="attempt-select" type="button">
 <div class="attempt-result goal"></div>
 <div class="attempt-info">
 <div class="attempt-date">Jan 03, 2025</div>
 <div class="attempt-opponent">vs Panthers</div>
 <div class="attempt-details">Snap • Goal</div>
+</div>
+</button>
 <div class="attempt-context">Round 2 · Shooter: <a href="/shootout/players/sam_reinhart_shootouts.html?v=2024020615-3">Sam Reinhart</a></div>
 </div>
-</div>
-<div class="attempt-item" data-details="Jan 03, 2025 • Goal • Snap&lt;br&gt;Shootout Attempt #5" data-has-video="true" data-title="vs Panthers" data-video="https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/461b37bd-d881-410d-b14f-941092862281.mp4" data-video-id="2024020615-5">
+<div class="attempt-item" data-details="Jan 03, 2025 • Goal • Snap" data-has-video="true" data-result="goal" data-title="vs Panthers" data-video="https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/461b37bd-d881-410d-b14f-941092862281.mp4" data-video-id="2024020615-5">
+<button class="attempt-select" type="button">
 <div class="attempt-result goal"></div>
 <div class="attempt-info">
 <div class="attempt-date">Jan 03, 2025</div>
 <div class="attempt-opponent">vs Panthers</div>
 <div class="attempt-details">Snap • Goal</div>
+</div>
+</button>
 <div class="attempt-context">Round 3 · Shooter: <a href="/shootout/players/anton_lundell_shootouts.html?v=2024020615-5">Anton Lundell</a></div>
 </div>
-</div>
-<div class="attempt-item no-video" data-details="Dec 02, 2023 • Save • Wrist&lt;br&gt;Shootout Attempt #1" data-has-video="false" data-title="vs Flyers" data-video="" data-video-id="2023020363-1">
+<div class="attempt-item no-video" data-details="Dec 02, 2023 • Save • Wrist" data-has-video="false" data-result="save" data-title="vs Flyers" data-video="" data-video-id="2023020363-1">
+<button class="attempt-select" type="button">
 <div class="attempt-result save"></div>
 <div class="attempt-info">
 <div class="attempt-date">Dec 02, 2023 (No Video)</div>
 <div class="attempt-opponent">vs Flyers</div>
 <div class="attempt-details">Wrist • Save</div>
+</div>
+</button>
 <div class="attempt-context">Round 1 · Shooter: <a href="/shootout/players/tyson_foerster_shootouts.html?v=2023020363-1">Tyson Foerster</a></div>
 </div>
-</div>
-<div class="attempt-item no-video" data-details="Dec 02, 2023 • Goal • Wrist&lt;br&gt;Shootout Attempt #3" data-has-video="false" data-title="vs Flyers" data-video="" data-video-id="2023020363-3">
+<div class="attempt-item no-video" data-details="Dec 02, 2023 • Goal • Wrist" data-has-video="false" data-result="goal" data-title="vs Flyers" data-video="" data-video-id="2023020363-3">
+<button class="attempt-select" type="button">
 <div class="attempt-result goal"></div>
 <div class="attempt-info">
 <div class="attempt-date">Dec 02, 2023 (No Video)</div>
 <div class="attempt-opponent">vs Flyers</div>
 <div class="attempt-details">Wrist • Goal</div>
+</div>
+</button>
 <div class="attempt-context">Round 2 · Shooter: <a href="/shootout/players/sean_couturier_shootouts.html?v=2023020363-3">Sean Couturier</a></div>
 </div>
-</div>
-<div class="attempt-item no-video" data-details="Dec 02, 2023 • Save • Wrist&lt;br&gt;Shootout Attempt #5" data-has-video="false" data-title="vs Flyers" data-video="" data-video-id="2023020363-5">
+<div class="attempt-item no-video" data-details="Dec 02, 2023 • Save • Wrist" data-has-video="false" data-result="save" data-title="vs Flyers" data-video="" data-video-id="2023020363-5">
+<button class="attempt-select" type="button">
 <div class="attempt-result save"></div>
 <div class="attempt-info">
 <div class="attempt-date">Dec 02, 2023 (No Video)</div>
 <div class="attempt-opponent">vs Flyers</div>
 <div class="attempt-details">Wrist • Save</div>
-<div class="attempt-context">Round 3 · Shooter: <a href="/shootout/players/travis_konecny_shootouts.html?v=2023020363-5">Travis Konecny</a></div>
 </div>
+</button>
+<div class="attempt-context">Round 3 · Shooter: <a href="/shootout/players/travis_konecny_shootouts.html?v=2023020363-5">Travis Konecny</a></div>
 </div>
 </div>
 <!-- Player Stats (mobile: below sidebar) -->
@@ -478,178 +523,21 @@
 <!-- Footer -->
 <footer class="site-footer" id="main-footer"></footer>
 </div>
+<dialog aria-labelledby="video-picker-title" class="video-picker" id="video-picker">
+<div class="video-picker-heading">
+<h2 id="video-picker-title">Tristan Jarry videos</h2>
+<button aria-label="Close video picker" autofocus="" class="video-picker-close" type="button">
+<svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><path d="m6 6 12 12M18 6 6 18"></path></svg>
+</button>
+</div>
+<div aria-label="Filter videos" class="video-picker-filters" role="group">
+<button aria-pressed="true" data-video-filter="all" type="button">All videos</button>
+<button aria-pressed="false" data-video-filter="goal" type="button">Goals</button>
+</div>
+<p class="video-picker-empty" hidden="" id="video-picker-empty" role="status"></p>
+<div aria-label="Available videos" class="video-picker-list" id="video-picker-list"></div>
+</dialog>
 <script src="../../js/main.js"></script>
-<script>
-        // Shootout video player functionality
-        document.addEventListener('DOMContentLoaded', function() {
-            const video = document.getElementById('shootout-video');
-            const videoTitle = document.getElementById('video-title');
-            const videoDetails = document.getElementById('video-details');
-            const noVideoMessage = document.getElementById('no-video-message');
-            const attemptItems = document.querySelectorAll('.attempt-item');
-            const autoplayToggle = document.getElementById('autoplay-toggle');
-
-            // Load autoplay preference from localStorage (default: true)
-            const savedAutoplay = localStorage.getItem('shootout-autoplay');
-            if (savedAutoplay !== null) {
-                autoplayToggle.checked = savedAutoplay === 'true';
-            }
-
-            // Save autoplay preference when changed
-            autoplayToggle.addEventListener('change', function() {
-                localStorage.setItem('shootout-autoplay', this.checked);
-            });
-
-            // URL parameter functions
-            function updateURLParameter(videoId) {
-                const url = new URL(window.location);
-                // Always set the video ID parameter for stable links
-                url.searchParams.set('v', videoId);
-                window.history.replaceState({}, '', url);
-            }
-
-            function getVideoIdFromURL() {
-                const urlParams = new URLSearchParams(window.location.search);
-                return urlParams.get('v');
-            }
-
-            function findVideoIndexById(videoId) {
-                for (let i = 0; i < attemptItems.length; i++) {
-                    if (attemptItems[i].dataset.videoId === videoId) {
-                        return i;
-                    }
-                }
-                return 0; // Default to first video if not found
-            }
-
-            // Function to play specific video by index
-            function playVideoByIndex(index) {
-                if (index < 0 || index >= attemptItems.length) return;
-
-                const item = attemptItems[index];
-
-                // Remove active class from all items
-                attemptItems.forEach(i => i.classList.remove('active'));
-
-                // Add active class to current item
-                item.classList.add('active');
-
-                // Update URL parameter with video ID
-                const videoId = item.dataset.videoId;
-                updateURLParameter(videoId);
-
-                // Update video source
-                const videoSrc = item.dataset.video;
-                const hasVideo = item.dataset.hasVideo === 'true';
-                const title = item.dataset.title;
-                const details = item.dataset.details;
-
-                // Update title and details
-                videoTitle.textContent = title;
-                videoDetails.innerHTML = details;
-
-                // Show video or no-video message
-                if (hasVideo && videoSrc) {
-                    video.style.display = 'block';
-                    noVideoMessage.style.display = 'none';
-                    video.src = videoSrc;
-                    video.load();
-                    video.play().catch(e => console.log('Auto-play prevented:', e));
-                } else {
-                    video.style.display = 'none';
-                    noVideoMessage.style.display = 'flex';
-                    video.pause();
-                    video.src = '';
-                }
-            }
-
-            // Function to get current active video index
-            function getCurrentVideoIndex() {
-                for (let i = 0; i < attemptItems.length; i++) {
-                    if (attemptItems[i].classList.contains('active')) {
-                        return i;
-                    }
-                }
-                return 0;
-            }
-
-            // Function to play next video
-            function playNextVideo() {
-                const currentIndex = getCurrentVideoIndex();
-                let nextIndex = currentIndex + 1;
-
-                // Skip attempts without videos
-                while (nextIndex < attemptItems.length && attemptItems[nextIndex].dataset.hasVideo !== 'true') {
-                    nextIndex++;
-                }
-
-                if (nextIndex < attemptItems.length) {
-                    playVideoByIndex(nextIndex);
-
-                    // Scroll to video on mobile devices
-                    if (window.innerWidth <= 768) {
-                        const videoContainer = document.querySelector('.video-player-container');
-                        videoContainer.scrollIntoView({
-                            behavior: 'smooth',
-                            block: 'center'
-                        });
-                    }
-                } else {
-                    console.log('Last video reached');
-                }
-            }
-
-            // Add click handlers to attempt items
-            attemptItems.forEach((item, index) => {
-                item.addEventListener('click', function(event) {
-                    if (event.target.closest('a')) return;
-                    playVideoByIndex(index);
-
-                    // Scroll to video on mobile devices
-                    if (window.innerWidth <= 768) {
-                        const videoContainer = document.querySelector('.video-player-container');
-                        videoContainer.scrollIntoView({
-                            behavior: 'smooth',
-                            block: 'center'
-                        });
-                    }
-                });
-            });
-
-            document.querySelectorAll('.attempt-jump').forEach(link => {
-                link.addEventListener('click', function(event) {
-                    event.preventDefault();
-                    playVideoByIndex(findVideoIndexById(this.dataset.attemptId));
-                    document.querySelector('.video-player-container').scrollIntoView({ behavior: 'smooth', block: 'center' });
-                });
-            });
-
-            // Auto-advance to next video when current video ends
-            video.addEventListener('ended', function() {
-                if (autoplayToggle.checked) {
-                    setTimeout(() => {
-                        playNextVideo();
-                    }, 1000); // 1 second delay before next video
-                }
-            });
-
-            // Initialize from URL parameter and auto-play
-            setTimeout(() => {
-                const videoId = getVideoIdFromURL();
-
-                if (videoId) {
-                    // Load video from URL parameter by ID
-                    const videoIndex = findVideoIndexById(videoId);
-                    playVideoByIndex(videoIndex);
-                } else {
-                    // No URL parameter - load first video and set its ID in URL
-                    playVideoByIndex(0);
-                    if (attemptItems[0].dataset.hasVideo === 'true' && attemptItems[0].dataset.video) {
-                        video.play().catch(e => console.log('Auto-play prevented:', e));
-                    }
-                }
-            }, 1000);
-        });
-    </script>
+<script defer="" src="/js/shootout-player.js?v=e4535301d4d7"></script>
 </body>
 </html>
