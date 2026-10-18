@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=800, user-scalable=yes">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Ottawa Senators Redraft Tool | NHL Draft Analysis</title>
     <meta name="description" content="Redraft the Ottawa Senators's first two rounds from the 2010-2026 NHL drafts. Compare actual picks vs best available players. Three-season ratings: 2023-2024 through 2025-2026.">
     <meta name="keywords" content="Ottawa Senators, NHL Draft, Draft Redraft, OTT, Hockey Draft History, Point Shares, NHL Draft Analysis, Draft What-If">
@@ -826,6 +826,7 @@
             border-radius: 1rem;
             overflow: hidden;
             max-width: 100%;
+            container-type: inline-size;
         }
         
         .summary-header {
@@ -1119,6 +1120,177 @@
         .hidden {
             display: none;
         }
+
+        /* Compact draft editor. Both layouts use the same selections. */
+        [hidden] { display: none !important; }
+        .draft-section-header { text-align: left; margin: 1.5rem 0 .5rem; padding: 0; scroll-margin-top: 5rem; }
+        .draft-section-title { font-size: 1.25rem; margin-bottom: .25rem; }
+        .draft-section-description { max-width: none; font-size: .8rem; }
+        .draft-editor-toolbar {
+            display: flex; align-items: center; justify-content: space-between;
+            flex-wrap: wrap; gap: .5rem; margin: .75rem 0 .4rem;
+        }
+        .draft-editor-toolbar .button-container { justify-content: flex-start; gap: .4rem; }
+        .draft-editor-toolbar .auto-redraft-btn, .draft-editor-toolbar .reset-btn {
+            padding: .45rem .7rem; margin: 0; font-size: .75rem; box-shadow: none;
+        }
+        .draft-editor-toolbar .reset-btn { background: #283548; color: #CBD5E1; }
+        .draft-editor-hint { color: #9CA3AF; font-size: .7rem; margin-bottom: .5rem; }
+        .draft-view-switch {
+            display: inline-flex; gap: 2px; padding: 2px; border-radius: 6px;
+            background: #0D1421; border: 1px solid #374151;
+        }
+        .draft-view-switch button {
+            background: transparent; border: 0; border-radius: 6px; color: #9CA3AF;
+            font: inherit; font-size: .75rem; padding: .35rem .65rem; cursor: pointer;
+        }
+        .draft-view-switch button[aria-pressed="true"] { background: #334155; color: white; }
+        .compact-scroll {
+            border: 1px solid #334155; border-radius: 6px;
+            background: #151F2E;
+        }
+        .compact-table { width: 100%; table-layout: fixed; border-collapse: collapse; }
+        .compact-table .pick-col { width: 40px; }
+        .compact-table .more-col { width: 44px; }
+        .compact-table thead th {
+            text-align: left; padding: .35rem .4rem; font-size: .6rem;
+            font-weight: 600; text-transform: uppercase; letter-spacing: .04em;
+            color: #94A3B8; background: #111B29;
+        }
+        .compact-table thead .selected-heading { color: #86EFAC; }
+        .compact-round th {
+            padding: 3px 8px; background: #1B283A; color: #CBD5E1; text-align: left;
+            border-top: 1px solid #334155; font-size: .7rem; line-height: 18px;
+        }
+        .compact-year th { background: #233147; border-top-color: #475569; color: #F1F5F9; }
+        .compact-round-label { margin-left: 10px; font-size: .6rem; color: #93C5FD; font-weight: 500; }
+        .compact-pick-row > td, .compact-pick-row > th { padding: 1px 2px; border-top: 1px solid #293548; }
+        .compact-pick-number { text-align: center; color: #94A3B8; font-size: .7rem; font-weight: 500; }
+        .compact-pick-row > td + td { border-left: 1px solid #293548; }
+        .compact-selected-cell { background: rgba(34, 197, 94, .065); }
+        .compact-player {
+            display: grid; grid-template-columns: 28px minmax(0, 1fr) 32px; align-items: center;
+            column-gap: 5px; width: 100%; min-width: 0; height: 42px;
+            padding: 3px; border: 0; border-radius: 3px; text-align: left;
+            background: transparent; color: #E5E7EB; font: inherit; cursor: pointer;
+            transition: background .15s;
+        }
+        .compact-player:hover { background: #2B3E55; }
+        .compact-player.is-selected .compact-player-name { color: #BBF7D0; }
+        .compact-player.is-unavailable { opacity: .5; }
+        .compact-face { width: 28px; height: 28px; border-radius: 50%; object-fit: cover; background: #0D1726; grid-row: 1 / 3; }
+        .compact-metric { grid-column: 3; grid-row: 1 / 3; font-size: .7rem; font-weight: 600; font-variant-numeric: tabular-nums; line-height: 1.2; text-align: right; }
+        .compact-metric small { display: block; color: #94A3B8; font-size: .5rem; font-weight: 400; margin-top: 2px; }
+        .compact-player-name {
+            grid-column: 2; grid-row: 1; display: block; font-size: .7rem; font-weight: 500; line-height: 16px;
+            min-width: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+        }
+        .compact-name-short { display: none; }
+        .compact-rating { grid-column: 2; grid-row: 2; display: flex; align-items: center; height: 8px; position: relative; padding-right: 7px; }
+        .compact-rating .percentile-bar-container { width: 100%; }
+        .compact-rating .percentile-bar { height: 4px; }
+        .compact-rating .unrated { font-size: .5rem !important; white-space: nowrap; max-width: 100%; overflow: hidden; text-overflow: ellipsis; }
+        .compact-rating-note { position: absolute; right: 0; color: #FCD34D; font-size: .55rem; line-height: 1; }
+        .compact-more-button, .compact-restore {
+            border: 0; background: transparent; color: #93C5FD; font: inherit; font-size: .7rem;
+            cursor: pointer; padding: .75rem .3rem; text-decoration: underline; text-underline-offset: 3px;
+        }
+        .compact-more-button { width: 100%; padding: 0; min-height: 42px; font-size: .7rem; }
+        .compact-empty { color: #64748B; font-size: .7rem; text-align: center; }
+        .compact-extra > td { padding: .4rem; background: #101A29; border-top: 1px solid #334155; }
+        .compact-extra-title { color: #94A3B8; font-size: .65rem; margin-bottom: .25rem; }
+        .compact-extra-grid { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: .25rem; }
+        .compact-extra-grid .compact-player { background: #1A2738; }
+        .compact-pick-row.is-highlighted { outline: 2px solid #60A5FA; outline-offset: -2px; }
+        .draft-player-dialog {
+            margin: auto; width: min(440px, calc(100% - 32px)); max-height: 85vh; overflow-y: auto;
+            padding: 0; border: 1px solid #475569; border-radius: 16px; background: #182435;
+            color: #F1F5F9; box-shadow: 0 24px 80px #0008; font-family: 'Inter', sans-serif;
+        }
+        .draft-player-dialog::backdrop { background: rgba(3, 9, 18, .75); }
+        .draft-dialog-header { display: flex; align-items: center; justify-content: space-between; padding: 1rem 1.25rem; border-bottom: 1px solid #334155; }
+        .draft-dialog-header p { font-size: .75rem; color: #94A3B8; }
+        .draft-dialog-close { width: 36px; height: 36px; border: 1px solid #475569; border-radius: 50%; background: transparent; color: white; font-size: 1.4rem; cursor: pointer; }
+        .draft-dialog-body { padding: 1.25rem; }
+        .draft-dialog-player { display: flex; align-items: center; gap: 1rem; margin-bottom: 1.25rem; }
+        .draft-dialog-player img { width: 72px; height: 72px; border-radius: 50%; background: #111827; }
+        .draft-dialog-player h3 { font-size: 1.25rem; line-height: 1.3; margin-bottom: .25rem; }
+        .draft-dialog-player p, .draft-dialog-caption { font-size: .75rem; color: #94A3B8; }
+        .draft-dialog-rating { padding: 1rem; background: #111B29; border-radius: 8px; margin-bottom: 1rem; }
+        .draft-dialog-rating .percentile-bar-container { width: 100%; margin-top: .65rem; }
+        .draft-dialog-rating .rating-note { color: #FCD34D; margin-top: .5rem; }
+        .draft-dialog-stats { display: flex; flex-wrap: wrap; gap: 1px; background: #334155; border: 1px solid #334155; border-radius: 8px; overflow: hidden; margin: .5rem 0 1.25rem; }
+        .draft-dialog-stats div { flex: 1 0 30%; padding: .75rem; background: #1B293B; }
+        .draft-dialog-stats dt { color: #94A3B8; font-size: .65rem; }
+        .draft-dialog-stats dd { margin: 0; font-size: 1.1rem; font-weight: 600; font-variant-numeric: tabular-nums; }
+        .draft-dialog-select { width: 100%; padding: .8rem 1rem; border: 1px solid #4ADE80; border-radius: 8px; background: #166534; color: white; font: inherit; font-weight: 600; cursor: pointer; }
+        .draft-dialog-select:disabled { background: #263549; border-color: #475569; color: #94A3B8; cursor: default; }
+        .compact-restore { display: block; margin: .5rem auto 0; }
+        .draft-view-switch button:focus-visible, .compact-player:focus-visible,
+        .compact-more-button:focus-visible, .draft-player-dialog button:focus-visible,
+        .compact-scroll:focus-visible { outline: 2px solid #93C5FD; outline-offset: 3px; }
+        .draft-live-status { position: absolute; width: 1px; height: 1px; padding: 0; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+        #expanded-draft-view { margin-bottom: 1.5rem; }
+        #compact-draft-view { margin-bottom: 1.5rem; }
+        @media (max-width: 1000px) {
+            .compact-player {
+                grid-template-columns: minmax(0, 1fr); grid-template-rows: 24px 12px 12px 5px;
+                height: 63px; padding: 3px 1px; row-gap: 1px; text-align: center;
+            }
+            .compact-face { grid-column: 1; grid-row: 1; width: 24px; height: 24px; justify-self: center; }
+            .compact-player-name { grid-column: 1; grid-row: 2; font-size: .6rem; line-height: 12px; }
+            .compact-name-long { display: none; }
+            .compact-name-short { display: inline; }
+            .compact-metric { grid-column: 1; grid-row: 3; font-size: .65rem; line-height: 12px; text-align: center; }
+            .compact-metric small { display: none; }
+            .compact-rating { grid-column: 1; grid-row: 4; height: 5px; padding-right: 5px; }
+            .compact-rating .percentile-bar { height: 3px; }
+            .compact-rating .unrated { font-size: .45rem !important; line-height: 5px; }
+            .compact-more-button { min-height: 63px; }
+        }
+        @media (max-width: 700px) {
+            .draft-container { padding: 1.5rem .75rem; }
+            .team-title { font-size: 1.8rem; }
+            .team-subtitle { font-size: .95rem; }
+            .draft-section-header { padding: 0; }
+            .draft-section-title { font-size: 1.1rem; }
+            .draft-editor-toolbar .auto-redraft-btn, .draft-editor-toolbar .reset-btn { font-size: .65rem; padding: .45rem; }
+            .draft-view-switch button { font-size: .65rem; padding: .35rem .4rem; }
+            .draft-editor-hint { font-size: .65rem; }
+            .compact-table .pick-col { width: 28px; }
+            .compact-table .more-col { width: 26px; }
+            .compact-table thead th { padding: .3rem 2px; font-size: .5rem; letter-spacing: 0; }
+            .compact-pick-row > td, .compact-pick-row > th { padding: 1px; }
+            .compact-pick-number, .compact-more-button { font-size: .6rem; }
+            .compact-extra-grid { grid-template-columns: repeat(5, minmax(0, 1fr)); }
+            .draft-card-body { flex-direction: column; padding: 1rem; }
+            .actual-pick { border-right: 0; border-bottom: 1px solid #374151; padding: 0 0 1rem; }
+            .alt-stats { flex-wrap: wrap; gap: .35rem .75rem; }
+            .alt-player-card { gap: .5rem; padding: .75rem; }
+            .alt-rank { min-width: 20px; font-size: 1rem; }
+            .player-stats { gap: .5rem; }
+            .draft-info { flex-wrap: wrap; gap: .5rem; }
+            .selected-team { padding: 1rem; }
+            .position-slots.forwards, .position-slots.defense, .position-slots.goalies { grid-template-columns: 1fr; }
+        }
+        @media (max-width: 360px) {
+            .site-header .nav-menu { min-width: 0; flex-wrap: wrap; justify-content: flex-end; gap: 0 .55rem; }
+        }
+        /* Use the summary's width so the 800px image export keeps its desktop layout. */
+        @container (max-width: 600px) {
+            .summary-title { font-size: 1rem; }
+            .summary-title-logo { width: 64px; height: 64px; }
+            .team-sheet-grid { padding: .75rem; }
+            .position-players { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+            .team-sheet-player { padding: .35rem; gap: .35rem; min-width: 0; }
+            .team-sheet-headshot { width: 32px; height: 32px; }
+            .team-sheet-headshot-container .percentile-bar-container { width: 32px; }
+            .team-sheet-name { font-size: .85rem; }
+            .team-sheet-swap { font-size: .6rem; }
+            .summary-footer { padding: 1rem .75rem; gap: .5rem; }
+            .summary-stats-value { font-size: 1.35rem; }
+            .summary-stats-label, .summary-credit { font-size: .6rem; }
+        }
     </style>
     <script src="https://cdn.jsdelivr.net/npm/html-to-image@1.11.11/dist/html-to-image.js"></script>
 </head>
@@ -1178,23 +1350,43 @@
         <div class="draft-section-header" id="draft-picks-section">
             <h2 class="draft-section-title">Your Draft Picks (Rounds 1-2, 2010-2026)</h2>
             <p class="draft-section-description">
-                Below are all the first and second round picks from the 17 drafts shown. Click on any player card to select an alternative pick and build your ideal team. Use the Auto Re-Draft button to automatically select the best available player for each pick.
+                Compare player stats and click an alternative to change your pick.
             </p>
         </div>
         
-        <div style="margin-top: 2rem; text-align: center; padding-bottom: 1rem;">
+        <div class="draft-editor-toolbar">
             <div class="button-container">
-                <button id="auto-redraft-btn" class="auto-redraft-btn">
-                    ⚡ Auto Re-Draft (Select Best Available)
+                <button id="auto-redraft-btn" class="auto-redraft-btn" title="Select the best available players">
+                    ⚡ Auto Re-Draft
                 </button>
-                <button id="reset-btn" class="reset-btn">
-                    ↺ Reset to Original Picks
+                <button id="reset-btn" class="reset-btn" title="Reset to original picks">
+                    ↺ Reset
                 </button>
             </div>
+            <div class="draft-view-switch" role="group" aria-label="Draft view">
+                <button type="button" data-draft-view="compact" aria-pressed="false" aria-controls="compact-draft-view">Compact</button>
+                <button type="button" data-draft-view="expanded" aria-pressed="true" aria-controls="expanded-draft-view">Expanded</button>
+            </div>
         </div>
-        <div class="draft-picks">
+        <p class="draft-editor-hint" id="draft-editor-hint">Click a player to select them · Your picks stay the same when switching views</p>
+        <div id="compact-draft-view" hidden>
+            <div class="compact-scroll" role="region" aria-label="Draft picks comparison">
+                <table class="compact-table">
+                    <caption class="draft-live-status">Your selection and up to five available alternatives per pick. Click a player for full stats and selection.</caption>
+                    <colgroup><col class="pick-col"><col class="selected-col"><col span="5"><col class="more-col"></colgroup>
+                    <thead><tr><th scope="col">Pick</th><th scope="col" class="selected-heading">Your pick</th><th scope="colgroup" colspan="5">5 alternatives · Sorted by rating</th><th scope="col">More</th></tr></thead>
+                    <tbody id="compact-draft-rows"></tbody>
+                </table>
+            </div>
+        </div>
+        <p id="draft-selection-status" class="draft-live-status" role="status"></p>
+        <dialog id="draft-player-dialog" class="draft-player-dialog" aria-labelledby="draft-dialog-name">
+            <div class="draft-dialog-header"><p id="draft-dialog-context"></p><button type="button" class="draft-dialog-close" aria-label="Close player details" autofocus>×</button></div>
+            <div id="draft-dialog-body" class="draft-dialog-body"></div>
+        </dialog>
+        <div class="draft-picks" id="expanded-draft-view">
 
-            <div class="draft-card">
+            <div class="draft-card" data-editor-pick="2011-6" data-round="1">
                 <div class="draft-card-header">
                     <div class="draft-info">
                         <span class="draft-year">2011 Draft</span>
@@ -1295,7 +1487,7 @@
 
                         </div>
                         <div class="view-more">
-                            <button class="view-more-btn" onclick="toggleMoreAlternatives('2011-6')">
+                            <button class="view-more-btn" onclick="toggleMoreAlternatives('2011-6', this)">
                                 View 7 More Options
                             </button>
                         </div>
@@ -1412,7 +1604,7 @@
                 </div>
             </div>
 
-            <div class="draft-card">
+            <div class="draft-card" data-editor-pick="2011-21" data-round="1">
                 <div class="draft-card-header">
                     <div class="draft-info">
                         <span class="draft-year">2011 Draft</span>
@@ -1513,7 +1705,7 @@
 
                         </div>
                         <div class="view-more">
-                            <button class="view-more-btn" onclick="toggleMoreAlternatives('2011-21')">
+                            <button class="view-more-btn" onclick="toggleMoreAlternatives('2011-21', this)">
                                 View 7 More Options
                             </button>
                         </div>
@@ -1630,7 +1822,7 @@
                 </div>
             </div>
 
-            <div class="draft-card">
+            <div class="draft-card" data-editor-pick="2011-24" data-round="1">
                 <div class="draft-card-header">
                     <div class="draft-info">
                         <span class="draft-year">2011 Draft</span>
@@ -1731,7 +1923,7 @@
 
                         </div>
                         <div class="view-more">
-                            <button class="view-more-btn" onclick="toggleMoreAlternatives('2011-24')">
+                            <button class="view-more-btn" onclick="toggleMoreAlternatives('2011-24', this)">
                                 View 7 More Options
                             </button>
                         </div>
@@ -1848,7 +2040,7 @@
                 </div>
             </div>
 
-            <div class="draft-card">
+            <div class="draft-card" data-editor-pick="2011-61" data-round="2">
                 <div class="draft-card-header">
                     <div class="draft-info">
                         <span class="draft-year">2011 Draft</span>
@@ -1949,7 +2141,7 @@
 
                         </div>
                         <div class="view-more">
-                            <button class="view-more-btn" onclick="toggleMoreAlternatives('2011-61')">
+                            <button class="view-more-btn" onclick="toggleMoreAlternatives('2011-61', this)">
                                 View 7 More Options
                             </button>
                         </div>
@@ -2066,7 +2258,7 @@
                 </div>
             </div>
 
-            <div class="draft-card">
+            <div class="draft-card" data-editor-pick="2012-15" data-round="1">
                 <div class="draft-card-header">
                     <div class="draft-info">
                         <span class="draft-year">2012 Draft</span>
@@ -2167,7 +2359,7 @@
 
                         </div>
                         <div class="view-more">
-                            <button class="view-more-btn" onclick="toggleMoreAlternatives('2012-15')">
+                            <button class="view-more-btn" onclick="toggleMoreAlternatives('2012-15', this)">
                                 View 7 More Options
                             </button>
                         </div>
@@ -2284,7 +2476,7 @@
                 </div>
             </div>
 
-            <div class="draft-card">
+            <div class="draft-card" data-editor-pick="2013-17" data-round="1">
                 <div class="draft-card-header">
                     <div class="draft-info">
                         <span class="draft-year">2013 Draft</span>
@@ -2385,7 +2577,7 @@
 
                         </div>
                         <div class="view-more">
-                            <button class="view-more-btn" onclick="toggleMoreAlternatives('2013-17')">
+                            <button class="view-more-btn" onclick="toggleMoreAlternatives('2013-17', this)">
                                 View 7 More Options
                             </button>
                         </div>
@@ -2502,7 +2694,7 @@
                 </div>
             </div>
 
-            <div class="draft-card">
+            <div class="draft-card" data-editor-pick="2014-40" data-round="2">
                 <div class="draft-card-header">
                     <div class="draft-info">
                         <span class="draft-year">2014 Draft</span>
@@ -2603,7 +2795,7 @@
 
                         </div>
                         <div class="view-more">
-                            <button class="view-more-btn" onclick="toggleMoreAlternatives('2014-40')">
+                            <button class="view-more-btn" onclick="toggleMoreAlternatives('2014-40', this)">
                                 View 7 More Options
                             </button>
                         </div>
@@ -2720,7 +2912,7 @@
                 </div>
             </div>
 
-            <div class="draft-card">
+            <div class="draft-card" data-editor-pick="2015-18" data-round="1">
                 <div class="draft-card-header">
                     <div class="draft-info">
                         <span class="draft-year">2015 Draft</span>
@@ -2821,7 +3013,7 @@
 
                         </div>
                         <div class="view-more">
-                            <button class="view-more-btn" onclick="toggleMoreAlternatives('2015-18')">
+                            <button class="view-more-btn" onclick="toggleMoreAlternatives('2015-18', this)">
                                 View 7 More Options
                             </button>
                         </div>
@@ -2938,7 +3130,7 @@
                 </div>
             </div>
 
-            <div class="draft-card">
+            <div class="draft-card" data-editor-pick="2015-21" data-round="1">
                 <div class="draft-card-header">
                     <div class="draft-info">
                         <span class="draft-year">2015 Draft</span>
@@ -3039,7 +3231,7 @@
 
                         </div>
                         <div class="view-more">
-                            <button class="view-more-btn" onclick="toggleMoreAlternatives('2015-21')">
+                            <button class="view-more-btn" onclick="toggleMoreAlternatives('2015-21', this)">
                                 View 7 More Options
                             </button>
                         </div>
@@ -3156,7 +3348,7 @@
                 </div>
             </div>
 
-            <div class="draft-card">
+            <div class="draft-card" data-editor-pick="2015-36" data-round="2">
                 <div class="draft-card-header">
                     <div class="draft-info">
                         <span class="draft-year">2015 Draft</span>
@@ -3257,7 +3449,7 @@
 
                         </div>
                         <div class="view-more">
-                            <button class="view-more-btn" onclick="toggleMoreAlternatives('2015-36')">
+                            <button class="view-more-btn" onclick="toggleMoreAlternatives('2015-36', this)">
                                 View 7 More Options
                             </button>
                         </div>
@@ -3374,7 +3566,7 @@
                 </div>
             </div>
 
-            <div class="draft-card">
+            <div class="draft-card" data-editor-pick="2015-48" data-round="2">
                 <div class="draft-card-header">
                     <div class="draft-info">
                         <span class="draft-year">2015 Draft</span>
@@ -3475,7 +3667,7 @@
 
                         </div>
                         <div class="view-more">
-                            <button class="view-more-btn" onclick="toggleMoreAlternatives('2015-48')">
+                            <button class="view-more-btn" onclick="toggleMoreAlternatives('2015-48', this)">
                                 View 7 More Options
                             </button>
                         </div>
@@ -3592,7 +3784,7 @@
                 </div>
             </div>
 
-            <div class="draft-card">
+            <div class="draft-card" data-editor-pick="2016-11" data-round="1">
                 <div class="draft-card-header">
                     <div class="draft-info">
                         <span class="draft-year">2016 Draft</span>
@@ -3693,7 +3885,7 @@
 
                         </div>
                         <div class="view-more">
-                            <button class="view-more-btn" onclick="toggleMoreAlternatives('2016-11')">
+                            <button class="view-more-btn" onclick="toggleMoreAlternatives('2016-11', this)">
                                 View 7 More Options
                             </button>
                         </div>
@@ -3810,7 +4002,7 @@
                 </div>
             </div>
 
-            <div class="draft-card">
+            <div class="draft-card" data-editor-pick="2016-42" data-round="2">
                 <div class="draft-card-header">
                     <div class="draft-info">
                         <span class="draft-year">2016 Draft</span>
@@ -3911,7 +4103,7 @@
 
                         </div>
                         <div class="view-more">
-                            <button class="view-more-btn" onclick="toggleMoreAlternatives('2016-42')">
+                            <button class="view-more-btn" onclick="toggleMoreAlternatives('2016-42', this)">
                                 View 7 More Options
                             </button>
                         </div>
@@ -4028,7 +4220,7 @@
                 </div>
             </div>
 
-            <div class="draft-card">
+            <div class="draft-card" data-editor-pick="2017-28" data-round="1">
                 <div class="draft-card-header">
                     <div class="draft-info">
                         <span class="draft-year">2017 Draft</span>
@@ -4129,7 +4321,7 @@
 
                         </div>
                         <div class="view-more">
-                            <button class="view-more-btn" onclick="toggleMoreAlternatives('2017-28')">
+                            <button class="view-more-btn" onclick="toggleMoreAlternatives('2017-28', this)">
                                 View 7 More Options
                             </button>
                         </div>
@@ -4246,7 +4438,7 @@
                 </div>
             </div>
 
-            <div class="draft-card">
+            <div class="draft-card" data-editor-pick="2017-47" data-round="2">
                 <div class="draft-card-header">
                     <div class="draft-info">
                         <span class="draft-year">2017 Draft</span>
@@ -4347,7 +4539,7 @@
 
                         </div>
                         <div class="view-more">
-                            <button class="view-more-btn" onclick="toggleMoreAlternatives('2017-47')">
+                            <button class="view-more-btn" onclick="toggleMoreAlternatives('2017-47', this)">
                                 View 7 More Options
                             </button>
                         </div>
@@ -4464,7 +4656,7 @@
                 </div>
             </div>
 
-            <div class="draft-card">
+            <div class="draft-card" data-editor-pick="2018-4" data-round="1">
                 <div class="draft-card-header">
                     <div class="draft-info">
                         <span class="draft-year">2018 Draft</span>
@@ -4565,7 +4757,7 @@
 
                         </div>
                         <div class="view-more">
-                            <button class="view-more-btn" onclick="toggleMoreAlternatives('2018-4')">
+                            <button class="view-more-btn" onclick="toggleMoreAlternatives('2018-4', this)">
                                 View 7 More Options
                             </button>
                         </div>
@@ -4682,7 +4874,7 @@
                 </div>
             </div>
 
-            <div class="draft-card">
+            <div class="draft-card" data-editor-pick="2018-26" data-round="1">
                 <div class="draft-card-header">
                     <div class="draft-info">
                         <span class="draft-year">2018 Draft</span>
@@ -4783,7 +4975,7 @@
 
                         </div>
                         <div class="view-more">
-                            <button class="view-more-btn" onclick="toggleMoreAlternatives('2018-26')">
+                            <button class="view-more-btn" onclick="toggleMoreAlternatives('2018-26', this)">
                                 View 7 More Options
                             </button>
                         </div>
@@ -4900,7 +5092,7 @@
                 </div>
             </div>
 
-            <div class="draft-card">
+            <div class="draft-card" data-editor-pick="2018-48" data-round="2">
                 <div class="draft-card-header">
                     <div class="draft-info">
                         <span class="draft-year">2018 Draft</span>
@@ -5001,7 +5193,7 @@
 
                         </div>
                         <div class="view-more">
-                            <button class="view-more-btn" onclick="toggleMoreAlternatives('2018-48')">
+                            <button class="view-more-btn" onclick="toggleMoreAlternatives('2018-48', this)">
                                 View 7 More Options
                             </button>
                         </div>
@@ -5118,7 +5310,7 @@
                 </div>
             </div>
 
-            <div class="draft-card">
+            <div class="draft-card" data-editor-pick="2019-19" data-round="1">
                 <div class="draft-card-header">
                     <div class="draft-info">
                         <span class="draft-year">2019 Draft</span>
@@ -5219,7 +5411,7 @@
 
                         </div>
                         <div class="view-more">
-                            <button class="view-more-btn" onclick="toggleMoreAlternatives('2019-19')">
+                            <button class="view-more-btn" onclick="toggleMoreAlternatives('2019-19', this)">
                                 View 7 More Options
                             </button>
                         </div>
@@ -5336,7 +5528,7 @@
                 </div>
             </div>
 
-            <div class="draft-card">
+            <div class="draft-card" data-editor-pick="2019-32" data-round="2">
                 <div class="draft-card-header">
                     <div class="draft-info">
                         <span class="draft-year">2019 Draft</span>
@@ -5437,7 +5629,7 @@
 
                         </div>
                         <div class="view-more">
-                            <button class="view-more-btn" onclick="toggleMoreAlternatives('2019-32')">
+                            <button class="view-more-btn" onclick="toggleMoreAlternatives('2019-32', this)">
                                 View 7 More Options
                             </button>
                         </div>
@@ -5554,7 +5746,7 @@
                 </div>
             </div>
 
-            <div class="draft-card">
+            <div class="draft-card" data-editor-pick="2019-37" data-round="2">
                 <div class="draft-card-header">
                     <div class="draft-info">
                         <span class="draft-year">2019 Draft</span>
@@ -5643,7 +5835,7 @@
 
                         </div>
                         <div class="view-more">
-                            <button class="view-more-btn" onclick="toggleMoreAlternatives('2019-37')">
+                            <button class="view-more-btn" onclick="toggleMoreAlternatives('2019-37', this)">
                                 View 7 More Options
                             </button>
                         </div>
@@ -5760,7 +5952,7 @@
                 </div>
             </div>
 
-            <div class="draft-card">
+            <div class="draft-card" data-editor-pick="2020-3" data-round="1">
                 <div class="draft-card-header">
                     <div class="draft-info">
                         <span class="draft-year">2020 Draft</span>
@@ -5861,7 +6053,7 @@
 
                         </div>
                         <div class="view-more">
-                            <button class="view-more-btn" onclick="toggleMoreAlternatives('2020-3')">
+                            <button class="view-more-btn" onclick="toggleMoreAlternatives('2020-3', this)">
                                 View 7 More Options
                             </button>
                         </div>
@@ -5978,7 +6170,7 @@
                 </div>
             </div>
 
-            <div class="draft-card">
+            <div class="draft-card" data-editor-pick="2020-5" data-round="1">
                 <div class="draft-card-header">
                     <div class="draft-info">
                         <span class="draft-year">2020 Draft</span>
@@ -6079,7 +6271,7 @@
 
                         </div>
                         <div class="view-more">
-                            <button class="view-more-btn" onclick="toggleMoreAlternatives('2020-5')">
+                            <button class="view-more-btn" onclick="toggleMoreAlternatives('2020-5', this)">
                                 View 7 More Options
                             </button>
                         </div>
@@ -6196,7 +6388,7 @@
                 </div>
             </div>
 
-            <div class="draft-card">
+            <div class="draft-card" data-editor-pick="2020-28" data-round="1">
                 <div class="draft-card-header">
                     <div class="draft-info">
                         <span class="draft-year">2020 Draft</span>
@@ -6297,7 +6489,7 @@
 
                         </div>
                         <div class="view-more">
-                            <button class="view-more-btn" onclick="toggleMoreAlternatives('2020-28')">
+                            <button class="view-more-btn" onclick="toggleMoreAlternatives('2020-28', this)">
                                 View 7 More Options
                             </button>
                         </div>
@@ -6414,7 +6606,7 @@
                 </div>
             </div>
 
-            <div class="draft-card">
+            <div class="draft-card" data-editor-pick="2020-33" data-round="2">
                 <div class="draft-card-header">
                     <div class="draft-info">
                         <span class="draft-year">2020 Draft</span>
@@ -6515,7 +6707,7 @@
 
                         </div>
                         <div class="view-more">
-                            <button class="view-more-btn" onclick="toggleMoreAlternatives('2020-33')">
+                            <button class="view-more-btn" onclick="toggleMoreAlternatives('2020-33', this)">
                                 View 7 More Options
                             </button>
                         </div>
@@ -6632,7 +6824,7 @@
                 </div>
             </div>
 
-            <div class="draft-card">
+            <div class="draft-card" data-editor-pick="2020-44" data-round="2">
                 <div class="draft-card-header">
                     <div class="draft-info">
                         <span class="draft-year">2020 Draft</span>
@@ -6733,7 +6925,7 @@
 
                         </div>
                         <div class="view-more">
-                            <button class="view-more-btn" onclick="toggleMoreAlternatives('2020-44')">
+                            <button class="view-more-btn" onclick="toggleMoreAlternatives('2020-44', this)">
                                 View 7 More Options
                             </button>
                         </div>
@@ -6850,7 +7042,7 @@
                 </div>
             </div>
 
-            <div class="draft-card">
+            <div class="draft-card" data-editor-pick="2020-61" data-round="2">
                 <div class="draft-card-header">
                     <div class="draft-info">
                         <span class="draft-year">2020 Draft</span>
@@ -6951,7 +7143,7 @@
 
                         </div>
                         <div class="view-more">
-                            <button class="view-more-btn" onclick="toggleMoreAlternatives('2020-61')">
+                            <button class="view-more-btn" onclick="toggleMoreAlternatives('2020-61', this)">
                                 View 7 More Options
                             </button>
                         </div>
@@ -7068,7 +7260,7 @@
                 </div>
             </div>
 
-            <div class="draft-card">
+            <div class="draft-card" data-editor-pick="2021-10" data-round="1">
                 <div class="draft-card-header">
                     <div class="draft-info">
                         <span class="draft-year">2021 Draft</span>
@@ -7169,7 +7361,7 @@
 
                         </div>
                         <div class="view-more">
-                            <button class="view-more-btn" onclick="toggleMoreAlternatives('2021-10')">
+                            <button class="view-more-btn" onclick="toggleMoreAlternatives('2021-10', this)">
                                 View 7 More Options
                             </button>
                         </div>
@@ -7286,7 +7478,7 @@
                 </div>
             </div>
 
-            <div class="draft-card">
+            <div class="draft-card" data-editor-pick="2021-39" data-round="2">
                 <div class="draft-card-header">
                     <div class="draft-info">
                         <span class="draft-year">2021 Draft</span>
@@ -7387,7 +7579,7 @@
 
                         </div>
                         <div class="view-more">
-                            <button class="view-more-btn" onclick="toggleMoreAlternatives('2021-39')">
+                            <button class="view-more-btn" onclick="toggleMoreAlternatives('2021-39', this)">
                                 View 7 More Options
                             </button>
                         </div>
@@ -7504,7 +7696,7 @@
                 </div>
             </div>
 
-            <div class="draft-card">
+            <div class="draft-card" data-editor-pick="2021-49" data-round="2">
                 <div class="draft-card-header">
                     <div class="draft-info">
                         <span class="draft-year">2021 Draft</span>
@@ -7605,7 +7797,7 @@
 
                         </div>
                         <div class="view-more">
-                            <button class="view-more-btn" onclick="toggleMoreAlternatives('2021-49')">
+                            <button class="view-more-btn" onclick="toggleMoreAlternatives('2021-49', this)">
                                 View 7 More Options
                             </button>
                         </div>
@@ -7722,7 +7914,7 @@
                 </div>
             </div>
 
-            <div class="draft-card">
+            <div class="draft-card" data-editor-pick="2022-64" data-round="2">
                 <div class="draft-card-header">
                     <div class="draft-info">
                         <span class="draft-year">2022 Draft</span>
@@ -7823,7 +8015,7 @@
 
                         </div>
                         <div class="view-more">
-                            <button class="view-more-btn" onclick="toggleMoreAlternatives('2022-64')">
+                            <button class="view-more-btn" onclick="toggleMoreAlternatives('2022-64', this)">
                                 View 7 More Options
                             </button>
                         </div>
@@ -7940,7 +8132,7 @@
                 </div>
             </div>
 
-            <div class="draft-card">
+            <div class="draft-card" data-editor-pick="2024-7" data-round="1">
                 <div class="draft-card-header">
                     <div class="draft-info">
                         <span class="draft-year">2024 Draft</span>
@@ -8041,7 +8233,7 @@
 
                         </div>
                         <div class="view-more">
-                            <button class="view-more-btn" onclick="toggleMoreAlternatives('2024-7')">
+                            <button class="view-more-btn" onclick="toggleMoreAlternatives('2024-7', this)">
                                 View 7 More Options
                             </button>
                         </div>
@@ -8158,7 +8350,7 @@
                 </div>
             </div>
 
-            <div class="draft-card">
+            <div class="draft-card" data-editor-pick="2024-39" data-round="2">
                 <div class="draft-card-header">
                     <div class="draft-info">
                         <span class="draft-year">2024 Draft</span>
@@ -8259,7 +8451,7 @@
 
                         </div>
                         <div class="view-more">
-                            <button class="view-more-btn" onclick="toggleMoreAlternatives('2024-39')">
+                            <button class="view-more-btn" onclick="toggleMoreAlternatives('2024-39', this)">
                                 View 7 More Options
                             </button>
                         </div>
@@ -8376,7 +8568,7 @@
                 </div>
             </div>
 
-            <div class="draft-card">
+            <div class="draft-card" data-editor-pick="2025-23" data-round="1">
                 <div class="draft-card-header">
                     <div class="draft-info">
                         <span class="draft-year">2025 Draft</span>
@@ -8477,7 +8669,7 @@
 
                         </div>
                         <div class="view-more">
-                            <button class="view-more-btn" onclick="toggleMoreAlternatives('2025-23')">
+                            <button class="view-more-btn" onclick="toggleMoreAlternatives('2025-23', this)">
                                 View 7 More Options
                             </button>
                         </div>
@@ -8594,7 +8786,7 @@
                 </div>
             </div>
 
-            <div class="draft-card">
+            <div class="draft-card" data-editor-pick="2026-25" data-round="1">
                 <div class="draft-card-header">
                     <div class="draft-info">
                         <span class="draft-year">2026 Draft</span>
@@ -8695,7 +8887,7 @@
 
                         </div>
                         <div class="view-more">
-                            <button class="view-more-btn" onclick="toggleMoreAlternatives('2026-25')">
+                            <button class="view-more-btn" onclick="toggleMoreAlternatives('2026-25', this)">
                                 View 7 More Options
                             </button>
                         </div>
@@ -8812,7 +9004,7 @@
                 </div>
             </div>
 
-            <div class="draft-card">
+            <div class="draft-card" data-editor-pick="2026-32" data-round="1">
                 <div class="draft-card-header">
                     <div class="draft-info">
                         <span class="draft-year">2026 Draft</span>
@@ -8913,7 +9105,7 @@
 
                         </div>
                         <div class="view-more">
-                            <button class="view-more-btn" onclick="toggleMoreAlternatives('2026-32')">
+                            <button class="view-more-btn" onclick="toggleMoreAlternatives('2026-32', this)">
                                 View 7 More Options
                             </button>
                         </div>
@@ -9030,6 +9222,7 @@
                 </div>
             </div>
 
+        </div>
         <div class="selected-team">
             <div class="selected-team-header">
                 <button class="back-to-summary-btn" onclick="scrollToTop()">
@@ -9063,8 +9256,6 @@
             </div>
         </div>
         
-        </div>
-        
         <div class="explanation-section" style="background: linear-gradient(145deg, #1F2937 0%, #1A202C 100%); border-radius: 1rem; padding: 2rem; margin-top: 3rem; border: 1px solid rgba(75, 85, 99, 0.3);">
             <h2 style="font-size: 1.5rem; font-weight: 700; color: white; margin-bottom: 1.5rem;">How It Works</h2>
             
@@ -9072,7 +9263,7 @@
                 <p style="margin-bottom: 1rem;">
                     <strong style="color: var(--blue-primary);">Re-Draft Your Team:</strong> 
                     This tool lets you rebuild your team's draft history from the first two rounds (2010-2026). 
-                    Click on any alternative player to swap them with the actual pick and see how your redrafted team would look.
+                    In compact view, click a player to inspect their stats, then choose Select player. In expanded view, click an alternative to select them directly. Both views update the same team.
                 </p>
                 
                 <p style="margin-bottom: 1rem;">
@@ -11298,6 +11489,181 @@
         
         // Flag to prevent URL updates during initial load
         let isLoadingFromURL = false;
+
+        // Compact view is a projection of the expanded cards, sharing their selection path.
+        const compactPicks = new Map();
+        const openCompactPicks = new Set();
+        let draftView = 'expanded';
+        let dialogOrigin = null;
+
+        function escapeHTML(value) {
+            return String(value ?? '').replace(/&/g, '&amp;').replace(/</g, '&lt;')
+                .replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/'/g, '&#39;');
+        }
+
+        function compactImage(player, className) {
+            return `<img class="${className}" src="${escapeHTML(player.headshot)}" alt="" loading="lazy"
+                onerror="${escapeHTML(player.source.querySelector('img').getAttribute('onerror') || '')}">`;
+        }
+
+        function isCompactPlayerUnavailable(pickId, player) {
+            return allPicksById[pickId].playerId !== player.playerId &&
+                (pickedPlayersByYear[player.draftYear]?.has(player.playerId) || false);
+        }
+
+        function compactPlayerHTML(pickId, player) {
+            const selected = allPicksById[pickId].playerId === player.playerId;
+            const unavailable = isCompactPlayerUnavailable(pickId, player);
+            const original = originalPicks[pickId].playerId === player.playerId;
+            const label = player.position === 'G' ? 'SV%' : 'PPG';
+            const metric = Number(player.stats.games) > 0
+                ? (player.position === 'G' ? player.stats.savePct : player.stats.ppg) : '—';
+            const status = selected ? '✓ Selected' : unavailable ? 'Picked elsewhere' : original ? 'Original pick' : `#${player.overallPick}`;
+            const note = player.stats.ratingNote;
+            const separator = player.playerName.indexOf(' ');
+            const surname = separator < 0 ? player.playerName : player.playerName.slice(separator + 1);
+            const shortName = separator < 0 ? surname : `${player.playerName[0]}. ${surname}`;
+            return `<button type="button" class="compact-player${selected ? ' is-selected' : ''}${unavailable ? ' is-unavailable' : ''}"
+                data-compact-pick="${pickId}" data-compact-player="${player.playerId}" aria-haspopup="dialog"
+                title="${escapeHTML(player.playerName)} · ${escapeHTML(player.position)} · ${metric} ${label} · ${status}"
+                aria-label="${escapeHTML(player.playerName)}, ${escapeHTML(player.position)}, ${metric} career ${label}, ${status}. View stats and selection">
+                ${compactImage(player, 'compact-face')}
+                <span class="compact-player-name"><span class="compact-name-long">${escapeHTML(shortName)}</span><span class="compact-name-short">${escapeHTML(surname)}</span></span>
+                <span class="compact-metric">${metric}<small>${label}</small></span>
+                <span class="compact-rating">${getPercentileBarHTML(player.stats.percentile, note, false)}${note ? `<span class="compact-rating-note" title="${escapeHTML(note)}" aria-label="${escapeHTML(note)}">*</span>` : ''}</span>
+            </button>`;
+        }
+
+        function renderCompactRow(pickId) {
+            const pick = compactPicks.get(pickId);
+            const selected = pick.players.find(p => p.playerId === allPicksById[pickId].playerId);
+            const candidates = pick.players.filter(p => p.playerId !== selected.playerId);
+            const visible = candidates.filter(p => !isCompactPlayerUnavailable(pickId, p)).slice(0, 5);
+            const remaining = candidates.filter(p => !visible.includes(p));
+            const expanded = openCompactPicks.has(pickId) && remaining.length > 0;
+            const cells = Array.from({length: 5}, (_, i) => `<td>${visible[i] ? compactPlayerHTML(pickId, visible[i]) : '<span class="compact-empty">—</span>'}</td>`).join('');
+            document.getElementById(`compact-pick-${pickId}`).innerHTML = `
+                <th scope="row" class="compact-pick-number">#${pick.number}</th>
+                <td class="compact-selected-cell">${compactPlayerHTML(pickId, selected)}</td>${cells}
+                <td>${remaining.length ? `<button type="button" class="compact-more-button" data-compact-more="${pickId}"
+                    aria-expanded="${expanded}" aria-controls="compact-more-${pickId}" title="${expanded ? 'Hide' : 'Show'} ${remaining.length} more players" aria-label="${expanded ? 'Hide' : 'Show'} more players for ${pick.year} pick ${pick.number}">${expanded ? '−' : `+${remaining.length}`}</button>` : '<span class="compact-empty">—</span>'}</td>`;
+            const extra = document.getElementById(`compact-more-${pickId}`);
+            extra.hidden = !expanded;
+            extra.innerHTML = expanded ? `<td colspan="8"><p class="compact-extra-title">More options for #${pick.number} · Players picked elsewhere can be inspected but cannot be selected again.</p>
+                <div class="compact-extra-grid">${remaining.map(p => compactPlayerHTML(pickId, p)).join('')}</div></td>` : '';
+        }
+
+        function renderCompactPicks(draftYear) {
+            compactPicks.forEach((pick, pickId) => {
+                if (!draftYear || pick.year === draftYear) renderCompactRow(pickId);
+            });
+        }
+
+        function initializeCompactEditor() {
+            const rows = document.getElementById('compact-draft-rows');
+            let lastYear = null;
+            let lastRound = null;
+            document.querySelectorAll('#expanded-draft-view .draft-card').forEach(card => {
+                const pickId = card.dataset.editorPick;
+                const [year, number] = pickId.split('-');
+                const round = card.dataset.round;
+                const players = Array.from(card.querySelectorAll('.player-card, .alt-player-card')).map(source => ({
+                    playerId: source.dataset.playerId,
+                    playerName: source.querySelector('.player-name, .alt-name').textContent,
+                    position: source.dataset.position,
+                    draftYear: source.dataset.draftYear,
+                    overallPick: source.dataset.overallPick,
+                    headshot: source.querySelector('img').src,
+                    stats: extractStatsFromCard(source, source.dataset.position),
+                    source
+                })).sort((a, b) => ratingValue(b.stats.percentile) - ratingValue(a.stats.percentile) || Number(a.overallPick) - Number(b.overallPick));
+                compactPicks.set(pickId, {year, number, round, players});
+                if (year !== lastYear || round !== lastRound) {
+                    rows.insertAdjacentHTML('beforeend', `<tr class="compact-round${year !== lastYear ? ' compact-year' : ''}"><th colspan="8">${year}<span class="compact-round-label">Round ${round}</span></th></tr>`);
+                    lastYear = year;
+                    lastRound = round;
+                }
+                rows.insertAdjacentHTML('beforeend', `<tr class="compact-pick-row" id="compact-pick-${pickId}"></tr><tr class="compact-extra" id="compact-more-${pickId}" hidden></tr>`);
+            });
+            renderCompactPicks();
+
+            document.querySelectorAll('[data-draft-view]').forEach(button => button.addEventListener('click', () => {
+                draftView = button.dataset.draftView;
+                document.getElementById('compact-draft-view').hidden = draftView !== 'compact';
+                document.getElementById('expanded-draft-view').hidden = draftView !== 'expanded';
+                document.querySelectorAll('[data-draft-view]').forEach(b => b.setAttribute('aria-pressed', String(b === button)));
+                document.getElementById('draft-editor-hint').textContent = draftView === 'compact'
+                    ? 'Bars: rating · Numbers: career PPG (goalies: SV%)'
+                    : 'Click a player to select them · Your picks stay the same when switching views';
+            }));
+            rows.addEventListener('click', event => {
+                const playerButton = event.target.closest('[data-compact-player]');
+                if (playerButton) {
+                    openCompactPlayer(playerButton.dataset.compactPick, playerButton.dataset.compactPlayer);
+                    return;
+                }
+                const more = event.target.closest('[data-compact-more]');
+                if (more) {
+                    const pickId = more.dataset.compactMore;
+                    if (openCompactPicks.has(pickId)) openCompactPicks.delete(pickId);
+                    else openCompactPicks.add(pickId);
+                    renderCompactRow(pickId);
+                    rows.querySelector(`[data-compact-more="${pickId}"]`).focus({preventScroll: true});
+                }
+            });
+            const dialog = document.getElementById('draft-player-dialog');
+            dialog.querySelector('.draft-dialog-close').addEventListener('click', () => dialog.close());
+            dialog.addEventListener('click', event => {
+                if (event.target === dialog) {
+                    const rect = dialog.getBoundingClientRect();
+                    if (event.clientX < rect.left || event.clientX > rect.right || event.clientY < rect.top || event.clientY > rect.bottom) dialog.close();
+                }
+            });
+            dialog.addEventListener('close', () => {
+                if (!dialogOrigin) return;
+                const row = document.getElementById(`compact-pick-${dialogOrigin.pickId}`);
+                const extra = document.getElementById(`compact-more-${dialogOrigin.pickId}`);
+                const selector = `[data-compact-player="${dialogOrigin.playerId}"]`;
+                const target = row.querySelector(selector) || (!extra.hidden && extra.querySelector(selector)) || row.querySelector('.compact-player');
+                target?.focus({preventScroll: true});
+            });
+        }
+
+        function openCompactPlayer(pickId, playerId) {
+            const pick = compactPicks.get(pickId);
+            const player = pick.players.find(p => p.playerId === playerId);
+            const selected = allPicksById[pickId].playerId === playerId;
+            const unavailable = isCompactPlayerUnavailable(pickId, player);
+            const original = originalPicks[pickId];
+            const stats = player.stats;
+            const metric = Number(stats.games) > 0 ? (player.position === 'G' ? stats.savePct : stats.ppg) : '—';
+            const values = player.position === 'G' ? [['Games', stats.games], ['Save %', metric]] :
+                [['Games', stats.games], ['Goals', stats.goals], ['Assists', stats.assists], ['Points', stats.points], ['PPG', metric]];
+            const sourceOriginal = pick.players.find(p => p.playerId === original.playerId);
+            const canRestore = !isCompactPlayerUnavailable(pickId, sourceOriginal);
+            dialogOrigin = {pickId, playerId};
+            document.getElementById('draft-dialog-context').textContent = `${pick.year} · Round ${pick.round} · Your pick #${pick.number}`;
+            document.getElementById('draft-dialog-body').innerHTML = `
+                <div class="draft-dialog-player">${compactImage(player, 'draft-dialog-face')}<div>
+                    <h3 id="draft-dialog-name">${escapeHTML(player.playerName)}</h3>
+                    <p>${escapeHTML(player.position)} · Drafted #${player.overallPick}${playerId === original.playerId ? ' · Original pick' : ''}</p></div></div>
+                <div class="draft-dialog-rating"><p class="draft-dialog-caption">${stats.percentile === null ? 'Recent performance' : `Recent performance · ${Number(stats.percentile).toFixed(1)} percentile`}</p>
+                    ${getPercentileBarHTML(stats.percentile, stats.ratingNote)}</div>
+                <p class="draft-dialog-caption">Career NHL stats${Number(stats.games) === 0 ? ' · No NHL games recorded' : ''}</p>
+                <dl class="draft-dialog-stats">${values.map(([label, value]) => `<div><dt>${label}</dt><dd>${escapeHTML(value)}</dd></div>`).join('')}</dl>
+                <button type="button" class="draft-dialog-select" ${selected || unavailable ? 'disabled' : ''}>${selected ? 'Currently selected' : unavailable ? 'Already picked elsewhere' : `Select player for #${pick.number}`}</button>
+                ${allPicksById[pickId].playerId !== original.playerId ? `<button type="button" class="compact-restore" ${canRestore ? '' : 'disabled'}>${canRestore ? 'Restore' : 'Already picked elsewhere:'} ${escapeHTML(original.playerName)}${canRestore ? ' (original pick)' : ''}</button>` : ''}`;
+            const dialog = document.getElementById('draft-player-dialog');
+            function select(source) {
+                source.click();
+                const current = allPicksById[pickId];
+                document.getElementById('draft-selection-status').textContent = `${current.playerName} selected for ${pick.year} pick ${pick.number}.`;
+                dialog.close();
+            }
+            dialog.querySelector('.draft-dialog-select').addEventListener('click', () => select(player.source));
+            dialog.querySelector('.compact-restore')?.addEventListener('click', () => select(sourceOriginal.source));
+            dialog.showModal();
+        }
         
         // Get position group from player position
         function getPositionGroup(position) {
@@ -11308,15 +11674,17 @@
         
         // Scroll to a specific draft pick
         function scrollToDraftPick(pickId) {
-            const draftCard = document.querySelector(`[data-pick-id="${pickId}"]`)?.closest('.draft-card');
+            const draftCard = draftView === 'compact'
+                ? document.getElementById(`compact-pick-${pickId}`)
+                : document.querySelector(`[data-editor-pick="${pickId}"]`);
             if (draftCard) {
                 draftCard.scrollIntoView({ behavior: 'smooth', block: 'center' });
                 // Add a brief highlight effect
-                draftCard.style.outline = '3px solid #60A5FA';
-                draftCard.style.outlineOffset = '4px';
+                draftCard.classList.add('is-highlighted');
+                draftCard.style.outline = '2px solid #60A5FA';
                 setTimeout(() => {
+                    draftCard.classList.remove('is-highlighted');
                     draftCard.style.outline = '';
-                    draftCard.style.outlineOffset = '';
                 }, 2000);
             }
         }
@@ -11355,20 +11723,6 @@
             const newPosGroup = getPositionGroup(position);
             const original = originalPicks[pickId];
             
-            // Update picked players tracking for this draft year
-            if (!pickedPlayersByYear[draftYear]) {
-                pickedPlayersByYear[draftYear] = new Set();
-            }
-            
-            // Remove the old player from this pick (if it exists)
-            const oldPick = allPicksById[pickId];
-            if (oldPick && oldPick.playerId !== playerId) {
-                pickedPlayersByYear[draftYear].delete(oldPick.playerId);
-            }
-            
-            // Add the new player
-            pickedPlayersByYear[draftYear].add(playerId);
-            
             // Store the pick data
             const pickData = {
                 playerId,
@@ -11390,12 +11744,20 @@
             }
             
             allPicksById[pickId] = pickData;
+
+            // Rebuild from selections: a saved swap can move a later original pick
+            // to an earlier slot before the later slot is restored from the URL.
+            pickedPlayersByYear[draftYear] = new Set(Object.keys(originalPicks)
+                .map(id => allPicksById[id])
+                .filter(pick => pick.draftYear === draftYear)
+                .map(pick => pick.playerId));
             
             // Re-render slots
             renderSlots();
             
             // Update alternative player cards to show/hide already picked players
             updateAlternativePlayerVisibility(draftYear);
+            renderCompactPicks(draftYear);
             
             // Update URL with current swaps (only if not loading from URL)
             if (!isLoadingFromURL) {
@@ -11914,9 +12276,8 @@
         });
         
         // Toggle more alternatives
-        function toggleMoreAlternatives(pickId) {
+        function toggleMoreAlternatives(pickId, btn) {
             const moreDiv = document.getElementById(`more-${pickId}`);
-            const btn = event.target;
             
             if (moreDiv.classList.contains('hidden')) {
                 moreDiv.classList.remove('hidden');
@@ -11951,9 +12312,9 @@
                 params.set('name', name);
             }
             
-            const baseURL = window.location.href.split('?')[0];
-            const queryString = params.toString();
-            return queryString ? `${baseURL}?${queryString}` : baseURL;
+            const url = new URL(window.location.href);
+            url.search = params.toString();
+            return url.href;
         }
         
         function updateURLWithSwaps() {
@@ -12029,6 +12390,8 @@
             
             // Initial render
             renderSlots();
+            initializeCompactEditor();
+            Object.keys(pickedPlayersByYear).forEach(updateAlternativePlayerVisibility);
             
             // Load swaps from URL if present
             const urlSwaps = loadSwapsFromURL();
