@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="en"><head><meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>NHL Draft Redraft Tool - Deep Hockey</title>
-<meta name="description" content="Redraft the 2010-2026 NHL drafts. Three-season ratings: 2023-2024 through 2025-2026.">
-<link rel="canonical" href="https://deephockey.com/draft/">
+<title>NHL Redraft Tool by Team | Deep Hockey</title>
+<meta name="description" content="Explore your team's 2010-2026 NHL draft history. Choose alternatives for first- and second-round picks and build your own redraft. Three-season ratings: 2023-2024 through 2025-2026.">
+<link rel="canonical" href="https://www.deephockey.com/draft/">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../css/styles.css">
@@ -18,12 +18,19 @@
 .team-logo {width:120px;height:120px;margin:0 auto 1rem;display:block;object-fit:contain}
 .team-name {color:#D1D5DB;margin-bottom:1rem}
 .pick-count {font-size:.875rem;color:#9CA3AF}
-</style></head><body><div id="app" class="app-container">
+.draft-index-container h2 {font-size:1.6rem;margin-bottom:.6rem}
+.draft-index-container section>p {color:#b8c3d3;max-width:750px;margin-bottom:1.4rem}
+.draft-index-nav {display:flex;justify-content:center;gap:24px;margin:16px 0}
+.draft-index-nav a {color:#93c5fd}
+#by-team {scroll-margin-top:90px}
+@media(max-width:767px){.draft-hub .header-nav{height:auto;flex-direction:column;align-items:flex-start;gap:6px;padding:10px 0}.draft-hub .nav-menu{margin-left:0;flex-wrap:wrap;gap:0 12px}.draft-hub .nav-link{display:flex;align-items:center;min-height:40px;transition:color .2s}}
+</style></head><body class="draft-hub"><div id="app" class="app-container">
 <header id="main-header" class="site-header"></header><main class="main-content">
-<div class="draft-index-container"><div class="hero-section"><h1 class="hero-title">NHL Redraft Tool</h1>
-<p class="hero-subtitle">Explore what-if scenarios for every NHL team. Redraft the first two rounds of the 2010-2026 NHL drafts and build your ideal roster.</p>
+<div class="draft-index-container"><div class="hero-section"><h1 class="hero-title">NHL Redraft</h1>
+<p class="hero-subtitle">Who could your team have picked instead? Choose a team, explore its 2010-2026 draft history and build your own redraft.</p>
+<nav class="draft-index-nav" aria-label="Draft tools"><a href="#by-team">Choose a team</a><a href="years.html">Revisit a draft year →</a></nav>
 <p class="pick-count">Three-season ratings: 2023-2024 through 2025-2026 · Updated 2026-10-17<br>Ratings estimate recent performance; career totals through 2025-2026 are shown separately.</p></div>
-<div class="teams-grid"><a href="anaheim-ducks-draft-redraft.html" class="team-card">
+<section id="by-team"><h2>Redraft by team</h2><p>Explore a team's draft history and choose your own alternatives.</p><div class="teams-grid"><a href="anaheim-ducks-draft-redraft.html" class="team-card">
             <img src="https://assets.nhle.com/logos/nhl/svg/ANA_light.svg" alt="ANA" class="team-logo">
             <div class="team-name">Anaheim Ducks</div>
             <div class="pick-count">47 picks (Rounds 1-2, 2010-2026)</div></a><a href="boston-bruins-draft-redraft.html" class="team-card">
@@ -119,5 +126,5 @@
             <div class="pick-count">28 picks (Rounds 1-2, 2010-2026)</div></a><a href="winnipeg-jets-draft-redraft.html" class="team-card">
             <img src="https://assets.nhle.com/logos/nhl/svg/WPG_light.svg" alt="WPG" class="team-logo">
             <div class="team-name">Winnipeg Jets</div>
-            <div class="pick-count">29 picks (Rounds 1-2, 2010-2026)</div></a></div></div></main>
+            <div class="pick-count">29 picks (Rounds 1-2, 2010-2026)</div></a></div></section></div></main>
 <footer id="main-footer" class="site-footer"></footer></div><script src="../js/main.js"></script></body></html>

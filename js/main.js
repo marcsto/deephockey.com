@@ -63,16 +63,16 @@ function generateHeader() {
         <div class="container">
             <div class="header-nav">
                 <div>
-                    <a href="https://www.deephockey.com" class="logo">
+                    <a href="/" class="logo">
                        Deep <span class="logo-accent">Hockey</span>
                     </a>
                 </div>
                 <div class="nav-menu">
-                    <a href="https://www.deephockey.com/about.html" class="nav-link">About</a>
+                    <a href="/about.html" class="nav-link">About</a>
                     <a href="https://www.youtube.com/@DeeperHockey/shorts" class="nav-link">Videos</a>
-                    <a href="https://www.deephockey.com/draft" class="nav-link">Redraft</a>
-                    <a href="https://www.deephockey.com/shootout" class="nav-link">Shootouts</a>
-                    <a href="https://www.deephockey.com/olympics" class="nav-link">Olympics</a>
+                    <a href="/shootout/" class="nav-link">Shootouts</a>
+                    <a href="/draft/years.html" class="nav-link">Draft</a>
+                    <a href="/draft/" class="nav-link">Redraft</a>
                 </div>
                 <!-- Mobile menu button can be added here if needed -->
             </div>

@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>NHL Draft Revisited: Draft Reviews by Year | Deep Hockey</title><meta name="description" content="Revisit the 2010–2026 NHL drafts. Compare first- and second-round picks with players still available, recent strength and career statistics.">
+<link rel="canonical" href="https://www.deephockey.com/draft/years.html"><meta property="og:type" content="website">
+<meta property="og:title" content="NHL Draft Revisited: Draft Reviews by Year"><meta property="og:description" content="Revisit the 2010–2026 NHL drafts. Compare first- and second-round picks with players still available, recent strength and career statistics.">
+<meta property="og:url" content="https://www.deephockey.com/draft/years.html"><meta property="og:site_name" content="Deep Hockey">
+<meta name="twitter:card" content="summary"><link rel="stylesheet" href="../css/styles.css"><style>.year-redraft {font-family:Inter,system-ui,-apple-system,sans-serif}
+.year-redraft .main-content {max-width:1200px;padding:24px 24px 64px}
+.year-redraft a {color:#93c5fd;text-underline-offset:3px}
+.year-redraft a:hover {color:#dbeafe}
+.year-redraft button,.year-redraft select {font:inherit}
+.year-redraft :focus-visible {outline:2px solid #93c5fd;outline-offset:4px}
+.year-redraft [hidden] {display:none!important}
+.yr-fallback-nav {display:flex;justify-content:space-between;align-items:center;min-height:64px}
+.yr-breadcrumb {display:flex;gap:12px;align-items:center;color:#9ca3af;font-size:13px;margin-bottom:28px}
+.yr-hero {max-width:850px}
+.yr-eyebrow {color:#93c5fd;text-transform:uppercase;letter-spacing:.1em;font-size:11px;font-weight:600;margin-bottom:9px}
+.yr-hero h1 {font-size:clamp(32px,5vw,52px);line-height:1.1;letter-spacing:-.04em;margin-bottom:14px}
+.yr-deck {font-size:21px;color:#e5e7eb;margin-bottom:14px}
+.yr-intro {color:#b8c3d3;font-size:15px;line-height:1.8;max-width:800px}
+.yr-byline {font-size:12px;color:#9ca3af;margin-top:18px}
+.draft-year-hub .yr-hero {margin:20px 0 40px}
+.draft-year-hub #by-year h2 {font-size:22px;margin-bottom:8px}
+.draft-year-hub #by-year>p {color:#b8c3d3;font-size:14px;margin-bottom:20px}
+.draft-years-grid {display:grid;grid-template-columns:repeat(auto-fill,minmax(170px,1fr));gap:12px;margin-bottom:32px}
+.year-redraft .draft-year-card {display:flex;flex-direction:column;gap:8px;padding:20px;border:1px solid #374151;border-radius:8px;background:#172336;text-decoration:none;color:#f9fafb}
+.year-redraft .draft-year-card:hover {border-color:#93c5fd;background:#1c2c42}
+.draft-year-card strong {font-size:24px}
+.draft-year-card span {font-size:12px;color:#cbd5e1}
+.draft-year-card small {font-size:12px;color:#93c5fd}
+.yr-stories {margin:32px 0 36px;padding:24px;background:#172336;border:1px solid #2c3a4d;border-radius:12px}
+.yr-stories h2 {font-size:20px;letter-spacing:-.02em;margin-bottom:6px;line-height:1.25}
+.yr-stories-description {color:#b8c3d3;font-size:13px;line-height:1.65;margin-bottom:16px}
+.yr-late-grid {display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:10px}
+.year-redraft .yr-late-player {display:flex;align-items:center;gap:12px;min-width:0;padding:12px;border:1px solid #334155;border-radius:8px;background:#1a283b;text-decoration:none;color:#e5e7eb}
+.year-redraft .yr-late-player:hover {background:#26354a;border-color:#93c5fd}
+.yr-late-info {display:flex;flex-direction:column;gap:4px;min-width:0}
+.yr-late-info strong {font-size:14px;line-height:1.4;overflow-wrap:anywhere}
+.yr-late-pick {font-size:11px;color:#b8c3d3}
+.yr-late-player .yr-rating {position:relative;width:max-content;margin-top:4px}
+.yr-late-player .yr-note-marker {right:-10px}
+.yr-late-more {margin-top:14px}
+.yr-late-more .yr-late-grid {margin-top:14px}
+.yr-notice {background:#172336;border-left:3px solid #93c5fd;padding:14px 18px;margin:24px 0;color:#d1d5db;font-size:14px}
+.yr-board-heading {display:flex;flex-wrap:wrap;gap:12px;align-items:baseline;justify-content:space-between;margin:30px 0 8px}
+.yr-board-heading h2 {font-size:22px;letter-spacing:-.025em}
+.yr-board-heading p,.yr-board-note {font-size:12px;color:#b8c3d3}
+.yr-controls {display:flex;flex-wrap:wrap;align-items:center;gap:20px;border-bottom:1px solid #334155;padding:20px 0}
+.yr-controls nav {display:flex;gap:8px}
+.yr-controls nav a {text-decoration:none;background:#1f2937;padding:9px 14px;border:1px solid #374151;border-radius:6px;font-size:13px;display:flex;align-items:center;min-height:44px}
+.yr-team-filter {display:flex;align-items:center;gap:10px;font-size:13px;color:#b8c3d3}
+.yr-team-filter select {background:#1f2937;color:#f9fafb;border:1px solid #4b5563;border-radius:6px;padding:9px 10px;min-height:44px;max-width:100%}
+#year-count {margin-left:auto;color:#9ca3af;font-size:12px}
+.yr-round {scroll-margin-top:88px;margin-top:28px}
+.yr-section-heading {display:flex;flex-wrap:wrap;gap:10px;align-items:baseline;justify-content:space-between;margin-bottom:16px}
+.yr-section-heading h2 {font-size:19px}
+.yr-section-heading>span {font-size:12px;color:#9ca3af}
+.yr-column-head,.yr-pick-row {display:grid;grid-template-columns:104px 96px minmax(0,1fr);gap:22px;align-items:start}
+.yr-column-head {color:#9ca3af;font-size:11px;text-transform:uppercase;letter-spacing:.07em;padding:0 16px 12px}
+.yr-pick {scroll-margin-top:88px;border-top:1px solid #2c3748}
+.yr-pick:last-child {border-bottom:1px solid #2c3748}
+.yr-pick:target {box-shadow:inset 3px 0 #93c5fd;background:#172336}
+.yr-pick-row {padding:12px 16px}
+.yr-pick-meta {display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 10px;padding-top:7px}
+.yr-pick-number {font-size:19px;line-height:1.3;font-weight:600;font-variant-numeric:tabular-nums}
+.yr-team {font-size:12px;font-weight:600;color:#b8c3d3}
+.yr-verdict {font-size:11px;line-height:1.4;color:#aab7c9;flex-basis:100%;margin-top:5px}
+.yr-original {min-width:0;border-right:1px solid #334155;padding-right:14px}
+.yr-alternatives {min-width:0}
+.yr-choices {display:flex;flex-wrap:wrap;align-items:center;gap:8px}
+.yr-initial-options {width:calc(var(--visible)*90px - 8px);max-width:100%}
+.yr-choices:not(:has(>.yr-more[open])) .yr-extra-option {display:none}
+.yr-choices:has(>.yr-more[open])>.yr-initial-options {width:100%}
+.yr-goalie-option {border-left:1px solid #475569}
+.yr-goalie-badge {position:absolute;top:4px;right:4px;background:#334155;color:#cbd5e1;border-radius:3px;padding:1px 4px;font-size:9px;line-height:14px}
+.yr-tile-grid {display:grid;grid-template-columns:repeat(auto-fit,minmax(68px,82px));gap:8px}
+.yr-player-tile {display:flex;flex-direction:column;align-items:center;gap:5px;min-width:0;width:100%;padding:7px 4px 9px;border-radius:7px;text-decoration:none!important;color:#e5e7eb!important;position:relative}
+.yr-player-tile:hover {background:#26354a}
+.yr-original .yr-player-tile {background:#1a283b}
+.yr-tile-name {font-size:12px;line-height:1.4;max-width:100%;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.yr-player-tile .yr-face {width:42px;height:42px}
+.yr-player-tile .yr-rating {margin:0;min-height:6px;justify-content:center;width:100%;font-size:10px;line-height:1.2;position:relative}
+.yr-player-tile .yr-bar {width:52px;max-width:100%;height:4px}
+.yr-more {min-width:0;max-width:100%}
+.yr-more[open] {flex-basis:100%}
+.yr-more>summary {display:inline-flex;align-items:center;min-height:44px;padding:5px 9px;background:#1f2937;border:1px solid #374151;border-radius:5px;font-size:11px;cursor:pointer;color:#cbd5e1;list-style:none}
+.yr-more>summary:hover {background:#2a3a50}
+.yr-more>summary::-webkit-details-marker {display:none}
+.yr-more-open {display:none}
+.yr-more[open] .yr-more-closed {display:none}
+.yr-more[open] .yr-more-open {display:inline}
+.yr-more .yr-tile-grid {margin-top:10px}
+.yr-pool-label {font-size:11px;color:#9ca3af;margin:8px 0 4px}
+.yr-face {height:48px;width:48px;flex-shrink:0;background:#26354a;border-radius:50%;display:grid;place-items:center;position:relative;overflow:hidden;color:#cbd5e1;font-size:13px}
+.yr-face img {position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:top}
+.yr-rating {display:flex;gap:9px;align-items:center;font-size:12px;color:#d1d5db;font-variant-numeric:tabular-nums;margin-top:6px}
+.yr-bar {display:block;width:88px;height:6px;border-radius:3px;background:rgba(75,85,99,.5);overflow:hidden}
+.yr-bar-fill {display:block;height:100%;border-radius:4px}
+.yr-bar-fill.low,.yr-strength-key .low {background:linear-gradient(90deg,#6B7280,#9CA3AF)}
+.yr-bar-fill.medium,.yr-strength-key .medium {background:linear-gradient(90deg,#FBBF24,#F59E0B)}
+.yr-bar-fill.high,.yr-strength-key .high {background:linear-gradient(90deg,#10B981,#22C55E)}
+.yr-note {display:block;color:#b8c3d3;font-size:11px;margin-top:4px}
+.yr-note-marker {position:absolute;right:-2px;top:-6px;font-size:12px;color:#cbd5e1}
+.yr-strength-key {display:flex;flex-wrap:wrap;gap:8px 18px;margin-top:12px;color:#9ca3af;font-size:11px}
+.yr-strength-key span {display:flex;align-items:center;gap:6px}
+.yr-strength-key i {display:inline-block;width:20px;height:4px;border-radius:3px}
+.yr-mobile-label {display:none}
+.yr-pick-detail {padding:6px 0 12px}
+.yr-explanation {font-size:14px;color:#d1d5db;max-width:850px;line-height:1.7;margin:8px 0 18px}
+.yr-player-card {padding:16px;background:#111827;border:1px solid #334155;border-radius:8px;min-width:0}
+.yr-player-card:first-child {border-color:#50647f}
+.yr-player-heading {display:flex;gap:10px;align-items:center;min-height:55px}
+.yr-player-heading h4 {font-size:14px;line-height:1.35;font-weight:600;overflow-wrap:anywhere}
+.yr-player-heading .yr-face {width:38px;height:38px}
+.yr-player-heading p {font-size:11px;margin-top:5px}
+.yr-muted {color:#aab7c9;font-size:12px}
+.yr-stat-label {color:#aab7c9;font-size:11px;margin-top:16px}
+.yr-stats {display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;margin-top:8px}
+.yr-stats dt {font-size:10px;color:#9ca3af}
+.yr-stats dd {font-size:14px;font-variant-numeric:tabular-nums;color:#e5e7eb;font-weight:500}
+.yr-detail-footer {display:flex;flex-wrap:wrap;gap:16px;justify-content:space-between;font-size:12px;margin-top:18px}
+.yr-detail-footer a {min-height:32px;display:flex;align-items:center}
+.yr-method {border-top:1px solid #374151;margin-top:44px;padding-top:24px;scroll-margin-top:88px;max-width:900px}
+.yr-method h2,.yr-all-years h2 {font-size:21px;margin-bottom:16px}
+.yr-method p {font-size:13px;line-height:1.8;color:#b8c3d3;margin-bottom:14px}
+.yr-adjacent {display:flex;justify-content:space-between;gap:16px;margin-top:30px}
+.yr-adjacent a {font-size:14px;padding:8px 0}
+.yr-all-years {margin-top:28px}
+.yr-all-years nav {display:flex;flex-wrap:wrap;gap:8px;margin-bottom:20px}
+.yr-all-years nav a {text-decoration:none;border:1px solid #374151;border-radius:6px;min-width:54px;min-height:44px;display:flex;justify-content:center;align-items:center;font-size:13px;background:#1f2937}
+.yr-all-years nav a[aria-current=page] {background:#bfdbfe;color:#172336;border-color:#bfdbfe}
+.yr-all-years>a {font-size:13px}
+.yr-sr {position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.yr-round-empty {padding:20px 16px;color:#b8c3d3;font-size:14px}
+.yr-profiles {margin-top:30px}
+.yr-profiles h2 {font-size:21px;margin-bottom:12px}
+.yr-profile {scroll-margin-top:120px;border-top:1px solid #334155;padding:10px 0}
+.yr-profile>summary {cursor:pointer;color:#cbd5e1}
+.yr-profile .yr-player-card {margin-top:12px;max-width:440px}
+.yr-player-dialog {background:#182334;color:#e5e7eb;border:1px solid #50647f;border-radius:12px;padding:20px;width:min(440px,calc(100% - 32px));max-height:calc(100dvh - 32px);margin:auto;overflow:auto}
+.yr-player-dialog::backdrop {background:rgba(3,7,18,.76)}
+.yr-dialog-top {display:flex;align-items:center;justify-content:space-between;gap:12px;color:#b8c3d3;font-size:12px;margin-bottom:12px}
+.yr-dialog-top button {color:#e5e7eb;background:#26354a;border:0;border-radius:6px;width:44px;height:44px;font-size:26px;cursor:pointer}
+.yr-player-dialog .yr-player-card {border:0;background:transparent;padding:0}
+.yr-player-dialog .yr-player-heading h4 {font-size:23px}
+.yr-player-dialog .yr-player-heading .yr-face {width:72px;height:72px}
+.yr-player-dialog .yr-stats {margin-top:14px}
+.yr-player-dialog .yr-stats dt {font-size:11px}
+.yr-player-dialog .yr-stats dd {font-size:21px}
+.yr-dialog-note {font-size:12px;color:#9ca3af;margin-top:20px;line-height:1.7}
+@media(max-width:767px) {
+ .year-redraft .header-nav {height:auto;flex-direction:column;align-items:flex-start;gap:6px;padding:10px 0}
+ .year-redraft .nav-menu {margin-left:0;flex-wrap:wrap;gap:0 12px}
+ .year-redraft .nav-link {display:flex;align-items:center;min-height:40px;transition:color .2s}
+ .yr-round,.yr-pick,.yr-method {scroll-margin-top:120px}
+}
+@media(max-width:1000px) {
+ .yr-column-head,.yr-pick-row {grid-template-columns:76px 84px minmax(0,1fr);gap:14px}
+ .yr-tile-grid {grid-template-columns:repeat(auto-fit,minmax(62px,76px));gap:6px}
+ .yr-initial-options {width:calc(var(--visible)*82px - 6px)}
+}
+@media(max-width:700px) {
+ .year-redraft .main-content {padding:20px 16px 44px}
+ .yr-breadcrumb {margin-bottom:22px}
+ .yr-deck {font-size:18px}
+ .yr-intro {font-size:14px}
+ .yr-stories {padding:18px;margin:24px 0}
+ .yr-stories h2 {font-size:18px}
+ .yr-late-grid {grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+ .year-redraft .yr-late-player {flex-direction:column;align-items:center;padding:12px 8px;gap:8px;text-align:center}
+ .yr-late-info {align-items:center}
+ .yr-late-info strong {font-size:12px}
+ .yr-board-heading h2 {font-size:21px}
+ .yr-controls {gap:12px}
+ .yr-team-filter {width:100%;order:3}
+ .yr-team-filter select {flex:1;min-width:0;font-size:16px}
+ .yr-column-head {display:none}
+ .yr-pick-row {grid-template-columns:64px minmax(0,1fr);gap:10px 12px;padding:12px 0}
+ .yr-pick-meta {grid-column:1/-1;padding:0;align-items:center}
+ .yr-pick-number {font-size:17px}
+ .yr-verdict {margin:0 0 0 auto;flex-basis:auto}
+ .yr-original {padding-right:8px}
+ .yr-alternatives {grid-column:2;min-width:0}
+ .yr-mobile-label {display:block;color:#aab7c9;font-size:10px;letter-spacing:.03em;margin-bottom:6px;white-space:nowrap}
+ .yr-tile-grid {grid-template-columns:repeat(auto-fit,minmax(60px,76px));gap:5px}
+ .yr-initial-options {width:100%;grid-template-columns:repeat(4,minmax(0,76px))}
+ .yr-player-tile {padding:6px 2px 8px}
+ .yr-player-tile .yr-face {width:38px;height:38px}
+ .yr-tile-name {font-size:11px}
+ .yr-player-tile .yr-bar {width:46px}
+ .yr-player-card {padding:14px}
+ .yr-stats dd {font-size:13px}
+ .yr-player-heading {align-items:start}
+ .yr-detail-footer {gap:8px}
+ .yr-detail-footer a {min-height:44px}
+}
+@media(max-width:400px) {
+ .draft-years-grid {grid-template-columns:repeat(2,minmax(0,1fr))}
+ .year-redraft .draft-year-card {padding:16px 12px}
+ .yr-tile-grid {grid-template-columns:repeat(4,minmax(0,1fr))}
+ .yr-hero h1 {font-size:34px}
+ .yr-board-heading h2 {font-size:19px}
+}
+@media(prefers-reduced-motion:reduce) {* {scroll-behavior:auto!important}}
+</style></head>
+<body class="year-redraft draft-year-hub"><div class="app-container"><header id="main-header" class="site-header">
+<div class="container yr-fallback-nav"><a class="logo" href="../index.html">Deep <span class="logo-accent">Hockey</span></a><a href="index.html">Redraft</a></div></header>
+<main class="main-content"><div class="yr-hero"><p class="yr-eyebrow">The draft, with hindsight</p><h1>NHL Draft Revisited</h1>
+<p class="yr-deck">Who was still available? Compare the first two rounds.</p>
+<p class="yr-intro">Explore each draft in its original order. See who each team selected alongside players they could have picked, with recent strength and career statistics to help you compare.</p>
+<p class="yr-byline">Analysis by <a href="../about.html">Deep Hockey</a> · Data updated <time datetime="2026-10-17">2026-10-17</time></p></div>
+<section id="by-year"><h2>Choose a draft year</h2><p>Review the first two rounds, compare players and explore later-round options.</p><div class="draft-years-grid"><a class="draft-year-card" href="2026-nhl-draft.html"><strong>2026</strong><span>64 picks · Rounds 1–2</span><small>Awaiting NHL results</small></a><a class="draft-year-card" href="2025-nhl-draft.html"><strong>2025</strong><span>64 picks · Rounds 1–2</span><small>Early look</small></a><a class="draft-year-card" href="2024-nhl-draft.html"><strong>2024</strong><span>65 picks · Rounds 1–2</span><small>Early look</small></a><a class="draft-year-card" href="2023-nhl-draft.html"><strong>2023</strong><span>64 picks · Rounds 1–2</span><small>Early look</small></a><a class="draft-year-card" href="2022-nhl-draft.html"><strong>2022</strong><span>65 picks · Rounds 1–2</span><small>Early look</small></a><a class="draft-year-card" href="2021-nhl-draft.html"><strong>2021</strong><span>64 picks · Rounds 1–2</span><small>Explore comparisons</small></a><a class="draft-year-card" href="2020-nhl-draft.html"><strong>2020</strong><span>62 picks · Rounds 1–2</span><small>Explore comparisons</small></a><a class="draft-year-card" href="2019-nhl-draft.html"><strong>2019</strong><span>62 picks · Rounds 1–2</span><small>Explore comparisons</small></a><a class="draft-year-card" href="2018-nhl-draft.html"><strong>2018</strong><span>62 picks · Rounds 1–2</span><small>Explore comparisons</small></a><a class="draft-year-card" href="2017-nhl-draft.html"><strong>2017</strong><span>62 picks · Rounds 1–2</span><small>Explore comparisons</small></a><a class="draft-year-card" href="2016-nhl-draft.html"><strong>2016</strong><span>61 picks · Rounds 1–2</span><small>Explore comparisons</small></a><a class="draft-year-card" href="2015-nhl-draft.html"><strong>2015</strong><span>61 picks · Rounds 1–2</span><small>Explore comparisons</small></a><a class="draft-year-card" href="2014-nhl-draft.html"><strong>2014</strong><span>60 picks · Rounds 1–2</span><small>Explore comparisons</small></a><a class="draft-year-card" href="2013-nhl-draft.html"><strong>2013</strong><span>61 picks · Rounds 1–2</span><small>Explore comparisons</small></a><a class="draft-year-card" href="2012-nhl-draft.html"><strong>2012</strong><span>61 picks · Rounds 1–2</span><small>Explore comparisons</small></a><a class="draft-year-card" href="2011-nhl-draft.html"><strong>2011</strong><span>61 picks · Rounds 1–2</span><small>Explore comparisons</small></a><a class="draft-year-card" href="2010-nhl-draft.html"><strong>2010</strong><span>60 picks · Rounds 1–2</span><small>Explore comparisons</small></a></div></section>
+<aside class="yr-notice">Want to choose your own picks across a team's draft history? <a href="index.html#by-team">Open the Redraft tool →</a></aside></main>
+<footer id="main-footer" class="site-footer"><div class="container">Deep Hockey · NHL draft analysis</div></footer></div>
+<script src="../js/main.js"></script></body></html>
