@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inside the Shootout: What the Patterns Reveal - Deep Hockey</title>
+    <meta name="description" content="Explore DeepHockey's shootout analytics: shot location maps, quick scouting reads, detailed statistics, interactive player paths, and a first look at DeepHockeyVision.">
+    <link rel="canonical" href="https://www.deephockey.com/articles/the-path-to-a-shootout-goal.html">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Inside the Shootout: What the Patterns Reveal">
+    <meta property="og:description" content="Shot maps, scouting reads, detailed results, and player paths bring the shootout into focus.">
+    <meta property="og:url" content="https://www.deephockey.com/articles/the-path-to-a-shootout-goal.html">
+    <meta property="og:image" content="https://www.deephockey.com/articles/images/shootout-shot-map-caufield.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/styles.css">
+    <style>
+        .shootout-story .article-deck { color: #b9cce3; font-size: 1.2rem; line-height: 1.65; }
+        .shootout-story .article-content a { color: #93c5fd; text-decoration: underline; text-underline-offset: .2em; }
+        .shootout-story .article-content a:hover { color: #dbeafe; }
+        .shootout-story .article-content h2 { line-height: 1.3; display: block; }
+        .shootout-story figure { margin: 2rem 0; }
+        .shootout-story figure img { display: block; margin: 0; }
+        .shootout-story figcaption { margin-top: .85rem; line-height: 1.6; }
+        .shootout-story .highlight-stat p:last-child { margin-bottom: 0; }
+        .shootout-story .comparison-wrap { overflow-x: auto; margin: 2rem 0; }
+        .shootout-story .comparison-table { border-collapse: collapse; width: 100%; font-size: .95rem; line-height: 1.5; }
+        .shootout-story .comparison-table caption { text-align: left; color: #b9cce3; padding-bottom: .8rem; }
+        .shootout-story .comparison-table th, .shootout-story .comparison-table td { padding: .8rem; border-bottom: 1px solid #344155; text-align: left; }
+        .shootout-story .comparison-table thead { color: #e3f3ff; background: #1b2a3c; }
+        .shootout-story .comparison-table tbody th { color: #fff; }
+        .shootout-story .snapshot-note { color: #9ca3af; font-size: .875rem; }
+        @media (max-width: 480px) {
+            .shootout-story .comparison-table { font-size: .8rem; }
+            .shootout-story .comparison-table th, .shootout-story .comparison-table td { padding: .65rem .35rem; }
+        }
+    </style>
+</head>
+<body>
+    <div id="app" class="app-container">
+        <header id="main-header" class="site-header"></header>
+        <main class="main-content">
+            <div class="article-container shootout-story">
+                <a href="../index.html" class="back-link">← Back to Articles</a>
+                <article>
+                    <header class="article-header">
+                        <h1 class="article-title">Inside the Shootout: What the Patterns Reveal</h1>
+                        <p class="article-deck">Shot maps, scouting reads, detailed results, and player paths bring the shootout into focus.</p>
+                        <div class="article-meta"><time datetime="2026-10-18">October 18, 2026</time> | Marc Stogaitis</div>
+                    </header>
+                    <div class="article-content">
+                        <p>A shootout percentage tells you how often a player scores. It leaves plenty to be curious about. Where does he release the puck? Does he favor a backhand or a shot from farther out? Does he take the same route every time? And when a familiar move fails, what does the goalie do differently?</p>
+
+                        <p>Those questions are the reason I’ve been expanding DeepHockey’s <a href="../shootout/index.html">shootout pages</a>. When I first shared them, the invitation was “Watch Every Player’s Attempts.” The recent upgrades turn that collection into a deeper analytics tool: <strong>shot location maps, quick scouting reads, detailed statistics, and interactive player paths</strong>, all connected to the attempts you can watch.</p>
+
+                        <p>I want it to be easy to spot a tendency, see the numbers behind it, and pull up a clip to investigate. Shootouts are a great setting for that kind of exploration. With one shooter, one goalie, and open ice, you can follow the decisions that lead to the finish.</p>
+
+                        <h2>Shot location maps: where does the chance happen?</h2>
+
+                        <p>The <strong>shot location map</strong> puts a player’s attempts back on the ice. Color shows whether an attempt became a goal, a save, or a miss. Marker shape shows the recorded shot type. Both ends of the rink face the same net, so you can compare attempts without mentally flipping the picture.</p>
+
+                        <p>Look for clusters. Does a player tend to finish close to the crease, or release from farther out? Are his backhands concentrated in a different area from his wrist shots? Do the goals and saves come from similar spots? The map gives those questions a visual starting point.</p>
+
+                        <figure>
+                            <a href="../shootout/players/cole_caufield_shootouts.html#shot-map">
+                                <img src="images/shootout-shot-map-caufield.jpg" width="800" height="900" class="article-image" alt="Cole Caufield’s shot location map: goals, saves, and misses marked by color, with circles for wrist shots and triangles for snap shots.">
+                            </a>
+                            <figcaption class="article-image-caption">Caufield’s shot map from 2023–24 onward. The locations put goals, saves, and misses into the same view; open his page to explore individual attempts.</figcaption>
+                        </figure>
+
+                        <p>You can switch between <strong>the full recorded career and attempts since 2023–24</strong>. That makes it useful for comparing a longer-term habit with a more recent sample. Where a clip is available, select the marker to watch the attempt and see what happened around that release.</p>
+
+                        <p>A dot shows the recorded release location on the ice. It doesn’t tell you where the puck was aimed inside the net, or what fakes came before it. That’s why the map and the video belong together: one reveals a pattern across attempts, while the other lets you inspect an individual play.</p>
+
+                        <h2>A quick scouting read before you press play</h2>
+
+                        <p>The new <strong>Quick scouting read</strong> gives you a useful first impression of a player’s finishing habits. Depending on his recorded attempts, it might describe him as shot-leaning, favoring backhands and close finishes, or using a mixture. A limited sample or unclear tendency stays visible too.</p>
+
+                        <p><a href="../shootout/players/nick_suzuki_shootouts.html#scouting-title">Nick Suzuki</a> and <a href="../shootout/players/cole_caufield_shootouts.html#scouting-title">Cole Caufield</a> are a fun comparison. Suzuki’s read favors backhands and close forehand finishes. Caufield’s leans toward shooting from farther out. Open a few clips with those tendencies in mind and watch how each player gets into position to finish.</p>
+
+                        <p>The scouting read helps you decide what to look for. It’s also a way into the deeper breakdowns below it: the scoring-by-finish tables, approach-side results, and example clips. A close release suggests a certain kind of finish, but the clip is still needed to see whether a deke actually happened.</p>
+
+                        <h2>Detailed statistics: how often, and over how many attempts?</h2>
+
+                        <p>The deeper statistics give that first impression some context. Career totals sit alongside the recent sample, and season-by-season results let you see how the record develops over time. The <strong>Scoring by finish</strong> tables separate backhands from forehands, then break forehands into close finishes, shots from farther out, and cases where the finish style is unclear. Slap shots appear separately in that breakdown when present.</p>
+
+                        <p>Here’s the current career comparison for those two Montreal teammates:</p>
+
+                        <div class="comparison-wrap">
+                            <table class="comparison-table">
+                                <caption>Recorded career results · goals / attempts</caption>
+                                <thead><tr><th scope="col">Player</th><th scope="col">Backhand</th><th scope="col">Forehand</th><th scope="col">Overall</th></tr></thead>
+                                <tbody>
+                                    <tr><th scope="row">Nick Suzuki</th><td>7 / 14</td><td>4 / 23</td><td>11 / 38</td></tr>
+                                    <tr><th scope="row">Cole Caufield</th><td>0 / 0</td><td>18 / 37</td><td>18 / 37</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <p>Suzuki has one additional attempt with no recorded release, which is included in his overall total but sits outside the finish rows. Caufield’s recorded career attempts are all forehands. Within that group, his table shows <strong>12 goals on 22 shots from farther out</strong>, compared with <strong>1 on 3 close finishes</strong>; another 12 have an unclear finish style.</p>
+
+                        <p>Those counts matter as much as the percentages. Three close finishes tell us much less than 22 shots from farther out. Suzuki’s backhand results are interesting, but they don’t prove that choosing a backhand on every attempt would help him. His choice also depends on what the goalie gives him.</p>
+
+                        <p>You can switch the finish tables between career results and attempts since 2023–24. The approach breakdown adds another comparison: how frequently the tracked attempts come through each lane, and how often those groups score. Where the evidence is strong enough, a <strong>Career scoring pattern</strong> calls out a supported difference. Those callouts require additional sample, coverage, and statistical checks; the tables remain available for exploring the results even when no strong conclusion is justified.</p>
+
+                        <h2>Paths to the net: the buildup to the finish</h2>
+
+                        <p>The interactive <strong>Paths to the net</strong> view adds the movement leading into the attempt. Layer the available routes, filter them to goals, saves, or misses, and select an individual path. Replay follows the video timing, while a slider lets you examine the route at your own pace.</p>
+
+                        <figure>
+                            <a href="../shootout/players/cole_caufield_shootouts.html#trajectories">
+                                <img src="images/shootout-paths-caufield.jpg" width="1265" height="1014" class="article-image" loading="lazy" alt="Cole Caufield’s shootout route explorer, with a goal against Florida highlighted among 22 tracked paths.">
+                            </a>
+                            <figcaption class="article-image-caption">Caufield’s paths to the net. Compare the routes, select an attempt, then open its video.</figcaption>
+                        </figure>
+
+                        <p>Suzuki’s page currently has 14 attempts with usable tracking, 13 of them classified as left-side approaches. That gives you a specific question to investigate: how many different finishes does he create from a familiar entrance? The label describes the main approach lane, so a left-side approach can still end with a late cut across the ice.</p>
+
+                        <p>Try finding a similar route among both the goals and saves. Then use “Watch this attempt” to compare the available clips. Did the shooter release earlier? Carry the puck across his body? Catch the goalie still moving? A shot map locates the release; a trajectory shows the skater’s approach; the video lets you examine how the two connect.</p>
+
+                        <p>Tracking coverage is shown alongside the paths. These are estimates for the available tracked attempts, and the lines follow the skater rather than the puck. The endpoint is the closest tracked position to the net, not a measured shot release.</p>
+
+                        <h2>The goalie’s side of the story</h2>
+
+                        <p>The <a href="../shootout/goalie_shootout_stats.html">goalie pages</a> bring the same visual tools to the other side of the contest: shot locations and tracked paths for the attempts faced, plus an approach breakdown showing goals allowed from each lane.</p>
+
+                        <p>Choose a goalie and compare similar approaches. Watch his depth, when he begins retreating, and how he responds to the final cut. A difference in goals allowed can suggest clips to study, but the sample and the shooters involved matter. Left and right are consistently labeled from the shooter’s viewpoint, including on goalie pages.</p>
+
+                        <h2>A first glimpse of DeepHockeyVision</h2>
+
+                        <p>The trajectories also introduce a project I haven’t shared here before: <strong>DeepHockeyVision</strong>. It’s about understanding hockey video: the camera’s view of the rink, player positions and identities, and the puck. We used DeepHockeyVision to estimate the player trajectories behind the shootout paths.</p>
+
+                        <figure>
+                            <a href="images/deephockeyvision-shootout-preview.svg">
+                                <img src="images/deephockeyvision-shootout-preview.jpg" width="720" height="642" class="article-image" loading="lazy" alt="Trevor Moore, number 12, with a broadcast-style nameplate above him, cyan camera-projected rink markings, and a magenta trail of his tracked positions behind him.">
+                            </a>
+                            <figcaption class="article-image-caption">A closer look at DeepHockeyVision: Trevor Moore’s tracked approach, with the estimated rink geometry in cyan and his preceding positions in magenta. This presentation uses an actual video frame and saved tracking, with a nameplate added for the preview.</figcaption>
+                        </figure>
+
+                        <p>I’ll share more about DeepHockeyVision in a future post. For now, this is a glimpse of how that work can feed tools for exploring the game.</p>
+
+                        <h2>Follow a question through the page</h2>
+
+                        <p>The most useful insights come from moving between these views. A scouting read suggests a tendency. The statistics show its frequency and sample size. The shot map and paths put it on the ice. The video lets you examine the details, including the saves and misses that a highlight reel leaves out.</p>
+
+                        <div class="highlight-stat">
+                            <p>Start with a player you enjoy watching. Pick one tendency from his scouting read, check the finish results, and find a goal and a save to compare. Then look at the goalie’s page and watch the contest from his side.</p>
+                        </div>
+
+                        <p>That’s what I want the shootout pages to make easier: turning curiosity about a single attempt into a closer understanding of a player’s game.</p>
+
+                        <p><a href="../shootout/index.html">Explore the player shootout pages →</a><br>
+                        <a href="../shootout/goalie_shootout_stats.html">Explore the goalie shootout pages →</a></p>
+
+                        <p class="snapshot-note">Player counts and results are a snapshot of the DeepHockey pages on October 17, 2026. The linked pages update as more attempts are added.</p>
+                    </div>
+                </article>
+            </div>
+        </main>
+        <footer id="main-footer" class="site-footer"></footer>
+    </div>
+    <script src="../js/main.js"></script>
+</body>
+</html>
