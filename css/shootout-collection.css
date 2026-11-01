@@ -1,0 +1,54 @@
+.collection { max-width: 1160px; padding-top: 1.5rem; padding-bottom: 4rem; }
+.collection a { color: #93c5fd; text-underline-offset: 3px; }
+.collection a:hover { color: #d1fae5; }
+.collection :is(a, button, select, video):focus-visible { outline: 3px solid #6ee7b7; outline-offset: 5px; }
+.collection-breadcrumb { display: flex; flex-wrap: wrap; gap: .6rem; font-size: .85rem; color: #9ca3af; }
+.collection-hero { padding: 3rem 0 2rem; max-width: 850px; }
+.collection-eyebrow { color: #6ee7b7; font-size: .75rem; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; }
+.collection h1 { font-size: clamp(2.5rem, 6vw, 4.7rem); line-height: 1.06; letter-spacing: -.055em; margin: .8rem 0 1.3rem; }
+.collection h1 span { color: #6ee7b7; }
+.collection-deck { color: #d1d5db; font-size: 1.1rem; line-height: 1.8; max-width: 680px; }
+.collection-meta { margin-top: 1.1rem; color: #9ca3af; font-size: .8rem; }
+.goal-jumps { display: flex; flex-wrap: wrap; gap: .5rem; margin: 0 0 2rem; }
+.goal-jumps a { border: 1px solid #374151; border-radius: 6px; padding: .5rem .85rem; font-size: .85rem; text-decoration: none; }
+.goal-jumps a:hover { background: #1f2937; border-color: #6ee7b7; }
+.collection-toolbar { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: .8rem; margin-bottom: 1rem; padding-top: 1.5rem; border-top: 1px solid #374151; }
+.collection-toolbar h2 { font-size: 1.1rem; font-weight: 600; }
+.playback-control { color: #cbd5e1; font-size: .8rem; }
+.playback-control select { margin-left: .5rem; color: #f9fafb; background: #1f2937; border: 1px solid #4b5563; padding: .5rem; border-radius: 5px; font: inherit; }
+.goal-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.2rem; }
+.goal-card { min-width: 0; border: 1px solid #374151; border-radius: 12px; overflow: hidden; background: #172132; scroll-margin-top: 5.2rem; display: flex; flex-direction: column; }
+.goal-card:target { border-color: #6ee7b7; box-shadow: 0 0 0 2px #6ee7b733; }
+.goal-media { background: #090f19; position: relative; }
+.goal-media video { display: block; width: 100%; height: 420px; object-fit: contain; background: #090f19; }
+.goal-body { padding: 1.25rem; display: flex; flex-direction: column; flex: 1; }
+.goal-kicker { color: #9ca3af; font-size: .72rem; letter-spacing: .04em; margin-bottom: .5rem; }
+.goal-body h3 { font-size: 1.32rem; letter-spacing: -.025em; line-height: 1.3; }
+.goal-matchup { font-size: .9rem; margin: .4rem 0 1rem; color: #6ee7b7; }
+.goal-description { color: #d1d5db; font-size: .9rem; line-height: 1.75; margin-bottom: 1rem; }
+.goal-facts { display: grid; grid-template-columns: auto 1fr; gap: .25rem .9rem; font-size: .8rem; padding-top: .9rem; border-top: 1px solid #374151; margin-top: auto; }
+.goal-facts dt { color: #9ca3af; }
+.goal-facts dd { margin: 0; }
+.goal-links { display: flex; flex-wrap: wrap; gap: .5rem 1rem; margin-top: 1.1rem; font-size: .8rem; align-items: center; }
+.goal-source { font-size: .75rem; color: #9ca3af; margin-top: .8rem; }
+.copy-goal { color: #cbd5e1; background: transparent; border: 1px solid #4b5563; padding: .4rem .6rem; border-radius: 5px; cursor: pointer; font: inherit; }
+.copy-goal:hover { background: #263449; }
+.video-error { padding: .75rem; color: #fcd34d; font-size: .8rem; }
+.collection-notes { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; margin-top: 3rem; padding-top: 2rem; border-top: 1px solid #374151; }
+.collection-notes h2 { font-size: 1.2rem; margin-bottom: .8rem; }
+.collection-notes p { color: #cbd5e1; font-size: .9rem; line-height: 1.8; margin-bottom: 1rem; }
+.collection-notes .small-note { color: #9ca3af; font-size: .8rem; }
+.collection-cta { display: inline-block; padding: .65rem 1rem; border: 1px solid #4b5563; border-radius: 6px; text-decoration: none; font-size: .9rem; }
+.collection .status-message { color: #6ee7b7; font-size: .8rem; min-height: 1.5rem; margin-top: 1rem; }
+[hidden] { display: none !important; }
+@media (max-width: 1000px) { .goal-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 600px) {
+  .collection { padding-top: 1rem; }
+  .collection-hero { padding: 1.5rem 0 1rem; }
+  .collection-deck { font-size: 1rem; }
+  .goal-grid { grid-template-columns: 1fr; }
+  .goal-media video { height: min(118vw, 490px); }
+  .collection-notes { grid-template-columns: 1fr; gap: 1rem; }
+  .goal-jumps a { font-size: .8rem; padding: .45rem .65rem; }
+  .goal-jumps { margin-bottom: 1rem; }
+}
