@@ -15,6 +15,12 @@
 <link href="/css/shootout-context.css" rel="stylesheet"/>
 <link href="/css/shootout-player.css?v=91ee5f299048" rel="stylesheet"/>
 <link href="https://www.deephockey.com/shootout/players/logan_couture_shootouts.html" rel="canonical"/>
+<!-- Deep Hockey identity -->
+<link href="/favicon.ico" rel="icon" sizes="16x16 32x32 48x48 64x64"/>
+<link href="/favicon-96x96.png" rel="icon" sizes="96x96" type="image/png"/>
+<link href="/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180"/>
+<meta content="Deep Hockey" property="og:site_name"/>
+<!-- /Deep Hockey identity -->
 <link href="/css/shootout-scouting.css?v=2e65caae388c" rel="stylesheet"/>
 <link href="/css/shootout-shot-map.css?v=475d48420075" rel="stylesheet"/>
 <script defer="" src="/js/shootout-shot-map.js?v=b684577f7f26"></script>
@@ -44,11 +50,11 @@
 <div class="left-column">
 <!-- Video Player -->
 <div class="video-player-container">
-<video class="video-player" controls="" id="shootout-video" playsinline="">
-<source src="" type="video/mp4"/>
+<video class="video-player" controls="" id="shootout-video" playsinline="" preload="metadata" style="display: none;">
+
                             Your browser does not support the video tag.
                         </video>
-<div class="no-video-message" id="no-video-message" style="display: none;">
+<div class="no-video-message" id="no-video-message" style="display: flex;">
 <div class="no-video-icon">🎥</div>
 <h3>No Video Available</h3>
 <p>Unfortunately, there is no video available for this shootout attempt.</p>
@@ -298,7 +304,7 @@
 <!-- Attempts Sidebar -->
 <div class="attempts-sidebar">
 <h3 class="sidebar-title">Shootout Attempts</h3>
-<div class="attempt-item active no-video" data-details="Jan 22, 2024 • Goal • Wrist" data-has-video="false" data-result="goal" data-title="vs Kings" data-video="" data-video-id="2023020729-2">
+<div class="attempt-item active no-video" data-details="Jan 22, 2024 • Goal • Wrist" data-has-video="false" data-poster="" data-result="goal" data-title="vs Kings" data-video="" data-video-id="2023020729-2">
 <button class="attempt-select" type="button">
 <div class="attempt-result goal"></div>
 <div class="attempt-info">
@@ -388,6 +394,6 @@
 <div aria-label="Available videos" class="video-picker-list" id="video-picker-list"></div>
 </dialog>
 <script src="../../js/main.js"></script>
-<script defer="" src="/js/shootout-player.js?v=e4535301d4d7"></script>
+<script defer="" src="/js/shootout-player.js?v=a9c90c008235"></script>
 </body>
 </html>

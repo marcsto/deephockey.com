@@ -15,6 +15,12 @@
 <link href="/css/shootout-context.css" rel="stylesheet"/>
 <link href="/css/shootout-player.css?v=91ee5f299048" rel="stylesheet"/>
 <link href="https://www.deephockey.com/shootout/players/matthew_tkachuk_shootouts.html" rel="canonical"/>
+<!-- Deep Hockey identity -->
+<link href="/favicon.ico" rel="icon" sizes="16x16 32x32 48x48 64x64"/>
+<link href="/favicon-96x96.png" rel="icon" sizes="96x96" type="image/png"/>
+<link href="/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180"/>
+<meta content="Deep Hockey" property="og:site_name"/>
+<!-- /Deep Hockey identity -->
 <link href="/css/shootout-scouting.css?v=2e65caae388c" rel="stylesheet"/>
 <link href="/css/shootout-shot-map.css?v=475d48420075" rel="stylesheet"/>
 <script defer="" src="/js/shootout-shot-map.js?v=b684577f7f26"></script>
@@ -44,8 +50,8 @@
 <div class="left-column">
 <!-- Video Player -->
 <div class="video-player-container">
-<video class="video-player" controls="" id="shootout-video" playsinline="">
-<source src="" type="video/mp4"/>
+<video class="video-player" controls="" id="shootout-video" playsinline="" poster="/images/shootout-thumbnails/v1/b136c177a4919569abcbf440.jpg" preload="metadata" style="display: block;">
+<source src="https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/0bf9d0f0-7949-43ba-a9e1-01f200f71dfc.mp4" type="video/mp4"/>
                             Your browser does not support the video tag.
                         </video>
 <div class="no-video-message" id="no-video-message" style="display: none;">
@@ -58,8 +64,8 @@
 <svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><path d="m15 6-6 6 6 6"></path></svg>
 </button>
 <div class="video-info">
-<div class="video-title" id="video-title">vs Kraken</div>
-<div class="video-details" id="video-details">Mar 24, 2026 • Save • Backhand</div>
+<div class="video-title" id="video-title">vs Bruins</div>
+<div class="video-details" id="video-details">Feb 04, 2026 • Save • Wrist</div>
 </div>
 <button aria-label="Next video" class="video-nav-button" disabled="" id="next-video" type="button">
 <svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><path d="m9 6 6 6-6 6"></path></svg>
@@ -251,7 +257,7 @@
 <!-- Attempts Sidebar -->
 <div class="attempts-sidebar">
 <h3 class="sidebar-title">Shootout Attempts</h3>
-<div class="attempt-item active no-video" data-details="Mar 24, 2026 • Save • Backhand" data-has-video="false" data-result="save" data-title="vs Kraken" data-video="" data-video-id="2025021123-5">
+<div class="attempt-item no-video" data-details="Mar 24, 2026 • Save • Backhand" data-has-video="false" data-poster="" data-result="save" data-title="vs Kraken" data-video="" data-video-id="2025021123-5">
 <button class="attempt-select" type="button">
 <div class="attempt-result save"></div>
 <div class="attempt-info">
@@ -262,7 +268,7 @@
 </button>
 <div class="attempt-context">Round 3 · Goalie: <a href="/shootout/goalies/joey_daccord_shootouts.html?v=2025021123-5">Joey Daccord</a></div>
 </div>
-<div class="attempt-item" data-details="Feb 04, 2026 • Save • Wrist" data-has-video="true" data-result="save" data-title="vs Bruins" data-video="https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/0bf9d0f0-7949-43ba-a9e1-01f200f71dfc.mp4" data-video-id="2025020893-5">
+<div class="attempt-item active" data-details="Feb 04, 2026 • Save • Wrist" data-has-video="true" data-poster="/images/shootout-thumbnails/v1/b136c177a4919569abcbf440.jpg" data-result="save" data-title="vs Bruins" data-video="https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/0bf9d0f0-7949-43ba-a9e1-01f200f71dfc.mp4" data-video-id="2025020893-5">
 <button class="attempt-select" type="button">
 <div class="attempt-result save"></div>
 <div class="attempt-info">
@@ -273,7 +279,7 @@
 </button>
 <div class="attempt-context">Round 3 · Goalie: <a href="/shootout/goalies/joonas_korpisalo_shootouts.html?v=2025020893-5">Joonas Korpisalo</a></div>
 </div>
-<div class="attempt-item" data-details="Nov 09, 2024 • Save • Backhand" data-has-video="true" data-result="save" data-title="vs Flyers" data-video="https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/5fadc35c-d11c-4d3a-ac4c-d38f4a200018.mp4" data-video-id="2024020225-7">
+<div class="attempt-item" data-details="Nov 09, 2024 • Save • Backhand" data-has-video="true" data-poster="/images/shootout-thumbnails/v1/e992884bd64d8e553738e464.jpg" data-result="save" data-title="vs Flyers" data-video="https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/5fadc35c-d11c-4d3a-ac4c-d38f4a200018.mp4" data-video-id="2024020225-7">
 <button class="attempt-select" type="button">
 <div class="attempt-result save"></div>
 <div class="attempt-info">
@@ -284,7 +290,7 @@
 </button>
 <div class="attempt-context">Round 4 · Goalie: <a href="/shootout/goalies/samuel_ersson_shootouts.html?v=2024020225-7">Samuel Ersson</a></div>
 </div>
-<div class="attempt-item" data-details="Nov 28, 2023 • Wide Left • Wrist" data-has-video="true" data-result="miss" data-title="vs Maple Leafs" data-video="https://www.nhl.com/stories/184348/14725364/23.mp4" data-video-id="2023020329-8">
+<div class="attempt-item" data-details="Nov 28, 2023 • Wide Left • Wrist" data-has-video="true" data-poster="/images/shootout-thumbnails/v1/42221d3080e2b55b67b80911.jpg" data-result="miss" data-title="vs Maple Leafs" data-video="https://www.nhl.com/stories/184348/14725364/23.mp4" data-video-id="2023020329-8">
 <button class="attempt-select" type="button">
 <div class="attempt-result miss"></div>
 <div class="attempt-info">
@@ -421,6 +427,6 @@
 <div aria-label="Available videos" class="video-picker-list" id="video-picker-list"></div>
 </dialog>
 <script src="../../js/main.js"></script>
-<script defer="" src="/js/shootout-player.js?v=e4535301d4d7"></script>
+<script defer="" src="/js/shootout-player.js?v=a9c90c008235"></script>
 </body>
 </html>

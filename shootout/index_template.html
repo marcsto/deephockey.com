@@ -558,8 +558,8 @@
                                 <path d="M15 18l-6-6 6-6"/>
                             </svg>
                         </button>
-                        <video id="featured-video" class="featured-video-player" controls autoplay muted>
-                            <source src="" type="video/mp4">
+                        <video id="featured-video" class="featured-video-player" controls autoplay muted playsinline preload="metadata" poster="{{FIRST_VIDEO_POSTER}}">
+                            <source src="{{FIRST_VIDEO_URL}}" type="video/mp4">
                             Your browser does not support the video tag.
                         </video>
                         <button class="carousel-nav carousel-next" id="carousel-next" aria-label="Next video">
@@ -670,6 +670,7 @@
         function loadVideo(index) {
             if (index >= 0 && index < shuffledVideos.length) {
                 const video = shuffledVideos[index];
+                featuredVideo.poster = video.poster || '';
                 featuredVideo.src = video.url;
                 featuredVideo.load();
                 featuredVideo.play().catch(e => console.log('Auto-play prevented:', e));
@@ -693,7 +694,7 @@
             // Initialize shuffled videos
             function initializeVideos() {
                 if (goalVideos && goalVideos.length > 0) {
-                    shuffledVideos = shuffleArray(goalVideos);
+                    shuffledVideos = [goalVideos[0], ...shuffleArray(goalVideos.slice(1))];
                     currentVideoIndex = 0;
                     videoHistory = [0];
                     playCurrentVideo();
@@ -705,6 +706,7 @@
             function playCurrentVideo() {
                 if (currentVideoIndex >= 0 && currentVideoIndex < shuffledVideos.length) {
                     const video = shuffledVideos[currentVideoIndex];
+                    featuredVideo.poster = video.poster || '';
                     featuredVideo.src = video.url;
                     featuredVideo.load();
                     featuredVideo.play().catch(e => console.log('Auto-play prevented:', e));

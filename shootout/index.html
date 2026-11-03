@@ -520,6 +520,12 @@
         }
     </style>
     <link rel="canonical" href="https://www.deephockey.com/shootout/">
+<!-- Deep Hockey identity -->
+<link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48 64x64">
+<link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180">
+<meta property="og:site_name" content="Deep Hockey">
+<!-- /Deep Hockey identity -->
 </head>
 <body>
     <!-- App Container -->
@@ -559,8 +565,8 @@
                                 <path d="M15 18l-6-6 6-6"/>
                             </svg>
                         </button>
-                        <video id="featured-video" class="featured-video-player" controls autoplay muted>
-                            <source src="" type="video/mp4">
+                        <video id="featured-video" class="featured-video-player" controls autoplay muted playsinline preload="metadata" poster="/images/shootout-thumbnails/v1/26737e42a6b0863b510028cc.jpg">
+                            <source src="https://www.nhl.com/stories/148623/13381621/34.mp4" type="video/mp4">
                             Your browser does not support the video tag.
                         </video>
                         <button class="carousel-nav carousel-next" id="carousel-next" aria-label="Next video">
@@ -12729,6 +12735,7 @@
         const goalVideos = [
   {
     "url": "https://www.nhl.com/stories/148623/13381621/34.mp4",
+    "poster": "/images/shootout-thumbnails/v1/26737e42a6b0863b510028cc.jpg",
     "playerName": "Mitch Marner",
     "playerTeam": "VGK",
     "opponent": "vs MTL",
@@ -12737,6 +12744,7 @@
   },
   {
     "url": "https://www.nhl.com/stories/149207/13402801/18.mp4",
+    "poster": "/images/shootout-thumbnails/v1/9db45c1c08d40d1b9aa94c97.jpg",
     "playerName": "Jason Robertson",
     "playerTeam": "DAL",
     "opponent": "vs STL",
@@ -12745,6 +12753,7 @@
   },
   {
     "url": "https://www.nhl.com/stories/149207/13402801/19.mp4",
+    "poster": "/images/shootout-thumbnails/v1/02af7abc5adf84230db97259.jpg",
     "playerName": "Brayden Schenn",
     "playerTeam": "NYI",
     "opponent": "@ DAL",
@@ -12753,6 +12762,7 @@
   },
   {
     "url": "https://www.nhl.com/stories/149207/13402801/20.mp4",
+    "poster": "/images/shootout-thumbnails/v1/b0d3aebfb7ba3a2327037d66.jpg",
     "playerName": "Matt Duchene",
     "playerTeam": "DAL",
     "opponent": "vs STL",
@@ -12761,6 +12771,7 @@
   },
   {
     "url": "https://www.nhl.com/stories/149975/13419166/25.mp4",
+    "poster": "/images/shootout-thumbnails/v1/c44f00b4212f9aa9068615e3.jpg",
     "playerName": "Nick Bjugstad",
     "playerTeam": "NJD",
     "opponent": "@ NJD",
@@ -12769,6 +12780,7 @@
   },
   {
     "url": "https://www.nhl.com/stories/149975/13419166/27.mp4",
+    "poster": "/images/shootout-thumbnails/v1/874425ddebd9a15f4e17766b.jpg",
     "playerName": "Nick Schmaltz",
     "playerTeam": "UTA",
     "opponent": "@ NJD",
@@ -12777,6 +12789,7 @@
   },
   {
     "url": "https://www.nhl.com/stories/150760/13445262/20.mp4",
+    "poster": "/images/shootout-thumbnails/v1/e412c4b37b7274069d2fee49.jpg",
     "playerName": "Robert Thomas",
     "playerTeam": "STL",
     "opponent": "vs SEA",
@@ -12785,6 +12798,7 @@
   },
   {
     "url": "https://www.nhl.com/stories/150885/13447841/23.mp4",
+    "poster": "/images/shootout-thumbnails/v1/0e225ce065480c341ae6919d.jpg",
     "playerName": "Mikko Rantanen",
     "playerTeam": "DAL",
     "opponent": "@ SJS",
@@ -12793,6 +12807,7 @@
   },
   {
     "url": "https://www.nhl.com/stories/150892/13448046/26.mp4",
+    "poster": "/images/shootout-thumbnails/v1/87822973296afc5fe99f413d.jpg",
     "playerName": "Pierre-Luc Dubois",
     "playerTeam": "WSH",
     "opponent": "vs CAR",
@@ -12801,6 +12816,7 @@
   },
   {
     "url": "https://www.nhl.com/stories/150892/13448046/29.mp4",
+    "poster": "/images/shootout-thumbnails/v1/db4e423b555a2a0457776889.jpg",
     "playerName": "Sebastian Aho",
     "playerTeam": "CAR",
     "opponent": "@ LAK",
@@ -12809,6 +12825,7 @@
   },
   {
     "url": "https://www.nhl.com/stories/150892/13448046/32.mp4",
+    "poster": "/images/shootout-thumbnails/v1/5ea04e764d9fd96998b0d546.jpg",
     "playerName": "Trevor Moore",
     "playerTeam": "LAK",
     "opponent": "vs CAR",
@@ -12817,6 +12834,7 @@
   },
   {
     "url": "https://www.nhl.com/stories/150892/13448046/33.mp4",
+    "poster": "/images/shootout-thumbnails/v1/b6f0a89acf7270258298b98d.jpg",
     "playerName": "Martin Necas",
     "playerTeam": "COL",
     "opponent": "@ LAK",
@@ -12825,6 +12843,7 @@
   },
   {
     "url": "https://www.nhl.com/stories/150892/13448046/41.mp4",
+    "poster": "/images/shootout-thumbnails/v1/43d0610a5ae2ce5410202e03.jpg",
     "playerName": "Jordan Martinook",
     "playerTeam": "CAR",
     "opponent": "@ LAK",
@@ -12833,6 +12852,7 @@
   },
   {
     "url": "https://www.nhl.com/stories/152116/13487603/21.mp4",
+    "poster": "/images/shootout-thumbnails/v1/2e36b07ab8adda0e93d63823.jpg",
     "playerName": "Evgeny Kuznetsov",
     "playerTeam": "CAR",
     "opponent": "vs CGY",
@@ -12841,6 +12861,7 @@
   },
   {
     "url": "https://www.nhl.com/stories/153393/13511550/20.mp4",
+    "poster": "/images/shootout-thumbnails/v1/ee1d6807bc72e876efa6d4e6.jpg",
     "playerName": "Shea Theodore",
     "playerTeam": "VGK",
     "opponent": "vs DAL",
@@ -12849,6 +12870,7 @@
   },
   {
     "url": "https://www.nhl.com/stories/153393/13511550/21.mp4",
+    "poster": "/images/shootout-thumbnails/v1/030e80f7d3e286b646dd4aa9.jpg",
     "playerName": "Matt Duchene",
     "playerTeam": "DAL",
     "opponent": "@ VGK",
@@ -12857,6 +12879,7 @@
   },
   {
     "url": "https://www.nhl.com/stories/153393/13511550/22.mp4",
+    "poster": "/images/shootout-thumbnails/v1/81fef0e0127e6977f55ad82f.jpg",
     "playerName": "Jonathan Marchessault",
     "playerTeam": "NSH",
     "opponent": "vs DAL",
@@ -12865,6 +12888,7 @@
   },
   {
     "url": "https://www.nhl.com/stories/160206/13766457/37.mp4",
+    "poster": "/images/shootout-thumbnails/v1/d77981ff775bfbad8b29255d.jpg",
     "playerName": "John Carlson",
     "playerTeam": "TBL",
     "opponent": "vs MIN",
@@ -12873,6 +12897,7 @@
   },
   {
     "url": "https://www.nhl.com/stories/161169/13813727/23.mp4",
+    "poster": "/images/shootout-thumbnails/v1/182ff060e9919e156cf66a33.jpg",
     "playerName": "Nick Suzuki",
     "playerTeam": "MTL",
     "opponent": "vs WPG",
@@ -12881,6 +12906,7 @@
   },
   {
     "url": "https://www.nhl.com/stories/161469/13818940/24.mp4",
+    "poster": "/images/shootout-thumbnails/v1/26978175148940adfb164067.jpg",
     "playerName": "Jack Eichel",
     "playerTeam": "VGK",
     "opponent": "@ LAK",
@@ -12889,6 +12915,7 @@
   },
   {
     "url": "https://www.nhl.com/stories/163895/13891996/23.mp4",
+    "poster": "/images/shootout-thumbnails/v1/dca978a1ff43fccb91874604.jpg",
     "playerName": "Nick Suzuki",
     "playerTeam": "MTL",
     "opponent": "@ VGK",
@@ -12897,6 +12924,7 @@
   },
   {
     "url": "https://www.nhl.com/stories/163895/13891996/24.mp4",
+    "poster": "/images/shootout-thumbnails/v1/b4e8a534d619cd7886e1d257.jpg",
     "playerName": "Jonathan Marchessault",
     "playerTeam": "NSH",
     "opponent": "vs MTL",
@@ -12905,6 +12933,7 @@
   },
   {
     "url": "https://www.nhl.com/stories/163895/13891996/28.mp4",
+    "poster": "/images/shootout-thumbnails/v1/234d6803bfdabdefbd506890.jpg",
     "playerName": "Shea Theodore",
     "playerTeam": "VGK",
     "opponent": "vs MTL",
@@ -12913,6 +12942,7 @@
   },
   {
     "url": "https://www.nhl.com/stories/165456/13949074/23.mp4",
+    "poster": "/images/shootout-thumbnails/v1/5fdfcdb33b797d5819ad08fe.jpg",
     "playerName": "Jake DeBrusk",
     "playerTeam": "VAN",
     "opponent": "vs TOR",
@@ -12921,6 +12951,7 @@
   },
   {
     "url": "https://www.nhl.com/stories/165456/13949074/25.mp4",
+    "poster": "/images/shootout-thumbnails/v1/2d00e1413ae00b805307d29b.jpg",
     "playerName": "Charlie Coyle",
     "playerTeam": "CBJ",
     "opponent": "vs TOR",
@@ -12929,6 +12960,7 @@
   },
   {
     "url": "https://www.nhl.com/stories/166941/14029391/26.mp4",
+    "poster": "/images/shootout-thumbnails/v1/75e83dcbc33429a6ae90b557.jpg",
     "playerName": "Mats Zuccarello",
     "playerTeam": "LAK",
     "opponent": "vs NYR",
@@ -12937,6 +12969,7 @@
   },
   {
     "url": "https://www.nhl.com/stories/166941/14029391/27.mp4",
+    "poster": "/images/shootout-thumbnails/v1/3451fa57501c1b80681426a7.jpg",
     "playerName": "Artemi Panarin",
     "playerTeam": "LAK",
     "opponent": "@ MIN",
@@ -12945,6 +12978,7 @@
   },
   {
     "url": "https://www.nhl.com/stories/166941/14029391/30.mp4",
+    "poster": "/images/shootout-thumbnails/v1/803b4cdc5aa02ee6e1f4ac1f.jpg",
     "playerName": "Matt Boldy",
     "playerTeam": "MIN",
     "opponent": "vs NYR",
@@ -12953,6 +12987,7 @@
   },
   {
     "url": "https://www.nhl.com/stories/169614/14117633/31.mp4",
+    "poster": "/images/shootout-thumbnails/v1/c7f12560e0f63f64a4a54a0a.jpg",
     "playerName": "Nick Bjugstad",
     "playerTeam": "NJD",
     "opponent": "vs SEA",
@@ -12961,6 +12996,7 @@
   },
   {
     "url": "https://www.nhl.com/stories/171503/14194385/29.mp4",
+    "poster": "/images/shootout-thumbnails/v1/e880b5ef3b1808d017f86997.jpg",
     "playerName": "Yegor Sharangovich",
     "playerTeam": "CGY",
     "opponent": "@ TOR",
@@ -12969,6 +13005,7 @@
   },
   {
     "url": "https://www.nhl.com/stories/171503/14194385/30.mp4",
+    "poster": "/images/shootout-thumbnails/v1/bbb5952c9f25f26cec434dd6.jpg",
     "playerName": "Mitch Marner",
     "playerTeam": "VGK",
     "opponent": "vs CGY",
@@ -12977,6 +13014,7 @@
   },
   {
     "url": "https://www.nhl.com/stories/171503/14194385/34.mp4",
+    "poster": "/images/shootout-thumbnails/v1/369d115a36c640395265a8a7.jpg",
     "playerName": "Max Domi",
     "playerTeam": "TOR",
     "opponent": "vs CGY",
@@ -12985,6 +13023,7 @@
   },
   {
     "url": "https://www.nhl.com/stories/173650/14300359/31.mp4",
+    "poster": "/images/shootout-thumbnails/v1/36d0ee986b72909bab954037.jpg",
     "playerName": "Alexis Lafrenière",
     "playerTeam": "NYR",
     "opponent": "vs CBJ",
@@ -12993,6 +13032,7 @@
   },
   {
     "url": "https://www.nhl.com/stories/176243/14381243/24.mp4",
+    "poster": "/images/shootout-thumbnails/v1/2920dcfb56a83c3f4f649323.jpg",
     "playerName": "Bo Horvat",
     "playerTeam": "NYI",
     "opponent": "@ SEA",
@@ -13001,6 +13041,7 @@
   },
   {
     "url": "https://www.nhl.com/stories/176243/14381243/25.mp4",
+    "poster": "/images/shootout-thumbnails/v1/e696ce373a10f3545374dc76.jpg",
     "playerName": "Oliver Bjorkstrand",
     "playerTeam": "NYR",
     "opponent": "vs NYI",
@@ -13009,6 +13050,7 @@
   },
   {
     "url": "https://www.nhl.com/stories/176243/14381243/31.mp4",
+    "poster": "/images/shootout-thumbnails/v1/8225f793b2962bb7a630f909.jpg",
     "playerName": "Jordan Eberle",
     "playerTeam": "SEA",
     "opponent": "vs NYI",
@@ -13017,6 +13059,7 @@
   },
   {
     "url": "https://www.nhl.com/stories/176243/14381243/32.mp4",
+    "poster": "/images/shootout-thumbnails/v1/335648d6bd24643607de1d77.jpg",
     "playerName": "Oliver Wahlstrom",
     "playerTeam": "SJS",
     "opponent": "@ SEA",
@@ -13025,6 +13068,7 @@
   },
   {
     "url": "https://www.nhl.com/stories/176243/14381243/35.mp4",
+    "poster": "/images/shootout-thumbnails/v1/9f6e8c0d359602291e7cd175.jpg",
     "playerName": "Kailer Yamamoto",
     "playerTeam": "UTA",
     "opponent": "vs NYI",
@@ -13033,6 +13077,7 @@
   },
   {
     "url": "https://www.nhl.com/stories/177251/14439258/24.mp4",
+    "poster": "/images/shootout-thumbnails/v1/a3da719a99ad0fd378d6259c.jpg",
     "playerName": "Yegor Sharangovich",
     "playerTeam": "CGY",
     "opponent": "vs NYI",
@@ -13041,6 +13086,7 @@
   },
   {
     "url": "https://www.nhl.com/stories/177251/14439258/25.mp4",
+    "poster": "/images/shootout-thumbnails/v1/9b7c57062a95de15861a53ca.jpg",
     "playerName": "Bo Horvat",
     "playerTeam": "NYI",
     "opponent": "@ CGY",
@@ -13049,6 +13095,7 @@
   },
   {
     "url": "https://www.nhl.com/stories/177251/14439258/31.mp4",
+    "poster": "/images/shootout-thumbnails/v1/c267552655832329713277b4.jpg",
     "playerName": "Oliver Wahlstrom",
     "playerTeam": "SJS",
     "opponent": "@ CGY",
@@ -13057,6 +13104,7 @@
   },
   {
     "url": "https://www.nhl.com/stories/180421/14577465/18.mp4",
+    "poster": "/images/shootout-thumbnails/v1/8a4f31590302733606e58783.jpg",
     "playerName": "William Eklund",
     "playerTeam": "OTT",
     "opponent": "vs MTL",
@@ -13065,6 +13113,7 @@
   },
   {
     "url": "https://www.nhl.com/stories/180421/14577465/19.mp4",
+    "poster": "/images/shootout-thumbnails/v1/786fc3eb903aa9d4dd666150.jpg",
     "playerName": "Nick Suzuki",
     "playerTeam": "MTL",
     "opponent": "@ SJS",
@@ -13073,6 +13122,7 @@
   },
   {
     "url": "https://www.nhl.com/stories/180421/14577465/29.mp4",
+    "poster": "/images/shootout-thumbnails/v1/c916155c35f8b9035f821928.jpg",
     "playerName": "Jesse Ylonen",
     "playerTeam": "TBL",
     "opponent": "@ SJS",
@@ -13081,6 +13131,7 @@
   },
   {
     "url": "https://www.nhl.com/stories/181655/14635379/21.mp4",
+    "poster": "/images/shootout-thumbnails/v1/09b1bd52b5fb658358ca29aa.jpg",
     "playerName": "Tyson Foerster",
     "playerTeam": "PHI",
     "opponent": "@ NYI",
@@ -13089,6 +13140,7 @@
   },
   {
     "url": "https://www.nhl.com/stories/184348/14725364/19.mp4",
+    "poster": "/images/shootout-thumbnails/v1/9528e1f6b7d164b3131793db.jpg",
     "playerName": "Auston Matthews",
     "playerTeam": "TOR",
     "opponent": "vs FLA",
@@ -13097,6 +13149,7 @@
   },
   {
     "url": "https://www.nhl.com/stories/184348/14725364/21.mp4",
+    "poster": "/images/shootout-thumbnails/v1/31af2985f67add68f358943c.jpg",
     "playerName": "Sam Reinhart",
     "playerTeam": "FLA",
     "opponent": "@ TOR",
@@ -13105,6 +13158,7 @@
   },
   {
     "url": "https://www.nhl.com/stories/184547/14731597/27.mp4",
+    "poster": "/images/shootout-thumbnails/v1/0eff550b60152766de6119a4.jpg",
     "playerName": "Connor McDavid",
     "playerTeam": "EDM",
     "opponent": "vs VGK",
@@ -13113,6 +13167,7 @@
   },
   {
     "url": "https://www.nhl.com/stories/184547/14731597/29.mp4",
+    "poster": "/images/shootout-thumbnails/v1/9990326e5aaa18346251ac8f.jpg",
     "playerName": "Ryan Nugent-Hopkins",
     "playerTeam": "EDM",
     "opponent": "vs VGK",
@@ -13121,6 +13176,7 @@
   },
   {
     "url": "https://www.nhl.com/stories/186110/14787373/31.mp4",
+    "poster": "/images/shootout-thumbnails/v1/8a235dbbf0809ed80441dac7.jpg",
     "playerName": "Auston Matthews",
     "playerTeam": "TOR",
     "opponent": "vs SEA",
@@ -13129,6 +13185,7 @@
   },
   {
     "url": "https://www.nhl.com/stories/186110/14787373/30.mp4",
+    "poster": "/images/shootout-thumbnails/v1/fd98b4ae74ed931a1915bf87.jpg",
     "playerName": "Mitch Marner",
     "playerTeam": "VGK",
     "opponent": "vs SEA",
@@ -13137,6 +13194,7 @@
   },
   {
     "url": "https://www.nhl.com/stories/188101/14868384/27.mp4",
+    "poster": "/images/shootout-thumbnails/v1/39ff64dc150eaa7ae6add94a.jpg",
     "playerName": "Leo Carlsson",
     "playerTeam": "ANA",
     "opponent": "vs COL",
@@ -13145,6 +13203,7 @@
   },
   {
     "url": "https://www.nhl.com/stories/190242/14941876/25.mp4",
+    "poster": "/images/shootout-thumbnails/v1/0f99dd754142d771cfa833d2.jpg",
     "playerName": "Gustav Nyquist",
     "playerTeam": "WPG",
     "opponent": "@ CHI",
@@ -13153,6 +13212,7 @@
   },
   {
     "url": "https://www.nhl.com/stories/190242/14941876/26.mp4",
+    "poster": "/images/shootout-thumbnails/v1/73e77e0f9bfefca0f2177eb8.jpg",
     "playerName": "Connor Bedard",
     "playerTeam": "CHI",
     "opponent": "vs NSH",
@@ -13161,6 +13221,7 @@
   },
   {
     "url": "https://www.nhl.com/stories/190242/14941876/27.mp4",
+    "poster": "/images/shootout-thumbnails/v1/e9a8e04756b500735dbf6daf.jpg",
     "playerName": "Ryan O'Reilly",
     "playerTeam": "NSH",
     "opponent": "@ CHI",
@@ -13169,6 +13230,7 @@
   },
   {
     "url": "https://www.nhl.com/stories/190242/14941876/29.mp4",
+    "poster": "/images/shootout-thumbnails/v1/f737a1863fad24814b150d4b.jpg",
     "playerName": "Filip Forsberg",
     "playerTeam": "NSH",
     "opponent": "@ CHI",
@@ -13177,6 +13239,7 @@
   },
   {
     "url": "https://www.nhl.com/stories/192062/14995239/25.mp4",
+    "poster": "/images/shootout-thumbnails/v1/d89c1d70bc6321765a84a709.jpg",
     "playerName": "Jason Robertson",
     "playerTeam": "DAL",
     "opponent": "@ WSH",
@@ -13185,6 +13248,7 @@
   },
   {
     "url": "https://www.nhl.com/stories/193681/15064783/27.mp4",
+    "poster": "/images/shootout-thumbnails/v1/ef2f77c248e2986f865fe176.jpg",
     "playerName": "Victor Olofsson",
     "playerTeam": "VGK",
     "opponent": "vs MTL",
@@ -13193,6 +13257,7 @@
   },
   {
     "url": "https://www.nhl.com/stories/193681/15064783/28.mp4",
+    "poster": "/images/shootout-thumbnails/v1/5c906130416c55c52f634c62.jpg",
     "playerName": "Cole Caufield",
     "playerTeam": "MTL",
     "opponent": "@ BUF",
@@ -13201,6 +13266,7 @@
   },
   {
     "url": "https://www.nhl.com/stories/193681/15064783/29.mp4",
+    "poster": "/images/shootout-thumbnails/v1/cd7e16fcb9affbefff1a96ae.jpg",
     "playerName": "Owen Power",
     "playerTeam": "BUF",
     "opponent": "vs MTL",
@@ -13209,6 +13275,7 @@
   },
   {
     "url": "https://www.nhl.com/stories/193681/15064783/30.mp4",
+    "poster": "/images/shootout-thumbnails/v1/5ff3b3dc8cea0e357ea3102a.jpg",
     "playerName": "Jesse Ylonen",
     "playerTeam": "TBL",
     "opponent": "@ BUF",
@@ -13217,6 +13284,7 @@
   },
   {
     "url": "https://www.nhl.com/stories/193681/15064783/32.mp4",
+    "poster": "/images/shootout-thumbnails/v1/dad3c02ea36a1a118ae62559.jpg",
     "playerName": "Juraj Slafkovský",
     "playerTeam": "MTL",
     "opponent": "@ BUF",
@@ -13225,6 +13293,7 @@
   },
   {
     "url": "https://www.nhl.com/stories/194432/15102306/30.mp4",
+    "poster": "/images/shootout-thumbnails/v1/a474da755cae955a8473abc4.jpg",
     "playerName": "Jack Eichel",
     "playerTeam": "VGK",
     "opponent": "vs SJS",
@@ -13233,6 +13302,7 @@
   },
   {
     "url": "https://www.nhl.com/stories/194432/15102306/32.mp4",
+    "poster": "/images/shootout-thumbnails/v1/4a6098585b69fad9fb61c1cb.jpg",
     "playerName": "Jonathan Marchessault",
     "playerTeam": "NSH",
     "opponent": "vs SJS",
@@ -13241,6 +13311,7 @@
   },
   {
     "url": "https://www.nhl.com/stories/196959/15174022/23.mp4",
+    "poster": "/images/shootout-thumbnails/v1/840a5d9214e54042b6c30a86.jpg",
     "playerName": "Nick Suzuki",
     "playerTeam": "MTL",
     "opponent": "vs PIT",
@@ -13249,6 +13320,7 @@
   },
   {
     "url": "https://www.nhl.com/stories/196959/15174022/24.mp4",
+    "poster": "/images/shootout-thumbnails/v1/a97f1b6d58622d39d76a40ac.jpg",
     "playerName": "Kris Letang",
     "playerTeam": "PIT",
     "opponent": "@ MTL",
@@ -13257,6 +13329,7 @@
   },
   {
     "url": "https://www.nhl.com/stories/196959/15174022/25.mp4",
+    "poster": "/images/shootout-thumbnails/v1/5bde86b02cf9af1b26352cfe.jpg",
     "playerName": "Cole Caufield",
     "playerTeam": "MTL",
     "opponent": "vs PIT",
@@ -13265,6 +13338,7 @@
   },
   {
     "url": "https://www.nhl.com/stories/196959/15174022/26.mp4",
+    "poster": "/images/shootout-thumbnails/v1/1146e40e36740c77c50a27f9.jpg",
     "playerName": "Sidney Crosby",
     "playerTeam": "PIT",
     "opponent": "@ MTL",
@@ -13273,6 +13347,7 @@
   },
   {
     "url": "https://www.nhl.com/stories/196959/15174022/35.mp4",
+    "poster": "/images/shootout-thumbnails/v1/364b1cb146541f08df5c6901.jpg",
     "playerName": "Sean Monahan",
     "playerTeam": "CBJ",
     "opponent": "vs PIT",
@@ -13281,6 +13356,7 @@
   },
   {
     "url": "https://www.nhl.com/stories/196959/15174022/36.mp4",
+    "poster": "/images/shootout-thumbnails/v1/d3746954b49bfa744e048111.jpg",
     "playerName": "Lars Eller",
     "playerTeam": "FLA",
     "opponent": "@ MTL",
@@ -13289,6 +13365,7 @@
   },
   {
     "url": "https://www.nhl.com/stories/196959/15174022/46.mp4",
+    "poster": "/images/shootout-thumbnails/v1/9788bc3a5aad87b7030d5d27.jpg",
     "playerName": "Jansen Harkins",
     "playerTeam": "TBL",
     "opponent": "@ MTL",
@@ -13297,6 +13374,7 @@
   },
   {
     "url": "https://www.nhl.com/stories/197705/15196416/22.mp4",
+    "poster": "/images/shootout-thumbnails/v1/4cdcd858ff7cf60ddfca6c0e.jpg",
     "playerName": "Sean Couturier",
     "playerTeam": "PHI",
     "opponent": "vs WSH",
@@ -13305,6 +13383,7 @@
   },
   {
     "url": "https://www.nhl.com/stories/197705/15196416/23.mp4",
+    "poster": "/images/shootout-thumbnails/v1/99ac1383e451257278103367.jpg",
     "playerName": "T.J. Oshie",
     "playerTeam": "WSH",
     "opponent": "@ PHI",
@@ -13313,6 +13392,7 @@
   },
   {
     "url": "https://www.nhl.com/stories/197705/15196416/26.mp4",
+    "poster": "/images/shootout-thumbnails/v1/01d8a1dc3eb2980f2b8fa130.jpg",
     "playerName": "Bobby Brink",
     "playerTeam": "MIN",
     "opponent": "vs WSH",
@@ -13321,6 +13401,7 @@
   },
   {
     "url": "https://www.nhl.com/stories/197754/15201610/21.mp4",
+    "poster": "/images/shootout-thumbnails/v1/363481b609d1d9d0cdc6b3b7.jpg",
     "playerName": "Mats Zuccarello",
     "playerTeam": "LAK",
     "opponent": "vs CGY",
@@ -13329,6 +13410,7 @@
   },
   {
     "url": "https://www.nhl.com/stories/197754/15201610/22.mp4",
+    "poster": "/images/shootout-thumbnails/v1/40b341fae833cc403f1efbc7.jpg",
     "playerName": "Yegor Sharangovich",
     "playerTeam": "CGY",
     "opponent": "@ MIN",
@@ -13337,6 +13419,7 @@
   },
   {
     "url": "https://www.nhl.com/stories/197754/15201610/27.mp4",
+    "poster": "/images/shootout-thumbnails/v1/6b64ebec683dda128d8cc1f0.jpg",
     "playerName": "Matt Boldy",
     "playerTeam": "MIN",
     "opponent": "vs CGY",
@@ -13345,6 +13428,7 @@
   },
   {
     "url": "https://www.nhl.com/stories/198374/15231948/32.mp4",
+    "poster": "/images/shootout-thumbnails/v1/783b84d1aa24940c626f088a.jpg",
     "playerName": "Charlie Coyle",
     "playerTeam": "CBJ",
     "opponent": "@ NYI",
@@ -13353,6 +13437,7 @@
   },
   {
     "url": "https://www.nhl.com/stories/198374/15231948/33.mp4",
+    "poster": "/images/shootout-thumbnails/v1/fcbe65b3970f520082fa43ef.jpg",
     "playerName": "Simon Holmstrom",
     "playerTeam": "NYI",
     "opponent": "vs BOS",
@@ -13361,6 +13446,7 @@
   },
   {
     "url": "https://www.nhl.com/stories/198374/15231948/34.mp4",
+    "poster": "/images/shootout-thumbnails/v1/1a2bf79a7bee2f745206465f.jpg",
     "playerName": "David Pastrnak",
     "playerTeam": "BOS",
     "opponent": "@ NYI",
@@ -13369,6 +13455,7 @@
   },
   {
     "url": "https://www.nhl.com/stories/199275/15258013/19.mp4",
+    "poster": "/images/shootout-thumbnails/v1/2b3a9c4a14a231109055e204.jpg",
     "playerName": "Mats Zuccarello",
     "playerTeam": "LAK",
     "opponent": "vs VAN",
@@ -13377,6 +13464,7 @@
   },
   {
     "url": "https://www.nhl.com/stories/199822/15281967/21.mp4",
+    "poster": "/images/shootout-thumbnails/v1/8f94e71a6171b487d99142e1.jpg",
     "playerName": "Kailer Yamamoto",
     "playerTeam": "UTA",
     "opponent": "vs LAK",
@@ -13385,6 +13473,7 @@
   },
   {
     "url": "https://www.nhl.com/stories/199822/15281967/22.mp4",
+    "poster": "/images/shootout-thumbnails/v1/ef00a247670dee3d86a7723f.jpg",
     "playerName": "Adrian Kempe",
     "playerTeam": "LAK",
     "opponent": "@ SEA",
@@ -13393,6 +13482,7 @@
   },
   {
     "url": "https://www.nhl.com/stories/199822/15281967/29.mp4",
+    "poster": "/images/shootout-thumbnails/v1/b16f02d3a80145c041ce13ed.jpg",
     "playerName": "Yanni Gourde",
     "playerTeam": "TBL",
     "opponent": "vs LAK",
@@ -13401,6 +13491,7 @@
   },
   {
     "url": "https://www.nhl.com/stories/199822/15281967/30.mp4",
+    "poster": "/images/shootout-thumbnails/v1/90234622e52246c6f82a99d3.jpg",
     "playerName": "Arthur Kaliyev",
     "playerTeam": "OTT",
     "opponent": "@ SEA",
@@ -13409,6 +13500,7 @@
   },
   {
     "url": "https://www.nhl.com/stories/199822/15281967/31.mp4",
+    "poster": "/images/shootout-thumbnails/v1/7825c07bed300e79a9d3deb5.jpg",
     "playerName": "Matty Beniers",
     "playerTeam": "SEA",
     "opponent": "vs LAK",
@@ -13417,6 +13509,7 @@
   },
   {
     "url": "https://www.nhl.com/stories/199822/15281967/32.mp4",
+    "poster": "/images/shootout-thumbnails/v1/074e22319cab1b3ec0c4d3f3.jpg",
     "playerName": "Trevor Lewis",
     "playerTeam": "LAK",
     "opponent": "@ SEA",
@@ -13425,6 +13518,7 @@
   },
   {
     "url": "https://www.nhl.com/stories/199822/15281967/34.mp4",
+    "poster": "/images/shootout-thumbnails/v1/a34170468553cd5cfac5dee2.jpg",
     "playerName": "Carl Grundstrom",
     "playerTeam": "PHI",
     "opponent": "@ SEA",
@@ -13433,6 +13527,7 @@
   },
   {
     "url": "https://www.nhl.com/stories/200599/15318586/15.mp4",
+    "poster": "/images/shootout-thumbnails/v1/56886a0d2cbd6cf9c71470a5.jpg",
     "playerName": "Evgeny Kuznetsov",
     "playerTeam": "CAR",
     "opponent": "@ CAR",
@@ -13441,6 +13536,7 @@
   },
   {
     "url": "https://www.nhl.com/stories/204046/15450205/19.mp4",
+    "poster": "/images/shootout-thumbnails/v1/45afc96ccfc6aa775588ff1b.jpg",
     "playerName": "Sidney Crosby",
     "playerTeam": "PIT",
     "opponent": "vs CAR",
@@ -13449,6 +13545,7 @@
   },
   {
     "url": "https://www.nhl.com/stories/204979/15479917/39.mp4",
+    "poster": "/images/shootout-thumbnails/v1/e636d444889894e0497f3ac9.jpg",
     "playerName": "Lucas Raymond",
     "playerTeam": "DET",
     "opponent": "vs PHI",
@@ -13457,6 +13554,7 @@
   },
   {
     "url": "https://www.nhl.com/stories/204979/15479917/41.mp4",
+    "poster": "/images/shootout-thumbnails/v1/b4642f00cf1b8a604459e8ab.jpg",
     "playerName": "Patrick Kane",
     "playerTeam": "CHI",
     "opponent": "vs PHI",
@@ -13465,6 +13563,7 @@
   },
   {
     "url": "https://www.nhl.com/stories/206339/15524191/17.mp4",
+    "poster": "/images/shootout-thumbnails/v1/17c35a9553497f628f089d15.jpg",
     "playerName": "Evgeny Kuznetsov",
     "playerTeam": "CAR",
     "opponent": "vs TBL",
@@ -13473,6 +13572,7 @@
   },
   {
     "url": "https://www.nhl.com/stories/206339/15524191/20.mp4",
+    "poster": "/images/shootout-thumbnails/v1/9aa5907abd053076c1a554f2.jpg",
     "playerName": "Brayden Point",
     "playerTeam": "TBL",
     "opponent": "@ WSH",
@@ -13481,6 +13581,7 @@
   },
   {
     "url": "https://www.nhl.com/stories/206339/15524191/24.mp4",
+    "poster": "/images/shootout-thumbnails/v1/65ade4cf0c98b34261149897.jpg",
     "playerName": "Victor Hedman",
     "playerTeam": "TBL",
     "opponent": "@ WSH",
@@ -13489,6 +13590,7 @@
   },
   {
     "url": "https://www.nhl.com/stories/211309/15745434/24.mp4",
+    "poster": "/images/shootout-thumbnails/v1/b087d46d4a13aa372f06b47b.jpg",
     "playerName": "Gustav Nyquist",
     "playerTeam": "WPG",
     "opponent": "@ WSH",
@@ -13497,6 +13599,7 @@
   },
   {
     "url": "https://www.nhl.com/stories/211309/15745434/26.mp4",
+    "poster": "/images/shootout-thumbnails/v1/ffcd2fbcc327d67249805876.jpg",
     "playerName": "Ryan O'Reilly",
     "playerTeam": "NSH",
     "opponent": "@ WSH",
@@ -13505,6 +13608,7 @@
   },
   {
     "url": "https://www.nhl.com/stories/211498/15748799/20.mp4",
+    "poster": "/images/shootout-thumbnails/v1/403df2cf0a3859e4ae84d8ce.jpg",
     "playerName": "Trevor Moore",
     "playerTeam": "LAK",
     "opponent": "vs EDM",
@@ -13513,6 +13617,7 @@
   },
   {
     "url": "https://www.nhl.com/stories/211498/15748799/21.mp4",
+    "poster": "/images/shootout-thumbnails/v1/1fe25ba5f16e2ca19d32fa70.jpg",
     "playerName": "Connor McDavid",
     "playerTeam": "EDM",
     "opponent": "@ LAK",
@@ -13521,6 +13626,7 @@
   },
   {
     "url": "https://www.nhl.com/stories/211498/15748799/22.mp4",
+    "poster": "/images/shootout-thumbnails/v1/d0e1ef0bb18fec782bdd6624.jpg",
     "playerName": "Adrian Kempe",
     "playerTeam": "LAK",
     "opponent": "vs EDM",
@@ -13529,6 +13635,7 @@
   },
   {
     "url": "https://www.nhl.com/stories/211498/15748799/23.mp4",
+    "poster": "/images/shootout-thumbnails/v1/c3caa62bb06eb0fd13b1edc2.jpg",
     "playerName": "Ryan Nugent-Hopkins",
     "playerTeam": "EDM",
     "opponent": "@ LAK",
@@ -13537,6 +13644,7 @@
   },
   {
     "url": "https://www.nhl.com/stories/211498/15748799/27.mp4",
+    "poster": "/images/shootout-thumbnails/v1/a195a8342426eed30c8fea92.jpg",
     "playerName": "Derek Ryan",
     "playerTeam": "EDM",
     "opponent": "@ LAK",
@@ -13545,6 +13653,7 @@
   },
   {
     "url": "https://www.nhl.com/stories/214260/15879556/20.mp4",
+    "poster": "/images/shootout-thumbnails/v1/723b41164e6a2b56399bdf9a.jpg",
     "playerName": "Johnny Gaudreau",
     "playerTeam": "CBJ",
     "opponent": "@ PHI",
@@ -13553,6 +13662,7 @@
   },
   {
     "url": "https://www.nhl.com/stories/214434/15885981/23.mp4",
+    "poster": "/images/shootout-thumbnails/v1/cb00bbd3ae6b494aa85df7d2.jpg",
     "playerName": "Lucas Raymond",
     "playerTeam": "DET",
     "opponent": "@ LAK",
@@ -13561,6 +13671,7 @@
   },
   {
     "url": "https://www.nhl.com/stories/214434/15885981/25.mp4",
+    "poster": "/images/shootout-thumbnails/v1/ab66d694672722d86b78c66b.jpg",
     "playerName": "Patrick Kane",
     "playerTeam": "CHI",
     "opponent": "@ LAK",
@@ -13569,6 +13680,7 @@
   },
   {
     "url": "https://www.nhl.com/stories/217050/15946002/24.mp4",
+    "poster": "/images/shootout-thumbnails/v1/413e0bdb34cc1e4d813138d2.jpg",
     "playerName": "Sebastian Aho",
     "playerTeam": "CAR",
     "opponent": "vs STL",
@@ -13577,6 +13689,7 @@
   },
   {
     "url": "https://www.nhl.com/stories/217050/15946002/25.mp4",
+    "poster": "/images/shootout-thumbnails/v1/6f2fbc7c88a4d53112c80990.jpg",
     "playerName": "Jake Neighbours",
     "playerTeam": "STL",
     "opponent": "@ CAR",
@@ -13585,6 +13698,7 @@
   },
   {
     "url": "https://www.nhl.com/stories/217050/15946002/27.mp4",
+    "poster": "/images/shootout-thumbnails/v1/9ef7a369916f0f5b9b62232e.jpg",
     "playerName": "Brayden Schenn",
     "playerTeam": "NYI",
     "opponent": "@ CAR",
@@ -13593,6 +13707,7 @@
   },
   {
     "url": "https://www.nhl.com/stories/216980/15944662/25.mp4",
+    "poster": "/images/shootout-thumbnails/v1/660cc83dea0d1fd5ff37aeb8.jpg",
     "playerName": "Cole Caufield",
     "playerTeam": "MTL",
     "opponent": "vs NYR",
@@ -13601,6 +13716,7 @@
   },
   {
     "url": "https://www.nhl.com/stories/218421/16002002/29.mp4",
+    "poster": "/images/shootout-thumbnails/v1/4991e56ff0d5aee04c7e773a.jpg",
     "playerName": "Valeri Nichushkin",
     "playerTeam": "CBJ",
     "opponent": "vs BOS",
@@ -13609,6 +13725,7 @@
   },
   {
     "url": "https://www.nhl.com/stories/219684/16044560/20.mp4",
+    "poster": "/images/shootout-thumbnails/v1/f460c7c07336a5f4fb569cc9.jpg",
     "playerName": "Sean Couturier",
     "playerTeam": "PHI",
     "opponent": "vs MTL",
@@ -13617,6 +13734,7 @@
   },
   {
     "url": "https://www.nhl.com/stories/224790/16206436/29.mp4",
+    "poster": "/images/shootout-thumbnails/v1/fa6cef2643d1a3a4993f01f9.jpg",
     "playerName": "Kirill Marchenko",
     "playerTeam": "TOR",
     "opponent": "vs VAN",
@@ -13625,6 +13743,7 @@
   },
   {
     "url": "https://www.nhl.com/stories/225993/16239767/22.mp4",
+    "poster": "/images/shootout-thumbnails/v1/447cc45aa1a3269b6448ab0d.jpg",
     "playerName": "Kevin Labanc",
     "playerTeam": "CAR",
     "opponent": "@ CHI",
@@ -13633,6 +13752,7 @@
   },
   {
     "url": "https://www.nhl.com/stories/225993/16239767/23.mp4",
+    "poster": "/images/shootout-thumbnails/v1/a655709641a6dc1d33c7e03a.jpg",
     "playerName": "Rem Pitlick",
     "playerTeam": "EDM",
     "opponent": "vs SJS",
@@ -13641,6 +13761,7 @@
   },
   {
     "url": "https://www.nhl.com/stories/225993/16239767/35.mp4",
+    "poster": "/images/shootout-thumbnails/v1/07ecb1a59a0425a88d53ce15.jpg",
     "playerName": "Boris Katchouk",
     "playerTeam": "TBL",
     "opponent": "vs SJS",
@@ -13649,6 +13770,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/259788/17306009/26.mp4",
+    "poster": "/images/shootout-thumbnails/v1/23e440397d54ee10e2c43ccf.jpg",
     "playerName": "Jason Robertson",
     "playerTeam": "DAL",
     "opponent": "@ BOS",
@@ -13657,6 +13779,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/259788/17306009/29.mp4",
+    "poster": "/images/shootout-thumbnails/v1/7e0bf1525ddff8bd555a5bf1.jpg",
     "playerName": "Brad Marchand",
     "playerTeam": "FLA",
     "opponent": "vs DAL",
@@ -13665,6 +13788,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/259788/17306009/40.mp4",
+    "poster": "/images/shootout-thumbnails/v1/eebf95330da014ee1a54e6b2.jpg",
     "playerName": "Charlie McAvoy",
     "playerTeam": "BOS",
     "opponent": "vs DAL",
@@ -13673,6 +13797,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/264618/17458144/25.mp4",
+    "poster": "/images/shootout-thumbnails/v1/6d658026f43981b95f26b935.jpg",
     "playerName": "Tim Stützle",
     "playerTeam": "OTT",
     "opponent": "vs VGK",
@@ -13681,6 +13806,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/264809/17467375/19.mp4",
+    "poster": "/images/shootout-thumbnails/v1/73e7859140595e3efbe70821.jpg",
     "playerName": "Pierre-Luc Dubois",
     "playerTeam": "WSH",
     "opponent": "vs ANA",
@@ -13689,6 +13815,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/264809/17467375/21.mp4",
+    "poster": "/images/shootout-thumbnails/v1/e22fb9b39115616852e9aad4.jpg",
     "playerName": "Trevor Moore",
     "playerTeam": "LAK",
     "opponent": "vs ANA",
@@ -13697,6 +13824,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/264809/17467375/22.mp4",
+    "poster": "/images/shootout-thumbnails/v1/db87df11ad08fbd8d555060c.jpg",
     "playerName": "Leo Carlsson",
     "playerTeam": "ANA",
     "opponent": "@ LAK",
@@ -13705,6 +13833,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/265680/17506189/26.mp4",
+    "poster": "/images/shootout-thumbnails/v1/1e3b2365e4d390848732f7cd.jpg",
     "playerName": "Casey Mittelstadt",
     "playerTeam": "BOS",
     "opponent": "vs CAR",
@@ -13713,6 +13842,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/266695/17535385/22.mp4",
+    "poster": "/images/shootout-thumbnails/v1/076a4cb11d5d2cecd35e0420.jpg",
     "playerName": "Kailer Yamamoto",
     "playerTeam": "UTA",
     "opponent": "vs BOS",
@@ -13721,6 +13851,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/268977/17614297/29.mp4",
+    "poster": "/images/shootout-thumbnails/v1/57d4f40625353e99ce667ad8.jpg",
     "playerName": "Aleksander Barkov",
     "playerTeam": "FLA",
     "opponent": "vs MTL",
@@ -13729,6 +13860,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/268977/17614297/30.mp4",
+    "poster": "/images/shootout-thumbnails/v1/58736d240e9e441010c84955.jpg",
     "playerName": "Cole Caufield",
     "playerTeam": "MTL",
     "opponent": "@ FLA",
@@ -13737,6 +13869,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/268977/17614297/31.mp4",
+    "poster": "/images/shootout-thumbnails/v1/bed1c7dd6ba540be8ebeac73.jpg",
     "playerName": "Anton Lundell",
     "playerTeam": "FLA",
     "opponent": "vs MTL",
@@ -13745,6 +13878,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/271900/17714808/27.mp4",
+    "poster": "/images/shootout-thumbnails/v1/32dd3ba695d6152adcaf568a.jpg",
     "playerName": "Cole Caufield",
     "playerTeam": "MTL",
     "opponent": "@ TBL",
@@ -13753,6 +13887,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/271900/17714808/28.mp4",
+    "poster": "/images/shootout-thumbnails/v1/7783479b1c525f8e173db563.jpg",
     "playerName": "Steven Stamkos",
     "playerTeam": "NSH",
     "opponent": "vs MTL",
@@ -13761,6 +13896,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/271900/17714808/34.mp4",
+    "poster": "/images/shootout-thumbnails/v1/a6c5de3cca08483e93272641.jpg",
     "playerName": "Victor Hedman",
     "playerTeam": "TBL",
     "opponent": "vs MTL",
@@ -13769,6 +13905,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/271904/17714859/27.mp4",
+    "poster": "/images/shootout-thumbnails/v1/911eb5e1cd1041183fd12c09.jpg",
     "playerName": "Mika Zibanejad",
     "playerTeam": "NYR",
     "opponent": "@ TOR",
@@ -13777,6 +13914,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/271904/17714859/28.mp4",
+    "poster": "/images/shootout-thumbnails/v1/7b2987d72ce7413ceaab89b2.jpg",
     "playerName": "Mitch Marner",
     "playerTeam": "VGK",
     "opponent": "vs NYR",
@@ -13785,6 +13923,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/271904/17714859/29.mp4",
+    "poster": "/images/shootout-thumbnails/v1/019acc58a74318eb1abc8dbc.jpg",
     "playerName": "Max Domi",
     "playerTeam": "TOR",
     "opponent": "vs NYR",
@@ -13793,6 +13932,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/271977/17716573/23.mp4",
+    "poster": "/images/shootout-thumbnails/v1/3f104255fd31e4c011dc9dca.jpg",
     "playerName": "Matt Duchene",
     "playerTeam": "DAL",
     "opponent": "vs SJS",
@@ -13801,6 +13941,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/271977/17716573/24.mp4",
+    "poster": "/images/shootout-thumbnails/v1/d24c2351e00f3821ea1db7cb.jpg",
     "playerName": "Anthony Duclair",
     "playerTeam": "NYI",
     "opponent": "@ DAL",
@@ -13809,6 +13950,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/271977/17716573/33.mp4",
+    "poster": "/images/shootout-thumbnails/v1/de38b62c6801a470a001f353.jpg",
     "playerName": "Jamie Benn",
     "playerTeam": "DAL",
     "opponent": "vs SJS",
@@ -13817,6 +13959,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/273734/17780757/21.mp4",
+    "poster": "/images/shootout-thumbnails/v1/10e77556f93d98149c57f24d.jpg",
     "playerName": "Jake Neighbours",
     "playerTeam": "STL",
     "opponent": "@ PHI",
@@ -13825,6 +13968,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/273734/17780757/22.mp4",
+    "poster": "/images/shootout-thumbnails/v1/554aa993143f8010edbfffc9.jpg",
     "playerName": "Morgan Frost",
     "playerTeam": "CGY",
     "opponent": "vs STL",
@@ -13833,6 +13977,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/273734/17780757/25.mp4",
+    "poster": "/images/shootout-thumbnails/v1/9febaebe35e5bad8c906cbcc.jpg",
     "playerName": "Pavel Buchnevich",
     "playerTeam": "STL",
     "opponent": "@ PHI",
@@ -13841,6 +13986,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/278738/17962362/23.mp4",
+    "poster": "/images/shootout-thumbnails/v1/813db62b93d824c294d53512.jpg",
     "playerName": "Tage Thompson",
     "playerTeam": "BUF",
     "opponent": "vs EDM",
@@ -13849,6 +13995,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/278738/17962362/26.mp4",
+    "poster": "/images/shootout-thumbnails/v1/a86a5624e6aae4aa7c0f08ec.jpg",
     "playerName": "Leon Draisaitl",
     "playerTeam": "EDM",
     "opponent": "@ BUF",
@@ -13857,6 +14004,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/278738/17962362/27.mp4",
+    "poster": "/images/shootout-thumbnails/v1/d9e171ab346bbb39c6a2d152.jpg",
     "playerName": "Alex Tuch",
     "playerTeam": "WSH",
     "opponent": "vs EDM",
@@ -13865,6 +14013,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/284271/18149825/18.mp4",
+    "poster": "/images/shootout-thumbnails/v1/b876f9252c4edfcfaedc488f.jpg",
     "playerName": "Tim Stützle",
     "playerTeam": "OTT",
     "opponent": "@ CBJ",
@@ -13873,6 +14022,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/284271/18149825/19.mp4",
+    "poster": "/images/shootout-thumbnails/v1/9ac482c356121b90438c1c80.jpg",
     "playerName": "Alexandre Texier",
     "playerTeam": "MTL",
     "opponent": "vs OTT",
@@ -13881,6 +14031,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/284271/18149825/22.mp4",
+    "poster": "/images/shootout-thumbnails/v1/d75eec498baf88a54ae8c663.jpg",
     "playerName": "Claude Giroux",
     "playerTeam": "OTT",
     "opponent": "@ CBJ",
@@ -13889,6 +14040,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/287123/18234596/24.mp4",
+    "poster": "/images/shootout-thumbnails/v1/52ee8fbc058581379f8ce6ea.jpg",
     "playerName": "Brayden Schenn",
     "playerTeam": "NYI",
     "opponent": "vs MIN",
@@ -13897,6 +14049,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/287123/18234596/25.mp4",
+    "poster": "/images/shootout-thumbnails/v1/a0e5cd88371d18debea097e8.jpg",
     "playerName": "Matt Boldy",
     "playerTeam": "MIN",
     "opponent": "@ STL",
@@ -13905,6 +14058,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/287123/18234596/26.mp4",
+    "poster": "/images/shootout-thumbnails/v1/7d0819ee70cc446ba3e4dc39.jpg",
     "playerName": "Jordan Kyrou",
     "playerTeam": "WSH",
     "opponent": "vs MIN",
@@ -13913,6 +14067,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/292210/18419622/41.mp4",
+    "poster": "/images/shootout-thumbnails/v1/9a0899008ada66c0dfe54815.jpg",
     "playerName": "Dylan Strome",
     "playerTeam": "WSH",
     "opponent": "vs CAR",
@@ -13921,6 +14076,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/293239/18466690/21.mp4",
+    "poster": "/images/shootout-thumbnails/v1/5a7816bdbb2e4640151d0c8e.jpg",
     "playerName": "Mika Zibanejad",
     "playerTeam": "NYR",
     "opponent": "vs FLA",
@@ -13929,6 +14085,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/293239/18466690/22.mp4",
+    "poster": "/images/shootout-thumbnails/v1/9a0b8ab15598247f049a5219.jpg",
     "playerName": "Sam Reinhart",
     "playerTeam": "FLA",
     "opponent": "@ NYR",
@@ -13937,6 +14094,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/293239/18466690/23.mp4",
+    "poster": "/images/shootout-thumbnails/v1/c686d703a5963427eb23c2d0.jpg",
     "playerName": "Artemi Panarin",
     "playerTeam": "LAK",
     "opponent": "vs FLA",
@@ -13945,6 +14103,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/297154/18604514/24.mp4",
+    "poster": "/images/shootout-thumbnails/v1/ded6f0ad47038cae57d4a205.jpg",
     "playerName": "Artemi Panarin",
     "playerTeam": "LAK",
     "opponent": "@ COL",
@@ -13953,6 +14112,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/297154/18604514/28.mp4",
+    "poster": "/images/shootout-thumbnails/v1/811078bc079b6ec74647732d.jpg",
     "playerName": "Vincent Trocheck",
     "playerTeam": "UTA",
     "opponent": "@ COL",
@@ -13961,6 +14121,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/299130/18669196/22.mp4",
+    "poster": "/images/shootout-thumbnails/v1/fff6fe08df72b9b223273ffc.jpg",
     "playerName": "Sam Reinhart",
     "playerTeam": "FLA",
     "opponent": "vs DET",
@@ -13969,6 +14130,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/299666/18688541/25.mp4",
+    "poster": "/images/shootout-thumbnails/v1/890f03468c1afd13c628d216.jpg",
     "playerName": "Alexandre Texier",
     "playerTeam": "MTL",
     "opponent": "vs PIT",
@@ -13977,6 +14139,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/299666/18688541/26.mp4",
+    "poster": "/images/shootout-thumbnails/v1/80c41df59b71b04f1ab62343.jpg",
     "playerName": "Sidney Crosby",
     "playerTeam": "PIT",
     "opponent": "@ CBJ",
@@ -13985,6 +14148,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/299666/18688541/31.mp4",
+    "poster": "/images/shootout-thumbnails/v1/5476b6cc4cfa161b46213a80.jpg",
     "playerName": "Damon Severson",
     "playerTeam": "CBJ",
     "opponent": "vs PIT",
@@ -13993,6 +14157,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/299626/18688598/20.mp4",
+    "poster": "/images/shootout-thumbnails/v1/a5a7ce5179d5c710985446a4.jpg",
     "playerName": "Jake DeBrusk",
     "playerTeam": "VAN",
     "opponent": "@ WSH",
@@ -14001,6 +14166,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/299626/18688598/23.mp4",
+    "poster": "/images/shootout-thumbnails/v1/24f2e93e771e376def296405.jpg",
     "playerName": "Dylan Strome",
     "playerTeam": "WSH",
     "opponent": "vs BOS",
@@ -14009,6 +14175,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/299626/18688598/24.mp4",
+    "poster": "/images/shootout-thumbnails/v1/0a45da2690aa80c87997f0db.jpg",
     "playerName": "David Pastrnak",
     "playerTeam": "BOS",
     "opponent": "@ WSH",
@@ -14017,6 +14184,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/299626/18688598/25.mp4",
+    "poster": "/images/shootout-thumbnails/v1/a1a30d8795d2cfb7e17fe365.jpg",
     "playerName": "Sonny Milano",
     "playerTeam": "WSH",
     "opponent": "vs BOS",
@@ -14025,6 +14193,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/299626/18688598/28.mp4",
+    "poster": "/images/shootout-thumbnails/v1/12bd093c1b734be48de1dfb1.jpg",
     "playerName": "Kevin Shattenkirk",
     "playerTeam": "BOS",
     "opponent": "@ WSH",
@@ -14033,6 +14202,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/315057/18984347/23.mp4",
+    "poster": "/images/shootout-thumbnails/v1/76beb9f6ceb4460a18017ce3.jpg",
     "playerName": "Ryan O'Reilly",
     "playerTeam": "NSH",
     "opponent": "@ NJD",
@@ -14041,6 +14211,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/315177/18986069/31.mp4",
+    "poster": "/images/shootout-thumbnails/v1/ff7729a8a0ae46a321f73179.jpg",
     "playerName": "Jordan Kyrou",
     "playerTeam": "WSH",
     "opponent": "@ ANA",
@@ -14049,6 +14220,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/317926/19088820/21.mp4",
+    "poster": "/images/shootout-thumbnails/v1/50eb487fb6afac953fdceb3c.jpg",
     "playerName": "Brady Tkachuk",
     "playerTeam": "FLA",
     "opponent": "@ TBL",
@@ -14057,6 +14229,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/319695/19161936/19.mp4",
+    "poster": "/images/shootout-thumbnails/v1/af79678aed861ec9bdff6021.jpg",
     "playerName": "Artemi Panarin",
     "playerTeam": "LAK",
     "opponent": "vs NYI",
@@ -14065,6 +14238,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/319695/19161936/23.mp4",
+    "poster": "/images/shootout-thumbnails/v1/5d4e584106ce58e36db13191.jpg",
     "playerName": "Vincent Trocheck",
     "playerTeam": "UTA",
     "opponent": "vs NYI",
@@ -14073,6 +14247,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/320087/19172736/26.mp4",
+    "poster": "/images/shootout-thumbnails/v1/3c61ce5d6e49b2e23feb12ed.jpg",
     "playerName": "Drake Batherson",
     "playerTeam": "OTT",
     "opponent": "vs MTL",
@@ -14081,6 +14256,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/322688/19264420/32.mp4",
+    "poster": "/images/shootout-thumbnails/v1/393e3709951b3879fcad607a.jpg",
     "playerName": "Patrick Kane",
     "playerTeam": "CHI",
     "opponent": "@ MTL",
@@ -14089,6 +14265,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/323107/19294213/21.mp4",
+    "poster": "/images/shootout-thumbnails/v1/11d8ff915348e0704529b34e.jpg",
     "playerName": "Jason Robertson",
     "playerTeam": "DAL",
     "opponent": "vs STL",
@@ -14097,6 +14274,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/c7ed0c29-4b64-4a71-91d7-d18689d60111.mp4",
+    "poster": "/images/shootout-thumbnails/v1/428970d76cfae43587b7e924.jpg",
     "playerName": "Jason Robertson",
     "playerTeam": "DAL",
     "opponent": "vs SJS",
@@ -14105,6 +14283,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/14c6160b-6014-4104-9499-9a334848f92f.mp4",
+    "poster": "/images/shootout-thumbnails/v1/eb65bbd1a6cff968d58887d4.jpg",
     "playerName": "Matt Duchene",
     "playerTeam": "DAL",
     "opponent": "vs SJS",
@@ -14113,6 +14292,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/7a1265d4-ffbf-44ad-8fc3-756af61de941.mp4",
+    "poster": "/images/shootout-thumbnails/v1/a957bb19412e96d773342f49.jpg",
     "playerName": "Mikael Granlund",
     "playerTeam": "ANA",
     "opponent": "@ DAL",
@@ -14121,6 +14301,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/02811ec0-9943-4523-ba55-c3de083c346c.mp4",
+    "poster": "/images/shootout-thumbnails/v1/5a79d587ed12946db7d29ad8.jpg",
     "playerName": "Wyatt Johnston",
     "playerTeam": "DAL",
     "opponent": "vs SJS",
@@ -14129,6 +14310,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/5915c889-57af-4d4b-bf84-a11d29f662d0.mp4",
+    "poster": "/images/shootout-thumbnails/v1/f5d255d89993a388690972f0.jpg",
     "playerName": "Kyle Palmieri",
     "playerTeam": "NYI",
     "opponent": "vs MTL",
@@ -14137,6 +14319,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/545557f6-6aa8-421f-811f-76c7405317ae.mp4",
+    "poster": "/images/shootout-thumbnails/v1/01d04457391de7c781cdbc8d.jpg",
     "playerName": "Oliver Kapanen",
     "playerTeam": "MTL",
     "opponent": "@ NYI",
@@ -14145,6 +14328,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/b044b653-5ebb-41bf-96c8-2b87053740be.mp4",
+    "poster": "/images/shootout-thumbnails/v1/d37fb1fe24ca99f818c513a9.jpg",
     "playerName": "Simon Holmstrom",
     "playerTeam": "NYI",
     "opponent": "vs MTL",
@@ -14153,6 +14337,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/330d24e3-3e24-4cb1-9843-74bec91a162d.mp4",
+    "poster": "/images/shootout-thumbnails/v1/15008ef90335fe1a6ed93f35.jpg",
     "playerName": "Emil Heineman",
     "playerTeam": "NYI",
     "opponent": "@ NYI",
@@ -14161,6 +14346,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/f8086a9a-e09d-445b-b92e-1adef9eb920d.mp4",
+    "poster": "/images/shootout-thumbnails/v1/926d28cf91e0f52ed98afc46.jpg",
     "playerName": "Noah Dobson",
     "playerTeam": "MTL",
     "opponent": "vs MTL",
@@ -14169,6 +14355,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/923230b3-85f6-4238-9d51-ce11c6d6e11e.mp4",
+    "poster": "/images/shootout-thumbnails/v1/cfe7f7a352f292752725db9d.jpg",
     "playerName": "Rickard Rakell",
     "playerTeam": "PIT",
     "opponent": "@ CGY",
@@ -14177,6 +14364,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/9e0ad70d-00f4-462f-bfcc-39aaa9609904.mp4",
+    "poster": "/images/shootout-thumbnails/v1/465a0246efb478ccfea3c7e9.jpg",
     "playerName": "Anthony Mantha",
     "playerTeam": "NJD",
     "opponent": "vs PIT",
@@ -14185,6 +14373,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/de143210-3c2a-406f-ae09-e3857f06ee1f.mp4",
+    "poster": "/images/shootout-thumbnails/v1/98b2cfc568fc7b03db9c09aa.jpg",
     "playerName": "Rasmus Andersson",
     "playerTeam": "VGK",
     "opponent": "vs PIT",
@@ -14193,6 +14382,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/24588d15-9a99-4eed-95a2-67f25355b63e.mp4",
+    "poster": "/images/shootout-thumbnails/v1/6858c90e792523dba421ea0e.jpg",
     "playerName": "Bryan Rust",
     "playerTeam": "PIT",
     "opponent": "@ CGY",
@@ -14201,6 +14391,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/4660c932-cd06-47ce-9a55-4f2f8f202a86.mp4",
+    "poster": "/images/shootout-thumbnails/v1/806f36128e2ad7f79ccde49e.jpg",
     "playerName": "Justin Kirkland",
     "playerTeam": "MIN",
     "opponent": "vs PIT",
@@ -14209,6 +14400,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/786ba8b8-8fcd-4ab8-ab84-6e842b88c7f7.mp4",
+    "poster": "/images/shootout-thumbnails/v1/b82ff78304c58f62c28a9442.jpg",
     "playerName": "Trevor Moore",
     "playerTeam": "LAK",
     "opponent": "vs CHI",
@@ -14217,6 +14409,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/08a9dd00-7583-413c-8e9d-df28fd10a281.mp4",
+    "poster": "/images/shootout-thumbnails/v1/8ef7fbd718be802f44a95aec.jpg",
     "playerName": "Connor Bedard",
     "playerTeam": "CHI",
     "opponent": "@ LAK",
@@ -14225,6 +14418,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/50a01768-1ba3-4a58-a9f8-17f4a7c3e9c8.mp4",
+    "poster": "/images/shootout-thumbnails/v1/256790c27f5e68a2fe1c23bd.jpg",
     "playerName": "Teuvo Teravainen",
     "playerTeam": "CHI",
     "opponent": "@ LAK",
@@ -14233,6 +14427,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/d1045e9d-6730-494c-b051-ab1271f1be72.mp4",
+    "poster": "/images/shootout-thumbnails/v1/ce30eae8a51e789f05c61a9b.jpg",
     "playerName": "Adrian Kempe",
     "playerTeam": "LAK",
     "opponent": "vs CHI",
@@ -14241,6 +14436,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/498b21e8-fa3e-47fd-b8f5-20af7f82f97a.mp4",
+    "poster": "/images/shootout-thumbnails/v1/846d70ae1ae7b99edc597cc8.jpg",
     "playerName": "Ryan Donato",
     "playerTeam": "CHI",
     "opponent": "@ LAK",
@@ -14249,6 +14445,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/0d1c1d2d-c176-4d31-b49a-58a330ed9d43.mp4",
+    "poster": "/images/shootout-thumbnails/v1/b475e26f6568ac4f7ec032fa.jpg",
     "playerName": "Bo Horvat",
     "playerTeam": "NYI",
     "opponent": "vs PIT",
@@ -14257,6 +14454,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/f2f2799c-a232-4eb6-8bd2-1bbd00d1a640.mp4",
+    "poster": "/images/shootout-thumbnails/v1/3ede008e3c6197d660ab823c.jpg",
     "playerName": "Travis Konecny",
     "playerTeam": "PHI",
     "opponent": "@ TBL",
@@ -14265,6 +14463,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/a0ba6c22-ca74-40a3-8512-de9ff181e051.mp4",
+    "poster": "/images/shootout-thumbnails/v1/5e295147632e2d2b7bebfb0a.jpg",
     "playerName": "Owen Tippett",
     "playerTeam": "PHI",
     "opponent": "@ TBL",
@@ -14273,6 +14472,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/296173f8-1370-4562-befb-cb38f7f2e34d.mp4",
+    "poster": "/images/shootout-thumbnails/v1/119fae8c0205851b4abe7411.jpg",
     "playerName": "JJ Peterka",
     "playerTeam": "BOS",
     "opponent": "vs CGY",
@@ -14281,6 +14481,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/170f8adb-465f-4773-a937-5e010f2da3e4.mp4",
+    "poster": "/images/shootout-thumbnails/v1/c395ab710c7ae5b37fc3d8bc.jpg",
     "playerName": "Aleksander Barkov",
     "playerTeam": "FLA",
     "opponent": "vs PHI",
@@ -14289,6 +14490,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/1c05bb0e-bb77-4b25-b9cf-ba028e564c44.mp4",
+    "poster": "/images/shootout-thumbnails/v1/17c40a209b1f6036a59bdd15.jpg",
     "playerName": "Owen Tippett",
     "playerTeam": "PHI",
     "opponent": "@ FLA",
@@ -14297,6 +14499,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/96e7d5c1-27c4-40a5-ab07-a2c77613872a.mp4",
+    "poster": "/images/shootout-thumbnails/v1/d07f24b3f42a3a92ced09c11.jpg",
     "playerName": "Evan Rodrigues",
     "playerTeam": "NJD",
     "opponent": "vs PHI",
@@ -14305,6 +14508,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/07c86b2a-f8ea-45d7-8ed5-62199a1df3eb.mp4",
+    "poster": "/images/shootout-thumbnails/v1/45cdfc0aab1330283821df61.jpg",
     "playerName": "Matvei Michkov",
     "playerTeam": "PHI",
     "opponent": "vs SJS",
@@ -14313,6 +14517,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/18d8ece3-13c9-49a0-b4b1-68a5b1530621.mp4",
+    "poster": "/images/shootout-thumbnails/v1/6500022c703b070b362fdad2.jpg",
     "playerName": "Travis Konecny",
     "playerTeam": "PHI",
     "opponent": "vs SJS",
@@ -14321,6 +14526,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/98a78668-0c47-4d54-a942-13b60f91b2f1.mp4",
+    "poster": "/images/shootout-thumbnails/v1/6e70055ebbc5d65c06b098e2.jpg",
     "playerName": "Mikael Granlund",
     "playerTeam": "ANA",
     "opponent": "@ PIT",
@@ -14329,6 +14535,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/d9446dce-0d69-4b4b-a4d8-02cedaf6ac8f.mp4",
+    "poster": "/images/shootout-thumbnails/v1/11db4f28c813d0914f4ed911.jpg",
     "playerName": "Sidney Crosby",
     "playerTeam": "PIT",
     "opponent": "vs SJS",
@@ -14337,6 +14544,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/431ffb87-1285-42b7-be84-a45204e6bb9b.mp4",
+    "poster": "/images/shootout-thumbnails/v1/cad2d5fe5c81e144f7c4b5db.jpg",
     "playerName": "Anthony Beauvillier",
     "playerTeam": "WSH",
     "opponent": "vs SJS",
@@ -14345,6 +14553,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/7b798866-4cab-4a68-b1b5-67eb0a9fea81.mp4",
+    "poster": "/images/shootout-thumbnails/v1/5d02e94a9ed04b8f64429c4d.jpg",
     "playerName": "William Eklund",
     "playerTeam": "OTT",
     "opponent": "@ PIT",
@@ -14353,6 +14562,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/3ae485dc-9fce-4a0c-93f9-eaae2cf57a3e.mp4",
+    "poster": "/images/shootout-thumbnails/v1/d25ac40877ea986d111c4928.jpg",
     "playerName": "Evgeni Malkin",
     "playerTeam": "PIT",
     "opponent": "vs SJS",
@@ -14361,6 +14571,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/3c9fbef2-ecbb-4fbd-b90c-f9a9ed9a654b.mp4",
+    "poster": "/images/shootout-thumbnails/v1/275741568ecae00c6ebc569b.jpg",
     "playerName": "Andrei Kuzmenko",
     "playerTeam": "PIT",
     "opponent": "vs NYI",
@@ -14369,6 +14580,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/dacff83d-c655-4aa0-82c4-ed65be40094d.mp4",
+    "poster": "/images/shootout-thumbnails/v1/f675bb2c3f8faad309f647d0.jpg",
     "playerName": "Justin Kirkland",
     "playerTeam": "MIN",
     "opponent": "vs NYI",
@@ -14377,6 +14589,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/81ff2774-eedf-4c80-8f17-057c755999eb.mp4",
+    "poster": "/images/shootout-thumbnails/v1/024199aaf2db683f7da8a58a.jpg",
     "playerName": "Jake Neighbours",
     "playerTeam": "STL",
     "opponent": "vs SJS",
@@ -14385,6 +14598,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/45ecfedd-7a3b-4c01-982e-acbef896bca9.mp4",
+    "poster": "/images/shootout-thumbnails/v1/75a323103d098a08a00f06ee.jpg",
     "playerName": "Frederick Gaudreau",
     "playerTeam": "SEA",
     "opponent": "@ CGY",
@@ -14393,6 +14607,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/9603461e-8cd6-460e-9c97-a0e30d36fd9a.mp4",
+    "poster": "/images/shootout-thumbnails/v1/aa4d7dbf7f9b83a82cb24c97.jpg",
     "playerName": "Justin Kirkland",
     "playerTeam": "MIN",
     "opponent": "vs MIN",
@@ -14401,6 +14616,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/ca1134c4-20f5-42e8-8868-e65a5d21d4db.mp4",
+    "poster": "/images/shootout-thumbnails/v1/74a8c3afaec5404cbca8b5fe.jpg",
     "playerName": "Rasmus Andersson",
     "playerTeam": "VGK",
     "opponent": "vs MIN",
@@ -14409,6 +14625,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/a04a7657-0b10-4323-9f3d-51eed534b7b0.mp4",
+    "poster": "/images/shootout-thumbnails/v1/1a48fc791b610fcdfbbc2065.jpg",
     "playerName": "Sean Monahan",
     "playerTeam": "CBJ",
     "opponent": "vs CAR",
@@ -14417,6 +14634,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/a0dc7379-c2da-42c6-8076-bc86b01f16aa.mp4",
+    "poster": "/images/shootout-thumbnails/v1/e7cf8ae7dcd4889de3c8bb96.jpg",
     "playerName": "Jack Eichel",
     "playerTeam": "VGK",
     "opponent": "@ PHI",
@@ -14425,6 +14643,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/aa6de6a0-0064-4b35-8219-6a508350ccd6.mp4",
+    "poster": "/images/shootout-thumbnails/v1/61aa4b8ef3d629c87ee4cb82.jpg",
     "playerName": "Valeri Nichushkin",
     "playerTeam": "CBJ",
     "opponent": "vs VGK",
@@ -14433,6 +14652,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/c93ebd9c-d09a-4786-8e87-3dc588b67ad5.mp4",
+    "poster": "/images/shootout-thumbnails/v1/697a475d21ce6a044ff44720.jpg",
     "playerName": "Troy Terry",
     "playerTeam": "ANA",
     "opponent": "vs OTT",
@@ -14441,6 +14661,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/51144058-c837-4e7b-ba66-7f203184f752.mp4",
+    "poster": "/images/shootout-thumbnails/v1/69c34a203e83e498044bb484.jpg",
     "playerName": "Trevor Zegras",
     "playerTeam": "PHI",
     "opponent": "vs OTT",
@@ -14449,6 +14670,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/a624668e-d357-4a80-80ab-4e5be68fe88f.mp4",
+    "poster": "/images/shootout-thumbnails/v1/a2bd6826f4f9e3f9017e890b.jpg",
     "playerName": "Lucas Raymond",
     "playerTeam": "DET",
     "opponent": "@ BUF",
@@ -14457,6 +14679,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/294e7e4d-afb4-4ff4-b7cf-fc7ad413b8ec.mp4",
+    "poster": "/images/shootout-thumbnails/v1/5b6614668e7612e797ef4d87.jpg",
     "playerName": "Alex Tuch",
     "playerTeam": "WSH",
     "opponent": "vs DET",
@@ -14465,6 +14688,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/93213714-e362-4014-a61f-def0a24a354f.mp4",
+    "poster": "/images/shootout-thumbnails/v1/8c57b3d27f49709f670e94ca.jpg",
     "playerName": "Dylan Larkin",
     "playerTeam": "DET",
     "opponent": "@ BUF",
@@ -14473,6 +14697,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/3495ef4a-9a25-4327-a8d8-975093fc3a09.mp4",
+    "poster": "/images/shootout-thumbnails/v1/6433aba82817be863d1a7edc.jpg",
     "playerName": "Patrik Laine",
     "playerTeam": "MTL",
     "opponent": "vs ANA",
@@ -14481,6 +14706,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/36432ba3-4e48-4a4d-ae3f-6da87d5de8b4.mp4",
+    "poster": "/images/shootout-thumbnails/v1/5df1328509f6ab69fc849c3f.jpg",
     "playerName": "Cole Caufield",
     "playerTeam": "MTL",
     "opponent": "vs ANA",
@@ -14489,6 +14715,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/8a5c2f86-b845-46c2-8947-f8ea30b0affc.mp4",
+    "poster": "/images/shootout-thumbnails/v1/adbc364ab42cf0b3f0e262ba.jpg",
     "playerName": "Matt Boldy",
     "playerTeam": "MIN",
     "opponent": "@ UTA",
@@ -14497,6 +14724,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/53cc3511-9dbf-477c-a638-438f53be27d3.mp4",
+    "poster": "/images/shootout-thumbnails/v1/5e32d9bd115dc98509ba3e29.jpg",
     "playerName": "Aleksander Barkov",
     "playerTeam": "FLA",
     "opponent": "@ SEA",
@@ -14505,6 +14733,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/c5536504-6b84-47e7-8e9c-4a50848518a4.mp4",
+    "poster": "/images/shootout-thumbnails/v1/be74806b7a69bfc4b43a9fe7.jpg",
     "playerName": "Sam Reinhart",
     "playerTeam": "FLA",
     "opponent": "@ SEA",
@@ -14513,6 +14742,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/dce75a37-1f9c-4466-96e3-43229b5afad8.mp4",
+    "poster": "/images/shootout-thumbnails/v1/088dd52049007c07e3db2bf6.jpg",
     "playerName": "Mason McTavish",
     "playerTeam": "STL",
     "opponent": "@ UTA",
@@ -14521,6 +14751,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/f072524f-f146-444f-a83d-0bbc8eef9553.mp4",
+    "poster": "/images/shootout-thumbnails/v1/330f021dfa3dfe1b361396b3.jpg",
     "playerName": "Andrei Svechnikov",
     "playerTeam": "CAR",
     "opponent": "@ CBJ",
@@ -14529,6 +14760,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/36471882-1093-459a-a9cf-626635b0e30f.mp4",
+    "poster": "/images/shootout-thumbnails/v1/a8f91e82f24de41160c26d80.jpg",
     "playerName": "Kent Johnson",
     "playerTeam": "CBJ",
     "opponent": "vs CAR",
@@ -14537,6 +14769,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/ccf9f9c3-6c6e-4800-a0dd-051fa4e0178b.mp4",
+    "poster": "/images/shootout-thumbnails/v1/4769bc3293fae228b853edab.jpg",
     "playerName": "Adam Fantilli",
     "playerTeam": "CBJ",
     "opponent": "vs CAR",
@@ -14545,6 +14778,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/c03e2a24-46c8-4271-983d-4dae00b14bfb.mp4",
+    "poster": "/images/shootout-thumbnails/v1/de9aba95eadc31adfc8b1924.jpg",
     "playerName": "Matt Boldy",
     "playerTeam": "MIN",
     "opponent": "@ WSH",
@@ -14553,6 +14787,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/f9d74637-75e6-42b6-92de-e67978deaafb.mp4",
+    "poster": "/images/shootout-thumbnails/v1/65a83b7e0848df83ad4bfbd1.jpg",
     "playerName": "J.T. Miller",
     "playerTeam": "NYR",
     "opponent": "@ SEA",
@@ -14561,6 +14796,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/3c9108b8-1397-43fe-a677-4a1b4d7922a6.mp4",
+    "poster": "/images/shootout-thumbnails/v1/1f5d257ef21c78c1022bf761.jpg",
     "playerName": "Sam Reinhart",
     "playerTeam": "FLA",
     "opponent": "vs PIT",
@@ -14569,6 +14805,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/461b37bd-d881-410d-b14f-941092862281.mp4",
+    "poster": "/images/shootout-thumbnails/v1/2df4dd7adabc4e8234331164.jpg",
     "playerName": "Anton Lundell",
     "playerTeam": "FLA",
     "opponent": "vs PIT",
@@ -14577,6 +14814,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/923d2702-3aa3-4b81-8405-4b90ad20e788.mp4",
+    "poster": "/images/shootout-thumbnails/v1/23fe44ca3d2cb037b2ea46e5.jpg",
     "playerName": "Cole Caufield",
     "playerTeam": "MTL",
     "opponent": "@ COL",
@@ -14585,6 +14823,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/3b3bb858-2a7a-4c49-8e02-feec1da37aa4.mp4",
+    "poster": "/images/shootout-thumbnails/v1/5442840f7e467cc90905cf44.jpg",
     "playerName": "Kirby Dach",
     "playerTeam": "MTL",
     "opponent": "@ COL",
@@ -14593,6 +14832,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/4be1e74f-5019-497d-a80d-c67a746d6322.mp4",
+    "poster": "/images/shootout-thumbnails/v1/7affec3b35032edbd647fe8a.jpg",
     "playerName": "Pierre-Luc Dubois",
     "playerTeam": "WSH",
     "opponent": "@ BUF",
@@ -14601,6 +14841,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/04bcfe80-7e58-4c51-b7af-4f54bf2e5685.mp4",
+    "poster": "/images/shootout-thumbnails/v1/25027af7f5c54c33e478caea.jpg",
     "playerName": "Alex Tuch",
     "playerTeam": "WSH",
     "opponent": "vs WSH",
@@ -14609,6 +14850,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/a7f4c542-f55a-49e9-b650-addc2fef0281.mp4",
+    "poster": "/images/shootout-thumbnails/v1/352f12ef4cb33b511f29af08.jpg",
     "playerName": "JJ Peterka",
     "playerTeam": "BOS",
     "opponent": "vs WSH",
@@ -14617,6 +14859,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/39367e98-e45f-44f3-b775-26c4a90142b3.mp4",
+    "poster": "/images/shootout-thumbnails/v1/ab7e30684121114a34325024.jpg",
     "playerName": "Kent Johnson",
     "playerTeam": "CBJ",
     "opponent": "@ PIT",
@@ -14625,6 +14868,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/1d934a4e-6767-4fe4-ba15-2ecf7dc48900.mp4",
+    "poster": "/images/shootout-thumbnails/v1/c1fc11de071b759e8146bc43.jpg",
     "playerName": "Kirill Marchenko",
     "playerTeam": "TOR",
     "opponent": "@ PIT",
@@ -14633,6 +14877,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/923ed614-4ff3-444f-a01c-123d308d5ed1.mp4",
+    "poster": "/images/shootout-thumbnails/v1/a611dd9d6737d86571dd8ada.jpg",
     "playerName": "Jason Robertson",
     "playerTeam": "DAL",
     "opponent": "@ MTL",
@@ -14641,6 +14886,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/7dfd96af-ecc6-4551-8d8d-fe3714e6f466.mp4",
+    "poster": "/images/shootout-thumbnails/v1/daa8c742a294ba9b265f72f4.jpg",
     "playerName": "Paul Cotter",
     "playerTeam": "VAN",
     "opponent": "vs FLA",
@@ -14649,6 +14895,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/a9fe02b3-fc86-465b-a789-757191892122.mp4",
+    "poster": "/images/shootout-thumbnails/v1/2ac60e63229c6f81554c6737.jpg",
     "playerName": "Aleksander Barkov",
     "playerTeam": "FLA",
     "opponent": "@ NJD",
@@ -14657,6 +14904,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/065f30e4-0512-4c3b-a564-4da3a9174404.mp4",
+    "poster": "/images/shootout-thumbnails/v1/0837e3c9aa5bf4c3469f1ee7.jpg",
     "playerName": "Anton Lundell",
     "playerTeam": "FLA",
     "opponent": "@ NJD",
@@ -14665,6 +14913,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/8b5fb358-d5cb-4c5d-8c68-ca7cc6617449.mp4",
+    "poster": "/images/shootout-thumbnails/v1/c446e437730ee1339b2c9a1d.jpg",
     "playerName": "Kent Johnson",
     "playerTeam": "CBJ",
     "opponent": "vs PHI",
@@ -14673,6 +14922,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/58272d31-fb8b-4253-b0c3-83c47b928e9a.mp4",
+    "poster": "/images/shootout-thumbnails/v1/e7d927a5c6f4dfdcd90d04be.jpg",
     "playerName": "Kirill Marchenko",
     "playerTeam": "TOR",
     "opponent": "vs PHI",
@@ -14681,6 +14931,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/accdd855-2a53-43e2-9f04-c320695e35f1.mp4",
+    "poster": "/images/shootout-thumbnails/v1/381cf8d301d74a33fd856a27.jpg",
     "playerName": "Jake Guentzel",
     "playerTeam": "TBL",
     "opponent": "vs ANA",
@@ -14689,6 +14940,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/6e36ad14-3708-4d38-b0a5-644ccb0b87a6.mp4",
+    "poster": "/images/shootout-thumbnails/v1/4ba84dfffca39618e79e6b28.jpg",
     "playerName": "Gustav Nyquist",
     "playerTeam": "WPG",
     "opponent": "vs CHI",
@@ -14697,6 +14949,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/10ef525d-4704-4356-bbcf-1e87b79afb01.mp4",
+    "poster": "/images/shootout-thumbnails/v1/8bfbb8415b8931aa65eb5646.jpg",
     "playerName": "Teuvo Teravainen",
     "playerTeam": "CHI",
     "opponent": "@ NSH",
@@ -14705,6 +14958,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/768ad3d1-8e82-48be-8ce4-6f51096779fa.mp4",
+    "poster": "/images/shootout-thumbnails/v1/913ea67f48eff530c3c7e92f.jpg",
     "playerName": "Ryan O'Reilly",
     "playerTeam": "NSH",
     "opponent": "vs CHI",
@@ -14713,6 +14967,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/a49b5101-03b3-4d12-b9ad-d8066acbe74e.mp4",
+    "poster": "/images/shootout-thumbnails/v1/4053d41faec7bf2024cbc128.jpg",
     "playerName": "Steven Stamkos",
     "playerTeam": "NSH",
     "opponent": "vs CHI",
@@ -14721,6 +14976,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/06a03b28-ca0a-44a6-88f4-e4611f04b0ee.mp4",
+    "poster": "/images/shootout-thumbnails/v1/595341b420c280f50e6fd956.jpg",
     "playerName": "Tim Stützle",
     "playerTeam": "OTT",
     "opponent": "vs BOS",
@@ -14729,6 +14985,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/9011bd5a-a290-4eb9-ad64-6c16d250dbb0.mp4",
+    "poster": "/images/shootout-thumbnails/v1/0b9f5eb982d006033697363e.jpg",
     "playerName": "Vincent Trocheck",
     "playerTeam": "UTA",
     "opponent": "vs CBJ",
@@ -14737,6 +14994,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/a4ac6779-ea86-4af3-9e71-5ee1794d473f.mp4",
+    "poster": "/images/shootout-thumbnails/v1/875e67aaadd811ee67b07314.jpg",
     "playerName": "Jake Neighbours",
     "playerTeam": "STL",
     "opponent": "@ VGK",
@@ -14745,6 +15003,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/8d90aab2-e8e5-4958-be01-8a5149a45832.mp4",
+    "poster": "/images/shootout-thumbnails/v1/071d5d3792d5bc3bfad588f2.jpg",
     "playerName": "Brayden Schenn",
     "playerTeam": "NYI",
     "opponent": "@ VGK",
@@ -14753,6 +15012,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/098b2826-5eff-4351-85fd-f37d2500f423.mp4",
+    "poster": "/images/shootout-thumbnails/v1/97ef4bf089bedccfc9ed1474.jpg",
     "playerName": "Jack Eichel",
     "playerTeam": "VGK",
     "opponent": "vs STL",
@@ -14761,6 +15021,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/212acb6b-336d-4c66-b9aa-5eccd88c94b6.mp4",
+    "poster": "/images/shootout-thumbnails/v1/66c436796a7c350d42aa38f6.jpg",
     "playerName": "Lucas Raymond",
     "playerTeam": "DET",
     "opponent": "@ EDM",
@@ -14769,6 +15030,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/66a7d301-86f3-4580-9c13-a6ea08f6848b.mp4",
+    "poster": "/images/shootout-thumbnails/v1/771a3aa6abadfa61f37930e0.jpg",
     "playerName": "Dylan Larkin",
     "playerTeam": "DET",
     "opponent": "@ EDM",
@@ -14777,6 +15039,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/2208c29e-a11e-417c-8622-c4afd0727b74.mp4",
+    "poster": "/images/shootout-thumbnails/v1/c0054acd5b9602e809a36200.jpg",
     "playerName": "Rickard Rakell",
     "playerTeam": "PIT",
     "opponent": "vs NJD",
@@ -14785,6 +15048,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/a6c35a57-37e4-4e84-aed0-98c83dbc2a03.mp4",
+    "poster": "/images/shootout-thumbnails/v1/f2e92898c9a6af368597d2d2.jpg",
     "playerName": "Paul Cotter",
     "playerTeam": "VAN",
     "opponent": "@ PIT",
@@ -14793,6 +15057,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/97ea3691-a66e-4e28-99c5-e3dd15253c29.mp4",
+    "poster": "/images/shootout-thumbnails/v1/617f1c81a328cc859e58323e.jpg",
     "playerName": "Anthony Beauvillier",
     "playerTeam": "WSH",
     "opponent": "vs NJD",
@@ -14801,6 +15066,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/426849dd-e092-4b90-b691-6eba653a42f6.mp4",
+    "poster": "/images/shootout-thumbnails/v1/0540f1e39ee83e5bf75d1ea4.jpg",
     "playerName": "Dougie Hamilton",
     "playerTeam": "NJD",
     "opponent": "@ PIT",
@@ -14809,6 +15075,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/2a9ea865-dc9f-4d04-89c2-f698fc58cf52.mp4",
+    "poster": "/images/shootout-thumbnails/v1/d4f0463a75c810df8bc1c865.jpg",
     "playerName": "Timo Meier",
     "playerTeam": "NJD",
     "opponent": "@ PIT",
@@ -14817,6 +15084,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/a42a9d34-33b5-437a-8894-e7dc9c87c682.mp4",
+    "poster": "/images/shootout-thumbnails/v1/dc16062f8d7d5d8169979b02.jpg",
     "playerName": "Patrick Kane",
     "playerTeam": "CHI",
     "opponent": "@ SEA",
@@ -14825,6 +15093,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/855d1e50-13f3-4150-9e83-ff84b1a2f084.mp4",
+    "poster": "/images/shootout-thumbnails/v1/f80310c495e16f10e00b9572.jpg",
     "playerName": "Adrian Kempe",
     "playerTeam": "LAK",
     "opponent": "vs DAL",
@@ -14833,6 +15102,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/366fbc55-9d61-424a-8baf-39f82504da88.mp4",
+    "poster": "/images/shootout-thumbnails/v1/4e49da3363e545979c2c92a3.jpg",
     "playerName": "Kevin Fiala",
     "playerTeam": "LAK",
     "opponent": "vs DAL",
@@ -14841,6 +15111,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/53317a83-d9db-4ddc-b38e-f6565814d522.mp4",
+    "poster": "/images/shootout-thumbnails/v1/fcce4ced4333671b3b520ea6.jpg",
     "playerName": "Brayden Schenn",
     "playerTeam": "NYI",
     "opponent": "vs CHI",
@@ -14849,6 +15120,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/9fd1cd75-b1f0-42e6-85b1-6db56bc3a158.mp4",
+    "poster": "/images/shootout-thumbnails/v1/772bd4c86fc8c8696fd680de.jpg",
     "playerName": "Teuvo Teravainen",
     "playerTeam": "CHI",
     "opponent": "@ STL",
@@ -14857,6 +15129,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/04077080-3add-4bfd-bb6c-ec104ed7a05a.mp4",
+    "poster": "/images/shootout-thumbnails/v1/0c4876b302d0dbd0abf545a1.jpg",
     "playerName": "Radek Faksa",
     "playerTeam": "DAL",
     "opponent": "vs CHI",
@@ -14865,6 +15138,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/7d5da699-c1e1-43df-aa70-4b91ba0070e8.mp4",
+    "poster": "/images/shootout-thumbnails/v1/accf01fdc3aba5adaae24d74.jpg",
     "playerName": "Trevor Zegras",
     "playerTeam": "PHI",
     "opponent": "@ LAK",
@@ -14873,6 +15147,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/d9204d05-dae4-4f88-bb1f-219330d5b874.mp4",
+    "poster": "/images/shootout-thumbnails/v1/ceeecb5cc235507185b82ec4.jpg",
     "playerName": "Leo Carlsson",
     "playerTeam": "ANA",
     "opponent": "@ LAK",
@@ -14881,6 +15156,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/e3899926-8b62-49e1-aef6-697eb7d48797.mp4",
+    "poster": "/images/shootout-thumbnails/v1/0d8ca15da22ac179f555da86.jpg",
     "playerName": "Nick Schmaltz",
     "playerTeam": "UTA",
     "opponent": "@ WSH",
@@ -14889,6 +15165,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/03944406-a062-4ba9-8581-b4519ce95060.mp4",
+    "poster": "/images/shootout-thumbnails/v1/db8b0808fdd8814f2e33174f.jpg",
     "playerName": "Kyle Connor",
     "playerTeam": "WPG",
     "opponent": "@ STL",
@@ -14897,6 +15174,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/980e6892-387b-4fba-b52b-8f06849e7603.mp4",
+    "poster": "/images/shootout-thumbnails/v1/c52192a59df338d390586a34.jpg",
     "playerName": "Matvei Michkov",
     "playerTeam": "PHI",
     "opponent": "@ WPG",
@@ -14905,6 +15183,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/980b5a25-7bb7-4876-9d57-37b72a496842.mp4",
+    "poster": "/images/shootout-thumbnails/v1/697f48c7a0e64ca1d561072a.jpg",
     "playerName": "Dylan Strome",
     "playerTeam": "WSH",
     "opponent": "vs OTT",
@@ -14913,6 +15192,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/282d2c24-6c51-4b05-8195-1479fe845c45.mp4",
+    "poster": "/images/shootout-thumbnails/v1/4d247d297324b9830b2b3d00.jpg",
     "playerName": "William Nylander",
     "playerTeam": "TOR",
     "opponent": "vs SJS",
@@ -14921,6 +15201,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/dd3ec398-a238-4fbd-b8b6-96398de1b2b6.mp4",
+    "poster": "/images/shootout-thumbnails/v1/980ff33461ba2605a92ba477.jpg",
     "playerName": "Tyler Toffoli",
     "playerTeam": "SJS",
     "opponent": "@ TOR",
@@ -14929,6 +15210,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/3c1de26a-0c06-4c3c-8eb2-4a08ebfddba3.mp4",
+    "poster": "/images/shootout-thumbnails/v1/32fa912dfea4b523b83e3b2c.jpg",
     "playerName": "Fabian Zetterlund",
     "playerTeam": "OTT",
     "opponent": "@ TOR",
@@ -14937,6 +15219,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/4981f290-8989-430a-abcb-2a13ab3dc71f.mp4",
+    "poster": "/images/shootout-thumbnails/v1/86028df131d5bc6c7577002e.jpg",
     "playerName": "Jake Neighbours",
     "playerTeam": "STL",
     "opponent": "@ LAK",
@@ -14945,6 +15228,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/f639c36d-2dc3-4da2-a48e-3f042934d9a3.mp4",
+    "poster": "/images/shootout-thumbnails/v1/91a20bcee52fde37c9f9318e.jpg",
     "playerName": "Kevin Fiala",
     "playerTeam": "LAK",
     "opponent": "vs STL",
@@ -14953,6 +15237,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/017e7f3c-c3ae-4cc5-ba3f-d4db6b37cae9.mp4",
+    "poster": "/images/shootout-thumbnails/v1/8980118c322f380f3c190156.jpg",
     "playerName": "Robert Thomas",
     "playerTeam": "STL",
     "opponent": "@ LAK",
@@ -14961,6 +15246,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/6db1ba1b-e65b-4307-9536-9967faf17a58.mp4",
+    "poster": "/images/shootout-thumbnails/v1/3408060696062d9950f813e4.jpg",
     "playerName": "Auston Matthews",
     "playerTeam": "TOR",
     "opponent": "@ UTA",
@@ -14969,6 +15255,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/a9fe8fb4-eac9-4d6e-8247-300a590ea2e0.mp4",
+    "poster": "/images/shootout-thumbnails/v1/49958b9932d2f2e32983a12c.jpg",
     "playerName": "Clayton Keller",
     "playerTeam": "UTA",
     "opponent": "vs TOR",
@@ -14977,6 +15264,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/a76a9806-1ad2-4de5-b22f-2eee98b28519.mp4",
+    "poster": "/images/shootout-thumbnails/v1/a48f761c6f9e920bbe4288ec.jpg",
     "playerName": "Mitch Marner",
     "playerTeam": "VGK",
     "opponent": "@ UTA",
@@ -14985,6 +15273,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/dc48e143-1d80-42e3-ad87-033d2710d0c8.mp4",
+    "poster": "/images/shootout-thumbnails/v1/013050abdaee961c6591d497.jpg",
     "playerName": "Mats Zuccarello",
     "playerTeam": "LAK",
     "opponent": "vs COL",
@@ -14993,6 +15282,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/ffe99105-1e11-4d42-b99d-e13ef90bcb93.mp4",
+    "poster": "/images/shootout-thumbnails/v1/802680ea2e6a3dbc2594d9b1.jpg",
     "playerName": "Matt Boldy",
     "playerTeam": "MIN",
     "opponent": "vs COL",
@@ -15001,6 +15291,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/e8e86edb-4013-499a-a300-4e9cea7a314f.mp4",
+    "poster": "/images/shootout-thumbnails/v1/3018cf8211810924cf4b39a6.jpg",
     "playerName": "Elias Pettersson",
     "playerTeam": "VAN",
     "opponent": "@ CGY",
@@ -15009,6 +15300,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/4f063f23-25c3-43b6-8c47-2953e9639da9.mp4",
+    "poster": "/images/shootout-thumbnails/v1/dee868d216e52af1321dd23e.jpg",
     "playerName": "Jonathan Huberdeau",
     "playerTeam": "CGY",
     "opponent": "vs VAN",
@@ -15017,6 +15309,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/4eb88894-09e1-4eb4-abb7-2a3b3e845997.mp4",
+    "poster": "/images/shootout-thumbnails/v1/5d789bef09eec8f3d1d391ef.jpg",
     "playerName": "Conor Garland",
     "playerTeam": "CBJ",
     "opponent": "@ CGY",
@@ -15025,6 +15318,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/11982191-e8d6-467b-b4df-95cf269950a3.mp4",
+    "poster": "/images/shootout-thumbnails/v1/b2a43f093145ed2780321b2e.jpg",
     "playerName": "Matvei Michkov",
     "playerTeam": "PHI",
     "opponent": "vs TBL",
@@ -15033,6 +15327,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/ed7732ac-1481-4a3e-9cf3-7e3235057777.mp4",
+    "poster": "/images/shootout-thumbnails/v1/651ba936734013fb8a27ff45.jpg",
     "playerName": "Brayden Point",
     "playerTeam": "TBL",
     "opponent": "@ PHI",
@@ -15041,6 +15336,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/7187a064-a587-4646-a62f-dbef5d995377.mp4",
+    "poster": "/images/shootout-thumbnails/v1/73c56abde2aedf85d91d937d.jpg",
     "playerName": "Owen Tippett",
     "playerTeam": "PHI",
     "opponent": "vs TBL",
@@ -15049,6 +15345,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/460ccf1e-99e3-4bac-afe9-5a93f7347cfa.mp4",
+    "poster": "/images/shootout-thumbnails/v1/2f77bd2d5efb80cd4d41ca54.jpg",
     "playerName": "Victor Olofsson",
     "playerTeam": "VGK",
     "opponent": "@ BUF",
@@ -15057,6 +15354,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/baa97ff9-f27b-48e0-b4ac-c71a7799ccc7.mp4",
+    "poster": "/images/shootout-thumbnails/v1/c174836bbd2550221f0ff6d9.jpg",
     "playerName": "Jack Quinn",
     "playerTeam": "BUF",
     "opponent": "vs VGK",
@@ -15065,6 +15363,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/09d6a480-b09b-4a90-ac70-4674c84619cc.mp4",
+    "poster": "/images/shootout-thumbnails/v1/4b1f5a6c0501f4b00df25317.jpg",
     "playerName": "Alex Tuch",
     "playerTeam": "WSH",
     "opponent": "vs VGK",
@@ -15073,6 +15372,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/3d295c8a-5bad-40ef-945c-c7751086e094.mp4",
+    "poster": "/images/shootout-thumbnails/v1/cd39bf31b49c023b88da6c49.jpg",
     "playerName": "Jason Robertson",
     "playerTeam": "DAL",
     "opponent": "vs TBL",
@@ -15081,6 +15381,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/c92b6458-b4af-44e4-a016-7e7247644592.mp4",
+    "poster": "/images/shootout-thumbnails/v1/3c39fb4e42dfbb72d9523190.jpg",
     "playerName": "Jake Guentzel",
     "playerTeam": "TBL",
     "opponent": "@ DAL",
@@ -15089,6 +15390,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/2bddb279-de21-40ad-bcaf-f4edf5399409.mp4",
+    "poster": "/images/shootout-thumbnails/v1/237d891ad3bc8a64833a0b98.jpg",
     "playerName": "Matt Duchene",
     "playerTeam": "DAL",
     "opponent": "vs TBL",
@@ -15097,6 +15399,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/111f765e-06cb-49c4-b354-4f3fa15fc073.mp4",
+    "poster": "/images/shootout-thumbnails/v1/e1a476a5555a0884d0034c99.jpg",
     "playerName": "Nikita Kucherov",
     "playerTeam": "TBL",
     "opponent": "@ DAL",
@@ -15105,6 +15408,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/728c906b-1126-47ed-87cf-297e70c074e2.mp4",
+    "poster": "/images/shootout-thumbnails/v1/7e4b4d6d4720fe88995c90f6.jpg",
     "playerName": "Gage Goncalves",
     "playerTeam": "TBL",
     "opponent": "@ DAL",
@@ -15113,6 +15417,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/4ffb8bea-3e1f-472d-806a-54793639ec81.mp4",
+    "poster": "/images/shootout-thumbnails/v1/a72014f69dbba518ec8a238b.jpg",
     "playerName": "Charlie Coyle",
     "playerTeam": "CBJ",
     "opponent": "@ MTL",
@@ -15121,6 +15426,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/3bfee15f-4a2b-4b6a-bf58-1328dcef7401.mp4",
+    "poster": "/images/shootout-thumbnails/v1/b41373d2e87a1f39c37aca59.jpg",
     "playerName": "Patrik Laine",
     "playerTeam": "MTL",
     "opponent": "vs COL",
@@ -15129,6 +15435,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/63376db1-f9df-4bb7-ad2e-8af1c69723d1.mp4",
+    "poster": "/images/shootout-thumbnails/v1/bec94304ea8596c2b84a96df.jpg",
     "playerName": "Brock Nelson",
     "playerTeam": "COL",
     "opponent": "@ MTL",
@@ -15137,6 +15444,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/85b55014-513b-4210-ac74-5df9f38294d6.mp4",
+    "poster": "/images/shootout-thumbnails/v1/0d38ef8d85637d65bf7b8e8e.jpg",
     "playerName": "Aleksander Barkov",
     "playerTeam": "FLA",
     "opponent": "vs PIT",
@@ -15145,6 +15453,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/13f301da-2aae-49fe-b728-e97bdc2210c9.mp4",
+    "poster": "/images/shootout-thumbnails/v1/70cdbac08e6d41e11918e0cc.jpg",
     "playerName": "Jake DeBrusk",
     "playerTeam": "VAN",
     "opponent": "@ NJD",
@@ -15153,6 +15462,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/95b16c13-3106-4851-8d4d-695529abab12.mp4",
+    "poster": "/images/shootout-thumbnails/v1/57d040e2886d628c00674a51.jpg",
     "playerName": "Jesper Bratt",
     "playerTeam": "NJD",
     "opponent": "vs VAN",
@@ -15161,6 +15471,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/354948f9-28a1-4f67-a7e3-b94b425f1772.mp4",
+    "poster": "/images/shootout-thumbnails/v1/47d2c8e371e96399930e4f97.jpg",
     "playerName": "Jonathan Lekkerimäki",
     "playerTeam": "VAN",
     "opponent": "@ NJD",
@@ -15169,6 +15480,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/12457bb2-a495-43af-80f4-1d6059098021.mp4",
+    "poster": "/images/shootout-thumbnails/v1/ca1c62e268b4a0966744e3a3.jpg",
     "playerName": "Adam Fantilli",
     "playerTeam": "CBJ",
     "opponent": "@ NYI",
@@ -15177,6 +15489,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/61080308-789c-4a33-a007-0c720d859777.mp4",
+    "poster": "/images/shootout-thumbnails/v1/f489ef598cd95ca5c769216e.jpg",
     "playerName": "William Nylander",
     "playerTeam": "TOR",
     "opponent": "@ SJS",
@@ -15185,6 +15498,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/a5936b3f-cd29-49f6-be28-5eb634787967.mp4",
+    "poster": "/images/shootout-thumbnails/v1/944542b27ca05ddb9ebd520e.jpg",
     "playerName": "Will Smith",
     "playerTeam": "SJS",
     "opponent": "vs TOR",
@@ -15193,6 +15507,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/26cd7b88-e828-4b4a-bc4b-2b1c6a0b1830.mp4",
+    "poster": "/images/shootout-thumbnails/v1/12272869434dcf91928aa95b.jpg",
     "playerName": "Macklin Celebrini",
     "playerTeam": "SJS",
     "opponent": "vs TOR",
@@ -15201,6 +15516,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/1b8506cc-df4f-4dda-a7d6-5fff2381aaae.mp4",
+    "poster": "/images/shootout-thumbnails/v1/e0cad4cd6a09e1d61fc39317.jpg",
     "playerName": "Kent Johnson",
     "playerTeam": "CBJ",
     "opponent": "vs VAN",
@@ -15209,6 +15525,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/6ef426ce-a864-4e91-93e9-99281fadcf9f.mp4",
+    "poster": "/images/shootout-thumbnails/v1/6022a64ab98d6e03e2ceae51.jpg",
     "playerName": "Paul Cotter",
     "playerTeam": "VAN",
     "opponent": "vs MIN",
@@ -15217,6 +15534,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/cfa71c48-a632-4841-9806-ecda15d93aa1.mp4",
+    "poster": "/images/shootout-thumbnails/v1/484e568d3bea7d52bc6eb52a.jpg",
     "playerName": "Jesper Bratt",
     "playerTeam": "NJD",
     "opponent": "vs MIN",
@@ -15225,6 +15543,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/7dcc5ffb-3650-4b6b-a362-0516b97a4744.mp4",
+    "poster": "/images/shootout-thumbnails/v1/8d6406fcefdbc99c395f4553.jpg",
     "playerName": "Yegor Sharangovich",
     "playerTeam": "CGY",
     "opponent": "@ COL",
@@ -15233,6 +15552,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/2ccf83d2-d077-412d-89aa-b7393d4e2348.mp4",
+    "poster": "/images/shootout-thumbnails/v1/0001e3f349fae5169fc72dbb.jpg",
     "playerName": "Mason McTavish",
     "playerTeam": "STL",
     "opponent": "vs SJS",
@@ -15241,6 +15561,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/aced55cd-825e-4e48-8050-b611f5170101.mp4",
+    "poster": "/images/shootout-thumbnails/v1/9cbbe84af771b8c2b229a25f.jpg",
     "playerName": "Nathan MacKinnon",
     "playerTeam": "COL",
     "opponent": "@ CHI",
@@ -15249,6 +15570,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/f82c11ee-7c5d-4b7a-9f87-c8782002dbd7.mp4",
+    "poster": "/images/shootout-thumbnails/v1/e4858e2caca1c35f5ffed544.jpg",
     "playerName": "Teuvo Teravainen",
     "playerTeam": "CHI",
     "opponent": "vs COL",
@@ -15257,6 +15579,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/313bc837-7182-4a0d-9d3e-25728f5245e2.mp4",
+    "poster": "/images/shootout-thumbnails/v1/c7e5a9c5e81ba63f7894b1aa.jpg",
     "playerName": "Artturi Lehkonen",
     "playerTeam": "COL",
     "opponent": "@ CHI",
@@ -15265,6 +15588,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/4b284ff1-3805-41ff-82df-bae56608ee05.mp4",
+    "poster": "/images/shootout-thumbnails/v1/3686eb6593482834fb26a557.jpg",
     "playerName": "Jack Quinn",
     "playerTeam": "BUF",
     "opponent": "vs TBL",
@@ -15273,6 +15597,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/bea2fcf4-3d5c-46c5-8b39-e2cbb09d4562.mp4",
+    "poster": "/images/shootout-thumbnails/v1/c7589f3f922ca7ac477e5194.jpg",
     "playerName": "Alex Tuch",
     "playerTeam": "WSH",
     "opponent": "vs TBL",
@@ -15281,6 +15606,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/3e1bb4f3-3886-4273-b962-bdde75830d4a.mp4",
+    "poster": "/images/shootout-thumbnails/v1/4d3a19a39af1141a1986bbaa.jpg",
     "playerName": "Charlie Coyle",
     "playerTeam": "CBJ",
     "opponent": "vs VGK",
@@ -15289,6 +15615,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/16c1c36e-2254-4a02-ba4e-bbaa5ade67a3.mp4",
+    "poster": "/images/shootout-thumbnails/v1/0712d1eb75545bc10954c007.jpg",
     "playerName": "Pierre-Luc Dubois",
     "playerTeam": "WSH",
     "opponent": "vs CAR",
@@ -15297,6 +15624,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/0543900e-958f-4e7d-90d5-da3130410554.mp4",
+    "poster": "/images/shootout-thumbnails/v1/59dda518527b748da06bddaf.jpg",
     "playerName": "Filip Forsberg",
     "playerTeam": "NSH",
     "opponent": "@ UTA",
@@ -15305,6 +15633,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/9fbf8ff8-6b8a-4608-b245-5856a4281d44.mp4",
+    "poster": "/images/shootout-thumbnails/v1/35bdbccfa8435e50004ec96c.jpg",
     "playerName": "Bobby Brink",
     "playerTeam": "MIN",
     "opponent": "vs NYI",
@@ -15313,6 +15642,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/3891cf06-61b4-44e5-8946-7160092dd8fb.mp4",
+    "poster": "/images/shootout-thumbnails/v1/e5bb35c086644fc9c05f3cab.jpg",
     "playerName": "Anton Lundell",
     "playerTeam": "FLA",
     "opponent": "vs BUF",
@@ -15321,6 +15651,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/69c37676-4ac0-4141-bd04-a9314a4edb37.mp4",
+    "poster": "/images/shootout-thumbnails/v1/ff368aa32e079939d669c3fe.jpg",
     "playerName": "Connor Bedard",
     "playerTeam": "CHI",
     "opponent": "vs WPG",
@@ -15329,6 +15660,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/f701e1ab-f3ef-4aba-b4b5-411690ddc63e.mp4",
+    "poster": "/images/shootout-thumbnails/v1/4e80e1423ca5ae3611de5c65.jpg",
     "playerName": "Kyle Connor",
     "playerTeam": "WPG",
     "opponent": "@ CHI",
@@ -15337,6 +15669,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/1aef3757-1178-423a-971f-59448ebed402.mp4",
+    "poster": "/images/shootout-thumbnails/v1/8ccdbe7fcab1326c05bd0de8.jpg",
     "playerName": "Cole Perfetti",
     "playerTeam": "WPG",
     "opponent": "@ CHI",
@@ -15345,6 +15678,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/d778f29d-8ccd-408a-bef6-c47bbed6def6.mp4",
+    "poster": "/images/shootout-thumbnails/v1/8c8592ba0cb484c8ad132fd5.jpg",
     "playerName": "Eeli Tolvanen",
     "playerTeam": "NYR",
     "opponent": "vs STL",
@@ -15353,6 +15687,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/5fb4b644-fc2e-491c-9e04-e2987374bbe4.mp4",
+    "poster": "/images/shootout-thumbnails/v1/36a86fe67c4ffb7ae84bfd2c.jpg",
     "playerName": "Jake Neighbours",
     "playerTeam": "STL",
     "opponent": "@ SEA",
@@ -15361,6 +15696,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/cfe4c35a-deea-421f-a22b-532e2b8409ad.mp4",
+    "poster": "/images/shootout-thumbnails/v1/0f00ecb2fb0802eecf3c7d5e.jpg",
     "playerName": "Robert Thomas",
     "playerTeam": "STL",
     "opponent": "@ SEA",
@@ -15369,6 +15705,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/8d3554d8-cbbb-4c6b-a198-27292f20d333.mp4",
+    "poster": "/images/shootout-thumbnails/v1/be3f5c3a3be0da553dcde55d.jpg",
     "playerName": "Kaapo Kakko",
     "playerTeam": "SEA",
     "opponent": "vs STL",
@@ -15377,6 +15714,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/69e29157-a511-4f0d-ad0b-434fc696f47a.mp4",
+    "poster": "/images/shootout-thumbnails/v1/d9379ed06c49849da382c10b.jpg",
     "playerName": "Chandler Stephenson",
     "playerTeam": "SEA",
     "opponent": "vs STL",
@@ -15385,6 +15723,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/4796eef8-07bb-480b-b322-d1cc66a019ad.mp4",
+    "poster": "/images/shootout-thumbnails/v1/5ea6579c6cf91dae1a8fa2c5.jpg",
     "playerName": "Frank Nazar",
     "playerTeam": "CHI",
     "opponent": "@ MTL",
@@ -15393,6 +15732,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/74faf977-5254-498d-98b2-ba8cae15bb90.mp4",
+    "poster": "/images/shootout-thumbnails/v1/a334f2fbefcfc385fd39700d.jpg",
     "playerName": "Morgan Frost",
     "playerTeam": "CGY",
     "opponent": "vs VGK",
@@ -15401,6 +15741,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/a370d875-c227-4cf9-8495-f19539f9f9b1.mp4",
+    "poster": "/images/shootout-thumbnails/v1/4bddf2569e291b08398a3f34.jpg",
     "playerName": "Leon Draisaitl",
     "playerTeam": "EDM",
     "opponent": "vs CGY",
@@ -15409,6 +15750,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/b81c5b52-18d3-42f5-9894-0b1f7723249f.mp4",
+    "poster": "/images/shootout-thumbnails/v1/1c5bba965f5b47c725e5dd68.jpg",
     "playerName": "Adrian Kempe",
     "playerTeam": "LAK",
     "opponent": "@ VGK",
@@ -15417,6 +15759,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/16c2cca1-464a-4187-8c8b-06e4309f3a93.mp4",
+    "poster": "/images/shootout-thumbnails/v1/6e8ca84a7edbbab3350a8f3b.jpg",
     "playerName": "Trevor Moore",
     "playerTeam": "LAK",
     "opponent": "@ VGK",
@@ -15425,6 +15768,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/ec6347e2-ea12-4fd7-9816-0baf020849bc.mp4",
+    "poster": "/images/shootout-thumbnails/v1/c8dbd5013341d4708577fb09.jpg",
     "playerName": "Pavel Dorofeyev",
     "playerTeam": "NYR",
     "opponent": "vs LAK",
@@ -15433,6 +15777,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/df935c93-8771-4e86-995e-cca8af4347c8.mp4",
+    "poster": "/images/shootout-thumbnails/v1/c41ae79cf925aef6d9c0e09c.jpg",
     "playerName": "Jason Robertson",
     "playerTeam": "DAL",
     "opponent": "@ COL",
@@ -15441,6 +15786,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/413326a7-a8f3-46e0-8a34-1229edc98774.mp4",
+    "poster": "/images/shootout-thumbnails/v1/c9de5a19f46e6757318dacc4.jpg",
     "playerName": "Mikko Rantanen",
     "playerTeam": "DAL",
     "opponent": "@ COL",
@@ -15449,6 +15795,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/afa7fe7a-8e2f-4a71-8b4a-cb899de50c46.mp4",
+    "poster": "/images/shootout-thumbnails/v1/f837c768055213196231c0db.jpg",
     "playerName": "Marco Rossi",
     "playerTeam": "VAN",
     "opponent": "vs LAK",
@@ -15457,6 +15804,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/87d29fec-32f3-48af-9303-2556e3556577.mp4",
+    "poster": "/images/shootout-thumbnails/v1/c3733ae89770bb2822226909.jpg",
     "playerName": "Tim Stützle",
     "playerTeam": "OTT",
     "opponent": "vs SEA",
@@ -15465,6 +15813,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/07dffa96-3268-4bf6-8266-126dea63db60.mp4",
+    "poster": "/images/shootout-thumbnails/v1/0ae22aa0f020648f76622451.jpg",
     "playerName": "Shane Pinto",
     "playerTeam": "OTT",
     "opponent": "vs SEA",
@@ -15473,6 +15822,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/f28e79b6-4676-4d05-8629-5ef20ef2ef99.mp4",
+    "poster": "/images/shootout-thumbnails/v1/64c561b0dd384bfc16eee45d.jpg",
     "playerName": "Brock Boeser",
     "playerTeam": "VAN",
     "opponent": "@ CHI",
@@ -15481,6 +15831,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/49664bcf-2297-4f4d-8ff2-7cce75f72599.mp4",
+    "poster": "/images/shootout-thumbnails/v1/a1cb0b0bd5d7a53087945ef2.jpg",
     "playerName": "Seth Jarvis",
     "playerTeam": "CAR",
     "opponent": "@ COL",
@@ -15489,6 +15840,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/6cc81c97-8168-49cf-bb63-b50b21509543.mp4",
+    "poster": "/images/shootout-thumbnails/v1/a80348e654e24f46f48f3274.jpg",
     "playerName": "Trevor Zegras",
     "playerTeam": "PHI",
     "opponent": "vs NYI",
@@ -15497,6 +15849,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/87782def-8856-49c8-9b9b-1af0aa5e857f.mp4",
+    "poster": "/images/shootout-thumbnails/v1/cccfdb61b7860d054ede7ebe.jpg",
     "playerName": "Simon Holmstrom",
     "playerTeam": "NYI",
     "opponent": "@ PHI",
@@ -15505,6 +15858,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/33f095b5-9306-468a-8da2-9785fc5ec005.mp4",
+    "poster": "/images/shootout-thumbnails/v1/af0ac00585e88f4060eab073.jpg",
     "playerName": "Matvei Michkov",
     "playerTeam": "PHI",
     "opponent": "vs NYI",
@@ -15513,6 +15867,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/598f1045-48a8-4de2-a175-2adee95b06c4.mp4",
+    "poster": "/images/shootout-thumbnails/v1/ae24c841f4c71c3343bedd7d.jpg",
     "playerName": "Kent Johnson",
     "playerTeam": "CBJ",
     "opponent": "@ PIT",
@@ -15521,6 +15876,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/a2cd2145-78ad-4c85-86e1-3320dd112fcc.mp4",
+    "poster": "/images/shootout-thumbnails/v1/e92fdae72b3e12e7f4f6d6e1.jpg",
     "playerName": "Bryan Rust",
     "playerTeam": "PIT",
     "opponent": "vs CBJ",
@@ -15529,6 +15885,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/4e72ef10-f16a-46db-be52-417e0cd6ae71.mp4",
+    "poster": "/images/shootout-thumbnails/v1/0c6a64b6efe889338064fd9b.jpg",
     "playerName": "Adam Fantilli",
     "playerTeam": "CBJ",
     "opponent": "@ PIT",
@@ -15537,6 +15894,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/65811dce-bfe4-4d16-93de-1dba5e6627f1.mp4",
+    "poster": "/images/shootout-thumbnails/v1/20d639f9e60a7c198fd6225b.jpg",
     "playerName": "Sidney Crosby",
     "playerTeam": "PIT",
     "opponent": "vs CBJ",
@@ -15545,6 +15903,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/5fed3b74-a119-4a1a-94e0-85daabc5e367.mp4",
+    "poster": "/images/shootout-thumbnails/v1/25d8ecf51f8565aee810663a.jpg",
     "playerName": "Kirill Marchenko",
     "playerTeam": "TOR",
     "opponent": "@ PIT",
@@ -15553,6 +15912,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/2b51fcfd-4b42-44f3-a2d2-50f49abf5d5f.mp4",
+    "poster": "/images/shootout-thumbnails/v1/ae8824a5244bb797c0a35f70.jpg",
     "playerName": "Ryan O'Reilly",
     "playerTeam": "NSH",
     "opponent": "vs LAK",
@@ -15561,6 +15921,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/270103e2-1a3d-4cf3-a3a3-6c6c76786575.mp4",
+    "poster": "/images/shootout-thumbnails/v1/9f6a7a6b76e55158cf22f41a.jpg",
     "playerName": "Adrian Kempe",
     "playerTeam": "LAK",
     "opponent": "@ NSH",
@@ -15569,6 +15930,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/88dc72c7-8b4e-40c4-b794-e7c3330be673.mp4",
+    "poster": "/images/shootout-thumbnails/v1/9008375a1eadedd9f0392fb7.jpg",
     "playerName": "Filip Forsberg",
     "playerTeam": "NSH",
     "opponent": "vs LAK",
@@ -15577,6 +15939,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/ee42fdaa-70ff-42a2-948d-398a3746d0ed.mp4",
+    "poster": "/images/shootout-thumbnails/v1/d0d4eeae471de43775b378eb.jpg",
     "playerName": "Trevor Moore",
     "playerTeam": "LAK",
     "opponent": "@ NSH",
@@ -15585,6 +15948,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/c16d7f31-1d3d-4bf6-955f-3076bef5c054.mp4",
+    "poster": "/images/shootout-thumbnails/v1/a01d4456bcbd876841bec7e4.jpg",
     "playerName": "Erik Haula",
     "playerTeam": "LAK",
     "opponent": "vs LAK",
@@ -15593,6 +15957,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/b0e3b7fa-23e4-4c02-88c0-84aca7c2aef3.mp4",
+    "poster": "/images/shootout-thumbnails/v1/364fc23f24024305171dd42e.jpg",
     "playerName": "Kevin Fiala",
     "playerTeam": "LAK",
     "opponent": "@ NSH",
@@ -15601,6 +15966,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/42e86584-22e8-443c-9889-343a207ea832.mp4",
+    "poster": "/images/shootout-thumbnails/v1/d0b8f2bc9396a25f8efbfed4.jpg",
     "playerName": "Ozzy Wiesblatt",
     "playerTeam": "NSH",
     "opponent": "vs LAK",
@@ -15609,6 +15975,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/fef313f5-292e-4dc4-98fd-e57135ead254.mp4",
+    "poster": "/images/shootout-thumbnails/v1/a1bd01d02d7311a240bd3048.jpg",
     "playerName": "Matvei Michkov",
     "playerTeam": "PHI",
     "opponent": "vs PIT",
@@ -15617,6 +15984,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/2ba1f1e2-edb8-4d7e-ace0-cf4528c3e040.mp4",
+    "poster": "/images/shootout-thumbnails/v1/e36df355fe28e5171874a102.jpg",
     "playerName": "Evgeni Malkin",
     "playerTeam": "PIT",
     "opponent": "@ PHI",
@@ -15625,6 +15993,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/4b533715-ed5c-41b7-897c-a718ee8229a9.mp4",
+    "poster": "/images/shootout-thumbnails/v1/248a6225b6bf2231b52a7ba1.jpg",
     "playerName": "Bobby Brink",
     "playerTeam": "MIN",
     "opponent": "vs PIT",
@@ -15633,6 +16002,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/6768b7f8-c698-4bbc-9b1e-88c456e0853f.mp4",
+    "poster": "/images/shootout-thumbnails/v1/d2fcabd66b82d945d9735eed.jpg",
     "playerName": "Troy Terry",
     "playerTeam": "ANA",
     "opponent": "@ FLA",
@@ -15641,6 +16011,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/aea6fdb5-9ca4-42d5-b5e7-1ac11de536e4.mp4",
+    "poster": "/images/shootout-thumbnails/v1/a0f161929bf26ecc513007e4.jpg",
     "playerName": "Anton Lundell",
     "playerTeam": "FLA",
     "opponent": "vs ANA",
@@ -15649,6 +16020,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/7544346a-83e5-4c21-bfd5-5f230cee60c8.mp4",
+    "poster": "/images/shootout-thumbnails/v1/285e4198148c08c5cd65a046.jpg",
     "playerName": "Mason McTavish",
     "playerTeam": "STL",
     "opponent": "@ FLA",
@@ -15657,6 +16029,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/a0e71eda-fc9e-4f63-a9b1-6665123b8d57.mp4",
+    "poster": "/images/shootout-thumbnails/v1/7d4877e280652b0fcf70b83c.jpg",
     "playerName": "Drake Batherson",
     "playerTeam": "OTT",
     "opponent": "vs CGY",
@@ -15665,6 +16038,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/54524edf-fc0b-458d-95a1-17be82a0483f.mp4",
+    "poster": "/images/shootout-thumbnails/v1/86d5650d72c23ce3c25e5b7d.jpg",
     "playerName": "Tim Stützle",
     "playerTeam": "OTT",
     "opponent": "vs CGY",
@@ -15673,6 +16047,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/9dda6d26-08b3-4b7c-9579-b66056d2a975.mp4",
+    "poster": "/images/shootout-thumbnails/v1/490fc6cff6b90952820d1997.jpg",
     "playerName": "Jake DeBrusk",
     "playerTeam": "VAN",
     "opponent": "@ STL",
@@ -15681,6 +16056,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/99fcfaba-2f81-454e-87da-39359c7ac618.mp4",
+    "poster": "/images/shootout-thumbnails/v1/593ce4ca3bc4a3b509bf5e02.jpg",
     "playerName": "Lucas Raymond",
     "playerTeam": "DET",
     "opponent": "@ LAK",
@@ -15689,6 +16065,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/69abf616-9a6a-445d-bc26-c4826ab35eb3.mp4",
+    "poster": "/images/shootout-thumbnails/v1/a8be1e2660599bc0616ad36e.jpg",
     "playerName": "Brad Marchand",
     "playerTeam": "FLA",
     "opponent": "vs DAL",
@@ -15697,6 +16074,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/fd32b260-44e7-4684-94c1-30f0fdbfd0c6.mp4",
+    "poster": "/images/shootout-thumbnails/v1/638d7221c9c6f973cee28023.jpg",
     "playerName": "Bowen Byram",
     "playerTeam": "CHI",
     "opponent": "vs WSH",
@@ -15705,6 +16083,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/5f6ba5b9-3410-4f5f-99d4-b1fa781b91d8.mp4",
+    "poster": "/images/shootout-thumbnails/v1/58b60ac1f6615e57f02731b2.jpg",
     "playerName": "James van Riemsdyk",
     "playerTeam": "DET",
     "opponent": "@ SJS",
@@ -15713,6 +16092,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/50977373-6807-47b6-a6e3-22ee3d177c1f.mp4",
+    "poster": "/images/shootout-thumbnails/v1/bb16c37b95f78d09f747b92b.jpg",
     "playerName": "Trevor Zegras",
     "playerTeam": "PHI",
     "opponent": "@ MTL",
@@ -15721,6 +16101,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/6fa7b70c-7aa1-47cd-a940-5807d9d62924.mp4",
+    "poster": "/images/shootout-thumbnails/v1/d634a13bae30ce6a06d143aa.jpg",
     "playerName": "Marat Khusnutdinov",
     "playerTeam": "BOS",
     "opponent": "@ NYI",
@@ -15729,6 +16110,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/f87f9227-c0fe-4dfa-ac6f-12e3306e3d5e.mp4",
+    "poster": "/images/shootout-thumbnails/v1/ce87a6d9fb54e3dbd4869402.jpg",
     "playerName": "Jason Robertson",
     "playerTeam": "DAL",
     "opponent": "vs EDM",
@@ -15737,6 +16119,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/90c5f3b4-4af9-4699-bde3-e408ca5b0cdd.mp4",
+    "poster": "/images/shootout-thumbnails/v1/7610b043f1fe18d14d5edcc0.jpg",
     "playerName": "Leon Draisaitl",
     "playerTeam": "EDM",
     "opponent": "@ DAL",
@@ -15745,6 +16128,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/f18c41e3-8432-4680-9a71-8e121e903d0e.mp4",
+    "poster": "/images/shootout-thumbnails/v1/6e06b802b06e49b33b2611a1.jpg",
     "playerName": "Wyatt Johnston",
     "playerTeam": "DAL",
     "opponent": "vs EDM",
@@ -15753,6 +16137,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/cdad96b5-6658-4f89-84cb-8ea5a6567b7a.mp4",
+    "poster": "/images/shootout-thumbnails/v1/81fc6f8d42126cc3400a27b1.jpg",
     "playerName": "Paul Cotter",
     "playerTeam": "VAN",
     "opponent": "vs PIT",
@@ -15761,6 +16146,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/a92452ee-3402-49c9-911c-f3d9a4684e07.mp4",
+    "poster": "/images/shootout-thumbnails/v1/529ade451b595e8c754ab8b7.jpg",
     "playerName": "Jesper Bratt",
     "playerTeam": "NJD",
     "opponent": "vs PIT",
@@ -15769,6 +16155,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/6dca9866-efd2-4bb0-ae11-b5f52887e563.mp4",
+    "poster": "/images/shootout-thumbnails/v1/ff05df213ed5a062d1d72a38.jpg",
     "playerName": "Kirill Marchenko",
     "playerTeam": "TOR",
     "opponent": "@ SEA",
@@ -15777,6 +16164,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/ab768ab7-7c1c-43a2-824c-fd00488d0e86.mp4",
+    "poster": "/images/shootout-thumbnails/v1/49b3b4e64a01a32abc9f224b.jpg",
     "playerName": "Eeli Tolvanen",
     "playerTeam": "NYR",
     "opponent": "vs CBJ",
@@ -15785,6 +16173,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/a18f2cb5-2136-4f34-b7c0-79a1d7be333f.mp4",
+    "poster": "/images/shootout-thumbnails/v1/1afd725bc5ff8a11f231eeaa.jpg",
     "playerName": "Charlie Coyle",
     "playerTeam": "CBJ",
     "opponent": "@ SEA",
@@ -15793,6 +16182,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/b3c21f5b-4298-438e-975d-79d9f3a09fac.mp4",
+    "poster": "/images/shootout-thumbnails/v1/82deba5d3a3e3aa1e272aef3.jpg",
     "playerName": "Trevor Zegras",
     "playerTeam": "PHI",
     "opponent": "@ STL",
@@ -15801,6 +16191,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/0186687c-8d40-490e-94c8-6895ed47b87d.mp4",
+    "poster": "/images/shootout-thumbnails/v1/942de2bcd38ef21bab81bc67.jpg",
     "playerName": "Dylan Strome",
     "playerTeam": "WSH",
     "opponent": "vs NJD",
@@ -15809,6 +16200,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/8dced139-e7c6-4db6-af44-cea4d52fb7b3.mp4",
+    "poster": "/images/shootout-thumbnails/v1/1366da6fc51565a29d582687.jpg",
     "playerName": "Jesper Bratt",
     "playerTeam": "NJD",
     "opponent": "@ WSH",
@@ -15817,6 +16209,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/23ad8f85-691d-4302-969b-c2d97eb42c5a.mp4",
+    "poster": "/images/shootout-thumbnails/v1/43fa11400e24f9de752c544a.jpg",
     "playerName": "Simon Nemec",
     "playerTeam": "CGY",
     "opponent": "@ WSH",
@@ -15825,6 +16218,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/4b370546-a71c-484d-9419-5b492b2d3f9e.mp4",
+    "poster": "/images/shootout-thumbnails/v1/ee6cb4af680d285e519b1cd3.jpg",
     "playerName": "Vincent Trocheck",
     "playerTeam": "UTA",
     "opponent": "@ CBJ",
@@ -15833,6 +16227,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/3e5cb4a0-9497-4488-ab68-403d1c3a58e8.mp4",
+    "poster": "/images/shootout-thumbnails/v1/afcdbd18033bc3f0795d4a55.jpg",
     "playerName": "Kirill Marchenko",
     "playerTeam": "TOR",
     "opponent": "vs NYR",
@@ -15841,6 +16236,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/571d236e-7fac-41df-afa1-48efc5f93c0d.mp4",
+    "poster": "/images/shootout-thumbnails/v1/4731bbcfeef9b71d521f1940.jpg",
     "playerName": "J.T. Miller",
     "playerTeam": "NYR",
     "opponent": "@ CBJ",
@@ -15849,6 +16245,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/67a27460-d8d2-413a-8bf8-d7355bcfdf86.mp4",
+    "poster": "/images/shootout-thumbnails/v1/9ef3f37683230b991fac56f2.jpg",
     "playerName": "Gabriel Vilardi",
     "playerTeam": "WPG",
     "opponent": "@ CGY",
@@ -15857,6 +16254,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/942359e1-c8b1-48ef-8e10-3f81d2138200.mp4",
+    "poster": "/images/shootout-thumbnails/v1/25f691926cffe2dbdec22b2d.jpg",
     "playerName": "Kent Johnson",
     "playerTeam": "CBJ",
     "opponent": "vs MTL",
@@ -15865,6 +16263,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/f2ee3745-722f-464b-bcff-206db31208d3.mp4",
+    "poster": "/images/shootout-thumbnails/v1/c5ff5f1084bc27346236a024.jpg",
     "playerName": "Cole Caufield",
     "playerTeam": "MTL",
     "opponent": "@ CBJ",
@@ -15873,6 +16272,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/28870fed-3288-458f-a426-e6d26aa56f86.mp4",
+    "poster": "/images/shootout-thumbnails/v1/b73b8c8aff75c4374bd3d6ed.jpg",
     "playerName": "Kirill Marchenko",
     "playerTeam": "TOR",
     "opponent": "vs MTL",
@@ -15881,6 +16281,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/a684001c-fc0c-4914-af13-f7c6ef03766d.mp4",
+    "poster": "/images/shootout-thumbnails/v1/a24c09761b5864746b2c8b3d.jpg",
     "playerName": "Matt Boldy",
     "playerTeam": "MIN",
     "opponent": "vs CAR",
@@ -15889,6 +16290,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/3aa906ee-d879-4602-9be6-6af53c893d27.mp4",
+    "poster": "/images/shootout-thumbnails/v1/6272c97ce0bff6aaed572e70.jpg",
     "playerName": "Philipp Kurashev",
     "playerTeam": "SJS",
     "opponent": "vs LAK",
@@ -15897,6 +16299,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/b848eeb2-8bbe-478a-87dd-1f454b4c87f9.mp4",
+    "poster": "/images/shootout-thumbnails/v1/2330153062acecab93518bf3.jpg",
     "playerName": "Morgan Frost",
     "playerTeam": "CGY",
     "opponent": "vs DAL",
@@ -15905,6 +16308,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/cd4246ea-0da5-431b-82db-483344afdc30.mp4",
+    "poster": "/images/shootout-thumbnails/v1/caa07f7f2dcf3f2bc57b090d.jpg",
     "playerName": "Jason Robertson",
     "playerTeam": "DAL",
     "opponent": "@ CGY",
@@ -15913,6 +16317,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/b95b23e1-1365-40a2-bf5f-afcb4ce44242.mp4",
+    "poster": "/images/shootout-thumbnails/v1/79738befce13b321ef3fb16b.jpg",
     "playerName": "Nazem Kadri",
     "playerTeam": "COL",
     "opponent": "vs DAL",
@@ -15921,6 +16326,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/ec62eac2-799b-4b01-8e6b-79a0c17c1efb.mp4",
+    "poster": "/images/shootout-thumbnails/v1/6f8f13cb21d483e8974d8ebd.jpg",
     "playerName": "Frederick Gaudreau",
     "playerTeam": "SEA",
     "opponent": "@ NYI",
@@ -15929,6 +16335,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/b962009c-04b1-4582-84bf-b82ca23c026b.mp4",
+    "poster": "/images/shootout-thumbnails/v1/1c403092523ee33c17c3648c.jpg",
     "playerName": "Bo Horvat",
     "playerTeam": "NYI",
     "opponent": "vs SEA",
@@ -15937,6 +16344,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/a3b7cd09-0e40-45d9-bdcc-73724792d487.mp4",
+    "poster": "/images/shootout-thumbnails/v1/f29e88ee659040ad150cf7f7.jpg",
     "playerName": "Kyle Palmieri",
     "playerTeam": "NYI",
     "opponent": "vs SEA",
@@ -15945,6 +16353,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/781c006b-a740-46cb-b038-af43e5a04482.mp4",
+    "poster": "/images/shootout-thumbnails/v1/1651620350e3b6800186aa13.jpg",
     "playerName": "Shane Pinto",
     "playerTeam": "OTT",
     "opponent": "@ VGK",
@@ -15953,6 +16362,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/944a60c7-ea20-4a80-9a32-931dcde38605.mp4",
+    "poster": "/images/shootout-thumbnails/v1/951f783bec45b563852d9cb9.jpg",
     "playerName": "Mats Zuccarello",
     "playerTeam": "LAK",
     "opponent": "vs COL",
@@ -15961,6 +16371,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/7ed2a6cf-9550-4876-8317-3d0acab4ba98.mp4",
+    "poster": "/images/shootout-thumbnails/v1/4b1ea1e0a0989e5cb4c51e19.jpg",
     "playerName": "Martin Necas",
     "playerTeam": "COL",
     "opponent": "@ MIN",
@@ -15969,6 +16380,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/9390ae86-88a7-4526-9bd2-77c120f1cd9a.mp4",
+    "poster": "/images/shootout-thumbnails/v1/816c6f2a21e167aca7422207.jpg",
     "playerName": "Matt Boldy",
     "playerTeam": "MIN",
     "opponent": "vs COL",
@@ -15977,6 +16389,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/90964723-b6a9-4a77-b61f-d6cd1ad67275.mp4",
+    "poster": "/images/shootout-thumbnails/v1/77db2cf14042c2cbe796ed0a.jpg",
     "playerName": "Trevor Zegras",
     "playerTeam": "PHI",
     "opponent": "@ NYI",
@@ -15985,6 +16398,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/188beff5-5f5f-4c3f-b266-ce53f81cf5f0.mp4",
+    "poster": "/images/shootout-thumbnails/v1/d28bf4cfcc9ceb7384a3582a.jpg",
     "playerName": "Simon Holmstrom",
     "playerTeam": "NYI",
     "opponent": "vs PHI",
@@ -15993,6 +16407,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/b845372e-bdca-476f-911a-72b5f1b8836a.mp4",
+    "poster": "/images/shootout-thumbnails/v1/df8cfd6758eb68a97d10c3ee.jpg",
     "playerName": "Travis Konecny",
     "playerTeam": "PHI",
     "opponent": "@ NYI",
@@ -16001,6 +16416,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/e985950f-ee2d-49d8-bdc8-5c3e1cea1773.mp4",
+    "poster": "/images/shootout-thumbnails/v1/d66cd14f504d683c2b7dcf37.jpg",
     "playerName": "Troy Terry",
     "playerTeam": "ANA",
     "opponent": "vs LAK",
@@ -16009,6 +16425,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/846a2e5d-a76c-4584-9826-587a32df3049.mp4",
+    "poster": "/images/shootout-thumbnails/v1/9d46b9ac5d9d0994fe8cdc1c.jpg",
     "playerName": "Mason McTavish",
     "playerTeam": "STL",
     "opponent": "vs LAK",
@@ -16017,6 +16434,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/bae447d0-1802-4e9a-b975-e4ee089051da.mp4",
+    "poster": "/images/shootout-thumbnails/v1/3434983fb5a5e595d749a3ba.jpg",
     "playerName": "Casey Mittelstadt",
     "playerTeam": "BOS",
     "opponent": "vs DET",
@@ -16025,6 +16443,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/5c3a0f3a-1ffb-4c98-9a83-f923876ed75f.mp4",
+    "poster": "/images/shootout-thumbnails/v1/7c5c49f9a5c2e82174a706e5.jpg",
     "playerName": "Tage Thompson",
     "playerTeam": "BUF",
     "opponent": "@ MIN",
@@ -16033,6 +16452,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/9a673e2d-d681-47af-9a9b-405a8edc63b7.mp4",
+    "poster": "/images/shootout-thumbnails/v1/91280d7a73be5a2c9589528a.jpg",
     "playerName": "Matt Boldy",
     "playerTeam": "MIN",
     "opponent": "vs BUF",
@@ -16041,6 +16461,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/a98b91f3-ccec-4e5e-aeb5-fbe3a03662c9.mp4",
+    "poster": "/images/shootout-thumbnails/v1/287a9d61dcd20dc0dfd6baee.jpg",
     "playerName": "Jack Quinn",
     "playerTeam": "BUF",
     "opponent": "@ MIN",
@@ -16049,6 +16470,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/b691fb40-9458-4507-9ca3-9dd7fc5f216c.mp4",
+    "poster": "/images/shootout-thumbnails/v1/887d518480ed6a6eb7d736c9.jpg",
     "playerName": "Kirill Kaprizov",
     "playerTeam": "MIN",
     "opponent": "vs BUF",
@@ -16057,6 +16479,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/a6e28fb8-17d2-42c5-a4f3-49b8e13d0d2b.mp4",
+    "poster": "/images/shootout-thumbnails/v1/4931e5cdcce6b416c7ad733c.jpg",
     "playerName": "Noah Ostlund",
     "playerTeam": "BUF",
     "opponent": "@ MIN",
@@ -16065,6 +16488,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/2cb2d8fe-55ad-4b87-902e-63dad2de5a60.mp4",
+    "poster": "/images/shootout-thumbnails/v1/f42162cf5a4fc340ee73d6d3.jpg",
     "playerName": "Pavel Dorofeyev",
     "playerTeam": "NYR",
     "opponent": "vs CHI",
@@ -16073,6 +16497,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/d4f4a8df-9229-42f9-8833-20092dd4a03f.mp4",
+    "poster": "/images/shootout-thumbnails/v1/56c69e4d6078c9dd9036b562.jpg",
     "playerName": "Connor Bedard",
     "playerTeam": "CHI",
     "opponent": "@ VGK",
@@ -16081,6 +16506,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/7dfb5a5c-d80c-4de1-8b0d-f769d3d2d3c8.mp4",
+    "poster": "/images/shootout-thumbnails/v1/661169b725b426b7279e5171.jpg",
     "playerName": "Shea Theodore",
     "playerTeam": "VGK",
     "opponent": "vs CHI",
@@ -16089,6 +16515,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/96da239d-5619-4a20-914c-0909405d7c09.mp4",
+    "poster": "/images/shootout-thumbnails/v1/879c897aea38bc1ecdfe9e6e.jpg",
     "playerName": "Cole Caufield",
     "playerTeam": "MTL",
     "opponent": "vs WPG",
@@ -16097,6 +16524,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/091a0f74-5aa1-4ec2-a4bc-c001a608d2e8.mp4",
+    "poster": "/images/shootout-thumbnails/v1/b78c79d2eeca6ddaf6a8f3c8.jpg",
     "playerName": "Kent Johnson",
     "playerTeam": "CBJ",
     "opponent": "vs DET",
@@ -16105,6 +16533,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/4b30f361-4fd5-4479-942f-f903cdea5826.mp4",
+    "poster": "/images/shootout-thumbnails/v1/32e31100f3cc3a37a7b2fb86.jpg",
     "playerName": "Kirill Marchenko",
     "playerTeam": "TOR",
     "opponent": "vs DET",
@@ -16113,6 +16542,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/4b0048cc-2b13-4c61-9c27-27981d7ddf4a.mp4",
+    "poster": "/images/shootout-thumbnails/v1/8eeec981f38d5772279e0221.jpg",
     "playerName": "Troy Terry",
     "playerTeam": "ANA",
     "opponent": "vs WSH",
@@ -16121,6 +16551,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/8e61429d-ad3e-459e-ab58-64548316cfda.mp4",
+    "poster": "/images/shootout-thumbnails/v1/5b549543b0307d53cd95963d.jpg",
     "playerName": "Anthony Beauvillier",
     "playerTeam": "WSH",
     "opponent": "@ ANA",
@@ -16129,6 +16560,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/dcff55dc-3a73-428b-967d-c325c20bd65a.mp4",
+    "poster": "/images/shootout-thumbnails/v1/9f37df61010c546d4f46a1ec.jpg",
     "playerName": "Mason McTavish",
     "playerTeam": "STL",
     "opponent": "vs WSH",
@@ -16137,6 +16569,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/66a49457-c610-4f0f-a8d4-7e685eae47a2.mp4",
+    "poster": "/images/shootout-thumbnails/v1/85e7ccdc7aec4aff0ccaf16e.jpg",
     "playerName": "Cole Caufield",
     "playerTeam": "MTL",
     "opponent": "@ TOR",
@@ -16145,6 +16578,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/222217e9-8ad4-4ba2-a7cf-d609b9ef2adf.mp4",
+    "poster": "/images/shootout-thumbnails/v1/383a5be51cdeb0aac20dbb44.jpg",
     "playerName": "Auston Matthews",
     "playerTeam": "TOR",
     "opponent": "vs MTL",
@@ -16153,6 +16587,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/a0ae8746-f6d0-48a4-9dcd-aa4dd9ccb171.mp4",
+    "poster": "/images/shootout-thumbnails/v1/60d91cfb13f76f96df0c1280.jpg",
     "playerName": "Alexandre Texier",
     "playerTeam": "MTL",
     "opponent": "@ TOR",
@@ -16161,6 +16596,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/cdd2c7e0-7547-4aed-bf8b-82292e915d8d.mp4",
+    "poster": "/images/shootout-thumbnails/v1/ec24b1bb4472bc053e56ed70.jpg",
     "playerName": "Mikko Rantanen",
     "playerTeam": "DAL",
     "opponent": "vs PIT",
@@ -16169,6 +16605,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/214a7aa7-2450-4c9b-907d-574ccb6d527a.mp4",
+    "poster": "/images/shootout-thumbnails/v1/cfa93b5b3a595e12f0e3523d.jpg",
     "playerName": "Emil Heineman",
     "playerTeam": "NYI",
     "opponent": "vs VGK",
@@ -16177,6 +16614,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/3609d4c0-9590-4d99-9cee-bebe33ca3616.mp4",
+    "poster": "/images/shootout-thumbnails/v1/15057ff90d99e618ed277707.jpg",
     "playerName": "Leo Carlsson",
     "playerTeam": "ANA",
     "opponent": "@ PIT",
@@ -16185,6 +16623,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/d2497041-d904-4cce-a474-c64e74a6c1f8.mp4",
+    "poster": "/images/shootout-thumbnails/v1/6b390d74e2c6d0d9d0c946dd.jpg",
     "playerName": "Ryan O'Reilly",
     "playerTeam": "NSH",
     "opponent": "vs COL",
@@ -16193,6 +16632,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/b40c6d4c-dd9f-4795-a1d9-e5c8a627d059.mp4",
+    "poster": "/images/shootout-thumbnails/v1/f6135f7cafee8fcfa2943362.jpg",
     "playerName": "Seth Jarvis",
     "playerTeam": "CAR",
     "opponent": "@ WSH",
@@ -16201,6 +16641,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/978927a8-f168-4341-b4e3-0309cece784f.mp4",
+    "poster": "/images/shootout-thumbnails/v1/7a74afe113009e5293a56589.jpg",
     "playerName": "Mathew Barzal",
     "playerTeam": "NYI",
     "opponent": "vs TBL",
@@ -16209,6 +16650,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/13faa9a9-7b9c-46b9-9fdc-59af357c4ae8.mp4",
+    "poster": "/images/shootout-thumbnails/v1/4dbb1e7e7db48e529b2542e0.jpg",
     "playerName": "Brayden Point",
     "playerTeam": "TBL",
     "opponent": "@ NYI",
@@ -16217,6 +16659,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/fadfad64-2c50-46fe-8396-4a8e2411022a.mp4",
+    "poster": "/images/shootout-thumbnails/v1/3eba2744ba15dd1894510594.jpg",
     "playerName": "Emil Heineman",
     "playerTeam": "NYI",
     "opponent": "vs TBL",
@@ -16225,6 +16668,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/b4782550-463f-4517-8691-77349fd5012f.mp4",
+    "poster": "/images/shootout-thumbnails/v1/9ff46e92782f7012786f2528.jpg",
     "playerName": "Jackson Blake",
     "playerTeam": "CAR",
     "opponent": "@ PHI",
@@ -16233,6 +16677,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/65a9709a-eb17-46ab-9105-1e0cdede2402.mp4",
+    "poster": "/images/shootout-thumbnails/v1/1f1834b5d5aea6f146726cc0.jpg",
     "playerName": "Andrei Svechnikov",
     "playerTeam": "CAR",
     "opponent": "vs PHI",
@@ -16241,6 +16686,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/48aa5d1c-1bc2-45c2-8e93-dc560be0ec6a.mp4",
+    "poster": "/images/shootout-thumbnails/v1/58fd063e847a206faddea37c.jpg",
     "playerName": "Jesper Bratt",
     "playerTeam": "NJD",
     "opponent": "@ VGK",
@@ -16249,6 +16695,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/dfe3e41c-44ae-4edb-834d-d2c3ac9c3a5d.mp4",
+    "poster": "/images/shootout-thumbnails/v1/7a98a69bd8dfe0a9dab48055.jpg",
     "playerName": "Sam Reinhart",
     "playerTeam": "FLA",
     "opponent": "vs CAR",
@@ -16257,6 +16704,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/e662f3de-b4a8-4943-a989-bbd26eb447b1.mp4",
+    "poster": "/images/shootout-thumbnails/v1/c9572d0385792b89cb455a0e.jpg",
     "playerName": "Jackson Blake",
     "playerTeam": "CAR",
     "opponent": "@ FLA",
@@ -16265,6 +16713,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/afe10781-bfda-4866-9832-f646a95ee88d.mp4",
+    "poster": "/images/shootout-thumbnails/v1/8d6b49e3f20f20477a43de8e.jpg",
     "playerName": "Evan Rodrigues",
     "playerTeam": "NJD",
     "opponent": "vs CAR",
@@ -16273,6 +16722,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/8edfdf62-11d6-43b2-9146-4dc733224b8a.mp4",
+    "poster": "/images/shootout-thumbnails/v1/932ce0ce08c3c4940d155499.jpg",
     "playerName": "Artemi Panarin",
     "playerTeam": "LAK",
     "opponent": "vs PHI",
@@ -16281,6 +16731,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/fa7ddb00-cc18-4dc5-a691-886c1d877012.mp4",
+    "poster": "/images/shootout-thumbnails/v1/515ba070e6f2b148963c5d34.jpg",
     "playerName": "Vincent Trocheck",
     "playerTeam": "UTA",
     "opponent": "vs PHI",
@@ -16289,6 +16740,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/ca237851-9510-4ef7-98f6-4be7c0fef793.mp4",
+    "poster": "/images/shootout-thumbnails/v1/f42312e798de7ec8b3dfee18.jpg",
     "playerName": "Mathew Barzal",
     "playerTeam": "NYI",
     "opponent": "@ BUF",
@@ -16297,6 +16749,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/167b8482-13e7-4892-b724-9bf488925bf1.mp4",
+    "poster": "/images/shootout-thumbnails/v1/455e4c74c3a80862386615fb.jpg",
     "playerName": "Jack Quinn",
     "playerTeam": "BUF",
     "opponent": "vs NYI",
@@ -16305,6 +16758,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/6493cc5c-4ef8-4d97-85cb-4482e75177e0.mp4",
+    "poster": "/images/shootout-thumbnails/v1/6aa2706b15dad1202c32f1db.jpg",
     "playerName": "Josh Norris",
     "playerTeam": "BUF",
     "opponent": "vs NYI",
@@ -16313,6 +16767,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/6a816c2d-a0cf-47d6-bc09-f700b7fdc0a6.mp4",
+    "poster": "/images/shootout-thumbnails/v1/10300be6c5f15d07d3d3d12d.jpg",
     "playerName": "Liam Ohgren",
     "playerTeam": "VAN",
     "opponent": "@ BOS",
@@ -16321,6 +16776,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/13393628-b5f2-4f2d-8c89-c3f8fe22d90f.mp4",
+    "poster": "/images/shootout-thumbnails/v1/a95ecd0c0ed023f0b6178f25.jpg",
     "playerName": "Kevin Hayes",
     "playerTeam": "PIT",
     "opponent": "vs MTL",
@@ -16329,6 +16785,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/d36d6059-3061-4195-80da-60a469bd1963.mp4",
+    "poster": "/images/shootout-thumbnails/v1/eadabcc78d082985266fbc08.jpg",
     "playerName": "Cole Caufield",
     "playerTeam": "MTL",
     "opponent": "@ PIT",
@@ -16337,6 +16794,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/d852e09f-8aa2-4a51-9768-37e70cd7413e.mp4",
+    "poster": "/images/shootout-thumbnails/v1/e2f5b6088ddf33e55166d31f.jpg",
     "playerName": "Rickard Rakell",
     "playerTeam": "PIT",
     "opponent": "vs MTL",
@@ -16345,6 +16803,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/b7b1c395-a196-42bb-a5a0-de64ae07a6f3.mp4",
+    "poster": "/images/shootout-thumbnails/v1/123b262b5b1347be80ae5b32.jpg",
     "playerName": "Ryan Donato",
     "playerTeam": "CHI",
     "opponent": "@ DAL",
@@ -16353,6 +16812,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/2184175d-e670-4d6a-a9ed-a6813d5e1b1b.mp4",
+    "poster": "/images/shootout-thumbnails/v1/027f49edce311c571927c002.jpg",
     "playerName": "Matt Duchene",
     "playerTeam": "DAL",
     "opponent": "vs CHI",
@@ -16361,6 +16821,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/291e90ea-436f-4135-8177-f6d8ef80996f.mp4",
+    "poster": "/images/shootout-thumbnails/v1/f88251fd953ac66061fedc90.jpg",
     "playerName": "Nick Lardis",
     "playerTeam": "CHI",
     "opponent": "@ DAL",
@@ -16369,6 +16830,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/e9a7cbfd-8c5b-402b-a236-006f154bbb4b.mp4",
+    "poster": "/images/shootout-thumbnails/v1/50bcc3899c916f4e456bc8f5.jpg",
     "playerName": "Martin Necas",
     "playerTeam": "COL",
     "opponent": "@ VGK",
@@ -16377,6 +16839,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/01ca5c11-f13d-428e-965a-7d2060b7c337.mp4",
+    "poster": "/images/shootout-thumbnails/v1/9b23c450bcd9da44f6607e07.jpg",
     "playerName": "Mitch Marner",
     "playerTeam": "VGK",
     "opponent": "vs COL",
@@ -16385,6 +16848,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/98afb30d-9763-410b-8a56-e64298cedbdb.mp4",
+    "poster": "/images/shootout-thumbnails/v1/fd0354721f920f09f7499a51.jpg",
     "playerName": "Nathan MacKinnon",
     "playerTeam": "COL",
     "opponent": "@ VGK",
@@ -16393,6 +16857,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/ab98fc57-78e8-41d2-8468-570dbefa39b7.mp4",
+    "poster": "/images/shootout-thumbnails/v1/abf2a2cf851f0453ec379be3.jpg",
     "playerName": "Gage Goncalves",
     "playerTeam": "TBL",
     "opponent": "vs MTL",
@@ -16401,6 +16866,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/94b7976a-5a59-469b-9a4a-4f3ba67cd08a.mp4",
+    "poster": "/images/shootout-thumbnails/v1/547bcba710b3e9d79ca2cd44.jpg",
     "playerName": "Brayden Point",
     "playerTeam": "TBL",
     "opponent": "vs MTL",
@@ -16409,6 +16875,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/02ee81ad-b182-47a4-8a1b-a95cfe53fce4.mp4",
+    "poster": "/images/shootout-thumbnails/v1/be7b77c33190e981d1ed5034.jpg",
     "playerName": "Liam Ohgren",
     "playerTeam": "VAN",
     "opponent": "@ SEA",
@@ -16417,6 +16884,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/13be5cdc-631f-49f6-8d1d-5669be1e8107.mp4",
+    "poster": "/images/shootout-thumbnails/v1/9544675b27bfcc16597868df.jpg",
     "playerName": "Bo Horvat",
     "playerTeam": "NYI",
     "opponent": "@ CHI",
@@ -16425,6 +16893,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/3c056abc-2737-47cf-be2a-75f35500a3de.mp4",
+    "poster": "/images/shootout-thumbnails/v1/4068594cbb69714955ecb9a3.jpg",
     "playerName": "Macklin Celebrini",
     "playerTeam": "SJS",
     "opponent": "vs MIN",
@@ -16433,6 +16902,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/6ff1448e-7b30-4792-b5fc-a153b3c3ccc0.mp4",
+    "poster": "/images/shootout-thumbnails/v1/ea8123ddc58a7ae5b48807e1.jpg",
     "playerName": "William Eklund",
     "playerTeam": "OTT",
     "opponent": "vs MIN",
@@ -16441,6 +16911,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/ed45f178-f788-4de5-87ef-a54d8724dd5c.mp4",
+    "poster": "/images/shootout-thumbnails/v1/3338f5d05a27dbce59f32c1b.jpg",
     "playerName": "Matty Beniers",
     "playerTeam": "SEA",
     "opponent": "@ VAN",
@@ -16449,6 +16920,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/e228695f-7151-4dcd-9c03-806dafdd3910.mp4",
+    "poster": "/images/shootout-thumbnails/v1/3245f006d3fdb130b5f37354.jpg",
     "playerName": "Nick Lardis",
     "playerTeam": "CHI",
     "opponent": "@ WSH",
@@ -16457,6 +16929,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/93ccadaa-b8de-4b60-9405-d0fa1476b184.mp4",
+    "poster": "/images/shootout-thumbnails/v1/290a61adaeb6aeaefe814507.jpg",
     "playerName": "Dylan Strome",
     "playerTeam": "WSH",
     "opponent": "vs CHI",
@@ -16465,6 +16938,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/0472d76d-1b2a-4422-bece-6b61ce685274.mp4",
+    "poster": "/images/shootout-thumbnails/v1/8b36948b3023e4acd74e59ff.jpg",
     "playerName": "Sonny Milano",
     "playerTeam": "WSH",
     "opponent": "vs CHI",
@@ -16473,6 +16947,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/d94b7272-ef6e-4af7-8223-23d2b16f9f35.mp4",
+    "poster": "/images/shootout-thumbnails/v1/996de2e5a1eab873ff2a5d97.jpg",
     "playerName": "Andre Burakovsky",
     "playerTeam": "OTT",
     "opponent": "@ WSH",
@@ -16481,6 +16956,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/df60d0ea-d34b-43c5-99ae-365fb3b1502d.mp4",
+    "poster": "/images/shootout-thumbnails/v1/738e00a660066a328396965f.jpg",
     "playerName": "Nick Foligno",
     "playerTeam": "MIN",
     "opponent": "@ WSH",
@@ -16489,6 +16965,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/5f00ade2-5183-4a59-a6db-baae8c73b9a2.mp4",
+    "poster": "/images/shootout-thumbnails/v1/e34c8983f7f85306b1900a3c.jpg",
     "playerName": "Adrian Kempe",
     "playerTeam": "LAK",
     "opponent": "vs MIN",
@@ -16497,6 +16974,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/5fb377ef-7603-40f0-9020-89fcf1b8f455.mp4",
+    "poster": "/images/shootout-thumbnails/v1/b66d1149ca659db2cdc243d6.jpg",
     "playerName": "Matt Boldy",
     "playerTeam": "MIN",
     "opponent": "@ LAK",
@@ -16505,6 +16983,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/d9764474-27e4-41d8-8606-08d5bd5813b8.mp4",
+    "poster": "/images/shootout-thumbnails/v1/bcb6e9a4a68204a30fc510d6.jpg",
     "playerName": "Brandt Clarke",
     "playerTeam": "LAK",
     "opponent": "vs MIN",
@@ -16513,6 +16992,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/6fd58fe6-2bbf-44ed-960b-0219b2ca1280.mp4",
+    "poster": "/images/shootout-thumbnails/v1/7025a3a0d09a812f1a94ff2a.jpg",
     "playerName": "Filip Forsberg",
     "playerTeam": "NSH",
     "opponent": "vs NYI",
@@ -16521,6 +17001,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/39fef5f1-6379-462c-b395-292db00784fd.mp4",
+    "poster": "/images/shootout-thumbnails/v1/c8e93aefa339a37318ea63b0.jpg",
     "playerName": "Adrian Kempe",
     "playerTeam": "LAK",
     "opponent": "@ EDM",
@@ -16529,6 +17010,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/cb44ff96-7d35-4320-a069-d9b43d567f20.mp4",
+    "poster": "/images/shootout-thumbnails/v1/d1814b94d062b1f978af3efc.jpg",
     "playerName": "Gage Goncalves",
     "playerTeam": "TBL",
     "opponent": "@ PIT",
@@ -16537,6 +17019,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/5aee9439-7c3e-4608-bd45-84b08c293598.mp4",
+    "poster": "/images/shootout-thumbnails/v1/79026a21e1d708230f4e575e.jpg",
     "playerName": "Egor Chinakhov",
     "playerTeam": "PIT",
     "opponent": "vs TBL",
@@ -16545,6 +17028,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/030f0dc4-84b8-40f7-ac2d-0621902df44e.mp4",
+    "poster": "/images/shootout-thumbnails/v1/95bb49ab000ec2ea42c50e10.jpg",
     "playerName": "Nikita Kucherov",
     "playerTeam": "TBL",
     "opponent": "@ PIT",
@@ -16553,6 +17037,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/046dd13c-f7a9-472c-82a8-f4f0b4eb0cf8.mp4",
+    "poster": "/images/shootout-thumbnails/v1/9c781e6b05f220ea814e3730.jpg",
     "playerName": "Jordan Kyrou",
     "playerTeam": "WSH",
     "opponent": "vs TBL",
@@ -16561,6 +17046,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/4e01206a-5e08-4230-a7a9-1d4a58ae7bfa.mp4",
+    "poster": "/images/shootout-thumbnails/v1/7390406cfb11cd199f8d5283.jpg",
     "playerName": "Brandt Clarke",
     "playerTeam": "LAK",
     "opponent": "vs ANA",
@@ -16569,6 +17055,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/27e87c78-d433-4317-819f-0d323d9555c6.mp4",
+    "poster": "/images/shootout-thumbnails/v1/ef2502061e645c2d68f6b960.jpg",
     "playerName": "Beckett Sennecke",
     "playerTeam": "ANA",
     "opponent": "@ LAK",
@@ -16577,6 +17064,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/648ff99d-dae1-4dd4-ba0b-5557c065e8d2.mp4",
+    "poster": "/images/shootout-thumbnails/v1/eaad3aab044042e0671710b0.jpg",
     "playerName": "Mason McTavish",
     "playerTeam": "STL",
     "opponent": "@ LAK",
@@ -16585,6 +17073,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/1e89066d-b78d-47f2-bc4c-37afe34762f0.mp4",
+    "poster": "/images/shootout-thumbnails/v1/c53575bb1ab79dd8797c1fd6.jpg",
     "playerName": "Kent Johnson",
     "playerTeam": "CBJ",
     "opponent": "@ PIT",
@@ -16593,6 +17082,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/230bdcc8-8d74-460d-87b0-ca227238129e.mp4",
+    "poster": "/images/shootout-thumbnails/v1/fed5cd3f2d2fc9ba1190a8e2.jpg",
     "playerName": "Egor Chinakhov",
     "playerTeam": "PIT",
     "opponent": "vs CBJ",
@@ -16601,6 +17091,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/2e118a7b-bbc8-43fb-91f3-ccf21ce8ab03.mp4",
+    "poster": "/images/shootout-thumbnails/v1/698d9b6a4e1e486f1b55a56d.jpg",
     "playerName": "Charlie Coyle",
     "playerTeam": "CBJ",
     "opponent": "@ PIT",
@@ -16609,6 +17100,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/7bf7bdeb-2c55-41f7-adcc-1ef496e3d647.mp4",
+    "poster": "/images/shootout-thumbnails/v1/f6c6656581b5bed36240261b.jpg",
     "playerName": "Mikael Granlund",
     "playerTeam": "ANA",
     "opponent": "@ COL",
@@ -16617,6 +17109,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/16dd0116-363c-47a4-b3e3-35bf5b8fd3de.mp4",
+    "poster": "/images/shootout-thumbnails/v1/2586571a03374b4f394e13d6.jpg",
     "playerName": "Cutter Gauthier",
     "playerTeam": "ANA",
     "opponent": "@ COL",
@@ -16625,6 +17118,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/528c6c0b-6253-4c31-921c-744e24a7f16c.mp4",
+    "poster": "/images/shootout-thumbnails/v1/7dcd55d458dee161df83a69e.jpg",
     "playerName": "Andrei Svechnikov",
     "playerTeam": "CAR",
     "opponent": "vs CHI",
@@ -16633,6 +17127,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/44e38cd8-dc0e-4cbf-bd99-b213683b1c58.mp4",
+    "poster": "/images/shootout-thumbnails/v1/18bf070ef7bf8f71cf954de7.jpg",
     "playerName": "Connor Bedard",
     "playerTeam": "CHI",
     "opponent": "@ CAR",
@@ -16641,6 +17136,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/e1d21a6a-b88f-42d6-8afb-da2efea14d8b.mp4",
+    "poster": "/images/shootout-thumbnails/v1/7650a6330150e61499af0a60.jpg",
     "playerName": "Oliver Moore",
     "playerTeam": "CHI",
     "opponent": "@ CAR",
@@ -16649,6 +17145,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/c13ce70a-5497-49d0-8eb4-11e213b5c957.mp4",
+    "poster": "/images/shootout-thumbnails/v1/789e6a087777367b181e95e7.jpg",
     "playerName": "Anton Lundell",
     "playerTeam": "FLA",
     "opponent": "@ WPG",
@@ -16657,6 +17154,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/e3a8ef78-2671-4d95-8b30-f9605a06768a.mp4",
+    "poster": "/images/shootout-thumbnails/v1/b8b33452cfab231a8408ef85.jpg",
     "playerName": "Sam Reinhart",
     "playerTeam": "FLA",
     "opponent": "@ WPG",
@@ -16665,6 +17163,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/3c775d63-aaa2-4b06-ba66-c27232faaa7b.mp4",
+    "poster": "/images/shootout-thumbnails/v1/d7560970272fce4e28d47766.jpg",
     "playerName": "Nikita Kucherov",
     "playerTeam": "TBL",
     "opponent": "@ CHI",
@@ -16673,6 +17172,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/0f7fd8ed-3a5a-45eb-9244-2e05a77e523f.mp4",
+    "poster": "/images/shootout-thumbnails/v1/0c9f464658d26f44b23df140.jpg",
     "playerName": "Frank Nazar",
     "playerTeam": "CHI",
     "opponent": "vs TBL",
@@ -16681,6 +17181,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/a1ac6744-6cba-4f5f-ac73-bc02eb90ab7f.mp4",
+    "poster": "/images/shootout-thumbnails/v1/16e0568d582fdd1806455238.jpg",
     "playerName": "Louis Crevier",
     "playerTeam": "BUF",
     "opponent": "vs TBL",
@@ -16689,6 +17190,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/ef7293b2-78ee-4536-8eef-47928c09504c.mp4",
+    "poster": "/images/shootout-thumbnails/v1/9e2a97a436417a3e591af6d3.jpg",
     "playerName": "Gage Goncalves",
     "playerTeam": "TBL",
     "opponent": "@ CHI",
@@ -16697,6 +17199,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/7c2c2554-ad2e-4c23-b6fa-bca4c5d77b67.mp4",
+    "poster": "/images/shootout-thumbnails/v1/1cdafed0a6fcdb829d77581b.jpg",
     "playerName": "Dominic James",
     "playerTeam": "TBL",
     "opponent": "@ CHI",
@@ -16705,6 +17208,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/bd444681-0c98-4136-add3-a0102b10a8a3.mp4",
+    "poster": "/images/shootout-thumbnails/v1/e63ef9667f94b96dab17457b.jpg",
     "playerName": "Adrian Kempe",
     "playerTeam": "LAK",
     "opponent": "@ STL",
@@ -16713,6 +17217,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/21de24a0-b86b-432f-9aa1-f0c60e137f69.mp4",
+    "poster": "/images/shootout-thumbnails/v1/dee41b285bb21e77489d0d1f.jpg",
     "playerName": "Dalibor Dvorsky",
     "playerTeam": "STL",
     "opponent": "vs LAK",
@@ -16721,6 +17226,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/55e22854-8998-4898-963b-826126bd2743.mp4",
+    "poster": "/images/shootout-thumbnails/v1/604584f96c290a222fadc95b.jpg",
     "playerName": "Trevor Moore",
     "playerTeam": "LAK",
     "opponent": "@ STL",
@@ -16729,6 +17235,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/b2a3eee2-7673-4051-9029-6ff1a4162b86.mp4",
+    "poster": "/images/shootout-thumbnails/v1/ba2e10ad6ccb6bd2f7059ea2.jpg",
     "playerName": "Kirill Kaprizov",
     "playerTeam": "MIN",
     "opponent": "vs CHI",
@@ -16737,6 +17244,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/4db28e72-6d72-4839-bad6-f4b428faa3ad.mp4",
+    "poster": "/images/shootout-thumbnails/v1/21ef99cb77bf658a0b014c55.jpg",
     "playerName": "Lucas Raymond",
     "playerTeam": "DET",
     "opponent": "vs WSH",
@@ -16745,6 +17253,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/af9c987b-ddc1-45fa-a020-988f2ee827e8.mp4",
+    "poster": "/images/shootout-thumbnails/v1/0790c361da795a8f657f43b8.jpg",
     "playerName": "Dylan Strome",
     "playerTeam": "WSH",
     "opponent": "@ DET",
@@ -16753,6 +17262,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/059eb3e8-8a61-4df7-9b31-2b6983fe87d3.mp4",
+    "poster": "/images/shootout-thumbnails/v1/32c0d66ab544b41909e8e62b.jpg",
     "playerName": "Patrick Kane",
     "playerTeam": "CHI",
     "opponent": "vs WSH",
@@ -16761,6 +17271,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/dca2fd98-afa2-447c-9ff9-782cf3530a58.mp4",
+    "poster": "/images/shootout-thumbnails/v1/e4a524bf84eaeab7c819799d.jpg",
     "playerName": "Ryan Leonard",
     "playerTeam": "WSH",
     "opponent": "@ DET",
@@ -16769,6 +17280,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/075c8171-e049-44c1-aaca-7927e51cb7ca.mp4",
+    "poster": "/images/shootout-thumbnails/v1/177e1116b131dbfd1873bd3c.jpg",
     "playerName": "Nic Dowd",
     "playerTeam": "VGK",
     "opponent": "@ DET",
@@ -16777,6 +17289,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/ae1d7a85-7746-4b93-84be-e7679da16ea2.mp4",
+    "poster": "/images/shootout-thumbnails/v1/3888adc9681ac9aa743a738d.jpg",
     "playerName": "Jason Robertson",
     "playerTeam": "DAL",
     "opponent": "@ VGK",
@@ -16785,6 +17298,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/6d1b5dcc-0d03-4e7d-a9c2-6360bc52f42d.mp4",
+    "poster": "/images/shootout-thumbnails/v1/d8584a2b738eeccfb61c7d12.jpg",
     "playerName": "Mikko Rantanen",
     "playerTeam": "DAL",
     "opponent": "@ VGK",
@@ -16793,6 +17307,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/5b346e2c-7428-4028-bf0e-380c89520772.mp4",
+    "poster": "/images/shootout-thumbnails/v1/0bc666c56d9bc2a690cbcab0.jpg",
     "playerName": "William Nylander",
     "playerTeam": "TOR",
     "opponent": "@ VAN",
@@ -16801,6 +17316,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/569b4ee8-6b1a-4047-9f4e-20de4795d73b.mp4",
+    "poster": "/images/shootout-thumbnails/v1/27ef4794c8ead0320e4f7713.jpg",
     "playerName": "Auston Matthews",
     "playerTeam": "TOR",
     "opponent": "@ VAN",
@@ -16809,6 +17325,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/f36d9689-c9ed-45b3-b1bc-7ca3daa140a3.mp4",
+    "poster": "/images/shootout-thumbnails/v1/09262ec8f1cbf20910a1399b.jpg",
     "playerName": "Jake Guentzel",
     "playerTeam": "TBL",
     "opponent": "vs BOS",
@@ -16817,6 +17334,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/46af75d9-7639-4ee0-a5f7-677d17b14eb5.mp4",
+    "poster": "/images/shootout-thumbnails/v1/72780755ce703967783fb30e.jpg",
     "playerName": "Anton Lundell",
     "playerTeam": "FLA",
     "opponent": "vs BOS",
@@ -16825,6 +17343,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/c6b582ff-ea9c-407a-934d-bc43a833d846.mp4",
+    "poster": "/images/shootout-thumbnails/v1/b00fe8b863622ef69237f1cc.jpg",
     "playerName": "Viktor Arvidsson",
     "playerTeam": "DET",
     "opponent": "@ FLA",
@@ -16833,6 +17352,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/f2d6e25f-7a64-4440-9c6c-afa75f0c1cf3.mp4",
+    "poster": "/images/shootout-thumbnails/v1/683c7384a31031c9c14a994e.jpg",
     "playerName": "Brad Marchand",
     "playerTeam": "FLA",
     "opponent": "vs BOS",
@@ -16841,6 +17361,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/d32b49c4-9b1f-4e36-aabb-05966e2a1a29.mp4",
+    "poster": "/images/shootout-thumbnails/v1/8df1db22fb56c96f607d3d67.jpg",
     "playerName": "Vincent Trocheck",
     "playerTeam": "UTA",
     "opponent": "vs PIT",
@@ -16849,6 +17370,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/cfa5e1b3-3963-416b-a205-ef76d66f078e.mp4",
+    "poster": "/images/shootout-thumbnails/v1/954ce80e6ff90d697db05f8a.jpg",
     "playerName": "Leo Carlsson",
     "playerTeam": "ANA",
     "opponent": "vs CGY",
@@ -16857,6 +17379,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/9f0b1a0c-8c2e-4afb-8279-e616e75f9e5e.mp4",
+    "poster": "/images/shootout-thumbnails/v1/0f3839c99b611aad14a6b821.jpg",
     "playerName": "Nazem Kadri",
     "playerTeam": "COL",
     "opponent": "@ ANA",
@@ -16865,6 +17388,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/95944166-aaa4-450b-8a4d-00dda35dc613.mp4",
+    "poster": "/images/shootout-thumbnails/v1/72040d268fa63e87890edeb5.jpg",
     "playerName": "Mason McTavish",
     "playerTeam": "STL",
     "opponent": "vs CGY",
@@ -16873,6 +17397,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/2677b887-f131-4362-abaa-a36adf76dfec.mp4",
+    "poster": "/images/shootout-thumbnails/v1/afd56f7496e4384a2a01eeeb.jpg",
     "playerName": "William Nylander",
     "playerTeam": "TOR",
     "opponent": "vs PHI",
@@ -16881,6 +17406,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/9c854e01-690e-494d-9c34-f7cd057d4517.mp4",
+    "poster": "/images/shootout-thumbnails/v1/0c7ea9318a1a9e5da9d6ff11.jpg",
     "playerName": "Matvei Michkov",
     "playerTeam": "PHI",
     "opponent": "@ TOR",
@@ -16889,6 +17415,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/7908814c-e566-400e-b5d4-61a81c13a4eb.mp4",
+    "poster": "/images/shootout-thumbnails/v1/f33c31310cbd26d6d37490e1.jpg",
     "playerName": "Trevor Zegras",
     "playerTeam": "PHI",
     "opponent": "@ TOR",
@@ -16897,6 +17424,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/4da3af5f-9fc1-4373-a159-a9faf23bda6f.mp4",
+    "poster": "/images/shootout-thumbnails/v1/9b0857b595b7c85b3b377c27.jpg",
     "playerName": "Paul Cotter",
     "playerTeam": "VAN",
     "opponent": "vs TOR",
@@ -16905,6 +17433,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/06720aed-71a3-495d-be3d-6c5ff5785ad6.mp4",
+    "poster": "/images/shootout-thumbnails/v1/2d889a14dac79cc07bb86572.jpg",
     "playerName": "Jesper Bratt",
     "playerTeam": "NJD",
     "opponent": "vs TOR",
@@ -16913,6 +17442,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/44985dad-e5d0-45a5-9020-95c0677c1b41.mp4",
+    "poster": "/images/shootout-thumbnails/v1/e950b458303716b2d6c0eb6f.jpg",
     "playerName": "Valeri Nichushkin",
     "playerTeam": "CBJ",
     "opponent": "@ DAL",
@@ -16921,6 +17451,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/d2522dff-fac1-4d8f-b2a6-94ab2f5acfa6.mp4",
+    "poster": "/images/shootout-thumbnails/v1/35840288aea35f9314d7533c.jpg",
     "playerName": "Martin Necas",
     "playerTeam": "COL",
     "opponent": "@ DAL",
@@ -16929,6 +17460,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/e3707aeb-2c2b-4e28-b0e7-d6773826377a.mp4",
+    "poster": "/images/shootout-thumbnails/v1/7257e51981e05c92272aad08.jpg",
     "playerName": "Cutter Gauthier",
     "playerTeam": "ANA",
     "opponent": "vs MTL",
@@ -16937,6 +17469,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/0ae92794-761c-4608-b028-2e0c64b96cce.mp4",
+    "poster": "/images/shootout-thumbnails/v1/0927fcf0e63b313b3b009830.jpg",
     "playerName": "Ivan Demidov",
     "playerTeam": "MTL",
     "opponent": "@ ANA",
@@ -16945,6 +17478,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/52872882-dd57-49bb-bb31-1ffaebbdc67a.mp4",
+    "poster": "/images/shootout-thumbnails/v1/c265aba386370cd7d126cd8a.jpg",
     "playerName": "Alex Killorn",
     "playerTeam": "ANA",
     "opponent": "vs MTL",
@@ -16953,6 +17487,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/229d9b38-d0cd-4f22-b17d-12e4026da285.mp4",
+    "poster": "/images/shootout-thumbnails/v1/51d630a7d1b4560a26c709fc.jpg",
     "playerName": "Trevor Zegras",
     "playerTeam": "PHI",
     "opponent": "@ PIT",
@@ -16961,6 +17496,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/1cb5e12c-f0f4-471b-b701-28f65640e83a.mp4",
+    "poster": "/images/shootout-thumbnails/v1/eed480bb90412546049b2490.jpg",
     "playerName": "Valeri Nichushkin",
     "playerTeam": "CBJ",
     "opponent": "vs MIN",
@@ -16969,6 +17505,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/137ab7bc-f47f-48ec-97e6-ecdb784750f1.mp4",
+    "poster": "/images/shootout-thumbnails/v1/f8cb2181d7f2327c1966c8af.jpg",
     "playerName": "Matt Boldy",
     "playerTeam": "MIN",
     "opponent": "@ COL",
@@ -16977,6 +17514,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/b83d7535-c0e9-4e84-b75c-dfd0a665173a.mp4",
+    "poster": "/images/shootout-thumbnails/v1/fc681a5fa2a3a6d3dc8ee428.jpg",
     "playerName": "Nathan MacKinnon",
     "playerTeam": "COL",
     "opponent": "vs MIN",
@@ -16985,6 +17523,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/d5911f3b-db6a-4cb6-9a6c-f3ab96fe3a3c.mp4",
+    "poster": "/images/shootout-thumbnails/v1/80375aaba714500a0fac144b.jpg",
     "playerName": "Ben Kindel",
     "playerTeam": "PIT",
     "opponent": "@ CAR",
@@ -16993,6 +17532,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/31ecef37-c80a-4c9f-a154-ab261c783cc2.mp4",
+    "poster": "/images/shootout-thumbnails/v1/27e95dc8543115504fe45205.jpg",
     "playerName": "Andrei Svechnikov",
     "playerTeam": "CAR",
     "opponent": "vs PIT",
@@ -17001,6 +17541,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/9f32e43a-8454-4d37-af29-ba193213c086.mp4",
+    "poster": "/images/shootout-thumbnails/v1/dde61ddbcf02cf2e37ae6e6a.jpg",
     "playerName": "Jackson Blake",
     "playerTeam": "CAR",
     "opponent": "vs PIT",
@@ -17009,6 +17550,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/81823cf3-98a1-4829-80c8-6ef0d3109566.mp4",
+    "poster": "/images/shootout-thumbnails/v1/2bd5fd13359545f8a1b3b642.jpg",
     "playerName": "Travis Konecny",
     "playerTeam": "PHI",
     "opponent": "@ MIN",
@@ -17017,6 +17559,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/6de0f06c-f688-4a30-84e8-4c2f081a96c2.mp4",
+    "poster": "/images/shootout-thumbnails/v1/97059e83f59e225af49625d8.jpg",
     "playerName": "Jake DeBrusk",
     "playerTeam": "VAN",
     "opponent": "vs NSH",
@@ -17025,6 +17568,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/4401405d-d94d-4e2f-bf1d-4b9d1895be88.mp4",
+    "poster": "/images/shootout-thumbnails/v1/74e391f7c94284b6188e1ea8.jpg",
     "playerName": "Fraser Minten",
     "playerTeam": "BOS",
     "opponent": "@ WSH",
@@ -17033,6 +17577,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/adbe52a9-1771-4843-baa4-d6a638f5edca.mp4",
+    "poster": "/images/shootout-thumbnails/v1/99bae799ed1a5cbf50a06ca5.jpg",
     "playerName": "Jack Quinn",
     "playerTeam": "BUF",
     "opponent": "vs TOR",
@@ -17041,6 +17586,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/d9e3b63f-9516-44d3-9bed-6e0cc8df3b7f.mp4",
+    "poster": "/images/shootout-thumbnails/v1/2e4151b5133e46fc351e3fbd.jpg",
     "playerName": "Alex Tuch",
     "playerTeam": "WSH",
     "opponent": "vs TOR",
@@ -17049,6 +17595,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/5dd50ce7-435e-421c-940e-f839acf36f72.mp4",
+    "poster": "/images/shootout-thumbnails/v1/5bd0a42c59a725af4f6a8929.jpg",
     "playerName": "Kirill Marchenko",
     "playerTeam": "TOR",
     "opponent": "@ PHI",
@@ -17057,6 +17604,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/f162d090-bd62-46e8-a042-0c02e12666e4.mp4",
+    "poster": "/images/shootout-thumbnails/v1/4d9607c3836d9d79f93aa160.jpg",
     "playerName": "Ryan O'Reilly",
     "playerTeam": "NSH",
     "opponent": "@ WPG",
@@ -17065,6 +17613,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/d9e1f853-0fdb-4a12-855a-c77e70fc70bc.mp4",
+    "poster": "/images/shootout-thumbnails/v1/25bce07ed4cdb36b2fc742e0.jpg",
     "playerName": "Wyatt Johnston",
     "playerTeam": "DAL",
     "opponent": "@ COL",
@@ -17073,6 +17622,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/cdf24f3a-84ba-437a-9b55-95d04ebbc647.mp4",
+    "poster": "/images/shootout-thumbnails/v1/34ef6710548850c8c07fecf9.jpg",
     "playerName": "Joel Farabee",
     "playerTeam": "CGY",
     "opponent": "vs STL",
@@ -17081,6 +17631,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/aa35e0df-f056-419a-a71d-d5d2875b7d20.mp4",
+    "poster": "/images/shootout-thumbnails/v1/44248bcc95454065c9cc4715.jpg",
     "playerName": "Matvei Gridin",
     "playerTeam": "CGY",
     "opponent": "vs STL",
@@ -17089,6 +17640,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/c3355cf8-4c90-4a51-99d1-b5bb1577219f.mp4",
+    "poster": "/images/shootout-thumbnails/v1/32bc62397bacd9ffb1d12283.jpg",
     "playerName": "Trevor Zegras",
     "playerTeam": "PHI",
     "opponent": "@ LAK",
@@ -17097,6 +17649,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/26894cb0-a2f2-4191-b18f-6a11541cafa8.mp4",
+    "poster": "/images/shootout-thumbnails/v1/272894c74b881d872a9f7b11.jpg",
     "playerName": "Matvei Michkov",
     "playerTeam": "PHI",
     "opponent": "@ LAK",
@@ -17105,6 +17658,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/a2327bd8-4145-4dd4-97e7-a76c6b070fcc.mp4",
+    "poster": "/images/shootout-thumbnails/v1/6fec90773aee3ff8ed8802fd.jpg",
     "playerName": "Sidney Crosby",
     "playerTeam": "PIT",
     "opponent": "vs WPG",
@@ -17113,6 +17667,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/3efa3353-17e2-4d16-80af-725b547ad80e.mp4",
+    "poster": "/images/shootout-thumbnails/v1/1826466ccaeff81ea8dccde1.jpg",
     "playerName": "Rickard Rakell",
     "playerTeam": "PIT",
     "opponent": "vs WPG",
@@ -17121,6 +17676,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/55144ddf-eddb-4d0f-b545-5a5e2624c271.mp4",
+    "poster": "/images/shootout-thumbnails/v1/fc66f7e2039ea8fd9b56d478.jpg",
     "playerName": "Kyle Connor",
     "playerTeam": "WPG",
     "opponent": "@ NYR",
@@ -17129,6 +17685,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/429b7945-ae4d-400b-98ea-f0f81b2dca79.mp4",
+    "poster": "/images/shootout-thumbnails/v1/0568d2b5c962fe1f8ec79b9e.jpg",
     "playerName": "Gabriel Vilardi",
     "playerTeam": "WPG",
     "opponent": "@ NYR",
@@ -17137,6 +17694,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/715b9819-e35c-46ae-8243-7d6633b2ba83.mp4",
+    "poster": "/images/shootout-thumbnails/v1/8f91d44ffb96b24b44a04444.jpg",
     "playerName": "Vinnie Hinostroza",
     "playerTeam": "COL",
     "opponent": "vs SEA",
@@ -17145,6 +17703,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/e8466bbb-6f92-4ea6-a438-d91c5a61d52c.mp4",
+    "poster": "/images/shootout-thumbnails/v1/968a1757519d5d99af5f1381.jpg",
     "playerName": "Morgan Frost",
     "playerTeam": "CGY",
     "opponent": "vs LAK",
@@ -17153,6 +17712,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/dd2706fd-d92d-4e9d-a172-a8c1f3f3d29b.mp4",
+    "poster": "/images/shootout-thumbnails/v1/148ef365f378e7a0ec0a9b14.jpg",
     "playerName": "Artemi Panarin",
     "playerTeam": "LAK",
     "opponent": "@ CGY",
@@ -17161,6 +17721,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/4f34d244-5738-4131-aa52-1c2bff3abe07.mp4",
+    "poster": "/images/shootout-thumbnails/v1/a208f541ddd021bef20bd463.jpg",
     "playerName": "Yegor Sharangovich",
     "playerTeam": "CGY",
     "opponent": "vs LAK",
@@ -17169,6 +17730,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/89b353df-1159-4570-a67a-692983f70032.mp4",
+    "poster": "/images/shootout-thumbnails/v1/4e9b5f5b03d353c73c0bd0db.jpg",
     "playerName": "Drake Batherson",
     "playerTeam": "OTT",
     "opponent": "vs PIT",
@@ -17177,6 +17739,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/791a5510-698f-4fb8-839d-5af9ef61de83.mp4",
+    "poster": "/images/shootout-thumbnails/v1/0c7f4c1ce8a5710be53cde8d.jpg",
     "playerName": "Egor Chinakhov",
     "playerTeam": "PIT",
     "opponent": "@ OTT",
@@ -17185,6 +17748,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/b3f56b0d-48d9-41e0-820e-65e520e58d90.mp4",
+    "poster": "/images/shootout-thumbnails/v1/6fef8b95d96e4d19d3a28037.jpg",
     "playerName": "Ben Kindel",
     "playerTeam": "PIT",
     "opponent": "@ OTT",
@@ -17193,6 +17757,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/b8a053d3-78d1-4fb4-b12f-d8d05ddab378.mp4",
+    "poster": "/images/shootout-thumbnails/v1/1e705456b7d167c486b99264.jpg",
     "playerName": "Tage Thompson",
     "playerTeam": "BUF",
     "opponent": "vs SEA",
@@ -17201,6 +17766,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/d964b3e0-0ba1-4623-8b0f-8a05761c51b1.mp4",
+    "poster": "/images/shootout-thumbnails/v1/37202a8ae24d90a70fb597c1.jpg",
     "playerName": "Jack Quinn",
     "playerTeam": "BUF",
     "opponent": "vs SEA",
@@ -17209,6 +17775,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/3136cccd-7257-4340-bf03-a1aafce17f45.mp4",
+    "poster": "/images/shootout-thumbnails/v1/c803bb0c678473a733f18f7d.jpg",
     "playerName": "Dylan Strome",
     "playerTeam": "WSH",
     "opponent": "@ VGK",
@@ -17217,6 +17784,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/d6264d97-e77d-4b49-a350-276d1efd130f.mp4",
+    "poster": "/images/shootout-thumbnails/v1/abe27055e5ae3fa91b8486af.jpg",
     "playerName": "Fraser Minten",
     "playerTeam": "BOS",
     "opponent": "@ CBJ",
@@ -17225,6 +17793,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/9ca9bfaf-f526-4d51-9c1b-70a1506cf035.mp4",
+    "poster": "/images/shootout-thumbnails/v1/4661693e2cd7ab0fe7124514.jpg",
     "playerName": "Charlie Coyle",
     "playerTeam": "CBJ",
     "opponent": "vs BOS",
@@ -17233,6 +17802,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/6fc6f5d6-36a8-44b1-9806-b99839dc8c77.mp4",
+    "poster": "/images/shootout-thumbnails/v1/f5ee005ad1b8703318eb5b5f.jpg",
     "playerName": "Viktor Arvidsson",
     "playerTeam": "DET",
     "opponent": "@ CBJ",
@@ -17241,6 +17811,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/4d63ffdf-e7b7-482e-8b6e-0c2af9459385.mp4",
+    "poster": "/images/shootout-thumbnails/v1/9693d7288ef0a8fe897de723.jpg",
     "playerName": "Luke Evangelista",
     "playerTeam": "NJD",
     "opponent": "@ LAK",
@@ -17249,6 +17820,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/9d5465dc-23df-4e9b-bde6-9ace050e9f9e.mp4",
+    "poster": "/images/shootout-thumbnails/v1/3ae63623da5ae1de42106577.jpg",
     "playerName": "Cole Caufield",
     "playerTeam": "MTL",
     "opponent": "@ NJD",
@@ -17257,6 +17829,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/dcd8cf20-fb9f-4619-a054-5e666cd24ceb.mp4",
+    "poster": "/images/shootout-thumbnails/v1/15fb86fb43236c0087e9af74.jpg",
     "playerName": "Jesper Bratt",
     "playerTeam": "NJD",
     "opponent": "vs MTL",
@@ -17265,6 +17838,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/1afccd2a-c9a7-4876-a076-5c50f5a96226.mp4",
+    "poster": "/images/shootout-thumbnails/v1/26b5fe134afcd8c5a39fc94b.jpg",
     "playerName": "Ivan Demidov",
     "playerTeam": "MTL",
     "opponent": "@ NJD",
@@ -17273,6 +17847,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/4c20a9ef-d21a-477e-94f3-7c9c5ef6c8e1.mp4",
+    "poster": "/images/shootout-thumbnails/v1/fa34e84798226a88ea2bf878.jpg",
     "playerName": "Jack Hughes",
     "playerTeam": "NJD",
     "opponent": "vs MTL",
@@ -17281,6 +17856,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/7245503d-7cf8-47ea-8624-e9799d8a6176.mp4",
+    "poster": "/images/shootout-thumbnails/v1/52156ab6c5f5a9b020fe65e7.jpg",
     "playerName": "Oliver Kapanen",
     "playerTeam": "MTL",
     "opponent": "@ NJD",
@@ -17289,6 +17865,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/4159cc6f-c391-4862-9a92-f760befe8874.mp4",
+    "poster": "/images/shootout-thumbnails/v1/e6e95599f481d1f99a9b94a9.jpg",
     "playerName": "Adrian Kempe",
     "playerTeam": "LAK",
     "opponent": "vs NSH",
@@ -17297,6 +17874,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/6e18d434-f158-490b-be7a-60a32044b326.mp4",
+    "poster": "/images/shootout-thumbnails/v1/e7f697d2317d08f06a014648.jpg",
     "playerName": "Cole Caufield",
     "playerTeam": "MTL",
     "opponent": "vs FLA",
@@ -17305,6 +17883,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/8f7aadbd-42d5-401a-acd2-64b80fb7247f.mp4",
+    "poster": "/images/shootout-thumbnails/v1/af6ab39299230a74ae396f1d.jpg",
     "playerName": "Alexandre Texier",
     "playerTeam": "MTL",
     "opponent": "vs FLA",
@@ -17313,6 +17892,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/29f4848d-28dd-4f74-82f6-e9221d8de530.mp4",
+    "poster": "/images/shootout-thumbnails/v1/29877f8a36f4639a317e4f0d.jpg",
     "playerName": "Kent Johnson",
     "playerTeam": "CBJ",
     "opponent": "@ DET",
@@ -17321,6 +17901,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/f25cc774-4a71-4ab0-a34a-883aa23ec6cd.mp4",
+    "poster": "/images/shootout-thumbnails/v1/5d8b2002d4b5ccb6dd791687.jpg",
     "playerName": "Patrick Kane",
     "playerTeam": "CHI",
     "opponent": "vs CBJ",
@@ -17329,6 +17910,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/cf888674-6b91-46e3-ae74-8bd038e9cb83.mp4",
+    "poster": "/images/shootout-thumbnails/v1/6d6c7bf25255afcfa17feeb9.jpg",
     "playerName": "Alex DeBrincat",
     "playerTeam": "DET",
     "opponent": "vs CBJ",
@@ -17337,6 +17919,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/03404c19-c389-4321-aeaa-92dbcf07e48f.mp4",
+    "poster": "/images/shootout-thumbnails/v1/65b19b81efb8f03d65c47661.jpg",
     "playerName": "Charlie Coyle",
     "playerTeam": "CBJ",
     "opponent": "@ DET",
@@ -17345,6 +17928,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/9f496fee-cbf3-478b-8ee7-a65d6b9255b1.mp4",
+    "poster": "/images/shootout-thumbnails/v1/d1e32269409e838d53e74dbb.jpg",
     "playerName": "Zach Werenski",
     "playerTeam": "CBJ",
     "opponent": "@ DET",
@@ -17353,6 +17937,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/5256dae1-d260-4035-882a-974edf9e8ada.mp4",
+    "poster": "/images/shootout-thumbnails/v1/846fef9a239d3b83eb2f23f6.jpg",
     "playerName": "Mitch Marner",
     "playerTeam": "VGK",
     "opponent": "@ SEA",
@@ -17361,6 +17946,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/7673ff19-9983-4d52-8f46-cd44b93233ce.mp4",
+    "poster": "/images/shootout-thumbnails/v1/6735152ba5a3a0fa6177ca87.jpg",
     "playerName": "Matty Beniers",
     "playerTeam": "SEA",
     "opponent": "vs VGK",
@@ -17369,6 +17955,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/55c06106-e52c-4dba-813f-eb3617f63889.mp4",
+    "poster": "/images/shootout-thumbnails/v1/a4bdac85d3cfc16d0357a4c6.jpg",
     "playerName": "Berkly Catton",
     "playerTeam": "SEA",
     "opponent": "vs VGK",
@@ -17377,6 +17964,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/43c7822a-b302-4e00-9d97-45941f01c7bb.mp4",
+    "poster": "/images/shootout-thumbnails/v1/68009b0c8344c3e3dcb80f30.jpg",
     "playerName": "Macklin Celebrini",
     "playerTeam": "SJS",
     "opponent": "vs VAN",
@@ -17385,6 +17973,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/35f676e1-85fd-4528-92d4-2c8a3284e52d.mp4",
+    "poster": "/images/shootout-thumbnails/v1/27e4b9dc0d4d5b0be9474d9e.jpg",
     "playerName": "Jake DeBrusk",
     "playerTeam": "VAN",
     "opponent": "@ SJS",
@@ -17393,6 +17982,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/509ecc1f-b717-4f61-a886-3df19bd1aae2.mp4",
+    "poster": "/images/shootout-thumbnails/v1/fde0fd3015e7c6e0b008b1b8.jpg",
     "playerName": "Linus Karlsson",
     "playerTeam": "VAN",
     "opponent": "@ SJS",
@@ -17401,6 +17991,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/8e8b4b72-4bf0-4291-a4a3-d36ddc6b87ed.mp4",
+    "poster": "/images/shootout-thumbnails/v1/c94b9ccd06898ad9f08c5067.jpg",
     "playerName": "Tyson Foerster",
     "playerTeam": "PHI",
     "opponent": "vs CAR",
@@ -17409,6 +18000,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/c8d42cf0-884c-4a31-87cb-0f7b692a6037.mp4",
+    "poster": "/images/shootout-thumbnails/v1/82ebbb826fd018c6494135c9.jpg",
     "playerName": "Connor McDavid",
     "playerTeam": "EDM",
     "opponent": "vs COL",
@@ -17417,6 +18009,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/95486291-0857-4dcc-bd9b-bdaf85b9531f.mp4",
+    "poster": "/images/shootout-thumbnails/v1/be1358e1af37b364b2ddd3e1.jpg",
     "playerName": "Valeri Nichushkin",
     "playerTeam": "CBJ",
     "opponent": "@ EDM",
@@ -17425,6 +18018,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/a1d0496b-f1ca-4005-ad40-dc589ae61448.mp4",
+    "poster": "/images/shootout-thumbnails/v1/efb013733f1a08adfe07f168.jpg",
     "playerName": "Ryan Nugent-Hopkins",
     "playerTeam": "EDM",
     "opponent": "vs COL",
@@ -17433,6 +18027,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/5ee03443-f358-48aa-9361-46071517480d.mp4",
+    "poster": "/images/shootout-thumbnails/v1/4c6f289fc9b7017c672e4831.jpg",
     "playerName": "Martin Necas",
     "playerTeam": "COL",
     "opponent": "@ EDM",
@@ -17441,6 +18036,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/9e6997e3-a95d-4edc-8abb-aa7372e5767d.mp4",
+    "poster": "/images/shootout-thumbnails/v1/68d0d531cc54191b916d434f.jpg",
     "playerName": "Nathan MacKinnon",
     "playerTeam": "COL",
     "opponent": "@ EDM",
@@ -17449,6 +18045,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/f566cb34-acb2-4585-965b-aa894e13265e.mp4",
+    "poster": "/images/shootout-thumbnails/v1/3c9bd719cb4ea4531179307f.jpg",
     "playerName": "Josh Norris",
     "playerTeam": "BUF",
     "opponent": "vs DAL",
@@ -17457,6 +18054,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/39c9f6ee-16ed-4832-8821-7633ba790f27.mp4",
+    "poster": "/images/shootout-thumbnails/v1/3820dd177e20d0c55e513525.jpg",
     "playerName": "Jason Robertson",
     "playerTeam": "DAL",
     "opponent": "@ BUF",
@@ -17465,6 +18063,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/9c0742c5-17cf-41b5-865f-fcc332436a70.mp4",
+    "poster": "/images/shootout-thumbnails/v1/45f235ff904d792f9c7fa845.jpg",
     "playerName": "Jack Quinn",
     "playerTeam": "BUF",
     "opponent": "vs DAL",
@@ -17473,6 +18072,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/78054e9e-0fff-4f4f-9ab1-3011e2038090.mp4",
+    "poster": "/images/shootout-thumbnails/v1/fd6218179a4fb8e4c0ea5a44.jpg",
     "playerName": "Matt Duchene",
     "playerTeam": "DAL",
     "opponent": "@ BUF",
@@ -17481,6 +18081,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/814ee91f-32ea-4712-b688-ac25701dbbdf.mp4",
+    "poster": "/images/shootout-thumbnails/v1/291e8a2280a107a81fe08ea4.jpg",
     "playerName": "Wyatt Johnston",
     "playerTeam": "DAL",
     "opponent": "@ BUF",
@@ -17489,6 +18090,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/8fe70c7a-93d2-40c4-9079-2628f973873e.mp4",
+    "poster": "/images/shootout-thumbnails/v1/2435701e2a25738dfab2cdff.jpg",
     "playerName": "Braeden Bowman",
     "playerTeam": "VGK",
     "opponent": "vs TOR",
@@ -17497,6 +18099,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/14346ebf-24fa-465d-ab42-5c3c9ab79005.mp4",
+    "poster": "/images/shootout-thumbnails/v1/6082259c73e5c0844a233b1e.jpg",
     "playerName": "Kirill Marchenko",
     "playerTeam": "TOR",
     "opponent": "@ VGK",
@@ -17505,6 +18108,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/c584098d-535d-4963-8bf1-0d84f0ba4e2f.mp4",
+    "poster": "/images/shootout-thumbnails/v1/43c2e3abcdfa6211faa7fd7e.jpg",
     "playerName": "Trevor Connelly",
     "playerTeam": "VGK",
     "opponent": "vs TOR",
@@ -17513,6 +18117,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/c62dd35c-42fb-4ae8-9be7-39404362efb4.mp4",
+    "poster": "/images/shootout-thumbnails/v1/13a8f864544010ccf3ef19df.jpg",
     "playerName": "Kent Johnson",
     "playerTeam": "CBJ",
     "opponent": "vs PIT",
@@ -17521,6 +18126,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/1d2225f7-b9ee-436a-8915-f3b80f97924d.mp4",
+    "poster": "/images/shootout-thumbnails/v1/b14c42e8fca446dbd125d22e.jpg",
     "playerName": "Zachary Bolduc",
     "playerTeam": "MTL",
     "opponent": "vs DET",
@@ -17529,6 +18135,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/208c54c4-6730-4d3c-bf89-1adf6db81f48.mp4",
+    "poster": "/images/shootout-thumbnails/v1/f1e7d6e30a9882e654d5a3d9.jpg",
     "playerName": "Ryan O'Reilly",
     "playerTeam": "NSH",
     "opponent": "@ OTT",
@@ -17537,6 +18144,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/8d3da352-6641-43ec-a315-255c8dd1d208.mp4",
+    "poster": "/images/shootout-thumbnails/v1/ddb1ca033989b5d4026596cf.jpg",
     "playerName": "Tim Stützle",
     "playerTeam": "OTT",
     "opponent": "vs NSH",
@@ -17545,6 +18153,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/ab183535-0848-45ce-acc0-d0af633ec4e1.mp4",
+    "poster": "/images/shootout-thumbnails/v1/83e3f7f99dd5afdc1c5869b1.jpg",
     "playerName": "Shane Pinto",
     "playerTeam": "OTT",
     "opponent": "vs NSH",
@@ -17553,6 +18162,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/82e77c3b-3513-4614-8eae-1582be4689c4.mp4",
+    "poster": "/images/shootout-thumbnails/v1/b9286c426a65b84e40c0140b.jpg",
     "playerName": "Ben Kindel",
     "playerTeam": "PIT",
     "opponent": "vs DAL",
@@ -17561,6 +18171,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/fc817ed5-c62f-4a11-879d-40a945ddfc8e.mp4",
+    "poster": "/images/shootout-thumbnails/v1/8435653f7a5a2acfa29f364b.jpg",
     "playerName": "Sidney Crosby",
     "playerTeam": "PIT",
     "opponent": "vs DAL",
@@ -17569,6 +18180,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/1c2e96e2-4f4e-4f53-aff3-0b3c7ce42d39.mp4",
+    "poster": "/images/shootout-thumbnails/v1/96a9af0bc6ac67481c45f926.jpg",
     "playerName": "Tyler Seguin",
     "playerTeam": "DAL",
     "opponent": "@ PIT",
@@ -17577,6 +18189,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/6cb636de-8f73-41fc-a906-139999bafae4.mp4",
+    "poster": "/images/shootout-thumbnails/v1/b28abcfd0a3fb2eeb79b4154.jpg",
     "playerName": "Wyatt Johnston",
     "playerTeam": "DAL",
     "opponent": "@ PIT",
@@ -17585,6 +18198,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/93d5e189-2422-4b6b-8ccf-b90f96275985.mp4",
+    "poster": "/images/shootout-thumbnails/v1/1363eb932ebaea76e079639e.jpg",
     "playerName": "Rickard Rakell",
     "playerTeam": "PIT",
     "opponent": "vs DAL",
@@ -17593,6 +18207,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/49e91da8-3ac0-4b54-bfdd-7a4a3a4fda21.mp4",
+    "poster": "/images/shootout-thumbnails/v1/6827d09e8bc05fb73fe0c8ca.jpg",
     "playerName": "Cole Caufield",
     "playerTeam": "MTL",
     "opponent": "vs BUF",
@@ -17601,6 +18216,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/2025680b-fb46-4395-bab5-46b790be476f.mp4",
+    "poster": "/images/shootout-thumbnails/v1/4b8f4407a82cb1a7fefa718f.jpg",
     "playerName": "Tage Thompson",
     "playerTeam": "BUF",
     "opponent": "@ MTL",
@@ -17609,6 +18225,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/69ea5eb4-7522-4494-ac92-7cf0a43db7a0.mp4",
+    "poster": "/images/shootout-thumbnails/v1/7f5b101d087992597e7e534a.jpg",
     "playerName": "Alexandre Texier",
     "playerTeam": "MTL",
     "opponent": "vs BUF",
@@ -17617,6 +18234,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/b9a54318-3179-47c0-ad94-2261403739ed.mp4",
+    "poster": "/images/shootout-thumbnails/v1/62f437b0dedb24923d0ef6aa.jpg",
     "playerName": "Zachary Bolduc",
     "playerTeam": "MTL",
     "opponent": "vs BUF",
@@ -17625,6 +18243,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/90aaf101-646a-4e3b-b622-6a4be4d1128d.mp4",
+    "poster": "/images/shootout-thumbnails/v1/84f04db4f1a8049812df304f.jpg",
     "playerName": "Matty Beniers",
     "playerTeam": "SEA",
     "opponent": "@ PHI",
@@ -17633,6 +18252,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/695d8942-e1db-4122-8739-38fd7ad09dfa.mp4",
+    "poster": "/images/shootout-thumbnails/v1/2a0654c33960832d41770964.jpg",
     "playerName": "Matvei Michkov",
     "playerTeam": "PHI",
     "opponent": "vs SEA",
@@ -17641,6 +18261,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/c74cc694-d583-462f-9270-599adbab80d3.mp4",
+    "poster": "/images/shootout-thumbnails/v1/31cb2ddec2f8212aaac32679.jpg",
     "playerName": "Bobby McMann",
     "playerTeam": "SEA",
     "opponent": "@ PHI",
@@ -17649,6 +18270,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/9fb990aa-1ae0-4ec2-8f86-8709e1731106.mp4",
+    "poster": "/images/shootout-thumbnails/v1/d151a1022fa63dedae572997.jpg",
     "playerName": "Jason Robertson",
     "playerTeam": "DAL",
     "opponent": "@ COL",
@@ -17657,6 +18279,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/4a3b2062-4915-4fc3-8de9-4f56d20dba33.mp4",
+    "poster": "/images/shootout-thumbnails/v1/1aabff2324ca484f4fb2d188.jpg",
     "playerName": "Nazem Kadri",
     "playerTeam": "COL",
     "opponent": "vs DAL",
@@ -17665,6 +18288,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/469d8178-7b8b-415b-a3d6-35d752aa74c8.mp4",
+    "poster": "/images/shootout-thumbnails/v1/181e03c08196df2f2bffb1c9.jpg",
     "playerName": "Roope Hintz",
     "playerTeam": "DAL",
     "opponent": "@ COL",
@@ -17673,6 +18297,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/a87bde62-8158-451c-8f36-bf1f37a74493.mp4",
+    "poster": "/images/shootout-thumbnails/v1/b064f529c2cebf41230fd225.jpg",
     "playerName": "Shane Pinto",
     "playerTeam": "OTT",
     "opponent": "vs NYI",
@@ -17681,6 +18306,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/0283b9fd-19c2-4854-8302-67a1467aa3ca.mp4",
+    "poster": "/images/shootout-thumbnails/v1/47f68711633aab78c6fe8b86.jpg",
     "playerName": "Macklin Celebrini",
     "playerTeam": "SJS",
     "opponent": "@ NSH",
@@ -17689,6 +18315,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/437ea0cc-8548-4894-ab72-a6d97b040ae9.mp4",
+    "poster": "/images/shootout-thumbnails/v1/f41a5a2a9ef7113d8b888aed.jpg",
     "playerName": "Lucas Raymond",
     "playerTeam": "DET",
     "opponent": "vs SJS",
@@ -17697,6 +18324,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/b0ce8490-d608-4ee9-bbf0-757ecd754a3c.mp4",
+    "poster": "/images/shootout-thumbnails/v1/f585b37ad5d80cf16b6fb5a4.jpg",
     "playerName": "Frederick Gaudreau",
     "playerTeam": "SEA",
     "opponent": "vs DET",
@@ -17705,6 +18333,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/d57ff3be-6242-4599-a608-a5f73182ba26.mp4",
+    "poster": "/images/shootout-thumbnails/v1/a6b63fc4ce398f2161e7fb47.jpg",
     "playerName": "Viktor Arvidsson",
     "playerTeam": "DET",
     "opponent": "@ SEA",
@@ -17713,6 +18342,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/328f9299-4fd8-4bad-9c09-dc119b22b1c6.mp4",
+    "poster": "/images/shootout-thumbnails/v1/f06b4a61938d27beb5d20844.jpg",
     "playerName": "Bobby McMann",
     "playerTeam": "SEA",
     "opponent": "vs DET",
@@ -17721,6 +18351,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/b130a64c-5297-4d68-9ca3-427a958c112b.mp4",
+    "poster": "/images/shootout-thumbnails/v1/6521406623adbc926e3b9d7a.jpg",
     "playerName": "Ryan Nugent-Hopkins",
     "playerTeam": "EDM",
     "opponent": "vs CAR",
@@ -17729,6 +18360,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/4e8c0622-c651-4e62-ad5b-13f4cf43ddcb.mp4",
+    "poster": "/images/shootout-thumbnails/v1/4332c7bf067dc4cfd0b52180.jpg",
     "playerName": "Lucas Raymond",
     "playerTeam": "DET",
     "opponent": "@ EDM",
@@ -17737,6 +18369,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/6189081c-32f4-4428-8904-fd50fc83af49.mp4",
+    "poster": "/images/shootout-thumbnails/v1/1ec2f52d694f0d9dd2cffc60.jpg",
     "playerName": "Kyle Palmieri",
     "playerTeam": "NYI",
     "opponent": "@ NSH",
@@ -17745,6 +18378,7 @@
   },
   {
     "url": "https://stories.nhl.com/games/357bd45e38182fe4b6bb10838da2115f/d45552c7-9240-4bf4-ac3d-04a2eae6d327.mp4",
+    "poster": "/images/shootout-thumbnails/v1/f4bbd3b6a8e8c15c80862230.jpg",
     "playerName": "Steven Stamkos",
     "playerTeam": "NSH",
     "opponent": "vs TBL",
@@ -17773,6 +18407,7 @@
         function loadVideo(index) {
             if (index >= 0 && index < shuffledVideos.length) {
                 const video = shuffledVideos[index];
+                featuredVideo.poster = video.poster || '';
                 featuredVideo.src = video.url;
                 featuredVideo.load();
                 featuredVideo.play().catch(e => console.log('Auto-play prevented:', e));
@@ -17796,7 +18431,7 @@
             // Initialize shuffled videos
             function initializeVideos() {
                 if (goalVideos && goalVideos.length > 0) {
-                    shuffledVideos = shuffleArray(goalVideos);
+                    shuffledVideos = [goalVideos[0], ...shuffleArray(goalVideos.slice(1))];
                     currentVideoIndex = 0;
                     videoHistory = [0];
                     playCurrentVideo();
@@ -17808,6 +18443,7 @@
             function playCurrentVideo() {
                 if (currentVideoIndex >= 0 && currentVideoIndex < shuffledVideos.length) {
                     const video = shuffledVideos[currentVideoIndex];
+                    featuredVideo.poster = video.poster || '';
                     featuredVideo.src = video.url;
                     featuredVideo.load();
                     featuredVideo.play().catch(e => console.log('Auto-play prevented:', e));

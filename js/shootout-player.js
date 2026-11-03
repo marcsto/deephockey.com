@@ -87,10 +87,12 @@ document.addEventListener('DOMContentLoaded', () => {
         unavailable.style.display = hasVideo ? 'none' : 'flex';
         video.pause();
         if (hasVideo) {
+            video.poster = item.dataset.poster || '';
             video.src = item.dataset.video;
             video.load();
             if (play) startVideo();
         } else {
+            video.removeAttribute('poster');
             video.removeAttribute('src');
             video.querySelector('source')?.remove();
             video.load();

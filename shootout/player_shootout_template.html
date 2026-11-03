@@ -37,11 +37,11 @@
                 <div class="left-column">
                     <!-- Video Player -->
                     <div class="video-player-container">
-                        <video id="shootout-video" class="video-player" controls playsinline>
+                        <video id="shootout-video" class="video-player" controls playsinline preload="metadata" poster="{{FIRST_VIDEO_POSTER}}" style="display: {{VIDEO_DISPLAY}};">
                             <source src="{{FIRST_VIDEO_URL}}" type="video/mp4">
                             Your browser does not support the video tag.
                         </video>
-                        <div id="no-video-message" class="no-video-message" style="display: none;">
+                        <div id="no-video-message" class="no-video-message" style="display: {{NO_VIDEO_DISPLAY}};">
                             <div class="no-video-icon">🎥</div>
                             <h3>No Video Available</h3>
                             <p>Unfortunately, there is no video available for this shootout attempt.</p>
