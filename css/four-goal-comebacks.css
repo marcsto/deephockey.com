@@ -1,0 +1,90 @@
+/* Styles scoped to the four-goal comeback article. */
+.comeback-story { max-width: 1160px; padding-top: 2rem; }
+.comeback-story a { color: #93c5fd; text-underline-offset: .2em; }
+.comeback-story a:hover { color: #dbeafe; }
+.comeback-story :is(a, [tabindex]):focus-visible { outline: 2px solid #7ee3c2; outline-offset: 5px; border-radius: 3px; }
+.comeback-story :is(section, .comeback-sources li) { scroll-margin-top: 6rem; }
+.comeback-hero { display: grid; grid-template-columns: 1.4fr 1fr; gap: 3rem; align-items: center; padding: 1rem 0 2.5rem; }
+.comeback-eyebrow { font-size: .72rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: #7ee3c2; }
+.comeback-hero h1 { font-size: clamp(2.2rem, 4.6vw, 3.7rem); line-height: 1.08; letter-spacing: -.045em; margin: 1rem 0 1.5rem; max-width: 15ch; }
+.comeback-hero h1 span { color: #93c5fd; }
+.comeback-deck { color: #c2cddd; font-size: 1.1rem; line-height: 1.75; max-width: 48ch; }
+.comeback-byline { color: #9ca3af; font-size: .8rem; margin-top: 1.5rem; }
+.comeback-record { border: 1px solid #35546a; border-top: 3px solid #7ee3c2; border-radius: .75rem; background: radial-gradient(ellipse at top, #203b47 0%, #152332 65%); padding: 1.6rem 1rem; text-align: center; }
+.record-matchup { display: flex; justify-content: center; align-items: center; gap: .6rem; font-weight: 700; letter-spacing: .06em; font-size: .9rem; }
+.record-at { color: #a9bbc9; font-weight: 400; font-size: .75rem; margin: 0 .4rem; }
+.record-time { color: #a0f0d6; font-size: clamp(5rem, 8.5vw, 7rem); line-height: 1.15; font-weight: 700; font-variant-numeric: tabular-nums; letter-spacing: -.06em; margin-top: .5rem; }
+.record-label { color: #bbcdd8; font-size: .8rem; }
+.record-score { font-size: 1.9rem; font-weight: 700; margin-top: 1.1rem; }
+.record-score > span[aria-hidden] { color: #7ee3c2; margin: 0 .5rem; }
+.record-result { color: #9fb4c6; font-size: .75rem; margin-top: .5rem; }
+.comeback-jumps { display: flex; flex-wrap: wrap; gap: .5rem 1.4rem; padding: 1rem 0; border-top: 1px solid #2d3a4c; border-bottom: 1px solid #2d3a4c; margin-bottom: 2rem; font-size: .85rem; }
+.comeback-jumps a { text-decoration: none; padding: .25rem 0; }
+.comeback-content { color: #d1dae5; font-size: 1rem; line-height: 1.8; }
+.comeback-content p { margin-bottom: 1.25rem; }
+.comeback-content strong { color: #f9fafb; font-weight: 600; }
+.comeback-content > p, .comeback-content section > p, .comeback-method, .comeback-sources { max-width: 80ch; }
+.comeback-content .comeback-lead { font-size: 1.2rem; max-width: 72ch; }
+.comeback-section-heading { margin: 3.5rem 0 1.1rem; }
+.comeback-section-heading .comeback-eyebrow { margin-bottom: .5rem; }
+.comeback-section-heading h2 { font-size: clamp(1.6rem, 3vw, 2.05rem); color: #f9fafb; line-height: 1.25; letter-spacing: -.025em; }
+.comeback-content .comeback-table-help, .comeback-content .comeback-caption { color: #a7b6c7; font-size: .8rem; line-height: 1.7; }
+.comeback-table-wrap { overflow-x: auto; border: 1px solid #334155; border-radius: .65rem; margin: 1rem 0; }
+.comeback-table { border-collapse: collapse; width: 100%; min-width: 850px; font-size: .85rem; line-height: 1.5; text-align: left; }
+.comeback-table caption { text-align: left; padding: .9rem 1rem; font-weight: 600; background: #1b293b; color: #e5edf6; font-size: .8rem; }
+.comeback-table :is(th, td) { padding: 1.2rem .85rem; border-top: 1px solid #334155; vertical-align: middle; }
+.comeback-table thead th { background: #172335; font-size: .73rem; color: #c9d4e2; font-weight: 600; }
+.comeback-table thead span { color: #9caec2; font-weight: 400; }
+.comeback-table tbody th { font-weight: 600; width: 30%; }
+.comeback-table tbody th a { color: #f9fafb; text-decoration: none; }
+.comeback-table tbody th a:hover { text-decoration: underline; }
+.comeback-table .source-mark { color: #93c5fd; font-size: .7rem; }
+.comeback-table .comeback-opponent, .comeback-table time, .comeback-secondary { display: block; font-size: .73rem; font-weight: 400; color: #a9b9cd; }
+.comeback-table time { margin-top: .3rem; }
+.comeback-rank { font-size: .85rem; color: #9caec2; font-variant-numeric: tabular-nums; }
+.comeback-clock { display: block; font-size: 1.4rem; font-variant-numeric: tabular-nums; letter-spacing: -.03em; }
+.remaining-track { display: block; height: 4px; width: 80px; margin-top: .4rem; background: #2e3d50; border-radius: 4px; }
+.remaining-track > span { display: block; height: 100%; background: #7da8d7; border-radius: inherit; }
+.comeback-score { white-space: nowrap; font-variant-numeric: tabular-nums; }
+.comeback-outcome { color: #e5edf6; font-weight: 600; white-space: nowrap; }
+.comeback-winner { background: #17343b; }
+.comeback-winner .comeback-clock, .comeback-winner .comeback-rank { color: #a0f0d6; }
+.comeback-winner .remaining-track > span { background: #7ee3c2; }
+.comeback-note { padding: 1.4rem 1.6rem; border-left: 3px solid #7ee3c2; background: #1b2939; border-radius: 0 .6rem .6rem 0; margin: 2rem 0; font-size: .95rem; }
+.comeback-note h3 { color: #b6f2df; font-size: 1.1rem; margin-bottom: .75rem; }
+.comeback-note p:last-child { margin-bottom: 0; }
+.comeback-timeline { display: grid; grid-template-columns: repeat(4, 1fr); list-style: none; padding: 0; margin: 2rem 0 1.5rem; }
+.comeback-timeline li { position: relative; border-top: 2px solid #426678; padding: 1.5rem 1rem 0 0; }
+.comeback-timeline li::before { content: ''; position: absolute; top: -6px; left: 0; width: 10px; height: 10px; background: #7ee3c2; border-radius: 50%; }
+.comeback-timeline li:last-child::before { box-shadow: 0 0 0 5px #21413f; }
+.timeline-time { display: block; color: #a0f0d6; font-size: 1.9rem; font-weight: 700; font-variant-numeric: tabular-nums; }
+.timeline-scorer { display: block; color: #cdd8e6; font-size: .85rem; }
+.timeline-score { display: block; color: #f9fafb; font-size: 1.15rem; font-weight: 600; margin-top: .3rem; }
+.comeback-ot { padding: 1rem 0; border-top: 1px solid #334155; border-bottom: 1px solid #334155; font-size: .9rem; }
+.comeback-ot > span { color: #a0f0d6; margin-right: .75rem; font-weight: 600; }
+.comeback-method, .comeback-sources { padding-left: 1.5rem; }
+.comeback-method li { padding-left: .3rem; margin-bottom: 1rem; }
+.comeback-sources { font-size: .9rem; }
+.comeback-sources li { margin-bottom: 1.25rem; padding-left: .3rem; }
+.comeback-sources li::marker { color: #7ee3c2; }
+.comeback-sr-only, .comeback-skip:not(:focus) { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; border: 0; }
+.comeback-skip:focus { position: fixed; top: .5rem; left: .5rem; z-index: 100; padding: .8rem 1rem; background: #a0f0d6; color: #111827; }
+@media (max-width: 800px) {
+    .comeback-hero { grid-template-columns: 1fr; gap: 1.8rem; }
+    .comeback-hero h1 { max-width: 20ch; font-size: clamp(2.3rem, 6vw, 3.3rem); }
+    .comeback-record { max-width: 440px; width: 100%; }
+    .record-time { font-size: 6rem; }
+    .comeback-section-heading { margin-top: 2.7rem; }
+}
+@media (max-width: 480px) {
+    .comeback-hero h1 { font-size: 2.45rem; }
+    .comeback-deck { font-size: 1rem; }
+    .comeback-jumps { gap: .5rem 1rem; font-size: .8rem; }
+    .comeback-content .comeback-lead { font-size: 1.1rem; }
+    .comeback-note { padding: 1.1rem; }
+    .comeback-timeline { grid-template-columns: 1fr; margin-left: .5rem; }
+    .comeback-timeline li { display: grid; grid-template-columns: 4.5rem 1fr auto; align-items: center; gap: .5rem; border-top: 0; border-left: 2px solid #426678; padding: .8rem 0 .8rem 1.2rem; }
+    .comeback-timeline li::before { top: calc(50% - 5px); left: -6px; }
+    .timeline-time { font-size: 1.5rem; }
+    .timeline-score { margin-top: 0; }
+}
